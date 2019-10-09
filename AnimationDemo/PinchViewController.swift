@@ -25,12 +25,13 @@ class PinchViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    var animationName: String?
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {
             return
         }
         let startPoint = touch.location(in: view)
-        IFPinchAnimation.showDot(in: view.layer, centerPoint: view.center, point: startPoint)
+        animationName = IFPinchAnimation.showDot(in: view.layer, centerPoint: view.center, point: startPoint)
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -42,7 +43,7 @@ class PinchViewController: UIViewController {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        IFPinchAnimation.clear(animationName)
     }
 }
 

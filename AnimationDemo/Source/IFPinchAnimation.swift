@@ -10,17 +10,28 @@ import Foundation
 import UIKit
 
 class IFPinchAnimation {
-    static var anmationKeys: [String: Any] = [:]
+    static var animations: [String: Any] = [:]
     
-    static func showDot(in layer: CALayer, centerPoint: CGPoint, point: CGPoint) {
+    @discardableResult
+    static func showDot(in layer: CALayer, centerPoint: CGPoint, point: CGPoint) -> String {
         let name = layer.description
-        if let existHelper = anmationKeys[name] as? PinchHelper {
+        if let existHelper = animations[name] as? PinchHelper {
             existHelper.showDot(point, center: centerPoint)
         } else {
           let helper = PinchHelper(layer)
           helper.showDot(point, center: centerPoint)
-          anmationKeys[name] = helper
+          animations[name] = helper
         }
+        return name
+    }
+    
+    static func clear(_ animationKey: String?) {
+        guard let animationKey = animationKey,
+            let helper = animations[animationKey] as? PinchHelper else {
+            return
+        }
+        helper.clear()
+        animations[animationKey] = nil
     }
 }
 
@@ -63,4 +74,15 @@ class PinchHelper {
         dot2.add(positionAnimation, forKey: nil)
        
         }
+    
+    fileprivate func clear() {
+        dot1.removeAllAnimations()
+        dot2.removeAllAnimations()
+        dot1.removeFromSuperlayer()
+        dot2.removeFromSuperlayer()
+    }
+    
+    deinit {
+        debugPrint("deinit - PinchHelper")
+    }
 }
