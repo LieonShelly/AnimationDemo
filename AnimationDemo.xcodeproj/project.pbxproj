@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		CD2FCF70234D796100E28E5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCF6F234D796100E28E5C /* AppDelegate.swift */; };
-		CD2FCF72234D796100E28E5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCF71234D796100E28E5C /* SceneDelegate.swift */; };
-		CD2FCF74234D796100E28E5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCF73234D796100E28E5C /* ViewController.swift */; };
-		CD2FCF77234D796100E28E5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCF75234D796100E28E5C /* Main.storyboard */; };
 		CD2FCF79234D796500E28E5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCF78234D796500E28E5C /* Assets.xcassets */; };
 		CD2FCF7C234D796500E28E5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCF7A234D796500E28E5C /* LaunchScreen.storyboard */; };
 		CD2FCF87234D796500E28E5C /* AnimationDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCF86234D796500E28E5C /* AnimationDemoTests.swift */; };
 		CD2FCF92234D796500E28E5C /* AnimationDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCF91234D796500E28E5C /* AnimationDemoUITests.swift */; };
+		CD2FCFA1234D79AB00E28E5C /* TapAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCF9F234D79AB00E28E5C /* TapAnimationViewController.swift */; };
+		CD2FCFA2234D79AB00E28E5C /* TapAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCFA0234D79AB00E28E5C /* TapAnimationViewController.xib */; };
+		CD2FCFA5234D7C4000E28E5C /* IFTapAniamtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCFA4234D7C4000E28E5C /* IFTapAniamtion.swift */; };
+		CD2FCFA8234DB37600E28E5C /* PinchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCFA6234DB37600E28E5C /* PinchViewController.swift */; };
+		CD2FCFA9234DB37600E28E5C /* PinchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCFA7234DB37600E28E5C /* PinchViewController.xib */; };
+		CD436428234E17500047930B /* IFPinchAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD436427234E17500047930B /* IFPinchAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +40,6 @@
 /* Begin PBXFileReference section */
 		CD2FCF6C234D796100E28E5C /* AnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2FCF6F234D796100E28E5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CD2FCF71234D796100E28E5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CD2FCF73234D796100E28E5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CD2FCF76234D796100E28E5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD2FCF78234D796500E28E5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD2FCF7B234D796500E28E5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD2FCF7D234D796500E28E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +49,12 @@
 		CD2FCF8D234D796500E28E5C /* AnimationDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimationDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2FCF91234D796500E28E5C /* AnimationDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDemoUITests.swift; sourceTree = "<group>"; };
 		CD2FCF93234D796500E28E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD2FCF9F234D79AB00E28E5C /* TapAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapAnimationViewController.swift; sourceTree = "<group>"; };
+		CD2FCFA0234D79AB00E28E5C /* TapAnimationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TapAnimationViewController.xib; sourceTree = "<group>"; };
+		CD2FCFA4234D7C4000E28E5C /* IFTapAniamtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFTapAniamtion.swift; sourceTree = "<group>"; };
+		CD2FCFA6234DB37600E28E5C /* PinchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchViewController.swift; sourceTree = "<group>"; };
+		CD2FCFA7234DB37600E28E5C /* PinchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinchViewController.xib; sourceTree = "<group>"; };
+		CD436427234E17500047930B /* IFPinchAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFPinchAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +105,15 @@
 		CD2FCF6E234D796100E28E5C /* AnimationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CD2FCFA3234D7A5F00E28E5C /* Source */,
 				CD2FCF6F234D796100E28E5C /* AppDelegate.swift */,
-				CD2FCF71234D796100E28E5C /* SceneDelegate.swift */,
-				CD2FCF73234D796100E28E5C /* ViewController.swift */,
-				CD2FCF75234D796100E28E5C /* Main.storyboard */,
 				CD2FCF78234D796500E28E5C /* Assets.xcassets */,
 				CD2FCF7A234D796500E28E5C /* LaunchScreen.storyboard */,
 				CD2FCF7D234D796500E28E5C /* Info.plist */,
+				CD2FCF9F234D79AB00E28E5C /* TapAnimationViewController.swift */,
+				CD2FCFA0234D79AB00E28E5C /* TapAnimationViewController.xib */,
+				CD2FCFA6234DB37600E28E5C /* PinchViewController.swift */,
+				CD2FCFA7234DB37600E28E5C /* PinchViewController.xib */,
 			);
 			path = AnimationDemo;
 			sourceTree = "<group>";
@@ -126,6 +134,15 @@
 				CD2FCF93234D796500E28E5C /* Info.plist */,
 			);
 			path = AnimationDemoUITests;
+			sourceTree = "<group>";
+		};
+		CD2FCFA3234D7A5F00E28E5C /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				CD2FCFA4234D7C4000E28E5C /* IFTapAniamtion.swift */,
+				CD436427234E17500047930B /* IFPinchAnimation.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,8 +250,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD2FCF7C234D796500E28E5C /* LaunchScreen.storyboard in Resources */,
+				CD2FCFA9234DB37600E28E5C /* PinchViewController.xib in Resources */,
 				CD2FCF79234D796500E28E5C /* Assets.xcassets in Resources */,
-				CD2FCF77234D796100E28E5C /* Main.storyboard in Resources */,
+				CD2FCFA2234D79AB00E28E5C /* TapAnimationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +277,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD2FCF74234D796100E28E5C /* ViewController.swift in Sources */,
+				CD436428234E17500047930B /* IFPinchAnimation.swift in Sources */,
 				CD2FCF70234D796100E28E5C /* AppDelegate.swift in Sources */,
-				CD2FCF72234D796100E28E5C /* SceneDelegate.swift in Sources */,
+				CD2FCFA8234DB37600E28E5C /* PinchViewController.swift in Sources */,
+				CD2FCFA1234D79AB00E28E5C /* TapAnimationViewController.swift in Sources */,
+				CD2FCFA5234D7C4000E28E5C /* IFTapAniamtion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +317,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CD2FCF75234D796100E28E5C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CD2FCF76234D796100E28E5C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CD2FCF7A234D796500E28E5C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -436,14 +448,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AnimationDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AnimationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -453,14 +466,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AnimationDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AnimationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

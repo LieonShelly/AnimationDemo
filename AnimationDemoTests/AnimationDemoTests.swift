@@ -30,5 +30,27 @@ class AnimationDemoTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testSymmetricPoint() {
+        let startPoint = CGPoint(x: 300, y: 500)
+        let centerPoint = CGPoint(x: UIScreen.main.bounds.width * 0.5,
+                                  y: UIScreen.main.bounds.height * 0.5)
+        let endPoint = startPoint.symmetricPoint(with: centerPoint )
+        XCTAssert(endPoint.x == 2 * centerPoint.x - startPoint.x)
+        XCTAssert(endPoint.y == 2 * centerPoint.y - startPoint.y)
+        debugPrint("centerPoint:\(centerPoint) - endPoint:\(endPoint)")
+    }
 
 }
+
+
+
+extension CGPoint {
+    
+    func symmetricPoint(with centerPoint: CGPoint) -> CGPoint {
+        /// 任意一点（x, y）关于（a, b）的对称点为 （2a-x, 2b-y）
+        return CGPoint(x: 2 * centerPoint.x - x, y: 2 * centerPoint.y - y)
+    }
+
+}
+
