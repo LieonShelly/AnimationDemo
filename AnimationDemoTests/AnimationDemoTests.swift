@@ -40,6 +40,13 @@ class AnimationDemoTests: XCTestCase {
         XCTAssert(endPoint.y == 2 * centerPoint.y - startPoint.y)
         debugPrint("centerPoint:\(centerPoint) - endPoint:\(endPoint)")
     }
+    
+    func testRandomPoints() {
+        let startPoint = CGPoint(x: 30, y: 80)
+        let endPoint = CGPoint(x: 300, y: 800)
+        let points = startPoint.randomPoinits(endPoint: endPoint, pointCount: 100)
+        debugPrint("points:\(points)")
+    }
 
 }
 
@@ -52,5 +59,30 @@ extension CGPoint {
         return CGPoint(x: 2 * centerPoint.x - x, y: 2 * centerPoint.y - y)
     }
 
+    func randomPoinits(endPoint: CGPoint, pointCount: Int) -> [CGPoint] {
+           let startPointX = x
+           let startPointY = y
+           let endPointX = endPoint.x
+           let endPointY = endPoint.y
+           let generatorX =  randomSequenceGenerator(min: Int(startPointX), max: Int(endPointX))
+           let generatorY =  randomSequenceGenerator(min: Int(startPointY), max: Int(endPointY))
+           let randomX = (0..<pointCount).map {_ in generatorX() }
+           let randomY = (0..<pointCount).map {_ in generatorY() }
+           let points = zip(randomX, randomY).map { CGPoint(x: CGFloat($0.0), y: CGFloat($0.1))}
+           return points
+       }
+       
+     fileprivate  func randomSequenceGenerator(min: Int, max: Int) -> () -> Int {
+           var numbers: [Int] = []
+           return {
+               if numbers.isEmpty {
+                   numbers = Array(min ... max)
+               }
+
+               let index = Int(arc4random_uniform(UInt32(numbers.count)))
+               return numbers.remove(at: index)
+           }
+       }
+       
 }
 

@@ -14,13 +14,26 @@ class IFPinchAnimation {
     
     @discardableResult
     static func showDot(in layer: CALayer, centerPoint: CGPoint, point: CGPoint) -> String {
-        let name = layer.description
+        let name = key(layer.description)
         if let existHelper = animations[name] as? PinchHelper {
             existHelper.showDot(point, center: centerPoint)
         } else {
           let helper = PinchHelper(layer)
           helper.showDot(point, center: centerPoint)
           animations[name] = helper
+        }
+        return name
+    }
+    
+    @discardableResult
+    static func showKeyframe(in layer: CALayer, centerPoint: CGPoint, points: [CGPoint]) -> String {
+        let name = key(layer.description)
+        if let existHelper = animations[name] as? PinchHelper {
+           existHelper.showKeyFrameDot(points, centerPoint: centerPoint)
+        } else {
+            let helper = PinchHelper(layer)
+            helper.showKeyFrameDot(points, centerPoint: centerPoint)
+            animations[name] = helper
         }
         return name
     }
@@ -32,6 +45,10 @@ class IFPinchAnimation {
         }
         helper.clear()
         animations[animationKey] = nil
+    }
+    
+    fileprivate static func key(_ str: String) -> String {
+        return "IFPinchAnimation" + str
     }
 }
 
@@ -52,8 +69,8 @@ class PinchHelper {
     
     init(_ layer: CALayer) {
         self.layer = layer
-        dot2.bounds = CGRect(x: 110, y: 0, width: 50, height: 50)
-        dot1.bounds = CGRect(x: 220, y: 0, width: 50, height: 50)
+        dot2.bounds = CGRect(x: 0, y: 0, width: 50, height: 50)
+        dot1.bounds = CGRect(x: 0, y: 0, width: 50, height: 50)
         layer.addSublayer(dot1)
         layer.addSublayer(dot2)
     }
@@ -66,7 +83,7 @@ class PinchHelper {
         let positionAnimation = CABasicAnimation(keyPath: "position")
         positionAnimation.fromValue = dot1.position
         positionAnimation.toValue = startPoint
-        positionAnimation.duration = 0.25
+        positionAnimation.duration = 2
         dot1.add(positionAnimation, forKey: nil)
 
         positionAnimation.fromValue = dot2.position
@@ -74,6 +91,19 @@ class PinchHelper {
         dot2.add(positionAnimation, forKey: nil)
        
         }
+    
+    fileprivate  func showKeyFrameDot(_ points: [CGPoint], centerPoint: CGPoint) {
+        let pointsA = points
+        let pointsB = points.map { $0.symmetricPoint(with: centerPoint)}
+        let positionAnimation = CAKeyframeAnimation(keyPath: "position")
+        positionAnimation.values = pointsA
+        positionAnimation.duration = 10
+        positionAnimation.isRemovedOnCompletion = true
+        dot1.add(positionAnimation, forKey: nil)
+        
+        positionAnimation.values = pointsB
+        dot2.add(positionAnimation, forKey: nil)
+    }
     
     fileprivate func clear() {
         dot1.removeAllAnimations()
