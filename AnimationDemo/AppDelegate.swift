@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = PanViewController()
+        window?.rootViewController = UINavigationController(rootViewController: HomeViewController())
         window?.makeKeyAndVisible()
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
