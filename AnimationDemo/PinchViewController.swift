@@ -34,9 +34,12 @@ class PinchViewController: UIViewController {
         let startPoint = CGPoint(x: CGFloat(startPointX), y: CGFloat(startPointY))
         let endPoint = CGPoint(x: CGFloat(endPointX), y: CGFloat(endPointY))
         let points = startPoint.randomPoinits(endPoint: endPoint, pointCount: count)
-        IFPinchAnimation.showKeyframe(in: animationView.layer,
+        IFPinchAnimation.showKeyFrameDot(in: animationView.layer,
                                       centerPoint: animationView.center,
-                                      points: points)
+                                      points: points,
+                                      completion: { _ in
+                                        debugPrint("complete")
+        })
     }
     
     var animationName: String?

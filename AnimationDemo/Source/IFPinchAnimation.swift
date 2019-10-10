@@ -13,26 +13,19 @@ class IFPinchAnimation {
     static var animations: [String: Any] = [:]
     
     @discardableResult
-    static func showDot(in layer: CALayer, centerPoint: CGPoint, point: CGPoint) -> String {
+    static func showKeyFrameDot(in layer: CALayer, centerPoint: CGPoint, points: [CGPoint], completion: ((Bool) -> Void)?) -> String {
         let name = key(layer.description)
-        if let existHelper = animations[name] as? PinchHelper {
-            existHelper.showDot(point, center: centerPoint)
+        if let existHelper = animations[name] as? PinchAnimator {
+            existHelper.showKeyFrameDot(points, centerPoint: centerPoint, completion: { flag in
+                clear(name)
+                completion?(flag)
+            })
         } else {
-          let helper = PinchHelper(layer)
-          helper.showDot(point, center: centerPoint)
-          animations[name] = helper
-        }
-        return name
-    }
-    
-    @discardableResult
-    static func showKeyframe(in layer: CALayer, centerPoint: CGPoint, points: [CGPoint]) -> String {
-        let name = key(layer.description)
-        if let existHelper = animations[name] as? PinchHelper {
-           existHelper.showKeyFrameDot(points, centerPoint: centerPoint)
-        } else {
-            let helper = PinchHelper(layer)
-            helper.showKeyFrameDot(points, centerPoint: centerPoint)
+            let helper = PinchAnimator(layer)
+            helper.showKeyFrameDot(points, centerPoint: centerPoint, completion: { flag in
+                clear(name)
+                completion?(flag)
+            })
             animations[name] = helper
         }
         return name
@@ -40,7 +33,7 @@ class IFPinchAnimation {
     
     static func clear(_ animationKey: String?) {
         guard let animationKey = animationKey,
-            let helper = animations[animationKey] as? PinchHelper else {
+            let helper = animations[animationKey] as? PinchAnimator else {
             return
         }
         helper.clear()
@@ -53,7 +46,7 @@ class IFPinchAnimation {
 }
 
 
-class PinchHelper {
+class PinchAnimator: NSObject {
     fileprivate lazy var dot1: CALayer = {
         let dot1 = CALayer()
         dot1.contents = UIImage(named: "circle_gray")?.cgImage
@@ -65,14 +58,23 @@ class PinchHelper {
         return dot1
      }()
     
-    var layer: CALayer
+    private let dotCount: Int = 2
+    private var aniamtionFinishDotCount: Int = 0
+    var layer: CALayer!
+    var animationCompletion: ((Bool) -> Void)?
     
-    init(_ layer: CALayer) {
+    convenience init(_ layer: CALayer) {
+        self.init()
         self.layer = layer
         dot2.bounds = CGRect(x: 0, y: 0, width: 50, height: 50)
         dot1.bounds = CGRect(x: 0, y: 0, width: 50, height: 50)
         layer.addSublayer(dot1)
         layer.addSublayer(dot2)
+    }
+    
+    private override init() {
+        super.init()
+        self.layer = CALayer()
     }
     
     fileprivate func showDot(_ startPoint: CGPoint, center: CGPoint) {
@@ -89,20 +91,21 @@ class PinchHelper {
         positionAnimation.fromValue = dot2.position
         positionAnimation.toValue = endPoint
         dot2.add(positionAnimation, forKey: nil)
-       
-        }
+    }
     
-    fileprivate  func showKeyFrameDot(_ points: [CGPoint], centerPoint: CGPoint) {
+    fileprivate  func showKeyFrameDot(_ points: [CGPoint], centerPoint: CGPoint, completion: ((Bool) -> Void)?) {
         let pointsA = points
         let pointsB = points.map { $0.symmetricPoint(with: centerPoint)}
         let positionAnimation = CAKeyframeAnimation(keyPath: "position")
         positionAnimation.values = pointsA
         positionAnimation.duration = 10
-        positionAnimation.isRemovedOnCompletion = true
+        positionAnimation.delegate = self
+
         dot1.add(positionAnimation, forKey: nil)
         
         positionAnimation.values = pointsB
         dot2.add(positionAnimation, forKey: nil)
+        self.animationCompletion = completion
     }
     
     fileprivate func clear() {
@@ -114,5 +117,16 @@ class PinchHelper {
     
     deinit {
         debugPrint("deinit - PinchHelper")
+    }
+    
+}
+
+extension PinchAnimator: CAAnimationDelegate {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        aniamtionFinishDotCount += 1
+        if aniamtionFinishDotCount == dotCount {
+            aniamtionFinishDotCount = 0
+            animationCompletion?(flag)
+        }
     }
 }
