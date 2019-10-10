@@ -17,20 +17,16 @@ class IFPinchAnimation {
                                 centerPoint: CGPoint,
                                 points: [CGPoint],
                                 completion: ((Bool) -> Void)?) -> String {
-        let name = key(layer.description)
-        if let existHelper = animations[name] as? PinchAnimator {
-            existHelper.showKeyFrameDot(points, centerPoint: centerPoint, completion: { flag in
-                clear(name)
-                completion?(flag)
-            })
-        } else {
-            let helper = PinchAnimator(layer)
-            helper.showKeyFrameDot(points, centerPoint: centerPoint, completion: { flag in
-                clear(name)
-                completion?(flag)
-            })
-            animations[name] = helper
+        let name = AniamtionHelper.key(layer.description)
+        var animator = animations[name] as? PinchAnimator
+        if animator == nil {
+            animator = PinchAnimator(layer)
+            animations[name] = animator
         }
+        animator!.showKeyFrameDot(points, centerPoint: centerPoint, completion: { flag in
+                       clear(name)
+                       completion?(flag)
+                   })
         return name
     }
     
@@ -43,13 +39,13 @@ class IFPinchAnimation {
         animations[animationKey] = nil
     }
     
-    fileprivate static func key(_ str: String) -> String {
-        return "IFPinchAnimation" + str
-    }
+  
 }
 
 
-class PinchAnimator: NSObject {
+class PinchAnimator: NSObject, AnimationTargetType {
+    var layer: CALayer!
+    var animationCompletion: ((Bool) -> Void)?
     fileprivate lazy var dot1: CALayer = {
         let dot1 = CALayer()
         dot1.contents = UIImage(named: "circle_gray")?.cgImage
@@ -63,8 +59,7 @@ class PinchAnimator: NSObject {
     
     private let dotCount: Int = 2
     private var aniamtionFinishDotCount: Int = 0
-    var layer: CALayer!
-    var animationCompletion: ((Bool) -> Void)?
+    
     
     convenience init(_ layer: CALayer) {
         self.init()
@@ -73,7 +68,6 @@ class PinchAnimator: NSObject {
         dot1.bounds = CGRect(x: 0, y: 0, width: 50, height: 50)
         layer.addSublayer(dot1)
         layer.addSublayer(dot2)
-
     }
     
     private override init() {
@@ -112,7 +106,7 @@ class PinchAnimator: NSObject {
         self.animationCompletion = completion
     }
     
-    fileprivate func clear() {
+    internal func clear() {
         dot1.removeAllAnimations()
         dot2.removeAllAnimations()
         dot1.removeFromSuperlayer()
@@ -133,4 +127,10 @@ extension PinchAnimator: CAAnimationDelegate {
             animationCompletion?(flag)
         }
     }
+}
+
+class AniamtionHelper {
+     static func key(_ str: String) -> String {
+        return "IFAnimation" + str + "\(Date().timeIntervalSince1970)"
+      }
 }

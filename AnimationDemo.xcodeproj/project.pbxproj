@@ -17,6 +17,7 @@
 		CD2FCFA5234D7C4000E28E5C /* IFTapAniamtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCFA4234D7C4000E28E5C /* IFTapAniamtion.swift */; };
 		CD2FCFA8234DB37600E28E5C /* PinchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCFA6234DB37600E28E5C /* PinchViewController.swift */; };
 		CD2FCFA9234DB37600E28E5C /* PinchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCFA7234DB37600E28E5C /* PinchViewController.xib */; };
+		CD3BC9AC234F26A0003C8AA9 /* IFAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC9AB234F26A0003C8AA9 /* IFAnimationProtocol.swift */; };
 		CD436428234E17500047930B /* IFPinchAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD436427234E17500047930B /* IFPinchAnimation.swift */; };
 		CD725AD3234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */; };
 		CD725AD5234F0E1D00C11FB0 /* IFPanAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AD4234F0E1D00C11FB0 /* IFPanAnimation.swift */; };
@@ -60,6 +61,7 @@
 		CD2FCFA4234D7C4000E28E5C /* IFTapAniamtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFTapAniamtion.swift; sourceTree = "<group>"; };
 		CD2FCFA6234DB37600E28E5C /* PinchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchViewController.swift; sourceTree = "<group>"; };
 		CD2FCFA7234DB37600E28E5C /* PinchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinchViewController.xib; sourceTree = "<group>"; };
+		CD3BC9AB234F26A0003C8AA9 /* IFAnimationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFAnimationProtocol.swift; sourceTree = "<group>"; };
 		CD436427234E17500047930B /* IFPinchAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFPinchAnimation.swift; sourceTree = "<group>"; };
 		CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
 		CD725AD4234F0E1D00C11FB0 /* IFPanAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFPanAnimation.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				CD2FCFA4234D7C4000E28E5C /* IFTapAniamtion.swift */,
 				CD436427234E17500047930B /* IFPinchAnimation.swift */,
 				CD725AD4234F0E1D00C11FB0 /* IFPanAnimation.swift */,
+				CD3BC9AB234F26A0003C8AA9 /* IFAnimationProtocol.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				CD725AD5234F0E1D00C11FB0 /* IFPanAnimation.swift in Sources */,
 				CD2FCFA1234D79AB00E28E5C /* TapAnimationViewController.swift in Sources */,
 				CD2FCFA5234D7C4000E28E5C /* IFTapAniamtion.swift in Sources */,
+				CD3BC9AC234F26A0003C8AA9 /* IFAnimationProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

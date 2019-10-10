@@ -18,12 +18,13 @@ class PanViewController: UIViewController, DemoUIControl {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     @IBAction func enterAction(_ sender: Any) {
-         let points = getDemoPoints()
-          
-       }
+        let points = getDemoPoints()
+        IFPanAnimation.showPath(in: animationView.layer, points: points) { (_) in
+            debugPrint("completion - PanViewController")
+        }
+    }
     
 }
