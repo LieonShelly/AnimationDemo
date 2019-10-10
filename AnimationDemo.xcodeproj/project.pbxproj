@@ -19,6 +19,11 @@
 		CD2FCFA9234DB37600E28E5C /* PinchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCFA7234DB37600E28E5C /* PinchViewController.xib */; };
 		CD436428234E17500047930B /* IFPinchAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD436427234E17500047930B /* IFPinchAnimation.swift */; };
 		CD725AD3234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */; };
+		CD725AD5234F0E1D00C11FB0 /* IFPanAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AD4234F0E1D00C11FB0 /* IFPanAnimation.swift */; };
+		CD725AD9234F0E4E00C11FB0 /* PanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AD7234F0E4E00C11FB0 /* PanViewController.swift */; };
+		CD725ADA234F0E4E00C11FB0 /* PanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD725AD8234F0E4E00C11FB0 /* PanViewController.xib */; };
+		CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AE5234F140700C11FB0 /* Extensions.swift */; };
+		CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AE7234F140E00C11FB0 /* Protocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +62,11 @@
 		CD2FCFA7234DB37600E28E5C /* PinchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinchViewController.xib; sourceTree = "<group>"; };
 		CD436427234E17500047930B /* IFPinchAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFPinchAnimation.swift; sourceTree = "<group>"; };
 		CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
+		CD725AD4234F0E1D00C11FB0 /* IFPanAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFPanAnimation.swift; sourceTree = "<group>"; };
+		CD725AD7234F0E4E00C11FB0 /* PanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanViewController.swift; sourceTree = "<group>"; };
+		CD725AD8234F0E4E00C11FB0 /* PanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PanViewController.xib; sourceTree = "<group>"; };
+		CD725AE5234F140700C11FB0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CD725AE7234F140E00C11FB0 /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,15 +119,13 @@
 		CD2FCF6E234D796100E28E5C /* AnimationDemo */ = {
 			isa = PBXGroup;
 			children = (
-				CD2FCFA3234D7A5F00E28E5C /* Source */,
 				CD2FCF6F234D796100E28E5C /* AppDelegate.swift */,
+				CD725AD6234F0E2C00C11FB0 /* Controller */,
+				CD725AE0234F13EE00C11FB0 /* Vender */,
+				CD2FCFA3234D7A5F00E28E5C /* Source */,
 				CD2FCF78234D796500E28E5C /* Assets.xcassets */,
 				CD2FCF7A234D796500E28E5C /* LaunchScreen.storyboard */,
 				CD2FCF7D234D796500E28E5C /* Info.plist */,
-				CD2FCF9F234D79AB00E28E5C /* TapAnimationViewController.swift */,
-				CD2FCFA0234D79AB00E28E5C /* TapAnimationViewController.xib */,
-				CD2FCFA6234DB37600E28E5C /* PinchViewController.swift */,
-				CD2FCFA7234DB37600E28E5C /* PinchViewController.xib */,
 			);
 			path = AnimationDemo;
 			sourceTree = "<group>";
@@ -145,6 +153,7 @@
 			children = (
 				CD2FCFA4234D7C4000E28E5C /* IFTapAniamtion.swift */,
 				CD436427234E17500047930B /* IFPinchAnimation.swift */,
+				CD725AD4234F0E1D00C11FB0 /* IFPanAnimation.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -155,6 +164,28 @@
 				CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD725AD6234F0E2C00C11FB0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD2FCF9F234D79AB00E28E5C /* TapAnimationViewController.swift */,
+				CD2FCFA0234D79AB00E28E5C /* TapAnimationViewController.xib */,
+				CD2FCFA6234DB37600E28E5C /* PinchViewController.swift */,
+				CD2FCFA7234DB37600E28E5C /* PinchViewController.xib */,
+				CD725AD7234F0E4E00C11FB0 /* PanViewController.swift */,
+				CD725AD8234F0E4E00C11FB0 /* PanViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CD725AE0234F13EE00C11FB0 /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+				CD725AE7234F140E00C11FB0 /* Protocol.swift */,
+				CD725AE5234F140700C11FB0 /* Extensions.swift */,
+			);
+			path = Vender;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +295,7 @@
 			files = (
 				CD2FCF7C234D796500E28E5C /* LaunchScreen.storyboard in Resources */,
 				CD2FCFA9234DB37600E28E5C /* PinchViewController.xib in Resources */,
+				CD725ADA234F0E4E00C11FB0 /* PanViewController.xib in Resources */,
 				CD2FCF79234D796500E28E5C /* Assets.xcassets in Resources */,
 				CD2FCFA2234D79AB00E28E5C /* TapAnimationViewController.xib in Resources */,
 			);
@@ -314,7 +346,11 @@
 			files = (
 				CD436428234E17500047930B /* IFPinchAnimation.swift in Sources */,
 				CD2FCF70234D796100E28E5C /* AppDelegate.swift in Sources */,
+				CD725AD9234F0E4E00C11FB0 /* PanViewController.swift in Sources */,
+				CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */,
 				CD2FCFA8234DB37600E28E5C /* PinchViewController.swift in Sources */,
+				CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */,
+				CD725AD5234F0E1D00C11FB0 /* IFPanAnimation.swift in Sources */,
 				CD2FCFA1234D79AB00E28E5C /* TapAnimationViewController.swift in Sources */,
 				CD2FCFA5234D7C4000E28E5C /* IFTapAniamtion.swift in Sources */,
 			);

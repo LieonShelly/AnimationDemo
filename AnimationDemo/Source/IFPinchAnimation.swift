@@ -13,7 +13,10 @@ class IFPinchAnimation {
     static var animations: [String: Any] = [:]
     
     @discardableResult
-    static func showKeyFrameDot(in layer: CALayer, centerPoint: CGPoint, points: [CGPoint], completion: ((Bool) -> Void)?) -> String {
+    static func showKeyFrameDot(in layer: CALayer,
+                                centerPoint: CGPoint,
+                                points: [CGPoint],
+                                completion: ((Bool) -> Void)?) -> String {
         let name = key(layer.description)
         if let existHelper = animations[name] as? PinchAnimator {
             existHelper.showKeyFrameDot(points, centerPoint: centerPoint, completion: { flag in
@@ -70,6 +73,7 @@ class PinchAnimator: NSObject {
         dot1.bounds = CGRect(x: 0, y: 0, width: 50, height: 50)
         layer.addSublayer(dot1)
         layer.addSublayer(dot2)
+
     }
     
     private override init() {

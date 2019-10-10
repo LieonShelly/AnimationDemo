@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PanViewController" customModule="AnimationDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="animationView" destination="Z6X-O2-Qeu" id="S1c-ki-60I"/>
+                <outlet property="endX" destination="KKv-e4-vk9" id="ZU0-l9-8eh"/>
+                <outlet property="endY" destination="fL6-eI-DD2" id="zgA-M2-dtH"/>
+                <outlet property="pointCunt" destination="DQC-gb-aaX" id="5fZ-Ed-JqB"/>
+                <outlet property="startX" destination="v9h-fn-ZHE" id="5IY-Lf-AV1"/>
+                <outlet property="startY" destination="JVw-wu-Kek" id="q7H-fi-FkI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99c-Lr-TNJ">
+                    <rect key="frame" x="0.0" y="662" width="414" height="200"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkd-VM-dLR">
+                            <rect key="frame" x="234" y="10" width="164" height="127"/>
+                            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                            <state key="normal" title="确认">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="enterAction:" destination="-1" eventType="touchUpInside" id="XPZ-iU-n9W"/>
+                            </connections>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ecE-yH-NWx">
+                            <rect key="frame" x="37" y="10" width="170" height="34"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="50" borderStyle="roundedRect" placeholder="起点的X" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v9h-fn-ZHE">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="34"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="80" id="B7R-kw-sxF"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" borderStyle="roundedRect" placeholder="起点的Y" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JVw-wu-Kek">
+                                    <rect key="frame" x="90" y="0.0" width="80" height="34"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="80" id="21L-y6-QBV"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                </textField>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eap-dp-6ZI">
+                            <rect key="frame" x="37" y="59" width="170" height="34"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="400" borderStyle="roundedRect" placeholder="终点点的x" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KKv-e4-vk9">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="34"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="80" id="ALn-wV-h6Z"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="400" borderStyle="roundedRect" placeholder="终点的Y" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fL6-eI-DD2">
+                                    <rect key="frame" x="90" y="0.0" width="80" height="34"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="80" id="DFC-De-Pbs"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                </textField>
+                            </subviews>
+                        </stackView>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" placeholder="采集点数量" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DQC-gb-aaX">
+                            <rect key="frame" x="37" y="103" width="170" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="mkd-VM-dLR" firstAttribute="top" secondItem="99c-Lr-TNJ" secondAttribute="top" constant="10" id="2w5-QB-9he"/>
+                        <constraint firstItem="DQC-gb-aaX" firstAttribute="trailing" secondItem="fL6-eI-DD2" secondAttribute="trailing" id="66t-3v-X3u"/>
+                        <constraint firstItem="mkd-VM-dLR" firstAttribute="bottom" secondItem="DQC-gb-aaX" secondAttribute="bottom" id="6pe-GY-IAe"/>
+                        <constraint firstItem="DQC-gb-aaX" firstAttribute="leading" secondItem="KKv-e4-vk9" secondAttribute="leading" id="97x-8x-mgk"/>
+                        <constraint firstItem="eap-dp-6ZI" firstAttribute="trailing" secondItem="ecE-yH-NWx" secondAttribute="trailing" id="BBn-F5-hLr"/>
+                        <constraint firstAttribute="height" constant="200" id="BaN-ZM-QrE"/>
+                        <constraint firstItem="ecE-yH-NWx" firstAttribute="trailing" secondItem="99c-Lr-TNJ" secondAttribute="centerX" id="VEo-la-inn"/>
+                        <constraint firstItem="ecE-yH-NWx" firstAttribute="top" secondItem="99c-Lr-TNJ" secondAttribute="top" constant="10" id="cOl-E4-DDw"/>
+                        <constraint firstItem="DQC-gb-aaX" firstAttribute="top" secondItem="eap-dp-6ZI" secondAttribute="bottom" constant="10" id="e0r-0b-NCX"/>
+                        <constraint firstItem="eap-dp-6ZI" firstAttribute="top" secondItem="ecE-yH-NWx" secondAttribute="bottom" constant="15" id="fB8-ZV-If4"/>
+                        <constraint firstAttribute="trailing" secondItem="mkd-VM-dLR" secondAttribute="trailing" constant="16" id="mFW-HT-a29"/>
+                        <constraint firstItem="mkd-VM-dLR" firstAttribute="leading" secondItem="ecE-yH-NWx" secondAttribute="trailing" constant="27" id="mmy-e3-Ylm"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6X-O2-Qeu">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="662"/>
+                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="99c-Lr-TNJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9vl-fx-gmK"/>
+                <constraint firstItem="Z6X-O2-Qeu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="VaP-Oj-ddZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Z6X-O2-Qeu" secondAttribute="trailing" id="aHz-ks-DHt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="99c-Lr-TNJ" secondAttribute="trailing" id="cEj-VU-gBd"/>
+                <constraint firstItem="Z6X-O2-Qeu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="e4E-GC-CMu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="99c-Lr-TNJ" secondAttribute="bottom" id="p2R-aT-hOL"/>
+                <constraint firstItem="99c-Lr-TNJ" firstAttribute="top" secondItem="Z6X-O2-Qeu" secondAttribute="bottom" id="pdr-va-8P3"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="153"/>
+        </view>
+    </objects>
+</document>
