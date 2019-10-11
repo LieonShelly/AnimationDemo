@@ -11,11 +11,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PanViewController" customModule="AnimationDemo" customModuleProvider="target">
             <connections>
                 <outlet property="animationView" destination="Z6X-O2-Qeu" id="S1c-ki-60I"/>
-                <outlet property="endX" destination="KKv-e4-vk9" id="ZU0-l9-8eh"/>
-                <outlet property="endY" destination="fL6-eI-DD2" id="zgA-M2-dtH"/>
-                <outlet property="pointCunt" destination="DQC-gb-aaX" id="5fZ-Ed-JqB"/>
-                <outlet property="startX" destination="v9h-fn-ZHE" id="5IY-Lf-AV1"/>
-                <outlet property="startY" destination="JVw-wu-Kek" id="q7H-fi-FkI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,81 +23,46 @@
                     <rect key="frame" x="0.0" y="662" width="414" height="200"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkd-VM-dLR">
-                            <rect key="frame" x="234" y="10" width="164" height="127"/>
+                            <rect key="frame" x="237" y="10" width="100" height="100"/>
                             <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="Tel-wE-4lg"/>
+                                <constraint firstAttribute="height" constant="100" id="bgS-Wd-DNU"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                            <state key="normal" title="确认">
+                            <state key="normal" title="重现">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
                                 <action selector="enterAction:" destination="-1" eventType="touchUpInside" id="XPZ-iU-n9W"/>
                             </connections>
                         </button>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ecE-yH-NWx">
-                            <rect key="frame" x="37" y="10" width="170" height="34"/>
-                            <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="50" borderStyle="roundedRect" placeholder="起点的X" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v9h-fn-ZHE">
-                                    <rect key="frame" x="0.0" y="0.0" width="80" height="34"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="80" id="B7R-kw-sxF"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" borderStyle="roundedRect" placeholder="起点的Y" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JVw-wu-Kek">
-                                    <rect key="frame" x="90" y="0.0" width="80" height="34"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="80" id="21L-y6-QBV"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                </textField>
-                            </subviews>
-                        </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eap-dp-6ZI">
-                            <rect key="frame" x="37" y="59" width="170" height="34"/>
-                            <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="400" borderStyle="roundedRect" placeholder="终点点的x" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KKv-e4-vk9">
-                                    <rect key="frame" x="0.0" y="0.0" width="80" height="34"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="80" id="ALn-wV-h6Z"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="400" borderStyle="roundedRect" placeholder="终点的Y" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fL6-eI-DD2">
-                                    <rect key="frame" x="90" y="0.0" width="80" height="34"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="80" id="DFC-De-Pbs"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                </textField>
-                            </subviews>
-                        </stackView>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" placeholder="采集点数量" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DQC-gb-aaX">
-                            <rect key="frame" x="37" y="103" width="170" height="34"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HW3-bO-PuP">
+                            <rect key="frame" x="77" y="10" width="100" height="100"/>
+                            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="DgP-cv-bWe"/>
+                                <constraint firstAttribute="height" constant="100" id="EQG-OU-rnf"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                            <state key="normal" title="清除">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="clear:" destination="-1" eventType="touchUpInside" id="pHW-rs-fNj"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstItem="mkd-VM-dLR" firstAttribute="top" secondItem="99c-Lr-TNJ" secondAttribute="top" constant="10" id="2w5-QB-9he"/>
-                        <constraint firstItem="DQC-gb-aaX" firstAttribute="trailing" secondItem="fL6-eI-DD2" secondAttribute="trailing" id="66t-3v-X3u"/>
-                        <constraint firstItem="mkd-VM-dLR" firstAttribute="bottom" secondItem="DQC-gb-aaX" secondAttribute="bottom" id="6pe-GY-IAe"/>
-                        <constraint firstItem="DQC-gb-aaX" firstAttribute="leading" secondItem="KKv-e4-vk9" secondAttribute="leading" id="97x-8x-mgk"/>
-                        <constraint firstItem="eap-dp-6ZI" firstAttribute="trailing" secondItem="ecE-yH-NWx" secondAttribute="trailing" id="BBn-F5-hLr"/>
+                        <constraint firstItem="HW3-bO-PuP" firstAttribute="top" secondItem="mkd-VM-dLR" secondAttribute="top" id="9tR-SW-0zS"/>
+                        <constraint firstItem="HW3-bO-PuP" firstAttribute="trailing" secondItem="99c-Lr-TNJ" secondAttribute="centerX" constant="-30" id="AD5-I2-CLN"/>
                         <constraint firstAttribute="height" constant="200" id="BaN-ZM-QrE"/>
-                        <constraint firstItem="ecE-yH-NWx" firstAttribute="trailing" secondItem="99c-Lr-TNJ" secondAttribute="centerX" id="VEo-la-inn"/>
-                        <constraint firstItem="ecE-yH-NWx" firstAttribute="top" secondItem="99c-Lr-TNJ" secondAttribute="top" constant="10" id="cOl-E4-DDw"/>
-                        <constraint firstItem="DQC-gb-aaX" firstAttribute="top" secondItem="eap-dp-6ZI" secondAttribute="bottom" constant="10" id="e0r-0b-NCX"/>
-                        <constraint firstItem="eap-dp-6ZI" firstAttribute="top" secondItem="ecE-yH-NWx" secondAttribute="bottom" constant="15" id="fB8-ZV-If4"/>
-                        <constraint firstAttribute="trailing" secondItem="mkd-VM-dLR" secondAttribute="trailing" constant="16" id="mFW-HT-a29"/>
-                        <constraint firstItem="mkd-VM-dLR" firstAttribute="leading" secondItem="ecE-yH-NWx" secondAttribute="trailing" constant="27" id="mmy-e3-Ylm"/>
+                        <constraint firstItem="mkd-VM-dLR" firstAttribute="leading" secondItem="99c-Lr-TNJ" secondAttribute="centerX" constant="30" id="oNl-UN-JUa"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6X-O2-Qeu">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z6X-O2-Qeu" customClass="TouchView" customModule="AnimationDemo" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="662"/>
                     <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>

@@ -10,12 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    fileprivate lazy var items: [ListItem] = {
-        let tap = ListItem("点击类", destVC: TapAnimationViewController())
-        let pinch = ListItem("捏合类", destVC: PinchViewController())
-        let move = ListItem("移动类", destVC: PanViewController())
-        return [tap, pinch, move]
-    }()
+    fileprivate lazy var items: [ListItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +18,30 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerClassWithCell(UITableViewCell.self)
+        let tap = ListItem("点击类", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+           let vcc = TapAnimationViewController()
+           weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        let pinch = ListItem("捏合类", handler: { [weak self] in
+                  guard let weakSelf = self else {
+                      return
+                  }
+                 let vcc = PinchViewController()
+                 weakSelf.navigationController?.pushViewController(vcc, animated: true)
+              })
+        let move = ListItem("移动类", handler: { [weak self] in
+                  guard let weakSelf = self else {
+                      return
+                  }
+                 let vcc = PanViewController()
+                 weakSelf.navigationController?.pushViewController(vcc, animated: true)
+              })
+        items.append(tap)
+        items.append(pinch)
+        items.append(move)
     }
 }
 
@@ -40,19 +59,17 @@ extension HomeViewController: UITableViewDataSource {
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vcc = items[indexPath.row].destVC
-        tableView.deselectRow(at: indexPath, animated: true)
-        navigationController?.pushViewController(vcc, animated: true)
+        let handler = items[indexPath.row].handler
+         handler?()
     }
 }
 
 class ListItem {
     var name: String
-    var destVC: UIViewController
+    var handler: (() -> Void)?
     
-    init(_ name: String, destVC: UIViewController) {
+    init(_ name: String, handler: (() -> Void)?) {
         self.name = name
-        self.destVC = destVC
-        self.destVC.title = name
+        self.handler = handler
     }
 }

@@ -11,11 +11,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PinchViewController" customModule="AnimationDemo" customModuleProvider="target">
             <connections>
                 <outlet property="animationView" destination="99s-DD-XG5" id="2Yk-eX-XeG"/>
-                <outlet property="endX" destination="jNX-B3-Nsy" id="Zqq-qt-J8i"/>
-                <outlet property="endY" destination="Zba-f9-ctm" id="EBb-Hq-pUq"/>
-                <outlet property="pointCunt" destination="Mu8-aS-nzo" id="pkd-9U-fFz"/>
-                <outlet property="startX" destination="pq6-E0-8Hh" id="RfU-LI-6J9"/>
-                <outlet property="startY" destination="ZV6-ry-k93" id="I4b-zQ-Gto"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99s-DD-XG5">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99s-DD-XG5" customClass="PinchView" customModule="AnimationDemo" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="662"/>
                     <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
@@ -32,78 +27,26 @@
                     <rect key="frame" x="0.0" y="662" width="414" height="200"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mmu-aA-oLV">
-                            <rect key="frame" x="234" y="10" width="164" height="127"/>
+                            <rect key="frame" x="157" y="10" width="100" height="100"/>
                             <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="bm4-3o-eXq"/>
+                                <constraint firstAttribute="width" constant="100" id="hrJ-Sa-17v"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                            <state key="normal" title="确认">
+                            <state key="normal" title="重现">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
                                 <action selector="enterAction:" destination="-1" eventType="touchUpInside" id="1Cv-fJ-1DR"/>
                             </connections>
                         </button>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="h7T-yu-tKD">
-                            <rect key="frame" x="37" y="10" width="170" height="34"/>
-                            <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="50" borderStyle="roundedRect" placeholder="起点的X" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pq6-E0-8Hh">
-                                    <rect key="frame" x="0.0" y="0.0" width="80" height="34"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="80" id="bpK-Ec-bbz"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" borderStyle="roundedRect" placeholder="起点的Y" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZV6-ry-k93">
-                                    <rect key="frame" x="90" y="0.0" width="80" height="34"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="80" id="Bsy-vL-oc1"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                </textField>
-                            </subviews>
-                        </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uL0-S5-9da">
-                            <rect key="frame" x="37" y="59" width="170" height="34"/>
-                            <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="400" borderStyle="roundedRect" placeholder="终点点的x" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jNX-B3-Nsy">
-                                    <rect key="frame" x="0.0" y="0.0" width="80" height="34"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="80" id="EZ3-Fc-zca"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                </textField>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="400" borderStyle="roundedRect" placeholder="终点的Y" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zba-f9-ctm">
-                                    <rect key="frame" x="90" y="0.0" width="80" height="34"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="80" id="rt5-o7-v4b"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                </textField>
-                            </subviews>
-                        </stackView>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" placeholder="采集点数量" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mu8-aS-nzo">
-                            <rect key="frame" x="37" y="103" width="170" height="34"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </textField>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstItem="h7T-yu-tKD" firstAttribute="top" secondItem="s9a-RK-CAo" secondAttribute="top" constant="10" id="CJ2-d2-Mez"/>
-                        <constraint firstItem="Mu8-aS-nzo" firstAttribute="leading" secondItem="jNX-B3-Nsy" secondAttribute="leading" id="Kd0-1d-j0X"/>
-                        <constraint firstItem="Mu8-aS-nzo" firstAttribute="top" secondItem="uL0-S5-9da" secondAttribute="bottom" constant="10" id="OVu-9d-xZt"/>
-                        <constraint firstAttribute="trailing" secondItem="Mmu-aA-oLV" secondAttribute="trailing" constant="16" id="Qaq-CL-2ha"/>
-                        <constraint firstItem="uL0-S5-9da" firstAttribute="trailing" secondItem="h7T-yu-tKD" secondAttribute="trailing" id="ZzY-WQ-jFr"/>
-                        <constraint firstItem="Mu8-aS-nzo" firstAttribute="trailing" secondItem="Zba-f9-ctm" secondAttribute="trailing" id="ahM-Pw-Xqg"/>
-                        <constraint firstItem="Mmu-aA-oLV" firstAttribute="leading" secondItem="h7T-yu-tKD" secondAttribute="trailing" constant="27" id="bxo-S7-B1B"/>
+                        <constraint firstItem="Mmu-aA-oLV" firstAttribute="centerX" secondItem="s9a-RK-CAo" secondAttribute="centerX" id="Gqn-tR-Wrg"/>
                         <constraint firstItem="Mmu-aA-oLV" firstAttribute="top" secondItem="s9a-RK-CAo" secondAttribute="top" constant="10" id="mwf-nS-SxA"/>
-                        <constraint firstItem="h7T-yu-tKD" firstAttribute="trailing" secondItem="s9a-RK-CAo" secondAttribute="centerX" id="oTj-oE-OMe"/>
-                        <constraint firstItem="uL0-S5-9da" firstAttribute="top" secondItem="h7T-yu-tKD" secondAttribute="bottom" constant="15" id="qTQ-3s-m8O"/>
                         <constraint firstAttribute="height" constant="200" id="qUb-rf-NQl"/>
-                        <constraint firstItem="Mmu-aA-oLV" firstAttribute="bottom" secondItem="Mu8-aS-nzo" secondAttribute="bottom" id="xri-Nj-AO3"/>
                     </constraints>
                 </view>
             </subviews>

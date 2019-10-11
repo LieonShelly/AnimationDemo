@@ -15,7 +15,7 @@ protocol DemoUIControl {
     var endX: UITextField! { get set }
     var startY: UITextField! { get set }
     var pointCunt: UITextField! { get set }
-    var animationView: UIView! { get set }
+    var animationView: TouchView! { get set }
     
     func getDemoPoints() -> [CGPoint]
      

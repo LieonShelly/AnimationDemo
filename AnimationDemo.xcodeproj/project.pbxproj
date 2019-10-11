@@ -27,6 +27,9 @@
 		CD725ADA234F0E4E00C11FB0 /* PanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD725AD8234F0E4E00C11FB0 /* PanViewController.xib */; };
 		CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AE5234F140700C11FB0 /* Extensions.swift */; };
 		CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AE7234F140E00C11FB0 /* Protocol.swift */; };
+		CDFB49CD235025820083426A /* TouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49CC235025820083426A /* TouchView.swift */; };
+		CDFB49CF235047940083426A /* PinchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49CE235047940083426A /* PinchView.swift */; };
+		CDFB49D123504C070083426A /* ZoomScollVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49D023504C070083426A /* ZoomScollVIew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		CD725AD8234F0E4E00C11FB0 /* PanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PanViewController.xib; sourceTree = "<group>"; };
 		CD725AE5234F140700C11FB0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CD725AE7234F140E00C11FB0 /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		CDFB49CC235025820083426A /* TouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchView.swift; sourceTree = "<group>"; };
+		CDFB49CE235047940083426A /* PinchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchView.swift; sourceTree = "<group>"; };
+		CDFB49D023504C070083426A /* ZoomScollVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomScollVIew.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				CD2FCF6F234D796100E28E5C /* AppDelegate.swift */,
+				CDFB49CB2350255F0083426A /* View */,
 				CD725AD6234F0E2C00C11FB0 /* Controller */,
 				CD725AE0234F13EE00C11FB0 /* Vender */,
 				CD2FCFA3234D7A5F00E28E5C /* Source */,
@@ -195,6 +202,16 @@
 				CD725AE5234F140700C11FB0 /* Extensions.swift */,
 			);
 			path = Vender;
+			sourceTree = "<group>";
+		};
+		CDFB49CB2350255F0083426A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CDFB49CC235025820083426A /* TouchView.swift */,
+				CDFB49CE235047940083426A /* PinchView.swift */,
+				CDFB49D023504C070083426A /* ZoomScollVIew.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +375,8 @@
 				CD2FCF70234D796100E28E5C /* AppDelegate.swift in Sources */,
 				CD725AD9234F0E4E00C11FB0 /* PanViewController.swift in Sources */,
 				CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */,
+				CDFB49CD235025820083426A /* TouchView.swift in Sources */,
+				CDFB49CF235047940083426A /* PinchView.swift in Sources */,
 				CD2FCFA8234DB37600E28E5C /* PinchViewController.swift in Sources */,
 				CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */,
 				CD725AD5234F0E1D00C11FB0 /* IFPanAnimation.swift in Sources */,
@@ -365,6 +384,7 @@
 				CD2FCFA1234D79AB00E28E5C /* TapAnimationViewController.swift in Sources */,
 				CD2FCFA5234D7C4000E28E5C /* IFTapAniamtion.swift in Sources */,
 				CD3BC9AC234F26A0003C8AA9 /* IFAnimationProtocol.swift in Sources */,
+				CDFB49D123504C070083426A /* ZoomScollVIew.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

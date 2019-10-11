@@ -13,9 +13,9 @@ class IFPinchAnimation {
     static var animations: [String: Any] = [:]
     
     @discardableResult
-    static func showKeyFrameDot(in layer: CALayer,
-                                centerPoint: CGPoint,
-                                points: [CGPoint],
+    static func showKeyFrameDots(in layer: CALayer,
+                                pointsA: [CGPoint],
+                                pointsB: [CGPoint],
                                 completion: ((Bool) -> Void)?) -> String {
         let name = AniamtionHelper.key(layer.description)
         var animator = animations[name] as? PinchAnimator
@@ -23,12 +23,13 @@ class IFPinchAnimation {
             animator = PinchAnimator(layer)
             animations[name] = animator
         }
-        animator!.showKeyFrameDot(points, centerPoint: centerPoint, completion: { flag in
-                       clear(name)
-                       completion?(flag)
-                   })
+        animator!.showKeyFrameDot(pointsA, pointsB: pointsB, completion: { flag in
+            clear(name)
+            completion?(flag)
+        })
         return name
     }
+    
     
     static func clear(_ animationKey: String?) {
         guard let animationKey = animationKey,
@@ -75,36 +76,21 @@ class PinchAnimator: NSObject, AnimationTargetType {
         self.layer = CALayer()
     }
     
-    fileprivate func showDot(_ startPoint: CGPoint, center: CGPoint) {
-        dot1.position = startPoint
-        let endPoint = startPoint.symmetricPoint(with: center)
-        dot2.position = endPoint
-
-        let positionAnimation = CABasicAnimation(keyPath: "position")
-        positionAnimation.fromValue = dot1.position
-        positionAnimation.toValue = startPoint
-        positionAnimation.duration = 2
-        dot1.add(positionAnimation, forKey: nil)
-
-        positionAnimation.fromValue = dot2.position
-        positionAnimation.toValue = endPoint
-        dot2.add(positionAnimation, forKey: nil)
-    }
     
-    fileprivate  func showKeyFrameDot(_ points: [CGPoint], centerPoint: CGPoint, completion: ((Bool) -> Void)?) {
-        let pointsA = points
-        let pointsB = points.map { $0.symmetricPoint(with: centerPoint)}
+    fileprivate  func showKeyFrameDot(_ pointsA: [CGPoint], pointsB: [CGPoint], completion: ((Bool) -> Void)?) {
         let positionAnimation = CAKeyframeAnimation(keyPath: "position")
         positionAnimation.values = pointsA
-        positionAnimation.duration = 10
+        let pointCount = max(pointsA.count, pointsB.count)
+        let duration = Float(pointCount) / 50 // 50 个点一秒
+        positionAnimation.duration = CFTimeInterval(duration)
         positionAnimation.delegate = self
 
         dot1.add(positionAnimation, forKey: nil)
-        
         positionAnimation.values = pointsB
         dot2.add(positionAnimation, forKey: nil)
         self.animationCompletion = completion
     }
+    
     
     internal func clear() {
         dot1.removeAllAnimations()

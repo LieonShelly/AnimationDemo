@@ -8,23 +8,16 @@
 
 import UIKit
 
-class PinchViewController: UIViewController, DemoUIControl {
-    @IBOutlet weak var startX: UITextField!
-    @IBOutlet weak var endY: UITextField!
-    @IBOutlet weak var endX: UITextField!
-    @IBOutlet weak var startY: UITextField!
-    @IBOutlet weak var pointCunt: UITextField!
-    @IBOutlet weak var animationView: UIView!
+class PinchViewController: UIViewController {
+    @IBOutlet weak var animationView: PinchView!
     var animationName: String?
     
     @IBAction func enterAction(_ sender: Any) {
-        let points = getDemoPoints()
-        IFPinchAnimation.showKeyFrameDot(in: animationView.layer,
-                                      centerPoint: animationView.center,
-                                      points: points,
-                                      completion: { _ in
-                                        debugPrint("complete")
-        })
+        IFPinchAnimation.showKeyFrameDots(in: animationView.layer,
+                                          pointsA: animationView.pointsA,
+                                          pointsB: animationView.pointsB) { (_) in
+          debugPrint("complete")
+        }
     }
 
 }
