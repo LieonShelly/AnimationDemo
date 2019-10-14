@@ -30,6 +30,9 @@
 		CDFB49CD235025820083426A /* TouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49CC235025820083426A /* TouchView.swift */; };
 		CDFB49CF235047940083426A /* PinchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49CE235047940083426A /* PinchView.swift */; };
 		CDFB49D123504C070083426A /* ZoomScollVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49D023504C070083426A /* ZoomScollVIew.swift */; };
+		CDFB49D423505AD50083426A /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49D223505AD50083426A /* ProgressViewController.swift */; };
+		CDFB49D523505AD50083426A /* ProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFB49D323505AD50083426A /* ProgressViewController.xib */; };
+		CDFB49D723505C5F0083426A /* IFProgressAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49D623505C5F0083426A /* IFProgressAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,9 @@
 		CDFB49CC235025820083426A /* TouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchView.swift; sourceTree = "<group>"; };
 		CDFB49CE235047940083426A /* PinchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchView.swift; sourceTree = "<group>"; };
 		CDFB49D023504C070083426A /* ZoomScollVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomScollVIew.swift; sourceTree = "<group>"; };
+		CDFB49D223505AD50083426A /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		CDFB49D323505AD50083426A /* ProgressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressViewController.xib; sourceTree = "<group>"; };
+		CDFB49D623505C5F0083426A /* IFProgressAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFProgressAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +174,7 @@
 				CD436427234E17500047930B /* IFPinchAnimation.swift */,
 				CD725AD4234F0E1D00C11FB0 /* IFPanAnimation.swift */,
 				CD3BC9AB234F26A0003C8AA9 /* IFAnimationProtocol.swift */,
+				CDFB49D623505C5F0083426A /* IFProgressAnimation.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -191,6 +198,8 @@
 				CD725AD8234F0E4E00C11FB0 /* PanViewController.xib */,
 				CD3BC9AD234F313E003C8AA9 /* HomeViewController.swift */,
 				CD3BC9AE234F313E003C8AA9 /* HomeViewController.xib */,
+				CDFB49D223505AD50083426A /* ProgressViewController.swift */,
+				CDFB49D323505AD50083426A /* ProgressViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -319,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDFB49D523505AD50083426A /* ProgressViewController.xib in Resources */,
 				CD2FCF7C234D796500E28E5C /* LaunchScreen.storyboard in Resources */,
 				CD2FCFA9234DB37600E28E5C /* PinchViewController.xib in Resources */,
 				CD725ADA234F0E4E00C11FB0 /* PanViewController.xib in Resources */,
@@ -371,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDFB49D423505AD50083426A /* ProgressViewController.swift in Sources */,
 				CD436428234E17500047930B /* IFPinchAnimation.swift in Sources */,
 				CD2FCF70234D796100E28E5C /* AppDelegate.swift in Sources */,
 				CD725AD9234F0E4E00C11FB0 /* PanViewController.swift in Sources */,
@@ -378,6 +389,7 @@
 				CDFB49CD235025820083426A /* TouchView.swift in Sources */,
 				CDFB49CF235047940083426A /* PinchView.swift in Sources */,
 				CD2FCFA8234DB37600E28E5C /* PinchViewController.swift in Sources */,
+				CDFB49D723505C5F0083426A /* IFProgressAnimation.swift in Sources */,
 				CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */,
 				CD725AD5234F0E1D00C11FB0 /* IFPanAnimation.swift in Sources */,
 				CD3BC9AF234F313E003C8AA9 /* HomeViewController.swift in Sources */,

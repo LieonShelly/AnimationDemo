@@ -17,7 +17,7 @@ class IFPanAnimation {
         let name = AniamtionHelper.key(layer.description)
         var animator = animations[name] as? PanAnimatior
         if animator == nil {
-            animator = PanAnimatior(layer, points: points)
+            animator = PanAnimatior(layer)
         }
         animator!.showAnimation(points) { (flag) in
             animator!.clear()
@@ -34,23 +34,20 @@ class IFPanAnimation {
 }
 
 class PanAnimatior: NSObject, AnimationTargetType {
+   fileprivate lazy var dot1: CALayer = {
+          let dot1 = CALayer()
+          dot1.contents = UIImage(named: "circle_gray")?.cgImage
+          return dot1
+      }()
     var layer: CALayer!
     var animationCompletion: ((Bool) -> Void)?
-    fileprivate lazy var pathLayer: CAShapeLayer = {
-        let pathLayer = CAShapeLayer()
-        return pathLayer
-    }()
-    
-    convenience init(_ layer: CALayer, points: [CGPoint]) {
+
+    convenience init(_ layer: CALayer) {
         self.init()
         self.layer = layer
-        pathLayer.fillColor = UIColor.clear.cgColor
-        pathLayer.strokeColor = UIColor.yellow.cgColor
-        pathLayer.lineWidth = 10
-        pathLayer.lineJoin = .round
-        pathLayer.lineCap = .round
-        pathLayer.frame = layer.bounds
-        layer.addSublayer(pathLayer)
+        dot1.bounds = CGRect(x: 0, y: 0, width: 50, height: 50)
+        layer.addSublayer(dot1)
+
     }
     
     private override init() {
@@ -59,29 +56,16 @@ class PanAnimatior: NSObject, AnimationTargetType {
     }
     
     fileprivate func showAnimation(_ points: [CGPoint], completion: ((Bool) -> Void)?) {
-        let path = UIBezierPath()
-        var points = points.map { $0 }
-        guard let firstPoint = points.first else {
-            return
-        }
-        path.move(to: firstPoint)
-        points.removeFirst()
-        points.forEach { path.addLine(to: $0)}
-        path.stroke()
-        path.close()
-        self.animationCompletion = completion
-        pathLayer.path = path.cgPath
-        let strokeEndAnimation = CABasicAnimation(keyPath: "strokeEnd")
-        strokeEndAnimation.fromValue = 0.0
-        strokeEndAnimation.duration = 2
-        strokeEndAnimation.toValue = 1.0
-        strokeEndAnimation.delegate = self
-        pathLayer.add(strokeEndAnimation, forKey: nil)
+        let position = CAKeyframeAnimation(keyPath: "position")
+       position.values = points
+       position.calculationMode = .linear
+       let duration = Float(points.count) / 50.0 // 50 个点一秒
+       position.duration = CFTimeInterval(duration)
+       dot1.add(position, forKey: nil)
     }
     
     internal func clear() {
-        pathLayer.removeAllAnimations()
-        pathLayer.removeFromSuperlayer()
+        dot1.removeAllAnimations()
     }
     
     deinit {
