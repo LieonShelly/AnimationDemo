@@ -12,8 +12,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     fileprivate lazy var items: [ListItem] = []
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    fileprivate func setupUI() {
         title = "动画列表"
         tableView.delegate = self
         tableView.dataSource = self
@@ -22,26 +21,39 @@ class HomeViewController: UIViewController {
             guard let weakSelf = self else {
                 return
             }
-           let vcc = TapAnimationViewController()
-           weakSelf.navigationController?.pushViewController(vcc, animated: true)
+            let vcc = TapAnimationViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
         let pinch = ListItem("捏合类", handler: { [weak self] in
-                  guard let weakSelf = self else {
-                      return
-                  }
-                 let vcc = PinchViewController()
-                 weakSelf.navigationController?.pushViewController(vcc, animated: true)
-              })
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = PinchViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
         let move = ListItem("移动类", handler: { [weak self] in
-                  guard let weakSelf = self else {
-                      return
-                  }
-                 let vcc = PanViewController()
-                 weakSelf.navigationController?.pushViewController(vcc, animated: true)
-              })
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = PanViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        let slider = ListItem("滑轮类", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = PanViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
         items.append(tap)
         items.append(pinch)
         items.append(move)
+        items.append(slider)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
     }
 }
 

@@ -9,10 +9,31 @@
 import Foundation
 import UIKit
 
-protocol AnimationTargetType {
+protocol AnimationTargetType: IFAnimationBase {
     var layer: CALayer! { get set }
     var animationCompletion: ((Bool) -> Void)? { get set }
     
     func clear()
        
 }
+
+protocol IFAnimationParam {
+    var layer: CALayer! { get set }
+    var duration: Double! { get set }
+    var color: UIColor! { get set }
+    var fromPoint: CGPoint? { get set }
+    var endPoint: CGPoint? { get set }
+}
+
+protocol IFAnimationBase {
+    func delay(seconds: Double, completion: @escaping ()-> Void)
+}
+
+extension IFAnimationBase {
+
+    func delay(seconds: Double, completion: @escaping ()-> Void) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: completion)
+    }
+
+}
+

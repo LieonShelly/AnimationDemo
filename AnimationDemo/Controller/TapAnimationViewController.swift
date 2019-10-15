@@ -9,15 +9,20 @@
 import UIKit
 
 class TapAnimationViewController: UIViewController {
-    
+    @IBOutlet weak var animateView: UIView!
     @IBOutlet weak var tapButton: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
     @IBAction func buttonTapAction(_ sender: UIButton) {
-        IFTapAniamtion.jumpSpring(layer: sender.layer)
+        showWaveAnimation()
     }
+    
+    fileprivate func showWaveAnimation() {
+        let param = IFCommonAnimateParam(animateView.layer)
+        param.fromPoint = CGPoint(x: animateView.center.x, y: 2000)
+        param.endPoint = animateView.center
+        IFTapAniamtion.showWave(with: param) { (_) in
+            debugPrint("complete")
+        }
+    }
+
 }

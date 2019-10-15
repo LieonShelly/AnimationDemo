@@ -17,6 +17,7 @@
 		CD2FCFA5234D7C4000E28E5C /* IFTapAniamtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCFA4234D7C4000E28E5C /* IFTapAniamtion.swift */; };
 		CD2FCFA8234DB37600E28E5C /* PinchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCFA6234DB37600E28E5C /* PinchViewController.swift */; };
 		CD2FCFA9234DB37600E28E5C /* PinchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCFA7234DB37600E28E5C /* PinchViewController.xib */; };
+		CD306C4D2355CC36002ABA93 /* IFCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD306C4C2355CC36002ABA93 /* IFCommon.swift */; };
 		CD3BC9AC234F26A0003C8AA9 /* IFAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC9AB234F26A0003C8AA9 /* IFAnimationProtocol.swift */; };
 		CD3BC9AF234F313E003C8AA9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC9AD234F313E003C8AA9 /* HomeViewController.swift */; };
 		CD3BC9B0234F313E003C8AA9 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3BC9AE234F313E003C8AA9 /* HomeViewController.xib */; };
@@ -69,6 +70,7 @@
 		CD2FCFA4234D7C4000E28E5C /* IFTapAniamtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFTapAniamtion.swift; sourceTree = "<group>"; };
 		CD2FCFA6234DB37600E28E5C /* PinchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchViewController.swift; sourceTree = "<group>"; };
 		CD2FCFA7234DB37600E28E5C /* PinchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinchViewController.xib; sourceTree = "<group>"; };
+		CD306C4C2355CC36002ABA93 /* IFCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFCommon.swift; sourceTree = "<group>"; };
 		CD3BC9AB234F26A0003C8AA9 /* IFAnimationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFAnimationProtocol.swift; sourceTree = "<group>"; };
 		CD3BC9AD234F313E003C8AA9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CD3BC9AE234F313E003C8AA9 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				CD725AD4234F0E1D00C11FB0 /* IFPanAnimation.swift */,
 				CD3BC9AB234F26A0003C8AA9 /* IFAnimationProtocol.swift */,
 				CDFB49D623505C5F0083426A /* IFProgressAnimation.swift */,
+				CD306C4C2355CC36002ABA93 /* IFCommon.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */,
 				CDFB49CD235025820083426A /* TouchView.swift in Sources */,
 				CDFB49CF235047940083426A /* PinchView.swift in Sources */,
+				CD306C4D2355CC36002ABA93 /* IFCommon.swift in Sources */,
 				CD2FCFA8234DB37600E28E5C /* PinchViewController.swift in Sources */,
 				CDFB49D723505C5F0083426A /* IFProgressAnimation.swift in Sources */,
 				CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */,

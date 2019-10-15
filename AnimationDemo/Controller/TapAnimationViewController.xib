@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -9,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TapAnimationViewController" customModule="AnimationDemo" customModuleProvider="target">
             <connections>
+                <outlet property="animateView" destination="WhF-1w-FeR" id="bXz-hd-IUR"/>
                 <outlet property="tapButton" destination="Uf6-Hf-1Sr" id="k4w-h4-hdE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,24 +21,32 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uf6-Hf-1Sr">
-                    <rect key="frame" x="162" y="428" width="90" height="40"/>
-                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <rect key="frame" x="162" y="761" width="90" height="40"/>
+                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="40" id="LB6-P5-zaQ"/>
-                        <constraint firstAttribute="width" constant="90" id="R6q-Hr-YPx"/>
+                        <constraint firstAttribute="height" constant="40" id="2UT-jy-Md4"/>
+                        <constraint firstAttribute="width" constant="90" id="mJU-Sf-f2b"/>
                     </constraints>
-                    <state key="normal" title="牛逼">
+                    <state key="normal" title="重现">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
                         <action selector="buttonTapAction:" destination="-1" eventType="touchUpInside" id="MOK-Ja-T8l"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WhF-1w-FeR">
+                    <rect key="frame" x="0.0" y="44" width="414" height="697"/>
+                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Uf6-Hf-1Sr" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="gfy-hw-d0O"/>
-                <constraint firstItem="Uf6-Hf-1Sr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="vbA-lz-Q2N"/>
+                <constraint firstItem="Uf6-Hf-1Sr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="H4L-Ks-hXM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WhF-1w-FeR" secondAttribute="trailing" id="Ocl-Fr-ZI4"/>
+                <constraint firstItem="WhF-1w-FeR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gk9-Z7-uwp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Uf6-Hf-1Sr" secondAttribute="bottom" constant="61" id="iFb-c3-mg9"/>
+                <constraint firstItem="WhF-1w-FeR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wfY-DV-2iP"/>
+                <constraint firstItem="Uf6-Hf-1Sr" firstAttribute="top" secondItem="WhF-1w-FeR" secondAttribute="bottom" constant="20" id="zb4-TE-I8H"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
