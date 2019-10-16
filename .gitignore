@@ -66,3 +66,6 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+/AnimationDemo.xcodeproj/project.xcworkspace/xcuserdata
+/AnimationDemo.xcodeproj/xcuserdata/lieon.xcuserdatad/xcdebugger
+/Carthage
