@@ -15,7 +15,7 @@ class TouchView: UIView {
     fileprivate lazy var allPath: [UIBezierPath] = []
     
     override func awakeFromNib() {
-        super.awakeFromNib()
+            super.awakeFromNib()
     }
     
     override init(frame: CGRect) {

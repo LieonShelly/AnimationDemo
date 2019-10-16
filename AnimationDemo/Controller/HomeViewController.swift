@@ -12,6 +12,26 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     fileprivate lazy var items: [ListItem] = []
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupUI()
+    }
+}
+
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueCell(UITableViewCell.self, for: indexPath)
+        cell.textLabel?.text = items[indexPath.row].name
+        return cell
+    }
+}
+
+extension HomeViewController {
+    
     fileprivate func setupUI() {
         title = "动画列表"
         tableView.delegate = self
@@ -45,28 +65,20 @@ class HomeViewController: UIViewController {
             let vcc = PanViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
+        let flip = ListItem("VC翻转类", handler: { [weak self] in
+             guard let weakSelf = self else {
+                 return
+             }
+             let vcc = FlipViewController()
+             weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
         items.append(tap)
         items.append(pinch)
         items.append(move)
         items.append(slider)
+        items.append(flip)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupUI()
-    }
-}
-
-extension HomeViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueCell(UITableViewCell.self, for: indexPath)
-        cell.textLabel?.text = items[indexPath.row].name
-        return cell
-    }
 }
 
 extension HomeViewController: UITableViewDelegate {
