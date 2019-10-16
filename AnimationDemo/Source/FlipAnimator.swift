@@ -54,4 +54,8 @@ class FlipAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             transitionContext.completeTransition(true)
         }
     }
+    
+    deinit {
+        debugPrint("deinit - FlipAnimator")
+    }
 }

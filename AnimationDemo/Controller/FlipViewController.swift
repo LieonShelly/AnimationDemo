@@ -31,7 +31,10 @@ extension FlipViewController: UINavigationControllerDelegate {
                               animationControllerFor operation: UINavigationController.Operation,
                               from fromVC: UIViewController,
                               to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        flipAnimator.operation = operation
-        return flipAnimator
+        if toVC is FlipSubViewController || toVC is FlipViewController {
+            flipAnimator.operation = operation
+            return flipAnimator
+        }
+        return nil
     }
 }
