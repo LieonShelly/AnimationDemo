@@ -1,5 +1,5 @@
 //
-//  IFProgressAnimation.swift
+//  ProgressAnimation.swift
 //  AnimationDemo
 //
 //  Created by lieon on 2019/10/11.
@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class IFProgressView: UIView {
+class ProgressView: UIView {
     fileprivate lazy var progressLabel: UILabel = {
         let progressLabel = UILabel()
         progressLabel.text = "0.0%"
@@ -51,7 +51,7 @@ class IFProgressView: UIView {
     }
 }
 
-extension IFProgressView {
+extension ProgressView {
     fileprivate func configUI() {
         addSubview(progressLabel)
         addSubview(nameLabel)

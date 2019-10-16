@@ -1,5 +1,5 @@
 //
-//  IFPinchAnimation.swift
+//  PinchAnimation.swift
 //  AnimationDemo
 //
 //  Created by lieon on 2019/10/9.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class IFPinchAnimation {
+class PinchAnimation {
     static var animations: [String: Any] = [:]
     
     @discardableResult

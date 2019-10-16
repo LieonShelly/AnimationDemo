@@ -1,5 +1,5 @@
 //
-//  IFPanAnimation.swift
+//  PanAnimation.swift
 //  AnimationDemo
 //
 //  Created by lieon on 2019/10/10.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class IFPanAnimation {
+class PanAnimation {
     static var animations: [String: Any?] = [:]
     
     @discardableResult

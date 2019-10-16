@@ -1,5 +1,5 @@
 //
-//  IFCommon.swift
+//  Common.swift
 //  AnimationDemo
 //
 //  Created by lieon on 2019/10/15.
@@ -9,7 +9,7 @@
 import Foundation
 import  UIKit
 
-class IFCommonAnimateParam: IFAnimationParam {
+class CommonAnimateParam: AnimationParam {
     var fromPoint: CGPoint?
     var endPoint: CGPoint?
     var color: UIColor! = UIColor.gray

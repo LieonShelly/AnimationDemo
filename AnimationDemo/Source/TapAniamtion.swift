@@ -1,5 +1,5 @@
 //
-//  IFTapAniamtion.swift
+//  TapAniamtion.swift
 //  AnimationDemo
 //
 //  Created by lieon on 2019/10/9.
@@ -9,10 +9,10 @@
 import Foundation
 import UIKit
 
-class IFTapAniamtion {
+class TapAniamtion {
     static var animations: [String: Any?] = [:]
     
-    static func jumpSpring(with param: IFAnimationParam) {
+    static func jumpSpring(with param: AnimationParam) {
         let jump = CASpringAnimation(keyPath: "position.y")
         jump.fromValue = param.layer.position.y + 1
         jump.toValue = param.layer.position.y
@@ -26,12 +26,12 @@ class IFTapAniamtion {
     }
     
     @discardableResult
-    static func showWave(with param: IFAnimationParam,
+    static func showWave(with param: AnimationParam,
                          completion: ((Bool) -> Void)?) -> String {
         let name = AniamtionHelper.key(param.layer.description)
-          var animator = animations[name] as? IFTapAnimator
+          var animator = animations[name] as? TapAnimator
           if animator == nil {
-              animator = IFTapAnimator(param.layer)
+              animator = TapAnimator(param.layer)
               animations[name] = animator
           }
         animator?.showWave(param, completion: { (flag) in
@@ -43,7 +43,7 @@ class IFTapAniamtion {
     
     static func clear(_ animationKey: String?) {
          guard let animationKey = animationKey,
-             let helper = animations[animationKey] as? IFTapAnimator else {
+             let helper = animations[animationKey] as? TapAnimator else {
              return
          }
          helper.clear()
@@ -52,7 +52,7 @@ class IFTapAniamtion {
       
 }
 
-class IFTapAnimator: NSObject, AnimationTargetType {
+class TapAnimator: NSObject, AnimationTargetType {
     var layer: CALayer!
     var animationCompletion: ((Bool) -> Void)?
     fileprivate lazy var dot: CAShapeLayer = {
@@ -75,7 +75,7 @@ class IFTapAnimator: NSObject, AnimationTargetType {
     }
     
     
-    fileprivate  func showWave(_ param: IFAnimationParam,
+    fileprivate  func showWave(_ param: AnimationParam,
                                completion: ((Bool) -> Void)?) {
         let center = layer.position
         let path = UIBezierPath(roundedRect: CGRect(x: center.x - radius,
@@ -105,7 +105,7 @@ class IFTapAnimator: NSObject, AnimationTargetType {
         dot.removeFromSuperlayer()
     }
     
-    fileprivate func showWave(_ param: IFAnimationParam) {
+    fileprivate func showWave(_ param: AnimationParam) {
        let endIndex: Int = 0
        for index in 0 ... endIndex {
            let cycle = CAShapeLayer()
@@ -165,7 +165,7 @@ class IFTapAnimator: NSObject, AnimationTargetType {
     
 }
 
-extension IFTapAnimator: CAAnimationDelegate {
+extension TapAnimator: CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
          animationCompletion?(flag)
     }

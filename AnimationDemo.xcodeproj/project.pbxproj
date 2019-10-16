@@ -14,16 +14,16 @@
 		CD2FCF92234D796500E28E5C /* AnimationDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCF91234D796500E28E5C /* AnimationDemoUITests.swift */; };
 		CD2FCFA1234D79AB00E28E5C /* TapAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCF9F234D79AB00E28E5C /* TapAnimationViewController.swift */; };
 		CD2FCFA2234D79AB00E28E5C /* TapAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCFA0234D79AB00E28E5C /* TapAnimationViewController.xib */; };
-		CD2FCFA5234D7C4000E28E5C /* IFTapAniamtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCFA4234D7C4000E28E5C /* IFTapAniamtion.swift */; };
+		CD2FCFA5234D7C4000E28E5C /* TapAniamtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCFA4234D7C4000E28E5C /* TapAniamtion.swift */; };
 		CD2FCFA8234DB37600E28E5C /* PinchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCFA6234DB37600E28E5C /* PinchViewController.swift */; };
 		CD2FCFA9234DB37600E28E5C /* PinchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCFA7234DB37600E28E5C /* PinchViewController.xib */; };
-		CD306C4D2355CC36002ABA93 /* IFCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD306C4C2355CC36002ABA93 /* IFCommon.swift */; };
-		CD3BC9AC234F26A0003C8AA9 /* IFAnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC9AB234F26A0003C8AA9 /* IFAnimationProtocol.swift */; };
+		CD306C4D2355CC36002ABA93 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD306C4C2355CC36002ABA93 /* Common.swift */; };
+		CD3BC9AC234F26A0003C8AA9 /* AnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC9AB234F26A0003C8AA9 /* AnimationProtocol.swift */; };
 		CD3BC9AF234F313E003C8AA9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC9AD234F313E003C8AA9 /* HomeViewController.swift */; };
 		CD3BC9B0234F313E003C8AA9 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3BC9AE234F313E003C8AA9 /* HomeViewController.xib */; };
-		CD436428234E17500047930B /* IFPinchAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD436427234E17500047930B /* IFPinchAnimation.swift */; };
+		CD436428234E17500047930B /* PinchAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD436427234E17500047930B /* PinchAnimation.swift */; };
 		CD725AD3234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */; };
-		CD725AD5234F0E1D00C11FB0 /* IFPanAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AD4234F0E1D00C11FB0 /* IFPanAnimation.swift */; };
+		CD725AD5234F0E1D00C11FB0 /* PanAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AD4234F0E1D00C11FB0 /* PanAnimation.swift */; };
 		CD725AD9234F0E4E00C11FB0 /* PanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AD7234F0E4E00C11FB0 /* PanViewController.swift */; };
 		CD725ADA234F0E4E00C11FB0 /* PanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD725AD8234F0E4E00C11FB0 /* PanViewController.xib */; };
 		CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AE5234F140700C11FB0 /* Extensions.swift */; };
@@ -33,7 +33,7 @@
 		CDFB49D123504C070083426A /* ZoomScollVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49D023504C070083426A /* ZoomScollVIew.swift */; };
 		CDFB49D423505AD50083426A /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49D223505AD50083426A /* ProgressViewController.swift */; };
 		CDFB49D523505AD50083426A /* ProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFB49D323505AD50083426A /* ProgressViewController.xib */; };
-		CDFB49D723505C5F0083426A /* IFProgressAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49D623505C5F0083426A /* IFProgressAnimation.swift */; };
+		CDFB49D723505C5F0083426A /* ProgressAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49D623505C5F0083426A /* ProgressAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,16 +67,16 @@
 		CD2FCF93234D796500E28E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD2FCF9F234D79AB00E28E5C /* TapAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapAnimationViewController.swift; sourceTree = "<group>"; };
 		CD2FCFA0234D79AB00E28E5C /* TapAnimationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TapAnimationViewController.xib; sourceTree = "<group>"; };
-		CD2FCFA4234D7C4000E28E5C /* IFTapAniamtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFTapAniamtion.swift; sourceTree = "<group>"; };
+		CD2FCFA4234D7C4000E28E5C /* TapAniamtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapAniamtion.swift; sourceTree = "<group>"; };
 		CD2FCFA6234DB37600E28E5C /* PinchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchViewController.swift; sourceTree = "<group>"; };
 		CD2FCFA7234DB37600E28E5C /* PinchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinchViewController.xib; sourceTree = "<group>"; };
-		CD306C4C2355CC36002ABA93 /* IFCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFCommon.swift; sourceTree = "<group>"; };
-		CD3BC9AB234F26A0003C8AA9 /* IFAnimationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFAnimationProtocol.swift; sourceTree = "<group>"; };
+		CD306C4C2355CC36002ABA93 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		CD3BC9AB234F26A0003C8AA9 /* AnimationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationProtocol.swift; sourceTree = "<group>"; };
 		CD3BC9AD234F313E003C8AA9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CD3BC9AE234F313E003C8AA9 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		CD436427234E17500047930B /* IFPinchAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFPinchAnimation.swift; sourceTree = "<group>"; };
+		CD436427234E17500047930B /* PinchAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchAnimation.swift; sourceTree = "<group>"; };
 		CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
-		CD725AD4234F0E1D00C11FB0 /* IFPanAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFPanAnimation.swift; sourceTree = "<group>"; };
+		CD725AD4234F0E1D00C11FB0 /* PanAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanAnimation.swift; sourceTree = "<group>"; };
 		CD725AD7234F0E4E00C11FB0 /* PanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanViewController.swift; sourceTree = "<group>"; };
 		CD725AD8234F0E4E00C11FB0 /* PanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PanViewController.xib; sourceTree = "<group>"; };
 		CD725AE5234F140700C11FB0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 		CDFB49D023504C070083426A /* ZoomScollVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomScollVIew.swift; sourceTree = "<group>"; };
 		CDFB49D223505AD50083426A /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		CDFB49D323505AD50083426A /* ProgressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressViewController.xib; sourceTree = "<group>"; };
-		CDFB49D623505C5F0083426A /* IFProgressAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFProgressAnimation.swift; sourceTree = "<group>"; };
+		CDFB49D623505C5F0083426A /* ProgressAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,12 +172,12 @@
 		CD2FCFA3234D7A5F00E28E5C /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				CD2FCFA4234D7C4000E28E5C /* IFTapAniamtion.swift */,
-				CD436427234E17500047930B /* IFPinchAnimation.swift */,
-				CD725AD4234F0E1D00C11FB0 /* IFPanAnimation.swift */,
-				CD3BC9AB234F26A0003C8AA9 /* IFAnimationProtocol.swift */,
-				CDFB49D623505C5F0083426A /* IFProgressAnimation.swift */,
-				CD306C4C2355CC36002ABA93 /* IFCommon.swift */,
+				CD2FCFA4234D7C4000E28E5C /* TapAniamtion.swift */,
+				CD436427234E17500047930B /* PinchAnimation.swift */,
+				CD725AD4234F0E1D00C11FB0 /* PanAnimation.swift */,
+				CD3BC9AB234F26A0003C8AA9 /* AnimationProtocol.swift */,
+				CDFB49D623505C5F0083426A /* ProgressAnimation.swift */,
+				CD306C4C2355CC36002ABA93 /* Common.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -385,21 +385,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDFB49D423505AD50083426A /* ProgressViewController.swift in Sources */,
-				CD436428234E17500047930B /* IFPinchAnimation.swift in Sources */,
+				CD436428234E17500047930B /* PinchAnimation.swift in Sources */,
 				CD2FCF70234D796100E28E5C /* AppDelegate.swift in Sources */,
 				CD725AD9234F0E4E00C11FB0 /* PanViewController.swift in Sources */,
 				CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */,
 				CDFB49CD235025820083426A /* TouchView.swift in Sources */,
 				CDFB49CF235047940083426A /* PinchView.swift in Sources */,
-				CD306C4D2355CC36002ABA93 /* IFCommon.swift in Sources */,
+				CD306C4D2355CC36002ABA93 /* Common.swift in Sources */,
 				CD2FCFA8234DB37600E28E5C /* PinchViewController.swift in Sources */,
-				CDFB49D723505C5F0083426A /* IFProgressAnimation.swift in Sources */,
+				CDFB49D723505C5F0083426A /* ProgressAnimation.swift in Sources */,
 				CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */,
-				CD725AD5234F0E1D00C11FB0 /* IFPanAnimation.swift in Sources */,
+				CD725AD5234F0E1D00C11FB0 /* PanAnimation.swift in Sources */,
 				CD3BC9AF234F313E003C8AA9 /* HomeViewController.swift in Sources */,
 				CD2FCFA1234D79AB00E28E5C /* TapAnimationViewController.swift in Sources */,
-				CD2FCFA5234D7C4000E28E5C /* IFTapAniamtion.swift in Sources */,
-				CD3BC9AC234F26A0003C8AA9 /* IFAnimationProtocol.swift in Sources */,
+				CD2FCFA5234D7C4000E28E5C /* TapAniamtion.swift in Sources */,
+				CD3BC9AC234F26A0003C8AA9 /* AnimationProtocol.swift in Sources */,
 				CDFB49D123504C070083426A /* ZoomScollVIew.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

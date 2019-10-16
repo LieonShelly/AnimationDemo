@@ -11,8 +11,8 @@ import UIKit
 class ProgressViewController: UIViewController {
     @IBOutlet weak var animatieView: UIView!
     @IBOutlet weak var slider: UISlider!
-    fileprivate lazy var progressView: IFProgressView = {
-        let progressView = IFProgressView()
+    fileprivate lazy var progressView: ProgressView = {
+        let progressView = ProgressView()
         return progressView
     }()
     

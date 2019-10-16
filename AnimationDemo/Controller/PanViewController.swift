@@ -12,7 +12,7 @@ class PanViewController: UIViewController {
     @IBOutlet weak var animationView: TouchView!
     
     @IBAction func enterAction(_ sender: Any) {
-        IFPanAnimation.showPath(in: animationView.layer, points: animationView.currentHandlePoints) { (_) in
+        PanAnimation.showPath(in: animationView.layer, points: animationView.currentHandlePoints) { (_) in
             debugPrint("complete")
         }
     }
