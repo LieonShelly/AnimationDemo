@@ -65,9 +65,8 @@ class PanAnimatior: NSObject, AnimationTargetType {
         dot.position = firstPoint
         self.animationCompletion = completion
         show(param)
-
         move(param)
-        let duration = Float(param.points.count) / Float(param.speed) // 50 个点一秒
+        let duration = Float(param.points.count) / Float(param.speed)
         delay(seconds: Double(duration) + 0.5 + 0.5) {
             self.dismiss(CACurrentMediaTime(), param)
         }

@@ -42,3 +42,28 @@ struct CommonPanAnimationParam: PanParam {
     }
     
 }
+
+
+struct CommonPinchAnimationParam: PinchParam {
+    var dotStartFillColor: UIColor!
+    var dotEndFillColor: UIColor!
+    var dotStartBorderColor: UIColor!
+    var dotEndBorderColor: UIColor!
+    var dotBorderWidth: CGFloat!
+    var dotMoveColor: UIColor!
+    var speed: Int!
+    var dotRadius: CGFloat!
+    var dotBorderColor: UIColor!
+    var dotFillColor: UIColor!
+    var pointsA: [CGPoint]!
+    var pointsB: [CGPoint]!
+    var layer: CALayer!
+    
+    init(_ layer: CALayer, pointsA: [CGPoint], pointsB: [CGPoint]) {
+        self.layer = layer
+        self.pointsA = pointsA
+        self.pointsB = pointsB
+        self.initial()
+    }
+    
+}

@@ -28,6 +28,6 @@ class ProgressViewController: UIViewController {
     }
 
     @IBAction func sliderAction(_ sender: UISlider) {
-        let progress = sender.value
+        
     }
 }

@@ -9,6 +9,33 @@
 import Foundation
 import UIKit
 
+protocol PinchParam: AnimationParam {
+    var pointsA: [CGPoint]! { get set }
+    var pointsB: [CGPoint]! { get set }
+    var dotStartFillColor: UIColor! { get set }
+    var dotEndFillColor: UIColor! { get set }
+    var dotStartBorderColor: UIColor! { get set }
+    var dotEndBorderColor: UIColor! { get set }
+    var dotRadius: CGFloat! { get set}
+    var dotBorderWidth: CGFloat! { get set }
+    var dotMoveColor: UIColor! { get set }
+    var speed: Int! { get set }
+}
+
+extension PinchParam {
+    mutating func initial() {
+        self.dotRadius = 20
+        self.dotBorderWidth = 3
+        self.speed = 50
+        self.dotStartFillColor = UIColor.gray
+        self.dotEndFillColor = UIColor.gray
+        self.dotStartBorderColor = UIColor.white
+        self.dotEndBorderColor = UIColor.white
+        self.dotMoveColor = UIColor.white
+    }
+}
+
+
 protocol PanParam: AnimationParam {
     var points: [CGPoint]! { get set }
     var dotStartFillColor: UIColor! { get set }
@@ -19,8 +46,6 @@ protocol PanParam: AnimationParam {
     var dotBorderWidth: CGFloat! { get set }
     var dotMoveColor: UIColor! { get set }
     var speed: Int! { get set }
-    
-    mutating func initial()
 }
 
 extension PanParam {
@@ -44,7 +69,15 @@ protocol AnimationTargetType: AnimationBase {
 }
 
 protocol AnimationParam {
-    var layer: CALayer! { get set }    
+    var layer: CALayer! { get set }
+    
+    mutating func initial()
+}
+
+extension AnimationParam {
+    mutating func initial() {
+        
+    }
 }
 
 protocol TapAnimationParam: AnimationParam {

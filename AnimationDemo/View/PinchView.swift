@@ -71,9 +71,9 @@ extension PinchView: UIScrollViewDelegate {
     }
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        imageView.frame.origin.y = (scrollView.frame.size.height - imageView.frame.size.height) > 0 ?
-        (scrollView.frame.size.height - imageView.frame.size.height) * 0.5 : 0
-        imageView.frame.origin.x = (scrollView.frame.size.width - imageView.frame.size.width) > 0 ? (scrollView.frame.size.width - imageView.frame.size.width) * 0.5 : 0
+//        imageView.frame.origin.y = (scrollView.frame.size.height - imageView.frame.size.height) > 0 ?
+//        (scrollView.frame.size.height - imageView.frame.size.height) * 0.5 : 0
+//        imageView.frame.origin.x = (scrollView.frame.size.width - imageView.frame.size.width) > 0 ? (scrollView.frame.size.width - imageView.frame.size.width) * 0.5 : 0
         scrollView.contentSize = CGSize(width: imageView.frame.size.width + 30, height: imageView.frame.size.height + 30)
         guard let pinch = scrollView.pinchGestureRecognizer else {
             return
