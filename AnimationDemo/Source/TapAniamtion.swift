@@ -26,7 +26,7 @@ class TapAniamtion {
     }
     
     @discardableResult
-    static func showWave(with param: AnimationParam,
+    static func showWave(with param: TapAnimationParam,
                          completion: ((Bool) -> Void)?) -> String {
         let name = AniamtionHelper.key(param.layer.description)
           var animator = animations[name] as? TapAnimator
@@ -75,7 +75,7 @@ class TapAnimator: NSObject, AnimationTargetType {
     }
     
     
-    fileprivate  func showWave(_ param: AnimationParam,
+    fileprivate  func showWave(_ param: TapAnimationParam,
                                completion: ((Bool) -> Void)?) {
         let center = layer.position
         let path = UIBezierPath(roundedRect: CGRect(x: center.x - radius,
@@ -105,7 +105,7 @@ class TapAnimator: NSObject, AnimationTargetType {
         dot.removeFromSuperlayer()
     }
     
-    fileprivate func showWave(_ param: AnimationParam) {
+    fileprivate func showWave(_ param: TapAnimationParam) {
        let endIndex: Int = 0
        for index in 0 ... endIndex {
            let cycle = CAShapeLayer()

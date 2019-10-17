@@ -9,6 +9,33 @@
 import Foundation
 import UIKit
 
+protocol PanParam: AnimationParam {
+    var points: [CGPoint]! { get set }
+    var dotStartFillColor: UIColor! { get set }
+    var dotEndFillColor: UIColor! { get set }
+    var dotStartBorderColor: UIColor! { get set }
+    var dotEndBorderColor: UIColor! { get set }
+    var dotRadius: CGFloat! { get set}
+    var dotBorderWidth: CGFloat! { get set }
+    var dotMoveColor: UIColor! { get set }
+    var speed: Int! { get set }
+    
+    mutating func initial()
+}
+
+extension PanParam {
+    mutating func initial() {
+        self.dotRadius = 20
+        self.dotBorderWidth = 3
+        self.speed = 200
+        self.dotStartFillColor = UIColor.gray
+        self.dotEndFillColor = UIColor.gray
+        self.dotStartBorderColor = UIColor.white
+        self.dotEndBorderColor = UIColor.white
+        self.dotMoveColor = UIColor.white
+    }
+}
+
 protocol AnimationTargetType: AnimationBase {
     var layer: CALayer! { get set }
     var animationCompletion: ((Bool) -> Void)? { get set }
@@ -17,11 +44,23 @@ protocol AnimationTargetType: AnimationBase {
 }
 
 protocol AnimationParam {
-    var layer: CALayer! { get set }
+    var layer: CALayer! { get set }    
+}
+
+protocol TapAnimationParam: AnimationParam {
     var duration: Double! { get set }
     var color: UIColor! { get set }
     var fromPoint: CGPoint? { get set }
     var endPoint: CGPoint? { get set }
+}
+
+extension TapAnimationParam {
+    var duration: Double? {
+        return 0.25
+    }
+    var color: UIColor? {
+        return .white
+    }
 }
 
 protocol AnimationBase {

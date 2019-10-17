@@ -9,7 +9,7 @@
 import Foundation
 import  UIKit
 
-class CommonAnimateParam: AnimationParam {
+class CommonAnimateParam: TapAnimationParam {
     var fromPoint: CGPoint?
     var endPoint: CGPoint?
     var color: UIColor! = UIColor.gray
@@ -19,4 +19,26 @@ class CommonAnimateParam: AnimationParam {
     init(_ layer: CALayer) {
         self.layer = layer
     }
+}
+
+struct CommonPanAnimationParam: PanParam {
+    var dotStartFillColor: UIColor!
+    var dotEndFillColor: UIColor!
+    var dotStartBorderColor: UIColor!
+    var dotEndBorderColor: UIColor!
+    var dotBorderWidth: CGFloat!
+    var dotMoveColor: UIColor!
+    var speed: Int!
+    var dotRadius: CGFloat!
+    var dotBorderColor: UIColor!
+    var dotFillColor: UIColor!
+    var points: [CGPoint]!
+    var layer: CALayer!
+    
+    init(_ layer: CALayer, points: [CGPoint]) {
+        self.layer = layer
+        self.points = points
+        self.initial()
+    }
+    
 }

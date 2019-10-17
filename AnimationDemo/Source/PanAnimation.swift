@@ -13,13 +13,13 @@ class PanAnimation {
     static var animations: [String: Any?] = [:]
     
     @discardableResult
-    static func showPath( in layer: CALayer, points: [CGPoint], completion: ((Bool) -> Void)?) -> String {
-        let name = AniamtionHelper.key(layer.description)
+    static func showPath(with param: PanParam, completion: ((Bool) -> Void)?) -> String {
+        let name = AniamtionHelper.key(param.layer.description)
         var animator = animations[name] as? PanAnimatior
         if animator == nil {
-            animator = PanAnimatior(layer)
+            animator = PanAnimatior(param)
         }
-        animator!.showAnimation(points) { (flag) in
+        animator!.showAnimation(param) { (flag) in
             animator!.clear()
             clear(name)
             completion?(flag)
@@ -36,19 +36,20 @@ class PanAnimation {
 class PanAnimatior: NSObject, AnimationTargetType {
    fileprivate lazy var dot: CAShapeLayer = {
           let dot = CAShapeLayer()
-          dot.backgroundColor = UIColor.gray.cgColor
           return dot
       }()
     var layer: CALayer!
     var animationCompletion: ((Bool) -> Void)?
 
-    convenience init(_ layer: CALayer) {
+    convenience init(_ param: PanParam) {
         self.init()
-        self.layer = layer
-        dot.cornerRadius = 20
-        dot.bounds = CGRect(x: 0, y: 0, width: 40, height: 40)
-        dot.borderColor = UIColor.white.cgColor
-        dot.borderWidth = 3
+        self.layer = param.layer
+        dot.cornerRadius = param.dotRadius
+        dot.backgroundColor = param.dotStartFillColor.cgColor
+        dot.bounds = CGRect(x: 0, y: 0, width: param.dotRadius * 2, height: param.dotRadius * 2)
+        dot.opacity = 1
+        dot.borderColor = param.dotStartBorderColor.cgColor
+        dot.borderWidth = param.dotBorderWidth
         layer.addSublayer(dot)
     }
     
@@ -57,30 +58,34 @@ class PanAnimatior: NSObject, AnimationTargetType {
         self.layer = CALayer()
     }
     
-    fileprivate func showAnimation(_ points: [CGPoint], completion: ((Bool) -> Void)?) {
-        guard let firstPoint = points.first else {
+    fileprivate func showAnimation(_ param: PanParam, completion: ((Bool) -> Void)?) {
+        guard let firstPoint = param.points.first else {
             return
         }
         dot.position = firstPoint
         self.animationCompletion = completion
-        show()
+        show(param)
 
-        let position = CAKeyframeAnimation(keyPath: "position")
-        position.fillMode = .forwards
-        position.beginTime = CACurrentMediaTime() + 0.5 + 0.25
-        position.values = points
-        position.calculationMode = .linear
-        let duration = Float(points.count) / 50.0 // 50 个点一秒
-        position.duration = CFTimeInterval(duration)
-        position.isRemovedOnCompletion = false
-        dot.add(position, forKey: nil)
-
-        delay(seconds: Double(duration) + 0.5 + 0.25) {
-            self.dismiss(CACurrentMediaTime())
+        move(param)
+        let duration = Float(param.points.count) / Float(param.speed) // 50 个点一秒
+        delay(seconds: Double(duration) + 0.5 + 0.5) {
+            self.dismiss(CACurrentMediaTime(), param)
         }
     }
     
-    private func show() {
+    private func move(_ param: PanParam) {
+        let position = CAKeyframeAnimation(keyPath: "position")
+        position.fillMode = .forwards
+        position.beginTime = CACurrentMediaTime() + 0.5 + 0.5
+        position.values = param.points
+        position.calculationMode = .linear
+        let duration = Float(param.points.count) / Float(param.speed) // 50 个点一秒
+        position.duration = CFTimeInterval(duration)
+        position.isRemovedOnCompletion = false
+        dot.add(position, forKey: nil)
+    }
+    
+    private func show(_ param: PanParam) {
         let showGroup = CAAnimationGroup()
         showGroup.fillMode = .forwards
         showGroup.beginTime = CACurrentMediaTime()
@@ -89,42 +94,47 @@ class PanAnimatior: NSObject, AnimationTargetType {
         showGroup.repeatDuration = 1
         showGroup.isRemovedOnCompletion = false
         showGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
+        
         let showScaleAnimation = CABasicAnimation(keyPath: "transform.scale")
         showScaleAnimation.fromValue = 0
-        showScaleAnimation.toValue = 1.5
+        showScaleAnimation.toValue = 1
+        
         let opacity = CABasicAnimation(keyPath: "opacity")
         opacity.fromValue = 0
         opacity.toValue = 1
+        
+        
         showGroup.animations = [showScaleAnimation, opacity]
-        dot.add(showScaleAnimation, forKey: nil)
+        dot.add(showGroup, forKey: nil)
+        
 
         let group = CAAnimationGroup()
         group.fillMode = .forwards
-        group.beginTime = CACurrentMediaTime() + 0.5
+        group.beginTime = CACurrentMediaTime() + 0.25 + 0.5
         group.duration = 0.25
         group.repeatCount = 1
         group.repeatDuration = 1
         group.isRemovedOnCompletion = false
 
         let showScaleAnimation0 = CABasicAnimation(keyPath: "transform.scale")
-        showScaleAnimation0.fromValue = 1.5
-        showScaleAnimation.toValue = 1
+        showScaleAnimation0.fromValue = 1
+        showScaleAnimation0.toValue = 0.8
 
         let borderColorAnima = CABasicAnimation(keyPath: "borderColor")
         borderColorAnima.fromValue = dot.borderColor
-        borderColorAnima.toValue = UIColor.white.cgColor
+        borderColorAnima.toValue = param.dotMoveColor.cgColor
 
+        
         let bgColorAnima = CABasicAnimation(keyPath: "backgroundColor")
         bgColorAnima.fromValue = dot.backgroundColor
-        bgColorAnima.toValue = UIColor.white.cgColor
-        bgColorAnima.isRemovedOnCompletion = false
-
+        bgColorAnima.toValue = param.dotMoveColor.cgColor
+        
         group.animations = [showScaleAnimation0, borderColorAnima, bgColorAnima]
         group.timingFunction = CAMediaTimingFunction(name: .easeIn)
         dot.add(group, forKey: nil)
     }
     
-    private func dismiss(_ beginTime: CFTimeInterval) {
+    private func dismiss(_ beginTime: CFTimeInterval, _ param: PanParam) {
         let dismissGroup = CAAnimationGroup()
         dismissGroup.fillMode = .forwards
         dismissGroup.duration = 0.25
@@ -134,16 +144,15 @@ class PanAnimatior: NSObject, AnimationTargetType {
         dismissGroup.delegate = self
 
         let dismissBgColorAnima = CABasicAnimation(keyPath: "backgroundColor")
-        dismissBgColorAnima.toValue = UIColor.white.cgColor
-        dismissBgColorAnima.toValue = UIColor.gray
+        dismissBgColorAnima.toValue = param.dotEndFillColor.cgColor
 
         let borderWidth = CABasicAnimation(keyPath: "borderWidth")
         borderWidth.fromValue = 0
-        borderWidth.toValue = 2
+        borderWidth.toValue = param.dotBorderWidth
 
         let dismissScale = CABasicAnimation(keyPath: "transform.scale")
-        dismissScale.fromValue = 1
-        dismissScale.toValue = 2
+        dismissScale.fromValue = 0.8
+        dismissScale.toValue = 1.5
 
         let opacity = CABasicAnimation(keyPath: "opacity")
         opacity.fromValue = 1
@@ -174,4 +183,5 @@ extension PanAnimatior: CAAnimationDelegate {
         animationCompletion?(flag)
     }
 }
+
 

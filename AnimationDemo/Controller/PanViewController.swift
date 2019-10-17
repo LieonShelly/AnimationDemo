@@ -10,7 +10,6 @@ import UIKit
 
 class PanViewController: UIViewController {
     @IBOutlet weak var animationView: TouchView!
-    
     fileprivate lazy var dot: CAShapeLayer = {
         let dot = CAShapeLayer()
         dot.backgroundColor = UIColor.gray.cgColor
@@ -19,6 +18,34 @@ class PanViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        dot.position = animationView.center
+    }
+    
+    @IBAction func enterAction(_ sender: Any) {
+        let param = CommonPanAnimationParam(animationView.layer,
+                                            points: animationView.currentHandlePoints)
+        /**
+            可以单独设置参数：
+            param.dotStartFillColor = .red
+            param.dotMoveColor = .yellow
+            param.dotEndFillColor = .purple
+            param.dotStartBorderColor = .brown
+            param.dotEndBorderColor = .blue
+            param.dotRadius = 50
+            param.dotBorderWidth = 20
+         */
+        PanAnimation.showPath(with: param) { (_) in
+                   debugPrint("complete")
+               }
+    }
+    
+    
+    private func setupDemoUI() {
         dot.cornerRadius = 20
         dot.bounds = CGRect(x: 0, y: 0, width: 40, height: 40)
         dot.borderColor = UIColor.white.cgColor
@@ -27,15 +54,7 @@ class PanViewController: UIViewController {
         animationView.layer.addSublayer(dot)
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        dot.position = animationView.center
-    }
-    @IBAction func enterAction(_ sender: Any) {
-        PanAnimation.showPath(in: animationView.layer, points: animationView.currentHandlePoints) { (_) in
-                   debugPrint("complete")
-               }
-        return
+    private func showDemoAction() {
         let showScaleAnimation = CABasicAnimation(keyPath: "transform.scale")
         showScaleAnimation.fromValue = 0
         showScaleAnimation.toValue = 1.5
@@ -46,7 +65,7 @@ class PanViewController: UIViewController {
         showScaleAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
         dot.opacity = 1
         dot.add(showScaleAnimation, forKey: nil)
-        
+
         let group = CAAnimationGroup()
         group.fillMode = .forwards
         group.beginTime = CACurrentMediaTime() + 0.5
@@ -62,17 +81,17 @@ class PanViewController: UIViewController {
         let borderColorAnima = CABasicAnimation(keyPath: "borderColor")
         borderColorAnima.fromValue = dot.borderColor
         borderColorAnima.toValue = UIColor.white.cgColor
-        
+
         let bgColorAnima = CABasicAnimation(keyPath: "backgroundColor")
         bgColorAnima.fromValue = dot.backgroundColor
         bgColorAnima.toValue = UIColor.white.cgColor
         bgColorAnima.isRemovedOnCompletion = false
-        
-         group.animations = [showScaleAnimation0, borderColorAnima, bgColorAnima]
-         group.timingFunction = CAMediaTimingFunction(name: .easeIn)
-         dot.add(group, forKey: nil)
-        
-        
+
+        group.animations = [showScaleAnimation0, borderColorAnima, bgColorAnima]
+        group.timingFunction = CAMediaTimingFunction(name: .easeIn)
+        dot.add(group, forKey: nil)
+
+
         let position = CABasicAnimation(keyPath: "position")
         position.fillMode = .forwards
         position.beginTime = CACurrentMediaTime() + 1
@@ -97,16 +116,14 @@ class PanViewController: UIViewController {
         opacity.fromValue = 1
         opacity.toValue = 0
 
-        group.beginTime = CACurrentMediaTime() + 1 + 1 
+        group.beginTime = CACurrentMediaTime() + 1 + 1
         group.animations = [borderColorAnima,
-                            dismissBgColorAnima,
-                            borderWidth,
-                            dismissScale,
-                            opacity]
+                          dismissBgColorAnima,
+                          borderWidth,
+                          dismissScale,
+                          opacity]
         dot.add(group, forKey: nil)
-
     }
-    
     
     @IBAction func clear(_ sender: Any) {
         animationView.clear()
