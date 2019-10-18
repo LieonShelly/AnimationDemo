@@ -27,8 +27,14 @@ class PanViewController: UIViewController {
     }
     
     @IBAction func enterAction(_ sender: Any) {
-        let param = CommonPanAnimationParam(animationView.layer,
+        var param = CommonPanAnimationParam(animationView.layer,
                                             points: animationView.currentHandlePoints)
+        param.dotStartFillColor = UIColor.white.withAlphaComponent(0.5)
+        param.dotMoveColor = UIColor.white.withAlphaComponent(0.5)
+        param.dotEndFillColor = UIColor.white.withAlphaComponent(0.5)
+        param.dotStartBorderColor = .white
+        param.dotEndBorderColor = .white
+        param.speed = 50
         /**
             可以单独设置参数：
             param.dotStartFillColor = .red

@@ -15,6 +15,7 @@ class CommonAnimateParam: TapAnimationParam {
     var color: UIColor! = UIColor.gray
     var duration: Double! = 0.5
     var layer: CALayer!
+     var dotRadius: Double! = 20
     
     init(_ layer: CALayer) {
         self.layer = layer

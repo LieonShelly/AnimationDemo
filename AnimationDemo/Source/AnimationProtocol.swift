@@ -85,6 +85,11 @@ protocol TapAnimationParam: AnimationParam {
     var color: UIColor! { get set }
     var fromPoint: CGPoint? { get set }
     var endPoint: CGPoint? { get set }
+    var dotRadius: Double! { get set }
+}
+
+extension TapAniamtion {
+    
 }
 
 extension TapAnimationParam {

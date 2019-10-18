@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD1691CC23595B93006E73AD /* RecordAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1691CA23595B93006E73AD /* RecordAudioViewController.swift */; };
+		CD1691CD23595B93006E73AD /* RecordAudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1691CB23595B93006E73AD /* RecordAudioViewController.xib */; };
 		CD2FCF70234D796100E28E5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCF6F234D796100E28E5C /* AppDelegate.swift */; };
 		CD2FCF79234D796500E28E5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCF78234D796500E28E5C /* Assets.xcassets */; };
 		CD2FCF7C234D796500E28E5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCF7A234D796500E28E5C /* LaunchScreen.storyboard */; };
@@ -59,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD1691CA23595B93006E73AD /* RecordAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordAudioViewController.swift; sourceTree = "<group>"; };
+		CD1691CB23595B93006E73AD /* RecordAudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordAudioViewController.xib; sourceTree = "<group>"; };
 		CD2FCF6C234D796100E28E5C /* AnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2FCF6F234D796100E28E5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD2FCF78234D796500E28E5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -218,6 +222,8 @@
 				CD749AC92356F6EF00C357A5 /* FlipSubViewController.xib */,
 				CD749ACC2356F72C00C357A5 /* FlipViewController.swift */,
 				CD749ACD2356F72C00C357A5 /* FlipViewController.xib */,
+				CD1691CA23595B93006E73AD /* RecordAudioViewController.swift */,
+				CD1691CB23595B93006E73AD /* RecordAudioViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -354,6 +360,7 @@
 				CD2FCF79234D796500E28E5C /* Assets.xcassets in Resources */,
 				CD2FCFA2234D79AB00E28E5C /* TapAnimationViewController.xib in Resources */,
 				CD749ACB2356F6EF00C357A5 /* FlipSubViewController.xib in Resources */,
+				CD1691CD23595B93006E73AD /* RecordAudioViewController.xib in Resources */,
 				CD3BC9B0234F313E003C8AA9 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +420,7 @@
 				CD306C4D2355CC36002ABA93 /* Common.swift in Sources */,
 				CD2FCFA8234DB37600E28E5C /* PinchViewController.swift in Sources */,
 				CDFB49D723505C5F0083426A /* ProgressAnimation.swift in Sources */,
+				CD1691CC23595B93006E73AD /* RecordAudioViewController.swift in Sources */,
 				CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */,
 				CD749ACE2356F72C00C357A5 /* FlipViewController.swift in Sources */,
 				CD725AD5234F0E1D00C11FB0 /* PanAnimation.swift in Sources */,

@@ -59,13 +59,13 @@ class TapAnimator: NSObject, AnimationTargetType {
         let dot1 = CAShapeLayer()
         return dot1
     }()
-    let radius: CGFloat = 10
+    let radius: CGFloat = 20
     convenience init(_ layer: CALayer) {
         self.init()
         self.layer = layer
         dot.frame = layer.bounds
-        dot.fillColor = UIColor.gray.cgColor
-        dot.backgroundColor = UIColor.clear.cgColor
+        dot.fillColor = UIColor.white.cgColor
+        dot.backgroundColor = UIColor.red.cgColor
         layer.addSublayer(dot)
     }
     
