@@ -63,9 +63,11 @@ class TapAnimator: NSObject, AnimationTargetType {
     convenience init(_ layer: CALayer) {
         self.init()
         self.layer = layer
-        dot.frame = layer.bounds
-        dot.fillColor = UIColor.white.cgColor
-        dot.backgroundColor = UIColor.red.cgColor
+        dot.bounds = CGRect(x: 0, y: 0, width: radius * 2, height: radius * 2)
+        dot.position = CGPoint(x: 10000, y: 10000)
+        dot.borderColor = UIColor.white.cgColor
+        dot.cornerRadius = radius
+        dot.backgroundColor = UIColor.white.cgColor
         layer.addSublayer(dot)
     }
     
@@ -77,20 +79,27 @@ class TapAnimator: NSObject, AnimationTargetType {
     
     fileprivate  func showWave(_ param: TapAnimationParam,
                                completion: ((Bool) -> Void)?) {
-        let center = layer.position
-        let path = UIBezierPath(roundedRect: CGRect(x: center.x - radius,
-                                               y: center.y - radius,
-                                               width: radius * 2,
-                                               height: radius * 2),
-                           cornerRadius: radius)
-        dot.path = path.cgPath
+        
         let position = CABasicAnimation(keyPath: "position")
         position.duration = 1
         position.timingFunction = CAMediaTimingFunction(name: .linear)
         position.fromValue = param.fromPoint
         position.toValue = param.endPoint
+        position.fillMode = .forwards
+        position.isRemovedOnCompletion = false
         dot.add(position, forKey: nil)
-        delay(seconds: 1, completion: {[weak self] in
+        
+        let scale = CABasicAnimation(keyPath: "transform.scale")
+        scale.duration = 0.25
+        scale.beginTime = CACurrentMediaTime() + 1 + 0.5
+        scale.timingFunction = CAMediaTimingFunction(name: .easeOut)
+        scale.fromValue = 1
+        scale.fillMode = .forwards
+        scale.isRemovedOnCompletion = false
+        scale.toValue = 0.8
+        dot.add(scale, forKey: nil)
+        
+        delay(seconds: 1.75, completion: {[weak self] in
             guard let weakSelf = self else {
                 return
             }
@@ -155,7 +164,7 @@ class TapAnimator: NSObject, AnimationTargetType {
            group.isRemovedOnCompletion = true
            group.delegate = self
            cycle.add(group, forKey: nil)
-           dot.addSublayer(cycle)
+           layer.addSublayer(cycle)
        }
     }
     
