@@ -10,12 +10,13 @@ import Foundation
 import  UIKit
 
 class CommonAnimateParam: TapAnimationParam {
+    var waveRadius: CGFloat! = 30
     var fromPoint: CGPoint?
     var endPoint: CGPoint?
     var color: UIColor! = UIColor.gray
     var duration: Double! = 0.5
     var layer: CALayer!
-     var dotRadius: Double! = 20
+    var dotRadius: CGFloat! = 20
     
     init(_ layer: CALayer) {
         self.layer = layer

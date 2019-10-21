@@ -58,13 +58,6 @@ extension HomeViewController {
             let vcc = PanViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
-//        let slider = ListItem("滑轮类", handler: { [weak self] in
-//            guard let weakSelf = self else {
-//                return
-//            }
-//            let vcc = PanViewController()
-//            weakSelf.navigationController?.pushViewController(vcc, animated: true)
-//        })
         let flip = ListItem("VC翻转类", handler: { [weak self] in
              guard let weakSelf = self else {
                  return
@@ -72,20 +65,18 @@ extension HomeViewController {
              let vcc = FlipViewController()
              weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
-//        let record = ListItem("语音录制合并与输出", handler: { [weak self] in
-//                guard let weakSelf = self else {
-//                    return
-//                }
-//                let vcc = RecordAudioViewController()
-//                weakSelf.navigationController?.pushViewController(vcc, animated: true)
-//           })
+        let input = ListItem("多语言文本输入框", handler: { [weak self] in
+                guard let weakSelf = self else {
+                    return
+                }
+            MultiLanguageTexInputAlert.show(weakSelf)
+           })
         
         items.append(tap)
         items.append(pinch)
         items.append(move)
-//        items.append(slider)
         items.append(flip)
-//        items.append(record)
+        items.append(input)
     }
     
 }

@@ -21,7 +21,7 @@ class TapAnimationViewController: UIViewController {
         param.fromPoint = CGPoint(x: animateView.center.x, y: 2000)
         param.endPoint = animateView.center
         param.color = UIColor.white
-
+        param.layer = animateView.layer
         TapAniamtion.showWave(with: param) { (_) in
             debugPrint("complete")
         }

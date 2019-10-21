@@ -11,27 +11,14 @@ import UIKit
 
 class TapAniamtion {
     static var animations: [String: Any?] = [:]
-    
-    static func jumpSpring(with param: AnimationParam) {
-        let jump = CASpringAnimation(keyPath: "position.y")
-        jump.fromValue = param.layer.position.y + 1
-        jump.toValue = param.layer.position.y
-        jump.duration = jump.settlingDuration
-        jump.initialVelocity = 100.0
-        jump.mass = 10
-        jump.stiffness = 15000
-        jump.damping = 50
-        param.layer.add(jump, forKey: nil)
 
-    }
-    
     @discardableResult
     static func showWave(with param: TapAnimationParam,
                          completion: ((Bool) -> Void)?) -> String {
         let name = AniamtionHelper.key(param.layer.description)
           var animator = animations[name] as? TapAnimator
           if animator == nil {
-              animator = TapAnimator(param.layer)
+              animator = TapAnimator(param)
               animations[name] = animator
           }
         animator?.showWave(param, completion: { (flag) in
@@ -59,15 +46,15 @@ class TapAnimator: NSObject, AnimationTargetType {
         let dot1 = CAShapeLayer()
         return dot1
     }()
-    let radius: CGFloat = 20
-    convenience init(_ layer: CALayer) {
+    
+    convenience init(_ param: TapAnimationParam) {
         self.init()
-        self.layer = layer
-        dot.bounds = CGRect(x: 0, y: 0, width: radius * 2, height: radius * 2)
+        self.layer = param.layer
+        dot.bounds = CGRect(x: 0, y: 0, width: param.dotRadius * 2, height: param.dotRadius * 2)
         dot.position = CGPoint(x: 10000, y: 10000)
         dot.borderColor = UIColor.white.cgColor
-        dot.cornerRadius = radius
-        dot.backgroundColor = UIColor.white.cgColor
+        dot.cornerRadius = param.dotRadius
+        dot.backgroundColor = param.color.cgColor
         layer.addSublayer(dot)
     }
     
@@ -119,11 +106,11 @@ class TapAnimator: NSObject, AnimationTargetType {
        for index in 0 ... endIndex {
            let cycle = CAShapeLayer()
            cycle.borderWidth = 1
-           let cornerRadius: CGFloat = 30
+        let cornerRadius: CGFloat = param.waveRadius
            cycle.borderColor = UIColor.clear.cgColor
            cycle.cornerRadius = cornerRadius
-           cycle.frame = CGRect(x: layer.bounds.width * 0.5 - radius,
-                                y: layer.bounds.height * 0.5 - radius,
+           cycle.frame = CGRect(x: layer.bounds.width * 0.5 - param.dotRadius,
+                                y: layer.bounds.height * 0.5 - param.dotRadius,
                                 width: cornerRadius * 2,
                                 height: cornerRadius * 2)
            cycle.position = layer.position

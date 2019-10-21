@@ -9,6 +9,21 @@
 /* Begin PBXBuildFile section */
 		CD1691CC23595B93006E73AD /* RecordAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1691CA23595B93006E73AD /* RecordAudioViewController.swift */; };
 		CD1691CD23595B93006E73AD /* RecordAudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1691CB23595B93006E73AD /* RecordAudioViewController.xib */; };
+		CD2112E0235D82BC003B5202 /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112D8235D82BC003B5202 /* RxAtomic.framework */; };
+		CD2112E1235D82BC003B5202 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112D9235D82BC003B5202 /* RxRelay.framework */; };
+		CD2112E2235D82BC003B5202 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DA235D82BC003B5202 /* RxSwiftExt.framework */; };
+		CD2112E4235D82BC003B5202 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DC235D82BC003B5202 /* SnapKit.framework */; };
+		CD2112E5235D82BC003B5202 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DD235D82BC003B5202 /* RxSwift.framework */; };
+		CD2112E6235D82BC003B5202 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DE235D82BC003B5202 /* RxBlocking.framework */; };
+		CD2112E7235D82BC003B5202 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DF235D82BC003B5202 /* RxCocoa.framework */; };
+		CD2112EA235D8550003B5202 /* MultiLanguageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2112E9235D8550003B5202 /* MultiLanguageAlert.swift */; };
+		CD2112ED235D8800003B5202 /* MultiLanguageTexInputAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2112EB235D8800003B5202 /* MultiLanguageTexInputAlert.swift */; };
+		CD2112EE235D8800003B5202 /* MultiLanguageTexInputAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2112EC235D8800003B5202 /* MultiLanguageTexInputAlert.xib */; };
+		CD2112F1235D8B91003B5202 /* PadTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2112EF235D8B91003B5202 /* PadTypeCollectionViewCell.swift */; };
+		CD2112F2235D8B91003B5202 /* PadTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2112F0235D8B91003B5202 /* PadTypeCollectionViewCell.xib */; };
+		CD2112F4235D8D49003B5202 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112F3235D8D48003B5202 /* RxDataSources.framework */; };
+		CD2112F6235D8DD2003B5202 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112F5235D8DD2003B5202 /* Differentiator.framework */; };
+		CD2112F8235DBA4D003B5202 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2112F7235DBA4D003B5202 /* Wireframe.swift */; };
 		CD2FCF70234D796100E28E5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCF6F234D796100E28E5C /* AppDelegate.swift */; };
 		CD2FCF79234D796500E28E5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCF78234D796500E28E5C /* Assets.xcassets */; };
 		CD2FCF7C234D796500E28E5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCF7A234D796500E28E5C /* LaunchScreen.storyboard */; };
@@ -63,6 +78,22 @@
 /* Begin PBXFileReference section */
 		CD1691CA23595B93006E73AD /* RecordAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordAudioViewController.swift; sourceTree = "<group>"; };
 		CD1691CB23595B93006E73AD /* RecordAudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordAudioViewController.xib; sourceTree = "<group>"; };
+		CD2112D8235D82BC003B5202 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
+		CD2112D9235D82BC003B5202 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		CD2112DA235D82BC003B5202 /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = Carthage/Build/iOS/RxSwiftExt.framework; sourceTree = "<group>"; };
+		CD2112DB235D82BC003B5202 /* RxSwiftUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftUtilities.framework; path = Carthage/Build/iOS/RxSwiftUtilities.framework; sourceTree = "<group>"; };
+		CD2112DC235D82BC003B5202 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		CD2112DD235D82BC003B5202 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		CD2112DE235D82BC003B5202 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		CD2112DF235D82BC003B5202 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		CD2112E9235D8550003B5202 /* MultiLanguageAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLanguageAlert.swift; sourceTree = "<group>"; };
+		CD2112EB235D8800003B5202 /* MultiLanguageTexInputAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLanguageTexInputAlert.swift; sourceTree = "<group>"; };
+		CD2112EC235D8800003B5202 /* MultiLanguageTexInputAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiLanguageTexInputAlert.xib; sourceTree = "<group>"; };
+		CD2112EF235D8B91003B5202 /* PadTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadTypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		CD2112F0235D8B91003B5202 /* PadTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PadTypeCollectionViewCell.xib; sourceTree = "<group>"; };
+		CD2112F3235D8D48003B5202 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
+		CD2112F5235D8DD2003B5202 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
+		CD2112F7235DBA4D003B5202 /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
 		CD2FCF6C234D796100E28E5C /* AnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2FCF6F234D796100E28E5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD2FCF78234D796500E28E5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,6 +139,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD2112F6235D8DD2003B5202 /* Differentiator.framework in Frameworks */,
+				CD2112F4235D8D49003B5202 /* RxDataSources.framework in Frameworks */,
+				CD2112E0235D82BC003B5202 /* RxAtomic.framework in Frameworks */,
+				CD2112E1235D82BC003B5202 /* RxRelay.framework in Frameworks */,
+				CD2112E2235D82BC003B5202 /* RxSwiftExt.framework in Frameworks */,
+				CD2112E4235D82BC003B5202 /* SnapKit.framework in Frameworks */,
+				CD2112E5235D82BC003B5202 /* RxSwift.framework in Frameworks */,
+				CD2112E6235D82BC003B5202 /* RxBlocking.framework in Frameworks */,
+				CD2112E7235D82BC003B5202 /* RxCocoa.framework in Frameworks */,
 				CD725AD3234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,6 +169,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD2112D2235D7ED5003B5202 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				CD2FCFA4234D7C4000E28E5C /* TapAniamtion.swift */,
+				CD436427234E17500047930B /* PinchAnimation.swift */,
+				CD725AD4234F0E1D00C11FB0 /* PanAnimation.swift */,
+				CDFB49D623505C5F0083426A /* ProgressAnimation.swift */,
+				CD749AC62356F42F00C357A5 /* FlipAnimator.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		CD2112D3235D7EF5003B5202 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD2112EF235D8B91003B5202 /* PadTypeCollectionViewCell.swift */,
+				CD2112F0235D8B91003B5202 /* PadTypeCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CD2112E8235D8522003B5202 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD2112E9235D8550003B5202 /* MultiLanguageAlert.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CD2FCF63234D796100E28E5C = {
 			isa = PBXGroup;
 			children = (
@@ -186,13 +255,13 @@
 		CD2FCFA3234D7A5F00E28E5C /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				CD749AC62356F42F00C357A5 /* FlipAnimator.swift */,
-				CD2FCFA4234D7C4000E28E5C /* TapAniamtion.swift */,
-				CD436427234E17500047930B /* PinchAnimation.swift */,
-				CD725AD4234F0E1D00C11FB0 /* PanAnimation.swift */,
+				CD2112E8235D8522003B5202 /* Model */,
+				CD2112D3235D7EF5003B5202 /* View */,
+				CD2112D2235D7ED5003B5202 /* Animations */,
 				CD3BC9AB234F26A0003C8AA9 /* AnimationProtocol.swift */,
-				CDFB49D623505C5F0083426A /* ProgressAnimation.swift */,
 				CD306C4C2355CC36002ABA93 /* Common.swift */,
+				CD2112EB235D8800003B5202 /* MultiLanguageTexInputAlert.swift */,
+				CD2112EC235D8800003B5202 /* MultiLanguageTexInputAlert.xib */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -200,6 +269,16 @@
 		CD725AD1234EFF6F00C11FB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD2112F5235D8DD2003B5202 /* Differentiator.framework */,
+				CD2112F3235D8D48003B5202 /* RxDataSources.framework */,
+				CD2112D8235D82BC003B5202 /* RxAtomic.framework */,
+				CD2112DE235D82BC003B5202 /* RxBlocking.framework */,
+				CD2112DF235D82BC003B5202 /* RxCocoa.framework */,
+				CD2112D9235D82BC003B5202 /* RxRelay.framework */,
+				CD2112DD235D82BC003B5202 /* RxSwift.framework */,
+				CD2112DA235D82BC003B5202 /* RxSwiftExt.framework */,
+				CD2112DB235D82BC003B5202 /* RxSwiftUtilities.framework */,
+				CD2112DC235D82BC003B5202 /* SnapKit.framework */,
 				CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */,
 			);
 			name = Frameworks;
@@ -231,6 +310,7 @@
 		CD725AE0234F13EE00C11FB0 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				CD2112F7235DBA4D003B5202 /* Wireframe.swift */,
 				CD725AE7234F140E00C11FB0 /* Protocol.swift */,
 				CD725AE5234F140700C11FB0 /* Extensions.swift */,
 			);
@@ -257,7 +337,7 @@
 				CD2FCF68234D796100E28E5C /* Sources */,
 				CD2FCF69234D796100E28E5C /* Frameworks */,
 				CD2FCF6A234D796100E28E5C /* Resources */,
-				CD725AD0234EFF2700C11FB0 /* Run Script */,
+				CD725AD0234EFF2700C11FB0 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -355,6 +435,8 @@
 				CDFB49D523505AD50083426A /* ProgressViewController.xib in Resources */,
 				CD2FCF7C234D796500E28E5C /* LaunchScreen.storyboard in Resources */,
 				CD749ACF2356F72C00C357A5 /* FlipViewController.xib in Resources */,
+				CD2112EE235D8800003B5202 /* MultiLanguageTexInputAlert.xib in Resources */,
+				CD2112F2235D8B91003B5202 /* PadTypeCollectionViewCell.xib in Resources */,
 				CD2FCFA9234DB37600E28E5C /* PinchViewController.xib in Resources */,
 				CD725ADA234F0E4E00C11FB0 /* PanViewController.xib in Resources */,
 				CD2FCF79234D796500E28E5C /* Assets.xcassets in Resources */,
@@ -382,7 +464,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		CD725AD0234EFF2700C11FB0 /* Run Script */ = {
+		CD725AD0234EFF2700C11FB0 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -391,8 +473,17 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxAtomic.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwiftExt.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Differentiator.framework",
 			);
-			name = "Run Script";
+			name = Carthage;
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -414,7 +505,9 @@
 				CD725AD9234F0E4E00C11FB0 /* PanViewController.swift in Sources */,
 				CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */,
 				CDFB49CD235025820083426A /* TouchView.swift in Sources */,
+				CD2112ED235D8800003B5202 /* MultiLanguageTexInputAlert.swift in Sources */,
 				CDFB49CF235047940083426A /* PinchView.swift in Sources */,
+				CD2112F1235D8B91003B5202 /* PadTypeCollectionViewCell.swift in Sources */,
 				CD749ACA2356F6EF00C357A5 /* FlipSubViewController.swift in Sources */,
 				CD749AC72356F42F00C357A5 /* FlipAnimator.swift in Sources */,
 				CD306C4D2355CC36002ABA93 /* Common.swift in Sources */,
@@ -424,7 +517,9 @@
 				CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */,
 				CD749ACE2356F72C00C357A5 /* FlipViewController.swift in Sources */,
 				CD725AD5234F0E1D00C11FB0 /* PanAnimation.swift in Sources */,
+				CD2112EA235D8550003B5202 /* MultiLanguageAlert.swift in Sources */,
 				CD3BC9AF234F313E003C8AA9 /* HomeViewController.swift in Sources */,
+				CD2112F8235DBA4D003B5202 /* Wireframe.swift in Sources */,
 				CD2FCFA1234D79AB00E28E5C /* TapAnimationViewController.swift in Sources */,
 				CD2FCFA5234D7C4000E28E5C /* TapAniamtion.swift in Sources */,
 				CD3BC9AC234F26A0003C8AA9 /* AnimationProtocol.swift in Sources */,
