@@ -24,18 +24,19 @@ class MultiLanguageTexInputAlert: UIViewController {
     let selectedModel: BehaviorRelay<TextInputModel?> = .init(value: nil)
     fileprivate lazy var datas: BehaviorRelay<[TextInputModel]> = {
         return BehaviorRelay<[TextInputModel]>(value:
-            [ TextInputModel(keyboardType: 0, keyboardDesc: "简体中文", inputContent: nil, textPlaceholder: "字数不超过200字", textInputLength: 20, isSelect: true),
-                   TextInputModel(keyboardType: 0, keyboardDesc: "繁体中文", inputContent: nil, textPlaceholder: "字数不超过300字", textInputLength: 30),
-                   TextInputModel(keyboardType: 1, keyboardDesc: "美式英文", inputContent: nil, textPlaceholder: "字数不超过100字", textInputLength: 10),
-                   TextInputModel(keyboardType: 2, keyboardDesc: "英式中文", inputContent: nil, textPlaceholder: "字数不超过50字", textInputLength: 5),
-                   TextInputModel(keyboardType: 3, keyboardDesc: "日文", inputContent: nil, textPlaceholder: "字数不超过120字", textInputLength: 12),
-                   TextInputModel(keyboardType: 4, keyboardDesc: "韩文", inputContent: nil, textPlaceholder: "字数不超过150字", textInputLength: 15)])
+            [ TextInputModel(keyboardType: 0, keyboardDesc: "简体中文", inputContent: nil, textPlaceholder: "字数不超过200字", textInputLength: 2000, isSelect: true),
+                   TextInputModel(keyboardType: 0, keyboardDesc: "繁体中文", inputContent: nil, textPlaceholder: "字数不超过300字", textInputLength: 3000),
+                   TextInputModel(keyboardType: 1, keyboardDesc: "美式英文", inputContent: nil, textPlaceholder: "字数不超过100字", textInputLength: 1000),
+                   TextInputModel(keyboardType: 2, keyboardDesc: "英式中文", inputContent: nil, textPlaceholder: "字数不超过50字", textInputLength: 5000),
+                   TextInputModel(keyboardType: 3, keyboardDesc: "日文", inputContent: nil, textPlaceholder: "字数不超过120字", textInputLength: 1200),
+                   TextInputModel(keyboardType: 4, keyboardDesc: "韩文", inputContent: nil, textPlaceholder: "字数不超过150字", textInputLength: 1500)])
     }()
    fileprivate let transition = PopAnimator()
     
     static func show(_ presenter: UIViewController) {
         let vcc = MultiLanguageTexInputAlert()
         vcc.transitioningDelegate = vcc
+        vcc.modalPresentationStyle = .custom
         presenter.present(vcc, animated: true, completion: nil)
     }
     
@@ -139,15 +140,6 @@ extension MultiLanguageTexInputAlert {
             .bind(to: textPlaceholder.rx.text)
             .disposed(by: bag)
         
-        NotificationCenter.default.rx.notification(UIResponder.keyboardWillHideNotification)
-            .asObservable()
-            .map { $0.userInfo }
-            .unwrap()
-            .subscribe(onNext: { (_) in
-                debugPrint(self.selectedModel.value ?? "")
-            })
-            .disposed(by: bag)
-        
         closeBtn.rx.tap
             .subscribe(onNext: { [weak self](_) in
                 guard let weakSelf = self else {
@@ -208,43 +200,47 @@ fileprivate class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     var presenting: Bool = true
     var originFrame: CGRect = .zero
     var dismissCompletion: ((Bool) -> Void)?
+    weak var transitionContext: UIViewControllerContextTransitioning!
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return duration
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        self.transitionContext = transitionContext
         let containerView = transitionContext.containerView
+        containerView.superview?.backgroundColor = .clear
         var herbView: UIView!
+        let scaleAnimation = CASpringAnimation(keyPath: "transform.scale") //CABasicAnimation(keyPath: "transform.scale")
+        scaleAnimation.stiffness = 200
+        scaleAnimation.damping = 10
+        scaleAnimation.duration = scaleAnimation.settlingDuration
+        scaleAnimation.fillMode = .forwards
+        scaleAnimation.isRemovedOnCompletion = true
+        scaleAnimation.delegate = self
         if presenting {
             herbView = transitionContext.view(forKey: .to)!
+            scaleAnimation.fromValue = 0
+            scaleAnimation.toValue = 1
         } else {
             herbView = transitionContext.view(forKey: .from)!
+            scaleAnimation.fromValue = 1
+            scaleAnimation.toValue = 0
         }
         containerView.backgroundColor = .clear
-        let intialFrame = presenting ? originFrame : herbView.frame
-        let finalFrame = presenting ? herbView.frame : originFrame
-        
-        let xScaleFactor = presenting ? intialFrame.width / finalFrame.width : finalFrame.width / intialFrame.width
-        let yScaleFactor = presenting ? intialFrame.height / finalFrame.height : finalFrame.height / intialFrame.height
-        let scaleTransform = CGAffineTransform(scaleX: xScaleFactor, y: yScaleFactor)
-        if presenting {
-            herbView.transform = scaleTransform
-            herbView.center = CGPoint(x: finalFrame.midX, y: finalFrame.midY)
-        }
         containerView.addSubview(herbView)
         containerView.bringSubviewToFront(herbView)
-        
-        UIView.animate(withDuration: duration, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.0, options: [], animations: {
-            herbView.center = CGPoint(x: finalFrame.midX, y: finalFrame.midY)
-            herbView.transform = self.presenting ? CGAffineTransform.identity : scaleTransform
-        }) { (_) in
-            transitionContext.completeTransition(true)
-            if !self.presenting {
-                self.dismissCompletion?(true)
-            }
-        }
+        herbView.layer.add(scaleAnimation, forKey: nil)
     }
     
 
+}
+
+extension PopAnimator: CAAnimationDelegate {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        transitionContext.completeTransition(true)
+        if !presenting {
+            dismissCompletion?(flag)
+        }
+    }
 }
