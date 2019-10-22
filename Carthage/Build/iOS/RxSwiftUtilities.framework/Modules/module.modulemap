@@ -1,0 +1,11 @@
+framework module RxSwiftUtilities {
+  umbrella header "RxSwiftUtilities.h"
+
+  export *
+  module * { export * }
+}
+
+module RxSwiftUtilities.Swift {
+    header "RxSwiftUtilities-Swift.h"
+    requires objc
+}
