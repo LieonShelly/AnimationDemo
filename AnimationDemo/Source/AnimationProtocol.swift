@@ -114,3 +114,25 @@ extension AnimationBase {
 
 }
 
+enum ArrowDirection: Int {
+    case top = 0
+    case left = 1
+    case bottom = 2
+    case right = 3
+    case none = -1
+}
+
+
+/**
+ 箭头默认向上，计算出气泡的rect，判断当前rect是否超出屏幕，如果超出箭头方向向左。。。∫
+ */
+protocol TipPopParam {
+    var priorityDirection: ArrowDirection! { get set }
+    var direction: ArrowDirection! { get set }
+    var arrowPosition: CGPoint! { get set }
+    var arrorwSize: CGSize! { get set }
+    var cornorRadius: CGFloat! { get set }
+    var popRect: CGRect! { get set }
+    var borderColor: UIColor! { get set }
+    var borderWidth: CGFloat! { get set }
+}

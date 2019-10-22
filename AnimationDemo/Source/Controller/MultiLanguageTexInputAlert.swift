@@ -112,7 +112,6 @@ extension MultiLanguageTexInputAlert {
             .asObservable()
             .bind(to: selectedModel)
             .disposed(by: bag)
-    
       
         let textChange = textView.rx.text.orEmpty
             .map { (text) -> String in

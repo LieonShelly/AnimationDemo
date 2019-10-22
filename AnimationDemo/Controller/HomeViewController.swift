@@ -66,17 +66,24 @@ extension HomeViewController {
              weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
         let input = ListItem("多语言文本输入框", handler: { [weak self] in
-                guard let weakSelf = self else {
+            guard let weakSelf = self else {
                     return
-                }
+            }
             MultiLanguageTexInputAlert.show(weakSelf)
            })
-        
+        let pop = ListItem("提示气泡", handler: { [weak self] in
+            guard let weakSelf = self else {
+                            return
+                        }
+            let vcc = TipPopViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+            })
         items.append(tap)
         items.append(pinch)
         items.append(move)
         items.append(flip)
         items.append(input)
+        items.append(pop)
     }
     
 }
