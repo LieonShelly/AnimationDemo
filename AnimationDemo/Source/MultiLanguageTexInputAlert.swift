@@ -21,15 +21,15 @@ class MultiLanguageTexInputAlert: UIViewController {
     @IBOutlet weak var closeBtn: UIButton!
     let bag = DisposeBag()
     @IBOutlet weak var inputViewCenterY: NSLayoutConstraint!
-    let selectedModel: BehaviorRelay<TextInputModel?> = .init(value: nil)
+    fileprivate let selectedModel: BehaviorRelay<TextInputModel?> = .init(value: nil)
     fileprivate lazy var datas: BehaviorRelay<[TextInputModel]> = {
         return BehaviorRelay<[TextInputModel]>(value:
             [ TextInputModel(keyboardType: 0, keyboardDesc: "简体中文", inputContent: nil, textPlaceholder: "字数不超过200字", textInputLength: 2000, isSelect: true),
-                   TextInputModel(keyboardType: 0, keyboardDesc: "繁体中文", inputContent: nil, textPlaceholder: "字数不超过300字", textInputLength: 3000),
-                   TextInputModel(keyboardType: 1, keyboardDesc: "美式英文", inputContent: nil, textPlaceholder: "字数不超过100字", textInputLength: 1000),
-                   TextInputModel(keyboardType: 2, keyboardDesc: "英式中文", inputContent: nil, textPlaceholder: "字数不超过50字", textInputLength: 5000),
-                   TextInputModel(keyboardType: 3, keyboardDesc: "日文", inputContent: nil, textPlaceholder: "字数不超过120字", textInputLength: 1200),
-                   TextInputModel(keyboardType: 4, keyboardDesc: "韩文", inputContent: nil, textPlaceholder: "字数不超过150字", textInputLength: 1500)])
+                   TextInputModel(keyboardType: 1, keyboardDesc: "繁体中文", inputContent: nil, textPlaceholder: "字数不超过300字", textInputLength: 3000),
+                   TextInputModel(keyboardType: 2, keyboardDesc: "美式英文", inputContent: nil, textPlaceholder: "字数不超过100字", textInputLength: 1000),
+                   TextInputModel(keyboardType: 3, keyboardDesc: "英式英文", inputContent: nil, textPlaceholder: "字数不超过50字", textInputLength: 5000),
+                   TextInputModel(keyboardType: 4, keyboardDesc: "日文", inputContent: nil, textPlaceholder: "字数不超过120字", textInputLength: 1200),
+                   TextInputModel(keyboardType: 5, keyboardDesc: "韩文", inputContent: nil, textPlaceholder: "字数不超过150字", textInputLength: 1500)])
     }()
    fileprivate let transition = PopAnimator()
     
@@ -70,6 +70,7 @@ extension MultiLanguageTexInputAlert {
         
         datas.map { $0.first }
             .unwrap()
+            .take(1)
             .bind(to: selectedModel)
             .disposed(by: bag)
 
@@ -79,6 +80,8 @@ extension MultiLanguageTexInputAlert {
             .bind(to: textPlaceholder.rx.isHidden)
             .disposed(by: bag)
         
+        let allSavedModels: BehaviorRelay<[TextInputModel]> = .init(value: [])
+        let selectedModel = self.selectedModel
         func selected(_ indexPath: IndexPath) {
              var models = datas.value
              datas.accept(models)
@@ -88,6 +91,9 @@ extension MultiLanguageTexInputAlert {
                  models[index] = newValue
              }
              var selectedModel = models[indexPath.row]
+            if let index = allSavedModels.value.lastIndex(where: { $0.keyboardType == selectedModel.keyboardType}) {
+                selectedModel = allSavedModels.value[index]
+            }
              selectedModel.isSelect = true
              models[indexPath.row] = selectedModel
              datas.accept(models)
@@ -104,7 +110,7 @@ extension MultiLanguageTexInputAlert {
             .bind(to: selectedModel)
             .disposed(by: bag)
     
-        let selectedModel = self.selectedModel
+      
         let textChange = textView.rx.text.orEmpty
             .map { (text) -> String in
                 let length = selectedModel.value?.textInputLength ?? 0
@@ -140,6 +146,19 @@ extension MultiLanguageTexInputAlert {
             .bind(to: textPlaceholder.rx.text)
             .disposed(by: bag)
         
+        selectedModel.asObservable()
+            .unwrap()
+            .subscribe(onNext: { selectedValue in
+                var allSavedValue = allSavedModels.value
+                if let index = allSavedModels.value.lastIndex(where: { $0.keyboardType == selectedValue.keyboardType}) {
+                     allSavedValue[index] = selectedValue
+                } else {
+                    allSavedValue.append(selectedValue)
+                }
+                allSavedModels.accept(allSavedValue)
+            })
+            .disposed(by: bag)
+        
         closeBtn.rx.tap
             .subscribe(onNext: { [weak self](_) in
                 guard let weakSelf = self else {
@@ -153,7 +172,7 @@ extension MultiLanguageTexInputAlert {
         enterBtn.rx.tap
             .mapToVoid()
             .flatMap {
-                alert.promptAlert(title: nil, message: String(describing: self.selectedModel.value!))
+                alert.promptAlert(title: nil, message: String(describing: allSavedModels.value))
             }
             .subscribe()
             .disposed(by: bag)
@@ -225,7 +244,6 @@ fileprivate class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             scaleAnimation.toValue = 1
             let toVC = transitionContext.viewController(forKey: .to)
             finalFrame = transitionContext.finalFrame(for: toVC!)
-            
         } else {
             herbView = transitionContext.view(forKey: .from)!
             scaleAnimation.fromValue = 1
