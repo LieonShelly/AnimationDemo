@@ -218,15 +218,23 @@ fileprivate class PopAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         scaleAnimation.fillMode = .forwards
         scaleAnimation.isRemovedOnCompletion = true
         scaleAnimation.delegate = self
+        var finalFrame: CGRect = .zero
         if presenting {
             herbView = transitionContext.view(forKey: .to)!
             scaleAnimation.fromValue = 0
             scaleAnimation.toValue = 1
+            let toVC = transitionContext.viewController(forKey: .to)
+            finalFrame = transitionContext.finalFrame(for: toVC!)
+            
         } else {
             herbView = transitionContext.view(forKey: .from)!
             scaleAnimation.fromValue = 1
             scaleAnimation.toValue = 0
+            let fromVC = transitionContext.viewController(forKey: .from)
+            finalFrame = transitionContext.finalFrame(for: fromVC!)
+            herbView.transform = CGAffineTransform(scaleX: 0, y: 0)
         }
+        herbView.frame = finalFrame
         containerView.backgroundColor = .clear
         containerView.addSubview(herbView)
         containerView.bringSubviewToFront(herbView)
