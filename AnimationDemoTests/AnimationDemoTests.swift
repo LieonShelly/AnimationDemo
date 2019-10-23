@@ -47,6 +47,15 @@ class AnimationDemoTests: XCTestCase {
         let points = startPoint.randomPoinits(endPoint: endPoint, pointCount: 100)
         debugPrint("points:\(points)")
     }
+    
+    func testInsetBy() {
+        let frame = CGRect(x: 30, y: 70, width: 80, height: 100)
+        let newFrame = frame.inset(by: UIEdgeInsets(top: 10,
+                                                    left: 20,
+                                                    bottom: 30,
+                                                    right: 40))
+        debugPrint("newFrame:\(newFrame) - frame:\(frame)")
+    }
 
 }
 

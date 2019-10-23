@@ -30,6 +30,10 @@ class TipPop: UIViewController {
     static func show(_ param: TipPopInputParam) {
         let pop = TipPop(param)
         let keyWindow = UIApplication.shared.keyWindow!
+        keyWindow.frame.inset(by: UIEdgeInsets(top: param.minInset,
+                                               left: param.minInset,
+                                               bottom: param.minInset,
+                                               right: param.minInset))
         pop.view.frame = UIApplication.shared.keyWindow!.bounds
         keyWindow.rootViewController!.addChild(pop)
         keyWindow.addSubview(pop.view)
@@ -42,8 +46,8 @@ class TipPop: UIViewController {
         var param = CommonTipPopParam()
         param.minInset = self.param.minInset
         param.priorityDirection = self.param.arrowDirection
-        param.direction =  self.param.arrowDirection
-        param.arrowPosition =  self.param.point
+        param.direction = self.param.arrowDirection
+        param.arrowPosition = adjustOutsidePoint(self.param.point, minInset: self.param.minInset)
         param.popRect = caculatePopRect(with: self.param, pathParam: param)
         param = ckeckArrowValid(param)
         let pth = PathHelper.path(with: param)
@@ -74,49 +78,76 @@ class TipPop: UIViewController {
                                  y: arrowPosition!.y + pathParam.arrorwSize.height,
                                  width: popSize!.width,
                                  height: popSize!.height)
-            return adjustScreenOutsideFrame(popRect, minInset: param.minInset)
+            return adjustOutsideFrame(popRect, minInset: param.minInset)
         case .left:
             let popRect = CGRect(x: arrowPosition!.x + arrowSize!.width,
                                  y: arrowPosition!.y - popSize!.height * 0.5,
                                            width: popSize!.width,
                                            height: popSize!.height)
-            return adjustScreenOutsideFrame(popRect, minInset: pathParam.minInset)
+            return adjustOutsideFrame(popRect, minInset: pathParam.minInset)
         case .bottom:
             let popRect = CGRect(x: arrowPosition!.x - popSize!.width * 0.5,
                                  y: arrowPosition!.y - popSize!.height - arrowSize!.height,
                                                      width: popSize!.width,
                                                      height: popSize!.height)
-            return adjustScreenOutsideFrame(popRect, minInset: param.minInset)
+            return adjustOutsideFrame(popRect, minInset: param.minInset)
         case .right:
             let popRect = CGRect(x: arrowPosition!.x - arrowSize!.width - popSize!.width,
                                  y: arrowPosition!.y - popSize!.height * 0.5,
                                                    width: popSize!.width,
                                                    height: popSize!.height)
-          return adjustScreenOutsideFrame(popRect, minInset: param.minInset)
+          return adjustOutsideFrame(popRect, minInset: param.minInset)
         default:
             return .zero
         }
     
     }
     
-    fileprivate func adjustScreenOutsideFrame(_ popRect: CGRect, minInset: CGFloat) -> CGRect {
+    fileprivate func adjustOutsideFrame(_ popRect: CGRect, minInset: CGFloat) -> CGRect {
         var popRect = popRect
-        let keyWindow = UIApplication.shared.keyWindow!
-        if !keyWindow.frame.contains(popRect) {
-          if popRect.origin.x < 0 { // 左边超出边界
-              popRect.origin.x = minInset
+        let vFrame = validFrame(UIApplication.shared.keyWindow!, minInset: minInset)
+        if !vFrame.contains(popRect) {
+            if popRect.origin.x < vFrame.origin.x { // 左边超出边界
+              popRect.origin.x = vFrame.origin.x
           }
-          if popRect.origin.y < 0 { // 顶部超出边界
-              popRect.origin.y = minInset
+          if popRect.origin.y < vFrame.origin.y { // 顶部超出边界
+              popRect.origin.y = vFrame.origin.y
           }
-          if popRect.maxX > keyWindow.frame.maxX { // 右边超出边界
-              popRect.origin.x = keyWindow.frame.maxX - minInset - popRect.width
+          if popRect.maxX > vFrame.maxX { // 右边超出边界
+              popRect.origin.x = vFrame.maxX - popRect.width
           }
-          if popRect.maxY > keyWindow.bounds.maxY { // 底部超出边界
-              popRect.origin.y = keyWindow.frame.maxY - minInset - popRect.height
+          if popRect.maxY > vFrame.maxY { // 底部超出边界
+              popRect.origin.y = vFrame.maxY - popRect.height
           }
         }
         return popRect
+    }
+    
+    fileprivate func adjustOutsidePoint(_ point: CGPoint, minInset: CGFloat) -> CGPoint {
+        var point = point
+        let vFrame = validFrame(UIApplication.shared.keyWindow!, minInset: minInset)
+        if !vFrame.contains(point) {
+            if point.x < vFrame.origin.x { // 左边超出边界
+                point.x = vFrame.origin.x
+            }
+            if point.y < vFrame.origin.y { // 顶部超出边界
+                point.y = vFrame.origin.y
+            }
+            if point.x > vFrame.maxX { // 右边超出边界
+                point.x = vFrame.maxX
+            }
+            if point.y > vFrame.maxY { // 底部超出边界
+                point.y = vFrame.maxY
+            }
+        }
+        return point
+    }
+    
+    fileprivate func validFrame(_ relyView: UIView, minInset: CGFloat) -> CGRect {
+        return relyView.frame.inset(by: UIEdgeInsets(top: minInset,
+                                                     left: minInset,
+                                                     bottom: minInset,
+                                                     right: minInset))
     }
     
     
@@ -168,7 +199,7 @@ class TipPop: UIViewController {
         switch pathParam.direction {
         case .top:
             /// 如果包含，则向调整相反的方向
-            if popRect.contains(arrowPosition) {
+            if popRect.contains(arrowPosition) || arrowPosition.y == popRect.maxY {
                 pathParam.direction = .bottom
                 popRect.origin = CGPoint(x: arrowPosition.x - popRect.width * 0.5,
                                          y: arrowPosition.y - popRect.height - arrowSize.height)
@@ -189,7 +220,7 @@ class TipPop: UIViewController {
                 pathParam.arrowPosition.x = noCornorPopRect.maxX - pathParam.arrorwSize.width * 0.5
             }
         case .left:
-            if popRect.contains(arrowPosition) {
+            if popRect.contains(arrowPosition) || arrowPosition.x == popRect.maxX {
                 pathParam.direction = .right
                 popRect.origin = CGPoint(x: arrowPosition.x - arrowSize.width - popRect.width,
                                          y: arrowPosition.y - popRect.height * 0.5)
@@ -209,7 +240,7 @@ class TipPop: UIViewController {
                 pathParam.arrowPosition.y = noCornorPopRect.maxY
             }
         case .bottom:
-            if popRect.contains(arrowPosition) {
+            if popRect.contains(arrowPosition) || arrowPosition.y == popRect.origin.y {
                 pathParam.direction = .top
                 popRect.origin = CGPoint(x: arrowPosition.x - popRect.width * 0.5,
                                      y: arrowPosition.y + arrowSize.height)
@@ -229,7 +260,7 @@ class TipPop: UIViewController {
               pathParam.arrowPosition.x = noCornorPopRect.maxX - pathParam.arrorwSize.width * 0.5
             }
         case .right:
-            if popRect.contains(arrowPosition) {
+            if popRect.contains(arrowPosition) || arrowPosition.x == popRect.origin.x {
                 pathParam.direction = .left
                 popRect.origin = CGPoint(x: arrowPosition.x + arrowSize.width,
                                          y: arrowPosition.y - popRect.height * 0.5)
@@ -251,7 +282,7 @@ class TipPop: UIViewController {
         default:
             break
         }
-        pathParam.popRect = adjustScreenOutsideFrame(popRect, minInset: param.minInset)
+        pathParam.popRect = adjustOutsideFrame(popRect, minInset: param.minInset)
         return pathParam
     }
 }
