@@ -128,6 +128,7 @@ protocol TipPopInputParam {
     var point: CGPoint! { get set }
     var arrowDirection: ArrowDirection! { get set }
     var popSize: CGSize! { get set }
+    var minInset: CGFloat! { get set }
 }
 
 /**
@@ -142,4 +143,5 @@ protocol TipPopParam {
     var popRect: CGRect! { get set }
     var borderColor: UIColor! { get set }
     var borderWidth: CGFloat! { get set }
+    var minInset: CGFloat! { get set }
 }
