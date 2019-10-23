@@ -123,6 +123,13 @@ enum ArrowDirection: Int {
 }
 
 
+
+protocol TipPopInputParam {
+    var point: CGPoint! { get set }
+    var arrowDirection: ArrowDirection! { get set }
+    var popSize: CGSize! { get set }
+}
+
 /**
  箭头默认向上，计算出气泡的rect，判断当前rect是否超出屏幕，如果超出箭头方向向左。。。∫
  */

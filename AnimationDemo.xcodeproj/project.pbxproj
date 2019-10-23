@@ -24,6 +24,7 @@
 		CD2112F4235D8D49003B5202 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112F3235D8D48003B5202 /* RxDataSources.framework */; };
 		CD2112F6235D8DD2003B5202 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112F5235D8DD2003B5202 /* Differentiator.framework */; };
 		CD2112F8235DBA4D003B5202 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2112F7235DBA4D003B5202 /* Wireframe.swift */; };
+		CD2880D3235FE38700F20EF1 /* TipPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2880D2235FE38700F20EF1 /* TipPop.swift */; };
 		CD2FCF70234D796100E28E5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCF6F234D796100E28E5C /* AppDelegate.swift */; };
 		CD2FCF79234D796500E28E5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCF78234D796500E28E5C /* Assets.xcassets */; };
 		CD2FCF7C234D796500E28E5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCF7A234D796500E28E5C /* LaunchScreen.storyboard */; };
@@ -96,6 +97,7 @@
 		CD2112F3235D8D48003B5202 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		CD2112F5235D8DD2003B5202 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
 		CD2112F7235DBA4D003B5202 /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
+		CD2880D2235FE38700F20EF1 /* TipPop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipPop.swift; sourceTree = "<group>"; };
 		CD2FCF6C234D796100E28E5C /* AnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2FCF6F234D796100E28E5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD2FCF78234D796500E28E5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -306,6 +308,8 @@
 				CD749ACD2356F72C00C357A5 /* FlipViewController.xib */,
 				CD1691CA23595B93006E73AD /* RecordAudioViewController.swift */,
 				CD1691CB23595B93006E73AD /* RecordAudioViewController.xib */,
+				CDADB234235EE7A7002A57FD /* TipPopViewController.swift */,
+				CDADB235235EE7A7002A57FD /* TipPopViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -323,10 +327,9 @@
 		CDADB233235EE776002A57FD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CD2880D2235FE38700F20EF1 /* TipPop.swift */,
 				CD2112EB235D8800003B5202 /* MultiLanguageTexInputAlert.swift */,
 				CD2112EC235D8800003B5202 /* MultiLanguageTexInputAlert.xib */,
-				CDADB234235EE7A7002A57FD /* TipPopViewController.swift */,
-				CDADB235235EE7A7002A57FD /* TipPopViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 			files = (
 				CDFB49D423505AD50083426A /* ProgressViewController.swift in Sources */,
 				CD436428234E17500047930B /* PinchAnimation.swift in Sources */,
+				CD2880D3235FE38700F20EF1 /* TipPop.swift in Sources */,
 				CD2FCF70234D796100E28E5C /* AppDelegate.swift in Sources */,
 				CD725AD9234F0E4E00C11FB0 /* PanViewController.swift in Sources */,
 				CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */,
