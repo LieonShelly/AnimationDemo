@@ -55,6 +55,8 @@
 		CD7D50B223613C4600FA9C07 /* PopSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50B123613C4600FA9C07 /* PopSerivce.swift */; };
 		CD7D50B42361768E00FA9C07 /* Param.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50B32361768E00FA9C07 /* Param.swift */; };
 		CD7D50B7236191CC00FA9C07 /* IFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50B6236191CC00FA9C07 /* IFExtension.swift */; };
+		CD88DD602361E4F200B9DB8F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD88DD5E2361E4F200B9DB8F /* TestViewController.swift */; };
+		CD88DD612361E4F200B9DB8F /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD88DD5F2361E4F200B9DB8F /* TestViewController.xib */; };
 		CDADB236235EE7A7002A57FD /* TipPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADB234235EE7A7002A57FD /* TipPopViewController.swift */; };
 		CDADB237235EE7A7002A57FD /* TipPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDADB235235EE7A7002A57FD /* TipPopViewController.xib */; };
 		CDFB49CD235025820083426A /* TouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49CC235025820083426A /* TouchView.swift */; };
@@ -138,6 +140,8 @@
 		CD7D50B123613C4600FA9C07 /* PopSerivce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopSerivce.swift; sourceTree = "<group>"; };
 		CD7D50B32361768E00FA9C07 /* Param.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Param.swift; sourceTree = "<group>"; };
 		CD7D50B6236191CC00FA9C07 /* IFExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFExtension.swift; sourceTree = "<group>"; };
+		CD88DD5E2361E4F200B9DB8F /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		CD88DD5F2361E4F200B9DB8F /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		CDADB234235EE7A7002A57FD /* TipPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipPopViewController.swift; sourceTree = "<group>"; };
 		CDADB235235EE7A7002A57FD /* TipPopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipPopViewController.xib; sourceTree = "<group>"; };
 		CDFB49CC235025820083426A /* TouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchView.swift; sourceTree = "<group>"; };
@@ -320,6 +324,8 @@
 				CD1691CB23595B93006E73AD /* RecordAudioViewController.xib */,
 				CDADB234235EE7A7002A57FD /* TipPopViewController.swift */,
 				CDADB235235EE7A7002A57FD /* TipPopViewController.xib */,
+				CD88DD5E2361E4F200B9DB8F /* TestViewController.swift */,
+				CD88DD5F2361E4F200B9DB8F /* TestViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -489,6 +495,7 @@
 				CDADB237235EE7A7002A57FD /* TipPopViewController.xib in Resources */,
 				CD749ACB2356F6EF00C357A5 /* FlipSubViewController.xib in Resources */,
 				CD1691CD23595B93006E73AD /* RecordAudioViewController.xib in Resources */,
+				CD88DD612361E4F200B9DB8F /* TestViewController.xib in Resources */,
 				CD3BC9B0234F313E003C8AA9 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,6 +570,7 @@
 				CD2FCFA8234DB37600E28E5C /* PinchViewController.swift in Sources */,
 				CDFB49D723505C5F0083426A /* ProgressAnimation.swift in Sources */,
 				CD1691CC23595B93006E73AD /* RecordAudioViewController.swift in Sources */,
+				CD88DD602361E4F200B9DB8F /* TestViewController.swift in Sources */,
 				CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */,
 				CD749ACE2356F72C00C357A5 /* FlipViewController.swift in Sources */,
 				CD725AD5234F0E1D00C11FB0 /* PanAnimation.swift in Sources */,

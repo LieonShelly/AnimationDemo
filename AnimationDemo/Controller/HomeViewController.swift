@@ -78,12 +78,21 @@ extension HomeViewController {
             let vcc = TipPopViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
             })
+        let test = ListItem("测试t控制器", handler: { [weak self] in
+                  guard let weakSelf = self else {
+                                  return
+                              }
+                  let vcc = TestViewController()
+                  weakSelf.navigationController?.pushViewController(vcc, animated: true)
+                  })
+        //
         items.append(tap)
         items.append(pinch)
         items.append(move)
         items.append(flip)
         items.append(input)
         items.append(pop)
+        items.append(test)
     }
     
 }

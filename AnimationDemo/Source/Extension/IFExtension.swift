@@ -11,20 +11,18 @@ import UIKit
 
 extension String {
     
-    func width(attributes: [NSAttributedString.Key : Any], height: CGFloat = 15) -> CGFloat {
-        let attributeStr = NSMutableAttributedString(string: self, attributes: attributes)
-        let rect = attributeStr.boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: height),
-                options: [.usesFontLeading, .usesLineFragmentOrigin],
+    func width(attributes: [NSAttributedString.Key : Any], height: CGFloat) -> CGFloat {
+        let rect = (self as NSString).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: height),
+                options: [.usesLineFragmentOrigin, .truncatesLastVisibleLine, .usesFontLeading],
                 context: nil)
-         return ceil(rect.width)
+        return ceil(rect.size.width * rect.size.height / height)
      }
     
     func height(attributes: [NSAttributedString.Key : Any], width: CGFloat) -> CGFloat {
-        let attributeStr = NSMutableAttributedString(string: self, attributes: attributes)
-        let rect = attributeStr.boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)),
-               options: [.usesFontLeading, .usesLineFragmentOrigin],
+        let rect = (self as NSString).boundingRect(with: CGSize(width: width, height: CGFloat(MAXFLOAT)),
+                                             options: [.usesLineFragmentOrigin, .truncatesLastVisibleLine, .usesFontLeading],
                context: nil)
-           return ceil(rect.height)
+           return ceil(rect.size.width * rect.size.height / width)
        }
     
     func width(fontSize: CGFloat, height: CGFloat = 15) -> CGFloat {

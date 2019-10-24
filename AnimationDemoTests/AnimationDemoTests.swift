@@ -57,6 +57,19 @@ class AnimationDemoTests: XCTestCase {
         debugPrint("newFrame:\(newFrame) - frame:\(frame)")
     }
 
+    func testTextSize() {
+        let text = "asdf阿士大夫几哈就是打分哈市大世纪东方阿萨德回房间卡是大V和阿斯顿发水电费阿斯顿发几哈时代峰峻阿萨德规范化"
+        let limmitWidth: CGFloat = 200
+        let limmitHeight: CGFloat = 100
+        let height = text.height(fontSize: 15, width: limmitWidth)
+        let width = text.width(fontSize: 15, height: limmitHeight)
+        print("height(fontSize:\(height) - width(fontSize:\(width)")
+        let prap = NSMutableParagraphStyle()
+        prap.lineSpacing = 10
+        let aWidth = text.width(attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 13), NSAttributedString.Key.paragraphStyle: prap], height: limmitHeight)
+        let aHeight = text.height(attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 13),  NSAttributedString.Key.paragraphStyle: prap], width: limmitWidth)
+         print("- NSAttributedString height(fontSize:\(aHeight) - width(fontSize:\(aWidth)")
+    }
 }
 
 

@@ -229,10 +229,10 @@ class PopSerivce {
                                             height: pathParam.popRect.height)
             return noCornorPopRect
         case .left:
-            let noCornorPopRect = CGRect(x: pathParam.popRect.origin.x,
-                                            y: pathParam.popRect.origin.y + pathParam.cornorRadius,
-                                            width: pathParam.popRect.width,
-                                            height: pathParam.popRect.height - 2 * pathParam.cornorRadius)
+            let noCornorPopRect = pathParam.popRect.inset(by: UIEdgeInsets(top: pathParam.cornorRadius,
+                                                                           left: pathParam.cornorRadius,
+                                                                           bottom: pathParam.cornorRadius,
+                                                                           right: pathParam.cornorRadius))
             return noCornorPopRect
         case .bottom:
             let noCornorPopRect = CGRect(x: popRect.origin.x + pathParam.cornorRadius,
@@ -241,14 +241,34 @@ class PopSerivce {
                                                 height: pathParam.popRect.height)
             return noCornorPopRect
         case .right:
-            let noCornorPopRect = CGRect(x: pathParam.popRect.origin.x,
-                                        y: pathParam.popRect.origin.y + pathParam.cornorRadius,
-                                        width: pathParam.popRect.width,
-                                        height: pathParam.popRect.height - 2 * pathParam.cornorRadius)
+            let noCornorPopRect = pathParam.popRect.inset(by: UIEdgeInsets(top: pathParam.cornorRadius,
+                                                                            left: pathParam.cornorRadius,
+                                                                            bottom: pathParam.cornorRadius,
+                                                                            right: pathParam.cornorRadius))
                 return noCornorPopRect
         default:
             break
         }
         return .zero
+    }
+}
+
+
+extension PopSerivce {
+    static func getAnchorPoint(_ param: TipPopParam) -> CGPoint {
+        var point = CGPoint(x: 0.5, y: 0.5)
+        switch param.direction {
+        case .top:
+            point = CGPoint(x: param.arrowPosition.x / param.popRect.width, y: 0)
+        case .bottom:
+            point = CGPoint(x: param.arrowPosition.x / param.popRect.width, y: 1)
+        case .left:
+            point = CGPoint(x: 0, y: (param.popRect.height - param.arrowPosition.y) / param.popRect.height)
+        case .right:
+            point = CGPoint(x: 1, y: (param.popRect.height - param.arrowPosition.y) / param.popRect.height)
+        default:
+            break
+        }
+        return point
     }
 }
