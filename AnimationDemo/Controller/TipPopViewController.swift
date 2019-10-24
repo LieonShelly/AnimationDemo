@@ -61,12 +61,13 @@ class TipPopViewController: UIViewController {
     @IBAction func textTypeBtnAction(_ sender: UIButton) {
         getSettingValue()
         var textParam = CommonTipPopTextParam()
-        textParam.backgroudColor = UIColor.clear
+        textParam.backgroudColor = UIColor.purple
         textParam.textColor = .black
         textParam.font = UIFont.systemFont(ofSize: 13)
         textParam.text = "asdhfjha阿萨德发挥世纪东方就按时 氨甲环酸的规范化静安寺鬼地方个家哈桑的高房价哈阿士大夫噶时间很短法规及阿申达股份间距啊还是给多发几个"
         param.textParam = textParam
         param.arrowPosition = sender.center
+        param.displayView = nil
         TipPop.show(param)
     }
 }

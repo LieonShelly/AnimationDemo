@@ -54,6 +54,7 @@
 		CD7D50B023613AD300FA9C07 /* PathSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50AF23613AD300FA9C07 /* PathSerivce.swift */; };
 		CD7D50B223613C4600FA9C07 /* PopSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50B123613C4600FA9C07 /* PopSerivce.swift */; };
 		CD7D50B42361768E00FA9C07 /* Param.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50B32361768E00FA9C07 /* Param.swift */; };
+		CD7D50B7236191CC00FA9C07 /* IFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50B6236191CC00FA9C07 /* IFExtension.swift */; };
 		CDADB236235EE7A7002A57FD /* TipPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADB234235EE7A7002A57FD /* TipPopViewController.swift */; };
 		CDADB237235EE7A7002A57FD /* TipPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDADB235235EE7A7002A57FD /* TipPopViewController.xib */; };
 		CDFB49CD235025820083426A /* TouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49CC235025820083426A /* TouchView.swift */; };
@@ -136,6 +137,7 @@
 		CD7D50AF23613AD300FA9C07 /* PathSerivce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathSerivce.swift; sourceTree = "<group>"; };
 		CD7D50B123613C4600FA9C07 /* PopSerivce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopSerivce.swift; sourceTree = "<group>"; };
 		CD7D50B32361768E00FA9C07 /* Param.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Param.swift; sourceTree = "<group>"; };
+		CD7D50B6236191CC00FA9C07 /* IFExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFExtension.swift; sourceTree = "<group>"; };
 		CDADB234235EE7A7002A57FD /* TipPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipPopViewController.swift; sourceTree = "<group>"; };
 		CDADB235235EE7A7002A57FD /* TipPopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipPopViewController.xib; sourceTree = "<group>"; };
 		CDFB49CC235025820083426A /* TouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchView.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 		CD2FCFA3234D7A5F00E28E5C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				CD7D50B52361916F00FA9C07 /* Extension */,
 				CD7D50AE23613A3F00FA9C07 /* Service */,
 				CDADB233235EE776002A57FD /* Controller */,
 				CD2112E8235D8522003B5202 /* Model */,
@@ -339,6 +342,14 @@
 				CD7D50B32361768E00FA9C07 /* Param.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		CD7D50B52361916F00FA9C07 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CD7D50B6236191CC00FA9C07 /* IFExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		CDADB233235EE776002A57FD /* Controller */ = {
@@ -559,6 +570,7 @@
 				CD2112EA235D8550003B5202 /* MultiLanguageAlert.swift in Sources */,
 				CD3BC9AF234F313E003C8AA9 /* HomeViewController.swift in Sources */,
 				CD2112F8235DBA4D003B5202 /* Wireframe.swift in Sources */,
+				CD7D50B7236191CC00FA9C07 /* IFExtension.swift in Sources */,
 				CD2FCFA1234D79AB00E28E5C /* TapAnimationViewController.swift in Sources */,
 				CD7D50B223613C4600FA9C07 /* PopSerivce.swift in Sources */,
 				CD2FCFA5234D7C4000E28E5C /* TapAniamtion.swift in Sources */,

@@ -104,7 +104,7 @@ extension UICollectionView {
     }
 
 }
-
+/**
 extension String {
     func width(fontSize: CGFloat, height: CGFloat = 15) -> CGFloat {
         let font = UIFont.systemFont(ofSize: fontSize)
@@ -154,8 +154,7 @@ extension String {
         return groupStrs
     }
 }
-
-
+**/
 extension ObservableType {
     
     func catchErrorJustComplete() -> Observable<Element> {

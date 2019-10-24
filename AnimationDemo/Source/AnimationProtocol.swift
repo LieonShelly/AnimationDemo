@@ -134,8 +134,24 @@ protocol TipPopParam {
 
 protocol TipPopTextAttribute {
     var font: UIFont! { get set }
-    var textColor: UIColor! {get set }
+    var textColor: UIColor! { get set }
     var textAlignment: NSTextAlignment! { get set }
     var text: String? { get set }
     var backgroudColor: UIColor? { get set }
+    var lineSpacing: CGFloat! { get set }
+    var sizeLimitType: TipPopTextSizeLimitType! { get set }
+}
+
+enum TipPopTextSizeLimitType {
+    case width(CGFloat)
+    case height(CGFloat)
+    
+    var value: CGFloat {
+        switch self {
+        case .width(let value):
+            return value
+        case .height(let value):
+            return value
+        }
+    }
 }

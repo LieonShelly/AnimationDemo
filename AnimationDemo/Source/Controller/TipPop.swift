@@ -46,24 +46,29 @@ class TipPop: UIViewController {
         popLayer.fillColor = param.fillColor.cgColor
         popLayer.strokeColor = param.borderColor.cgColor
         popLayer.lineWidth = param.borderWidth
+        var displayView = param.displayView
+        if displayView == nil, let textParam = param.textParam {
+            let font = textParam.font ?? UIFont.systemFont(ofSize: 13)
+            textLabel.font = font
+            textLabel.textColor = textParam.textColor
+            textLabel.textAlignment = textParam.textAlignment
+            textLabel.backgroundColor = textParam.backgroudColor
+            textLabel.numberOfLines = 0
+            displayView = textLabel
+        }
         param.arrowPosition = PopSerivce.adjustOutsidePoint(self.param.arrowPosition, minInset: self.param.minInset)
         param.popRect = PopSerivce.caculatePopRect(with: self.param)
         self.param = PopSerivce.ckeckArrowValid(param)
         let pth = PathSerivce.path(with: param)
         popLayer.path = pth.cgPath
         view.layer.addSublayer(popLayer)
-        var displayView = param.displayView
-        if displayView == nil {
-            textLabel.font = param.textParam?.font ?? UIFont.systemFont(ofSize: 13)
-            textLabel.textColor = param.textParam?.textColor ?? UIColor.black
-            textLabel.textAlignment = param.textParam?.textAlignment ?? .center
-            textLabel.backgroundColor = param.textParam?.backgroudColor ?? .clear
-            textLabel.numberOfLines = 0
-            textLabel.text = param.textParam?.text
-            displayView = textLabel
-        }
         displayView!.frame = PopSerivce.noCornerPopRect(param)
         view.addSubview(displayView!)
+        
+        if let text = param.textParam?.text, let textParam =  param.textParam {
+           let spacingText = text.withlineSpacing(textParam.lineSpacing)
+           textLabel.attributedText = spacingText.0
+        }
     }
   
 }

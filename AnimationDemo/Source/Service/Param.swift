@@ -26,6 +26,8 @@ struct CommonTipPopParam: TipPopParam {
 }
 
 struct CommonTipPopTextParam: TipPopTextAttribute {
+    var lineSpacing: CGFloat! = 10
+    var sizeLimitType: TipPopTextSizeLimitType! = .height(100)
     var textColor: UIColor! = UIColor.black
     var font: UIFont! = UIFont.boldSystemFont(ofSize: 14)
     var textAlignment: NSTextAlignment! = .center
