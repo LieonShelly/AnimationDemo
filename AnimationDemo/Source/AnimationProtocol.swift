@@ -35,7 +35,6 @@ extension PinchParam {
     }
 }
 
-
 protocol PanParam: AnimationParam {
     var points: [CGPoint]! { get set }
     var dotStartFillColor: UIColor! { get set }
@@ -89,10 +88,6 @@ protocol TapAnimationParam: AnimationParam {
     var waveRadius: CGFloat! { get set }
 }
 
-extension TapAniamtion {
-    
-}
-
 extension TapAnimationParam {
     var duration: Double? {
         return 0.25
@@ -122,26 +117,25 @@ enum ArrowDirection: Int {
     case none = -1
 }
 
-
-
-protocol TipPopInputParam {
-    var point: CGPoint! { get set }
-    var arrowDirection: ArrowDirection! { get set }
-    var popSize: CGSize! { get set }
-    var minInset: CGFloat! { get set }
-}
-
-/**
- 箭头默认向上，计算出气泡的rect，判断当前rect是否超出屏幕，如果超出箭头方向向左。。。∫
- */
 protocol TipPopParam {
-    var priorityDirection: ArrowDirection! { get set }
+    var popSize: CGSize! { get set }
     var direction: ArrowDirection! { get set }
     var arrowPosition: CGPoint! { get set }
     var arrorwSize: CGSize! { get set }
     var cornorRadius: CGFloat! { get set }
     var popRect: CGRect! { get set }
+    var fillColor: UIColor! {get set}
     var borderColor: UIColor! { get set }
     var borderWidth: CGFloat! { get set }
     var minInset: CGFloat! { get set }
+    var displayView: UIView? { get set }
+    var textParam: TipPopTextAttribute? { get set }
+}
+
+protocol TipPopTextAttribute {
+    var font: UIFont! { get set }
+    var textColor: UIColor! {get set }
+    var textAlignment: NSTextAlignment! { get set }
+    var text: String? { get set }
+    var backgroudColor: UIColor? { get set }
 }

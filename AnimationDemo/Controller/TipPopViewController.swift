@@ -7,41 +7,35 @@
 //
 
 import UIKit
-
-struct CommonTipPopParam: TipPopParam {
-    var minInset: CGFloat!
-    var priorityDirection: ArrowDirection!
-    var direction: ArrowDirection!
-    var arrowPosition: CGPoint!
-    var arrorwSize: CGSize! = CGSize(width: 20, height: 20)
-    var cornorRadius: CGFloat! = 10
-    var popRect: CGRect!
-    var borderColor: UIColor! = UIColor.yellow
-    var borderWidth: CGFloat! = 1
-}
-
-struct CommonTipPopInputParam: TipPopInputParam {
-    var minInset: CGFloat! = 10
-    var point: CGPoint!
-    var arrowDirection: ArrowDirection!
-    var popSize: CGSize!
-}
+import IQKeyboardManagerSwift
 
 class TipPopViewController: UIViewController {
-    @IBOutlet weak var animateView: UIView!
+    @IBOutlet weak var popHeight: UITextField!
+    @IBOutlet weak var popWidth: UITextField!
+    @IBOutlet weak var popCornor: UITextField!
+    @IBOutlet weak var arrowHeight: UITextField!
+    @IBOutlet weak var arrowWidth: UITextField!
     fileprivate var selectedBtn: UIButton?
-    fileprivate var param: CommonTipPopInputParam = CommonTipPopInputParam()
+    fileprivate lazy var param: CommonTipPopParam = CommonTipPopParam()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.tapAction(_:)))
-        animateView.isUserInteractionEnabled = true
-        animateView.addGestureRecognizer(tap)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        IQKeyboardManager.shared.enable = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        IQKeyboardManager.shared.enable = false
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let location = touches.first?.location(in: view)
-        param.point = location!
-        param.popSize = CGSize(width: 200, height: 80)
+        param.arrowPosition = location!
         TipPop.show(param)
     }
     
@@ -49,20 +43,47 @@ class TipPopViewController: UIViewController {
         selectedBtn?.isSelected = false
         sender.isSelected = true
         selectedBtn = sender
-        param.arrowDirection = ArrowDirection(rawValue: sender.tag) ?? .top
+        param.direction = ArrowDirection(rawValue: sender.tag) ?? .top
     }
     
-    @objc fileprivate func tapAction(_ tap: UITapGestureRecognizer) {
-        let location = tap.location(in: tap.view!)
-        let keywindow = UIApplication.shared.keyWindow!
-        let point = keywindow.convert(location, from: animateView)
-        param.point = point
-        param.popSize = CGSize(width: 200, height: 80)
+  
+    @IBAction func customViewAction(_ sender: UIButton) {
+        getSettingValue()
+        let location = sender.center
+        param.textParam = nil
+        param.arrowPosition = location
+        let customView = UIView()
+        customView.backgroundColor = .purple
+        param.displayView = customView
+        TipPop.show(param)
+    }
+    
+    @IBAction func textTypeBtnAction(_ sender: UIButton) {
+        getSettingValue()
+        var textParam = CommonTipPopTextParam()
+        textParam.backgroudColor = UIColor.clear
+        textParam.textColor = .black
+        textParam.font = UIFont.systemFont(ofSize: 13)
+        textParam.text = "asdhfjha阿萨德发挥世纪东方就按时 氨甲环酸的规范化静安寺鬼地方个家哈桑的高房价哈阿士大夫噶时间很短法规及阿申达股份间距啊还是给多发几个"
+        param.textParam = textParam
+        param.arrowPosition = sender.center
         TipPop.show(param)
     }
 }
 
 extension TipPopViewController {
     
-    
+    fileprivate func getSettingValue() {
+          let popWidth = Float(self.popWidth!.text ?? "0")
+          let popHeight = Float(self.popHeight!.text ?? "0")
+          let popCornor = Float(self.popCornor!.text ?? "0")
+          let arrowHeight = Float(self.arrowHeight!.text ?? "0")
+          let arrowWidth = Float(self.arrowWidth!.text ?? "0")
+          param.arrorwSize = CGSize(width: CGFloat(arrowWidth!),
+                                    height: CGFloat(arrowHeight!))
+          param.cornorRadius = CGFloat(popCornor!)
+          param.popSize = CGSize(width: CGFloat(popWidth!),
+                                 height: CGFloat(popHeight!))
+      }
+      
 }

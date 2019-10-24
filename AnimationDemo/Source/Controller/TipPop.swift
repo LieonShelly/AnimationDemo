@@ -8,11 +8,13 @@
 
 import UIKit
 
-
 class TipPop: UIViewController {
-    var param: TipPopInputParam!
-    
-    convenience init(_ param: TipPopInputParam) {
+    var param: TipPopParam!
+    fileprivate lazy var textLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    convenience init(_ param: TipPopParam) {
         self.init()
         self.param = param
     }
@@ -27,7 +29,7 @@ class TipPop: UIViewController {
         view.removeFromSuperview()
     }
 
-    static func show(_ param: TipPopInputParam) {
+    static func show(_ param: TipPopParam) {
         let pop = TipPop(param)
         let keyWindow = UIApplication.shared.keyWindow!
         keyWindow.frame.inset(by: UIEdgeInsets(top: param.minInset,
@@ -41,18 +43,27 @@ class TipPop: UIViewController {
 
     fileprivate func configUI() {
         let popLayer = CAShapeLayer()
-        popLayer.fillColor = UIColor.yellow.cgColor
-        popLayer.strokeColor = UIColor.clear.cgColor
-        var param = CommonTipPopParam()
-        param.minInset = self.param.minInset
-        param.priorityDirection = self.param.arrowDirection
-        param.direction = self.param.arrowDirection
-        param.arrowPosition = PopSerivce.adjustOutsidePoint(self.param.point, minInset: self.param.minInset)
-        param.popRect = PopSerivce.caculatePopRect(with: self.param, pathParam: param)
-        param = PopSerivce.ckeckArrowValid(param)
+        popLayer.fillColor = param.fillColor.cgColor
+        popLayer.strokeColor = param.borderColor.cgColor
+        popLayer.lineWidth = param.borderWidth
+        param.arrowPosition = PopSerivce.adjustOutsidePoint(self.param.arrowPosition, minInset: self.param.minInset)
+        param.popRect = PopSerivce.caculatePopRect(with: self.param)
+        self.param = PopSerivce.ckeckArrowValid(param)
         let pth = PathSerivce.path(with: param)
         popLayer.path = pth.cgPath
         view.layer.addSublayer(popLayer)
+        var displayView = param.displayView
+        if displayView == nil {
+            textLabel.font = param.textParam?.font ?? UIFont.systemFont(ofSize: 13)
+            textLabel.textColor = param.textParam?.textColor ?? UIColor.black
+            textLabel.textAlignment = param.textParam?.textAlignment ?? .center
+            textLabel.backgroundColor = param.textParam?.backgroudColor ?? .clear
+            textLabel.numberOfLines = 0
+            textLabel.text = param.textParam?.text
+            displayView = textLabel
+        }
+        displayView!.frame = PopSerivce.noCornerPopRect(param)
+        view.addSubview(displayView!)
     }
   
 }

@@ -20,18 +20,17 @@ class PopSerivce {
         2.3.2如果不包含
         1. 箭头在顶部时，箭头的rect的x必须在poprect内（除去圆角半径）
     */
-   static func caculatePopRect(with inputParam: TipPopInputParam,
-                                    pathParam: TipPopParam) -> CGRect {
-       let popSize = inputParam.popSize
-       let arrowPosition = inputParam.point
+    static func caculatePopRect(with pathParam: TipPopParam) -> CGRect {
+       let popSize = pathParam.popSize
+       let arrowPosition = pathParam.arrowPosition
        let arrowSize = pathParam.arrorwSize
-       switch inputParam.arrowDirection {
+       switch pathParam.direction {
        case .top:
            let popRect = CGRect(x: arrowPosition!.x - popSize!.width * 0.5,
                                 y: arrowPosition!.y + pathParam.arrorwSize.height,
                                 width: popSize!.width,
                                 height: popSize!.height)
-           return adjustOutsideFrame(popRect, minInset: inputParam.minInset)
+           return adjustOutsideFrame(popRect, minInset: pathParam.minInset)
        case .left:
            let popRect = CGRect(x: arrowPosition!.x + arrowSize!.width,
                                 y: arrowPosition!.y - popSize!.height * 0.5,
@@ -43,20 +42,20 @@ class PopSerivce {
                                 y: arrowPosition!.y - popSize!.height - arrowSize!.height,
                                                     width: popSize!.width,
                                                     height: popSize!.height)
-           return adjustOutsideFrame(popRect, minInset: inputParam.minInset)
+           return adjustOutsideFrame(popRect, minInset: pathParam.minInset)
        case .right:
            let popRect = CGRect(x: arrowPosition!.x - arrowSize!.width - popSize!.width,
                                 y: arrowPosition!.y - popSize!.height * 0.5,
                                                   width: popSize!.width,
                                                   height: popSize!.height)
-         return adjustOutsideFrame(popRect, minInset: inputParam.minInset)
+         return adjustOutsideFrame(popRect, minInset: pathParam.minInset)
        default:
            return .zero
        }
-   
-   }
-   
-   static func adjustOutsideFrame(_ popRect: CGRect, minInset: CGFloat) -> CGRect {
+
+    }
+
+    static func adjustOutsideFrame(_ popRect: CGRect, minInset: CGFloat) -> CGRect {
        var popRect = popRect
        let vFrame = validFrame(UIApplication.shared.keyWindow!, minInset: minInset)
        if !vFrame.contains(popRect) {
@@ -74,9 +73,9 @@ class PopSerivce {
          }
        }
        return popRect
-   }
-   
-   static func adjustOutsidePoint(_ point: CGPoint, minInset: CGFloat) -> CGPoint {
+    }
+
+    static func adjustOutsidePoint(_ point: CGPoint, minInset: CGFloat) -> CGPoint {
        var point = point
        let vFrame = validFrame(UIApplication.shared.keyWindow!, minInset: minInset)
        if !vFrame.contains(point) {
@@ -94,17 +93,16 @@ class PopSerivce {
            }
        }
        return point
-   }
-   
-   static func validFrame(_ relyView: UIView, minInset: CGFloat) -> CGRect {
+    }
+
+    static func validFrame(_ relyView: UIView, minInset: CGFloat) -> CGRect {
        return relyView.frame.inset(by: UIEdgeInsets(top: minInset,
                                                     left: minInset,
                                                     bottom: minInset,
                                                     right: minInset))
-   }
-   
-   
-   static func popRealFrame(with param: TipPopParam) -> CGRect {
+    }
+
+    static func popRealFrame(with param: TipPopParam) -> CGRect {
       switch param.direction {
       case .top:
           let realFrame = CGRect(x: param.popRect.origin.x,
@@ -135,18 +133,19 @@ class PopSerivce {
       }
       
       return .zero
-   }
+    }
 
-   /**
+    /**
     校验气泡的有效性（箭头的位置不能动）：
     1.箭头是否在poprect之外
     2.箭头的位置是否在有效边上
     */
-   static func ckeckArrowValid<T: TipPopParam>(_ pathParam: T) -> T {
+    static func ckeckArrowValid(_ pathParam: TipPopParam) -> TipPopParam {
        var pathParam = pathParam
        let arrowPosition = pathParam.arrowPosition!
        let arrowSize = pathParam.arrorwSize!
        var popRect = pathParam.popRect!
+       let noCornorPopRect = noCornerPopRect(pathParam)
        switch pathParam.direction {
        case .top:
            /// 如果包含，则向调整相反的方向
@@ -155,11 +154,6 @@ class PopSerivce {
                popRect.origin = CGPoint(x: arrowPosition.x - popRect.width * 0.5,
                                         y: arrowPosition.y - popRect.height - arrowSize.height)
            }
-           /// 判断三角形的x是否超出没有圆角的rect
-           let noCornorPopRect = CGRect(x: popRect.origin.x + pathParam.cornorRadius,
-                                        y: popRect.origin.y,
-                                        width: popRect.width - pathParam.cornorRadius * 2,
-                                        height: pathParam.popRect.height)
            let arrowBottomLeftPoint = CGPoint(x: pathParam.arrowPosition.x - pathParam.arrorwSize.width * 0.5,
                                               y: pathParam.popRect.origin.y)
            if arrowBottomLeftPoint.x < noCornorPopRect.origin.x { //左边超出
@@ -176,10 +170,6 @@ class PopSerivce {
                popRect.origin = CGPoint(x: arrowPosition.x - arrowSize.width - popRect.width,
                                         y: arrowPosition.y - popRect.height * 0.5)
            }
-           let noCornorPopRect = CGRect(x: pathParam.popRect.origin.x,
-                                        y: pathParam.popRect.origin.y + pathParam.cornorRadius,
-                                        width: pathParam.popRect.width,
-                                        height: pathParam.popRect.height - 2 * pathParam.cornorRadius * 2)
            let arrowTopRightPoint = CGPoint(x: pathParam.arrowPosition.x + arrowSize.width,
                                             y: pathParam.arrowPosition.y - pathParam.arrorwSize.height * 0.5)
            let arrowBottomRightPoint = CGPoint(x: pathParam.arrowPosition.x + arrowSize.width,
@@ -196,10 +186,6 @@ class PopSerivce {
                popRect.origin = CGPoint(x: arrowPosition.x - popRect.width * 0.5,
                                     y: arrowPosition.y + arrowSize.height)
            }
-           let noCornorPopRect = CGRect(x: popRect.origin.x + pathParam.cornorRadius,
-                                              y: popRect.origin.y,
-                                              width: popRect.width - pathParam.cornorRadius * 2,
-                                              height: pathParam.popRect.height)
            let arrowTopLeftPoint = CGPoint(x: pathParam.arrowPosition.x - pathParam.arrorwSize.width * 0.5,
                                            y: pathParam.popRect.maxY + pathParam.arrorwSize.height)
            if arrowTopLeftPoint.x < noCornorPopRect.origin.x { //左边超出
@@ -216,10 +202,6 @@ class PopSerivce {
                popRect.origin = CGPoint(x: arrowPosition.x + arrowSize.width,
                                         y: arrowPosition.y - popRect.height * 0.5)
            }
-           let noCornorPopRect = CGRect(x: pathParam.popRect.origin.x,
-                                       y: pathParam.popRect.origin.y + pathParam.cornorRadius,
-                                       width: pathParam.popRect.width,
-                                       height: pathParam.popRect.height - 2 * pathParam.cornorRadius * 2)
            let arrowTopLeftPoint = CGPoint(x: pathParam.arrowPosition.x - arrowSize.width,
                                           y: pathParam.arrowPosition.y - pathParam.arrorwSize.height * 0.5)
            let arrowBottomLeftPoint = CGPoint(x: pathParam.arrowPosition.x - arrowSize.width,
@@ -235,35 +217,35 @@ class PopSerivce {
        }
        pathParam.popRect = adjustOutsideFrame(popRect, minInset: pathParam.minInset)
        return pathParam
-   }
+    }
 
     static func noCornerPopRect(_ pathParam: TipPopParam) -> CGRect {
         let popRect = pathParam.popRect!
         switch pathParam.direction {
         case .top:
             let noCornorPopRect = CGRect(x: popRect.origin.x + pathParam.cornorRadius,
-                                         y: popRect.origin.y,
-                                         width: popRect.width - pathParam.cornorRadius * 2,
-                                         height: pathParam.popRect.height)
+                                            y: popRect.origin.y,
+                                            width: popRect.width - pathParam.cornorRadius * 2,
+                                            height: pathParam.popRect.height)
             return noCornorPopRect
         case .left:
             let noCornorPopRect = CGRect(x: pathParam.popRect.origin.x,
-                                         y: pathParam.popRect.origin.y + pathParam.cornorRadius,
-                                         width: pathParam.popRect.width,
-                                         height: pathParam.popRect.height - 2 * pathParam.cornorRadius * 2)
+                                            y: pathParam.popRect.origin.y + pathParam.cornorRadius,
+                                            width: pathParam.popRect.width,
+                                            height: pathParam.popRect.height - 2 * pathParam.cornorRadius)
             return noCornorPopRect
         case .bottom:
             let noCornorPopRect = CGRect(x: popRect.origin.x + pathParam.cornorRadius,
-                                               y: popRect.origin.y,
-                                               width: popRect.width - pathParam.cornorRadius * 2,
-                                               height: pathParam.popRect.height)
+                                                y: popRect.origin.y,
+                                                width: popRect.width - pathParam.cornorRadius * 2,
+                                                height: pathParam.popRect.height)
             return noCornorPopRect
         case .right:
             let noCornorPopRect = CGRect(x: pathParam.popRect.origin.x,
                                         y: pathParam.popRect.origin.y + pathParam.cornorRadius,
                                         width: pathParam.popRect.width,
-                                        height: pathParam.popRect.height - 2 * pathParam.cornorRadius * 2)
-             return noCornorPopRect
+                                        height: pathParam.popRect.height - 2 * pathParam.cornorRadius)
+                return noCornorPopRect
         default:
             break
         }
