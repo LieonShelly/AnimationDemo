@@ -39,6 +39,7 @@ class TipPop: UIViewController {
         pop.view.frame = UIApplication.shared.keyWindow!.bounds
         keyWindow.rootViewController!.addChild(pop)
         keyWindow.addSubview(pop.view)
+    
     }
 
     fileprivate func configUI() {
@@ -46,6 +47,15 @@ class TipPop: UIViewController {
         popLayer.fillColor = param.fillColor.cgColor
         popLayer.strokeColor = param.borderColor.cgColor
         popLayer.lineWidth = param.borderWidth
+        
+        param.arrowPosition = PopSerivce.adjustOutsidePoint(self.param.arrowPosition, minInset: self.param.minInset)
+        param.popRect = PopSerivce.caculatePopRect(with: self.param)
+        self.param = PopSerivce.ckeckArrowValid(param)
+        let realFrame = PopSerivce.popRealFrame(with: param)
+        
+        let bgView = UIView(frame: realFrame)
+        bgView.backgroundColor = .red
+        view.addSubview(bgView)
         var displayView = param.displayView
         if displayView == nil, let textParam = param.textParam {
             let font = textParam.font ?? UIFont.systemFont(ofSize: 13)
@@ -56,19 +66,22 @@ class TipPop: UIViewController {
             textLabel.numberOfLines = 0
             displayView = textLabel
         }
-        param.arrowPosition = PopSerivce.adjustOutsidePoint(self.param.arrowPosition, minInset: self.param.minInset)
-        param.popRect = PopSerivce.caculatePopRect(with: self.param)
-        self.param = PopSerivce.ckeckArrowValid(param)
-        let pth = PathSerivce.path(with: param)
-        popLayer.path = pth.cgPath
-        view.layer.addSublayer(popLayer)
-        displayView!.frame = PopSerivce.noCornerPopRect(param)
-        view.addSubview(displayView!)
+
+         param.arrowPosition = bgView.convert(param.arrowPosition, from: view)
+         param.popRect = bgView.convert(param.popRect, from: view)
+         let pth = PathSerivce.path(with: param)
+         popLayer.path = pth.cgPath
+         bgView.layer.addSublayer(popLayer)
+    
+        let noCornerPopRect = PopSerivce.noCornerPopRect(param)
+        displayView!.frame = noCornerPopRect
+        bgView.addSubview(displayView!)
         
         if let text = param.textParam?.text, let textParam =  param.textParam {
            let spacingText = text.withlineSpacing(textParam.lineSpacing)
            textLabel.attributedText = spacingText.0
         }
     }
+    
   
 }
