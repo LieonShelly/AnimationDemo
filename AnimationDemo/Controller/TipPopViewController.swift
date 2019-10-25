@@ -39,6 +39,19 @@ class TipPopViewController: UIViewController {
         TipPop.show(param)
     }
     
+    @IBAction func sizeTextBtnAction(_ sender: UIButton) {
+        var textParam = CommonTipPopTextParam()
+        textParam.backgroudColor = UIColor.clear
+        textParam.textColor = .black
+        textParam.font = UIFont.systemFont(ofSize: 13)
+        textParam.text = "asdhfjha阿萨德发挥世纪东方就按时 氨甲环酸的规范化静安寺鬼地方个家哈"
+        param.textParam = textParam
+        param.popSize = CGSize(width: 100, height: 40)
+        param.arrowPosition = sender.center
+        param.displayView = nil
+        TipPop.show(param)
+    }
+    
     @IBAction func btnAction(_ sender: UIButton) {
         selectedBtn?.isSelected = false
         sender.isSelected = true

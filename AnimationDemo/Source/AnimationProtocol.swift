@@ -146,6 +146,7 @@ protocol TipPopTextAttribute {
 enum TipPopTextSizeLimitType {
     case width(CGFloat)
     case height(CGFloat)
+    case none
     
     var value: CGFloat {
         switch self {
@@ -153,6 +154,8 @@ enum TipPopTextSizeLimitType {
             return value
         case .height(let value):
             return value
+        case .none:
+            return 0
         }
     }
 }

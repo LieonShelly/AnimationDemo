@@ -116,7 +116,7 @@ class TipPop: UIView, AnimationBase {
     
     fileprivate func configTextLabelUI(_ param: TipPopParam,  bgView: UIView) {
         var param = param
-        if let text = param.textParam?.text, let textParam = param.textParam {
+        if let text = param.textParam?.text, var textParam = param.textParam {
             let spacingText = text.withlineSpacing(textParam.lineSpacing)
             let textLabel = UILabel()
             let font = textParam.font ?? UIFont.systemFont(ofSize: 13)
@@ -126,19 +126,21 @@ class TipPop: UIView, AnimationBase {
             textLabel.backgroundColor = textParam.backgroudColor
             textLabel.numberOfLines = 0
             textLabel.attributedText = spacingText.0
+            if param.popSize != .zero {
+                textParam.sizeLimitType = TipPopTextSizeLimitType.none
+            }
             switch textParam.sizeLimitType {
             case .width(let value):
-                textLabel.frame.size.width = value
-                textLabel.sizeToFit()
-                param.popSize = textLabel.frame.size
+                 textLabel.frame.size.width = value
+                 textLabel.sizeToFit()
+                 param.popSize = textLabel.frame.size
             case .height(let value):
-                textLabel.frame.size.height = value
-                textLabel.sizeToFit()
-                param.popSize = textLabel.frame.size
+                 textLabel.frame.size.height = value
+                 textLabel.sizeToFit()
+                 param.popSize = textLabel.frame.size
             default:
                 break
             }
-            debugPrint("textLabel-size:", textLabel.frame.size)
             param.arrowPosition = PopSerivce.adjustOutsidePoint(param.arrowPosition, minInset: param.minInset)
             param.popRect = PopSerivce.caculatePopRect(with: param)
             param = PopSerivce.ckeckArrowValid(param)
