@@ -9,14 +9,24 @@
 import UIKit
 
 class TipPop: UIView, AnimationBase {
+    fileprivate lazy var coverBtn: UIButton = {
+        let btn = UIButton()
+        btn.addTarget(self, action: #selector(self.dismiss), for: .touchUpInside)
+        return btn
+    }()
     
     convenience init(_ param: TipPopParam, frame: CGRect) {
         self.init(frame: frame)
-        configUI(param)
+        configCoverBtn(param)
+        configPop(param)
     }
+    
     convenience init(_ params: [TipPopParam], frame: CGRect) {
         self.init(frame: frame)
-        params.forEach(configUI)
+        if let firstParam = params.first {
+            configCoverBtn(firstParam)
+        }
+        params.forEach(configPop)
       }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -39,7 +49,7 @@ class TipPop: UIView, AnimationBase {
         return pop
     }
     
-    func dismiss() {
+    @objc func dismiss() {
         UIView.animate(withDuration: 0.25, animations: {
             self.alpha = 0
             self.transform = CGAffineTransform(scaleX: 0, y: 0)
@@ -49,7 +59,7 @@ class TipPop: UIView, AnimationBase {
         }
     }
 
-    fileprivate func configUI(_ param: TipPopParam) {
+    fileprivate func configPop(_ param: TipPopParam) {
         let bgView = createBgView(param)
         if param.textParam != nil {
             configTextLabelUI(param, bgView: bgView)
@@ -57,6 +67,7 @@ class TipPop: UIView, AnimationBase {
           configCustomUI(param, bgView: bgView)
         }
     }
+    
     fileprivate func configCustomUI(_ param: TipPopParam, bgView: UIView) {
         bgView.backgroundColor = .red
         var param = param
@@ -172,6 +183,12 @@ class TipPop: UIView, AnimationBase {
         let bgView = UIView()
         bgView.backgroundColor = .clear
         return bgView
+    }
+    
+    fileprivate func configCoverBtn(_ param: TipPopParam) {
+        coverBtn.backgroundColor = param.backgroundColor
+        coverBtn.frame = bounds
+        addSubview(coverBtn)
     }
     
     fileprivate func configPopLayer(_ param: TipPopParam,

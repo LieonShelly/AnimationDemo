@@ -118,6 +118,7 @@ enum ArrowDirection: Int {
 }
 
 protocol TipPopParam {
+    var backgroundColor: UIColor! { get set }
     var popSize: CGSize! { get set }
     var direction: ArrowDirection! { get set }
     var arrowPosition: CGPoint! { get set }

@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 struct CommonTipPopParam: TipPopParam {
-    var fillColor: UIColor! = UIColor.yellow
+    var backgroundColor: UIColor! = UIColor.black.withAlphaComponent(0.3)
+    var fillColor: UIColor! = UIColor.white
     var textParam: TipPopTextAttribute?
     var displayView: UIView?
     var minInset: CGFloat! = 10
@@ -20,7 +21,7 @@ struct CommonTipPopParam: TipPopParam {
     var arrorwSize: CGSize! = CGSize(width: 10, height: 10)
     var cornorRadius: CGFloat! = 3
     var popRect: CGRect!
-    var borderColor: UIColor! = UIColor.red
+    var borderColor: UIColor! = UIColor.clear
     var borderWidth: CGFloat! = 1
     var popSize: CGSize! = CGSize(width: 200, height: 100)
 }
