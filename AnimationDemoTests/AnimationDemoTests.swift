@@ -54,7 +54,11 @@ class AnimationDemoTests: XCTestCase {
                                                     left: 20,
                                                     bottom: 30,
                                                     right: 40))
-        debugPrint("newFrame:\(newFrame) - frame:\(frame)")
+        let ngFrame = frame.inset(by: UIEdgeInsets(top: -10,
+                                                         left: -10,
+                                                         bottom: -30,
+                                                         right: -40))
+        debugPrint("ngFrame:\(ngFrame) - frame:\(frame)")
     }
 
     func testTextSize() {
@@ -70,6 +74,7 @@ class AnimationDemoTests: XCTestCase {
         let aHeight = text.height(attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 13),  NSAttributedString.Key.paragraphStyle: prap], width: limmitWidth)
          print("- NSAttributedString height(fontSize:\(aHeight) - width(fontSize:\(aWidth)")
     }
+    
 }
 
 

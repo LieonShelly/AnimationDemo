@@ -175,10 +175,10 @@ class PopSerivce {
            let arrowBottomRightPoint = CGPoint(x: pathParam.arrowPosition.x + arrowSize.width,
                                                y: pathParam.arrowPosition.y + pathParam.arrorwSize.height * 0.5)
            if arrowTopRightPoint.y < noCornorPopRect.origin.y { //上边超出
-               pathParam.arrowPosition.y = noCornorPopRect.origin.y
+               pathParam.arrowPosition.y = noCornorPopRect.origin.y  + arrowSize.height * 0.5
            }
            if arrowBottomRightPoint.y > noCornorPopRect.maxY { // 下边超出
-               pathParam.arrowPosition.y = noCornorPopRect.maxY
+            pathParam.arrowPosition.y = noCornorPopRect.maxY - arrowSize.height * 0.5
            }
        case .bottom:
            if popRect.contains(arrowPosition) || arrowPosition.y == popRect.origin.y {
@@ -207,10 +207,10 @@ class PopSerivce {
            let arrowBottomLeftPoint = CGPoint(x: pathParam.arrowPosition.x - arrowSize.width,
                                              y: pathParam.arrowPosition.y + pathParam.arrorwSize.height * 0.5)
            if arrowTopLeftPoint.y < noCornorPopRect.origin.y { //上边超出
-               pathParam.arrowPosition.y = noCornorPopRect.origin.y
+               pathParam.arrowPosition.y = noCornorPopRect.origin.y + arrowSize.height * 0.5
            }
            if arrowBottomLeftPoint.y > noCornorPopRect.maxY { // 下边超出
-               pathParam.arrowPosition.y = noCornorPopRect.maxY
+               pathParam.arrowPosition.y = noCornorPopRect.maxY - arrowSize.height * 0.5
            }
        default:
            break
@@ -219,14 +219,14 @@ class PopSerivce {
        return pathParam
     }
 
+    /// 去掉圆角的rect
     static func noCornerPopRect(_ pathParam: TipPopParam) -> CGRect {
-        let popRect = pathParam.popRect!
         switch pathParam.direction {
         case .top:
-            let noCornorPopRect = CGRect(x: popRect.origin.x + pathParam.cornorRadius,
-                                            y: popRect.origin.y,
-                                            width: popRect.width - pathParam.cornorRadius * 2,
-                                            height: pathParam.popRect.height)
+            let noCornorPopRect = pathParam.popRect.inset(by: UIEdgeInsets(top: pathParam.cornorRadius,
+                                                                        left: pathParam.cornorRadius,
+                                                                        bottom: pathParam.cornorRadius,
+                                                                        right: pathParam.cornorRadius))
             return noCornorPopRect
         case .left:
             let noCornorPopRect = pathParam.popRect.inset(by: UIEdgeInsets(top: pathParam.cornorRadius,
@@ -235,10 +235,10 @@ class PopSerivce {
                                                                            right: pathParam.cornorRadius))
             return noCornorPopRect
         case .bottom:
-            let noCornorPopRect = CGRect(x: popRect.origin.x + pathParam.cornorRadius,
-                                                y: popRect.origin.y,
-                                                width: popRect.width - pathParam.cornorRadius * 2,
-                                                height: pathParam.popRect.height)
+            let noCornorPopRect = pathParam.popRect.inset(by: UIEdgeInsets(top: pathParam.cornorRadius,
+                                                                            left: pathParam.cornorRadius,
+                                                                            bottom: pathParam.cornorRadius,
+                                                                            right: pathParam.cornorRadius))
             return noCornorPopRect
         case .right:
             let noCornorPopRect = pathParam.popRect.inset(by: UIEdgeInsets(top: pathParam.cornorRadius,
@@ -263,9 +263,9 @@ extension PopSerivce {
         case .bottom:
             point = CGPoint(x: param.arrowPosition.x / param.popRect.width, y: 1)
         case .left:
-            point = CGPoint(x: 0, y: (param.popRect.height - param.arrowPosition.y) / param.popRect.height)
+            point = CGPoint(x: 0, y: 1 - (param.popRect.height - param.arrowPosition.y) / param.popRect.height)
         case .right:
-            point = CGPoint(x: 1, y: (param.popRect.height - param.arrowPosition.y) / param.popRect.height)
+            point = CGPoint(x: 1, y: 1 - (param.popRect.height - param.arrowPosition.y) / param.popRect.height)
         default:
             break
         }

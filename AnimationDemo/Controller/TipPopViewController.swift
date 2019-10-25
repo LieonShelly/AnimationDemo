@@ -46,13 +46,30 @@ class TipPopViewController: UIViewController {
         param.direction = ArrowDirection(rawValue: sender.tag) ?? .top
     }
     
-  
+    @IBAction func manyPopBtnAction(_ sender: Any) {
+        var params: [TipPopParam] = []
+        for index in stride(from: 80, to: view.bounds.height, by: 50) {
+            let location = CGPoint(x: 40, y: index + 10)
+            var param = CommonTipPopParam()
+            param.direction = .left
+            param.popSize = CGSize(width: 50, height: 50)
+            param.arrowPosition = location
+            param.textParam = nil
+            let customView = UIView()
+            customView.backgroundColor = .purple
+            param.displayView = customView
+            params.append(param)
+        }
+        TipPop.show(params)
+    }
+    
     @IBAction func customViewAction(_ sender: UIButton) {
         getSettingValue()
         let location = sender.center
         param.textParam = nil
         param.arrowPosition = location
         let customView = UIView()
+//        customView.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
         customView.backgroundColor = .purple
         param.displayView = customView
         TipPop.show(param)
@@ -64,7 +81,7 @@ class TipPopViewController: UIViewController {
         textParam.backgroudColor = UIColor.clear
         textParam.textColor = .black
         textParam.font = UIFont.systemFont(ofSize: 13)
-        textParam.text = "asdhfjha阿萨德发挥世纪东方就按时 氨甲环酸的规范化静安寺鬼地方个家哈桑的高房价哈阿士大夫噶个家哈桑的高房价哈阿士大夫噶个家哈桑的高房价哈阿士大夫噶个家哈桑的高房价哈阿士大夫噶时个"
+        textParam.text = "asdhfjha阿萨德发挥世纪东方就按时 氨甲环酸的规范化静安寺鬼地方个家哈"
         param.textParam = textParam
         param.arrowPosition = sender.center
         param.displayView = nil

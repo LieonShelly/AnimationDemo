@@ -17,7 +17,7 @@ struct CommonTipPopParam: TipPopParam {
     var priorityDirection: ArrowDirection!
     var direction: ArrowDirection! = .top
     var arrowPosition: CGPoint!
-    var arrorwSize: CGSize! = CGSize(width: 20, height: 20)
+    var arrorwSize: CGSize! = CGSize(width: 10, height: 10)
     var cornorRadius: CGFloat! = 3
     var popRect: CGRect!
     var borderColor: UIColor! = UIColor.red
