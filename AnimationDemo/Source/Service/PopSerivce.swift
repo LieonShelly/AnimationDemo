@@ -178,7 +178,7 @@ class PopSerivce {
                pathParam.arrowPosition.y = noCornorPopRect.origin.y  + arrowSize.height * 0.5
            }
            if arrowBottomRightPoint.y > noCornorPopRect.maxY { // 下边超出
-            pathParam.arrowPosition.y = noCornorPopRect.maxY - arrowSize.height * 0.5
+                pathParam.arrowPosition.y = noCornorPopRect.maxY - arrowSize.height * 0.5
            }
        case .bottom:
            if popRect.contains(arrowPosition) || arrowPosition.y == popRect.origin.y {
