@@ -75,9 +75,11 @@ class PopSerivce {
        return popRect
     }
 
-    static func adjustOutsidePoint(_ point: CGPoint, minInset: CGFloat) -> CGPoint {
+    static func adjustOutsidePoint(_ point: CGPoint,
+                                   relyView: UIView = UIApplication.shared.keyWindow!,
+                                   minInset: CGFloat) -> CGPoint {
        var point = point
-       let vFrame = validFrame(UIApplication.shared.keyWindow!, minInset: minInset)
+       let vFrame = validFrame(relyView, minInset: minInset)
        if !vFrame.contains(point) {
            if point.x < vFrame.origin.x { // 左边超出边界
                point.x = vFrame.origin.x
@@ -140,7 +142,7 @@ class PopSerivce {
     1.箭头是否在poprect之外
     2.箭头的位置是否在有效边上
     */
-    static func ckeckArrowValid(_ pathParam: TipPopParam) -> TipPopParam {
+    static func checkArrowValid(_ pathParam: TipPopParam) -> TipPopParam {
        var pathParam = pathParam
        let arrowPosition = pathParam.arrowPosition!
        let arrowSize = pathParam.arrorwSize!
@@ -212,6 +214,7 @@ class PopSerivce {
            if arrowBottomLeftPoint.y > noCornorPopRect.maxY { // 下边超出
                pathParam.arrowPosition.y = noCornorPopRect.maxY - arrowSize.height * 0.5
            }
+          
        default:
            break
        }
@@ -270,5 +273,34 @@ extension PopSerivce {
             break
         }
         return point
+    }
+    
+    
+    static  func checkArrowPosition(_ param: TipPopParam) -> TipPopParam {
+        var param = param
+        var arrowPosition = param.arrowPosition!
+        let popRect = param.popRect!
+        switch param.direction {
+        case .top:
+            if arrowPosition.y >= popRect.origin.y {
+                arrowPosition.y = popRect.origin.y - param.arrorwSize.height
+            }
+        case .left:
+            if arrowPosition.x < popRect.maxX && arrowPosition.x >= popRect.origin.x {
+                arrowPosition.x = popRect.origin.x - param.arrorwSize.width
+            }
+        case .right:
+            if arrowPosition.x > popRect.origin.x && arrowPosition.x <= popRect.maxX {
+                arrowPosition.x = popRect.maxX + param.arrorwSize.width
+            }
+        case .bottom:
+            if arrowPosition.y <= popRect.maxY {
+                  arrowPosition.y = popRect.maxY + param.arrorwSize.height
+              }
+        default:
+            break
+        }
+        param.arrowPosition = arrowPosition
+        return param
     }
 }

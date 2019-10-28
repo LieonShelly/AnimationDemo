@@ -17,6 +17,7 @@ class TipPopViewController: UIViewController {
     @IBOutlet weak var arrowWidth: UITextField!
     fileprivate var selectedBtn: UIButton?
     fileprivate lazy var param: CommonTipPopParam = CommonTipPopParam()
+    fileprivate var direction: ArrowDirection = .top
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +27,13 @@ class TipPopViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         IQKeyboardManager.shared.enable = true
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         IQKeyboardManager.shared.enable = false
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -38,25 +41,17 @@ class TipPopViewController: UIViewController {
         param.arrowPosition = location!
         TipPop.show(param)
     }
-    
-    @IBAction func sizeTextBtnAction(_ sender: UIButton) {
-        var textParam = CommonTipPopTextParam()
-        textParam.backgroudColor = UIColor.clear
-        textParam.textColor = .black
-        textParam.font = UIFont.systemFont(ofSize: 13)
-        textParam.text = "asdhfjha阿萨德发挥世纪东方就按时 氨甲环酸的规范化静安寺鬼地方个家哈"
-        param.textParam = textParam
-        param.popSize = CGSize(width: 100, height: 40)
-        param.arrowPosition = sender.center
-        param.displayView = nil
-        TipPop.show(param)
+
+    @IBAction func backAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func btnAction(_ sender: UIButton) {
         selectedBtn?.isSelected = false
         sender.isSelected = true
         selectedBtn = sender
-        param.direction = ArrowDirection(rawValue: sender.tag) ?? .top
+        direction = ArrowDirection(rawValue: sender.tag) ?? .top
+        param.direction = direction
     }
     
     @IBAction func manyPopBtnAction(_ sender: Any) {
@@ -82,7 +77,6 @@ class TipPopViewController: UIViewController {
         param.textParam = nil
         param.arrowPosition = location
         let customView = UIView()
-//        customView.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
         customView.backgroundColor = .purple
         param.displayView = customView
         TipPop.show(param)
@@ -93,11 +87,15 @@ class TipPopViewController: UIViewController {
         var textParam = CommonTipPopTextParam()
         textParam.backgroudColor = UIColor.clear
         textParam.textColor = .black
+        textParam.sizeLimitType = .width(180)
         textParam.font = UIFont.systemFont(ofSize: 13)
-        textParam.text = "asdhfjha阿萨德发挥世纪东方就按时 氨甲环酸的规范化静安寺鬼地方个家哈"
+        textParam.text = "asdhfjha阿萨德发挥世纪东方就按时 氨甲环酸的规范东方就按时 氨甲环酸的规范东方就按时 氨甲环酸的规范东方就按时 氨甲环酸的规范东方就按时 氨甲环酸的规范东方就按时 氨甲"
         param.textParam = textParam
         param.arrowPosition = sender.center
         param.displayView = nil
+        param.popSize = .zero
+        param.minInset = 10
+        param.direction = self.direction
         TipPop.show(param)
     }
 }

@@ -58,7 +58,14 @@ class TipPop: UIView, AnimationBase {
              self.removeFromSuperview()
         }
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        debugPrint("textLabel")
+    }
 
+    
+    
     fileprivate func configPop(_ param: TipPopParam) {
         let bgView = createBgView(param)
         if param.textParam != nil {
@@ -69,7 +76,7 @@ class TipPop: UIView, AnimationBase {
     }
     
     fileprivate func configCustomUI(_ param: TipPopParam, bgView: UIView) {
-        bgView.backgroundColor = .red
+        bgView.backgroundColor = .clear
         var param = param
         if let displayView = param.displayView, displayView.frame.size != .zero {
            param.popSize = displayView.bounds.inset(by: UIEdgeInsets(top: -param.minInset,
@@ -79,7 +86,7 @@ class TipPop: UIView, AnimationBase {
                                                .size
             param.arrowPosition = PopSerivce.adjustOutsidePoint(param.arrowPosition, minInset: param.minInset)
             param.popRect = PopSerivce.caculatePopRect(with: param)
-            param = PopSerivce.ckeckArrowValid(param)
+            param = PopSerivce.checkArrowValid(param)
             let realFrame = PopSerivce.popRealFrame(with: param)
             bgView.frame = realFrame
             bgView.backgroundColor = .clear
@@ -96,13 +103,14 @@ class TipPop: UIView, AnimationBase {
         } else if let displayView = param.displayView {
             param.arrowPosition = PopSerivce.adjustOutsidePoint(param.arrowPosition, minInset: param.minInset)
             param.popRect = PopSerivce.caculatePopRect(with: param)
-            param = PopSerivce.ckeckArrowValid(param)
+            param = PopSerivce.checkArrowValid(param)
             let realFrame = PopSerivce.popRealFrame(with: param)
             bgView.frame = realFrame
             bgView.backgroundColor = .clear
             addSubview(bgView)
             param.arrowPosition = convert(param.arrowPosition, to: bgView)
             param.popRect = convert(param.popRect, to: bgView)
+            param = PopSerivce.checkArrowPosition(param)
             let poLayer = createPopLayer(param)
             configPopLayer(param,
                           popLayer: poLayer,
@@ -116,8 +124,17 @@ class TipPop: UIView, AnimationBase {
     
     fileprivate func configTextLabelUI(_ param: TipPopParam,  bgView: UIView) {
         var param = param
-        if let text = param.textParam?.text, var textParam = param.textParam {
-            let spacingText = text.withlineSpacing(textParam.lineSpacing)
+        if let text = param.textParam?.text, let textParam = param.textParam {
+            let atrrStr = NSMutableAttributedString(string: text)
+            let paragrapStyle = NSMutableParagraphStyle()
+            paragrapStyle.lineBreakMode = .byWordWrapping
+            paragrapStyle.lineSpacing = textParam.lineSpacing
+            atrrStr.addAttribute(NSAttributedString.Key.paragraphStyle,
+                                 value: paragrapStyle,
+                                 range: NSRange(location: 0, length: text.count))
+            atrrStr.addAttribute(NSAttributedString.Key.font,
+                                 value: textParam.font ?? UIFont.systemFont(ofSize: 13),
+                                 range: NSRange(location: 0, length: text.count))
             let textLabel = UILabel()
             let font = textParam.font ?? UIFont.systemFont(ofSize: 13)
             textLabel.font = font
@@ -125,31 +142,27 @@ class TipPop: UIView, AnimationBase {
             textLabel.textAlignment = textParam.textAlignment
             textLabel.backgroundColor = textParam.backgroudColor
             textLabel.numberOfLines = 0
-            textLabel.attributedText = spacingText.0
-            if param.popSize != .zero {
-                textParam.sizeLimitType = TipPopTextSizeLimitType.none
-            }
+            textLabel.attributedText = atrrStr
             switch textParam.sizeLimitType {
             case .width(let value):
-                 textLabel.frame.size.width = value
-                 textLabel.sizeToFit()
-                 param.popSize = textLabel.frame.size
+                 let size = atrrStr.boundingRect(with: CGSize(width: value, height: .infinity), options: .usesLineFragmentOrigin, context: nil).size
+                 param.popSize = CGSize(width: size.width + param.minInset * 2, height: size.height + param.minInset * 2)
             case .height(let value):
-                 textLabel.frame.size.height = value
-                 textLabel.sizeToFit()
-                 param.popSize = textLabel.frame.size
+                 let size = atrrStr.boundingRect(with: CGSize(width: .infinity, height: value), options: .usesLineFragmentOrigin, context: nil).size
+                 param.popSize = CGSize(width: size.width + param.minInset * 2, height: size.height + param.minInset * 2)
             default:
                 break
             }
             param.arrowPosition = PopSerivce.adjustOutsidePoint(param.arrowPosition, minInset: param.minInset)
             param.popRect = PopSerivce.caculatePopRect(with: param)
-            param = PopSerivce.ckeckArrowValid(param)
+            param = PopSerivce.checkArrowValid(param)
             let realFrame = PopSerivce.popRealFrame(with: param)
             bgView.frame = realFrame
             bgView.backgroundColor = .clear
             addSubview(bgView)
             param.arrowPosition = convert(param.arrowPosition, to: bgView)
             param.popRect = convert(param.popRect, to: bgView)
+            param = PopSerivce.checkArrowPosition(param)
             let poLayer = createPopLayer(param)
             configPopLayer(param,
                         popLayer: poLayer,
@@ -160,7 +173,7 @@ class TipPop: UIView, AnimationBase {
         }
         showAnimation(bgView, param: param)
     }
-    
+
     fileprivate func showAnimation(_ view: UIView, param: TipPopParam) {
         let bgView = view
         let anchorPoint = PopSerivce.getAnchorPoint(param)
@@ -201,4 +214,44 @@ class TipPop: UIView, AnimationBase {
         bgView.layer.addSublayer(popLayer)
     }
     
+}
+
+class PopLabel: UILabel {
+    var param: TipPopParam!
+    
+    convenience init(_ param: TipPopParam) {
+        self.init()
+        self.param = param
+    }
+    
+   override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    
+   required init?(coder: NSCoder) {
+        super.init(coder: coder)
+
+    }
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        let rect = rect
+        switch param.direction {
+        case .top:
+            param.popRect = rect.inset(by: UIEdgeInsets(top: param.arrorwSize.height,
+                                                        left: param.arrorwSize.width,
+                                                        bottom: param.arrorwSize.height,
+                                                        right: param.arrorwSize.width))
+        default:
+            param.popRect = rect.inset(by: UIEdgeInsets(top: param.arrorwSize.height,
+                                                                   left: param.arrorwSize.width,
+                                                                   bottom: param.arrorwSize.height,
+                                                                   right: param.arrorwSize.width))
+        }
+        let pth = PathSerivce.path(with: param)
+        param.fillColor.setFill()
+        pth.fill()
+        debugPrint("PopLabel:\(rect) - bounds:\(self.bounds)) - frame: \(self.frame)")
+    }
 }
