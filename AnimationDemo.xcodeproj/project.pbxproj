@@ -61,6 +61,8 @@
 		CDADB237235EE7A7002A57FD /* TipPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDADB235235EE7A7002A57FD /* TipPopViewController.xib */; };
 		CDC87F2E2362E39600EFE022 /* BtnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC87F2C2362E39600EFE022 /* BtnViewController.swift */; };
 		CDC87F2F2362E39600EFE022 /* BtnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC87F2D2362E39600EFE022 /* BtnViewController.xib */; };
+		CDD33F842368447A00FD074A /* GuideStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD33F832368447A00FD074A /* GuideStartView.swift */; };
+		CDD33F862368448500FD074A /* GuideStartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD33F852368448500FD074A /* GuideStartView.xib */; };
 		CDFB49CD235025820083426A /* TouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49CC235025820083426A /* TouchView.swift */; };
 		CDFB49CF235047940083426A /* PinchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49CE235047940083426A /* PinchView.swift */; };
 		CDFB49D123504C070083426A /* ZoomScollVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49D023504C070083426A /* ZoomScollVIew.swift */; };
@@ -72,6 +74,12 @@
 		CDFF204C2367E78100800136 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF204A2367E78100800136 /* ImageCollectionViewCell.swift */; };
 		CDFF204D2367E78100800136 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFF204B2367E78100800136 /* ImageCollectionViewCell.xib */; };
 		CDFF204F23680D5200800136 /* PopImageBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF204E23680D5200800136 /* PopImageBrowser.swift */; };
+		CDFF205223682B3200800136 /* DemoTouchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF205023682B3200800136 /* DemoTouchViewController.swift */; };
+		CDFF205323682B3200800136 /* DemoTouchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFF205123682B3200800136 /* DemoTouchViewController.xib */; };
+		CDFF20562368333600800136 /* ImageTitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF20542368333600800136 /* ImageTitleCollectionViewCell.swift */; };
+		CDFF20572368333600800136 /* ImageTitleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFF20552368333600800136 /* ImageTitleCollectionViewCell.xib */; };
+		CDFF205A236837A500800136 /* GuideStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF2058236837A500800136 /* GuideStartViewController.swift */; };
+		CDFF205B236837A500800136 /* GuideStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFF2059236837A500800136 /* GuideStartViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +161,8 @@
 		CDADB235235EE7A7002A57FD /* TipPopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipPopViewController.xib; sourceTree = "<group>"; };
 		CDC87F2C2362E39600EFE022 /* BtnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnViewController.swift; sourceTree = "<group>"; };
 		CDC87F2D2362E39600EFE022 /* BtnViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BtnViewController.xib; sourceTree = "<group>"; };
+		CDD33F832368447A00FD074A /* GuideStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideStartView.swift; sourceTree = "<group>"; };
+		CDD33F852368448500FD074A /* GuideStartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuideStartView.xib; sourceTree = "<group>"; };
 		CDFB49CC235025820083426A /* TouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchView.swift; sourceTree = "<group>"; };
 		CDFB49CE235047940083426A /* PinchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchView.swift; sourceTree = "<group>"; };
 		CDFB49D023504C070083426A /* ZoomScollVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomScollVIew.swift; sourceTree = "<group>"; };
@@ -164,6 +174,12 @@
 		CDFF204A2367E78100800136 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		CDFF204B2367E78100800136 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		CDFF204E23680D5200800136 /* PopImageBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopImageBrowser.swift; sourceTree = "<group>"; };
+		CDFF205023682B3200800136 /* DemoTouchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTouchViewController.swift; sourceTree = "<group>"; };
+		CDFF205123682B3200800136 /* DemoTouchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoTouchViewController.xib; sourceTree = "<group>"; };
+		CDFF20542368333600800136 /* ImageTitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		CDFF20552368333600800136 /* ImageTitleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTitleCollectionViewCell.xib; sourceTree = "<group>"; };
+		CDFF2058236837A500800136 /* GuideStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideStartViewController.swift; sourceTree = "<group>"; };
+		CDFF2059236837A500800136 /* GuideStartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuideStartViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,6 +361,10 @@
 				CDC87F2D2362E39600EFE022 /* BtnViewController.xib */,
 				CDFF20462367E6B800800136 /* LongPressViewController.swift */,
 				CDFF20472367E6B800800136 /* LongPressViewController.xib */,
+				CDFF205023682B3200800136 /* DemoTouchViewController.swift */,
+				CDFF205123682B3200800136 /* DemoTouchViewController.xib */,
+				CDFF2058236837A500800136 /* GuideStartViewController.swift */,
+				CDFF2059236837A500800136 /* GuideStartViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -395,6 +415,10 @@
 				CDFB49D023504C070083426A /* ZoomScollVIew.swift */,
 				CDFF204A2367E78100800136 /* ImageCollectionViewCell.swift */,
 				CDFF204B2367E78100800136 /* ImageCollectionViewCell.xib */,
+				CDFF20542368333600800136 /* ImageTitleCollectionViewCell.swift */,
+				CDFF20552368333600800136 /* ImageTitleCollectionViewCell.xib */,
+				CDD33F832368447A00FD074A /* GuideStartView.swift */,
+				CDD33F852368448500FD074A /* GuideStartView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -512,14 +536,18 @@
 				CD2112F2235D8B91003B5202 /* PadTypeCollectionViewCell.xib in Resources */,
 				CD2FCFA9234DB37600E28E5C /* PinchViewController.xib in Resources */,
 				CD725ADA234F0E4E00C11FB0 /* PanViewController.xib in Resources */,
+				CDD33F862368448500FD074A /* GuideStartView.xib in Resources */,
+				CDFF205B236837A500800136 /* GuideStartViewController.xib in Resources */,
 				CD2FCF79234D796500E28E5C /* Assets.xcassets in Resources */,
 				CDFF20492367E6B800800136 /* LongPressViewController.xib in Resources */,
 				CD2FCFA2234D79AB00E28E5C /* TapAnimationViewController.xib in Resources */,
+				CDFF205323682B3200800136 /* DemoTouchViewController.xib in Resources */,
 				CDADB237235EE7A7002A57FD /* TipPopViewController.xib in Resources */,
 				CD749ACB2356F6EF00C357A5 /* FlipSubViewController.xib in Resources */,
 				CD1691CD23595B93006E73AD /* RecordAudioViewController.xib in Resources */,
 				CD88DD612361E4F200B9DB8F /* TestViewController.xib in Resources */,
 				CDC87F2F2362E39600EFE022 /* BtnViewController.xib in Resources */,
+				CDFF20572368333600800136 /* ImageTitleCollectionViewCell.xib in Resources */,
 				CD3BC9B0234F313E003C8AA9 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,7 +608,9 @@
 				CD436428234E17500047930B /* PinchAnimation.swift in Sources */,
 				CD2880D3235FE38700F20EF1 /* TipPop.swift in Sources */,
 				CD2FCF70234D796100E28E5C /* AppDelegate.swift in Sources */,
+				CDFF205A236837A500800136 /* GuideStartViewController.swift in Sources */,
 				CD725AD9234F0E4E00C11FB0 /* PanViewController.swift in Sources */,
+				CDD33F842368447A00FD074A /* GuideStartView.swift in Sources */,
 				CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */,
 				CDFB49CD235025820083426A /* TouchView.swift in Sources */,
 				CD2112ED235D8800003B5202 /* MultiLanguageTexInputAlert.swift in Sources */,
@@ -599,6 +629,8 @@
 				CD749ACE2356F72C00C357A5 /* FlipViewController.swift in Sources */,
 				CD725AD5234F0E1D00C11FB0 /* PanAnimation.swift in Sources */,
 				CDFF20482367E6B800800136 /* LongPressViewController.swift in Sources */,
+				CDFF20562368333600800136 /* ImageTitleCollectionViewCell.swift in Sources */,
+				CDFF205223682B3200800136 /* DemoTouchViewController.swift in Sources */,
 				CD7D50B42361768E00FA9C07 /* Param.swift in Sources */,
 				CD2112EA235D8550003B5202 /* MultiLanguageAlert.swift in Sources */,
 				CD3BC9AF234F313E003C8AA9 /* HomeViewController.swift in Sources */,

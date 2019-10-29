@@ -78,16 +78,16 @@ extension HomeViewController {
             let vcc = TipPopViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
             })
-        let test = ListItem("测试t控制器", handler: { [weak self] in
-                  guard let weakSelf = self else {
-                                  return
-                              }
-                  let vcc = TestViewController()
-                  weakSelf.navigationController?.pushViewController(vcc, animated: true)
-                  })
+        let test = ListItem("测试控制器", handler: { [weak self] in
+              guard let weakSelf = self else {
+                 return
+              }
+              let vcc = TestViewController()
+              weakSelf.navigationController?.pushViewController(vcc, animated: true)
+              })
         let btn = ListItem("按钮类", handler: { [weak self] in
             guard let weakSelf = self else {
-                            return
+                return
             }
             let vcc = BtnViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
@@ -95,11 +95,18 @@ extension HomeViewController {
         
         let press = ListItem("长按放大图片", handler: { [weak self] in
             guard let weakSelf = self else {
-                            return
+                return
             }
             let vcc = LongPressViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
             })
+        let touch = ListItem("互动教程模拟", handler: { [weak self] in
+           guard let weakSelf = self else {
+                return
+           }
+           let vcc = DemoTouchViewController()
+           weakSelf.navigationController?.pushViewController(vcc, animated: true)
+           })
         
         items.append(tap)
         items.append(pinch)
@@ -110,6 +117,7 @@ extension HomeViewController {
         items.append(test)
         items.append(btn)
         items.append(press)
+        items.append(touch)
     }
     
 }
