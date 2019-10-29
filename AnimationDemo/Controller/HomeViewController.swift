@@ -85,7 +85,6 @@ extension HomeViewController {
                   let vcc = TestViewController()
                   weakSelf.navigationController?.pushViewController(vcc, animated: true)
                   })
-        //
         let btn = ListItem("按钮类", handler: { [weak self] in
             guard let weakSelf = self else {
                             return
@@ -93,7 +92,15 @@ extension HomeViewController {
             let vcc = BtnViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
             })
-        //
+        
+        let press = ListItem("长按放大图片", handler: { [weak self] in
+            guard let weakSelf = self else {
+                            return
+            }
+            let vcc = LongPressViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+            })
+        
         items.append(tap)
         items.append(pinch)
         items.append(move)
@@ -102,6 +109,7 @@ extension HomeViewController {
         items.append(pop)
         items.append(test)
         items.append(btn)
+        items.append(press)
     }
     
 }

@@ -67,6 +67,11 @@
 		CDFB49D423505AD50083426A /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49D223505AD50083426A /* ProgressViewController.swift */; };
 		CDFB49D523505AD50083426A /* ProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFB49D323505AD50083426A /* ProgressViewController.xib */; };
 		CDFB49D723505C5F0083426A /* ProgressAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49D623505C5F0083426A /* ProgressAnimation.swift */; };
+		CDFF20482367E6B800800136 /* LongPressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF20462367E6B800800136 /* LongPressViewController.swift */; };
+		CDFF20492367E6B800800136 /* LongPressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFF20472367E6B800800136 /* LongPressViewController.xib */; };
+		CDFF204C2367E78100800136 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF204A2367E78100800136 /* ImageCollectionViewCell.swift */; };
+		CDFF204D2367E78100800136 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFF204B2367E78100800136 /* ImageCollectionViewCell.xib */; };
+		CDFF204F23680D5200800136 /* PopImageBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF204E23680D5200800136 /* PopImageBrowser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +159,11 @@
 		CDFB49D223505AD50083426A /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		CDFB49D323505AD50083426A /* ProgressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressViewController.xib; sourceTree = "<group>"; };
 		CDFB49D623505C5F0083426A /* ProgressAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressAnimation.swift; sourceTree = "<group>"; };
+		CDFF20462367E6B800800136 /* LongPressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPressViewController.swift; sourceTree = "<group>"; };
+		CDFF20472367E6B800800136 /* LongPressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LongPressViewController.xib; sourceTree = "<group>"; };
+		CDFF204A2367E78100800136 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		CDFF204B2367E78100800136 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		CDFF204E23680D5200800136 /* PopImageBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopImageBrowser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +216,7 @@
 		CD2112D3235D7EF5003B5202 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CD2880D2235FE38700F20EF1 /* TipPop.swift */,
 				CD2112EF235D8B91003B5202 /* PadTypeCollectionViewCell.swift */,
 				CD2112F0235D8B91003B5202 /* PadTypeCollectionViewCell.xib */,
 			);
@@ -332,6 +343,8 @@
 				CD88DD5F2361E4F200B9DB8F /* TestViewController.xib */,
 				CDC87F2C2362E39600EFE022 /* BtnViewController.swift */,
 				CDC87F2D2362E39600EFE022 /* BtnViewController.xib */,
+				CDFF20462367E6B800800136 /* LongPressViewController.swift */,
+				CDFF20472367E6B800800136 /* LongPressViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -367,9 +380,9 @@
 		CDADB233235EE776002A57FD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CD2880D2235FE38700F20EF1 /* TipPop.swift */,
 				CD2112EB235D8800003B5202 /* MultiLanguageTexInputAlert.swift */,
 				CD2112EC235D8800003B5202 /* MultiLanguageTexInputAlert.xib */,
+				CDFF204E23680D5200800136 /* PopImageBrowser.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -380,6 +393,8 @@
 				CDFB49CC235025820083426A /* TouchView.swift */,
 				CDFB49CE235047940083426A /* PinchView.swift */,
 				CDFB49D023504C070083426A /* ZoomScollVIew.swift */,
+				CDFF204A2367E78100800136 /* ImageCollectionViewCell.swift */,
+				CDFF204B2367E78100800136 /* ImageCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -491,12 +506,14 @@
 			files = (
 				CDFB49D523505AD50083426A /* ProgressViewController.xib in Resources */,
 				CD2FCF7C234D796500E28E5C /* LaunchScreen.storyboard in Resources */,
+				CDFF204D2367E78100800136 /* ImageCollectionViewCell.xib in Resources */,
 				CD749ACF2356F72C00C357A5 /* FlipViewController.xib in Resources */,
 				CD2112EE235D8800003B5202 /* MultiLanguageTexInputAlert.xib in Resources */,
 				CD2112F2235D8B91003B5202 /* PadTypeCollectionViewCell.xib in Resources */,
 				CD2FCFA9234DB37600E28E5C /* PinchViewController.xib in Resources */,
 				CD725ADA234F0E4E00C11FB0 /* PanViewController.xib in Resources */,
 				CD2FCF79234D796500E28E5C /* Assets.xcassets in Resources */,
+				CDFF20492367E6B800800136 /* LongPressViewController.xib in Resources */,
 				CD2FCFA2234D79AB00E28E5C /* TapAnimationViewController.xib in Resources */,
 				CDADB237235EE7A7002A57FD /* TipPopViewController.xib in Resources */,
 				CD749ACB2356F6EF00C357A5 /* FlipSubViewController.xib in Resources */,
@@ -581,6 +598,7 @@
 				CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */,
 				CD749ACE2356F72C00C357A5 /* FlipViewController.swift in Sources */,
 				CD725AD5234F0E1D00C11FB0 /* PanAnimation.swift in Sources */,
+				CDFF20482367E6B800800136 /* LongPressViewController.swift in Sources */,
 				CD7D50B42361768E00FA9C07 /* Param.swift in Sources */,
 				CD2112EA235D8550003B5202 /* MultiLanguageAlert.swift in Sources */,
 				CD3BC9AF234F313E003C8AA9 /* HomeViewController.swift in Sources */,
@@ -588,7 +606,9 @@
 				CD7D50B7236191CC00FA9C07 /* IFExtension.swift in Sources */,
 				CDC87F2E2362E39600EFE022 /* BtnViewController.swift in Sources */,
 				CD2FCFA1234D79AB00E28E5C /* TapAnimationViewController.swift in Sources */,
+				CDFF204F23680D5200800136 /* PopImageBrowser.swift in Sources */,
 				CD7D50B223613C4600FA9C07 /* PopSerivce.swift in Sources */,
+				CDFF204C2367E78100800136 /* ImageCollectionViewCell.swift in Sources */,
 				CD2FCFA5234D7C4000E28E5C /* TapAniamtion.swift in Sources */,
 				CD3BC9AC234F26A0003C8AA9 /* AnimationProtocol.swift in Sources */,
 				CDFB49D123504C070083426A /* ZoomScollVIew.swift in Sources */,
