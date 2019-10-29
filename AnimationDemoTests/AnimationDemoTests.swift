@@ -58,7 +58,7 @@ class AnimationDemoTests: XCTestCase {
                                                          left: -10,
                                                          bottom: -30,
                                                          right: -40))
-        debugPrint("ngFrame:\(ngFrame) - frame:\(frame)")
+        debugPrint("ngFrame:\(ngFrame) - frame:\(frame) - newFrame:\(newFrame)）")
     }
 
     func testTextSize() {

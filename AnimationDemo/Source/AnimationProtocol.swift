@@ -86,6 +86,8 @@ protocol TapAnimationParam: AnimationParam {
     var endPoint: CGPoint? { get set }
     var dotRadius: CGFloat! { get set }
     var waveRadius: CGFloat! { get set }
+    var waveCount: Int! { get set }
+    var repeateCount: Float! { get set}
 }
 
 extension TapAnimationParam {

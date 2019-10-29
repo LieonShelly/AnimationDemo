@@ -102,11 +102,11 @@ class TapAnimator: NSObject, AnimationTargetType {
     }
     
     fileprivate func showWave(_ param: TapAnimationParam) {
-       let endIndex: Int = 0
+       let endIndex: Int = param.waveCount
        for index in 0 ... endIndex {
            let cycle = CAShapeLayer()
            cycle.borderWidth = 1
-        let cornerRadius: CGFloat = param.waveRadius
+           let cornerRadius: CGFloat = param.waveRadius
            cycle.borderColor = UIColor.clear.cgColor
            cycle.cornerRadius = cornerRadius
            cycle.frame = CGRect(x: layer.bounds.width * 0.5 - param.dotRadius,
@@ -140,12 +140,12 @@ class TapAnimator: NSObject, AnimationTargetType {
                                    0.5,
                                    0.1]
            let group = CAAnimationGroup()
-          let duration: Double = param.duration
+           let duration: Double = Double(param.waveCount) * 0.25
            group.fillMode = .backwards
            group.setValue("wave", forKey: "name")
            group.beginTime = CACurrentMediaTime() + (Double(index) * duration) / Double(endIndex + 1)
            group.duration = duration
-           group.repeatCount = 1
+           group.repeatCount = param.repeateCount
            group.timingFunction = CAMediaTimingFunction(name: .default)
            group.animations = [scaleAnimation, borderAnimation, borderWidthAnimation]
            group.isRemovedOnCompletion = true
