@@ -38,7 +38,7 @@ class PopImageBrowser: UIView {
     }
     
     func dismiss() {
-        removeFromSuperview()
+        showAnimation(false)
     }
     
     func showAnimation(_ presenting: Bool) {
@@ -65,7 +65,7 @@ class PopImageBrowser: UIView {
                            self.center = CGPoint(x: finalFrame.midX, y: finalFrame.midY)
            }, completion: { _ in
              if !presenting {
-               
+                self.removeFromSuperview()
              }
         })
     }
@@ -78,6 +78,10 @@ class PopImageBrowser: UIView {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         dismiss()
+    }
+    
+    deinit {
+        debugPrint("deinit-PopImage")
     }
 }
 

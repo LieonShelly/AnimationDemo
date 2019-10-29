@@ -36,11 +36,11 @@ extension LongPressViewController {
             guard let cell = collectionView.cellForItem(at: selectedIP) as? ImageCollectionViewCell else {
               return
             }
-            let rect = view.convert(cell.frame, from: cell)
+            let rect = view.convert(cell.frame, from: collectionView)
             PopImageBrowser.show(cell.imageView.image!,
                                selectedFrame: rect)
         default:
-            debugPrint("break")
+            break
         }
       
     }
