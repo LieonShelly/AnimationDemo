@@ -15,7 +15,7 @@ class CommonAnimateParam: TapAnimationParam {
     var fromPoint: CGPoint?
     var endPoint: CGPoint?
     var color: UIColor! = UIColor.gray
-    var duration: Double! = 0.25
+    var speed: Double! = 0.25
     var layer: CALayer!
     var dotRadius: CGFloat! = 20
     var waveCount: Int! = 5

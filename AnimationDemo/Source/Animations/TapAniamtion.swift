@@ -140,7 +140,7 @@ class TapAnimator: NSObject, AnimationTargetType {
                                    0.5,
                                    0.1]
            let group = CAAnimationGroup()
-           let duration: Double = Double(param.waveCount) * 0.25
+        let duration: Double = Double(param.waveCount) * param.speed
            group.fillMode = .backwards
            group.setValue("wave", forKey: "name")
            group.beginTime = CACurrentMediaTime() + (Double(index) * duration) / Double(endIndex + 1)
