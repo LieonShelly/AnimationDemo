@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 class PinchAnimation {
     static var animations: [String: Any] = [:]
     

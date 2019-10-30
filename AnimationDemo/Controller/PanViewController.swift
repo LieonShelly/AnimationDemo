@@ -45,9 +45,9 @@ class PanViewController: UIViewController {
             param.dotRadius = 50
             param.dotBorderWidth = 20
          */
-        PanAnimation.showPath(with: param) { (_) in
-                   debugPrint("complete")
-               }
+        IFAnimation.show(.pan(param)) { (_) in
+            debugPrint("complete")
+         }
     }
     
     

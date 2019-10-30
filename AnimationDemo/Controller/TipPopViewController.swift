@@ -77,6 +77,7 @@ class TipPopViewController: UIViewController {
         param.textParam = nil
         param.arrowPosition = location
         let customView = UIView()
+//        customView.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
         customView.backgroundColor = .purple
         param.displayView = customView
         TipPop.show(param)

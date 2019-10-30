@@ -63,8 +63,6 @@ class TipPop: UIView, AnimationBase {
         super.layoutSubviews()
         debugPrint("textLabel")
     }
-
-    
     
     fileprivate func configPop(_ param: TipPopParam) {
         let bgView = createBgView(param)
@@ -227,7 +225,6 @@ class PopLabel: UILabel {
    override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    
     
    required init?(coder: NSCoder) {
         super.init(coder: coder)

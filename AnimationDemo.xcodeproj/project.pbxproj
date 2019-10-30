@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD10BCF523694787007B4808 /* IFAnimaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BCF423694787007B4808 /* IFAnimaton.swift */; };
 		CD1691CC23595B93006E73AD /* RecordAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1691CA23595B93006E73AD /* RecordAudioViewController.swift */; };
 		CD1691CD23595B93006E73AD /* RecordAudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1691CB23595B93006E73AD /* RecordAudioViewController.xib */; };
 		CD2112E0235D82BC003B5202 /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112D8235D82BC003B5202 /* RxAtomic.framework */; };
@@ -100,6 +101,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CD10BCF423694787007B4808 /* IFAnimaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFAnimaton.swift; sourceTree = "<group>"; };
 		CD1691CA23595B93006E73AD /* RecordAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordAudioViewController.swift; sourceTree = "<group>"; };
 		CD1691CB23595B93006E73AD /* RecordAudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordAudioViewController.xib; sourceTree = "<group>"; };
 		CD2112D8235D82BC003B5202 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				CD725AD4234F0E1D00C11FB0 /* PanAnimation.swift */,
 				CDFB49D623505C5F0083426A /* ProgressAnimation.swift */,
 				CD749AC62356F42F00C357A5 /* FlipAnimator.swift */,
+				CD10BCF423694787007B4808 /* IFAnimaton.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -635,6 +638,7 @@
 				CD2112EA235D8550003B5202 /* MultiLanguageAlert.swift in Sources */,
 				CD3BC9AF234F313E003C8AA9 /* HomeViewController.swift in Sources */,
 				CD2112F8235DBA4D003B5202 /* Wireframe.swift in Sources */,
+				CD10BCF523694787007B4808 /* IFAnimaton.swift in Sources */,
 				CD7D50B7236191CC00FA9C07 /* IFExtension.swift in Sources */,
 				CDC87F2E2362E39600EFE022 /* BtnViewController.swift in Sources */,
 				CD2FCFA1234D79AB00E28E5C /* TapAnimationViewController.swift in Sources */,

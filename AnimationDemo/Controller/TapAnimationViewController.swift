@@ -22,9 +22,7 @@ class TapAnimationViewController: UIViewController {
         param.endPoint = animateView.center
         param.color = UIColor.white
         param.layer = animateView.layer
-        TapAniamtion.showWave(with: param) { (_) in
-            debugPrint("complete")
-        }
+        IFAnimation.show(.tap(param), completion: nil)
     }
-
+    
 }

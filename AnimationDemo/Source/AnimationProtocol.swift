@@ -9,6 +9,19 @@
 import Foundation
 import UIKit
 
+enum IFTeachAnaimationType {
+    case pinch(PinchParam)
+    case pan(PanParam)
+    case tap(TapAnimationParam)
+}
+
+protocol AnimationInterface {
+    associatedtype AnimationType
+    
+    @discardableResult
+    static func show(_ param: AnimationType, completion: ((Bool) -> Void)?) -> String
+}
+
 protocol PinchParam: AnimationParam {
     var pointsA: [CGPoint]! { get set }
     var pointsB: [CGPoint]! { get set }
@@ -88,6 +101,7 @@ protocol TapAnimationParam: AnimationParam {
     var waveRadius: CGFloat! { get set }
     var waveCount: Int! { get set }
     var repeateCount: Float! { get set}
+    
 }
 
 extension TapAnimationParam {

@@ -20,8 +20,8 @@ class PinchViewController: UIViewController {
         param.dotStartBorderColor = .white
         param.dotEndBorderColor = .white
         param.speed = 50
-        PinchAnimation.showKeyFrameDots(with: param) { (_) in
-          debugPrint("complete")
+        IFAnimation.show(.pinch(param)) { (_) in
+            debugPrint("complete")
         }
     }
 
