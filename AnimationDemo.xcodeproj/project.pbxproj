@@ -58,6 +58,26 @@
 		CD7D50B7236191CC00FA9C07 /* IFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50B6236191CC00FA9C07 /* IFExtension.swift */; };
 		CD88DD602361E4F200B9DB8F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD88DD5E2361E4F200B9DB8F /* TestViewController.swift */; };
 		CD88DD612361E4F200B9DB8F /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD88DD5F2361E4F200B9DB8F /* TestViewController.xib */; };
+		CDACD94B23698FCA008EA187 /* LAnimation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDACD94223698FCA008EA187 /* LAnimation.framework */; };
+		CDACD95223698FCA008EA187 /* LAnimationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDACD95123698FCA008EA187 /* LAnimationTests.swift */; };
+		CDACD95423698FCA008EA187 /* LAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = CDACD94423698FCA008EA187 /* LAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CDACD95723698FCA008EA187 /* LAnimation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDACD94223698FCA008EA187 /* LAnimation.framework */; };
+		CDACD95823698FCA008EA187 /* LAnimation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CDACD94223698FCA008EA187 /* LAnimation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CDACD96023698FFA008EA187 /* IFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50B6236191CC00FA9C07 /* IFExtension.swift */; };
+		CDACD96123698FFA008EA187 /* PathSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50AF23613AD300FA9C07 /* PathSerivce.swift */; };
+		CDACD96223698FFA008EA187 /* PopSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50B123613C4600FA9C07 /* PopSerivce.swift */; };
+		CDACD96323698FFA008EA187 /* Param.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50B32361768E00FA9C07 /* Param.swift */; };
+		CDACD96623698FFA008EA187 /* PopImageBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF204E23680D5200800136 /* PopImageBrowser.swift */; };
+		CDACD96723698FFA008EA187 /* MultiLanguageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2112E9235D8550003B5202 /* MultiLanguageAlert.swift */; };
+		CDACD96823698FFA008EA187 /* TipPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2880D2235FE38700F20EF1 /* TipPop.swift */; };
+		CDACD96B23698FFA008EA187 /* TapAniamtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCFA4234D7C4000E28E5C /* TapAniamtion.swift */; };
+		CDACD96C23698FFA008EA187 /* PinchAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD436427234E17500047930B /* PinchAnimation.swift */; };
+		CDACD96D23698FFA008EA187 /* PanAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AD4234F0E1D00C11FB0 /* PanAnimation.swift */; };
+		CDACD96E23698FFA008EA187 /* ProgressAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49D623505C5F0083426A /* ProgressAnimation.swift */; };
+		CDACD96F23698FFA008EA187 /* FlipAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD749AC62356F42F00C357A5 /* FlipAnimator.swift */; };
+		CDACD97023698FFA008EA187 /* IFAnimaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BCF423694787007B4808 /* IFAnimaton.swift */; };
+		CDACD97123698FFA008EA187 /* AnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC9AB234F26A0003C8AA9 /* AnimationProtocol.swift */; };
+		CDACD97223698FFA008EA187 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD306C4C2355CC36002ABA93 /* Common.swift */; };
 		CDADB236235EE7A7002A57FD /* TipPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADB234235EE7A7002A57FD /* TipPopViewController.swift */; };
 		CDADB237235EE7A7002A57FD /* TipPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDADB235235EE7A7002A57FD /* TipPopViewController.xib */; };
 		CDC87F2E2362E39600EFE022 /* BtnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC87F2C2362E39600EFE022 /* BtnViewController.swift */; };
@@ -98,7 +118,42 @@
 			remoteGlobalIDString = CD2FCF6B234D796100E28E5C;
 			remoteInfo = AnimationDemo;
 		};
+		CDACD94C23698FCA008EA187 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD2FCF64234D796100E28E5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CDACD94123698FCA008EA187;
+			remoteInfo = LAnimation;
+		};
+		CDACD94E23698FCA008EA187 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD2FCF64234D796100E28E5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD2FCF6B234D796100E28E5C;
+			remoteInfo = AnimationDemo;
+		};
+		CDACD95523698FCA008EA187 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD2FCF64234D796100E28E5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CDACD94123698FCA008EA187;
+			remoteInfo = LAnimation;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CDACD95923698FCA008EA187 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CDACD95823698FCA008EA187 /* LAnimation.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CD10BCF423694787007B4808 /* IFAnimaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFAnimaton.swift; sourceTree = "<group>"; };
@@ -159,6 +214,12 @@
 		CD7D50B6236191CC00FA9C07 /* IFExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFExtension.swift; sourceTree = "<group>"; };
 		CD88DD5E2361E4F200B9DB8F /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		CD88DD5F2361E4F200B9DB8F /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		CDACD94223698FCA008EA187 /* LAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDACD94423698FCA008EA187 /* LAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LAnimation.h; sourceTree = "<group>"; };
+		CDACD94523698FCA008EA187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDACD94A23698FCA008EA187 /* LAnimationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LAnimationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDACD95123698FCA008EA187 /* LAnimationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LAnimationTests.swift; sourceTree = "<group>"; };
+		CDACD95323698FCA008EA187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CDADB234235EE7A7002A57FD /* TipPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipPopViewController.swift; sourceTree = "<group>"; };
 		CDADB235235EE7A7002A57FD /* TipPopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipPopViewController.xib; sourceTree = "<group>"; };
 		CDC87F2C2362E39600EFE022 /* BtnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +254,7 @@
 				CD2112F4235D8D49003B5202 /* RxDataSources.framework in Frameworks */,
 				CD2112E0235D82BC003B5202 /* RxAtomic.framework in Frameworks */,
 				CD2112E1235D82BC003B5202 /* RxRelay.framework in Frameworks */,
+				CDACD95723698FCA008EA187 /* LAnimation.framework in Frameworks */,
 				CD2112E2235D82BC003B5202 /* RxSwiftExt.framework in Frameworks */,
 				CD2112E4235D82BC003B5202 /* SnapKit.framework in Frameworks */,
 				CD2112E5235D82BC003B5202 /* RxSwift.framework in Frameworks */,
@@ -213,6 +275,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDACD93F23698FCA008EA187 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDACD94723698FCA008EA187 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDACD94B23698FCA008EA187 /* LAnimation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +333,8 @@
 				CD2FCF6E234D796100E28E5C /* AnimationDemo */,
 				CD2FCF85234D796500E28E5C /* AnimationDemoTests */,
 				CD2FCF90234D796500E28E5C /* AnimationDemoUITests */,
+				CDACD94323698FCA008EA187 /* LAnimation */,
+				CDACD95023698FCA008EA187 /* LAnimationTests */,
 				CD2FCF6D234D796100E28E5C /* Products */,
 				CD725AD1234EFF6F00C11FB0 /* Frameworks */,
 			);
@@ -267,6 +346,8 @@
 				CD2FCF6C234D796100E28E5C /* AnimationDemo.app */,
 				CD2FCF82234D796500E28E5C /* AnimationDemoTests.xctest */,
 				CD2FCF8D234D796500E28E5C /* AnimationDemoUITests.xctest */,
+				CDACD94223698FCA008EA187 /* LAnimation.framework */,
+				CDACD94A23698FCA008EA187 /* LAnimationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -400,6 +481,24 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		CDACD94323698FCA008EA187 /* LAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				CDACD94423698FCA008EA187 /* LAnimation.h */,
+				CDACD94523698FCA008EA187 /* Info.plist */,
+			);
+			path = LAnimation;
+			sourceTree = "<group>";
+		};
+		CDACD95023698FCA008EA187 /* LAnimationTests */ = {
+			isa = PBXGroup;
+			children = (
+				CDACD95123698FCA008EA187 /* LAnimationTests.swift */,
+				CDACD95323698FCA008EA187 /* Info.plist */,
+			);
+			path = LAnimationTests;
+			sourceTree = "<group>";
+		};
 		CDADB233235EE776002A57FD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -428,6 +527,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		CDACD93D23698FCA008EA187 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDACD95423698FCA008EA187 /* LAnimation.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		CD2FCF6B234D796100E28E5C /* AnimationDemo */ = {
 			isa = PBXNativeTarget;
@@ -437,10 +547,12 @@
 				CD2FCF69234D796100E28E5C /* Frameworks */,
 				CD2FCF6A234D796100E28E5C /* Resources */,
 				CD725AD0234EFF2700C11FB0 /* Carthage */,
+				CDACD95923698FCA008EA187 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CDACD95623698FCA008EA187 /* PBXTargetDependency */,
 			);
 			name = AnimationDemo;
 			productName = AnimationDemo;
@@ -483,6 +595,43 @@
 			productReference = CD2FCF8D234D796500E28E5C /* AnimationDemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		CDACD94123698FCA008EA187 /* LAnimation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDACD95E23698FCA008EA187 /* Build configuration list for PBXNativeTarget "LAnimation" */;
+			buildPhases = (
+				CDACD93D23698FCA008EA187 /* Headers */,
+				CDACD93E23698FCA008EA187 /* Sources */,
+				CDACD93F23698FCA008EA187 /* Frameworks */,
+				CDACD94023698FCA008EA187 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LAnimation;
+			productName = LAnimation;
+			productReference = CDACD94223698FCA008EA187 /* LAnimation.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CDACD94923698FCA008EA187 /* LAnimationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDACD95F23698FCA008EA187 /* Build configuration list for PBXNativeTarget "LAnimationTests" */;
+			buildPhases = (
+				CDACD94623698FCA008EA187 /* Sources */,
+				CDACD94723698FCA008EA187 /* Frameworks */,
+				CDACD94823698FCA008EA187 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CDACD94D23698FCA008EA187 /* PBXTargetDependency */,
+				CDACD94F23698FCA008EA187 /* PBXTargetDependency */,
+			);
+			name = LAnimationTests;
+			productName = LAnimationTests;
+			productReference = CDACD94A23698FCA008EA187 /* LAnimationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -504,6 +653,13 @@
 						CreatedOnToolsVersion = 11.0;
 						TestTargetID = CD2FCF6B234D796100E28E5C;
 					};
+					CDACD94123698FCA008EA187 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					CDACD94923698FCA008EA187 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = CD2FCF6B234D796100E28E5C;
+					};
 				};
 			};
 			buildConfigurationList = CD2FCF67234D796100E28E5C /* Build configuration list for PBXProject "AnimationDemo" */;
@@ -522,6 +678,8 @@
 				CD2FCF6B234D796100E28E5C /* AnimationDemo */,
 				CD2FCF81234D796500E28E5C /* AnimationDemoTests */,
 				CD2FCF8C234D796500E28E5C /* AnimationDemoUITests */,
+				CDACD94123698FCA008EA187 /* LAnimation */,
+				CDACD94923698FCA008EA187 /* LAnimationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -563,6 +721,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CD2FCF8B234D796500E28E5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDACD94023698FCA008EA187 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDACD94823698FCA008EA187 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -667,6 +839,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CDACD93E23698FCA008EA187 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDACD96023698FFA008EA187 /* IFExtension.swift in Sources */,
+				CDACD96123698FFA008EA187 /* PathSerivce.swift in Sources */,
+				CDACD96223698FFA008EA187 /* PopSerivce.swift in Sources */,
+				CDACD96323698FFA008EA187 /* Param.swift in Sources */,
+				CDACD96623698FFA008EA187 /* PopImageBrowser.swift in Sources */,
+				CDACD96723698FFA008EA187 /* MultiLanguageAlert.swift in Sources */,
+				CDACD96823698FFA008EA187 /* TipPop.swift in Sources */,
+				CDACD96B23698FFA008EA187 /* TapAniamtion.swift in Sources */,
+				CDACD96C23698FFA008EA187 /* PinchAnimation.swift in Sources */,
+				CDACD96D23698FFA008EA187 /* PanAnimation.swift in Sources */,
+				CDACD96E23698FFA008EA187 /* ProgressAnimation.swift in Sources */,
+				CDACD96F23698FFA008EA187 /* FlipAnimator.swift in Sources */,
+				CDACD97023698FFA008EA187 /* IFAnimaton.swift in Sources */,
+				CDACD97123698FFA008EA187 /* AnimationProtocol.swift in Sources */,
+				CDACD97223698FFA008EA187 /* Common.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDACD94623698FCA008EA187 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDACD95223698FCA008EA187 /* LAnimationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -679,6 +881,21 @@
 			isa = PBXTargetDependency;
 			target = CD2FCF6B234D796100E28E5C /* AnimationDemo */;
 			targetProxy = CD2FCF8E234D796500E28E5C /* PBXContainerItemProxy */;
+		};
+		CDACD94D23698FCA008EA187 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CDACD94123698FCA008EA187 /* LAnimation */;
+			targetProxy = CDACD94C23698FCA008EA187 /* PBXContainerItemProxy */;
+		};
+		CDACD94F23698FCA008EA187 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD2FCF6B234D796100E28E5C /* AnimationDemo */;
+			targetProxy = CDACD94E23698FCA008EA187 /* PBXContainerItemProxy */;
+		};
+		CDACD95623698FCA008EA187 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CDACD94123698FCA008EA187 /* LAnimation */;
+			targetProxy = CDACD95523698FCA008EA187 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -811,6 +1028,7 @@
 		CD2FCF97234D796500E28E5C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -836,6 +1054,7 @@
 		CD2FCF98234D796500E28E5C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -938,6 +1157,102 @@
 			};
 			name = Release;
 		};
+		CDACD95A23698FCA008EA187 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = X9HX4QQYHC;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = LAnimation/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.LAnimation;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CDACD95B23698FCA008EA187 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = X9HX4QQYHC;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = LAnimation/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.LAnimation;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CDACD95C23698FCA008EA187 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LAnimationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.LAnimationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AnimationDemo.app/AnimationDemo";
+			};
+			name = Debug;
+		};
+		CDACD95D23698FCA008EA187 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LAnimationTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.LAnimationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AnimationDemo.app/AnimationDemo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -973,6 +1288,24 @@
 			buildConfigurations = (
 				CD2FCF9D234D796500E28E5C /* Debug */,
 				CD2FCF9E234D796500E28E5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDACD95E23698FCA008EA187 /* Build configuration list for PBXNativeTarget "LAnimation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDACD95A23698FCA008EA187 /* Debug */,
+				CDACD95B23698FCA008EA187 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDACD95F23698FCA008EA187 /* Build configuration list for PBXNativeTarget "LAnimationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDACD95C23698FCA008EA187 /* Debug */,
+				CDACD95D23698FCA008EA187 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
