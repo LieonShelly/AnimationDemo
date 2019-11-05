@@ -23,6 +23,11 @@ class FlipViewController: UIViewController {
     @IBAction func push(_ sender: Any) {
         navigationController?.pushViewController(FlipSubViewController(), animated: true)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
 
 }
 

@@ -16,7 +16,10 @@ class FlipSubViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func btnAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
