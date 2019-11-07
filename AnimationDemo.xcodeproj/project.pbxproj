@@ -37,6 +37,8 @@
 		CD2FCFA8234DB37600E28E5C /* PinchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCFA6234DB37600E28E5C /* PinchViewController.swift */; };
 		CD2FCFA9234DB37600E28E5C /* PinchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCFA7234DB37600E28E5C /* PinchViewController.xib */; };
 		CD306C4D2355CC36002ABA93 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD306C4C2355CC36002ABA93 /* Common.swift */; };
+		CD35A9D82372A668007C8354 /* ScreenRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD35A9D62372A668007C8354 /* ScreenRecordViewController.swift */; };
+		CD35A9D92372A668007C8354 /* ScreenRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD35A9D72372A668007C8354 /* ScreenRecordViewController.xib */; };
 		CD3BC9AC234F26A0003C8AA9 /* AnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC9AB234F26A0003C8AA9 /* AnimationProtocol.swift */; };
 		CD3BC9AF234F313E003C8AA9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC9AD234F313E003C8AA9 /* HomeViewController.swift */; };
 		CD3BC9B0234F313E003C8AA9 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3BC9AE234F313E003C8AA9 /* HomeViewController.xib */; };
@@ -151,6 +153,8 @@
 		CD2FCFA6234DB37600E28E5C /* PinchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchViewController.swift; sourceTree = "<group>"; };
 		CD2FCFA7234DB37600E28E5C /* PinchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinchViewController.xib; sourceTree = "<group>"; };
 		CD306C4C2355CC36002ABA93 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		CD35A9D62372A668007C8354 /* ScreenRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRecordViewController.swift; sourceTree = "<group>"; };
+		CD35A9D72372A668007C8354 /* ScreenRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScreenRecordViewController.xib; sourceTree = "<group>"; };
 		CD3BC9AB234F26A0003C8AA9 /* AnimationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationProtocol.swift; sourceTree = "<group>"; };
 		CD3BC9AD234F313E003C8AA9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CD3BC9AE234F313E003C8AA9 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -381,6 +385,8 @@
 				CDFF205123682B3200800136 /* DemoTouchViewController.xib */,
 				CDFF2058236837A500800136 /* GuideStartViewController.swift */,
 				CDFF2059236837A500800136 /* GuideStartViewController.xib */,
+				CD35A9D62372A668007C8354 /* ScreenRecordViewController.swift */,
+				CD35A9D72372A668007C8354 /* ScreenRecordViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -558,6 +564,7 @@
 				CD2FCF79234D796500E28E5C /* Assets.xcassets in Resources */,
 				CDFF20492367E6B800800136 /* LongPressViewController.xib in Resources */,
 				CD2FCFA2234D79AB00E28E5C /* TapAnimationViewController.xib in Resources */,
+				CD35A9D92372A668007C8354 /* ScreenRecordViewController.xib in Resources */,
 				CDFF205323682B3200800136 /* DemoTouchViewController.xib in Resources */,
 				CDADB237235EE7A7002A57FD /* TipPopViewController.xib in Resources */,
 				CD749ACB2356F6EF00C357A5 /* FlipSubViewController.xib in Resources */,
@@ -659,6 +666,7 @@
 				CDFF204F23680D5200800136 /* PopImageBrowser.swift in Sources */,
 				CD7D50B223613C4600FA9C07 /* PopSerivce.swift in Sources */,
 				CDFF204C2367E78100800136 /* ImageCollectionViewCell.swift in Sources */,
+				CD35A9D82372A668007C8354 /* ScreenRecordViewController.swift in Sources */,
 				CD2FCFA5234D7C4000E28E5C /* TapAniamtion.swift in Sources */,
 				CD3BC9AC234F26A0003C8AA9 /* AnimationProtocol.swift in Sources */,
 				CDFB49D123504C070083426A /* ZoomScollVIew.swift in Sources */,

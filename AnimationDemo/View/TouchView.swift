@@ -15,7 +15,7 @@ class TouchView: UIView {
     fileprivate lazy var allPath: [UIBezierPath] = []
     
     override func awakeFromNib() {
-            super.awakeFromNib()
+        super.awakeFromNib()
     }
     
     override init(frame: CGRect) {
@@ -74,7 +74,7 @@ extension TouchView {
         
     }
     
-    @objc fileprivate func panAction(_ pan: UIPanGestureRecognizer) {
+    @objc func panAction(_ pan: UIPanGestureRecognizer) {
         let location = pan.location(in: self)
         switch pan.state {
         case .began:
@@ -93,5 +93,42 @@ extension TouchView {
         }
     }
     
+}
+
+class TouchRecordView: TouchView {
+    fileprivate lazy var dot: UIView = {
+         let dot = UIView()
+         return dot
+     }()
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        addot()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addot()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    fileprivate func addot() {
+        dot.bounds.size = CGSize(width: 20, height: 20)
+        dot.backgroundColor = UIColor.lightGray.withAlphaComponent(0.7)
+        dot.layer.cornerRadius = 10
+        dot.layer.borderColor =  UIColor.lightGray.withAlphaComponent(0.7).cgColor
+        dot.layer.borderWidth = 1
+        addSubview(dot)
+    }
+    
+    override func panAction(_ pan: UIPanGestureRecognizer) {
+        let location = pan.location(in: self)
+        dot.center = location
+        super.panAction(pan)
+     
+    }
     
 }
