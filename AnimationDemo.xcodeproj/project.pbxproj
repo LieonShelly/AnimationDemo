@@ -60,6 +60,10 @@
 		CD7D50B7236191CC00FA9C07 /* IFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50B6236191CC00FA9C07 /* IFExtension.swift */; };
 		CD88DD602361E4F200B9DB8F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD88DD5E2361E4F200B9DB8F /* TestViewController.swift */; };
 		CD88DD612361E4F200B9DB8F /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD88DD5F2361E4F200B9DB8F /* TestViewController.xib */; };
+		CDA89DF82373C0C8000E3346 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA89DF62373C0C8000E3346 /* BannerViewController.swift */; };
+		CDA89DF92373C0C8000E3346 /* BannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDA89DF72373C0C8000E3346 /* BannerViewController.xib */; };
+		CDA89DFB2373C13B000E3346 /* TransformLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA89DFA2373C13B000E3346 /* TransformLayout.swift */; };
+		CDAD5B5C237516C200A0E4FE /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAD5B5B237516C200A0E4FE /* BannerView.swift */; };
 		CDADB236235EE7A7002A57FD /* TipPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADB234235EE7A7002A57FD /* TipPopViewController.swift */; };
 		CDADB237235EE7A7002A57FD /* TipPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDADB235235EE7A7002A57FD /* TipPopViewController.xib */; };
 		CDC87F2E2362E39600EFE022 /* BtnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC87F2C2362E39600EFE022 /* BtnViewController.swift */; };
@@ -176,6 +180,10 @@
 		CD7D50B6236191CC00FA9C07 /* IFExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFExtension.swift; sourceTree = "<group>"; };
 		CD88DD5E2361E4F200B9DB8F /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		CD88DD5F2361E4F200B9DB8F /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		CDA89DF62373C0C8000E3346 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
+		CDA89DF72373C0C8000E3346 /* BannerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerViewController.xib; sourceTree = "<group>"; };
+		CDA89DFA2373C13B000E3346 /* TransformLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformLayout.swift; sourceTree = "<group>"; };
+		CDAD5B5B237516C200A0E4FE /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		CDADB234235EE7A7002A57FD /* TipPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipPopViewController.swift; sourceTree = "<group>"; };
 		CDADB235235EE7A7002A57FD /* TipPopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipPopViewController.xib; sourceTree = "<group>"; };
 		CDC87F2C2362E39600EFE022 /* BtnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnViewController.swift; sourceTree = "<group>"; };
@@ -387,6 +395,8 @@
 				CDFF2059236837A500800136 /* GuideStartViewController.xib */,
 				CD35A9D62372A668007C8354 /* ScreenRecordViewController.swift */,
 				CD35A9D72372A668007C8354 /* ScreenRecordViewController.xib */,
+				CDA89DF62373C0C8000E3346 /* BannerViewController.swift */,
+				CDA89DF72373C0C8000E3346 /* BannerViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -441,6 +451,8 @@
 				CDFF20552368333600800136 /* ImageTitleCollectionViewCell.xib */,
 				CDD33F832368447A00FD074A /* GuideStartView.swift */,
 				CDD33F852368448500FD074A /* GuideStartView.xib */,
+				CDA89DFA2373C13B000E3346 /* TransformLayout.swift */,
+				CDAD5B5B237516C200A0E4FE /* BannerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -557,6 +569,7 @@
 				CD749ACF2356F72C00C357A5 /* FlipViewController.xib in Resources */,
 				CD2112EE235D8800003B5202 /* MultiLanguageTexInputAlert.xib in Resources */,
 				CD2112F2235D8B91003B5202 /* PadTypeCollectionViewCell.xib in Resources */,
+				CDA89DF92373C0C8000E3346 /* BannerViewController.xib in Resources */,
 				CD2FCFA9234DB37600E28E5C /* PinchViewController.xib in Resources */,
 				CD725ADA234F0E4E00C11FB0 /* PanViewController.xib in Resources */,
 				CDD33F862368448500FD074A /* GuideStartView.xib in Resources */,
@@ -633,11 +646,13 @@
 				CD2880D3235FE38700F20EF1 /* TipPop.swift in Sources */,
 				CD2FCF70234D796100E28E5C /* AppDelegate.swift in Sources */,
 				CDFF205A236837A500800136 /* GuideStartViewController.swift in Sources */,
+				CDAD5B5C237516C200A0E4FE /* BannerView.swift in Sources */,
 				CD725AD9234F0E4E00C11FB0 /* PanViewController.swift in Sources */,
 				CDD33F842368447A00FD074A /* GuideStartView.swift in Sources */,
 				CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */,
 				CDFB49CD235025820083426A /* TouchView.swift in Sources */,
 				CD2112ED235D8800003B5202 /* MultiLanguageTexInputAlert.swift in Sources */,
+				CDA89DF82373C0C8000E3346 /* BannerViewController.swift in Sources */,
 				CDFB49CF235047940083426A /* PinchView.swift in Sources */,
 				CD2112F1235D8B91003B5202 /* PadTypeCollectionViewCell.swift in Sources */,
 				CD7D50B023613AD300FA9C07 /* PathSerivce.swift in Sources */,
@@ -649,6 +664,7 @@
 				CDFB49D723505C5F0083426A /* ProgressAnimation.swift in Sources */,
 				CD1691CC23595B93006E73AD /* RecordAudioViewController.swift in Sources */,
 				CD88DD602361E4F200B9DB8F /* TestViewController.swift in Sources */,
+				CDA89DFB2373C13B000E3346 /* TransformLayout.swift in Sources */,
 				CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */,
 				CD749ACE2356F72C00C357A5 /* FlipViewController.swift in Sources */,
 				CD725AD5234F0E1D00C11FB0 /* PanAnimation.swift in Sources */,

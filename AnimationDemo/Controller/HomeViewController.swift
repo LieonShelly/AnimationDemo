@@ -114,6 +114,13 @@ extension HomeViewController {
           let vcc = ScreenRecordViewController()
           weakSelf.navigationController?.pushViewController(vcc, animated: true)
           })
+        let banner = ListItem("Banner", handler: { [weak self] in
+            guard let weakSelf = self else {
+                 return
+            }
+            let vcc = BannerViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
         items.append(tap)
         items.append(pinch)
         items.append(move)
@@ -125,6 +132,7 @@ extension HomeViewController {
         items.append(press)
         items.append(touch)
         items.append(record)
+        items.append(banner)
     }
     
 }
