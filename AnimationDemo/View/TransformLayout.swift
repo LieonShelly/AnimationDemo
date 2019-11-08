@@ -47,7 +47,10 @@ class BannerLayout: UICollectionViewLayout {
     /// item的真实大小
     internal var contentSize: CGSize = .zero
     fileprivate var actualItemSize: CGSize = .zero
-    
+    fileprivate var pagerView: BannerView? {
+        return self.collectionView?.superview?.superview as? BannerView
+    }
+
     override func prepare() {
         guard let collectionView = self.collectionView else {
                return
@@ -83,9 +86,12 @@ class BannerLayout: UICollectionViewLayout {
     internal func forceInvalidate() {
         self.invalidateLayout()
     }
-    
+  
     override open var collectionViewContentSize: CGSize {
-        return self.contentSize
+         //FIXME:滑动范围要调大点，具体好大还没要算出来
+        return CGSize(width: self.contentSize.width + actualItemSize.width * 0.5 + abs(self.actualInteritemSpacing),
+                      height: self.contentSize.height)
+//        return self.contentSize
     }
 
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
@@ -107,7 +113,7 @@ class BannerLayout: UICollectionViewLayout {
        var itemIndex = startIndex
        
        var origin = startPosition
-       let maxPosition = min(rect.maxX, self.collectionView!.contentSize.width - self.actualItemSize.width - self.leadingSpacing)
+        let maxPosition = min(rect.maxX, self.contentSize.width - self.actualItemSize.width - self.leadingSpacing)
        while origin - maxPosition <= max(CGFloat(100.0) * .ulpOfOne * abs(origin + maxPosition), .leastNonzeroMagnitude) {
             let indexPath = IndexPath(item: itemIndex % self.numberOfItems, section: itemIndex / self.numberOfItems)
             let attributes = self.layoutAttributesForItem(at: indexPath) as! FSPagerViewLayoutAttributes
@@ -164,33 +170,34 @@ class BannerLayout: UICollectionViewLayout {
     }
     
     fileprivate func adjustCollectionViewBounds() {
-           guard let collectionView = self.collectionView else {
-               return
-           }
-           let currentIndex = 0
-           let newIndexPath = IndexPath(item: currentIndex, section: 0)
-           let contentOffset = self.contentOffset(for: newIndexPath)
-           let newBounds = CGRect(origin: contentOffset, size: collectionView.frame.size)
-           collectionView.bounds = newBounds
-       }
+        guard let collectionView = self.collectionView, let bannerView = self.pagerView  else {
+           return
+        }
+        let currentIndex = bannerView.currentIndex
+        let newIndexPath = IndexPath(item: currentIndex, section: 0)
+        let contentOffset = self.contentOffset(for: newIndexPath)
+        let newBounds = CGRect(origin: contentOffset, size: collectionView.frame.size)
+        print("newBounds:\(newBounds)")
+        collectionView.bounds = newBounds
+    }
     
     internal func contentOffset(for indexPath: IndexPath) -> CGPoint {
          let origin = self.frame(for: indexPath).origin
-         guard let collectionView = self.collectionView else {
+         guard let _ = self.collectionView else {
              return origin
          }
          let contentOffsetX: CGFloat = {
              if self.scrollDirection == .vertical {
                  return 0
              }
-             let contentOffsetX = origin.x - (collectionView.frame.width*0.5 - self.actualItemSize.width*0.5)
+             let contentOffsetX = origin.x - (actualItemSize.width * 0.5 + abs(self.actualInteritemSpacing) - self.actualItemSize.width * 0.5)
              return contentOffsetX
          }()
          let contentOffsetY: CGFloat = {
              if self.scrollDirection == .horizontal {
                  return 0
              }
-             let contentOffsetY = origin.y - (collectionView.frame.height*0.5 - self.actualItemSize.height*0.5)
+             let contentOffsetY = origin.y - (actualItemSize.height * 0.5 + abs(self.actualInteritemSpacing) - self.actualItemSize.height * 0.5)
              return contentOffsetY
          }()
          let contentOffset = CGPoint(x: contentOffsetX, y: contentOffsetY)
@@ -201,8 +208,8 @@ class BannerLayout: UICollectionViewLayout {
         guard let collectionView = self.collectionView else {
             return proposedContentOffset
         }
+        let oldproposedContentOffset = proposedContentOffset
        var proposedContentOffset = proposedContentOffset
-       
        func calculateTargetOffset(by proposedOffset: CGFloat, boundedOffset: CGFloat) -> CGFloat {
             var targetOffset: CGFloat
             let vector: CGFloat = velocity.x >= 0 ? 1.0 : -1.0
@@ -216,14 +223,14 @@ class BannerLayout: UICollectionViewLayout {
            if self.scrollDirection == .vertical {
                return proposedContentOffset.x
            }
-           let boundedOffset = collectionView.contentSize.width - self.itemSpacing
+        let boundedOffset = self.contentSize.width - self.itemSpacing
            return calculateTargetOffset(by: proposedContentOffset.x, boundedOffset: boundedOffset)
        }()
        let proposedContentOffsetY: CGFloat = {
            if self.scrollDirection == .horizontal {
                return proposedContentOffset.y
            }
-           let boundedOffset = collectionView.contentSize.height - self.itemSpacing
+           let boundedOffset = self.contentSize.height - self.itemSpacing
            return calculateTargetOffset(by: proposedContentOffset.y, boundedOffset: boundedOffset)
        }()
        proposedContentOffset = CGPoint(x: proposedContentOffsetX, y: proposedContentOffsetY)
