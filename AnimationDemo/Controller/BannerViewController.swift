@@ -29,13 +29,14 @@ class BannerViewController: UIViewController {
         bannerView = FXBannerView(frame: CGRect(x: 0,
                                                       y: self.view.center.y,
                                                       width: UIScreen.main.bounds.width,
-                                                      height: 400))
+                                                      height: 400.0.fit375Pt))
         bannerView.dataSource = self
         bannerView.delegate = self
         let interSpacing: CGFloat = 5
         bannerView.interitemSpacing = interSpacing
-        bannerView.itemSize = CGSize(width: (UIScreen.main.bounds.width - interSpacing - interSpacing * 2) / 1.5, height: 300)
-        bannerView.register(UINib(nibName: "ImageTitleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImageTitleCollectionViewCell")
+        bannerView.itemSize = CGSize(width: (UIScreen.main.bounds.width - interSpacing - interSpacing * 2) / 1.5,
+                                     height: FXBannerView.customItemHeight)
+        bannerView.register(UINib(nibName: "FXBannerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "FXBannerCollectionViewCell")
         view.addSubview(bannerView)
         bannerView.showAnimation()
     }
@@ -54,13 +55,9 @@ extension BannerViewController: FXBannerViewDataSource {
     }
     
     func bannerView(_ bannerView: FXBannerView, cellForItemAt index: Int) -> UICollectionViewCell {
-        guard let cell = bannerView.dequeueReusableCell(withReuseIdentifier: "ImageTitleCollectionViewCell", at: index) as? ImageTitleCollectionViewCell else {
+        guard let cell = bannerView.dequeueReusableCell(withReuseIdentifier: "FXBannerCollectionViewCell", at: index) as? FXBannerCollectionViewCell else {
             return UICollectionViewCell()
         }
-        let element = items[index]
-        cell.label.text = element.title
-        cell.imageView.image = UIImage(named: element.iconName)
-        cell.contentView.backgroundColor = .white
         return cell
     }
 }

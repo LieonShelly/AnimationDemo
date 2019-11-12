@@ -73,3 +73,10 @@ extension String {
         return groupStrs
     }
 }
+
+
+extension Double {
+    var fit375Pt: CGFloat {
+        return UIScreen.main.bounds.width * CGFloat(self) / 375.0
+    }
+}

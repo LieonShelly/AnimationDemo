@@ -133,8 +133,8 @@ class FXBannerLayout: UICollectionViewLayout {
             let zIndex = (1-abs(position)) * 10
             attributes.zIndex = Int(zIndex)
         
-            let alpha = (self.minimumAlpha + (1-abs(position))*(1-self.minimumAlpha))
-            attributes.alpha = alpha
+//            let alpha = (self.minimumAlpha + (1-abs(position))*(1-self.minimumAlpha))
+//            attributes.alpha = alpha
 
             layoutAttributes.append(attributes)
             itemIndex += 1

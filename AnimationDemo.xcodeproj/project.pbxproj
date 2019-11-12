@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD0230EC237A5F5200324E30 /* FXBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0230EA237A5F5200324E30 /* FXBannerCollectionViewCell.swift */; };
+		CD0230ED237A5F5200324E30 /* FXBannerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD0230EB237A5F5200324E30 /* FXBannerCollectionViewCell.xib */; };
 		CD0537B8237934F100F9BDB5 /* EventSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0537B6237934F100F9BDB5 /* EventSendViewController.swift */; };
 		CD0537B9237934F100F9BDB5 /* EventSendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD0537B7237934F100F9BDB5 /* EventSendViewController.xib */; };
 		CD10BCF523694787007B4808 /* IFAnimaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BCF423694787007B4808 /* IFAnimaton.swift */; };
@@ -122,6 +124,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CD0230EA237A5F5200324E30 /* FXBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXBannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		CD0230EB237A5F5200324E30 /* FXBannerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FXBannerCollectionViewCell.xib; sourceTree = "<group>"; };
 		CD0537B6237934F100F9BDB5 /* EventSendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSendViewController.swift; sourceTree = "<group>"; };
 		CD0537B7237934F100F9BDB5 /* EventSendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventSendViewController.xib; sourceTree = "<group>"; };
 		CD10BCF423694787007B4808 /* IFAnimaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFAnimaton.swift; sourceTree = "<group>"; };
@@ -459,6 +463,8 @@
 				CDD33F852368448500FD074A /* GuideStartView.xib */,
 				CDA89DFA2373C13B000E3346 /* FXTransformLayout.swift */,
 				CDAD5B5B237516C200A0E4FE /* FXBannerView.swift */,
+				CD0230EA237A5F5200324E30 /* FXBannerCollectionViewCell.swift */,
+				CD0230EB237A5F5200324E30 /* FXBannerCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -576,6 +582,7 @@
 				CD2112EE235D8800003B5202 /* MultiLanguageTexInputAlert.xib in Resources */,
 				CD2112F2235D8B91003B5202 /* PadTypeCollectionViewCell.xib in Resources */,
 				CDA89DF92373C0C8000E3346 /* BannerViewController.xib in Resources */,
+				CD0230ED237A5F5200324E30 /* FXBannerCollectionViewCell.xib in Resources */,
 				CD2FCFA9234DB37600E28E5C /* PinchViewController.xib in Resources */,
 				CD725ADA234F0E4E00C11FB0 /* PanViewController.xib in Resources */,
 				CDD33F862368448500FD074A /* GuideStartView.xib in Resources */,
@@ -656,6 +663,7 @@
 				CDAD5B5C237516C200A0E4FE /* FXBannerView.swift in Sources */,
 				CD725AD9234F0E4E00C11FB0 /* PanViewController.swift in Sources */,
 				CDD33F842368447A00FD074A /* GuideStartView.swift in Sources */,
+				CD0230EC237A5F5200324E30 /* FXBannerCollectionViewCell.swift in Sources */,
 				CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */,
 				CDFB49CD235025820083426A /* TouchView.swift in Sources */,
 				CD2112ED235D8800003B5202 /* MultiLanguageTexInputAlert.swift in Sources */,

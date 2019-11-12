@@ -67,6 +67,19 @@ protocol FXBannerViewDelegate: NSObjectProtocol {
 }
 
 class FXBannerView: UIView {
+    static var customItemHeight: CGFloat {
+        let deviceWidth = UIScreen.main.bounds.width
+        if deviceWidth <= 640 * 0.5 { // 5s
+            return 218
+        } else if deviceWidth > 640 * 0.5 && deviceWidth <= 750 * 0.5 { // 7系列
+            return 280
+        } else if deviceWidth >= 828 * 0.5 &&  deviceWidth <= 1125 * 0.5 { // x xr xs
+            return 312
+        } else if deviceWidth >= 1242 * 0.5 { // xsmax plus
+            return 280
+        }
+        return 312.0.fit375Pt
+    }
      open var interitemSpacing: CGFloat = 0 {
          didSet {
              self.collectionViewLayout.forceInvalidate()
