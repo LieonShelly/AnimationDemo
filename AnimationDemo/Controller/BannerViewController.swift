@@ -22,15 +22,16 @@ class BannerViewController: UIViewController {
         DemoTouchUIModel(title: "极致肤质", iconName: "balloon"),
         DemoTouchUIModel(title: "极致肤质", iconName: "balloon")]
     
-    fileprivate var bannerView: BannerView!
+    fileprivate var bannerView: FXBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bannerView = BannerView(frame: CGRect(x: 0,
+        bannerView = FXBannerView(frame: CGRect(x: 0,
                                                       y: self.view.center.y,
                                                       width: UIScreen.main.bounds.width,
                                                       height: 400))
         bannerView.dataSource = self
+        bannerView.delegate = self
         let interSpacing: CGFloat = 5
         bannerView.interitemSpacing = interSpacing
         bannerView.itemSize = CGSize(width: (UIScreen.main.bounds.width - interSpacing - interSpacing * 2) / 1.5, height: 300)
@@ -47,12 +48,12 @@ class BannerViewController: UIViewController {
 }
 
 
-extension BannerViewController: BannerViewDataSource {
-    func numberOfItems(in bannerView: BannerView) -> Int {
+extension BannerViewController: FXBannerViewDataSource {
+    func numberOfItems(in bannerView: FXBannerView) -> Int {
         return items.count
     }
     
-    func bannerView(_ bannerView: BannerView, cellForItemAt index: Int) -> UICollectionViewCell {
+    func bannerView(_ bannerView: FXBannerView, cellForItemAt index: Int) -> UICollectionViewCell {
         guard let cell = bannerView.dequeueReusableCell(withReuseIdentifier: "ImageTitleCollectionViewCell", at: index) as? ImageTitleCollectionViewCell else {
             return UICollectionViewCell()
         }
@@ -62,4 +63,23 @@ extension BannerViewController: BannerViewDataSource {
         cell.contentView.backgroundColor = .white
         return cell
     }
+}
+
+extension BannerViewController: FXBannerViewDelegate {
+    func bannerViewDidScroll(_ pagerView: FXBannerView) {
+        print("pagerView - scrollOffset:\(pagerView.scrollOffset)")
+    }
+    
+    func bannerViewWillBeginDragging(_ pagerView: FXBannerView) {
+        
+    }
+    
+    func bannerView(_ pagerView: FXBannerView, willDisplay cell: UICollectionViewCell, forItemAt index: Int) {
+        print("pagerView - willDisplay:\(index)")
+    }
+    
+    func bannerView(_ pagerView: FXBannerView, didEndDisplaying cell: UICollectionViewCell, forItemAt index: Int) {
+         print("pagerView - didEndDisplaying:\(index)")
+    }
+    
 }

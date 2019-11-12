@@ -8,12 +8,12 @@
 
 import UIKit
 
-open class FSPagerViewLayoutAttributes: UICollectionViewLayoutAttributes {
+open class FXPagerViewLayoutAttributes: UICollectionViewLayoutAttributes {
 
     open var position: CGFloat = 0
     
     open override func isEqual(_ object: Any?) -> Bool {
-        guard let object = object as? FSPagerViewLayoutAttributes else {
+        guard let object = object as? FXPagerViewLayoutAttributes else {
             return false
         }
         var isEqual = super.isEqual(object)
@@ -22,7 +22,7 @@ open class FSPagerViewLayoutAttributes: UICollectionViewLayoutAttributes {
     }
     
     open override func copy(with zone: NSZone? = nil) -> Any {
-        let copy = super.copy(with: zone) as! FSPagerViewLayoutAttributes
+        let copy = super.copy(with: zone) as! FXPagerViewLayoutAttributes
         copy.position = self.position
         return copy
     }
@@ -30,7 +30,7 @@ open class FSPagerViewLayoutAttributes: UICollectionViewLayoutAttributes {
 }
 
 
-class BannerLayout: UICollectionViewLayout {
+class FXBannerLayout: UICollectionViewLayout {
     public enum ScrollDirection: Int {
         case horizontal
         case vertical
@@ -51,8 +51,8 @@ class BannerLayout: UICollectionViewLayout {
     /// item的真实大小
     internal var contentSize: CGSize = .zero
     fileprivate var actualItemSize: CGSize = .zero
-    fileprivate var pagerView: BannerView? {
-        return self.collectionView?.superview?.superview as? BannerView
+    fileprivate weak var pagerView: FXBannerView? {
+        return self.collectionView?.superview?.superview as? FXBannerView
     }
 
     override func prepare() {
@@ -119,7 +119,7 @@ class BannerLayout: UICollectionViewLayout {
         let maxPosition = min(rect.maxX, self.contentSize.width - self.actualItemSize.width - self.leadingSpacing)
        while origin - maxPosition <= max(CGFloat(100.0) * .ulpOfOne * abs(origin + maxPosition), .leastNonzeroMagnitude) {
             let indexPath = IndexPath(item: itemIndex % self.numberOfItems, section: itemIndex / self.numberOfItems)
-            let attributes = self.layoutAttributesForItem(at: indexPath) as! FSPagerViewLayoutAttributes
+            let attributes = self.layoutAttributesForItem(at: indexPath) as! FXPagerViewLayoutAttributes
         
             let ruler = collectionView!.bounds.origin.x + actualItemSize.width * 0.5 + abs(self.actualInteritemSpacing)
         
@@ -146,7 +146,7 @@ class BannerLayout: UICollectionViewLayout {
     }
 
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        let attributes = FSPagerViewLayoutAttributes(forCellWith: indexPath)
+        let attributes = FXPagerViewLayoutAttributes(forCellWith: indexPath)
         attributes.indexPath = indexPath
         let frame = self.frame(for: indexPath)
         let center = CGPoint(x: frame.midX, y: frame.midY)
