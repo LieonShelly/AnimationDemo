@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD0537B8237934F100F9BDB5 /* EventSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0537B6237934F100F9BDB5 /* EventSendViewController.swift */; };
+		CD0537B9237934F100F9BDB5 /* EventSendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD0537B7237934F100F9BDB5 /* EventSendViewController.xib */; };
 		CD10BCF523694787007B4808 /* IFAnimaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BCF423694787007B4808 /* IFAnimaton.swift */; };
 		CD1691CC23595B93006E73AD /* RecordAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1691CA23595B93006E73AD /* RecordAudioViewController.swift */; };
 		CD1691CD23595B93006E73AD /* RecordAudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1691CB23595B93006E73AD /* RecordAudioViewController.xib */; };
@@ -120,6 +122,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CD0537B6237934F100F9BDB5 /* EventSendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSendViewController.swift; sourceTree = "<group>"; };
+		CD0537B7237934F100F9BDB5 /* EventSendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventSendViewController.xib; sourceTree = "<group>"; };
 		CD10BCF423694787007B4808 /* IFAnimaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFAnimaton.swift; sourceTree = "<group>"; };
 		CD1691CA23595B93006E73AD /* RecordAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordAudioViewController.swift; sourceTree = "<group>"; };
 		CD1691CB23595B93006E73AD /* RecordAudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordAudioViewController.xib; sourceTree = "<group>"; };
@@ -397,6 +401,8 @@
 				CD35A9D72372A668007C8354 /* ScreenRecordViewController.xib */,
 				CDA89DF62373C0C8000E3346 /* BannerViewController.swift */,
 				CDA89DF72373C0C8000E3346 /* BannerViewController.xib */,
+				CD0537B6237934F100F9BDB5 /* EventSendViewController.swift */,
+				CD0537B7237934F100F9BDB5 /* EventSendViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -586,6 +592,7 @@
 				CDC87F2F2362E39600EFE022 /* BtnViewController.xib in Resources */,
 				CDFF20572368333600800136 /* ImageTitleCollectionViewCell.xib in Resources */,
 				CD3BC9B0234F313E003C8AA9 /* HomeViewController.xib in Resources */,
+				CD0537B9237934F100F9BDB5 /* EventSendViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,6 +681,7 @@
 				CD7D50B42361768E00FA9C07 /* Param.swift in Sources */,
 				CD2112EA235D8550003B5202 /* MultiLanguageAlert.swift in Sources */,
 				CD3BC9AF234F313E003C8AA9 /* HomeViewController.swift in Sources */,
+				CD0537B8237934F100F9BDB5 /* EventSendViewController.swift in Sources */,
 				CD2112F8235DBA4D003B5202 /* Wireframe.swift in Sources */,
 				CD10BCF523694787007B4808 /* IFAnimaton.swift in Sources */,
 				CD7D50B7236191CC00FA9C07 /* IFExtension.swift in Sources */,

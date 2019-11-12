@@ -31,6 +31,9 @@ class BannerViewController: UIViewController {
                                                       width: UIScreen.main.bounds.width,
                                                       height: 400))
         bannerView.dataSource = self
+        let interSpacing: CGFloat = 5
+        bannerView.interitemSpacing = interSpacing
+        bannerView.itemSize = CGSize(width: (UIScreen.main.bounds.width - interSpacing - interSpacing * 2) / 1.5, height: 300)
         bannerView.register(UINib(nibName: "ImageTitleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ImageTitleCollectionViewCell")
         view.addSubview(bannerView)
         bannerView.showAnimation()

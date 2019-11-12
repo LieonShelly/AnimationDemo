@@ -9,9 +9,10 @@
 import UIKit
 import ReplayKit
 
+let window = UIApplication.shared.keyWindow as! FXWindow
 class ScreenRecordViewController: UIViewController, RPPreviewViewControllerDelegate {
     let recorder = RPScreenRecorder.shared()
-    @IBOutlet weak var animationView: TouchRecordView!
+    @IBOutlet weak var animationView: PinchView!
     private var isRecording = false
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var micToggle: UISwitch!
@@ -21,76 +22,86 @@ class ScreenRecordViewController: UIViewController, RPPreviewViewControllerDeleg
         super.viewDidLoad()
         RPScreenRecorder.shared().delegate = self
         recordButton.layer.cornerRadius = 32.5
-      }
-      
-      func viewReset() {
-          micToggle.isEnabled = true
-          statusLabel.text = "Ready to Record"
-          statusLabel.textColor = UIColor.black
-          recordButton.backgroundColor = UIColor.green
-      }
+        window.addPannel()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        window.removePannel()
+    }
+    
+    func viewReset() {
+        micToggle.isEnabled = true
+        statusLabel.text = "Ready to Record"
+        statusLabel.textColor = UIColor.black
+        recordButton.backgroundColor = UIColor.green
+    }
       
     @IBAction func recordButtonTapped() {
-          if !isRecording {
-              startRecording()
-          } else {
-              stopRecording()
-          }
-      }
+        if !isRecording {
+            window.startShowDot()
+            startRecording()
+        } else {
+            window.dismiss()
+            stopRecording()
+        }
+    }
       
     fileprivate func startRecording() {
-          guard recorder.isAvailable else {
-              print("Recording is not available at this time.")
+        guard recorder.isAvailable else {
+          print("Recording is not available at this time.")
+          return
+        }
+        if micToggle.isOn {
+          recorder.isMicrophoneEnabled = true
+        } else {
+          recorder.isMicrophoneEnabled = false
+        }
+        recorder.startRecording{ [unowned self] (error) in
+          guard error == nil else {
+              print("There was an error starting the recording.")
               return
           }
-          if micToggle.isOn {
-              recorder.isMicrophoneEnabled = true
-          } else {
-              recorder.isMicrophoneEnabled = false
-          }
-          recorder.startRecording{ [unowned self] (error) in
-              guard error == nil else {
-                  print("There was an error starting the recording.")
-                  return
-              }
-              print("Started Recording Successfully")
-              self.micToggle.isEnabled = false
-              self.recordButton.backgroundColor = UIColor.red
-              self.statusLabel.text = "Recording..."
-              self.statusLabel.textColor = UIColor.red
-              self.isRecording = true
+          print("Started Recording Successfully")
+            DispatchQueue.main.async {
+                self.micToggle.isEnabled = false
+                self.recordButton.backgroundColor = UIColor.red
+                self.statusLabel.text = "Recording..."
+                self.statusLabel.textColor = UIColor.red
+                self.isRecording = true
+            }
 
-          }
-      }
+        }
+    }
       
      fileprivate func stopRecording() {
-          recorder.stopRecording { [unowned self] (preview, error) in
-              print("Stopped recording")
-              guard preview != nil else {
-                  print("Preview controller is not available.")
-                  return
-              }
-              let alert = UIAlertController(title: "Recording Finished", message: "Would you like to edit or delete your recording?", preferredStyle: .alert)
-              let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action: UIAlertAction) in
-                  self.recorder.discardRecording(handler: { () -> Void in
-                      print("Recording suffessfully deleted.")
-                  })
-              })
-              let editAction = UIAlertAction(title: "Edit", style: .default, handler: { (action: UIAlertAction) -> Void in
-                  preview?.previewControllerDelegate = self
-                  self.present(preview!, animated: true, completion: nil)
-              })
-              alert.addAction(editAction)
-              alert.addAction(deleteAction)
-              self.present(alert, animated: true, completion: nil)
-              self.isRecording = false
-              self.viewReset()
+        recorder.stopRecording { [unowned self] (preview, error) in
+          print("Stopped recording")
+          guard preview != nil else {
+              print("Preview controller is not available.")
+              return
           }
-      }
+          let alert = UIAlertController(title: "Recording Finished", message: "Would you like to edit or delete your recording?", preferredStyle: .alert)
+          let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action: UIAlertAction) in
+              self.recorder.discardRecording(handler: { () -> Void in
+                  print("Recording suffessfully deleted.")
+              })
+          })
+          let editAction = UIAlertAction(title: "Edit", style: .default, handler: { (action: UIAlertAction) -> Void in
+              preview?.previewControllerDelegate = self
+              self.present(preview!, animated: true, completion: nil)
+          })
+          alert.addAction(editAction)
+          alert.addAction(deleteAction)
+          self.present(alert, animated: true, completion: nil)
+          self.isRecording = false
+          self.viewReset()
+        }
+    }
       
-      func previewControllerDidFinish(_ previewController: RPPreviewViewController) {
-          dismiss(animated: true)
-      }
+    func previewControllerDidFinish(_ previewController: RPPreviewViewController) {
+        dismiss(animated: true)
+    }
 
 }
 

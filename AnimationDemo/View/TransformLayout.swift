@@ -39,7 +39,11 @@ class BannerLayout: UICollectionViewLayout {
     open var minimumScale: CGFloat = 0.9
     open var minimumAlpha: CGFloat = 0.6
     internal var leadingSpacing: CGFloat = 0
-    internal var itemSpacing: CGFloat = 0
+    internal var itemSpacing: CGFloat = 0 {
+        didSet {
+            debugPrint("itemSpacing:\(itemSpacing)")
+        }
+    }
     fileprivate var collectionViewSize: CGSize = .zero
     fileprivate var numberOfSections = 1
     fileprivate var numberOfItems = 0
@@ -52,12 +56,11 @@ class BannerLayout: UICollectionViewLayout {
     }
 
     override func prepare() {
-        guard let collectionView = self.collectionView else {
+        guard let collectionView = self.collectionView, let pagerView = self.pagerView else {
                return
         }
-        let interSpacing: CGFloat = 5
-        self.actualItemSize = CGSize(width: (UIScreen.main.bounds.width - interSpacing - interSpacing * 2) / 1.5, height: 300)
-        self.actualInteritemSpacing = -10
+        self.actualItemSize = pagerView.itemSize
+        self.actualInteritemSpacing =  pagerView.interitemSpacing
         self.leadingSpacing = 15
         self.itemSpacing = self.actualItemSize.width + self.actualInteritemSpacing
         self.numberOfSections = collectionView.numberOfSections
@@ -117,19 +120,21 @@ class BannerLayout: UICollectionViewLayout {
        while origin - maxPosition <= max(CGFloat(100.0) * .ulpOfOne * abs(origin + maxPosition), .leastNonzeroMagnitude) {
             let indexPath = IndexPath(item: itemIndex % self.numberOfItems, section: itemIndex / self.numberOfItems)
             let attributes = self.layoutAttributesForItem(at: indexPath) as! FSPagerViewLayoutAttributes
+        
             let ruler = collectionView!.bounds.origin.x + actualItemSize.width * 0.5 + abs(self.actualInteritemSpacing)
         
             attributes.position = (attributes.center.x - ruler)/self.itemSpacing
             attributes.zIndex = Int(self.numberOfItems) - Int(attributes.position)
             let position = attributes.position
-            let scale = max(1 - (1-self.minimumScale) * abs(position), self.minimumScale)
+            let scale = max(1 - (1 - self.minimumScale) * abs(position), self.minimumScale)
+            print("scale:\(scale) - position:\(position)")
             let transform = CGAffineTransform(scaleX: scale, y: scale)
             attributes.transform = transform
-        
-//            let alpha = (self.minimumAlpha + (1-abs(position))*(1-self.minimumAlpha))
-//            attributes.alpha = alpha
             let zIndex = (1-abs(position)) * 10
             attributes.zIndex = Int(zIndex)
+        
+            let alpha = (self.minimumAlpha + (1-abs(position))*(1-self.minimumAlpha))
+            attributes.alpha = alpha
 
             layoutAttributes.append(attributes)
             itemIndex += 1
@@ -151,12 +156,12 @@ class BannerLayout: UICollectionViewLayout {
     }
     
     internal func frame(for indexPath: IndexPath) -> CGRect {
-       let numberOfItems = self.numberOfItems*indexPath.section + indexPath.item
+       let numberOfItems = self.numberOfItems * indexPath.section + indexPath.item
        let originX: CGFloat = {
            if self.scrollDirection == .vertical {
                return (self.collectionView!.frame.width-self.actualItemSize.width)*0.5
            }
-           return self.leadingSpacing + CGFloat(numberOfItems)*self.itemSpacing
+          return leadingSpacing + CGFloat(numberOfItems) * (self.itemSpacing)
        }()
        let originY: CGFloat = {
            if self.scrollDirection == .horizontal {
@@ -190,14 +195,14 @@ class BannerLayout: UICollectionViewLayout {
              if self.scrollDirection == .vertical {
                  return 0
              }
-             let contentOffsetX = origin.x - (actualItemSize.width * 0.5 + abs(self.actualInteritemSpacing) - self.actualItemSize.width * 0.5)
+             let contentOffsetX = origin.x - actualItemSize.width * 0.1
              return contentOffsetX
          }()
          let contentOffsetY: CGFloat = {
              if self.scrollDirection == .horizontal {
                  return 0
              }
-             let contentOffsetY = origin.y - (actualItemSize.height * 0.5 + abs(self.actualInteritemSpacing) - self.actualItemSize.height * 0.5)
+             let contentOffsetY = origin.y
              return contentOffsetY
          }()
          let contentOffset = CGPoint(x: contentOffsetX, y: contentOffsetY)
@@ -211,20 +216,16 @@ class BannerLayout: UICollectionViewLayout {
         let oldproposedContentOffset = proposedContentOffset
        var proposedContentOffset = proposedContentOffset
        func calculateTargetOffset(by proposedOffset: CGFloat, boundedOffset: CGFloat) -> CGFloat {
-            var targetOffset: CGFloat
-            let vector: CGFloat = velocity.x >= 0 ? 1.0 : -1.0
-            let offsetRatio = (actualItemSize.width * 0.5 + abs(self.actualInteritemSpacing)) * 0.5 / collectionView.bounds.width
-            targetOffset = round(proposedOffset / self.itemSpacing + offsetRatio * vector) * self.itemSpacing // Ceil by 0.15, rather than 0.5
-            targetOffset = max(0, targetOffset)
-            targetOffset = min(boundedOffset, targetOffset)
-            return targetOffset
+            let unitDis = itemSpacing
+            let index = proposedOffset / unitDis
+            return round(index) * unitDis - actualItemSize.width * 0.1 * 0.5
         }
        let proposedContentOffsetX: CGFloat = {
-           if self.scrollDirection == .vertical {
+            if self.scrollDirection == .vertical {
                return proposedContentOffset.x
-           }
-        let boundedOffset = self.contentSize.width - self.itemSpacing
-           return calculateTargetOffset(by: proposedContentOffset.x, boundedOffset: boundedOffset)
+            }
+            let boundedOffset = self.contentSize.width - self.itemSpacing
+            return calculateTargetOffset(by: proposedContentOffset.x, boundedOffset: boundedOffset)
        }()
        let proposedContentOffsetY: CGFloat = {
            if self.scrollDirection == .horizontal {

@@ -97,8 +97,8 @@ extension TouchView {
 
 class TouchRecordView: TouchView {
     fileprivate lazy var dot: UIView = {
-         let dot = UIView()
-         return dot
+        let dot = UIView()
+        return dot
      }()
     
     override func awakeFromNib() {
@@ -131,4 +131,5 @@ class TouchRecordView: TouchView {
      
     }
     
+   
 }

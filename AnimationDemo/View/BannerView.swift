@@ -23,6 +23,16 @@ protocol BannerViewDelegate: NSObjectProtocol {
 }
 
 class BannerView: UIView {
+     open var interitemSpacing: CGFloat = 0 {
+         didSet {
+             self.collectionViewLayout.forceInvalidate()
+         }
+     }
+    open var itemSize: CGSize = .zero {
+         didSet {
+             self.collectionViewLayout.forceInvalidate()
+         }
+     }
     let bag = DisposeBag()
     internal var numberOfSections: Int = 0
     internal var numberOfItems: Int = 0
