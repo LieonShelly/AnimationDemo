@@ -67,18 +67,18 @@ class TapAnimator: NSObject, AnimationTargetType {
     fileprivate  func showWave(_ param: TapAnimationParam,
                                completion: ((Bool) -> Void)?) {
         
-        let position = CABasicAnimation(keyPath: "position")
-        position.duration = 1
-        position.timingFunction = CAMediaTimingFunction(name: .linear)
-        position.fromValue = param.fromPoint
-        position.toValue = param.endPoint
-        position.fillMode = .forwards
-        position.isRemovedOnCompletion = false
-        dot.add(position, forKey: nil)
+//        let position = CABasicAnimation(keyPath: "position")
+//        position.duration = 1
+//        position.timingFunction = CAMediaTimingFunction(name: .linear)
+//        position.fromValue = param.fromPoint
+//        position.toValue = param.endPoint
+//        position.fillMode = CAMediaTimingFillMode.forwards
+//        position.fillMode = .forwards
+//        position.isRemovedOnCompletion = false
+//        dot.add(position, forKey: nil)
         
         let scale = CABasicAnimation(keyPath: "transform.scale")
         scale.duration = 0.25
-        scale.beginTime = CACurrentMediaTime() + 1 + 0.5
         scale.timingFunction = CAMediaTimingFunction(name: .easeOut)
         scale.fromValue = 1
         scale.fillMode = .forwards
@@ -86,7 +86,7 @@ class TapAnimator: NSObject, AnimationTargetType {
         scale.toValue = 0.8
         dot.add(scale, forKey: nil)
         
-        delay(seconds: 1.75, completion: {[weak self] in
+        delay(seconds: 0.25, completion: {[weak self] in
             guard let weakSelf = self else {
                 return
             }
@@ -102,18 +102,18 @@ class TapAnimator: NSObject, AnimationTargetType {
     }
     
     fileprivate func showWave(_ param: TapAnimationParam) {
-       let endIndex: Int = param.waveCount
+       let endIndex: Int = param.waveCount - 1
        for index in 0 ... endIndex {
            let cycle = CAShapeLayer()
            cycle.borderWidth = 1
            let cornerRadius: CGFloat = param.waveRadius
            cycle.borderColor = UIColor.clear.cgColor
            cycle.cornerRadius = cornerRadius
-           cycle.frame = CGRect(x: layer.bounds.width * 0.5 - param.dotRadius,
-                                y: layer.bounds.height * 0.5 - param.dotRadius,
+            cycle.frame = CGRect(x: param.endPoint!.x - param.dotRadius,
+                                y:  param.endPoint!.y - param.dotRadius,
                                 width: cornerRadius * 2,
                                 height: cornerRadius * 2)
-           cycle.position = layer.position
+        cycle.position = param.endPoint!
            let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
            scaleAnimation.fromValue = 1
            scaleAnimation.toValue = 4
@@ -140,7 +140,7 @@ class TapAnimator: NSObject, AnimationTargetType {
                                    0.5,
                                    0.1]
            let group = CAAnimationGroup()
-        let duration: Double = Double(param.waveCount) * param.speed
+        let duration: Double = 0.5
            group.fillMode = .backwards
            group.setValue("wave", forKey: "name")
            group.beginTime = CACurrentMediaTime() + (Double(index) * duration) / Double(endIndex + 1)

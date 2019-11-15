@@ -122,6 +122,18 @@ protocol TapAnimationParam: AnimationParam {
     
 }
 
+/// 滑竿类的动画参数
+protocol MoveAnimationParam {
+    ///  点的颜色
+    var color: UIColor! { get set }
+    /// 点的位置
+    var position: CGPoint? { get set }
+    /// 点的半径
+    var dotRadius: CGFloat! { get set }
+    /// 父视图
+    var containerView: UIView! { get set }
+}
+
 extension TapAnimationParam {
     var duration: Double? {
         return 0.25

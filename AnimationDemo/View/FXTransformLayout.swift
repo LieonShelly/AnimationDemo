@@ -35,6 +35,7 @@ class FXBannerLayout: UICollectionViewLayout {
         case horizontal
         case vertical
     }
+    internal var needsReprepare = true
     open var scrollDirection: ScrollDirection = .horizontal
     open var minimumScale: CGFloat = 0.9
     open var minimumAlpha: CGFloat = 0.6
@@ -59,6 +60,10 @@ class FXBannerLayout: UICollectionViewLayout {
         guard let collectionView = self.collectionView, let pagerView = self.pagerView else {
                return
         }
+        guard needsReprepare == true else {
+            return
+        }
+        needsReprepare = false
         self.actualItemSize = pagerView.itemSize
         self.actualInteritemSpacing =  pagerView.interitemSpacing
         self.leadingSpacing = 15
@@ -87,13 +92,14 @@ class FXBannerLayout: UICollectionViewLayout {
     }
     
     internal func forceInvalidate() {
+        needsReprepare = true
         self.invalidateLayout()
     }
   
     override open var collectionViewContentSize: CGSize {
          //FIXME:滑动范围要调大点，具体好大还没要算出来
         return CGSize(width: self.contentSize.width + actualItemSize.width * 0.5 + abs(self.actualInteritemSpacing),
-                      height: self.contentSize.height)
+                      height: 0)
 //        return self.contentSize
     }
 
@@ -165,7 +171,7 @@ class FXBannerLayout: UICollectionViewLayout {
        }()
        let originY: CGFloat = {
            if self.scrollDirection == .horizontal {
-               return (self.collectionView!.frame.height-self.actualItemSize.height)*0.5
+               return 20 //(self.collectionView!.frame.height-self.actualItemSize.height)*0.5
            }
            return self.leadingSpacing + CGFloat(numberOfItems)*self.itemSpacing
        }()
@@ -193,14 +199,14 @@ class FXBannerLayout: UICollectionViewLayout {
          }
          let contentOffsetX: CGFloat = {
              if self.scrollDirection == .vertical {
-                 return 0
+                 return self.collectionView?.contentOffset.x ?? 0
              }
              let contentOffsetX = origin.x - actualItemSize.width * 0.1
              return contentOffsetX
          }()
          let contentOffsetY: CGFloat = {
              if self.scrollDirection == .horizontal {
-                 return 0
+                return self.collectionView?.contentOffset.y ?? 0
              }
              let contentOffsetY = origin.y
              return contentOffsetY

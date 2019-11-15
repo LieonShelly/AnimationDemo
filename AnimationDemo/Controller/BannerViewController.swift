@@ -27,13 +27,14 @@ class BannerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bannerView = FXBannerView(frame: CGRect(x: 0,
-                                                      y: self.view.center.y,
+                                                      y:20,
                                                       width: UIScreen.main.bounds.width,
-                                                      height: 400.0.fit375Pt))
+                                                      height: FXBannerView.customItemHeight + 100))
         bannerView.dataSource = self
         bannerView.delegate = self
         let interSpacing: CGFloat = 5
         bannerView.interitemSpacing = interSpacing
+        bannerView.backgroundColor = .red
         bannerView.itemSize = CGSize(width: (UIScreen.main.bounds.width - interSpacing - interSpacing * 2) / 1.5,
                                      height: FXBannerView.customItemHeight)
         bannerView.register(UINib(nibName: "FXBannerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "FXBannerCollectionViewCell")

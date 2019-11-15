@@ -48,7 +48,7 @@ class DemoTouchViewController: UIViewController {
         .disposed(by: bag)
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-            GuideStartView.show()
+            FXTutorialPanel.show()
         }
     }
     

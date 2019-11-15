@@ -9,16 +9,31 @@
 import Foundation
 import  UIKit
 
+struct FXCommonMoveAnimationParam: MoveAnimationParam {
+    var containerView: UIView!
+    
+    var color: UIColor! = UIColor.red
+    
+    var position: CGPoint?
+    
+    var dotRadius: CGFloat! = 20
+    
+    init(_ containerView: UIView) {
+        self.containerView = containerView
+    }
+    
+}
+
 class CommonAnimateParam: TapAnimationParam {
-    var repeateCount: Float! = 30
+    var repeateCount: Float! = 1
     var waveRadius: CGFloat! = 10
     var fromPoint: CGPoint?
     var endPoint: CGPoint?
     var color: UIColor! = UIColor.gray
-    var speed: Double! = 0.25
+    var speed: Double! = 0.5
     var layer: CALayer!
     var dotRadius: CGFloat! = 20
-    var waveCount: Int! = 5
+    var waveCount: Int! = 1
     
     init(_ layer: CALayer) {
         self.layer = layer

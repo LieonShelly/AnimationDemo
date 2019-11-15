@@ -8,6 +8,7 @@
 
 import UIKit
 import ReplayKit
+import AVKit
 
 let window = UIApplication.shared.keyWindow as! FXWindow
 class ScreenRecordViewController: UIViewController, RPPreviewViewControllerDelegate {
@@ -17,12 +18,14 @@ class ScreenRecordViewController: UIViewController, RPPreviewViewControllerDeleg
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var micToggle: UISwitch!
     @IBOutlet weak var recordButton: UIButton!
+    let  tmpFileURL = URL(fileURLWithPath: "\(NSTemporaryDirectory())tmp\(arc4random()).mp4")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         RPScreenRecorder.shared().delegate = self
         recordButton.layer.cornerRadius = 32.5
         window.addPannel()
+        startRecordingw()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -57,50 +60,92 @@ class ScreenRecordViewController: UIViewController, RPPreviewViewControllerDeleg
         } else {
           recorder.isMicrophoneEnabled = false
         }
-        recorder.startRecording{ [unowned self] (error) in
-          guard error == nil else {
-              print("There was an error starting the recording.")
-              return
-          }
-          print("Started Recording Successfully")
-            DispatchQueue.main.async {
-                self.micToggle.isEnabled = false
-                self.recordButton.backgroundColor = UIColor.red
-                self.statusLabel.text = "Recording..."
-                self.statusLabel.textColor = UIColor.red
+        if #available(iOS 11.0, *) {
+            recorder.startCapture(handler: { (buffer, type, _) in
                 self.isRecording = true
-            }
-
+                switch type {
+                case .audioApp:
+                    print("audioApp")
+                case .audioMic:
+                    print("audioMic")
+                case .video:
+                    print("video")
+                    if let assetWriter = self.assetWriter {
+                           if assetWriter.status != .writing && assetWriter.status != .unknown {
+                               return
+                           }
+                       }
+                    if let assetWriter = self.assetWriter,  assetWriter.status == .unknown {
+                           assetWriter.startWriting()
+                            assetWriter.startSession(atSourceTime: CMSampleBufferGetPresentationTimeStamp(buffer))
+                    } else {
+                        self.videoWriterInput!.append(buffer)
+                    }
+                }
+            }, completionHandler: { error in
+                if error != nil {
+                    
+                }
+            })
+        } else {
+            debugPrint("录屏仅支持iOS11以上的系统")
         }
     }
       
      fileprivate func stopRecording() {
-        recorder.stopRecording { [unowned self] (preview, error) in
-          print("Stopped recording")
-          guard preview != nil else {
-              print("Preview controller is not available.")
-              return
-          }
-          let alert = UIAlertController(title: "Recording Finished", message: "Would you like to edit or delete your recording?", preferredStyle: .alert)
-          let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (action: UIAlertAction) in
-              self.recorder.discardRecording(handler: { () -> Void in
-                  print("Recording suffessfully deleted.")
-              })
-          })
-          let editAction = UIAlertAction(title: "Edit", style: .default, handler: { (action: UIAlertAction) -> Void in
-              preview?.previewControllerDelegate = self
-              self.present(preview!, animated: true, completion: nil)
-          })
-          alert.addAction(editAction)
-          alert.addAction(deleteAction)
-          self.present(alert, animated: true, completion: nil)
-          self.isRecording = false
-          self.viewReset()
+        if #available(iOS 11.0, *) {
+            recorder.stopCapture { (error) in
+                self.isRecording = false
+                  print("Stopped recording")
+                self.assetWriter?.finishWriting {
+                    print("finishWriting")
+                    print("tmpFileURL:\(self.tmpFileURL)")
+                    let vc = AVPlayerViewController()
+                    let player = AVPlayer(url: self.tmpFileURL)
+                    vc.player = player
+                    DispatchQueue.main.async {
+                        self.present(vc, animated: true, completion: nil)
+                    }
+                }
+            }
+        } else {
+            // Fallback on earlier versions
         }
     }
       
     func previewControllerDidFinish(_ previewController: RPPreviewViewController) {
         dismiss(animated: true)
+        
+    }
+  
+    
+    var assetWriter: AVAssetWriter?
+    var videoWriterInput: AVAssetWriterInput?
+    let videoSetting: [String : Any] = [
+        AVVideoCodecKey: AVVideoCodecH264,
+        AVVideoWidthKey: UIScreen.main.bounds.width,
+        AVVideoHeightKey: UIScreen.main.bounds.height,
+        AVVideoCompressionPropertiesKey: [
+            AVVideoPixelAspectRatioKey: [
+                AVVideoPixelAspectRatioHorizontalSpacingKey: 1,
+                AVVideoPixelAspectRatioVerticalSpacingKey: 1
+            ],
+            AVVideoMaxKeyFrameIntervalKey: 1,
+            AVVideoAverageBitRateKey: 1280000
+        ]
+    ]
+    func startRecordingw() {
+       
+        do {
+            assetWriter = try AVAssetWriter(url: tmpFileURL, fileType: .mp4)
+            videoWriterInput = AVAssetWriterInput(mediaType: AVMediaType.video, outputSettings: self.videoSetting)
+            videoWriterInput!.expectsMediaDataInRealTime = true
+            if assetWriter!.canAdd(videoWriterInput!) {
+                assetWriter!.add(videoWriterInput!)
+            }
+        } catch {
+            
+        }
     }
 
 }
@@ -108,6 +153,6 @@ class ScreenRecordViewController: UIViewController, RPPreviewViewControllerDeleg
 extension ScreenRecordViewController: RPScreenRecorderDelegate {
     
     func screenRecorder(_ screenRecorder: RPScreenRecorder, didStopRecordingWith previewViewController: RPPreviewViewController?, error: Error?) {
-        previewViewController?.value(forKey: "movieURL")
+        
     }
 }

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlurViewController" customModule="AnimationDemo" customModuleProvider="target">
+            <connections>
+                <outlet property="gradientView" destination="dVC-Zh-SiM" id="bZk-gk-3Ow"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sd" translatesAutoresizingMaskIntoConstraints="NO" id="Qky-Qf-NOl">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <visualEffectView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q8C-r9-jpx">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ug0-QW-vJy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="dark"/>
+                </visualEffectView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBX-3i-WGh">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sd" translatesAutoresizingMaskIntoConstraints="NO" id="onR-DK-STv">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVC-Zh-SiM" customClass="GradientView" customModule="AnimationDemo" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="82" width="414" height="318"/>
+                            <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="318" id="SIM-UN-Oih"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="onR-DK-STv" secondAttribute="trailing" id="8TI-00-iwK"/>
+                        <constraint firstAttribute="bottom" secondItem="onR-DK-STv" secondAttribute="bottom" id="JiR-5k-QME"/>
+                        <constraint firstItem="onR-DK-STv" firstAttribute="leading" secondItem="WBX-3i-WGh" secondAttribute="leading" id="N19-kl-WnZ"/>
+                        <constraint firstAttribute="trailing" secondItem="dVC-Zh-SiM" secondAttribute="trailing" id="NmI-Jp-kbJ"/>
+                        <constraint firstAttribute="bottom" secondItem="dVC-Zh-SiM" secondAttribute="bottom" id="OwP-wK-aMc"/>
+                        <constraint firstItem="dVC-Zh-SiM" firstAttribute="leading" secondItem="WBX-3i-WGh" secondAttribute="leading" id="iD1-7Y-7ZG"/>
+                        <constraint firstAttribute="height" constant="400" id="jut-aV-qth"/>
+                        <constraint firstItem="onR-DK-STv" firstAttribute="top" secondItem="WBX-3i-WGh" secondAttribute="top" id="xQa-cz-pPk"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="q8C-r9-jpx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2gJ-KM-YTS"/>
+                <constraint firstItem="q8C-r9-jpx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4xQ-E3-9Sz"/>
+                <constraint firstItem="WBX-3i-WGh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6XH-85-GEW"/>
+                <constraint firstAttribute="bottom" secondItem="q8C-r9-jpx" secondAttribute="bottom" id="VIs-Qa-IT0"/>
+                <constraint firstAttribute="trailing" secondItem="WBX-3i-WGh" secondAttribute="trailing" id="a4l-z9-YuS"/>
+                <constraint firstAttribute="trailing" secondItem="q8C-r9-jpx" secondAttribute="trailing" id="gM5-Zl-MrJ"/>
+                <constraint firstItem="WBX-3i-WGh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="udX-kJ-B9p"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="sd" width="225" height="225"/>
+    </resources>
+</document>

@@ -121,6 +121,13 @@ extension HomeViewController {
             let vcc = BannerViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
+        let progress = ListItem("SLider", handler: { [weak self] in
+            guard let weakSelf = self else {
+                 return
+            }
+            let vcc = ProgressViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
         items.append(tap)
         items.append(pinch)
         items.append(move)
@@ -133,6 +140,7 @@ extension HomeViewController {
         items.append(touch)
         items.append(record)
         items.append(banner)
+        items.append(progress)
     }
     
 }

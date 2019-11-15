@@ -228,7 +228,7 @@ extension PinchAnimator {
 
 class AniamtionHelper {
      static func key(_ str: String) -> String {
-        return "IFAnimation" + str + "\(Date().timeIntervalSince1970)"
+        return "IFAnimation" + str
       }
 }
 

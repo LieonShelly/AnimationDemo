@@ -18,8 +18,8 @@ class TapAnimationViewController: UIViewController {
     
     fileprivate func showWaveAnimation() {
         let param = CommonAnimateParam(animateView.layer)
-        param.fromPoint = CGPoint(x: animateView.center.x, y: 2000)
-        param.endPoint = animateView.center
+        param.fromPoint = CGPoint(x: 200, y: 100)
+        param.endPoint = CGPoint(x: 200, y: 100)
         param.color = UIColor.white
         param.layer = animateView.layer
         IFAnimation.show(.tap(param), completion: nil)

@@ -28,6 +28,9 @@ class ProgressViewController: UIViewController {
     }
 
     @IBAction func sliderAction(_ sender: UISlider) {
-        
+        let postion = slider.frame.origin.x + CGFloat(sender.value) *  slider.frame.size.width
+        var param = FXCommonMoveAnimationParam(view)
+        param.position = CGPoint(x: postion, y: slider.frame.origin.y + 200)
+        FXMoveAniamtion.showMove(with: param, completion: nil)
     }
 }
