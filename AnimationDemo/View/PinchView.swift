@@ -19,7 +19,7 @@ class PinchView: UIView {
     }()
     fileprivate lazy var imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "balloon")
+        imageView.image = UIImage(named: "meinv")
         return imageView
     }()
     
@@ -37,7 +37,7 @@ class PinchView: UIView {
         super.layoutSubviews()
         scrollView.frame = bounds
         imageView.center = center
-        imageView.sizeToFit()
+        imageView.frame = bounds
     }
 }
 

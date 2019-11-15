@@ -9,7 +9,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FlurViewController" customModule="AnimationDemo" customModuleProvider="target">
             <connections>
-                <outlet property="gradientView" destination="dVC-Zh-SiM" id="bZk-gk-3Ow"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,59 +17,36 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sd" translatesAutoresizingMaskIntoConstraints="NO" id="Qky-Qf-NOl">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="meinv" translatesAutoresizingMaskIntoConstraints="NO" id="Xd5-rk-5c1">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <visualEffectView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q8C-r9-jpx">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ug0-QW-vJy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    </view>
-                    <blurEffect style="dark"/>
-                </visualEffectView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WBX-3i-WGh">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
-                    <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sd" translatesAutoresizingMaskIntoConstraints="NO" id="onR-DK-STv">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
-                        </imageView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVC-Zh-SiM" customClass="GradientView" customModule="AnimationDemo" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="82" width="414" height="318"/>
-                            <color key="backgroundColor" systemColor="systemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="318" id="SIM-UN-Oih"/>
-                            </constraints>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="onR-DK-STv" secondAttribute="trailing" id="8TI-00-iwK"/>
-                        <constraint firstAttribute="bottom" secondItem="onR-DK-STv" secondAttribute="bottom" id="JiR-5k-QME"/>
-                        <constraint firstItem="onR-DK-STv" firstAttribute="leading" secondItem="WBX-3i-WGh" secondAttribute="leading" id="N19-kl-WnZ"/>
-                        <constraint firstAttribute="trailing" secondItem="dVC-Zh-SiM" secondAttribute="trailing" id="NmI-Jp-kbJ"/>
-                        <constraint firstAttribute="bottom" secondItem="dVC-Zh-SiM" secondAttribute="bottom" id="OwP-wK-aMc"/>
-                        <constraint firstItem="dVC-Zh-SiM" firstAttribute="leading" secondItem="WBX-3i-WGh" secondAttribute="leading" id="iD1-7Y-7ZG"/>
-                        <constraint firstAttribute="height" constant="400" id="jut-aV-qth"/>
-                        <constraint firstItem="onR-DK-STv" firstAttribute="top" secondItem="WBX-3i-WGh" secondAttribute="top" id="xQa-cz-pPk"/>
-                    </constraints>
-                </view>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="uxU-DM-LFd">
+                    <rect key="frame" x="18" y="433" width="378" height="31"/>
+                    <connections>
+                        <action selector="bgColorSliderAction:" destination="-1" eventType="valueChanged" id="0d1-t7-EAv"/>
+                    </connections>
+                </slider>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="OI6-Fd-Gpn">
+                    <rect key="frame" x="18" y="483" width="378" height="31"/>
+                    <connections>
+                        <action selector="aphaSliderAction:" destination="-1" eventType="valueChanged" id="p3s-ay-6Qa"/>
+                    </connections>
+                </slider>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="q8C-r9-jpx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2gJ-KM-YTS"/>
-                <constraint firstItem="q8C-r9-jpx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4xQ-E3-9Sz"/>
-                <constraint firstItem="WBX-3i-WGh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6XH-85-GEW"/>
-                <constraint firstAttribute="bottom" secondItem="q8C-r9-jpx" secondAttribute="bottom" id="VIs-Qa-IT0"/>
-                <constraint firstAttribute="trailing" secondItem="WBX-3i-WGh" secondAttribute="trailing" id="a4l-z9-YuS"/>
-                <constraint firstAttribute="trailing" secondItem="q8C-r9-jpx" secondAttribute="trailing" id="gM5-Zl-MrJ"/>
-                <constraint firstItem="WBX-3i-WGh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="udX-kJ-B9p"/>
+                <constraint firstItem="OI6-Fd-Gpn" firstAttribute="trailing" secondItem="uxU-DM-LFd" secondAttribute="trailing" id="EEL-1f-Exj"/>
+                <constraint firstItem="uxU-DM-LFd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Mb7-Jy-B7n"/>
+                <constraint firstAttribute="trailing" secondItem="uxU-DM-LFd" secondAttribute="trailing" constant="20" id="Qtn-dn-lC6"/>
+                <constraint firstItem="uxU-DM-LFd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="433" id="W2N-sW-uqs"/>
+                <constraint firstItem="OI6-Fd-Gpn" firstAttribute="top" secondItem="uxU-DM-LFd" secondAttribute="bottom" constant="20" id="YRu-ev-m0w"/>
+                <constraint firstItem="OI6-Fd-Gpn" firstAttribute="leading" secondItem="uxU-DM-LFd" secondAttribute="leading" id="e30-KB-0AU"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="153.34821428571428"/>
         </view>
     </objects>
     <resources>
-        <image name="sd" width="225" height="225"/>
+        <image name="meinv" width="375" height="812"/>
     </resources>
 </document>
