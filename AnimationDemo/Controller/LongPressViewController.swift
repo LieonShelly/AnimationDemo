@@ -18,11 +18,12 @@ class LongPressViewController: UIViewController {
         collectionView.delegate = self
         collectionView.registerNibWithCell(ImageCollectionViewCell.self)
         for _ in 0...100 {
-            dataSource.append(UIImage(named: "balloon")!)
+            dataSource.append(UIImage(named: "sd")!)
         }
         let press = UILongPressGestureRecognizer(target: self, action: #selector(longPress(_:)))
         collectionView.addGestureRecognizer(press)
     }
+    var aniamtionKey: String?
 }
 
 extension LongPressViewController {
@@ -37,8 +38,12 @@ extension LongPressViewController {
               return
             }
             let rect = view.convert(cell.frame, from: collectionView)
-            PopImageBrowser.show(cell.imageView.image!,
+            aniamtionKey = PopImageBrowser.show(cell.imageView.image!,
                                selectedFrame: rect)
+        case .ended:
+            if let aniamtionKey = aniamtionKey {
+                PopImageBrowser.dismiss(aniamtionKey)
+            }
         default:
             break
         }
@@ -53,6 +58,7 @@ extension LongPressViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(ImageCollectionViewCell.self, for: indexPath)
+        cell.contentView.backgroundColor = .blue
         cell.imageView.image = dataSource[indexPath.item]
         return cell
     }

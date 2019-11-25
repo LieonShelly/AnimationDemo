@@ -11,51 +11,72 @@ import UIKit
 
 class TapAniamtion {
     static var animations: [String: Any?] = [:]
-
+    
     @discardableResult
     static func showWave(with param: TapAnimationParam,
                          completion: ((Bool) -> Void)?) -> String {
         let name = AniamtionHelper.key(param.layer.description)
-          var animator = animations[name] as? TapAnimator
-          if animator == nil {
-              animator = TapAnimator(param)
-              animations[name] = animator
-          }
+        var animator = animations[name] as? TapAnimator
+        if animator == nil {
+            animator = TapAnimator(param)
+            animations[name] = animator
+        }
         animator?.showWave(param, completion: { (flag) in
             clear(name)
             completion?(flag)
         })
-          return name
-      }
+        return name
+    }
     
     static func clear(_ animationKey: String?) {
-         guard let animationKey = animationKey,
-             let helper = animations[animationKey] as? TapAnimator else {
-             return
-         }
-         helper.clear()
-         animations[animationKey] = nil
-     }
-      
+        guard let animationKey = animationKey,
+            let helper = animations[animationKey] as? TapAnimator else {
+                return
+        }
+        helper.clear()
+        animations[animationKey] = nil
+    }
+    
 }
 
 class TapAnimator: NSObject, AnimationTargetType {
     var layer: CALayer!
     var animationCompletion: ((Bool) -> Void)?
-    fileprivate lazy var dot: CAShapeLayer = {
-        let dot1 = CAShapeLayer()
+    fileprivate lazy var dot: FXTutorialDot = {
+        let dot1 = FXTutorialDot()
         return dot1
     }()
+    
+    fileprivate lazy var outterDot: CALayer = {
+        let dot1 = CALayer()
+        return dot1
+    }()
+    var outterFrame: CGRect = .zero
+    var innerFrame: CGRect = .zero
+    
     
     convenience init(_ param: TapAnimationParam) {
         self.init()
         self.layer = param.layer
-        dot.bounds = CGRect(x: 0, y: 0, width: param.dotRadius * 2, height: param.dotRadius * 2)
-        dot.position = CGPoint(x: 10000, y: 10000)
+        self.outterFrame = CGRect(x: 0, y: 0, width: param.dotRadius * 2.5, height: param.dotRadius * 2.5)
+        outterDot.bounds = outterFrame
+        outterDot.position = param.endPoint! //CGPoint(x: 10000, y: 10000)
+        outterDot.borderColor = UIColor.white.cgColor
+        outterDot.borderWidth = 2
+        outterDot.cornerRadius = outterFrame.width * 0.5
+        outterDot.backgroundColor = UIColor.clear.cgColor
+        outterDot.opacity = 0
+        layer.addSublayer(outterDot)
+        
+        innerFrame =  CGRect(x: 0, y: 0, width: param.dotRadius * 2, height: param.dotRadius * 2)
+        dot.bounds = innerFrame
+        dot.position = param.endPoint! //CGPoint(x: 10000, y: 10000)
         dot.borderColor = UIColor.white.cgColor
-        dot.cornerRadius = param.dotRadius
+        dot.cornerRadius  = param.dotRadius
         dot.backgroundColor = param.color.cgColor
         layer.addSublayer(dot)
+        
+        
     }
     
     private override init() {
@@ -66,93 +87,62 @@ class TapAnimator: NSObject, AnimationTargetType {
     
     fileprivate  func showWave(_ param: TapAnimationParam,
                                completion: ((Bool) -> Void)?) {
-        
-//        let position = CABasicAnimation(keyPath: "position")
-//        position.duration = 1
-//        position.timingFunction = CAMediaTimingFunction(name: .linear)
-//        position.fromValue = param.fromPoint
-//        position.toValue = param.endPoint
-//        position.fillMode = CAMediaTimingFillMode.forwards
-//        position.fillMode = .forwards
-//        position.isRemovedOnCompletion = false
-//        dot.add(position, forKey: nil)
-        
-        let scale = CABasicAnimation(keyPath: "transform.scale")
-        scale.duration = 0.25
+        let scale = CAKeyframeAnimation(keyPath: "transform.scale")
+        scale.values = [0, 1.5, 1]
+        scale.duration = 0.3
+        scale.calculationMode = .linear
         scale.timingFunction = CAMediaTimingFunction(name: .easeOut)
-        scale.fromValue = 1
-        scale.fillMode = .forwards
+        scale.fillMode = .backwards
         scale.isRemovedOnCompletion = false
-        scale.toValue = 0.8
         dot.add(scale, forKey: nil)
         
-        delay(seconds: 0.25, completion: {[weak self] in
-            guard let weakSelf = self else {
-                return
-            }
-            weakSelf.showWave(param)
-        })
+        let group = CAAnimationGroup()
+        group.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        group.fillMode = .forwards
+        group.isRemovedOnCompletion = false
+        group.duration = 0.3
+        group.beginTime = CACurrentMediaTime() + 0.2
+        
+        let opacity = CAKeyframeAnimation(keyPath: "opacity")
+        opacity.values = [0, 1, 0]
+        opacity.calculationMode = .linear
+        
+        let newScale = CABasicAnimation(keyPath: "transform.scale")
+        newScale.fromValue = 0
+        newScale.toValue = 2
+        group.delegate = self
+        group.animations = [newScale, opacity]
+        outterDot.add(group, forKey: nil)
+        
+        //        outterDot.opacity = 0
+        
+        let dismissGroup = CAAnimationGroup()
+        dismissGroup.timingFunction = CAMediaTimingFunction(name: .linear)
+        dismissGroup.fillMode = .forwards
+        dismissGroup.isRemovedOnCompletion = false
+        dismissGroup.beginTime = CACurrentMediaTime() + 0.2 + 0.15
+        dismissGroup.duration = 0.3
+        dismissGroup.delegate = self
+        dismissGroup.setValue("dismissGroup", forKey: "name")
+        
+        let dismissOpacity = CABasicAnimation(keyPath: "opacity")
+        dismissOpacity.fromValue = 1
+        dismissOpacity.toValue = 0
+        
+        newScale.fromValue = 1
+        newScale.toValue = 2
+        dismissGroup.animations = [newScale, dismissOpacity]
+        dot.add(dismissGroup, forKey: nil)
         self.animationCompletion = completion
+        return
     }
     
     
     internal func clear() {
         dot.removeAllAnimations()
         dot.removeFromSuperlayer()
-    }
-    
-    fileprivate func showWave(_ param: TapAnimationParam) {
-       let endIndex: Int = param.waveCount - 1
-       for index in 0 ... endIndex {
-           let cycle = CAShapeLayer()
-           cycle.borderWidth = 1
-           let cornerRadius: CGFloat = param.waveRadius
-           cycle.borderColor = UIColor.clear.cgColor
-           cycle.cornerRadius = cornerRadius
-            cycle.frame = CGRect(x: param.endPoint!.x - param.dotRadius,
-                                y:  param.endPoint!.y - param.dotRadius,
-                                width: cornerRadius * 2,
-                                height: cornerRadius * 2)
-        cycle.position = param.endPoint!
-           let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")
-           scaleAnimation.fromValue = 1
-           scaleAnimation.toValue = 4
-           
-           let borderAnimation = CAKeyframeAnimation()
-           borderAnimation.keyPath = "borderColor"
-           borderAnimation.values = [param.color.withAlphaComponent(0.9).cgColor,
-                                     param.color.withAlphaComponent(0.8).cgColor,
-                                     param.color.withAlphaComponent(0.715).cgColor,
-                                     param.color.withAlphaComponent(0.6).cgColor,
-                                     param.color.withAlphaComponent(0.475).cgColor,
-                                     param.color.withAlphaComponent(0.35).cgColor,
-                                     param.color.withAlphaComponent(0.225).cgColor,
-                                     param.color.withAlphaComponent(0.1).cgColor]
-           
-           let borderWidthAnimation = CAKeyframeAnimation()
-           borderWidthAnimation.keyPath = "borderWidth"
-           borderWidthAnimation.values = [10,
-                                   8,
-                                   4,
-                                   2,
-                                   1,
-                                   0.8,
-                                   0.5,
-                                   0.1]
-           let group = CAAnimationGroup()
-        let duration: Double = 0.5
-           group.fillMode = .backwards
-           group.setValue("wave", forKey: "name")
-           group.beginTime = CACurrentMediaTime() + (Double(index) * duration) / Double(endIndex + 1)
-           group.duration = duration
-           group.repeatCount = param.repeateCount
-           group.timingFunction = CAMediaTimingFunction(name: .default)
-           group.animations = [scaleAnimation, borderAnimation, borderWidthAnimation]
-           group.isRemovedOnCompletion = true
-           group.delegate = self
-           cycle.add(group, forKey: nil)
-           layer.addSublayer(cycle)
-       }
+        outterDot.removeAllAnimations()
+        outterDot.removeFromSuperlayer()
     }
     
     deinit {
@@ -163,7 +153,49 @@ class TapAnimator: NSObject, AnimationTargetType {
 
 extension TapAnimator: CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-         animationCompletion?(flag)
+        if let name = anim.value(forKey: "name") as? String, name == "dismissGroup" {
+            animationCompletion?(flag)
+            return
+        }
+        
+        
     }
 }
 
+
+
+class FXTutorialDot: CALayer {
+    struct UISize {
+        static let inset: CGFloat = 2
+    }
+    fileprivate lazy var innerLayer:  CALayer = {
+        let gradientLayer = CALayer()
+        gradientLayer.backgroundColor = UIColor(hex: 0xC47AFF)?.cgColor
+        return gradientLayer
+    }()
+    
+    
+    override func layoutSublayers() {
+        super.layoutSublayers()
+        borderWidth = UISize.inset
+        borderColor = UIColor.white.cgColor
+        let inserFrame = bounds.insetBy(dx: UISize.inset, dy: UISize.inset)
+        innerLayer.frame = inserFrame
+        innerLayer.cornerRadius = inserFrame.width * 0.5
+        innerLayer.masksToBounds = true
+    }
+    
+    override init() {
+        super.init()
+        addSublayer(innerLayer)
+    }
+    
+    override init(layer: Any) {
+        super.init(layer: layer)
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+}

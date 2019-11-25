@@ -80,4 +80,8 @@ extension BannerViewController: FXBannerViewDelegate {
          print("pagerView - didEndDisplaying:\(index)")
     }
     
+    func bannerView(_ pagerView: FXBannerView, didSelectItemAt index: Int) {
+        debugPrint("didSelectItemAt:\(index)")
+    }
+    
 }

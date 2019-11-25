@@ -35,6 +35,7 @@
 		CD224D3C237CF3A50072442F /* FlurViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD224D3A237CF3A50072442F /* FlurViewController.xib */; };
 		CD224D3E237CF7980072442F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD224D3D237CF7980072442F /* GradientView.swift */; };
 		CD2880D3235FE38700F20EF1 /* TipPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2880D2235FE38700F20EF1 /* TipPop.swift */; };
+		CD2D3F262387C96F00924CB4 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2D3F252387C96F00924CB4 /* CustomViewController.swift */; };
 		CD2FCF70234D796100E28E5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCF6F234D796100E28E5C /* AppDelegate.swift */; };
 		CD2FCF79234D796500E28E5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCF78234D796500E28E5C /* Assets.xcassets */; };
 		CD2FCF7C234D796500E28E5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCF7A234D796500E28E5C /* LaunchScreen.storyboard */; };
@@ -79,6 +80,8 @@
 		CDC87F2F2362E39600EFE022 /* BtnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC87F2D2362E39600EFE022 /* BtnViewController.xib */; };
 		CDD33F842368447A00FD074A /* GuideStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD33F832368447A00FD074A /* GuideStartView.swift */; };
 		CDD33F862368448500FD074A /* GuideStartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD33F852368448500FD074A /* GuideStartView.xib */; };
+		CDFAAA78238A54D400918051 /* BtnProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFAAA76238A54D400918051 /* BtnProgressViewController.swift */; };
+		CDFAAA79238A54D400918051 /* BtnProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFAAA77238A54D400918051 /* BtnProgressViewController.xib */; };
 		CDFB49CD235025820083426A /* TouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49CC235025820083426A /* TouchView.swift */; };
 		CDFB49CF235047940083426A /* PinchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49CE235047940083426A /* PinchView.swift */; };
 		CDFB49D123504C070083426A /* ZoomScollVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49D023504C070083426A /* ZoomScollVIew.swift */; };
@@ -158,6 +161,7 @@
 		CD224D3A237CF3A50072442F /* FlurViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlurViewController.xib; sourceTree = "<group>"; };
 		CD224D3D237CF7980072442F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		CD2880D2235FE38700F20EF1 /* TipPop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipPop.swift; sourceTree = "<group>"; };
+		CD2D3F252387C96F00924CB4 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		CD2FCF6C234D796100E28E5C /* AnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2FCF6F234D796100E28E5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD2FCF78234D796500E28E5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 		CDC87F2D2362E39600EFE022 /* BtnViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BtnViewController.xib; sourceTree = "<group>"; };
 		CDD33F832368447A00FD074A /* GuideStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideStartView.swift; sourceTree = "<group>"; };
 		CDD33F852368448500FD074A /* GuideStartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuideStartView.xib; sourceTree = "<group>"; };
+		CDFAAA76238A54D400918051 /* BtnProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnProgressViewController.swift; sourceTree = "<group>"; };
+		CDFAAA77238A54D400918051 /* BtnProgressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BtnProgressViewController.xib; sourceTree = "<group>"; };
 		CDFB49CC235025820083426A /* TouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchView.swift; sourceTree = "<group>"; };
 		CDFB49CE235047940083426A /* PinchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchView.swift; sourceTree = "<group>"; };
 		CDFB49D023504C070083426A /* ZoomScollVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomScollVIew.swift; sourceTree = "<group>"; };
@@ -421,6 +427,9 @@
 				CD0537B7237934F100F9BDB5 /* EventSendViewController.xib */,
 				CD224D39237CF3A50072442F /* FlurViewController.swift */,
 				CD224D3A237CF3A50072442F /* FlurViewController.xib */,
+				CD2D3F252387C96F00924CB4 /* CustomViewController.swift */,
+				CDFAAA76238A54D400918051 /* BtnProgressViewController.swift */,
+				CDFAAA77238A54D400918051 /* BtnProgressViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -597,6 +606,7 @@
 				CD2112EE235D8800003B5202 /* MultiLanguageTexInputAlert.xib in Resources */,
 				CD2112F2235D8B91003B5202 /* PadTypeCollectionViewCell.xib in Resources */,
 				CDA89DF92373C0C8000E3346 /* BannerViewController.xib in Resources */,
+				CDFAAA79238A54D400918051 /* BtnProgressViewController.xib in Resources */,
 				CD0230ED237A5F5200324E30 /* FXBannerCollectionViewCell.xib in Resources */,
 				CD2FCFA9234DB37600E28E5C /* PinchViewController.xib in Resources */,
 				CD725ADA234F0E4E00C11FB0 /* PanViewController.xib in Resources */,
@@ -690,6 +700,7 @@
 				CD7D50B023613AD300FA9C07 /* PathSerivce.swift in Sources */,
 				CD749ACA2356F6EF00C357A5 /* FlipSubViewController.swift in Sources */,
 				CD749AC72356F42F00C357A5 /* FlipAnimator.swift in Sources */,
+				CD2D3F262387C96F00924CB4 /* CustomViewController.swift in Sources */,
 				CD0230FA237A9BE000324E30 /* FXTutorialPanel.swift in Sources */,
 				CD306C4D2355CC36002ABA93 /* Common.swift in Sources */,
 				CDADB236235EE7A7002A57FD /* TipPopViewController.swift in Sources */,
@@ -713,6 +724,7 @@
 				CD10BCF523694787007B4808 /* IFAnimaton.swift in Sources */,
 				CD7D50B7236191CC00FA9C07 /* IFExtension.swift in Sources */,
 				CDC87F2E2362E39600EFE022 /* BtnViewController.swift in Sources */,
+				CDFAAA78238A54D400918051 /* BtnProgressViewController.swift in Sources */,
 				CD2FCFA1234D79AB00E28E5C /* TapAnimationViewController.swift in Sources */,
 				CDFF204F23680D5200800136 /* PopImageBrowser.swift in Sources */,
 				CD7D50B223613C4600FA9C07 /* PopSerivce.swift in Sources */,

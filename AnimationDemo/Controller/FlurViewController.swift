@@ -23,7 +23,7 @@ class FlurViewController: UIViewController {
     
     
     
-    let customView = APCustomBlurView(withRadius: 10)
+    let customView = FXTutorialBlurView(withRadius: 10)
     let colorBlur = ColorfulBlurEffectView(effect: UIBlurEffect(style: .light))
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,7 +64,7 @@ class FlurViewController: UIViewController {
 }
 
 
-public class APCustomBlurView: UIVisualEffectView {
+public class FXTutorialBlurView: UIVisualEffectView {
     
     private let blurEffect: UIBlurEffect
     public var blurRadius: CGFloat {

@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -81,51 +80,6 @@
                 <outlet property="titleLabel" destination="HMb-ze-hto" id="FZG-eA-C3j"/>
             </connections>
             <point key="canvasLocation" x="-114.49275362318842" y="181.47321428571428"/>
-        </collectionViewCell>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="BmA-Au-vIU">
-            <rect key="frame" x="0.0" y="0.0" width="184" height="243"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lkk-Bk-dGC">
-                <rect key="frame" x="0.0" y="0.0" width="184" height="243"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nf0-Eq-eMu">
-                        <rect key="frame" x="0.0" y="0.0" width="184" height="243"/>
-                        <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dml-5m-E3q">
-                                <rect key="frame" x="0.0" y="0.0" width="184" height="243"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pwH-Df-TUt">
-                                    <rect key="frame" x="0.0" y="0.0" width="184" height="243"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZnM-WA-GwG">
-                                            <rect key="frame" x="0.0" y="0.0" width="176" height="120"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        </view>
-                                    </subviews>
-                                </view>
-                                <blurEffect style="regular"/>
-                            </visualEffectView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Dml-5m-E3q" secondAttribute="trailing" id="3ER-3z-Z94"/>
-                            <constraint firstAttribute="bottom" secondItem="Dml-5m-E3q" secondAttribute="bottom" id="6Z2-uX-egi"/>
-                            <constraint firstItem="Dml-5m-E3q" firstAttribute="leading" secondItem="Nf0-Eq-eMu" secondAttribute="leading" id="Kov-eB-Wwq"/>
-                            <constraint firstItem="Dml-5m-E3q" firstAttribute="top" secondItem="Nf0-Eq-eMu" secondAttribute="top" id="c8V-wn-YxA"/>
-                        </constraints>
-                    </view>
-                </subviews>
-                <constraints>
-                    <constraint firstAttribute="trailing" secondItem="Nf0-Eq-eMu" secondAttribute="trailing" id="JgQ-Ma-eOq"/>
-                    <constraint firstAttribute="bottom" secondItem="Nf0-Eq-eMu" secondAttribute="bottom" id="VMp-6e-AHj"/>
-                    <constraint firstItem="Nf0-Eq-eMu" firstAttribute="top" secondItem="lkk-Bk-dGC" secondAttribute="top" id="fso-7n-h97"/>
-                    <constraint firstItem="Nf0-Eq-eMu" firstAttribute="leading" secondItem="lkk-Bk-dGC" secondAttribute="leading" id="oxm-3F-Rs3"/>
-                </constraints>
-            </collectionViewCellContentView>
-            <size key="customSize" width="184" height="243"/>
-            <point key="canvasLocation" x="-223.18840579710147" y="-92.745535714285708"/>
         </collectionViewCell>
     </objects>
     <resources>

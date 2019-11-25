@@ -59,39 +59,39 @@ extension HomeViewController {
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
         let flip = ListItem("VC翻转类", handler: { [weak self] in
-             guard let weakSelf = self else {
-                 return
-             }
-             let vcc = FlipViewController()
-             weakSelf.navigationController?.pushViewController(vcc, animated: true)
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = FlipViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
         let input = ListItem("多语言文本输入框", handler: { [weak self] in
             guard let weakSelf = self else {
-                    return
+                return
             }
             MultiLanguageTexInputAlert.show(weakSelf)
-           })
+        })
         let pop = ListItem("提示气泡", handler: { [weak self] in
             guard let weakSelf = self else {
-                            return
-                        }
+                return
+            }
             let vcc = TipPopViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
-            })
+        })
         let test = ListItem("测试控制器", handler: { [weak self] in
-              guard let weakSelf = self else {
-                 return
-              }
-              let vcc = TestViewController()
-              weakSelf.navigationController?.pushViewController(vcc, animated: true)
-              })
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = TestViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
         let btn = ListItem("按钮类", handler: { [weak self] in
             guard let weakSelf = self else {
                 return
             }
             let vcc = BtnViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
-            })
+        })
         
         let press = ListItem("长按放大图片", handler: { [weak self] in
             guard let weakSelf = self else {
@@ -99,33 +99,54 @@ extension HomeViewController {
             }
             let vcc = LongPressViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
-            })
+        })
         let touch = ListItem("互动教程模拟", handler: { [weak self] in
-           guard let weakSelf = self else {
+            guard let weakSelf = self else {
                 return
-           }
-           let vcc = DemoTouchViewController()
-           weakSelf.navigationController?.pushViewController(vcc, animated: true)
-           })
+            }
+            let vcc = DemoTouchViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
         let record = ListItem("互动教程模拟", handler: { [weak self] in
-          guard let weakSelf = self else {
-               return
-          }
-          let vcc = ScreenRecordViewController()
-          weakSelf.navigationController?.pushViewController(vcc, animated: true)
-          })
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = ScreenRecordViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
         let banner = ListItem("Banner", handler: { [weak self] in
             guard let weakSelf = self else {
-                 return
+                return
             }
             let vcc = BannerViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
         let progress = ListItem("SLider", handler: { [weak self] in
             guard let weakSelf = self else {
-                 return
+                return
             }
             let vcc = ProgressViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        let BLur = ListItem("BLur", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = FlurViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        let customViewController = ListItem("BLur", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = CustomViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        let btnProgressViewController = ListItem("ProgressBtn", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = BtnProgressViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
         items.append(tap)
@@ -141,6 +162,9 @@ extension HomeViewController {
         items.append(record)
         items.append(banner)
         items.append(progress)
+        items.append(BLur)
+        items.append(customViewController)
+        items.append(btnProgressViewController)
     }
     
 }
@@ -148,7 +172,7 @@ extension HomeViewController {
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let handler = items[indexPath.row].handler
-         handler?()
+        handler?()
     }
 }
 
