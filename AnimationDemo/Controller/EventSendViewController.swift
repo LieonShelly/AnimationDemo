@@ -9,11 +9,12 @@
 import UIKit
 
 class FXWindow: UIWindow {
-  
+    
     var pannelView: PannelView?
     
     override func sendEvent(_ event: UIEvent) {
         super.sendEvent(event)
+        debugPrint("sendEvent")
         switch event.type {
         case .touches:
             handleEvent(event)
@@ -26,7 +27,12 @@ class FXWindow: UIWindow {
         }
         
     }
- 
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        debugPrint("hitTest")
+        return super.hitTest(point, with: event)
+    }
+    
     func startShowDot() {
         pannelView?.isHidden = false
     }
@@ -89,7 +95,16 @@ class FXWindow: UIWindow {
             let center1 = pannelView.convert(secondLocation, from: currentWindow)
             pannelView.show([center0, center1])
         }
-
+        
+    }
+    
+    /// 点击类的辅助提示
+    func showTapAniamtion(_ point: CGPoint) {
+        let param = CommonAnimateParam(self.layer)
+        param.fromPoint = point
+        param.endPoint = point
+        param.endPoint = point
+        IFAnimation.show(.tap(param))
     }
     
 }
@@ -101,14 +116,14 @@ struct ActionRecordEntity {
 
 class PannelView: UIView {
     fileprivate lazy var dot0: UIView = {
-         let dot = UIView()
-         dot.bounds.size = CGSize(width: 40, height: 40)
-         dot.backgroundColor = UIColor.lightGray.withAlphaComponent(0.7)
-         dot.layer.cornerRadius = 10
-         dot.layer.borderColor =  UIColor.lightGray.withAlphaComponent(0.7).cgColor
-         dot.layer.borderWidth = 1
-         return dot
-     }()
+        let dot = UIView()
+        dot.bounds.size = CGSize(width: 40, height: 40)
+        dot.backgroundColor = UIColor.lightGray.withAlphaComponent(0.7)
+        dot.layer.cornerRadius = 10
+        dot.layer.borderColor =  UIColor.lightGray.withAlphaComponent(0.7).cgColor
+        dot.layer.borderWidth = 1
+        return dot
+    }()
     
     fileprivate lazy var dot1: UIView = {
         let dot = UIView()
@@ -121,7 +136,7 @@ class PannelView: UIView {
     }()
     
     override init(frame: CGRect) {
-       super.init(frame: frame)
+        super.init(frame: frame)
         dot1.isHidden = true
         dot0.isHidden = true
         dot1.frame = CGRect(x: 100, y: 200, width: 40, height: 40)
@@ -131,18 +146,18 @@ class PannelView: UIView {
         isUserInteractionEnabled = false
         tag = 1000
     }
-
+    
     required init?(coder: NSCoder) {
-       super.init(coder: coder)
+        super.init(coder: coder)
     }
 }
 
 
 extension PannelView {
-     func show(_ points: [CGPoint]) {
+    func show(_ points: [CGPoint]) {
         debugPrint("PannelView-points:\(points)")
         guard !points.isEmpty else {
-           return
+            return
         }
         if points.count == 1 {
             dot0.isHidden = false
@@ -154,5 +169,5 @@ extension PannelView {
             dot0.center = points[0]
             dot1.center = points[1]
         }
-   }
+    }
 }

@@ -13,7 +13,9 @@ class PinchViewController: UIViewController {
     var animationName: String?
     
     @IBAction func enterAction(_ sender: Any) {
-        var param = CommonPinchAnimationParam(animationView.layer, pointsA: animationView.pointsA, pointsB: animationView.pointsB)
+        let pointsA = animationView.pointsA.map { self.view.convert($0, from: self.animationView)}
+        let pointsB = animationView.pointsB.map { self.view.convert($0, from: self.animationView)}
+        var param = CommonPinchAnimationParam(view.layer, pointsA: pointsA, pointsB: pointsB)
         param.dotStartFillColor = UIColor.white.withAlphaComponent(0.5)
         param.dotMoveColor = UIColor.white.withAlphaComponent(0.5)
         param.dotEndFillColor = UIColor.white.withAlphaComponent(0.5)

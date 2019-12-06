@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BtnProgressViewController" customModule="AnimationDemo" customModuleProvider="target">
             <connections>
                 <outlet property="animateView" destination="QtD-5I-60f" id="nj0-rI-ep9"/>
+                <outlet property="imageVIew" destination="RJa-wd-Q7E" id="4cw-Mq-zdh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,26 +21,36 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="mnK-5z-AWF">
-                    <rect key="frame" x="-2" y="344" width="418" height="31"/>
+                    <rect key="frame" x="-2" y="344" width="418" height="113"/>
                     <connections>
                         <action selector="sliderProgreeAction:" destination="-1" eventType="valueChanged" id="N4u-ha-jUU"/>
                     </connections>
                 </slider>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QtD-5I-60f">
                     <rect key="frame" x="0.0" y="44" width="414" height="300"/>
-                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="300" id="fUE-Lx-Wbe"/>
                     </constraints>
                 </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RJa-wd-Q7E">
+                    <rect key="frame" x="20" y="609" width="374" height="46"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="bJQ-Dc-nRZ"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="RJa-wd-Q7E" secondAttribute="bottom" constant="207" id="2Wa-wi-yGn"/>
                 <constraint firstItem="mnK-5z-AWF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8NW-Kx-s0E"/>
+                <constraint firstItem="RJa-wd-Q7E" firstAttribute="top" secondItem="mnK-5z-AWF" secondAttribute="bottom" constant="153" id="NGv-V6-FNQ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QtD-5I-60f" secondAttribute="trailing" id="OnL-F0-fWW"/>
+                <constraint firstItem="RJa-wd-Q7E" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Tp8-dk-gC2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mnK-5z-AWF" secondAttribute="trailing" id="UPf-cU-fFz"/>
                 <constraint firstItem="QtD-5I-60f" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="c8k-fd-8lE"/>
                 <constraint firstItem="mnK-5z-AWF" firstAttribute="top" secondItem="QtD-5I-60f" secondAttribute="bottom" id="hg1-o4-YT5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RJa-wd-Q7E" secondAttribute="trailing" constant="20" id="i9x-T5-Yb1"/>
                 <constraint firstItem="QtD-5I-60f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lz0-Ic-2YD"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

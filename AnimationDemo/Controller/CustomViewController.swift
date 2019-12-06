@@ -7,57 +7,104 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class CustomViewController: UIViewController {
-
+    fileprivate lazy var redView: FXAnimtaeLayer = {
+        let view = FXAnimtaeLayer(CGPoint(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY))
+        view.backgroundColor = UIColor.red
+        return view
+    }()
+    
+    let bag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow
-        let test = FXGradientBorderView(5)
-        test.backgroundColor = .white
-        test.frame = CGRect(x: view.center.x - 40, y: view.center.y - 40, width: 80, height: 80)
-        view.addSubview(test)
+//        let test = FXGradientBorderView(5)
+//        test.backgroundColor = .clear
+//        test.frame = CGRect(x: view.center.x - 40, y: view.center.y - 40, width: 80, height: 80)
+//        view.addSubview(test)
+//
+//        let imageView = UIImageView(frame: CGRect(x: view.center.x + 40, y: view.center.y + 40, width: 100, height: 100))
+//        let image = UIImage(named: "picDownload")
+//        imageView.image = image
+//        view.addSubview(imageView)
+//
+//        let strchimageView = UIImageView(frame: CGRect(x: 20, y: view.center.y + 200, width: 230, height: 70))
+//        strchimageView.image = image?.stretchableImage(withLeftCapWidth: Int(image!.size.width * 0.3), topCapHeight: 0)
+//        view.addSubview(strchimageView)
+        view.addSubview(redView)
+        redView.snp.makeConstraints {
+            $0.center.equalTo(view.snp.center)
+            $0.size.equalTo(CGSize(width: 200, height: 200))
+        }
         
+        let btn = UIButton(type: .custom)
+        btn.backgroundColor = .blue
+        btn.setTitle("确定", for: .normal)
+        
+        view.addSubview(btn)
+         btn.snp.makeConstraints {
+            $0.centerX.equalTo(view.snp.centerX)
+             $0.size.equalTo(CGSize(width: 50, height: 50))
+            $0.top.equalTo(100)
+         }
+        
+        btn.rx.tap
+            .subscribe(onNext: { (_) in
+                self.index += 1
+                self.redView.transform = self.redView.transform.rotated(by: .pi / 4)
+            })
+        .disposed(by: bag)
     }
     
-
+    var index: CGFloat = 0
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      
+    }
+    
     
 }
 
 class FXGradientBorderView: UIView {
     fileprivate var innerInset: CGFloat = 5
-    fileprivate lazy var gradientLayer: CAGradientLayer = {
-       let gradientLayer = CAGradientLayer()
-       gradientLayer.colors = [
-           UIColor(hex: 0x54d5ef)!.cgColor,
-           UIColor(hex: 0x54ecef)!.cgColor,
-           UIColor(hex: 0xd79afb)!.cgColor,
-           UIColor(hex: 0xff82ff)!.cgColor,
-           UIColor(hex: 0xd795fb)!.cgColor,
-           UIColor(hex: 0x54d5ef)!.cgColor,
-           UIColor(hex: 0x54d5ef)!.cgColor,
-       ]
-       gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
-       gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
-       gradientLayer.locations = [0, 0.16, 0.4, 0.5, 0.61, 0.83, 1]
-       return gradientLayer
-   }()
+    fileprivate var borderWidth: CGFloat = 5
     
-    fileprivate lazy var pathLayer: CAShapeLayer = {
-        let pathLayer = CAShapeLayer()
-        pathLayer.fillColor = UIColor.clear.cgColor
-             pathLayer.strokeColor = UIColor.clear.cgColor
-        return pathLayer
+    fileprivate lazy var gradientLayer: CAGradientLayer = {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [
+            UIColor(hex: 0x54d5ef)!.withAlphaComponent(0).cgColor,
+            UIColor(hex: 0x54ecef)!.cgColor,
+            UIColor(hex: 0xd79afb)!.cgColor,
+            UIColor(hex: 0xd795fb)!.cgColor,
+            UIColor(hex: 0x54d5ef)!.cgColor,
+            UIColor(hex: 0x54d5ef)!.withAlphaComponent(0).cgColor,
+        ]
+        gradientLayer.startPoint = CGPoint(x: 1, y: 0.2)
+        gradientLayer.endPoint = CGPoint(x: 0, y: 0.6)
+        gradientLayer.locations = [0, 0, 0.08, 0.6, 1, 1]
+        return gradientLayer
     }()
     
-    convenience init(_ inset: CGFloat) {
+    fileprivate lazy var contentView: UIView = {
+        let contentView = UIView()
+        contentView.backgroundColor = .red
+        return contentView
+    }()
+    
+    convenience init(_ inset: CGFloat, borderWidth: CGFloat = 5) {
         self.init()
         self.innerInset = inset
+        self.borderWidth = borderWidth
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configUI(innerInset, frame: frame)
+        addSubview(contentView)
     }
     
     required init?(coder: NSCoder) {
@@ -66,23 +113,27 @@ class FXGradientBorderView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        let contentFrame = bounds.insetBy(dx: innerInset + borderWidth, dy: innerInset + borderWidth)
+        contentView.layer.cornerRadius = contentFrame.width * 0.5
+        contentView.layer.masksToBounds = true
+        contentView.frame = contentFrame
+    }
+    
+    override func layoutSublayers(of layer: CALayer) {
+        super.layoutSublayers(of: layer)
+        layer.cornerRadius = bounds.width * 0.5
+        layer.masksToBounds = true
         gradientLayer.frame = bounds
-    }
-    
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        let innerFrame = bounds
-                 .insetBy(dx: innerInset, dy: innerInset)
-        let cyclePath = UIBezierPath(roundedRect: innerFrame, cornerRadius: innerFrame.width * 0.5)
-        pathLayer.path = cyclePath.cgPath
-    }
-    
-    
-    fileprivate func configUI(_ inset: CGFloat, frame: CGRect) {
         layer.addSublayer(gradientLayer)
-        layer.mask = pathLayer
+        
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.borderWidth = 3
+        shapeLayer.masksToBounds = true
+        shapeLayer.frame = bounds
+        shapeLayer.cornerRadius = bounds.height * 0.5
+        gradientLayer.mask = shapeLayer
+        
     }
-   
 }
 
 
@@ -111,7 +162,7 @@ public class GradientButton: UIButton {
     
     /** 是否展示渐变边框，中间镂空 */
     private(set) var isBouderOut: Bool = false
-    private var borderLayer: CAGradientLayer?
+    var borderLayer: CAGradientLayer?
     
     private lazy var bottomShadowLayer: CALayer = {
         $0.contents = UIImage.init(named: "bottom_shadow")?.cgImage

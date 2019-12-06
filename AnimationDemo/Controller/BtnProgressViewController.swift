@@ -9,14 +9,18 @@
 import UIKit
 
 class BtnProgressViewController: UIViewController {
+    @IBOutlet weak var imageVIew: UIImageView!
+    
     var progressView: FXTutorialProgressView!
     @IBOutlet weak var animateView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         animateView.backgroundColor = .white
-        progressView = FXTutorialProgressView(frame: CGRect(x: 20, y: animateView.center.y - 50, width: view.bounds.width - 40, height: 100))
+        progressView = FXTutorialProgressView(frame: CGRect(x: 20, y: animateView.center.y - 50, width: view.bounds.width - 40, height: 80))
         animateView.addSubview(progressView)
-        
+        let ges = UIPinchGestureRecognizer(target: self, action: #selector(pinchAction(_:)))
+        ges.scale = 10
+        view.addGestureRecognizer(ges)
     }
     
     override func viewWillLayoutSubviews() {
@@ -24,8 +28,39 @@ class BtnProgressViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        imageVIew.contentMode = .center
+        var images: [UIImage] = []
+        for index in (52 ... 126) {
+            let name = String(format: "%03d", index)
+//            let path = Bundle.main.path(forResource: "开始_\(name).png", ofType: nil)
+//            let image = UIImage(contentsOfFile: path!)
+            let image = UIImage(named: "开始_\(name).png")
+            images.append(image!)
+        }
+        imageVIew.animationDuration = 2
+        imageVIew.animationImages = images
+        imageVIew.animationRepeatCount = 1
+        imageVIew.startAnimating()
+    }
+    
     @IBAction func sliderProgreeAction(_ sender: UISlider) {
         progressView.setProgress(CGFloat(sender.value))
+    }
+    
+    @objc
+    fileprivate func pinchAction(_ ges: UIPinchGestureRecognizer) {
+        switch ges.state {
+        case .began:
+            break
+        case .changed:
+            break
+        case .ended:
+            break
+        default:
+            break
+        }
     }
 }
 
@@ -36,11 +71,15 @@ class FXTutorialProgressView: UIView {
         static let innerInset: CGFloat = borderWidth + 1
         static let innerBorderWidth: CGFloat = innerInset
         static let progressLinWidth: CGFloat = 10
-        static let progressViewContainerSize: CGSize = CGSize(width: 100, height: 100)
+        static let progressViewContainerSize: CGSize = CGSize(width: 46, height: 46)
     }
+    fileprivate lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.backgroundColor = .yellow
+        return imageView
+    }()
     fileprivate lazy var progressViewContainer: UIView = {
         let progressViewContainer = UIView()
-        progressViewContainer.backgroundColor = .red
         return progressViewContainer
     }()
     fileprivate lazy var titleLabel: UILabel = {
@@ -72,18 +111,10 @@ class FXTutorialProgressView: UIView {
         return contentView
     }()
     var innerLayer: CALayer?
-    lazy var startBtn: UIButton = {
-        let btn = UIButton(type: .custom)
-//        btn.gradientColors = [UIColor(hex: 0x7ad3ff)!, UIColor(hex: 0xff41d3)!]
-//        btn.backgroundColor = UIColor(hex: 0xff41d3)
-        btn.setTitle("开始", for: .normal)
-//        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        return btn
-    }()
+    fileprivate var startBtn: GradientButton?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .red
         progressViewContainer.frame = CGRect(x: frame.width * 0.5 - UISize.progressViewContainerSize.width * 0.5,
                                              y: frame.height * 0.5 - UISize.progressViewContainerSize.height * 0.5,
                                              width: UISize.progressViewContainerSize.width,
@@ -134,10 +165,6 @@ class FXTutorialProgressView: UIView {
         progressLayer.strokeEnd = 0.7
         titleLabel.frame = contentView.bounds
         contentView.addSubview(titleLabel)
-        startBtn.frame = progressViewContainer.frame
-        startBtn.layer.cornerRadius = innerFrame.width * 0.5
-        startBtn.layer.masksToBounds = true
-        addSubview(startBtn)
     }
     
     
@@ -159,7 +186,6 @@ class FXTutorialProgressView: UIView {
         ]
         gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
         gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
-        //        gradientLayer.locations = [0, 0.16, 0.4, 0.5, 0.61, 0.83, 1]
         return gradientLayer
     }
     
@@ -205,7 +231,11 @@ class FXTutorialProgressView: UIView {
             scaleGroup.setValue(titleLabel.layer, forKey: "layer")
             titleLabel.layer.add(scaleGroup, forKey: nil)
         } else {
-            startBtn.layer.opacity = 0
+            for btn in progressViewContainer.subviews {
+                if btn.tag == 100 {
+                    btn.removeFromSuperview()
+                }
+            }
             progressViewContainer.layer.removeAllAnimations()
             titleLabel.layer.removeAllAnimations()
             innerLayer?.removeAllAnimations()
@@ -226,17 +256,99 @@ class FXTutorialProgressView: UIView {
         allText.addAttributes([NSAttributedString.Key.paragraphStyle : style], range: NSRange(location: 0, length: allText.string.count))
         titleLabel.attributedText = allText
     }
+    
+    
 }
 
 extension FXTutorialProgressView: CAAnimationDelegate {
+    /*
+     正常加载
+     加载失败，点击重试
+     准备中
+     **/
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         guard flag else {
             return
         }
         if let layer = anim.value(forKey: "layer") as? CALayer, layer == titleLabel.layer { // label动画显示完毕
-           
+            progressViewContainer.frame = bounds
+            let btn = GradientButton(button: .custom,
+                                    showBottom: .gradient,
+                                    corner: 10,
+                                    gradient: [UIColor(hex: 0x7ad3ff)!, UIColor(hex: 0xff41d3)!],
+                                    shadow: UIColor(hex: 0xb196ed),
+                                    shadowRadius: 20,
+                                    shadowOpacity: 1,
+                                    shadowOffset: CGSize(width: 0, height: 0),
+                                    borderOut: false)
+            btn.setTitle("开始", for: .normal)
+            btn.isHidden = false
+            btn.tag = 100
+            btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+            btn.frame = bounds
+            progressViewContainer.addSubview(btn)
+            self.startBtn = btn
+            let flash = CASpringAnimation(keyPath: "transform.scale.x")
+            flash.damping = 7.0
+            flash.stiffness = 200.0
+            flash.fromValue = 0.15
+            flash.toValue = 1
+            flash.duration = 3
+            flash.fillMode = .forwards
+            flash.isRemovedOnCompletion = false
+            progressViewContainer.layer.cornerRadius = 10
+            progressViewContainer.layer.add(flash, forKey: nil)
         }
     }
+    
+    /*
+    fileprivate func startBtmAnimation() {
+        let jump = CASpringAnimation(keyPath: "position.x")
+        jump.initialVelocity = 100.0
+        jump.mass = 40.0
+        jump.stiffness = 800.0
+        jump.damping = 20.0
+        jump.fromValue = progressViewContainer.layer.position.x + 1.0
+        jump.toValue = progressViewContainer.layer.position.x
+        jump.duration = 0.25
+        progressViewContainer.layer.add(jump, forKey: nil)
+        startBtn.frame.size = CGSize(width: bounds.width, height: UISize.progressViewContainerSize.height)
+        startBtn.center = progressViewContainer.center
+        startBtn.layer.opacity = 1
+        
+        let group = CAAnimationGroup()
+        group.fillMode = .both
+        group.duration = 1
+        group.beginTime = CACurrentMediaTime() + 0.25
+        group.isRemovedOnCompletion = false
+        group.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        
+        let flash = CASpringAnimation(keyPath: "transform.scale.x")
+        flash.damping = 7.0
+        flash.stiffness = 200.0
+        flash.fromValue = 0.15
+        flash.toValue = 1
+        flash.duration = 3
+        
+        let borderFlash = CASpringAnimation(keyPath: "cornerRadius")
+        borderFlash.damping = 7.0
+        borderFlash.stiffness = 200.0
+        borderFlash.fromValue = progressViewContainer.bounds.width * 0.5
+        borderFlash.toValue = 8
+        borderFlash.duration = 3
+        startBtn.layer.cornerRadius = 10
+        
+        group.animations = [flash, borderFlash]
+        startBtn.layer.add(group, forKey: nil)
+        
+        startBtn.layer.shadowColor = UIColor(hex: 0xb196ed)?.cgColor
+        startBtn.layer.shadowOffset = CGSize(width: 0, height: 0)
+        startBtn.layer.shadowRadius = 20
+        startBtn.layer.shadowOpacity = 1
+        startBtn.layer.shadowPath = UIBezierPath(rect: CGRect(x: 0, y: startBtn.frame.maxY, width: bounds.width, height: 5)).cgPath
+    }
+ 
+ */
 }
 
 

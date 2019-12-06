@@ -46,12 +46,12 @@ class PinchAnimation {
 class PinchAnimator: NSObject, AnimationTargetType {
     var layer: CALayer!
     var animationCompletion: ((Bool) -> Void)?
-    fileprivate lazy var dot1: CAShapeLayer = {
-        let dot = CAShapeLayer()
+    fileprivate lazy var dot1: FXTutorialDot = {
+        let dot = FXTutorialDot()
         return dot
     }()
-    fileprivate lazy var dot2: CAShapeLayer = {
-        let dot = CAShapeLayer()
+    fileprivate lazy var dot2: FXTutorialDot = {
+        let dot = FXTutorialDot()
         return dot
     }()
     
@@ -66,7 +66,7 @@ class PinchAnimator: NSObject, AnimationTargetType {
         config(dot2, param: param)
     }
     
-    private func config(_ dot: CAShapeLayer, param: PinchParam) {
+    private func config(_ dot: FXTutorialDot, param: PinchParam) {
         dot.cornerRadius = param.dotRadius
         dot.backgroundColor = param.dotStartFillColor.cgColor
         dot.bounds = CGRect(x: 0, y: 0, width: param.dotRadius * 2, height: param.dotRadius * 2)
@@ -93,7 +93,7 @@ class PinchAnimator: NSObject, AnimationTargetType {
         move(param)
         let pointCount = max(param.pointsA.count, param.pointsB.count)
         let duration = Float(pointCount) / Float(param.speed)
-        dismiss(CACurrentMediaTime() +  Double(duration) + 0.5 + 0.5, param)
+        dismiss(CACurrentMediaTime() +  Double(duration) + 0.3, param)
         self.animationCompletion = completion
     }
     
@@ -124,6 +124,15 @@ extension PinchAnimator: CAAnimationDelegate {
 extension PinchAnimator {
     
     fileprivate func show(_ param: PinchParam, dot: CALayer) {
+        let scale = CAKeyframeAnimation(keyPath: "transform.scale")
+        scale.values = [0, 1.5, 1]
+        scale.duration = 0.3
+        scale.calculationMode = .linear
+        scale.timingFunction = CAMediaTimingFunction(name: .easeOut)
+        scale.fillMode = .backwards
+        scale.isRemovedOnCompletion = false
+        dot.add(scale, forKey: nil)
+
        let showGroup = CAAnimationGroup()
        showGroup.fillMode = .forwards
        showGroup.beginTime = CACurrentMediaTime()
@@ -176,7 +185,7 @@ extension PinchAnimator {
         let positionAnimation = CAKeyframeAnimation(keyPath: "position")
         positionAnimation.fillMode = .forwards
         positionAnimation.isRemovedOnCompletion = false
-        positionAnimation.beginTime = CACurrentMediaTime() + 0.25 + 0.5 + 0.25
+        positionAnimation.beginTime = CACurrentMediaTime() + 0.3
         positionAnimation.values = param.pointsA
         let pointCount = max(param.pointsA.count, param.pointsB.count)
         let duration = Float(pointCount) / Float(param.speed)

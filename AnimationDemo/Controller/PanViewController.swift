@@ -18,7 +18,24 @@ class PanViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        animationView.gestureCallback = { ges in
+             
+        }
       
+    }
+    
+    fileprivate func gestureAction(_ ges: UIPanGestureRecognizer) {
+        let point = ges.location(in: animationView)
+        switch ges.state {
+        case .began:
+            break
+        case .changed:
+            break
+        case .ended:
+            break
+        default:
+            break
+        }
     }
     
     override func viewWillLayoutSubviews() {
@@ -34,7 +51,7 @@ class PanViewController: UIViewController {
         param.dotEndFillColor = UIColor.white.withAlphaComponent(0.5)
         param.dotStartBorderColor = .white
         param.dotEndBorderColor = .white
-        param.speed = 50
+        param.speed = 150
         /**
             可以单独设置参数：
             param.dotStartFillColor = .red

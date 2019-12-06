@@ -34,8 +34,8 @@ class PanAnimation {
 }
 
 class PanAnimatior: NSObject, AnimationTargetType {
-   fileprivate lazy var dot: CAShapeLayer = {
-          let dot = CAShapeLayer()
+   fileprivate lazy var dot: FXTutorialDot = {
+          let dot = FXTutorialDot()
           return dot
       }()
     var layer: CALayer!
@@ -67,7 +67,7 @@ class PanAnimatior: NSObject, AnimationTargetType {
         show(param)
         move(param)
         let duration = Float(param.points.count) / Float(param.speed)
-        delay(seconds: Double(duration) + 0.5 + 0.5) {
+        delay(seconds: Double(duration) + 0.3) {
             self.dismiss(CACurrentMediaTime(), param)
         }
     }
@@ -75,7 +75,7 @@ class PanAnimatior: NSObject, AnimationTargetType {
     private func move(_ param: PanParam) {
         let position = CAKeyframeAnimation(keyPath: "position")
         position.fillMode = .forwards
-        position.beginTime = CACurrentMediaTime() + 0.5 + 0.5
+        position.beginTime = CACurrentMediaTime() + 0.3
         position.values = param.points
         position.calculationMode = .linear
         let duration = Float(param.points.count) / Float(param.speed) // 50 个点一秒
@@ -85,6 +85,15 @@ class PanAnimatior: NSObject, AnimationTargetType {
     }
     
     private func show(_ param: PanParam) {
+        let scale = CAKeyframeAnimation(keyPath: "transform.scale")
+        scale.values = [0, 1.5, 1]
+        scale.duration = 0.3
+        scale.calculationMode = .linear
+        scale.timingFunction = CAMediaTimingFunction(name: .easeOut)
+        scale.fillMode = .backwards
+        scale.isRemovedOnCompletion = false
+        dot.add(scale, forKey: nil)
+        return
         let showGroup = CAAnimationGroup()
         showGroup.fillMode = .forwards
         showGroup.beginTime = CACurrentMediaTime()

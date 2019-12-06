@@ -13,6 +13,7 @@ class TouchView: UIView {
     var currentHandlePoints: [CGPoint] = []
     lazy var path: UIBezierPath = UIBezierPath()
     fileprivate lazy var allPath: [UIBezierPath] = []
+    var gestureCallback:((UIPanGestureRecognizer) -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -75,6 +76,7 @@ extension TouchView {
     }
     
     @objc func panAction(_ pan: UIPanGestureRecognizer) {
+        gestureCallback?(pan)
         let location = pan.location(in: self)
         switch pan.state {
         case .began:

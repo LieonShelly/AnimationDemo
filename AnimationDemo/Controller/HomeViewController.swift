@@ -149,6 +149,14 @@ extension HomeViewController {
             let vcc = BtnProgressViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
+        
+        let playerViewController = ListItem("player", handler: { [weak self] in
+              guard let weakSelf = self else {
+                  return
+              }
+              let vcc = PlayerViewController()
+              weakSelf.navigationController?.pushViewController(vcc, animated: true)
+          })
         items.append(tap)
         items.append(pinch)
         items.append(move)
@@ -165,6 +173,7 @@ extension HomeViewController {
         items.append(BLur)
         items.append(customViewController)
         items.append(btnProgressViewController)
+        items.append(playerViewController)
     }
     
 }

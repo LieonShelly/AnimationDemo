@@ -84,7 +84,11 @@ class ScreenRecordViewController: UIViewController, RPPreviewViewControllerDeleg
                 }
             }, completionHandler: { error in
                 if error != nil {
-                    
+                    self.recorder.startRecording(handler: { _ in
+                        self.recorder.discardRecording {
+
+                        }
+                    })
                 }
             })
         } else {

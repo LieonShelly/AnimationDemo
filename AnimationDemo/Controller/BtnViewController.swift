@@ -32,7 +32,7 @@ class BtnViewController: UIViewController {
         layerAnimation.toValue = 1
         layerAnimation.autoreverses = true
         layerAnimation.isAdditive = false
-        layerAnimation.duration = 1
+        layerAnimation.duration = 0.25
         layerAnimation.fillMode = .forwards
         layerAnimation.isRemovedOnCompletion = false
         layerAnimation.repeatCount = .infinity

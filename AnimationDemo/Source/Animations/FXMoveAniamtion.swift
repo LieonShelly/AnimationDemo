@@ -52,7 +52,15 @@ class FXMoveAnimator: NSObject {
         dot.layer.borderColor = UIColor.white.cgColor
         dot.layer.cornerRadius = param.dotRadius
         dot.backgroundColor = param.color
+     
+        dot.backgroundColor = .clear
         containerView.addSubview(dot)
+        
+        let dotLayer = FXTutorialDot()
+        dotLayer.borderColor = UIColor.white.cgColor
+        dotLayer.cornerRadius = param.dotRadius
+        dotLayer.frame = dot.bounds
+        dot.layer.addSublayer(dotLayer)
     }
     
     private override init() {
