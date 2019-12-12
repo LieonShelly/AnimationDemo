@@ -18,12 +18,13 @@ class FlurViewController: UIViewController {
     
     @IBAction func aphaSliderAction(_ sender: UISlider) {
         customView.setBlurRadius(radius: CGFloat(sender.value * 100))
-         colorBlur.backgroundColor = UIColor(hex: 0x949494)!.withAlphaComponent(CGFloat(sender.value))
+        print(sender.value)
+//         colorBlur.backgroundColor = UIColor(hex: 0x949494)!.withAlphaComponent(CGFloat(sender.value))
     }
     
     
     
-    let customView = FXTutorialBlurView(withRadius: 10)
+    let customView = FXTutorialBlurView(withRadius: 25)
     let colorBlur = ColorfulBlurEffectView(effect: UIBlurEffect(style: .light))
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +61,12 @@ class FlurViewController: UIViewController {
 //            $0.top.equalTo(customView.snp.bottom)
 //        }
         customView.layer.addSublayer(gradientLayer)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
 }
 

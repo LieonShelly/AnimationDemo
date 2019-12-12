@@ -157,6 +157,20 @@ extension HomeViewController {
               let vcc = PlayerViewController()
               weakSelf.navigationController?.pushViewController(vcc, animated: true)
           })
+        let swipeViewController = ListItem("Swipe", handler: { [weak self] in
+             guard let weakSelf = self else {
+                 return
+             }
+             let vcc = SwipeViewController()
+             weakSelf.navigationController?.pushViewController(vcc, animated: true)
+         })
+        let scaleBtnViewController = ListItem("ScaleBtnViewController", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = ScaleBtnViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
         items.append(tap)
         items.append(pinch)
         items.append(move)
@@ -174,6 +188,9 @@ extension HomeViewController {
         items.append(customViewController)
         items.append(btnProgressViewController)
         items.append(playerViewController)
+        items.append(swipeViewController)
+        
+        items.append(scaleBtnViewController)
     }
     
 }

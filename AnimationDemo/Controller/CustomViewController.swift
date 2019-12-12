@@ -18,27 +18,61 @@ class CustomViewController: UIViewController {
     }()
     
     let bag = DisposeBag()
+    fileprivate lazy var bottomBgImageView: UIImageView = {
+        let bottomBgImageView = UIImageView()
+        bottomBgImageView.backgroundColor = UIColor.gray
+        bottomBgImageView.image = UIImage(named: "meinv")
+        bottomBgImageView.alpha = 0
+        return bottomBgImageView
+    }()
+    fileprivate lazy var bottomBlackView: UIView = {
+        let bottomBlackView = UIView()
+        bottomBlackView.backgroundColor = UIColor.black.withAlphaComponent(0.65)
+        bottomBlackView.alpha = 0
+        return bottomBlackView
+    }()
+    fileprivate lazy var bottomFlurView: UIVisualEffectView = {
+        let view = UIVisualEffectView()
+        let effect = UIBlurEffect(style: .light)
+        view.alpha = 0
+        view.effect = effect
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow
-//        let test = FXGradientBorderView(5)
-//        test.backgroundColor = .clear
-//        test.frame = CGRect(x: view.center.x - 40, y: view.center.y - 40, width: 80, height: 80)
-//        view.addSubview(test)
-//
-//        let imageView = UIImageView(frame: CGRect(x: view.center.x + 40, y: view.center.y + 40, width: 100, height: 100))
-//        let image = UIImage(named: "picDownload")
-//        imageView.image = image
-//        view.addSubview(imageView)
-//
-//        let strchimageView = UIImageView(frame: CGRect(x: 20, y: view.center.y + 200, width: 230, height: 70))
-//        strchimageView.image = image?.stretchableImage(withLeftCapWidth: Int(image!.size.width * 0.3), topCapHeight: 0)
-//        view.addSubview(strchimageView)
+        //        let test = FXGradientBorderView(5)
+        //        test.backgroundColor = .clear
+        //        test.frame = CGRect(x: view.center.x - 40, y: view.center.y - 40, width: 80, height: 80)
+        //        view.addSubview(test)
+        //
+        //        let imageView = UIImageView(frame: CGRect(x: view.center.x + 40, y: view.center.y + 40, width: 100, height: 100))
+        //        let image = UIImage(named: "picDownload")
+        //        imageView.image = image
+        //        view.addSubview(imageView)
+        //
+        //        let strchimageView = UIImageView(frame: CGRect(x: 20, y: view.center.y + 200, width: 230, height: 70))
+        //        strchimageView.image = image?.stretchableImage(withLeftCapWidth: Int(image!.size.width * 0.3), topCapHeight: 0)
+        //        view.addSubview(strchimageView)
         view.addSubview(redView)
+        view.addSubview(bottomBgImageView)
+        
+        view.addSubview(bottomFlurView)
+        view.addSubview(bottomBlackView)
         redView.snp.makeConstraints {
             $0.center.equalTo(view.snp.center)
             $0.size.equalTo(CGSize(width: 200, height: 200))
+        }
+        bottomBgImageView.snp.makeConstraints {
+            $0.center.equalTo(view.snp.center)
+            $0.size.equalTo(CGSize(width: 50, height: 50))
+        }
+        bottomBlackView.snp.makeConstraints {
+            $0.edges.equalTo(0)
+        }
+        bottomFlurView.snp.makeConstraints {
+            $0.edges.equalTo(0)
         }
         
         let btn = UIButton(type: .custom)
@@ -46,25 +80,50 @@ class CustomViewController: UIViewController {
         btn.setTitle("确定", for: .normal)
         
         view.addSubview(btn)
-         btn.snp.makeConstraints {
+        btn.snp.makeConstraints {
             $0.centerX.equalTo(view.snp.centerX)
-             $0.size.equalTo(CGSize(width: 50, height: 50))
+            $0.size.equalTo(CGSize(width: 50, height: 50))
             $0.top.equalTo(100)
-         }
+        }
         
         btn.rx.tap
             .subscribe(onNext: { (_) in
-                self.index += 1
-                self.redView.transform = self.redView.transform.rotated(by: .pi / 4)
+                FXTutorialDotTipPop.show("asdfasd", direction: .up(dotCenter: btn.center, controlSize: btn.frame.size), dismissHandler: nil)
             })
-        .disposed(by: bag)
+            .disposed(by: bag)
     }
     
     var index: CGFloat = 0
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-      
+        let selectedFrame = CGRect(x: 200, y: 200, width: 50, height: 50)
+        let initialFrame = selectedFrame
+        let offsetY: CGFloat = 200
+        let finalFrame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - offsetY)
+        bottomBgImageView.alpha = 1
+        bottomBgImageView.frame = initialFrame
+        bottomBgImageView.center = CGPoint(x: initialFrame.midX, y: initialFrame.midY)
+        UIView.animate(withDuration: 3,
+                       delay: 0,
+                  options: [.transitionCrossDissolve],
+                  animations: {
+                    self.bottomBgImageView.center = CGPoint(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY - offsetY * 0.5)
+            self.bottomBgImageView.transform = CGAffineTransform(scaleX: finalFrame.width / selectedFrame.width, y: finalFrame.height / selectedFrame.height)
+        }, completion: { _ in
+            
+        })
+        bottomBlackView.alpha = 0
+        bottomFlurView.alpha = 0
+        UIView.animate(withDuration: 1,
+                       delay: 2,
+                        options: [.transitionCrossDissolve],
+                        animations: {
+                  self.bottomFlurView.alpha = 1
+                  self.bottomBlackView.alpha = 1
+          }, completion: { _ in
+              
+          })
     }
     
     
@@ -90,7 +149,7 @@ class FXGradientBorderView: UIView {
         return gradientLayer
     }()
     
-    fileprivate lazy var contentView: UIView = {
+    lazy var contentView: UIView = {
         let contentView = UIView()
         contentView.backgroundColor = .red
         return contentView
@@ -163,7 +222,7 @@ public class GradientButton: UIButton {
     /** 是否展示渐变边框，中间镂空 */
     private(set) var isBouderOut: Bool = false
     var borderLayer: CAGradientLayer?
-    
+    var gradientLayer: CAGradientLayer!
     private lazy var bottomShadowLayer: CALayer = {
         $0.contents = UIImage.init(named: "bottom_shadow")?.cgImage
         return $0
@@ -197,7 +256,7 @@ public class GradientButton: UIButton {
             layoutedSubviews = true
             lastBounds = bounds
             
-            let gradientLayer: CAGradientLayer = CAGradientLayer.init()
+            gradientLayer = CAGradientLayer.init()
             gradientLayer.frame = bounds
             gradientLayer.cornerRadius = cornerRadius
             gradientLayer.colors = gradientColors.map{$0.cgColor}

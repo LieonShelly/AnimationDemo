@@ -128,6 +128,8 @@
 		CD4786822390D925007C9706 /* 开始_085.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4786372390D925007C9706 /* 开始_085.png */; };
 		CD4786832390D925007C9706 /* 开始_091.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4786382390D925007C9706 /* 开始_091.png */; };
 		CD4786842390D925007C9706 /* 开始_052.png in Resources */ = {isa = PBXBuildFile; fileRef = CD4786392390D925007C9706 /* 开始_052.png */; };
+		CD6C28D323A21D620008761C /* ScaleBtnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C28D123A21D620008761C /* ScaleBtnViewController.swift */; };
+		CD6C28D423A21D620008761C /* ScaleBtnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6C28D223A21D620008761C /* ScaleBtnViewController.xib */; };
 		CD6EE72C238CC0D600ADEABD /* ic_tutorial_lanucn_start@3x_148.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6EE6D6238CC0D500ADEABD /* ic_tutorial_lanucn_start@3x_148.png */; };
 		CD6EE72D238CC0D600ADEABD /* ic_tutorial_lanucn_start@3x_149.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6EE6D7238CC0D500ADEABD /* ic_tutorial_lanucn_start@3x_149.png */; };
 		CD6EE72E238CC0D600ADEABD /* ic_tutorial_lanucn_start@3x_97.png in Resources */ = {isa = PBXBuildFile; fileRef = CD6EE6D8238CC0D500ADEABD /* ic_tutorial_lanucn_start@3x_97.png */; };
@@ -237,6 +239,8 @@
 		CDAD5B5C237516C200A0E4FE /* FXBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAD5B5B237516C200A0E4FE /* FXBannerView.swift */; };
 		CDADB236235EE7A7002A57FD /* TipPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADB234235EE7A7002A57FD /* TipPopViewController.swift */; };
 		CDADB237235EE7A7002A57FD /* TipPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDADB235235EE7A7002A57FD /* TipPopViewController.xib */; };
+		CDBBC730239F6D5000B07EE9 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBC72E239F6D5000B07EE9 /* SwipeViewController.swift */; };
+		CDBBC731239F6D5000B07EE9 /* SwipeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBBC72F239F6D5000B07EE9 /* SwipeViewController.xib */; };
 		CDC87F2E2362E39600EFE022 /* BtnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC87F2C2362E39600EFE022 /* BtnViewController.swift */; };
 		CDC87F2F2362E39600EFE022 /* BtnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC87F2D2362E39600EFE022 /* BtnViewController.xib */; };
 		CDD33F842368447A00FD074A /* GuideStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD33F832368447A00FD074A /* GuideStartView.swift */; };
@@ -423,6 +427,8 @@
 		CD4786372390D925007C9706 /* 开始_085.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "开始_085.png"; sourceTree = "<group>"; };
 		CD4786382390D925007C9706 /* 开始_091.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "开始_091.png"; sourceTree = "<group>"; };
 		CD4786392390D925007C9706 /* 开始_052.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "开始_052.png"; sourceTree = "<group>"; };
+		CD6C28D123A21D620008761C /* ScaleBtnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleBtnViewController.swift; sourceTree = "<group>"; };
+		CD6C28D223A21D620008761C /* ScaleBtnViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScaleBtnViewController.xib; sourceTree = "<group>"; };
 		CD6EE6D6238CC0D500ADEABD /* ic_tutorial_lanucn_start@3x_148.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_tutorial_lanucn_start@3x_148.png"; sourceTree = "<group>"; };
 		CD6EE6D7238CC0D500ADEABD /* ic_tutorial_lanucn_start@3x_149.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_tutorial_lanucn_start@3x_149.png"; sourceTree = "<group>"; };
 		CD6EE6D8238CC0D500ADEABD /* ic_tutorial_lanucn_start@3x_97.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_tutorial_lanucn_start@3x_97.png"; sourceTree = "<group>"; };
@@ -532,6 +538,8 @@
 		CDAD5B5B237516C200A0E4FE /* FXBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXBannerView.swift; sourceTree = "<group>"; };
 		CDADB234235EE7A7002A57FD /* TipPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipPopViewController.swift; sourceTree = "<group>"; };
 		CDADB235235EE7A7002A57FD /* TipPopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipPopViewController.xib; sourceTree = "<group>"; };
+		CDBBC72E239F6D5000B07EE9 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
+		CDBBC72F239F6D5000B07EE9 /* SwipeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipeViewController.xib; sourceTree = "<group>"; };
 		CDC87F2C2362E39600EFE022 /* BtnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnViewController.swift; sourceTree = "<group>"; };
 		CDC87F2D2362E39600EFE022 /* BtnViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BtnViewController.xib; sourceTree = "<group>"; };
 		CDD33F832368447A00FD074A /* GuideStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideStartView.swift; sourceTree = "<group>"; };
@@ -935,6 +943,10 @@
 				CDFAAA76238A54D400918051 /* BtnProgressViewController.swift */,
 				CDFAAA77238A54D400918051 /* BtnProgressViewController.xib */,
 				CDF9AB6B238FE86D00226E37 /* PlayerViewController.swift */,
+				CDBBC72E239F6D5000B07EE9 /* SwipeViewController.swift */,
+				CDBBC72F239F6D5000B07EE9 /* SwipeViewController.xib */,
+				CD6C28D123A21D620008761C /* ScaleBtnViewController.swift */,
+				CD6C28D223A21D620008761C /* ScaleBtnViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1203,6 +1215,7 @@
 				CD4786552390D925007C9706 /* 开始_064.png in Resources */,
 				CD47865D2390D925007C9706 /* 开始_098.png in Resources */,
 				CD4786402390D925007C9706 /* 开始_102.png in Resources */,
+				CD6C28D423A21D620008761C /* ScaleBtnViewController.xib in Resources */,
 				CD6EE737238CC0D600ADEABD /* ic_tutorial_lanucn_start@3x_96.png in Resources */,
 				CD4786732390D925007C9706 /* 开始_068.png in Resources */,
 				CDD33F862368448500FD074A /* GuideStartView.xib in Resources */,
@@ -1215,6 +1228,7 @@
 				CDFF205B236837A500800136 /* GuideStartViewController.xib in Resources */,
 				CD6EE760238CC0D600ADEABD /* ic_tutorial_lanucn_start@3x_126.png in Resources */,
 				CD6EE73B238CC0D600ADEABD /* ic_tutorial_lanucn_start@3x_106.png in Resources */,
+				CDBBC731239F6D5000B07EE9 /* SwipeViewController.xib in Resources */,
 				CD2FCF79234D796500E28E5C /* Assets.xcassets in Resources */,
 				CDFF20492367E6B800800136 /* LongPressViewController.xib in Resources */,
 				CD47867B2390D925007C9706 /* 开始_092.png in Resources */,
@@ -1378,6 +1392,7 @@
 				CD88DD602361E4F200B9DB8F /* TestViewController.swift in Sources */,
 				CDA89DFB2373C13B000E3346 /* FXTransformLayout.swift in Sources */,
 				CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */,
+				CDBBC730239F6D5000B07EE9 /* SwipeViewController.swift in Sources */,
 				CD749ACE2356F72C00C357A5 /* FlipViewController.swift in Sources */,
 				CD725AD5234F0E1D00C11FB0 /* PanAnimation.swift in Sources */,
 				CDFF20482367E6B800800136 /* LongPressViewController.swift in Sources */,
@@ -1397,6 +1412,7 @@
 				CDFF204F23680D5200800136 /* PopImageBrowser.swift in Sources */,
 				CD7D50B223613C4600FA9C07 /* PopSerivce.swift in Sources */,
 				CDFF204C2367E78100800136 /* ImageCollectionViewCell.swift in Sources */,
+				CD6C28D323A21D620008761C /* ScaleBtnViewController.swift in Sources */,
 				CD224D3B237CF3A50072442F /* FlurViewController.swift in Sources */,
 				CD35A9D82372A668007C8354 /* ScreenRecordViewController.swift in Sources */,
 				CD2FCFA5234D7C4000E28E5C /* TapAniamtion.swift in Sources */,
