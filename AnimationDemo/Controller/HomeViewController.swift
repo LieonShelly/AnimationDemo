@@ -107,7 +107,7 @@ extension HomeViewController {
             let vcc = DemoTouchViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
-        let record = ListItem("互动教程模拟", handler: { [weak self] in
+        let record = ListItem("ScreenRecordViewController", handler: { [weak self] in
             guard let weakSelf = self else {
                 return
             }

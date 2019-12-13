@@ -245,6 +245,9 @@
 		CDC87F2F2362E39600EFE022 /* BtnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC87F2D2362E39600EFE022 /* BtnViewController.xib */; };
 		CDD33F842368447A00FD074A /* GuideStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD33F832368447A00FD074A /* GuideStartView.swift */; };
 		CDD33F862368448500FD074A /* GuideStartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD33F852368448500FD074A /* GuideStartView.xib */; };
+		CDECDAC523A3546F0071F0B8 /* tmp571253848.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CDECDAC223A3546E0071F0B8 /* tmp571253848.mp4 */; };
+		CDECDAC623A3546F0071F0B8 /* tmp1742817472.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CDECDAC323A3546F0071F0B8 /* tmp1742817472.mp4 */; };
+		CDECDAC723A3546F0071F0B8 /* tmp2167816493.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CDECDAC423A3546F0071F0B8 /* tmp2167816493.mp4 */; };
 		CDF9AB6C238FE86D00226E37 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF9AB6B238FE86D00226E37 /* PlayerViewController.swift */; };
 		CDF9AB6E23900A4900226E37 /* aha_moment_start.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CDF9AB6D23900A4900226E37 /* aha_moment_start.mp4 */; };
 		CDFAAA78238A54D400918051 /* BtnProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFAAA76238A54D400918051 /* BtnProgressViewController.swift */; };
@@ -544,6 +547,9 @@
 		CDC87F2D2362E39600EFE022 /* BtnViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BtnViewController.xib; sourceTree = "<group>"; };
 		CDD33F832368447A00FD074A /* GuideStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideStartView.swift; sourceTree = "<group>"; };
 		CDD33F852368448500FD074A /* GuideStartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuideStartView.xib; sourceTree = "<group>"; };
+		CDECDAC223A3546E0071F0B8 /* tmp571253848.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = tmp571253848.mp4; sourceTree = "<group>"; };
+		CDECDAC323A3546F0071F0B8 /* tmp1742817472.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = tmp1742817472.mp4; sourceTree = "<group>"; };
+		CDECDAC423A3546F0071F0B8 /* tmp2167816493.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = tmp2167816493.mp4; sourceTree = "<group>"; };
 		CDF9AB6B238FE86D00226E37 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		CDF9AB6D23900A4900226E37 /* aha_moment_start.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = aha_moment_start.mp4; sourceTree = "<group>"; };
 		CDFAAA76238A54D400918051 /* BtnProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnProgressViewController.swift; sourceTree = "<group>"; };
@@ -790,6 +796,9 @@
 		CD6EE6D5238CC0D500ADEABD /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				CDECDAC223A3546E0071F0B8 /* tmp571253848.mp4 */,
+				CDECDAC323A3546F0071F0B8 /* tmp1742817472.mp4 */,
+				CDECDAC423A3546F0071F0B8 /* tmp2167816493.mp4 */,
 				CD4785EE2390D925007C9706 /* Picture */,
 				CDF9AB6D23900A4900226E37 /* aha_moment_start.mp4 */,
 				CD6EE6D6238CC0D500ADEABD /* ic_tutorial_lanucn_start@3x_148.png */,
@@ -1176,6 +1185,7 @@
 				CD47864E2390D925007C9706 /* 开始_059.png in Resources */,
 				CD6EE757238CC0D600ADEABD /* ic_tutorial_lanucn_start@3x_118.png in Resources */,
 				CD4786702390D925007C9706 /* 开始_097.png in Resources */,
+				CDECDAC723A3546F0071F0B8 /* tmp2167816493.mp4 in Resources */,
 				CD4786842390D925007C9706 /* 开始_052.png in Resources */,
 				CD47865E2390D925007C9706 /* 开始_067.png in Resources */,
 				CD4786502390D925007C9706 /* 开始_105.png in Resources */,
@@ -1297,12 +1307,14 @@
 				CD6EE754238CC0D600ADEABD /* ic_tutorial_lanucn_start@3x_75.png in Resources */,
 				CD4786662390D925007C9706 /* 开始_094.png in Resources */,
 				CD224D3C237CF3A50072442F /* FlurViewController.xib in Resources */,
+				CDECDAC623A3546F0071F0B8 /* tmp1742817472.mp4 in Resources */,
 				CD6EE72F238CC0D600ADEABD /* ic_tutorial_lanucn_start@3x_83.png in Resources */,
 				CD47866F2390D925007C9706 /* 开始_108.png in Resources */,
 				CD6EE732238CC0D600ADEABD /* ic_tutorial_lanucn_start@3x_139.png in Resources */,
 				CD6EE774238CC0D600ADEABD /* ic_tutorial_lanucn_start@3x_153.png in Resources */,
 				CD6EE777238CC0D600ADEABD /* ic_tutorial_lanucn_start@3x_150.png in Resources */,
 				CD47865B2390D925007C9706 /* 开始_113.png in Resources */,
+				CDECDAC523A3546F0071F0B8 /* tmp571253848.mp4 in Resources */,
 				CD6EE748238CC0D600ADEABD /* ic_tutorial_lanucn_start@3x_79.png in Resources */,
 				CD6EE769238CC0D600ADEABD /* ic_tutorial_lanucn_start@3x_137.png in Resources */,
 				CD4786722390D925007C9706 /* 开始_054.png in Resources */,

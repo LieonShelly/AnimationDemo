@@ -14,7 +14,6 @@ class FXWindow: UIWindow {
     
     override func sendEvent(_ event: UIEvent) {
         super.sendEvent(event)
-        debugPrint("sendEvent")
         switch event.type {
         case .touches:
             handleEvent(event)
@@ -70,7 +69,6 @@ class FXWindow: UIWindow {
                 startTimeStamp = Date().timeIntervalSince1970
             case .ended:
                 endTimeStamp = Date().timeIntervalSince1970
-                print("startTimeStamp:\(startTimeStamp) - endTimeStamp:\(endTimeStamp) - detla:\(endTimeStamp - startTimeStamp)")
             default:
                 break
             }

@@ -17,7 +17,7 @@ class PlayerViewController: UIViewController {
         
         player = FXTutorialPlayerView(frame: view.bounds)
         view.addSubview(player)
-        let path = Bundle.main.path(forResource: "aha_moment_start.mp4", ofType: nil)
+        let path = Bundle.main.path(forResource: "tmp571253848.mp4", ofType: nil)
         let url = URL(fileURLWithPath: path!)
         player.config(url)
     }

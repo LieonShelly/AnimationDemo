@@ -521,6 +521,79 @@ class FXDoubleCycleView: UIView {
 }
 
 
+class FXOneCycleView: UIView {
+    
+    struct UISize {
+        static let outterShapeWidth: CGFloat = 2
+        static let innerShapeWidth: CGFloat = outterShapeWidth * 2
+        static let outterClearCycleWidth: CGFloat = 5
+    }
+    
+    static var borderSize: CGFloat {
+        return UISize.outterShapeWidth + UISize.innerShapeWidth + UISize.outterClearCycleWidth
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+    }
+    
+    fileprivate lazy var outerCycle: CAGradientLayer = {
+        return createGrdientLayer()
+    }()
+
+    fileprivate lazy var outterShapeLayer: CAShapeLayer = {
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.borderWidth =  UISize.outterShapeWidth
+        shapeLayer.masksToBounds = true
+        return shapeLayer
+    }()
+
+    override func layoutSublayers(of layer: CALayer) {
+        super.layoutSublayers(of: layer)
+        outerCycle.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
+        outerCycle.cornerRadius = frame.width * 0.5
+        layer.addSublayer(outerCycle)
+        
+        outterShapeLayer.frame = bounds
+        outterShapeLayer.cornerRadius = bounds.height * 0.5
+        outerCycle.mask = outterShapeLayer
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    override func willMove(toSuperview newSuperview: UIView?) {
+        superview?.willMove(toSuperview: newSuperview)
+    }
+    
+    fileprivate func createGrdientLayer() -> CAGradientLayer {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [
+            UIColor(hex: 0x7ad3ff)!.cgColor,
+            UIColor(hex: 0xe261e0)!.cgColor
+        ]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
+        return gradientLayer
+    }
+    
+    func showAniamtion() {
+        let scale = CABasicAnimation(keyPath: "transform.scale")
+        scale.fromValue = 1
+        scale.toValue = 1.2
+        scale.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        scale.autoreverses = true
+        scale.duration = 1
+        scale.repeatCount = Float.infinity
+        layer.add(scale, forKey: nil)
+    }
+    
+}
+
+
 
 extension UIView {
     public func addPartialRoundedCorners(OnCorners corners: UIRectCorner, andCornerRadius cornerRadius: CGSize) {
