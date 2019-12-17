@@ -98,12 +98,6 @@ class ScreenRecordViewController: UIViewController, RPPreviewViewControllerDeleg
                 self.isRecording = false
                 self.assetWriter?.finishWriting {
                     print("finishWriting:\(self.tmpFileURL!)")
-                    let vc = AVPlayerViewController()
-                    let player = AVPlayer(url: self.tmpFileURL!)
-                    vc.player = player
-//                    DispatchQueue.main.async {
-//                        self.present(vc, animated: true, completion: nil)
-//                    }
                 }
                 
             }

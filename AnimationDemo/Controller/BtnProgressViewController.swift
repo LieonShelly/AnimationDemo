@@ -19,8 +19,9 @@ class BtnProgressViewController: UIViewController {
         animateView.backgroundColor = .white
         progressView = FXTutorialProgressView(frame: CGRect(x: 20, y: animateView.center.y - 50, width: view.bounds.width - 40, height: 46))
         animateView.addSubview(progressView)
-        progressView.reloadBtnDidClick = {[weak self] in
-            self?.slider.value = 0
+        progressView.reloadBtnAction = {[weak self] in
+//            self?.slider.value = 0
+            self?.progressView.setProgress(1, hasError: false)
         }
     }
     
@@ -31,9 +32,7 @@ class BtnProgressViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIView.animate(withDuration: 0.25) {
-            self.progressView.gradientView.transform = CGAffineTransform(scaleX: 1, y: 1)
-        }
+        progressView.setProgress(0.9, hasError: true)
         
     }
     
@@ -49,7 +48,8 @@ class BtnProgressViewController: UIViewController {
 
 
 class FXTutorialProgressView: UIView {
-    var reloadBtnDidClick: (() -> Void)?
+    var reloadBtnAction: (() -> Void)?
+    var startBtnAction: (() -> Void)?
     struct UISize {
         static let progressBorder: CGFloat = 23
         static let progressLinWidth: CGFloat = 10
@@ -63,17 +63,17 @@ class FXTutorialProgressView: UIView {
     }()
     fileprivate lazy var shadowView: UIView = {
         let progressContentView = UIView()
-        progressContentView.backgroundColor = UIColor.red
+        progressContentView.backgroundColor = .white
         return progressContentView
-    }()
+       }()
     fileprivate lazy var titleLabel: UIButton = {
         let btn = UIButton(type: .custom)
+        btn.setTitle("加载中...", for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         return btn
     }()
     lazy var backView: FXGradientView = {
         let maxTrackView = FXGradientView()
-        maxTrackView.alpha = 1
         (maxTrackView.layer as! CAGradientLayer).colors = [
             UIColor(hex: 0x7ad3ff)!.cgColor,
             UIColor(hex: 0xe261e0)!.cgColor
@@ -84,17 +84,16 @@ class FXTutorialProgressView: UIView {
     }()
     fileprivate lazy var whiteView: UIView = {
         let whiteView = UIView()
-        whiteView.backgroundColor = UIColor.white.withAlphaComponent(0.5)
+        whiteView.backgroundColor = UIColor.white.withAlphaComponent(0.7)
         return whiteView
     }()
     
-    lazy var gradientView: FXGradientView = {
+   fileprivate lazy var gradientView: FXGradientView = {
         let maxTrackView = FXGradientView()
         (maxTrackView.layer as! CAGradientLayer).colors = [
             UIColor(hex: 0x7ad3ff)!.cgColor,
             UIColor(hex: 0xe261e0)!.cgColor
         ]
-        maxTrackView.alpha = 1
         maxTrackView.layer.cornerRadius = 23
         maxTrackView.layer.masksToBounds = true
         (maxTrackView.layer as! CAGradientLayer).startPoint = CGPoint(x: 0, y: 0.5)
@@ -111,7 +110,8 @@ class FXTutorialProgressView: UIView {
     fileprivate lazy var reloadBtn: UIButton = {
         let btn = UIButton(type: .custom)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
-        btn.setTitle("加载失败，点击刷新", for: .normal)
+        btn.setTitle(" 加载失败，点击刷新", for: .normal)
+        btn.backgroundColor = .red
         return btn
     }()
     fileprivate lazy var reloadBgView: UIView = {
@@ -129,7 +129,6 @@ class FXTutorialProgressView: UIView {
         progressContentView.addSubview(whiteView)
         progressContentView.addSubview(gradientView)
         progressContentView.addSubview(reloadBgView)
-        
         progressContentView.addSubview(titleLabel)
         progressContentView.addSubview(startBtn)
         progressContentView.addSubview(reloadBtn)
@@ -137,27 +136,22 @@ class FXTutorialProgressView: UIView {
         
     }
     
-    override func layoutSublayers(of layer: CALayer) {
-        super.layoutSublayers(of: layer)
-        
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         if !isProgress {
-            progressContentView.frame = bounds
             gradientView.frame = CGRect(x: -UISize.progressBorder, y: 0, width: 0, height: bounds.height)
-            backView.frame = bounds
-            whiteView.frame = bounds
-            titleLabel.frame = bounds
-            reloadBtn.frame = CGRect(x: 0, y: -bounds.height, width: bounds.width, height: bounds.height)
-            reloadBgView.frame = CGRect(x: 0, y: -bounds.height, width: bounds.width, height: bounds.height)
-            startBtn.frame = CGRect(x: 0, y: -bounds.height, width: bounds.width, height: bounds.height)
+            progressContentView.frame = bounds
             shadowView.frame = CGRect(x: 10, y: 10, width: bounds.width - 10 * 2, height: bounds.height - 10 * 2)
             shadowView.layer.shadowOffset = CGSize(width: 0, height: 8)
             shadowView.layer.shadowRadius = 20
             shadowView.layer.shadowOpacity = 0.8
             shadowView.layer.shadowColor = UIColor(hex: 0xB196ED)?.cgColor
+            backView.frame = progressContentView.bounds
+            whiteView.frame = progressContentView.bounds
+            titleLabel.frame = progressContentView.bounds
+            reloadBtn.frame = CGRect(x: 0, y: -progressContentView.bounds.height, width: progressContentView.bounds.width, height: progressContentView.bounds.height)
+            reloadBgView.frame = CGRect(x: 0, y: -progressContentView.bounds.height, width: progressContentView.bounds.width, height: progressContentView.bounds.height)
+            startBtn.frame = CGRect(x: 0, y: -progressContentView.bounds.height, width: progressContentView.bounds.width, height: progressContentView.bounds.height)
         }
     }
     
@@ -177,52 +171,59 @@ class FXTutorialProgressView: UIView {
     }
     
     func setProgress(_ progress: CGFloat, hasError: Bool = false) {
-        debugPrint("progress:\(progress)")
         isProgress = true
-        gradientView.frame.size.width = progress * (bounds.width + UISize.progressBorder * 2)
+        gradientView.frame.size.width = 0
         titleLabel.setTitle("加载中...", for: .normal)
         if progress >= 1 && !hasError {
             startBtn.setTitle("开始", for: .normal)
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: -15, options: [.transitionCrossDissolve], animations: {
+            UIView.animate(withDuration: 0.35, delay: 0, options: [.curveEaseInOut], animations: {
+                  self.gradientView.frame.size.width = self.bounds.width + UISize.progressBorder * 2
+            }, completion: nil)
+
+            UIView.animate(withDuration: 0.5, delay: 0.35, usingSpringWithDamping: 0.7, initialSpringVelocity: -15, options: [.transitionCrossDissolve], animations: {
                 self.startBtn.frame.origin.y = 0
                 self.titleLabel.frame.origin.y = self.bounds.height
-            }, completion: nil)
+            }, completion: { _ in
+                self.startBtn.addTarget(self, action: #selector(self.startnAction), for: .touchUpInside)
+            })
         } else if hasError {
-            UIView.animate(withDuration: 0.25,
-                           delay: 0,
-                           options: [],
+            UIView.animate(withDuration: 0.25, delay: 0, options: [.transitionCrossDissolve],
                            animations: {
                             self.gradientView.frame.size.width = self.bounds.width + UISize.progressBorder * 2
             }, completion: nil)
             
-            UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: [], animations: {
+            UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [.transitionCrossDissolve], animations: {
                 self.reloadBtn.frame.origin.y = 0
                 self.reloadBgView.frame.origin.y = -10
                 self.reloadBgView.frame.size.height = self.bounds.height + 10
                 self.titleLabel.frame.origin.y = self.bounds.height
             }, completion: { _ in
-                self.reloadBtn.removeTarget(self, action: #selector(self.reloadBtnAction), for: .touchUpInside)
-                self.reloadBtn.addTarget(self, action: #selector(self.reloadBtnAction), for: .touchUpInside)
+                self.reloadBtn.addTarget(self, action: #selector(self.reloadAction), for: .touchUpInside)
             })
         }
     }
     
-    @objc fileprivate func reloadBtnAction() {
-        titleLabel.setTitle("加载失败，点击刷新", for: .normal)
-        reloadBtnDidClick?()
+    @objc fileprivate func reloadAction() {
+        titleLabel.setTitle(" 加载失败，点击刷新", for: .normal)
         gradientView.frame.size.width = 0
         startBtn.frame.origin.y = -bounds.height
         reloadBtn.frame.origin.y = -bounds.height
-        self.reloadBgView.frame.origin.y = -(self.bounds.height + 10)
-        self.reloadBgView.frame.size.height = self.bounds.height + 10
+        reloadBgView.frame.origin.y = -(self.bounds.height + 10)
+        reloadBgView.frame.size.height = self.bounds.height + 10
         titleLabel.isHidden = false
         titleLabel.frame.origin.y = 0
+        reloadBtn.removeTarget(self, action: #selector(self.reloadAction), for: .touchUpInside)
+        reloadBtnAction?()
     }
     
     @objc fileprivate func startnAction() {
-        reloadBtnDidClick?()
+        startBtnAction?()
+        startBtn.removeTarget(self, action: #selector(startnAction), for: .touchUpInside)
     }
     
 }
+
+
+
 
 

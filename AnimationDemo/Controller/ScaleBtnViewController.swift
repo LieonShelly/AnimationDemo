@@ -40,7 +40,7 @@ class ScaleBtnViewController: UIViewController {
         innerShapeLayer.backgroundColor = UIColor.clear.cgColor
         return innerShapeLayer
     }()
-    fileprivate lazy var shadowView: UIView = {
+    fileprivate lazy var bottomshadowView: UIView = {
         let shadowView = UIView()
         shadowView.backgroundColor = UIColor.black.withAlphaComponent(1)
         return shadowView
@@ -86,11 +86,11 @@ class ScaleBtnViewController: UIViewController {
         let bar = FXTutorialHandleNaviBar()
         bar.layer.cornerRadius = 12
         bar.layer.masksToBounds = true
-        view.addSubview(shadowView)
-        view.addSubview(leftshadowView)
-        view.addSubview(topshadowView)
-        view.addSubview(rightshadowView)
         view.addSubview(bar)
+        let shadowView = UIImageView()
+        shadowView.contentMode = .scaleToFill
+        shadowView.image = UIImage(named: "ic_tutorial_nav_shadow")
+        view.addSubview(shadowView)
         
         bar.snp.makeConstraints {
             $0.left.equalTo(20)
@@ -98,58 +98,21 @@ class ScaleBtnViewController: UIViewController {
             $0.height.equalTo(76)
             $0.centerY.equalTo(view.snp.centerY).offset(200)
         }
-        //        let pathframe = CGRect(x: 0, y: 0, width: view.bounds.width - 20 * 2, height: 50)
-        //        innerShapeLayer.frame = pathframe
-        //        innerShapeLayer.path = UIBezierPath(roundedRect: pathframe, cornerRadius: 12).cgPath
-        //        btn.layer.addSublayer(innerShapeLayer)
         
-        
-        //        gradientView.snp.makeConstraints {
-        //            $0.edges.equalTo(btn)
-        //        }
-        gradientView.layer.mask = innerShapeLayer
-        let shadowSize: CGFloat = 3
         shadowView.snp.makeConstraints {
-            $0.left.equalTo(bar.snp.left).offset(0)
-            $0.right.equalTo(bar.snp.right).offset(0)
-            $0.bottom.equalTo(bar.snp.bottom).offset(0)
-            $0.height.equalTo(shadowSize)
+            $0.left.equalTo(bar.snp.left).offset(-10)
+            $0.top.equalTo(bar.snp.top).offset(-15)
+            $0.right.equalTo(bar.snp.right).offset(10)
+            $0.bottom.equalTo(bar.snp.bottom).offset(20)
         }
-        leftshadowView.snp.makeConstraints {
-            $0.left.equalTo(bar.snp.left).offset(0)
-            $0.top.equalTo(bar.snp.top)
-            $0.bottom.equalTo(bar.snp.bottom).offset(0)
-            $0.width.equalTo(shadowSize)
-        }
-        topshadowView.snp.makeConstraints {
-            $0.left.equalTo(bar.snp.left).offset(0)
-            $0.right.equalTo(bar.snp.right).offset(0)
-            $0.top.equalTo(bar.snp.top)
-            $0.height.equalTo(shadowSize)
-        }
-        rightshadowView.snp.makeConstraints {
-            $0.bottom.equalTo(bar.snp.bottom).offset(0)
-            $0.right.equalTo(bar.snp.right).offset(0)
-            $0.top.equalTo(bar.snp.top)
-            $0.width.equalTo(shadowSize)
-        }
-        setShadowProperty(leftshadowView)
-        setShadowProperty(shadowView)
-        setShadowProperty(rightshadowView)
-        setShadowProperty(topshadowView)
-        
-        
-        //        let dotWidth: CGFloat = 50
-        //        self.dot = FXOneCycleView(frame: CGRect(x: destCenter.x - dotWidth * 0.5, y: destCenter.y - dotWidth * 0.5, width: dotWidth, height: dotWidth))
-        //        self.view.insertSubview(self.dot!, belowSubview: self.gradientView)
-        //        self.dot!.alpha = 0
+
     }
     
     fileprivate func setShadowProperty(_ shadowView: UIView) {
         shadowView.layer.shadowColor = UIColor.black.cgColor
         shadowView.layer.shadowRadius = 8
         shadowView.layer.shadowOpacity = 0.8
-        shadowView.layer.cornerRadius = 12
+        shadowView.layer.cornerRadius = 12 + 12
         shadowView.layer.shadowOffset = CGSize(width: 0, height: 0)
     }
     
@@ -190,11 +153,15 @@ extension ScaleBtnViewController: CAAnimationDelegate {
 }
 
 
-
 class FXTutorialHandleNaviBar: UIView {
     struct UISize {
         static let gradientHeight: CGFloat = 12
     }
+    fileprivate lazy var backView: UIView = {
+        let backView = UIView()
+        backView.backgroundColor = UIColor.black.withAlphaComponent(0.08)
+        return backView
+    }()
     fileprivate lazy var blurView: FXTutorialBlurView = {
         let blurView = FXTutorialBlurView(withRadius: 20)
         return blurView
@@ -219,7 +186,7 @@ class FXTutorialHandleNaviBar: UIView {
             override var startPoint: CGPoint {
                 set {}
                 get {
-                    return CGPoint(x: 0, y: 0.5)
+                   return CGPoint(x: 0, y: 0.5)
                 }
             }
             
@@ -241,32 +208,34 @@ class FXTutorialHandleNaviBar: UIView {
     }
     fileprivate lazy var bottomLine: GraientView = GraientView()
     fileprivate lazy var innerShapeLayer: CAShapeLayer = {
-        let innerShapeLayer = CAShapeLayer()
+          let innerShapeLayer = CAShapeLayer()
         innerShapeLayer.fillColor = UIColor.clear.cgColor
         innerShapeLayer.strokeColor = UIColor.red.cgColor
-        return innerShapeLayer
-    }()
+          return innerShapeLayer
+      }()
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
         blurView.frame = CGRect(x: 0,
                                 y: 0,
                                 width: bounds.width,
                                 height: bounds.height)
+        backView.frame = blurView.bounds
         bottomLine.frame = CGRect(x: 0,
-                                  y: bounds.height - UISize.gradientHeight,
-                                  width:  bounds.width,
-                                  height: UISize.gradientHeight)
-        
-        
+                               y: bounds.height - UISize.gradientHeight,
+                               width:  bounds.width,
+                               height: UISize.gradientHeight)
+      
+
     }
     
     override func layoutSublayers(of layer: CALayer) {
         super.layoutSublayers(of: layer)
         let shapeFrame =  CGRect(x: 0,
-                                 y: 0,
-                                 width:  bounds.width,
-                                 height: UISize.gradientHeight)
+                                       y: 0,
+                                       width:  bounds.width,
+                                       height: UISize.gradientHeight)
         innerShapeLayer.frame = shapeFrame
         let radius = shapeFrame.height
         let path = UIBezierPath()
@@ -276,7 +245,7 @@ class FXTutorialHandleNaviBar: UIView {
                     startAngle: .pi,
                     endAngle: .pi / 2,
                     clockwise: false)
-        
+
         path.addLine(to: CGPoint(x: bounds.width - radius, y: radius))
         path.addArc(withCenter: CGPoint(x:  bounds.width - radius, y: 0),
                     radius: radius,
@@ -299,6 +268,7 @@ class FXTutorialHandleNaviBar: UIView {
 
 extension FXTutorialHandleNaviBar {
     fileprivate func configUI() {
+        addSubview(backView)
         addSubview(blurView)
         addSubview(bottomLine)
         backgroundColor = .clear

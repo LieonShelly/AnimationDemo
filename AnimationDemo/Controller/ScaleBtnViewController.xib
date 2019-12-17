@@ -40,15 +40,32 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meinv" translatesAutoresizingMaskIntoConstraints="NO" id="r1N-Xo-VF0">
                     <rect key="frame" x="0.0" y="174" width="414" height="688"/>
                 </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_tutorial_nav_shadow" translatesAutoresizingMaskIntoConstraints="NO" id="big-vU-7wA">
+                    <rect key="frame" x="0.0" y="515" width="414" height="76"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="76" id="5Dg-W7-0c4"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Kl-lU-wrj">
+                    <rect key="frame" x="15" y="525" width="389" height="46"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="8Kl-lU-wrj" firstAttribute="leading" secondItem="big-vU-7wA" secondAttribute="leading" constant="15" id="GpY-sN-v1r"/>
+                <constraint firstItem="8Kl-lU-wrj" firstAttribute="trailing" secondItem="big-vU-7wA" secondAttribute="trailing" constant="-10" id="Jwa-kQ-vdE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="big-vU-7wA" secondAttribute="bottom" constant="271" id="Mlf-aZ-ctd"/>
                 <constraint firstItem="bvq-H0-Ugx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="PiF-ek-J8b"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="r1N-Xo-VF0" secondAttribute="bottom" id="RA6-py-RVc"/>
                 <constraint firstItem="bvq-H0-Ugx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="TV7-Wt-eGt"/>
                 <constraint firstItem="r1N-Xo-VF0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bE9-66-iPl"/>
+                <constraint firstItem="big-vU-7wA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eWc-Hd-gp5"/>
                 <constraint firstItem="r1N-Xo-VF0" firstAttribute="top" secondItem="bvq-H0-Ugx" secondAttribute="bottom" id="il9-4g-lxh"/>
+                <constraint firstItem="8Kl-lU-wrj" firstAttribute="bottom" secondItem="big-vU-7wA" secondAttribute="bottom" constant="-20" id="psm-e6-YRn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="big-vU-7wA" secondAttribute="trailing" id="pt9-PQ-ODO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bvq-H0-Ugx" secondAttribute="trailing" constant="30" id="q3D-ko-puU"/>
+                <constraint firstItem="8Kl-lU-wrj" firstAttribute="top" secondItem="big-vU-7wA" secondAttribute="top" constant="10" id="xU1-g7-QY7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="r1N-Xo-VF0" secondAttribute="trailing" id="z8Z-wH-yMv"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -56,6 +73,7 @@
         </view>
     </objects>
     <resources>
+        <image name="ic_tutorial_nav_shadow" width="375" height="96"/>
         <image name="invalidName" width="359" height="24"/>
         <image name="meinv" width="375" height="812"/>
     </resources>
