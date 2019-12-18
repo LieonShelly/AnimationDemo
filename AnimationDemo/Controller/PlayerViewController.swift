@@ -444,8 +444,6 @@ extension FXAnimtaeLayer {
                 angleIncrease: Bool? = nil,
                 scale: CGFloat? = nil,
                 scaleIncrease: Bool? = nil) {
-
-        debugPrint("viewCenter:\(viewCenter) - angle:\(angle) - angleIncrease:\(angleIncrease) -  scale:\(scale) -  scaleIncrease:\(scaleIncrease)")
         if viewCenter != lastViewCenter { /// 移动两个点
             self.center = viewCenter
         }
