@@ -77,7 +77,7 @@ class FXTutorialPlayerView: UIView {
         playerItem = item
         (layer as! AVPlayerLayer).player = player
         playerItem?.addObserver(self, forKeyPath: "status", options: .new, context: nil)
-        timeObserver = player.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1), queue: DispatchQueue.main) { [weak self](time) in
+        timeObserver = player.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 10), queue: DispatchQueue.main) { [weak self](time) in
             guard let weakSelf = self, let totalTime = weakSelf.playerItem?.duration else {
                 return
             }

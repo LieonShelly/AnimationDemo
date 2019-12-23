@@ -20,7 +20,7 @@ class BtnViewController: UIViewController {
         return layer
     }()
     
-    
+    let bag = DisposeBag()
     lazy var shapeLapyer: CAShapeLayer = {
         let shapeLayer = CAShapeLayer()
         shapeLayer.fillColor = UIColor.clear.cgColor
@@ -65,6 +65,14 @@ class BtnViewController: UIViewController {
         gradientLayer.cornerRadius = destinationRect.height * 0.5
         view.layer.addSublayer(gradientLayer)
         
+        btn.rx.tap
+            .subscribe(onNext: { (_) in
+                let alert = FXTutorialHandlerAlert("", title: "asdfs", desc: "sfsdfadsfhaudhsfjashfdjsdjfksagj")
+                alert.show { (_) in
+                    
+                }
+            })
+            .disposed(by: bag)
     }
     
 }
@@ -79,6 +87,7 @@ class FXTutorialHandlerAlert: UIView {
     let bag = DisposeBag()
     fileprivate lazy var containerView: UIView = {
         let containerView = UIView()
+        containerView.alpha = 0
         return containerView
     }()
     var dismissHandler: ((Any?) -> Void)?
@@ -96,7 +105,7 @@ class FXTutorialHandlerAlert: UIView {
     
     fileprivate lazy var upContentBgView: UIImageView = {
         let bgView = UIImageView()
-        bgView.image = UIImage(contentsOfFile: Bundle.getFilePath(fileName: "ic_tuotorial_alert_bg@3x"))
+        bgView.image = UIImage(named: "bottom_shadow")
         return bgView
     }()
     
@@ -135,6 +144,7 @@ class FXTutorialHandlerAlert: UIView {
         btn.titleLabel?.font = UIFont.customFont(ofSize: 16.0.fitiPhone5sSerires, isBold: true)
         btn.setTitleColor(UIColor.white, for: .normal)
         btn.addTarget(self, action: #selector(okAction(_:)), for: UIControl.Event.touchUpInside)
+        btn.imageEdgeInsets = UIEdgeInsets(top: 1, left: 0, bottom: 0, right: 0)
         var icon = UIImage(contentsOfFile: Bundle.getFilePath(fileName: "ic_tutorial_alter_contine@3x"))
         btn.setImage(icon, for: .normal)
         return btn
@@ -148,10 +158,10 @@ class FXTutorialHandlerAlert: UIView {
     }()
     
     lazy var bottomShadowLayer: CALayer = {
-        $0.contentsScale = UIScreen.main.scale
-        $0.contents = UIImage(named: "bottom_shadow")?.cgImage
-        return $0
-    }(CALayer())
+        let layer = CALayer()
+        layer.contents = UIImage(named: "bottom_shadow")?.cgImage
+        return layer
+    }()
     
     lazy var gradientLayer: CAGradientLayer = {
         let layer = CAGradientLayer()
@@ -179,7 +189,7 @@ class FXTutorialHandlerAlert: UIView {
     fileprivate lazy var coverBtn: UIButton = {
         let btn = UIButton()
         btn.isUserInteractionEnabled = false
-        btn.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        btn.backgroundColor = .clear //UIColor.black.withAlphaComponent(0.6)
         return btn
     }()
     fileprivate var isFirstLayoutSubLayer: Bool = true
@@ -193,6 +203,14 @@ class FXTutorialHandlerAlert: UIView {
                           height: imageSize.height)
         }
     }
+    
+    fileprivate lazy var blurView: UIVisualEffectView = {
+        let blurView = UIVisualEffectView()
+        blurView.alpha = 0
+        let effect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        blurView.effect = effect
+        return blurView
+    }()
     
     convenience init(_ iconURL: String?,
                      title: String?,
@@ -218,9 +236,22 @@ class FXTutorialHandlerAlert: UIView {
     }
     
     func showAnimation() {
-        self.containerView.center.y = -UIScreen.main.bounds.height
-        UIView.animate(withDuration: 0.45, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.3, options: .curveEaseOut, animations: {
-            self.containerView.center.y = UIScreen.main.bounds.height * 0.5
+        self.containerView.center.y = bounds.height * 0.5 - 100
+        
+        
+        UIView.animate(withDuration: 0.25,
+                       delay: 0,
+                       options: [.transitionCrossDissolve],
+                       animations: {
+                        self.blurView.alpha = 1
+        }, completion: nil)
+        UIView.animate(withDuration: 0.7,
+                       delay: 0.25,
+                       usingSpringWithDamping: 0.8, initialSpringVelocity: 0.3,
+                       options: [.curveEaseInOut, .transitionCrossDissolve],
+                       animations: {
+                        self.containerView.center.y = self.bounds.height * 0.5
+                        self.containerView.alpha = 1
         }) { (finished) in
             
         }
@@ -241,13 +272,9 @@ class FXTutorialHandlerAlert: UIView {
     override func layoutSublayers(of layer: CALayer) {
         super.layoutSublayers(of: layer)
         if isFirstLayoutSubLayer {
-            isFirstLayoutSubLayer = false
-            let gradientWidth = bounds.width - ((bounds.width - UISize.contentViewWidth) * 0.5 + 26.0.fitiPhone5sSerires) * 2
-            gradientLayer.frame = CGRect(x: 0, y: 0, width: gradientWidth, height: UISize.btnHeight)
-            gradientLayer.cornerRadius = 10.0.fitiPhone5sSerires
-            okButton.layer.insertSublayer(gradientLayer, below: okButton.imageView?.layer)
-            bottomShadowLayer.frame = CGRect.init(x: 0, y: UISize.btnHeight - 2, width: gradientWidth, height: 7.0)
-            okButton.layer.insertSublayer(bottomShadowLayer, below: gradientLayer)
+            let gradientWidth = okButton.bounds.width
+            gradientLayer.frame = okButton.bounds
+            bottomShadowLayer.frame =  CGRect(x: 0, y: gradientLayer.frame.maxY - 2, width: gradientWidth, height: 7.0)
         }
     }
     
@@ -256,11 +283,10 @@ class FXTutorialHandlerAlert: UIView {
             return
         }
         if gradientLayer.frame == destinationRect, destinationRect.contains(point) {
-            dismiss(true, result: true)
+            dismiss(true, result: true, animate: true)
         } else {
-            dismiss(true, result: false)
+            dismiss(true, result: false, animate: true)
         }
-        
     }
 }
 
@@ -271,10 +297,17 @@ extension FXTutorialHandlerAlert {
                               desc: String?) {
         let widthAlert: CGFloat = CGFloat(290).adaptedValue()
         let viewAlertBg = containerView
+        addSubview(blurView)
         addSubview(coverBtn)
         coverBtn.snp.makeConstraints {
             $0.edges.equalTo(0)
         }
+        blurView.snp.makeConstraints {
+            $0.edges.equalTo(0)
+        }
+        gradientLayer.cornerRadius = 10.0.fitiPhone5sSerires
+        okButton.layer.insertSublayer(gradientLayer, below: okButton.imageView?.layer)
+        okButton.layer.insertSublayer(bottomShadowLayer, below: gradientLayer)
         addSubview(containerView)
         containerView.snp.makeConstraints {
             $0.left.equalTo(30.0.fitiPhone5sSerires)
@@ -378,24 +411,33 @@ extension FXTutorialHandlerAlert {
         }
     }
     
-    fileprivate func dismiss(_ callback: Bool, result: Any?) {
-        UIView.animate(withDuration: 0.25, animations: {
-            self.alpha = 0.001
-        }, completion: { _ in
-            if callback {
-                self.dismissHandler?(result)
-            }
+    fileprivate func dismiss(_ callback: Bool, result: Any?, animate: Bool = true) {
+        if animate {
+            UIView.animate(withDuration: 0.7,
+                           delay: 0,
+                           options: [.curveEaseInOut, .transitionCrossDissolve],
+                           animations: {
+                            self.containerView.center.y = UIScreen.main.bounds.height * 2
+                            self.blurView.alpha = 0
+            }, completion: { _ in
+                if callback {
+                    self.dismissHandler?(result)
+                }
+                self.removeFromSuperview()
+            })
+        } else {
             self.removeFromSuperview()
-        })
+        }
     }
     
     @objc func okAction(_ sender: Any?) {
+        isFirstLayoutSubLayer = false
         exchangeSuperLayer()
         circularAnimations()
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.6) { [unowned self] in
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) { [unowned self] in
             self.moveToNavAnimation()
         }
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.2) { [unowned self] in
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8) { [unowned self] in
             self.breathAnimation()
         }
     }
@@ -403,6 +445,7 @@ extension FXTutorialHandlerAlert {
     fileprivate func exchangeSuperLayer() {
         let gradientBounds = gradientLayer.convert(gradientLayer.bounds, to: self.layer)
         gradientLayer.removeFromSuperlayer()
+        bottomShadowLayer.removeFromSuperlayer()
         CATransaction.begin()
         CATransaction.setDisableActions(true)
         gradientLayer.frame = gradientBounds
@@ -415,7 +458,7 @@ extension FXTutorialHandlerAlert {
         
         let groupAnimation = CAAnimationGroup()
         groupAnimation.beginTime = CACurrentMediaTime()
-        groupAnimation.duration = 0.5
+        groupAnimation.duration = 0.15
         groupAnimation.fillMode = CAMediaTimingFillMode(rawValue: "forwards")
         groupAnimation.isRemovedOnCompletion = false
         
@@ -428,7 +471,7 @@ extension FXTutorialHandlerAlert {
         position.isRemovedOnCompletion = false
         position.fromValue = CGPoint(x: layerBoundsInView.origin.x + UISize.btnHeight * 0.5, y: layerBoundsInView.origin.y +  UISize.btnHeight * 0.5)
         position.toValue = CGPoint(x: destinationRect.origin.x +  UISize.btnHeight * 0.5, y: destinationRect.origin.y +  UISize.btnHeight * 0.5)
-        position.duration = 0.5
+        position.duration = 0.15
         
         let cornerRadius = CABasicAnimation(keyPath: "cornerRadius")
         cornerRadius.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName(rawValue: "linear"))
@@ -441,23 +484,43 @@ extension FXTutorialHandlerAlert {
         fade.fromValue = 1
         fade.toValue = 0
         containerView.layer.opacity = 0
+        blurView.layer.opacity = 0
         groupAnimation.animations = [bounds, cornerRadius]
         containerView.layer.add(fade, forKey: "fade")
         coverBtn.layer.add(fade, forKey: nil)
+        blurView.layer.add(fade, forKey: nil)
         gradientLayer.add(groupAnimation, forKey: "group")
     }
     
     fileprivate func moveToNavAnimation() {
-        let position = CABasicAnimation(keyPath: "position")
+        let position = CAKeyframeAnimation(keyPath: "position")
         position.fillMode = CAMediaTimingFillMode(rawValue: "forwards")
         position.isRemovedOnCompletion = false
-        position.fromValue = CGPoint(x: layerBoundsInView.origin.x +  UISize.btnHeight * 0.5, y: layerBoundsInView.origin.y +  UISize.btnHeight * 0.5)
-        position.toValue = CGPoint(x: destinationRect.origin.x +  UISize.btnHeight * 0.5, y: destinationRect.origin.y +  UISize.btnHeight * 0.5)
+        let fromPoint = CGPoint(x: layerBoundsInView.origin.x +  UISize.btnHeight * 0.5,
+                                     y: layerBoundsInView.origin.y +  UISize.btnHeight * 0.5)
+        let endPoint = CGPoint(x: destinationRect.origin.x +  UISize.btnHeight * 0.5,
+                                   y: destinationRect.origin.y +  UISize.btnHeight * 0.5)
+        let path = UIBezierPath()
+        path.move(to: fromPoint)
+        let controlPoint1 = CGPoint(x: fromPoint.x + 100, y: fromPoint.y - 100)
+        path.addCurve(to: endPoint, controlPoint1: controlPoint1, controlPoint2: endPoint)
+        position.path = path.cgPath
         position.duration = 0.5
+        position.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         gradientLayer.add(position, forKey: "position")
     }
     
     fileprivate  func breathAnimation() {
+        let fade = CABasicAnimation(keyPath: "opacity")
+        fade.fillMode = .forwards
+        fade.duration = 0.05
+        fade.isRemovedOnCompletion = false
+        fade.fromValue = 1
+        fade.toValue = 0
+        gradientLayer.add(fade, forKey: "fade")
+        return;
+        
+        
         shapeLapyer.lineWidth = destinationRect.height
         shapeLapyer.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: destinationRect.height, height: destinationRect.height), cornerRadius: destinationRect.height * 0.5).cgPath
         gradientLayer.frame = destinationRect
@@ -502,9 +565,9 @@ extension Bundle {
 extension Double {
     var fitiPhone5sSerires: CGFloat {
         let deviceWidth = UIScreen.main.bounds.width
-          if deviceWidth <= 640 * 0.5 { // 5s
-              return fit375Pt
-          } else {
+        if deviceWidth <= 640 * 0.5 { // 5s
+            return fit375Pt
+        } else {
             return CGFloat(self)
         }
     }
@@ -560,6 +623,6 @@ public extension UIFont {
 extension CGFloat {
     
     public func adaptedValue() -> CGFloat {
-      return self
+        return self
     }
 }

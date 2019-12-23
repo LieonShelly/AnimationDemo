@@ -93,56 +93,10 @@ class PanAnimatior: NSObject, AnimationTargetType {
         scale.fillMode = .backwards
         scale.isRemovedOnCompletion = false
         dot.add(scale, forKey: nil)
-        return
-        let showGroup = CAAnimationGroup()
-        showGroup.fillMode = .forwards
-        showGroup.beginTime = CACurrentMediaTime()
-        showGroup.duration = 0.25
-        showGroup.repeatCount = 1
-        showGroup.repeatDuration = 1
-        showGroup.isRemovedOnCompletion = false
-        showGroup.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
-        
-        let showScaleAnimation = CABasicAnimation(keyPath: "transform.scale")
-        showScaleAnimation.fromValue = 0
-        showScaleAnimation.toValue = 1
-        
-        let opacity = CABasicAnimation(keyPath: "opacity")
-        opacity.fromValue = 0
-        opacity.toValue = 1
-        
-        
-        showGroup.animations = [showScaleAnimation, opacity]
-        dot.add(showGroup, forKey: nil)
-        
-
-        let group = CAAnimationGroup()
-        group.fillMode = .forwards
-        group.beginTime = CACurrentMediaTime() + 0.25 + 0.5
-        group.duration = 0.25
-        group.repeatCount = 1
-        group.repeatDuration = 1
-        group.isRemovedOnCompletion = false
-
-        let showScaleAnimation0 = CABasicAnimation(keyPath: "transform.scale")
-        showScaleAnimation0.fromValue = 1
-        showScaleAnimation0.toValue = 0.8
-
-        let borderColorAnima = CABasicAnimation(keyPath: "borderColor")
-        borderColorAnima.fromValue = dot.borderColor
-        borderColorAnima.toValue = param.dotMoveColor.cgColor
-
-        
-        let bgColorAnima = CABasicAnimation(keyPath: "backgroundColor")
-        bgColorAnima.fromValue = dot.backgroundColor
-        bgColorAnima.toValue = param.dotMoveColor.cgColor
-        
-        group.animations = [showScaleAnimation0, borderColorAnima, bgColorAnima]
-        group.timingFunction = CAMediaTimingFunction(name: .easeIn)
-        dot.add(group, forKey: nil)
     }
     
     private func dismiss(_ beginTime: CFTimeInterval, _ param: PanParam) {
+
         let dismissGroup = CAAnimationGroup()
         dismissGroup.fillMode = .forwards
         dismissGroup.duration = 0.25
@@ -150,13 +104,6 @@ class PanAnimatior: NSObject, AnimationTargetType {
         dismissGroup.repeatDuration = 1
         dismissGroup.isRemovedOnCompletion = false
         dismissGroup.delegate = self
-
-        let dismissBgColorAnima = CABasicAnimation(keyPath: "backgroundColor")
-        dismissBgColorAnima.toValue = param.dotEndFillColor.cgColor
-
-        let borderWidth = CABasicAnimation(keyPath: "borderWidth")
-        borderWidth.fromValue = 0
-        borderWidth.toValue = param.dotBorderWidth
 
         let dismissScale = CABasicAnimation(keyPath: "transform.scale")
         dismissScale.fromValue = 0.8
@@ -168,8 +115,6 @@ class PanAnimatior: NSObject, AnimationTargetType {
 
         dismissGroup.beginTime = beginTime
         dismissGroup.animations = [
-                 dismissBgColorAnima,
-                 borderWidth,
                  dismissScale,
                  opacity]
         self.dot.add(dismissGroup, forKey: nil)

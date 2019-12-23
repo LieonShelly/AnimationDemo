@@ -109,20 +109,19 @@ class SwipeViewController: UIViewController {
         switch pan.state {
         case .began:
             if velocity.x < 0 {
-                
-                UIView.animate(withDuration: 0.25, delay: 0,
-                               usingSpringWithDamping: 0.8,
-                               initialSpringVelocity: 20,
-                               options: [.transitionCrossDissolve],
+                UIView.animate(withDuration: 0.5, delay: 0,
+                               usingSpringWithDamping: 0.5,
+                               initialSpringVelocity: 0,
+                               options: [.curveEaseInOut],
                                animations: {
                                 self.red.frame.origin.x = -totoalOffset
                                 self.yellow.frame.origin.x = self.red.frame.maxX + UISize.rightInset
                 }, completion: nil)
             } else if velocity.x > 0 {
-                UIView.animate(withDuration: 0.25, delay: 0,
-                               usingSpringWithDamping: 0.8,
-                               initialSpringVelocity: 20,
-                               options: [.transitionCrossDissolve],
+                UIView.animate(withDuration: 0.5, delay: 0,
+                               usingSpringWithDamping: 0.5,
+                               initialSpringVelocity: 0,
+                               options: [.curveEaseInOut],
                                animations: {
                                 self.red.frame.origin.x = UISize.rightInset
                                 self.yellow.frame.origin.x = self.red.frame.maxX + UISize.rightInset

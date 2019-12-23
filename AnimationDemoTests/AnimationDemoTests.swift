@@ -10,14 +10,31 @@ import XCTest
 @testable import AnimationDemo
 
 class AnimationDemoTests: XCTestCase {
+    
+    override class func setUp() {
+        super.setUp()
+    }
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+    }
+    
+    override class func tearDown() {
+        
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
     }
+    
+    override func wait(for expectations: [XCTestExpectation], timeout seconds: TimeInterval) {
+        
+    }
+    
+    override func waitForExpectations(timeout: TimeInterval, handler: XCWaitCompletionHandler? = nil) {
+        
+    }
+    
 
     func testExample() {
         // This is an example of a functional test case.
