@@ -1,0 +1,69 @@
+//
+//  BillService.swift
+//  AnimationDemo
+//
+//  Created by lieon on 2019/12/23.
+//  Copyright © 2019 lieon. All rights reserved.
+//
+
+import Foundation
+import RealmSwift
+import Realm
+
+class BillService: StorageContext {
+    typealias DBEntityType = Bill
+    
+    let realm = try! Realm(configuration: .defaultConfiguration)
+    
+    func create(_ model: Bill) -> Bill? {
+        return model
+    }
+    
+    func save(object: Bill) throws {
+        try? realm.write {
+            realm.add(object, update: .all)
+        }
+    }
+    
+    func saveAll(objects: [Bill]) throws {
+        try objects.forEach(save)
+    }
+    
+    func update(object: Bill) throws {
+        try? realm.write {
+            realm.add(object, update: .modified)
+        }
+    }
+    
+    func delete(object: Bill) throws {
+        try? realm.write {
+            realm.delete(object)
+        }
+    }
+    
+    func deleteAll(_ model: Bill.Type) throws {
+        try? realm.write {
+            realm.deleteAll()
+        }
+    }
+    
+    func fetch(_ model: Bill.Type,
+               predicate: NSPredicate?,
+               sorted: Sorted? = Sorted(key: "createDate"),
+               page: Int = 0,
+               num: Int = 20) -> [Bill] {
+        var results: Results<Bill>?
+        if let predicate = predicate {
+            results = realm.objects(model).sorted(byKeyPath: sorted!.key, ascending: sorted!.ascending).filter(predicate)
+            
+        } else {
+            results = realm.objects(model).sorted(byKeyPath: sorted!.key, ascending: sorted!.ascending)
+        }
+        if let results = results {
+            let endIndex = (page + 1) * num - 1
+            let startIndex = endIndex - num
+            return results[startIndex ... endIndex].map { $0 }
+        }
+        return []
+    }
+}

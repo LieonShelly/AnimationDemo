@@ -22,6 +22,12 @@
 		CD2FCF7C234D796500E28E5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCF7A234D796500E28E5C /* LaunchScreen.storyboard */; };
 		CD2FCF87234D796500E28E5C /* AnimationDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCF86234D796500E28E5C /* AnimationDemoTests.swift */; };
 		CD2FCF92234D796500E28E5C /* AnimationDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCF91234D796500E28E5C /* AnimationDemoUITests.swift */; };
+		CD42C19B23B0A8A300C3EB20 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD42C19923B0A8A300C3EB20 /* Realm.framework */; };
+		CD42C19C23B0A8A300C3EB20 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD42C19923B0A8A300C3EB20 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD42C19D23B0A8A300C3EB20 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD42C19A23B0A8A300C3EB20 /* RealmSwift.framework */; };
+		CD42C19E23B0A8A300C3EB20 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD42C19A23B0A8A300C3EB20 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD42C1A123B0B65400C3EB20 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD42C1A023B0B65400C3EB20 /* Bill.swift */; };
+		CD42C1A823B0C70600C3EB20 /* BillService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD42C1A723B0C70600C3EB20 /* BillService.swift */; };
 		CD725AD3234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */; };
 		CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AE5234F140700C11FB0 /* Extensions.swift */; };
 		CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AE7234F140E00C11FB0 /* Protocol.swift */; };
@@ -51,6 +57,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CD42C19E23B0A8A300C3EB20 /* RealmSwift.framework in Embed Frameworks */,
+				CD42C19C23B0A8A300C3EB20 /* Realm.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +88,10 @@
 		CD2FCF8D234D796500E28E5C /* AnimationDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimationDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2FCF91234D796500E28E5C /* AnimationDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDemoUITests.swift; sourceTree = "<group>"; };
 		CD2FCF93234D796500E28E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD42C19923B0A8A300C3EB20 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		CD42C19A23B0A8A300C3EB20 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		CD42C1A023B0B65400C3EB20 /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		CD42C1A723B0C70600C3EB20 /* BillService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillService.swift; sourceTree = "<group>"; };
 		CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
 		CD725AE5234F140700C11FB0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CD725AE7234F140E00C11FB0 /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
@@ -92,6 +104,7 @@
 			files = (
 				CD2112F6235D8DD2003B5202 /* Differentiator.framework in Frameworks */,
 				CD2112F4235D8D49003B5202 /* RxDataSources.framework in Frameworks */,
+				CD42C19D23B0A8A300C3EB20 /* RealmSwift.framework in Frameworks */,
 				CD2112E0235D82BC003B5202 /* RxAtomic.framework in Frameworks */,
 				CD2112E1235D82BC003B5202 /* RxRelay.framework in Frameworks */,
 				CD2112E2235D82BC003B5202 /* RxSwiftExt.framework in Frameworks */,
@@ -100,6 +113,7 @@
 				CD2112E6235D82BC003B5202 /* RxBlocking.framework in Frameworks */,
 				CD2112E7235D82BC003B5202 /* RxCocoa.framework in Frameworks */,
 				CD725AD3234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework in Frameworks */,
+				CD42C19B23B0A8A300C3EB20 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				CD2FCF6F234D796100E28E5C /* AppDelegate.swift */,
+				CD42C1A223B0B9EC00C3EB20 /* Service */,
+				CD42C19F23B0B64300C3EB20 /* Model */,
 				CDFB49CB2350255F0083426A /* View */,
 				CD725AD6234F0E2C00C11FB0 /* Controller */,
 				CD725AE0234F13EE00C11FB0 /* Vender */,
@@ -173,9 +189,27 @@
 			path = AnimationDemoUITests;
 			sourceTree = "<group>";
 		};
+		CD42C19F23B0B64300C3EB20 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD42C1A023B0B65400C3EB20 /* Bill.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD42C1A223B0B9EC00C3EB20 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CD42C1A723B0C70600C3EB20 /* BillService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		CD725AD1234EFF6F00C11FB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD42C19923B0A8A300C3EB20 /* Realm.framework */,
+				CD42C19A23B0A8A300C3EB20 /* RealmSwift.framework */,
 				CD2112F5235D8DD2003B5202 /* Differentiator.framework */,
 				CD2112F3235D8D48003B5202 /* RxDataSources.framework */,
 				CD2112D8235D82BC003B5202 /* RxAtomic.framework */,
@@ -361,6 +395,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Differentiator.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
@@ -378,7 +414,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD42C1A823B0C70600C3EB20 /* BillService.swift in Sources */,
 				CD2FCF70234D796100E28E5C /* AppDelegate.swift in Sources */,
+				CD42C1A123B0B65400C3EB20 /* Bill.swift in Sources */,
 				CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */,
 				CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */,
 				CD2112F8235DBA4D003B5202 /* Wireframe.swift in Sources */,

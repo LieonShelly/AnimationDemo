@@ -18,11 +18,15 @@
 #  github "onevcat/Kingfisher" ~> 5.0
 
 
-github "SnapKit/SnapKit" ~> 5.0.0
+# github "SnapKit/SnapKit" ~> 5.0.0
 
 # github "scinfu/SwiftSoup"
 # github "hackiftekhar/IQKeyboardManager"
 
+# git@github.com:RxSwiftCommunity/RxRealm.git
+  github "RxSwiftCommunity/RxRealm" ~> 1.0.0
 
+# git@github.com:realm/realm-cocoa.gitw
+ github "realm/realm-cocoa"
 
 
