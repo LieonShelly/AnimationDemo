@@ -7,15 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD0230EC237A5F5200324E30 /* FXBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0230EA237A5F5200324E30 /* FXBannerCollectionViewCell.swift */; };
-		CD0230ED237A5F5200324E30 /* FXBannerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD0230EB237A5F5200324E30 /* FXBannerCollectionViewCell.xib */; };
-		CD0230FA237A9BE000324E30 /* FXTutorialPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0230F9237A9BE000324E30 /* FXTutorialPanel.swift */; };
-		CD039004237BF15400638401 /* FXMoveAniamtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD039003237BF15400638401 /* FXMoveAniamtion.swift */; };
-		CD0537B8237934F100F9BDB5 /* EventSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0537B6237934F100F9BDB5 /* EventSendViewController.swift */; };
-		CD0537B9237934F100F9BDB5 /* EventSendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD0537B7237934F100F9BDB5 /* EventSendViewController.xib */; };
-		CD10BCF523694787007B4808 /* IFAnimaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BCF423694787007B4808 /* IFAnimaton.swift */; };
-		CD1691CC23595B93006E73AD /* RecordAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1691CA23595B93006E73AD /* RecordAudioViewController.swift */; };
-		CD1691CD23595B93006E73AD /* RecordAudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1691CB23595B93006E73AD /* RecordAudioViewController.xib */; };
 		CD2112E0235D82BC003B5202 /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112D8235D82BC003B5202 /* RxAtomic.framework */; };
 		CD2112E1235D82BC003B5202 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112D9235D82BC003B5202 /* RxRelay.framework */; };
 		CD2112E2235D82BC003B5202 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DA235D82BC003B5202 /* RxSwiftExt.framework */; };
@@ -23,88 +14,17 @@
 		CD2112E5235D82BC003B5202 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DD235D82BC003B5202 /* RxSwift.framework */; };
 		CD2112E6235D82BC003B5202 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DE235D82BC003B5202 /* RxBlocking.framework */; };
 		CD2112E7235D82BC003B5202 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DF235D82BC003B5202 /* RxCocoa.framework */; };
-		CD2112EA235D8550003B5202 /* MultiLanguageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2112E9235D8550003B5202 /* MultiLanguageAlert.swift */; };
-		CD2112ED235D8800003B5202 /* MultiLanguageTexInputAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2112EB235D8800003B5202 /* MultiLanguageTexInputAlert.swift */; };
-		CD2112EE235D8800003B5202 /* MultiLanguageTexInputAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2112EC235D8800003B5202 /* MultiLanguageTexInputAlert.xib */; };
-		CD2112F1235D8B91003B5202 /* PadTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2112EF235D8B91003B5202 /* PadTypeCollectionViewCell.swift */; };
-		CD2112F2235D8B91003B5202 /* PadTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2112F0235D8B91003B5202 /* PadTypeCollectionViewCell.xib */; };
 		CD2112F4235D8D49003B5202 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112F3235D8D48003B5202 /* RxDataSources.framework */; };
 		CD2112F6235D8DD2003B5202 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112F5235D8DD2003B5202 /* Differentiator.framework */; };
 		CD2112F8235DBA4D003B5202 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2112F7235DBA4D003B5202 /* Wireframe.swift */; };
-		CD224D3B237CF3A50072442F /* FlurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD224D39237CF3A50072442F /* FlurViewController.swift */; };
-		CD224D3C237CF3A50072442F /* FlurViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD224D3A237CF3A50072442F /* FlurViewController.xib */; };
-		CD224D3E237CF7980072442F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD224D3D237CF7980072442F /* GradientView.swift */; };
-		CD2880D3235FE38700F20EF1 /* TipPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2880D2235FE38700F20EF1 /* TipPop.swift */; };
-		CD2D3F262387C96F00924CB4 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2D3F252387C96F00924CB4 /* CustomViewController.swift */; };
 		CD2FCF70234D796100E28E5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCF6F234D796100E28E5C /* AppDelegate.swift */; };
 		CD2FCF79234D796500E28E5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCF78234D796500E28E5C /* Assets.xcassets */; };
 		CD2FCF7C234D796500E28E5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCF7A234D796500E28E5C /* LaunchScreen.storyboard */; };
 		CD2FCF87234D796500E28E5C /* AnimationDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCF86234D796500E28E5C /* AnimationDemoTests.swift */; };
 		CD2FCF92234D796500E28E5C /* AnimationDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCF91234D796500E28E5C /* AnimationDemoUITests.swift */; };
-		CD2FCFA1234D79AB00E28E5C /* TapAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCF9F234D79AB00E28E5C /* TapAnimationViewController.swift */; };
-		CD2FCFA2234D79AB00E28E5C /* TapAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCFA0234D79AB00E28E5C /* TapAnimationViewController.xib */; };
-		CD2FCFA5234D7C4000E28E5C /* TapAniamtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCFA4234D7C4000E28E5C /* TapAniamtion.swift */; };
-		CD2FCFA8234DB37600E28E5C /* PinchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCFA6234DB37600E28E5C /* PinchViewController.swift */; };
-		CD2FCFA9234DB37600E28E5C /* PinchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCFA7234DB37600E28E5C /* PinchViewController.xib */; };
-		CD306C4D2355CC36002ABA93 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD306C4C2355CC36002ABA93 /* Common.swift */; };
-		CD35A9D82372A668007C8354 /* ScreenRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD35A9D62372A668007C8354 /* ScreenRecordViewController.swift */; };
-		CD35A9D92372A668007C8354 /* ScreenRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD35A9D72372A668007C8354 /* ScreenRecordViewController.xib */; };
-		CD3BC9AC234F26A0003C8AA9 /* AnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC9AB234F26A0003C8AA9 /* AnimationProtocol.swift */; };
-		CD3BC9AF234F313E003C8AA9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC9AD234F313E003C8AA9 /* HomeViewController.swift */; };
-		CD3BC9B0234F313E003C8AA9 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3BC9AE234F313E003C8AA9 /* HomeViewController.xib */; };
-		CD436428234E17500047930B /* PinchAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD436427234E17500047930B /* PinchAnimation.swift */; };
-		CD6C28D323A21D620008761C /* ScaleBtnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C28D123A21D620008761C /* ScaleBtnViewController.swift */; };
-		CD6C28D423A21D620008761C /* ScaleBtnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6C28D223A21D620008761C /* ScaleBtnViewController.xib */; };
 		CD725AD3234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */; };
-		CD725AD5234F0E1D00C11FB0 /* PanAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AD4234F0E1D00C11FB0 /* PanAnimation.swift */; };
-		CD725AD9234F0E4E00C11FB0 /* PanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AD7234F0E4E00C11FB0 /* PanViewController.swift */; };
-		CD725ADA234F0E4E00C11FB0 /* PanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD725AD8234F0E4E00C11FB0 /* PanViewController.xib */; };
 		CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AE5234F140700C11FB0 /* Extensions.swift */; };
 		CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AE7234F140E00C11FB0 /* Protocol.swift */; };
-		CD749AC72356F42F00C357A5 /* FlipAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD749AC62356F42F00C357A5 /* FlipAnimator.swift */; };
-		CD749ACA2356F6EF00C357A5 /* FlipSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD749AC82356F6EF00C357A5 /* FlipSubViewController.swift */; };
-		CD749ACB2356F6EF00C357A5 /* FlipSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD749AC92356F6EF00C357A5 /* FlipSubViewController.xib */; };
-		CD749ACE2356F72C00C357A5 /* FlipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD749ACC2356F72C00C357A5 /* FlipViewController.swift */; };
-		CD749ACF2356F72C00C357A5 /* FlipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD749ACD2356F72C00C357A5 /* FlipViewController.xib */; };
-		CD7D50B023613AD300FA9C07 /* PathSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50AF23613AD300FA9C07 /* PathSerivce.swift */; };
-		CD7D50B223613C4600FA9C07 /* PopSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50B123613C4600FA9C07 /* PopSerivce.swift */; };
-		CD7D50B42361768E00FA9C07 /* Param.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50B32361768E00FA9C07 /* Param.swift */; };
-		CD7D50B7236191CC00FA9C07 /* IFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50B6236191CC00FA9C07 /* IFExtension.swift */; };
-		CD88DD602361E4F200B9DB8F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD88DD5E2361E4F200B9DB8F /* TestViewController.swift */; };
-		CD88DD612361E4F200B9DB8F /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD88DD5F2361E4F200B9DB8F /* TestViewController.xib */; };
-		CDA89DF82373C0C8000E3346 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA89DF62373C0C8000E3346 /* BannerViewController.swift */; };
-		CDA89DF92373C0C8000E3346 /* BannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDA89DF72373C0C8000E3346 /* BannerViewController.xib */; };
-		CDA89DFB2373C13B000E3346 /* FXTransformLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA89DFA2373C13B000E3346 /* FXTransformLayout.swift */; };
-		CDAD5B5C237516C200A0E4FE /* FXBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAD5B5B237516C200A0E4FE /* FXBannerView.swift */; };
-		CDADB236235EE7A7002A57FD /* TipPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDADB234235EE7A7002A57FD /* TipPopViewController.swift */; };
-		CDADB237235EE7A7002A57FD /* TipPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDADB235235EE7A7002A57FD /* TipPopViewController.xib */; };
-		CDAEB81D23A9BEFC00B34420 /* ic_tutorial_alter_contine@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDAEB81C23A9BEFC00B34420 /* ic_tutorial_alter_contine@3x.png */; };
-		CDBBC730239F6D5000B07EE9 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBC72E239F6D5000B07EE9 /* SwipeViewController.swift */; };
-		CDBBC731239F6D5000B07EE9 /* SwipeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBBC72F239F6D5000B07EE9 /* SwipeViewController.xib */; };
-		CDC87F2E2362E39600EFE022 /* BtnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC87F2C2362E39600EFE022 /* BtnViewController.swift */; };
-		CDC87F2F2362E39600EFE022 /* BtnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC87F2D2362E39600EFE022 /* BtnViewController.xib */; };
-		CDD33F842368447A00FD074A /* GuideStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD33F832368447A00FD074A /* GuideStartView.swift */; };
-		CDD33F862368448500FD074A /* GuideStartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD33F852368448500FD074A /* GuideStartView.xib */; };
-		CDF9AB6C238FE86D00226E37 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF9AB6B238FE86D00226E37 /* PlayerViewController.swift */; };
-		CDFAAA78238A54D400918051 /* BtnProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFAAA76238A54D400918051 /* BtnProgressViewController.swift */; };
-		CDFAAA79238A54D400918051 /* BtnProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFAAA77238A54D400918051 /* BtnProgressViewController.xib */; };
-		CDFB49CD235025820083426A /* TouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49CC235025820083426A /* TouchView.swift */; };
-		CDFB49CF235047940083426A /* PinchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49CE235047940083426A /* PinchView.swift */; };
-		CDFB49D123504C070083426A /* ZoomScollVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49D023504C070083426A /* ZoomScollVIew.swift */; };
-		CDFB49D423505AD50083426A /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49D223505AD50083426A /* ProgressViewController.swift */; };
-		CDFB49D523505AD50083426A /* ProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFB49D323505AD50083426A /* ProgressViewController.xib */; };
-		CDFB49D723505C5F0083426A /* ProgressAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49D623505C5F0083426A /* ProgressAnimation.swift */; };
-		CDFF20482367E6B800800136 /* LongPressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF20462367E6B800800136 /* LongPressViewController.swift */; };
-		CDFF20492367E6B800800136 /* LongPressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFF20472367E6B800800136 /* LongPressViewController.xib */; };
-		CDFF204C2367E78100800136 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF204A2367E78100800136 /* ImageCollectionViewCell.swift */; };
-		CDFF204D2367E78100800136 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFF204B2367E78100800136 /* ImageCollectionViewCell.xib */; };
-		CDFF204F23680D5200800136 /* PopImageBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF204E23680D5200800136 /* PopImageBrowser.swift */; };
-		CDFF205223682B3200800136 /* DemoTouchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF205023682B3200800136 /* DemoTouchViewController.swift */; };
-		CDFF205323682B3200800136 /* DemoTouchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFF205123682B3200800136 /* DemoTouchViewController.xib */; };
-		CDFF20562368333600800136 /* ImageTitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF20542368333600800136 /* ImageTitleCollectionViewCell.swift */; };
-		CDFF20572368333600800136 /* ImageTitleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFF20552368333600800136 /* ImageTitleCollectionViewCell.xib */; };
-		CDFF205A236837A500800136 /* GuideStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF2058236837A500800136 /* GuideStartViewController.swift */; };
-		CDFF205B236837A500800136 /* GuideStartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFF2059236837A500800136 /* GuideStartViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,15 +58,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CD0230EA237A5F5200324E30 /* FXBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXBannerCollectionViewCell.swift; sourceTree = "<group>"; };
-		CD0230EB237A5F5200324E30 /* FXBannerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FXBannerCollectionViewCell.xib; sourceTree = "<group>"; };
-		CD0230F9237A9BE000324E30 /* FXTutorialPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialPanel.swift; sourceTree = "<group>"; };
-		CD039003237BF15400638401 /* FXMoveAniamtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXMoveAniamtion.swift; sourceTree = "<group>"; };
-		CD0537B6237934F100F9BDB5 /* EventSendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSendViewController.swift; sourceTree = "<group>"; };
-		CD0537B7237934F100F9BDB5 /* EventSendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventSendViewController.xib; sourceTree = "<group>"; };
-		CD10BCF423694787007B4808 /* IFAnimaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFAnimaton.swift; sourceTree = "<group>"; };
-		CD1691CA23595B93006E73AD /* RecordAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordAudioViewController.swift; sourceTree = "<group>"; };
-		CD1691CB23595B93006E73AD /* RecordAudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordAudioViewController.xib; sourceTree = "<group>"; };
 		CD2112D8235D82BC003B5202 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
 		CD2112D9235D82BC003B5202 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		CD2112DA235D82BC003B5202 /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = Carthage/Build/iOS/RxSwiftExt.framework; sourceTree = "<group>"; };
@@ -155,19 +66,9 @@
 		CD2112DD235D82BC003B5202 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		CD2112DE235D82BC003B5202 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		CD2112DF235D82BC003B5202 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		CD2112E9235D8550003B5202 /* MultiLanguageAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLanguageAlert.swift; sourceTree = "<group>"; };
-		CD2112EB235D8800003B5202 /* MultiLanguageTexInputAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiLanguageTexInputAlert.swift; sourceTree = "<group>"; };
-		CD2112EC235D8800003B5202 /* MultiLanguageTexInputAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiLanguageTexInputAlert.xib; sourceTree = "<group>"; };
-		CD2112EF235D8B91003B5202 /* PadTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadTypeCollectionViewCell.swift; sourceTree = "<group>"; };
-		CD2112F0235D8B91003B5202 /* PadTypeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PadTypeCollectionViewCell.xib; sourceTree = "<group>"; };
 		CD2112F3235D8D48003B5202 /* RxDataSources.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxDataSources.framework; path = Carthage/Build/iOS/RxDataSources.framework; sourceTree = "<group>"; };
 		CD2112F5235D8DD2003B5202 /* Differentiator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Differentiator.framework; path = Carthage/Build/iOS/Differentiator.framework; sourceTree = "<group>"; };
 		CD2112F7235DBA4D003B5202 /* Wireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wireframe.swift; sourceTree = "<group>"; };
-		CD224D39237CF3A50072442F /* FlurViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlurViewController.swift; sourceTree = "<group>"; };
-		CD224D3A237CF3A50072442F /* FlurViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlurViewController.xib; sourceTree = "<group>"; };
-		CD224D3D237CF7980072442F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		CD2880D2235FE38700F20EF1 /* TipPop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipPop.swift; sourceTree = "<group>"; };
-		CD2D3F252387C96F00924CB4 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		CD2FCF6C234D796100E28E5C /* AnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2FCF6F234D796100E28E5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD2FCF78234D796500E28E5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -179,70 +80,9 @@
 		CD2FCF8D234D796500E28E5C /* AnimationDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimationDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2FCF91234D796500E28E5C /* AnimationDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDemoUITests.swift; sourceTree = "<group>"; };
 		CD2FCF93234D796500E28E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CD2FCF9F234D79AB00E28E5C /* TapAnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapAnimationViewController.swift; sourceTree = "<group>"; };
-		CD2FCFA0234D79AB00E28E5C /* TapAnimationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TapAnimationViewController.xib; sourceTree = "<group>"; };
-		CD2FCFA4234D7C4000E28E5C /* TapAniamtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapAniamtion.swift; sourceTree = "<group>"; };
-		CD2FCFA6234DB37600E28E5C /* PinchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchViewController.swift; sourceTree = "<group>"; };
-		CD2FCFA7234DB37600E28E5C /* PinchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinchViewController.xib; sourceTree = "<group>"; };
-		CD306C4C2355CC36002ABA93 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		CD35A9D62372A668007C8354 /* ScreenRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRecordViewController.swift; sourceTree = "<group>"; };
-		CD35A9D72372A668007C8354 /* ScreenRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScreenRecordViewController.xib; sourceTree = "<group>"; };
-		CD3BC9AB234F26A0003C8AA9 /* AnimationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationProtocol.swift; sourceTree = "<group>"; };
-		CD3BC9AD234F313E003C8AA9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		CD3BC9AE234F313E003C8AA9 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		CD436427234E17500047930B /* PinchAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchAnimation.swift; sourceTree = "<group>"; };
-		CD6C28D123A21D620008761C /* ScaleBtnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleBtnViewController.swift; sourceTree = "<group>"; };
-		CD6C28D223A21D620008761C /* ScaleBtnViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScaleBtnViewController.xib; sourceTree = "<group>"; };
 		CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
-		CD725AD4234F0E1D00C11FB0 /* PanAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanAnimation.swift; sourceTree = "<group>"; };
-		CD725AD7234F0E4E00C11FB0 /* PanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanViewController.swift; sourceTree = "<group>"; };
-		CD725AD8234F0E4E00C11FB0 /* PanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PanViewController.xib; sourceTree = "<group>"; };
 		CD725AE5234F140700C11FB0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CD725AE7234F140E00C11FB0 /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
-		CD749AC62356F42F00C357A5 /* FlipAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipAnimator.swift; sourceTree = "<group>"; };
-		CD749AC82356F6EF00C357A5 /* FlipSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipSubViewController.swift; sourceTree = "<group>"; };
-		CD749AC92356F6EF00C357A5 /* FlipSubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipSubViewController.xib; sourceTree = "<group>"; };
-		CD749ACC2356F72C00C357A5 /* FlipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipViewController.swift; sourceTree = "<group>"; };
-		CD749ACD2356F72C00C357A5 /* FlipViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipViewController.xib; sourceTree = "<group>"; };
-		CD7D50AF23613AD300FA9C07 /* PathSerivce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathSerivce.swift; sourceTree = "<group>"; };
-		CD7D50B123613C4600FA9C07 /* PopSerivce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopSerivce.swift; sourceTree = "<group>"; };
-		CD7D50B32361768E00FA9C07 /* Param.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Param.swift; sourceTree = "<group>"; };
-		CD7D50B6236191CC00FA9C07 /* IFExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFExtension.swift; sourceTree = "<group>"; };
-		CD88DD5E2361E4F200B9DB8F /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		CD88DD5F2361E4F200B9DB8F /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
-		CDA89DF62373C0C8000E3346 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
-		CDA89DF72373C0C8000E3346 /* BannerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerViewController.xib; sourceTree = "<group>"; };
-		CDA89DFA2373C13B000E3346 /* FXTransformLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTransformLayout.swift; sourceTree = "<group>"; };
-		CDAD5B5B237516C200A0E4FE /* FXBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXBannerView.swift; sourceTree = "<group>"; };
-		CDADB234235EE7A7002A57FD /* TipPopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipPopViewController.swift; sourceTree = "<group>"; };
-		CDADB235235EE7A7002A57FD /* TipPopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TipPopViewController.xib; sourceTree = "<group>"; };
-		CDAEB81C23A9BEFC00B34420 /* ic_tutorial_alter_contine@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_tutorial_alter_contine@3x.png"; sourceTree = "<group>"; };
-		CDBBC72E239F6D5000B07EE9 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
-		CDBBC72F239F6D5000B07EE9 /* SwipeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipeViewController.xib; sourceTree = "<group>"; };
-		CDC87F2C2362E39600EFE022 /* BtnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnViewController.swift; sourceTree = "<group>"; };
-		CDC87F2D2362E39600EFE022 /* BtnViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BtnViewController.xib; sourceTree = "<group>"; };
-		CDD33F832368447A00FD074A /* GuideStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideStartView.swift; sourceTree = "<group>"; };
-		CDD33F852368448500FD074A /* GuideStartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuideStartView.xib; sourceTree = "<group>"; };
-		CDF9AB6B238FE86D00226E37 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
-		CDFAAA76238A54D400918051 /* BtnProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnProgressViewController.swift; sourceTree = "<group>"; };
-		CDFAAA77238A54D400918051 /* BtnProgressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BtnProgressViewController.xib; sourceTree = "<group>"; };
-		CDFB49CC235025820083426A /* TouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchView.swift; sourceTree = "<group>"; };
-		CDFB49CE235047940083426A /* PinchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchView.swift; sourceTree = "<group>"; };
-		CDFB49D023504C070083426A /* ZoomScollVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomScollVIew.swift; sourceTree = "<group>"; };
-		CDFB49D223505AD50083426A /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
-		CDFB49D323505AD50083426A /* ProgressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressViewController.xib; sourceTree = "<group>"; };
-		CDFB49D623505C5F0083426A /* ProgressAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressAnimation.swift; sourceTree = "<group>"; };
-		CDFF20462367E6B800800136 /* LongPressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPressViewController.swift; sourceTree = "<group>"; };
-		CDFF20472367E6B800800136 /* LongPressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LongPressViewController.xib; sourceTree = "<group>"; };
-		CDFF204A2367E78100800136 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
-		CDFF204B2367E78100800136 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
-		CDFF204E23680D5200800136 /* PopImageBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopImageBrowser.swift; sourceTree = "<group>"; };
-		CDFF205023682B3200800136 /* DemoTouchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTouchViewController.swift; sourceTree = "<group>"; };
-		CDFF205123682B3200800136 /* DemoTouchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoTouchViewController.xib; sourceTree = "<group>"; };
-		CDFF20542368333600800136 /* ImageTitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTitleCollectionViewCell.swift; sourceTree = "<group>"; };
-		CDFF20552368333600800136 /* ImageTitleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTitleCollectionViewCell.xib; sourceTree = "<group>"; };
-		CDFF2058236837A500800136 /* GuideStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideStartViewController.swift; sourceTree = "<group>"; };
-		CDFF2059236837A500800136 /* GuideStartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuideStartViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,41 +120,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CD2112D2235D7ED5003B5202 /* Animations */ = {
-			isa = PBXGroup;
-			children = (
-				CD306C4C2355CC36002ABA93 /* Common.swift */,
-				CD3BC9AB234F26A0003C8AA9 /* AnimationProtocol.swift */,
-				CD2FCFA4234D7C4000E28E5C /* TapAniamtion.swift */,
-				CD436427234E17500047930B /* PinchAnimation.swift */,
-				CD725AD4234F0E1D00C11FB0 /* PanAnimation.swift */,
-				CDFB49D623505C5F0083426A /* ProgressAnimation.swift */,
-				CD749AC62356F42F00C357A5 /* FlipAnimator.swift */,
-				CD10BCF423694787007B4808 /* IFAnimaton.swift */,
-				CD039003237BF15400638401 /* FXMoveAniamtion.swift */,
-			);
-			path = Animations;
-			sourceTree = "<group>";
-		};
-		CD2112D3235D7EF5003B5202 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				CD2880D2235FE38700F20EF1 /* TipPop.swift */,
-				CD2112EF235D8B91003B5202 /* PadTypeCollectionViewCell.swift */,
-				CD2112F0235D8B91003B5202 /* PadTypeCollectionViewCell.xib */,
-				CD224D3D237CF7980072442F /* GradientView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		CD2112E8235D8522003B5202 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				CD2112E9235D8550003B5202 /* MultiLanguageAlert.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		CD2FCF63234D796100E28E5C = {
 			isa = PBXGroup;
 			children = (
@@ -343,7 +148,6 @@
 				CDFB49CB2350255F0083426A /* View */,
 				CD725AD6234F0E2C00C11FB0 /* Controller */,
 				CD725AE0234F13EE00C11FB0 /* Vender */,
-				CD2FCFA3234D7A5F00E28E5C /* Source */,
 				CD2FCF78234D796500E28E5C /* Assets.xcassets */,
 				CD2FCF7A234D796500E28E5C /* LaunchScreen.storyboard */,
 				CD2FCF7D234D796500E28E5C /* Info.plist */,
@@ -369,19 +173,6 @@
 			path = AnimationDemoUITests;
 			sourceTree = "<group>";
 		};
-		CD2FCFA3234D7A5F00E28E5C /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				CD7D50B52361916F00FA9C07 /* Extension */,
-				CD7D50AE23613A3F00FA9C07 /* Service */,
-				CDADB233235EE776002A57FD /* Controller */,
-				CD2112E8235D8522003B5202 /* Model */,
-				CD2112D3235D7EF5003B5202 /* View */,
-				CD2112D2235D7ED5003B5202 /* Animations */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
 		CD725AD1234EFF6F00C11FB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,50 +194,6 @@
 		CD725AD6234F0E2C00C11FB0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CD2FCF9F234D79AB00E28E5C /* TapAnimationViewController.swift */,
-				CD2FCFA0234D79AB00E28E5C /* TapAnimationViewController.xib */,
-				CD2FCFA6234DB37600E28E5C /* PinchViewController.swift */,
-				CD2FCFA7234DB37600E28E5C /* PinchViewController.xib */,
-				CD725AD7234F0E4E00C11FB0 /* PanViewController.swift */,
-				CD725AD8234F0E4E00C11FB0 /* PanViewController.xib */,
-				CD3BC9AD234F313E003C8AA9 /* HomeViewController.swift */,
-				CD3BC9AE234F313E003C8AA9 /* HomeViewController.xib */,
-				CDFB49D223505AD50083426A /* ProgressViewController.swift */,
-				CDFB49D323505AD50083426A /* ProgressViewController.xib */,
-				CD749AC82356F6EF00C357A5 /* FlipSubViewController.swift */,
-				CD749AC92356F6EF00C357A5 /* FlipSubViewController.xib */,
-				CD749ACC2356F72C00C357A5 /* FlipViewController.swift */,
-				CD749ACD2356F72C00C357A5 /* FlipViewController.xib */,
-				CD1691CA23595B93006E73AD /* RecordAudioViewController.swift */,
-				CD1691CB23595B93006E73AD /* RecordAudioViewController.xib */,
-				CDADB234235EE7A7002A57FD /* TipPopViewController.swift */,
-				CDADB235235EE7A7002A57FD /* TipPopViewController.xib */,
-				CD88DD5E2361E4F200B9DB8F /* TestViewController.swift */,
-				CD88DD5F2361E4F200B9DB8F /* TestViewController.xib */,
-				CDC87F2C2362E39600EFE022 /* BtnViewController.swift */,
-				CDC87F2D2362E39600EFE022 /* BtnViewController.xib */,
-				CDFF20462367E6B800800136 /* LongPressViewController.swift */,
-				CDFF20472367E6B800800136 /* LongPressViewController.xib */,
-				CDFF205023682B3200800136 /* DemoTouchViewController.swift */,
-				CDFF205123682B3200800136 /* DemoTouchViewController.xib */,
-				CDFF2058236837A500800136 /* GuideStartViewController.swift */,
-				CDFF2059236837A500800136 /* GuideStartViewController.xib */,
-				CD35A9D62372A668007C8354 /* ScreenRecordViewController.swift */,
-				CD35A9D72372A668007C8354 /* ScreenRecordViewController.xib */,
-				CDA89DF62373C0C8000E3346 /* BannerViewController.swift */,
-				CDA89DF72373C0C8000E3346 /* BannerViewController.xib */,
-				CD0537B6237934F100F9BDB5 /* EventSendViewController.swift */,
-				CD0537B7237934F100F9BDB5 /* EventSendViewController.xib */,
-				CD224D39237CF3A50072442F /* FlurViewController.swift */,
-				CD224D3A237CF3A50072442F /* FlurViewController.xib */,
-				CD2D3F252387C96F00924CB4 /* CustomViewController.swift */,
-				CDFAAA76238A54D400918051 /* BtnProgressViewController.swift */,
-				CDFAAA77238A54D400918051 /* BtnProgressViewController.xib */,
-				CDF9AB6B238FE86D00226E37 /* PlayerViewController.swift */,
-				CDBBC72E239F6D5000B07EE9 /* SwipeViewController.swift */,
-				CDBBC72F239F6D5000B07EE9 /* SwipeViewController.xib */,
-				CD6C28D123A21D620008761C /* ScaleBtnViewController.swift */,
-				CD6C28D223A21D620008761C /* ScaleBtnViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -461,52 +208,9 @@
 			path = Vender;
 			sourceTree = "<group>";
 		};
-		CD7D50AE23613A3F00FA9C07 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				CD7D50AF23613AD300FA9C07 /* PathSerivce.swift */,
-				CD7D50B123613C4600FA9C07 /* PopSerivce.swift */,
-				CD7D50B32361768E00FA9C07 /* Param.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		CD7D50B52361916F00FA9C07 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				CD7D50B6236191CC00FA9C07 /* IFExtension.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		CDADB233235EE776002A57FD /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				CD2112EB235D8800003B5202 /* MultiLanguageTexInputAlert.swift */,
-				CD2112EC235D8800003B5202 /* MultiLanguageTexInputAlert.xib */,
-				CDFF204E23680D5200800136 /* PopImageBrowser.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		CDFB49CB2350255F0083426A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CDAEB81C23A9BEFC00B34420 /* ic_tutorial_alter_contine@3x.png */,
-				CDFB49CC235025820083426A /* TouchView.swift */,
-				CDFB49CE235047940083426A /* PinchView.swift */,
-				CDFB49D023504C070083426A /* ZoomScollVIew.swift */,
-				CDFF204A2367E78100800136 /* ImageCollectionViewCell.swift */,
-				CDFF204B2367E78100800136 /* ImageCollectionViewCell.xib */,
-				CDFF20542368333600800136 /* ImageTitleCollectionViewCell.swift */,
-				CDFF20552368333600800136 /* ImageTitleCollectionViewCell.xib */,
-				CDD33F832368447A00FD074A /* GuideStartView.swift */,
-				CDD33F852368448500FD074A /* GuideStartView.xib */,
-				CDA89DFA2373C13B000E3346 /* FXTransformLayout.swift */,
-				CDAD5B5B237516C200A0E4FE /* FXBannerView.swift */,
-				CD0230EA237A5F5200324E30 /* FXBannerCollectionViewCell.swift */,
-				CD0230EB237A5F5200324E30 /* FXBannerCollectionViewCell.xib */,
-				CD0230F9237A9BE000324E30 /* FXTutorialPanel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -617,36 +321,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDFB49D523505AD50083426A /* ProgressViewController.xib in Resources */,
 				CD2FCF7C234D796500E28E5C /* LaunchScreen.storyboard in Resources */,
-				CDFF204D2367E78100800136 /* ImageCollectionViewCell.xib in Resources */,
-				CD749ACF2356F72C00C357A5 /* FlipViewController.xib in Resources */,
-				CD2112EE235D8800003B5202 /* MultiLanguageTexInputAlert.xib in Resources */,
-				CD2112F2235D8B91003B5202 /* PadTypeCollectionViewCell.xib in Resources */,
-				CDA89DF92373C0C8000E3346 /* BannerViewController.xib in Resources */,
-				CDFAAA79238A54D400918051 /* BtnProgressViewController.xib in Resources */,
-				CD0230ED237A5F5200324E30 /* FXBannerCollectionViewCell.xib in Resources */,
-				CD2FCFA9234DB37600E28E5C /* PinchViewController.xib in Resources */,
-				CD725ADA234F0E4E00C11FB0 /* PanViewController.xib in Resources */,
-				CD6C28D423A21D620008761C /* ScaleBtnViewController.xib in Resources */,
-				CDD33F862368448500FD074A /* GuideStartView.xib in Resources */,
-				CDFF205B236837A500800136 /* GuideStartViewController.xib in Resources */,
-				CDBBC731239F6D5000B07EE9 /* SwipeViewController.xib in Resources */,
 				CD2FCF79234D796500E28E5C /* Assets.xcassets in Resources */,
-				CDFF20492367E6B800800136 /* LongPressViewController.xib in Resources */,
-				CD2FCFA2234D79AB00E28E5C /* TapAnimationViewController.xib in Resources */,
-				CD35A9D92372A668007C8354 /* ScreenRecordViewController.xib in Resources */,
-				CDFF205323682B3200800136 /* DemoTouchViewController.xib in Resources */,
-				CDADB237235EE7A7002A57FD /* TipPopViewController.xib in Resources */,
-				CD749ACB2356F6EF00C357A5 /* FlipSubViewController.xib in Resources */,
-				CD1691CD23595B93006E73AD /* RecordAudioViewController.xib in Resources */,
-				CD88DD612361E4F200B9DB8F /* TestViewController.xib in Resources */,
-				CDC87F2F2362E39600EFE022 /* BtnViewController.xib in Resources */,
-				CDFF20572368333600800136 /* ImageTitleCollectionViewCell.xib in Resources */,
-				CDAEB81D23A9BEFC00B34420 /* ic_tutorial_alter_contine@3x.png in Resources */,
-				CD3BC9B0234F313E003C8AA9 /* HomeViewController.xib in Resources */,
-				CD0537B9237934F100F9BDB5 /* EventSendViewController.xib in Resources */,
-				CD224D3C237CF3A50072442F /* FlurViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,62 +378,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDFB49D423505AD50083426A /* ProgressViewController.swift in Sources */,
-				CD436428234E17500047930B /* PinchAnimation.swift in Sources */,
-				CD2880D3235FE38700F20EF1 /* TipPop.swift in Sources */,
 				CD2FCF70234D796100E28E5C /* AppDelegate.swift in Sources */,
-				CDFF205A236837A500800136 /* GuideStartViewController.swift in Sources */,
-				CD224D3E237CF7980072442F /* GradientView.swift in Sources */,
-				CDAD5B5C237516C200A0E4FE /* FXBannerView.swift in Sources */,
-				CD725AD9234F0E4E00C11FB0 /* PanViewController.swift in Sources */,
-				CDD33F842368447A00FD074A /* GuideStartView.swift in Sources */,
-				CD0230EC237A5F5200324E30 /* FXBannerCollectionViewCell.swift in Sources */,
 				CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */,
-				CDFB49CD235025820083426A /* TouchView.swift in Sources */,
-				CD2112ED235D8800003B5202 /* MultiLanguageTexInputAlert.swift in Sources */,
-				CDA89DF82373C0C8000E3346 /* BannerViewController.swift in Sources */,
-				CDFB49CF235047940083426A /* PinchView.swift in Sources */,
-				CD2112F1235D8B91003B5202 /* PadTypeCollectionViewCell.swift in Sources */,
-				CD7D50B023613AD300FA9C07 /* PathSerivce.swift in Sources */,
-				CD749ACA2356F6EF00C357A5 /* FlipSubViewController.swift in Sources */,
-				CD749AC72356F42F00C357A5 /* FlipAnimator.swift in Sources */,
-				CD2D3F262387C96F00924CB4 /* CustomViewController.swift in Sources */,
-				CD0230FA237A9BE000324E30 /* FXTutorialPanel.swift in Sources */,
-				CD306C4D2355CC36002ABA93 /* Common.swift in Sources */,
-				CDADB236235EE7A7002A57FD /* TipPopViewController.swift in Sources */,
-				CD2FCFA8234DB37600E28E5C /* PinchViewController.swift in Sources */,
-				CDFB49D723505C5F0083426A /* ProgressAnimation.swift in Sources */,
-				CD039004237BF15400638401 /* FXMoveAniamtion.swift in Sources */,
-				CD1691CC23595B93006E73AD /* RecordAudioViewController.swift in Sources */,
-				CD88DD602361E4F200B9DB8F /* TestViewController.swift in Sources */,
-				CDA89DFB2373C13B000E3346 /* FXTransformLayout.swift in Sources */,
 				CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */,
-				CDBBC730239F6D5000B07EE9 /* SwipeViewController.swift in Sources */,
-				CD749ACE2356F72C00C357A5 /* FlipViewController.swift in Sources */,
-				CD725AD5234F0E1D00C11FB0 /* PanAnimation.swift in Sources */,
-				CDFF20482367E6B800800136 /* LongPressViewController.swift in Sources */,
-				CDFF20562368333600800136 /* ImageTitleCollectionViewCell.swift in Sources */,
-				CDFF205223682B3200800136 /* DemoTouchViewController.swift in Sources */,
-				CD7D50B42361768E00FA9C07 /* Param.swift in Sources */,
-				CD2112EA235D8550003B5202 /* MultiLanguageAlert.swift in Sources */,
-				CD3BC9AF234F313E003C8AA9 /* HomeViewController.swift in Sources */,
-				CD0537B8237934F100F9BDB5 /* EventSendViewController.swift in Sources */,
 				CD2112F8235DBA4D003B5202 /* Wireframe.swift in Sources */,
-				CD10BCF523694787007B4808 /* IFAnimaton.swift in Sources */,
-				CDF9AB6C238FE86D00226E37 /* PlayerViewController.swift in Sources */,
-				CD7D50B7236191CC00FA9C07 /* IFExtension.swift in Sources */,
-				CDC87F2E2362E39600EFE022 /* BtnViewController.swift in Sources */,
-				CDFAAA78238A54D400918051 /* BtnProgressViewController.swift in Sources */,
-				CD2FCFA1234D79AB00E28E5C /* TapAnimationViewController.swift in Sources */,
-				CDFF204F23680D5200800136 /* PopImageBrowser.swift in Sources */,
-				CD7D50B223613C4600FA9C07 /* PopSerivce.swift in Sources */,
-				CDFF204C2367E78100800136 /* ImageCollectionViewCell.swift in Sources */,
-				CD6C28D323A21D620008761C /* ScaleBtnViewController.swift in Sources */,
-				CD224D3B237CF3A50072442F /* FlurViewController.swift in Sources */,
-				CD35A9D82372A668007C8354 /* ScreenRecordViewController.swift in Sources */,
-				CD2FCFA5234D7C4000E28E5C /* TapAniamtion.swift in Sources */,
-				CD3BC9AC234F26A0003C8AA9 /* AnimationProtocol.swift in Sources */,
-				CDFB49D123504C070083426A /* ZoomScollVIew.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -939,7 +563,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vstudio.inFace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = vstudio_development_inFace;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -965,7 +589,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vstudio.inFace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = vstudio_development_inFace;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
