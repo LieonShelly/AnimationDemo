@@ -7,28 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CD2112E0235D82BC003B5202 /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112D8235D82BC003B5202 /* RxAtomic.framework */; };
-		CD2112E1235D82BC003B5202 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112D9235D82BC003B5202 /* RxRelay.framework */; };
-		CD2112E2235D82BC003B5202 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DA235D82BC003B5202 /* RxSwiftExt.framework */; };
-		CD2112E4235D82BC003B5202 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DC235D82BC003B5202 /* SnapKit.framework */; };
-		CD2112E5235D82BC003B5202 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DD235D82BC003B5202 /* RxSwift.framework */; };
-		CD2112E6235D82BC003B5202 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DE235D82BC003B5202 /* RxBlocking.framework */; };
-		CD2112E7235D82BC003B5202 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DF235D82BC003B5202 /* RxCocoa.framework */; };
-		CD2112F4235D8D49003B5202 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112F3235D8D48003B5202 /* RxDataSources.framework */; };
-		CD2112F6235D8DD2003B5202 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112F5235D8DD2003B5202 /* Differentiator.framework */; };
+		CD16A25523B10B6700094404 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD16A25323B10B6700094404 /* HomeViewController.swift */; };
+		CD16A25623B10B6700094404 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD16A25423B10B6700094404 /* HomeViewController.xib */; };
+		CD16A25823B10BB100094404 /* RealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD16A25723B10BB100094404 /* RealmTests.swift */; };
+		CD16A25923B10E7700094404 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112F5235D8DD2003B5202 /* Differentiator.framework */; };
+		CD16A25A23B10E7700094404 /* Differentiator.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112F5235D8DD2003B5202 /* Differentiator.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD16A25B23B10E7900094404 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */; };
+		CD16A25C23B10E7900094404 /* IQKeyboardManagerSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD16A25D23B10E7B00094404 /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112D8235D82BC003B5202 /* RxAtomic.framework */; };
+		CD16A25E23B10E7B00094404 /* RxAtomic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112D8235D82BC003B5202 /* RxAtomic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD16A25F23B10E7C00094404 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DE235D82BC003B5202 /* RxBlocking.framework */; };
+		CD16A26023B10E7C00094404 /* RxBlocking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DE235D82BC003B5202 /* RxBlocking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD16A26123B10E7D00094404 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DF235D82BC003B5202 /* RxCocoa.framework */; };
+		CD16A26223B10E7E00094404 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DF235D82BC003B5202 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD16A26323B10E7F00094404 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112F3235D8D48003B5202 /* RxDataSources.framework */; };
+		CD16A26423B10E7F00094404 /* RxDataSources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112F3235D8D48003B5202 /* RxDataSources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD16A26523B10E8000094404 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112D9235D82BC003B5202 /* RxRelay.framework */; };
+		CD16A26623B10E8000094404 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112D9235D82BC003B5202 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD16A26723B10E8200094404 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DD235D82BC003B5202 /* RxSwift.framework */; };
+		CD16A26823B10E8200094404 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DD235D82BC003B5202 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD16A26923B10E8300094404 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DA235D82BC003B5202 /* RxSwiftExt.framework */; };
+		CD16A26A23B10E8300094404 /* RxSwiftExt.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DA235D82BC003B5202 /* RxSwiftExt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD16A26B23B10E8500094404 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DC235D82BC003B5202 /* SnapKit.framework */; };
+		CD16A26C23B10E8500094404 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DC235D82BC003B5202 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD16A26D23B10EC800094404 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112F5235D8DD2003B5202 /* Differentiator.framework */; };
+		CD16A26E23B10EC800094404 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */; };
+		CD16A26F23B10EC800094404 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD42C19923B0A8A300C3EB20 /* Realm.framework */; };
+		CD16A27023B10EC800094404 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD42C19A23B0A8A300C3EB20 /* RealmSwift.framework */; };
+		CD16A27123B10EC800094404 /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112D8235D82BC003B5202 /* RxAtomic.framework */; };
+		CD16A27223B10EC800094404 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DE235D82BC003B5202 /* RxBlocking.framework */; };
+		CD16A27323B10EC800094404 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DF235D82BC003B5202 /* RxCocoa.framework */; };
+		CD16A27423B10EC800094404 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112F3235D8D48003B5202 /* RxDataSources.framework */; };
+		CD16A27523B10EC800094404 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112D9235D82BC003B5202 /* RxRelay.framework */; };
+		CD16A27623B10EC800094404 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DD235D82BC003B5202 /* RxSwift.framework */; };
+		CD16A27723B10EC800094404 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DA235D82BC003B5202 /* RxSwiftExt.framework */; };
+		CD16A27923B10EC800094404 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DC235D82BC003B5202 /* SnapKit.framework */; };
+		CD16A27F23B10EC800094404 /* RxRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD16A27B23B10EC800094404 /* RxRealm.framework */; };
+		CD16A28023B10EC800094404 /* Action.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD16A27C23B10EC800094404 /* Action.framework */; };
+		CD16A28123B10EC800094404 /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD16A27D23B10EC800094404 /* IQKeyboardManager.framework */; };
 		CD2112F8235DBA4D003B5202 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2112F7235DBA4D003B5202 /* Wireframe.swift */; };
 		CD2FCF70234D796100E28E5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCF6F234D796100E28E5C /* AppDelegate.swift */; };
 		CD2FCF79234D796500E28E5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCF78234D796500E28E5C /* Assets.xcassets */; };
 		CD2FCF7C234D796500E28E5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD2FCF7A234D796500E28E5C /* LaunchScreen.storyboard */; };
 		CD2FCF87234D796500E28E5C /* AnimationDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCF86234D796500E28E5C /* AnimationDemoTests.swift */; };
 		CD2FCF92234D796500E28E5C /* AnimationDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2FCF91234D796500E28E5C /* AnimationDemoUITests.swift */; };
+		CD3CE94023B1AC6F00BDC39A /* Action.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD16A27C23B10EC800094404 /* Action.framework */; };
+		CD3CE94123B1AC6F00BDC39A /* Action.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD16A27C23B10EC800094404 /* Action.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD3CE94223B1ACE400BDC39A /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD16A27D23B10EC800094404 /* IQKeyboardManager.framework */; };
+		CD3CE94323B1ACE400BDC39A /* IQKeyboardManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD16A27D23B10EC800094404 /* IQKeyboardManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD42C19B23B0A8A300C3EB20 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD42C19923B0A8A300C3EB20 /* Realm.framework */; };
 		CD42C19C23B0A8A300C3EB20 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD42C19923B0A8A300C3EB20 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD42C19D23B0A8A300C3EB20 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD42C19A23B0A8A300C3EB20 /* RealmSwift.framework */; };
 		CD42C19E23B0A8A300C3EB20 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD42C19A23B0A8A300C3EB20 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD42C1A123B0B65400C3EB20 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD42C1A023B0B65400C3EB20 /* Bill.swift */; };
 		CD42C1A823B0C70600C3EB20 /* BillService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD42C1A723B0C70600C3EB20 /* BillService.swift */; };
-		CD725AD3234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */; };
 		CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AE5234F140700C11FB0 /* Extensions.swift */; };
 		CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AE7234F140E00C11FB0 /* Protocol.swift */; };
 /* End PBXBuildFile section */
@@ -57,8 +89,20 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CD16A26823B10E8200094404 /* RxSwift.framework in Embed Frameworks */,
+				CD16A25E23B10E7B00094404 /* RxAtomic.framework in Embed Frameworks */,
+				CD3CE94123B1AC6F00BDC39A /* Action.framework in Embed Frameworks */,
+				CD16A25A23B10E7700094404 /* Differentiator.framework in Embed Frameworks */,
+				CD16A26C23B10E8500094404 /* SnapKit.framework in Embed Frameworks */,
+				CD3CE94323B1ACE400BDC39A /* IQKeyboardManager.framework in Embed Frameworks */,
+				CD16A26623B10E8000094404 /* RxRelay.framework in Embed Frameworks */,
+				CD16A26223B10E7E00094404 /* RxCocoa.framework in Embed Frameworks */,
+				CD16A26423B10E7F00094404 /* RxDataSources.framework in Embed Frameworks */,
 				CD42C19E23B0A8A300C3EB20 /* RealmSwift.framework in Embed Frameworks */,
+				CD16A25C23B10E7900094404 /* IQKeyboardManagerSwift.framework in Embed Frameworks */,
 				CD42C19C23B0A8A300C3EB20 /* Realm.framework in Embed Frameworks */,
+				CD16A26023B10E7C00094404 /* RxBlocking.framework in Embed Frameworks */,
+				CD16A26A23B10E8300094404 /* RxSwiftExt.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +110,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CD16A25323B10B6700094404 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CD16A25423B10B6700094404 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		CD16A25723B10BB100094404 /* RealmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTests.swift; sourceTree = "<group>"; };
+		CD16A27A23B10EC800094404 /* RxTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxTest.framework; path = Carthage/Build/iOS/RxTest.framework; sourceTree = "<group>"; };
+		CD16A27B23B10EC800094404 /* RxRealm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRealm.framework; path = Carthage/Build/iOS/RxRealm.framework; sourceTree = "<group>"; };
+		CD16A27C23B10EC800094404 /* Action.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Action.framework; path = Carthage/Build/iOS/Action.framework; sourceTree = "<group>"; };
+		CD16A27D23B10EC800094404 /* IQKeyboardManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManager.framework; path = Carthage/Build/iOS/IQKeyboardManager.framework; sourceTree = "<group>"; };
 		CD2112D8235D82BC003B5202 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
 		CD2112D9235D82BC003B5202 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		CD2112DA235D82BC003B5202 /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = Carthage/Build/iOS/RxSwiftExt.framework; sourceTree = "<group>"; };
@@ -102,18 +153,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD2112F6235D8DD2003B5202 /* Differentiator.framework in Frameworks */,
-				CD2112F4235D8D49003B5202 /* RxDataSources.framework in Frameworks */,
+				CD16A26123B10E7D00094404 /* RxCocoa.framework in Frameworks */,
 				CD42C19D23B0A8A300C3EB20 /* RealmSwift.framework in Frameworks */,
-				CD2112E0235D82BC003B5202 /* RxAtomic.framework in Frameworks */,
-				CD2112E1235D82BC003B5202 /* RxRelay.framework in Frameworks */,
-				CD2112E2235D82BC003B5202 /* RxSwiftExt.framework in Frameworks */,
-				CD2112E4235D82BC003B5202 /* SnapKit.framework in Frameworks */,
-				CD2112E5235D82BC003B5202 /* RxSwift.framework in Frameworks */,
-				CD2112E6235D82BC003B5202 /* RxBlocking.framework in Frameworks */,
-				CD2112E7235D82BC003B5202 /* RxCocoa.framework in Frameworks */,
-				CD725AD3234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework in Frameworks */,
+				CD3CE94023B1AC6F00BDC39A /* Action.framework in Frameworks */,
+				CD16A26323B10E7F00094404 /* RxDataSources.framework in Frameworks */,
+				CD16A26B23B10E8500094404 /* SnapKit.framework in Frameworks */,
+				CD3CE94223B1ACE400BDC39A /* IQKeyboardManager.framework in Frameworks */,
+				CD16A26923B10E8300094404 /* RxSwiftExt.framework in Frameworks */,
+				CD16A25D23B10E7B00094404 /* RxAtomic.framework in Frameworks */,
+				CD16A25923B10E7700094404 /* Differentiator.framework in Frameworks */,
+				CD16A26523B10E8000094404 /* RxRelay.framework in Frameworks */,
+				CD16A26723B10E8200094404 /* RxSwift.framework in Frameworks */,
+				CD16A25B23B10E7900094404 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				CD42C19B23B0A8A300C3EB20 /* Realm.framework in Frameworks */,
+				CD16A25F23B10E7C00094404 /* RxBlocking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +174,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD16A27F23B10EC800094404 /* RxRealm.framework in Frameworks */,
+				CD16A28023B10EC800094404 /* Action.framework in Frameworks */,
+				CD16A28123B10EC800094404 /* IQKeyboardManager.framework in Frameworks */,
+				CD16A26D23B10EC800094404 /* Differentiator.framework in Frameworks */,
+				CD16A26E23B10EC800094404 /* IQKeyboardManagerSwift.framework in Frameworks */,
+				CD16A26F23B10EC800094404 /* Realm.framework in Frameworks */,
+				CD16A27023B10EC800094404 /* RealmSwift.framework in Frameworks */,
+				CD16A27123B10EC800094404 /* RxAtomic.framework in Frameworks */,
+				CD16A27223B10EC800094404 /* RxBlocking.framework in Frameworks */,
+				CD16A27323B10EC800094404 /* RxCocoa.framework in Frameworks */,
+				CD16A27423B10EC800094404 /* RxDataSources.framework in Frameworks */,
+				CD16A27523B10EC800094404 /* RxRelay.framework in Frameworks */,
+				CD16A27623B10EC800094404 /* RxSwift.framework in Frameworks */,
+				CD16A27723B10EC800094404 /* RxSwiftExt.framework in Frameworks */,
+				CD16A27923B10EC800094404 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +244,7 @@
 			children = (
 				CD2FCF86234D796500E28E5C /* AnimationDemoTests.swift */,
 				CD2FCF88234D796500E28E5C /* Info.plist */,
+				CD16A25723B10BB100094404 /* RealmTests.swift */,
 			);
 			path = AnimationDemoTests;
 			sourceTree = "<group>";
@@ -208,6 +277,10 @@
 		CD725AD1234EFF6F00C11FB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD16A27C23B10EC800094404 /* Action.framework */,
+				CD16A27D23B10EC800094404 /* IQKeyboardManager.framework */,
+				CD16A27B23B10EC800094404 /* RxRealm.framework */,
+				CD16A27A23B10EC800094404 /* RxTest.framework */,
 				CD42C19923B0A8A300C3EB20 /* Realm.framework */,
 				CD42C19A23B0A8A300C3EB20 /* RealmSwift.framework */,
 				CD2112F5235D8DD2003B5202 /* Differentiator.framework */,
@@ -228,6 +301,8 @@
 		CD725AD6234F0E2C00C11FB0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CD16A25323B10B6700094404 /* HomeViewController.swift */,
+				CD16A25423B10B6700094404 /* HomeViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -278,6 +353,7 @@
 				CD2FCF7E234D796500E28E5C /* Sources */,
 				CD2FCF7F234D796500E28E5C /* Frameworks */,
 				CD2FCF80234D796500E28E5C /* Resources */,
+				CD16A28323B10FC200094404 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -357,6 +433,7 @@
 			files = (
 				CD2FCF7C234D796500E28E5C /* LaunchScreen.storyboard in Resources */,
 				CD2FCF79234D796500E28E5C /* Assets.xcassets in Resources */,
+				CD16A25623B10B6700094404 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +454,38 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		CD16A28323B10FC200094404 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRealm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Differentiator.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwiftExt.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxAtomic.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Action.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManager.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 		CD725AD0234EFF2700C11FB0 /* Carthage */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -397,6 +506,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Differentiator.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxRealm.framework",
 			);
 			name = Carthage;
 			outputFileListPaths = (
@@ -419,6 +529,7 @@
 				CD42C1A123B0B65400C3EB20 /* Bill.swift in Sources */,
 				CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */,
 				CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */,
+				CD16A25523B10B6700094404 /* HomeViewController.swift in Sources */,
 				CD2112F8235DBA4D003B5202 /* Wireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD2FCF87234D796500E28E5C /* AnimationDemoTests.swift in Sources */,
+				CD16A25823B10BB100094404 /* RealmTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,11 +695,11 @@
 		CD2FCF97234D796500E28E5C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = YFZ6GPTEHY;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -609,11 +721,11 @@
 		CD2FCF98234D796500E28E5C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = YFZ6GPTEHY;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -638,6 +750,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AnimationDemoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -659,6 +776,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = AnimationDemoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

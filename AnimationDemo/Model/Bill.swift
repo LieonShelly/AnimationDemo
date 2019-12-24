@@ -26,14 +26,20 @@ enum DataStatus: Int {
 
 class Bill: Object {
     @objc dynamic var name: String?
-    @objc dynamic var date: Double = Date().timeIntervalSince1970
+    @objc dynamic var date: Double = Date().timeIntervalSince1970 {
+        didSet {
+            self.id = "\(self.date)"
+        }
+    }
     @objc dynamic var createDate: Double = Date().timeIntervalSince1970
     @objc dynamic var amount: Double = 0
     @objc dynamic var note: String?
     @objc dynamic var status: NSInteger = DataStatus.normal.rawValue
     @objc dynamic var category: NSInteger = BillCategory.none.rawValue
+    @objc dynamic var id: String?
+    
+    static override func primaryKey() -> String? {
+        return "id"
+    }
 }
 
-extension Bill: Storable {
-    
-}
