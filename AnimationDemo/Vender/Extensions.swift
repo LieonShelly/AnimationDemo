@@ -194,6 +194,9 @@ private extension Int {
 }
 
 public extension UIColor {
+    static var them: UIColor? {
+        return UIColor(named: "themColor")
+    }
     fileprivate convenience init?(hex3: Int, alpha: Float) {
         self.init(red:   CGFloat( ((hex3 & 0xF00) >> 8).duplicate4bits() ) / 255.0,
                   green: CGFloat( ((hex3 & 0x0F0) >> 4).duplicate4bits() ) / 255.0,

@@ -30,7 +30,7 @@ class RealmTests: XCTestCase {
         super.tearDown()
     }
     
-    func testRealmCURD() {
+    func testRealmC() {
         let service = BillService()
         let newBill = Bill()
         newBill.amount = 100
@@ -45,6 +45,11 @@ class RealmTests: XCTestCase {
             XCTAssertThrowsError(error)
         }
         
+    }
+    func testRealmR() {
+        let service = BillService()
+        let results = service.fetch(Bill.self)
+        XCTAssert(results.count > 0)
     }
     
     fileprivate func configRealm() {

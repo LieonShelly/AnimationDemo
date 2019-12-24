@@ -55,6 +55,8 @@
 		CD3CE94123B1AC6F00BDC39A /* Action.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD16A27C23B10EC800094404 /* Action.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD3CE94223B1ACE400BDC39A /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD16A27D23B10EC800094404 /* IQKeyboardManager.framework */; };
 		CD3CE94323B1ACE400BDC39A /* IQKeyboardManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD16A27D23B10EC800094404 /* IQKeyboardManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CD3CE94723B2030C00BDC39A /* NumberKeyboardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3CE94523B2030B00BDC39A /* NumberKeyboardCell.swift */; };
+		CD3CE94823B2030C00BDC39A /* NumberKeyboardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3CE94623B2030B00BDC39A /* NumberKeyboardCell.xib */; };
 		CD42C19B23B0A8A300C3EB20 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD42C19923B0A8A300C3EB20 /* Realm.framework */; };
 		CD42C19C23B0A8A300C3EB20 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CD42C19923B0A8A300C3EB20 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CD42C19D23B0A8A300C3EB20 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD42C19A23B0A8A300C3EB20 /* RealmSwift.framework */; };
@@ -139,6 +141,8 @@
 		CD2FCF8D234D796500E28E5C /* AnimationDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimationDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2FCF91234D796500E28E5C /* AnimationDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDemoUITests.swift; sourceTree = "<group>"; };
 		CD2FCF93234D796500E28E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD3CE94523B2030B00BDC39A /* NumberKeyboardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberKeyboardCell.swift; sourceTree = "<group>"; };
+		CD3CE94623B2030B00BDC39A /* NumberKeyboardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumberKeyboardCell.xib; sourceTree = "<group>"; };
 		CD42C19923B0A8A300C3EB20 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		CD42C19A23B0A8A300C3EB20 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		CD42C1A023B0B65400C3EB20 /* Bill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
@@ -229,7 +233,6 @@
 				CD2FCF6F234D796100E28E5C /* AppDelegate.swift */,
 				CD42C1A223B0B9EC00C3EB20 /* Service */,
 				CD42C19F23B0B64300C3EB20 /* Model */,
-				CDFB49CB2350255F0083426A /* View */,
 				CD725AD6234F0E2C00C11FB0 /* Controller */,
 				CD725AE0234F13EE00C11FB0 /* Vender */,
 				CD2FCF78234D796500E28E5C /* Assets.xcassets */,
@@ -256,6 +259,15 @@
 				CD2FCF93234D796500E28E5C /* Info.plist */,
 			);
 			path = AnimationDemoUITests;
+			sourceTree = "<group>";
+		};
+		CD3CE94423B202E400BDC39A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD3CE94523B2030B00BDC39A /* NumberKeyboardCell.swift */,
+				CD3CE94623B2030B00BDC39A /* NumberKeyboardCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		CD42C19F23B0B64300C3EB20 /* Model */ = {
@@ -301,6 +313,7 @@
 		CD725AD6234F0E2C00C11FB0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CD3CE94423B202E400BDC39A /* View */,
 				CD16A25323B10B6700094404 /* HomeViewController.swift */,
 				CD16A25423B10B6700094404 /* HomeViewController.xib */,
 			);
@@ -315,13 +328,6 @@
 				CD725AE5234F140700C11FB0 /* Extensions.swift */,
 			);
 			path = Vender;
-			sourceTree = "<group>";
-		};
-		CDFB49CB2350255F0083426A /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,6 +438,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD2FCF7C234D796500E28E5C /* LaunchScreen.storyboard in Resources */,
+				CD3CE94823B2030C00BDC39A /* NumberKeyboardCell.xib in Resources */,
 				CD2FCF79234D796500E28E5C /* Assets.xcassets in Resources */,
 				CD16A25623B10B6700094404 /* HomeViewController.xib in Resources */,
 			);
@@ -529,6 +536,7 @@
 				CD42C1A123B0B65400C3EB20 /* Bill.swift in Sources */,
 				CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */,
 				CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */,
+				CD3CE94723B2030C00BDC39A /* NumberKeyboardCell.swift in Sources */,
 				CD16A25523B10B6700094404 /* HomeViewController.swift in Sources */,
 				CD2112F8235DBA4D003B5202 /* Wireframe.swift in Sources */,
 			);
@@ -705,7 +713,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = AnimationDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -731,7 +739,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = AnimationDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

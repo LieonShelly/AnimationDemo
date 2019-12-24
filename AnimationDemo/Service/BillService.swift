@@ -48,7 +48,7 @@ class BillService: StorageContext {
     }
     
     func fetch(_ model: Bill.Type,
-               predicate: NSPredicate?,
+               predicate: NSPredicate? = nil,
                sorted: Sorted? = Sorted(key: "createDate"),
                page: Int = 0,
                num: Int = 20) -> [Bill] {
@@ -60,8 +60,14 @@ class BillService: StorageContext {
             results = realm.objects(model).sorted(byKeyPath: sorted!.key, ascending: sorted!.ascending)
         }
         if let results = results {
-            let endIndex = (page + 1) * num - 1
-            let startIndex = endIndex - num
+            var endIndex = (page + 1) * num - 1
+            var startIndex = endIndex - num
+            if startIndex < 0 {
+                startIndex = 0
+            }
+            if endIndex > results.count {
+                endIndex = results.count - 1
+            }
             return results[startIndex ... endIndex].map { $0 }
         }
         return []
