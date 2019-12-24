@@ -31,6 +31,29 @@ class BtnViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let dashView = DashView(frame: CGRect(x: 40, y: 400, width: 16, height: 22))
+        dashView.backgroundColor = UIColor.red
+        view.addSubview(dashView)
+        let label0 = UILabel()
+        label0.text = "1"
+        label0.textColor = .white
+        label0.font = UIFont.boldSystemFont(ofSize: 11)
+        
+        let label1 = UILabel()
+        label1.text = "2"
+        label1.textColor = .white
+        label1.font = UIFont.boldSystemFont(ofSize: 11)
+        dashView.addSubview(label0)
+        dashView.addSubview(label1)
+        label0.snp.makeConstraints {
+            $0.top.equalTo(0)
+            $0.left.equalTo(1)
+        }
+        label1.snp.makeConstraints {
+             $0.bottom.equalTo(2)
+             $0.right.equalTo(-2)
+        }
+        return;
         let btn = UIButton(type: .custom)
         let btnBounds = CGRect(x: 0, y: 0, width: 60, height: 60)
         btn.frame.size = btnBounds.size
@@ -624,5 +647,22 @@ extension CGFloat {
     
     public func adaptedValue() -> CGFloat {
         return self
+    }
+}
+
+
+class DashView: UIView {
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        let pth = UIBezierPath()
+        let start = CGPoint(x: rect.width - 2, y: 2)
+        let end = CGPoint(x: 2, y: rect.height - 2)
+        pth.move(to: start)
+        pth.addLine(to: end)
+        pth.lineWidth = 2
+        UIColor.white.setStroke()
+        UIColor.clear.setFill()
+        pth.stroke()
     }
 }
