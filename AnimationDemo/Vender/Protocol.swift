@@ -20,8 +20,6 @@ protocol StorageContext {
    
     associatedtype DBEntityType
     
-    func create(_ model: DBEntityType) -> DBEntityType?
-
     func save(object: DBEntityType) throws
 
     func saveAll(objects: [DBEntityType]) throws

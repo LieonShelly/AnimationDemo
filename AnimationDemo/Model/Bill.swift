@@ -10,13 +10,9 @@ import Foundation
 import RealmSwift
 import Realm
 
-enum BillCategory: Int {
-    case none = -1
-    case liveActtivity
-    case work
-    case transform
-    case game
-    case study
+
+class BillCategory: Object {
+    @objc dynamic var name: String?
 }
 
 enum DataStatus: Int {
@@ -35,7 +31,7 @@ class Bill: Object {
     @objc dynamic var amount: Double = 0
     @objc dynamic var note: String?
     @objc dynamic var status: NSInteger = DataStatus.normal.rawValue
-    @objc dynamic var category: NSInteger = BillCategory.none.rawValue
+    @objc dynamic var category: BillCategory!
     @objc dynamic var id: String?
     
     static override func primaryKey() -> String? {
