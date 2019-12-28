@@ -66,6 +66,7 @@
 		CD749ACB2356F6EF00C357A5 /* FlipSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD749AC92356F6EF00C357A5 /* FlipSubViewController.xib */; };
 		CD749ACE2356F72C00C357A5 /* FlipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD749ACC2356F72C00C357A5 /* FlipViewController.swift */; };
 		CD749ACF2356F72C00C357A5 /* FlipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD749ACD2356F72C00C357A5 /* FlipViewController.xib */; };
+		CD787BCF23B59AAA00DAE0BD /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD787BCE23B59AAA00DAE0BD /* LoadingViewController.swift */; };
 		CD7D50B023613AD300FA9C07 /* PathSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50AF23613AD300FA9C07 /* PathSerivce.swift */; };
 		CD7D50B223613C4600FA9C07 /* PopSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50B123613C4600FA9C07 /* PopSerivce.swift */; };
 		CD7D50B42361768E00FA9C07 /* Param.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50B32361768E00FA9C07 /* Param.swift */; };
@@ -204,6 +205,7 @@
 		CD749AC92356F6EF00C357A5 /* FlipSubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipSubViewController.xib; sourceTree = "<group>"; };
 		CD749ACC2356F72C00C357A5 /* FlipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipViewController.swift; sourceTree = "<group>"; };
 		CD749ACD2356F72C00C357A5 /* FlipViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipViewController.xib; sourceTree = "<group>"; };
+		CD787BCE23B59AAA00DAE0BD /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		CD7D50AF23613AD300FA9C07 /* PathSerivce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathSerivce.swift; sourceTree = "<group>"; };
 		CD7D50B123613C4600FA9C07 /* PopSerivce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopSerivce.swift; sourceTree = "<group>"; };
 		CD7D50B32361768E00FA9C07 /* Param.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Param.swift; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 				CDBBC72F239F6D5000B07EE9 /* SwipeViewController.xib */,
 				CD6C28D123A21D620008761C /* ScaleBtnViewController.swift */,
 				CD6C28D223A21D620008761C /* ScaleBtnViewController.xib */,
+				CD787BCE23B59AAA00DAE0BD /* LoadingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -713,6 +716,7 @@
 				CDD33F842368447A00FD074A /* GuideStartView.swift in Sources */,
 				CD0230EC237A5F5200324E30 /* FXBannerCollectionViewCell.swift in Sources */,
 				CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */,
+				CD787BCF23B59AAA00DAE0BD /* LoadingViewController.swift in Sources */,
 				CDFB49CD235025820083426A /* TouchView.swift in Sources */,
 				CD2112ED235D8800003B5202 /* MultiLanguageTexInputAlert.swift in Sources */,
 				CDA89DF82373C0C8000E3346 /* BannerViewController.swift in Sources */,

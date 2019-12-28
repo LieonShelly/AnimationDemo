@@ -171,6 +171,14 @@ extension HomeViewController {
             let vcc = ScaleBtnViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
+        /// LoadingViewController
+        let loadingVC = ListItem("Laoding", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = LoadingViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
         items.append(tap)
         items.append(pinch)
         items.append(move)
@@ -191,6 +199,7 @@ extension HomeViewController {
         items.append(swipeViewController)
         
         items.append(scaleBtnViewController)
+        items.append(loadingVC)
     }
     
 }
