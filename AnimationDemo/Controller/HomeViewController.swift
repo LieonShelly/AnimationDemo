@@ -179,6 +179,14 @@ extension HomeViewController {
             let vcc = LoadingViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
+        /// IAPViewController
+        let iAPViewController = ListItem("IAPViewController", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = IAPViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
         items.append(tap)
         items.append(pinch)
         items.append(move)
@@ -200,6 +208,7 @@ extension HomeViewController {
         
         items.append(scaleBtnViewController)
         items.append(loadingVC)
+        items.append(iAPViewController)
     }
     
 }

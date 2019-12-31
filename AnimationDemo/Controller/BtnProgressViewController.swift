@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class BtnProgressViewController: UIViewController {
     @IBOutlet weak var slider: UISlider!
@@ -49,6 +51,9 @@ class BtnProgressViewController: UIViewController {
         tag = sender.tag
     }
     
+    deinit {
+
+    }
 }
 
 
@@ -220,6 +225,7 @@ class FXTutorialProgressView: UIView {
 }
 
 class FXArcView: UIView {
+    var bag: DisposeBag? = DisposeBag()
     fileprivate lazy var cycView:  FXGradientView = {
         let maxTrackView = FXGradientView()
         (maxTrackView.layer as! CAGradientLayer).colors = [
@@ -234,6 +240,7 @@ class FXArcView: UIView {
         let whiteCycleView = FXWhiteCycleView()
         return whiteCycleView
     }()
+    
     fileprivate lazy var whiteCycleView1: FXWhiteCycleView = {
         let whiteCycleView = FXWhiteCycleView()
         return whiteCycleView
@@ -249,11 +256,15 @@ class FXArcView: UIView {
         layer.masksToBounds = true
         addSubview(cycView)
         cycView.addSubview(whiteCycleView2)
-         cycView.addSubview(whiteCycleView1)
+        cycView.addSubview(whiteCycleView1)
         cycView.addSubview(whiteCycleView0)
+        
+        Observable<Int>.interval(RxTimeInterval.milliseconds(1500), scheduler: MainScheduler.instance)
+        .mapToVoid()
+        .subscribe(onNext: showAnimation)
+        .disposed(by: bag!)
     }
-
-    
+   
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -286,47 +297,51 @@ class FXArcView: UIView {
         position.toValue = bounds.width + 30
         position.fillMode = .removed
         position.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        position.duration = 0.5
+        position.duration = 1
+        position.beginTime = CACurrentMediaTime()
         whiteCycleView2.layer.add(position, forKey: nil)
-        position.duration = 0.35
+        
+        position.beginTime = CACurrentMediaTime() + 0.1
         whiteCycleView1.layer.add(position, forKey: nil)
-        position.duration = 0.25
+        
+        position.beginTime = CACurrentMediaTime() + 0.2
         whiteCycleView0.layer.add(position, forKey: nil)
     }
 
+    class FXWhiteCycleView: UIView {
+        
+        fileprivate lazy var shapeLayer: CAShapeLayer = {
+            let shapeLayer = CAShapeLayer()
+            shapeLayer.strokeColor = UIColor.cyan.cgColor
+            shapeLayer.fillColor = UIColor.clear.cgColor
+            return shapeLayer
+        }()
+        
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            backgroundColor = UIColor.white.withAlphaComponent(0.15)
+            layer.anchorPoint = CGPoint(x: 1, y: 0.5)
+        }
+        
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+        
+        override func layoutSublayers(of layer: CALayer) {
+            super.layoutSublayers(of: layer)
+            let lineWidth: CGFloat = 13
+            shapeLayer.lineWidth = lineWidth
+            let radius: CGFloat = 80
+            let path = UIBezierPath(arcCenter: CGPoint(x: bounds.width - radius - lineWidth * 0.5, y: bounds.height * 0.5),
+                                    radius: radius,
+                                    startAngle: .pi * 7 / 4,
+                                    endAngle: .pi / 4,
+                                    clockwise: true)
+            shapeLayer.path = path.cgPath
+            layer.mask = shapeLayer
+        }
+    }
+
 }
 
 
-class FXWhiteCycleView: UIView {
-    
-    fileprivate lazy var shapeLayer: CAShapeLayer = {
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.strokeColor = UIColor.cyan.cgColor
-        shapeLayer.fillColor = UIColor.clear.cgColor
-        return shapeLayer
-    }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = UIColor.white.withAlphaComponent(0.5)
-        layer.anchorPoint = CGPoint(x: 1, y: 0.5)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func layoutSublayers(of layer: CALayer) {
-        super.layoutSublayers(of: layer)
-        let lineWidth: CGFloat = 15
-        shapeLayer.lineWidth = lineWidth
-        let radius: CGFloat = 80
-        let path = UIBezierPath(arcCenter: CGPoint(x: bounds.width - radius - lineWidth * 0.5, y: bounds.height * 0.5),
-                                radius: radius,
-                                startAngle: .pi * 7 / 4,
-                                endAngle: .pi / 4,
-                                clockwise: true)
-        shapeLayer.path = path.cgPath
-        layer.mask = shapeLayer
-    }
-}
