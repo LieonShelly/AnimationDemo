@@ -54,6 +54,10 @@
 		CD3BC9B0234F313E003C8AA9 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3BC9AE234F313E003C8AA9 /* HomeViewController.xib */; };
 		CD436428234E17500047930B /* PinchAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD436427234E17500047930B /* PinchAnimation.swift */; };
 		CD6832FE23BAF7F9008C0C9F /* IAPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6832FD23BAF7F9008C0C9F /* IAPViewController.swift */; };
+		CD68330123BB4909008C0C9F /* iap_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD68330023BB4909008C0C9F /* iap_close@3x.png */; };
+		CD68330323BB491F008C0C9F /* ipa_bottom_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD68330223BB491F008C0C9F /* ipa_bottom_bg@3x.png */; };
+		CD68330623BB4BE6008C0C9F /* video_vip_headerView_plus.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD68330423BB4BE6008C0C9F /* video_vip_headerView_plus.mp4 */; };
+		CD68330723BB4BE6008C0C9F /* video_vip_headerView_x.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD68330523BB4BE6008C0C9F /* video_vip_headerView_x.mp4 */; };
 		CD6C28D323A21D620008761C /* ScaleBtnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C28D123A21D620008761C /* ScaleBtnViewController.swift */; };
 		CD6C28D423A21D620008761C /* ScaleBtnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6C28D223A21D620008761C /* ScaleBtnViewController.xib */; };
 		CD725AD3234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */; };
@@ -194,6 +198,10 @@
 		CD3BC9AE234F313E003C8AA9 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		CD436427234E17500047930B /* PinchAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchAnimation.swift; sourceTree = "<group>"; };
 		CD6832FD23BAF7F9008C0C9F /* IAPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPViewController.swift; sourceTree = "<group>"; };
+		CD68330023BB4909008C0C9F /* iap_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iap_close@3x.png"; sourceTree = "<group>"; };
+		CD68330223BB491F008C0C9F /* ipa_bottom_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipa_bottom_bg@3x.png"; sourceTree = "<group>"; };
+		CD68330423BB4BE6008C0C9F /* video_vip_headerView_plus.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_vip_headerView_plus.mp4; sourceTree = "<group>"; };
+		CD68330523BB4BE6008C0C9F /* video_vip_headerView_x.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_vip_headerView_x.mp4; sourceTree = "<group>"; };
 		CD6C28D123A21D620008761C /* ScaleBtnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleBtnViewController.swift; sourceTree = "<group>"; };
 		CD6C28D223A21D620008761C /* ScaleBtnViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScaleBtnViewController.xib; sourceTree = "<group>"; };
 		CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
@@ -343,6 +351,7 @@
 		CD2FCF6E234D796100E28E5C /* AnimationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CD6832FF23BB48FB008C0C9F /* Resource */,
 				CD2FCF6F234D796100E28E5C /* AppDelegate.swift */,
 				CDFB49CB2350255F0083426A /* View */,
 				CD725AD6234F0E2C00C11FB0 /* Controller */,
@@ -384,6 +393,17 @@
 				CD2112D2235D7ED5003B5202 /* Animations */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		CD6832FF23BB48FB008C0C9F /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				CD68330423BB4BE6008C0C9F /* video_vip_headerView_plus.mp4 */,
+				CD68330523BB4BE6008C0C9F /* video_vip_headerView_x.mp4 */,
+				CD68330223BB491F008C0C9F /* ipa_bottom_bg@3x.png */,
+				CD68330023BB4909008C0C9F /* iap_close@3x.png */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		CD725AD1234EFF6F00C11FB0 /* Frameworks */ = {
@@ -627,10 +647,13 @@
 				CD2FCF7C234D796500E28E5C /* LaunchScreen.storyboard in Resources */,
 				CDFF204D2367E78100800136 /* ImageCollectionViewCell.xib in Resources */,
 				CD749ACF2356F72C00C357A5 /* FlipViewController.xib in Resources */,
+				CD68330723BB4BE6008C0C9F /* video_vip_headerView_x.mp4 in Resources */,
 				CD2112EE235D8800003B5202 /* MultiLanguageTexInputAlert.xib in Resources */,
+				CD68330623BB4BE6008C0C9F /* video_vip_headerView_plus.mp4 in Resources */,
 				CD2112F2235D8B91003B5202 /* PadTypeCollectionViewCell.xib in Resources */,
 				CDA89DF92373C0C8000E3346 /* BannerViewController.xib in Resources */,
 				CDFAAA79238A54D400918051 /* BtnProgressViewController.xib in Resources */,
+				CD68330323BB491F008C0C9F /* ipa_bottom_bg@3x.png in Resources */,
 				CD0230ED237A5F5200324E30 /* FXBannerCollectionViewCell.xib in Resources */,
 				CD2FCFA9234DB37600E28E5C /* PinchViewController.xib in Resources */,
 				CD725ADA234F0E4E00C11FB0 /* PanViewController.xib in Resources */,
@@ -639,6 +662,7 @@
 				CDFF205B236837A500800136 /* GuideStartViewController.xib in Resources */,
 				CDBBC731239F6D5000B07EE9 /* SwipeViewController.xib in Resources */,
 				CD2FCF79234D796500E28E5C /* Assets.xcassets in Resources */,
+				CD68330123BB4909008C0C9F /* iap_close@3x.png in Resources */,
 				CDFF20492367E6B800800136 /* LongPressViewController.xib in Resources */,
 				CD2FCFA2234D79AB00E28E5C /* TapAnimationViewController.xib in Resources */,
 				CD35A9D92372A668007C8354 /* ScreenRecordViewController.xib in Resources */,

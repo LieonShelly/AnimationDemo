@@ -7,18 +7,23 @@
 //
 
 import UIKit
+import AVKit
 
 class IAPViewController: UIViewController {
+    fileprivate lazy var bottomBg: UIImageView = {
+        let bottomBg = UIImageView()
+        return bottomBg
+    }()
     fileprivate lazy var closeBtn: UIButton = {
         let btn = UIButton(type: .system)
-        btn.backgroundColor = .yellow
+        let btnImg = UIImage(contentsOfFile: Bundle.getFilePath(fileName: "iap_close@3x"))
+        btn.setImage(btnImg, for: .normal)
         return btn
     }()
     fileprivate lazy var recoverVipBtn: UIButton = {
         let btn = UIButton()
         btn.setTitle("恢复会员".localized_FX(), for: .normal)
         btn.setTitleColor(.white, for: .normal)
-        btn.backgroundColor = .red
         btn.titleLabel?.font = UIFont.customFont(ofSize: 15, isBold: true)
         return btn
     }()
@@ -34,8 +39,8 @@ class IAPViewController: UIViewController {
         let topView = UIView()
         return topView
     }()
-    fileprivate lazy var playerContainer: UIView = {
-        let view = UIView()
+    fileprivate lazy var playerContainer: SimpleVideoView = {
+        let view = SimpleVideoView()
         return view
     }()
     fileprivate lazy var iapBtnView: UIView = {
@@ -84,6 +89,23 @@ class IAPViewController: UIViewController {
     fileprivate lazy var descLabel5: UILabel = {
         let label = UILabel()
         return label
+    }()
+    
+    fileprivate lazy var gradientView: FXGradientView = {
+        let gradientView = FXGradientView()
+        let gradientLayer = gradientView.layer as! CAGradientLayer
+        gradientLayer.colors = [
+            UIColor.white.withAlphaComponent(0).cgColor,
+            UIColor.white.withAlphaComponent(0.1).cgColor,
+            UIColor.white.withAlphaComponent(0.7).cgColor,
+            UIColor.white.withAlphaComponent(0.8).cgColor,
+            UIColor.white.withAlphaComponent(0.9).cgColor,
+            UIColor.white.cgColor,
+        ]
+        gradientLayer.startPoint = CGPoint(x: 1, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 0, y: 0.5)
+        gradientLayer.locations = [0, 0.2, 0.4, 0.6, 0.8, 1]
+        return gradientView
     }()
     
     fileprivate lazy var subscribeBtn: FXBtnView = {
@@ -184,8 +206,8 @@ class IAPViewController: UIViewController {
             NSAttributedString.Key.foregroundColor : UIColor(hex: 0xc77fe6)!,
             ],
                             range: NSRange(location: 0, length: text5.count))
-//        view.setTitle(.double(attr0, attr4), isSelected: true)
-        view.setTitle(.sigle(attr5))
+        view.setTitle(.double(attr0, attr4), isSelected: true)
+        //        view.setTitle(.sigle(attr5))
         view.layer.cornerRadius = 10
         view.layer.masksToBounds = true
         return view
@@ -210,18 +232,41 @@ class IAPViewController: UIViewController {
         super.viewDidLoad()
         configUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        playerContainer.startPlay()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        playerContainer.endPlay()
+        super.viewWillDisappear(animated)
+    }
+    
 }
 
 extension IAPViewController {
     
     fileprivate func configUI() {
+      
         view.backgroundColor = .white
         let commonTop: CGFloat = UIDevice.current.isiPhoneXSeries ? 38: 0
-        view.addSubview(playerContainer)
-        playerContainer.snp.makeConstraints {
-            $0.left.top.right.equalTo(0)
-            // FIXME: 播放器的高度需要适配，根据视频来
-            $0.height.equalTo(250)
+        if let videoFile = Bundle.main.path(forResource: UIDevice.current.isiPhoneXSeries ? "video_vip_headerView_x" : "video_vip_headerView_plus",
+                                            ofType: "mp4") {
+            let videoURL = URL(fileURLWithPath: videoFile)
+            playerContainer.loadUrl(url: videoURL)
+            let asset = AVAsset(url: videoURL)
+            let tracks = asset.tracks
+            var videoSize = CGSize(width: 0, height: 1)
+            for track in tracks {
+                videoSize = track.naturalSize
+            }
+            view.addSubview(playerContainer)
+            playerContainer.snp.makeConstraints {
+                $0.left.top.right.equalTo(0)
+                let height = view.bounds.width * videoSize.height / videoSize.width
+                $0.height.equalTo(height + (UIDevice.current.isiPhoneXSeries ? 88 : 0))
+            }
         }
         view.addSubview(topView)
         topView.snp.makeConstraints {
@@ -268,11 +313,19 @@ extension IAPViewController {
         }
         
         /// 隐私协议
-        let privacyViewHeight: CGFloat = 16 + 99
+        let bottonImg = UIImage(contentsOfFile: Bundle.getFilePath(fileName: "ipa_bottom_bg@3x"))
+        bottomBg.image = bottonImg
+        let privacyViewHeight: CGFloat = bottonImg!.size.height
         view.addSubview(privacyBtnView)
         privacyBtnView.snp.makeConstraints {
             $0.left.right.bottom.equalTo(0)
             $0.height.equalTo(privacyViewHeight)
+        }
+        privacyBtnView.addSubview(bottomBg)
+        bottomBg.snp.makeConstraints {
+            $0.size.equalTo(bottonImg!.size)
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(0)
         }
         let bottomCenterLine = UIView()
         let bottomViewHeight: CGFloat = 15
@@ -376,6 +429,21 @@ extension IAPViewController {
         vstack.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.left.equalTo(36)
+        }
+
+        view.insertSubview(gradientView, aboveSubview: playerContainer)
+        gradientView.snp.makeConstraints {
+            $0.left.right.top.equalTo(0)
+            $0.bottom.equalTo(0)
+        }
+        
+        let whiteView = UIView()
+        whiteView.backgroundColor = .white
+        view.insertSubview(whiteView, aboveSubview: playerContainer)
+        
+        whiteView.snp.makeConstraints {
+            $0.left.right.bottom.equalTo(0)
+            $0.top.equalTo(gradientView.snp.bottom)
         }
     }
     
