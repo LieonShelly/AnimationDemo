@@ -12,6 +12,11 @@ import RxCocoa
 import RxSwift
 
 extension UIDevice {
+    
+    var isBelowOrEqual375Device: Bool {
+        return UIScreen.main.bounds.width <= 375.0
+    }
+    
     var isiPhoneXSeries: Bool {
         if self.userInterfaceIdiom != UIUserInterfaceIdiom.phone {
             return false

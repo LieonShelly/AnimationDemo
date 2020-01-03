@@ -185,7 +185,8 @@ extension HomeViewController {
                 return
             }
             let vcc = IAPViewController()
-            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+            vcc.modalPresentationStyle = .fullScreen
+            weakSelf.present(vcc, animated: true, completion: nil)
         })
         items.append(tap)
         items.append(pinch)

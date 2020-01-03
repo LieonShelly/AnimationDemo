@@ -58,6 +58,7 @@
 		CD68330323BB491F008C0C9F /* ipa_bottom_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD68330223BB491F008C0C9F /* ipa_bottom_bg@3x.png */; };
 		CD68330623BB4BE6008C0C9F /* video_vip_headerView_plus.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD68330423BB4BE6008C0C9F /* video_vip_headerView_plus.mp4 */; };
 		CD68330723BB4BE6008C0C9F /* video_vip_headerView_x.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD68330523BB4BE6008C0C9F /* video_vip_headerView_x.mp4 */; };
+		CD68330E23BDE137008C0C9F /* IFHookMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD68330D23BDE137008C0C9F /* IFHookMarkView.swift */; };
 		CD6C28D323A21D620008761C /* ScaleBtnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C28D123A21D620008761C /* ScaleBtnViewController.swift */; };
 		CD6C28D423A21D620008761C /* ScaleBtnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6C28D223A21D620008761C /* ScaleBtnViewController.xib */; };
 		CD725AD3234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */; };
@@ -202,6 +203,7 @@
 		CD68330223BB491F008C0C9F /* ipa_bottom_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipa_bottom_bg@3x.png"; sourceTree = "<group>"; };
 		CD68330423BB4BE6008C0C9F /* video_vip_headerView_plus.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_vip_headerView_plus.mp4; sourceTree = "<group>"; };
 		CD68330523BB4BE6008C0C9F /* video_vip_headerView_x.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_vip_headerView_x.mp4; sourceTree = "<group>"; };
+		CD68330D23BDE137008C0C9F /* IFHookMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFHookMarkView.swift; sourceTree = "<group>"; };
 		CD6C28D123A21D620008761C /* ScaleBtnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleBtnViewController.swift; sourceTree = "<group>"; };
 		CD6C28D223A21D620008761C /* ScaleBtnViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScaleBtnViewController.xib; sourceTree = "<group>"; };
 		CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
@@ -533,6 +535,7 @@
 				CD0230EA237A5F5200324E30 /* FXBannerCollectionViewCell.swift */,
 				CD0230EB237A5F5200324E30 /* FXBannerCollectionViewCell.xib */,
 				CD0230F9237A9BE000324E30 /* FXTutorialPanel.swift */,
+				CD68330D23BDE137008C0C9F /* IFHookMarkView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -772,6 +775,7 @@
 				CDFF205223682B3200800136 /* DemoTouchViewController.swift in Sources */,
 				CD7D50B42361768E00FA9C07 /* Param.swift in Sources */,
 				CD2112EA235D8550003B5202 /* MultiLanguageAlert.swift in Sources */,
+				CD68330E23BDE137008C0C9F /* IFHookMarkView.swift in Sources */,
 				CD3BC9AF234F313E003C8AA9 /* HomeViewController.swift in Sources */,
 				CD0537B8237934F100F9BDB5 /* EventSendViewController.swift in Sources */,
 				CD2112F8235DBA4D003B5202 /* Wireframe.swift in Sources */,
