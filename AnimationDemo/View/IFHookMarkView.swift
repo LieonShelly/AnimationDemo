@@ -12,7 +12,7 @@ class IFHookMarkView: UIView {
 
     fileprivate lazy var shapelayer: CAShapeLayer = {
         let layer = CAShapeLayer()
-        layer.lineWidth = 1
+        layer.lineWidth = 1.4
         layer.fillColor = UIColor.clear.cgColor
         layer.strokeColor = UIColor.black.cgColor
         layer.strokeEnd = 0

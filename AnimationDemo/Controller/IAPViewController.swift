@@ -231,16 +231,16 @@ class IAPViewController: UIViewController {
     
     fileprivate lazy var conditionBtn: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitleColor(UIColor(hex: 0x808080), for: .normal)
+        btn.setTitleColor(UIColor(hex: 0x000000)!.withAlphaComponent(0.5), for: .normal)
         btn.setTitle("使用条款".localized_FX(), for: .normal)
-        btn.titleLabel?.font = UIFont.customFont(ofSize: 11, isBold: true)
+        btn.titleLabel?.font = UIFont.customFont(ofSize: 11, isBold: false)
         return btn
     }()
     fileprivate lazy var privacyBtn: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitleColor(UIColor(hex: 0x808080), for: .normal)
+        btn.setTitleColor(UIColor(hex: 0x000000)!.withAlphaComponent(0.5), for: .normal)
         btn.setTitle("隐私政策".localized_FX(), for: .normal)
-        btn.titleLabel?.font = UIFont.customFont(ofSize: 11, isBold: true)
+        btn.titleLabel?.font = UIFont.customFont(ofSize: 11, isBold: false)
         return btn
     }()
     
@@ -310,10 +310,10 @@ extension IAPViewController {
         
         let tileHeight: CGFloat = 33.0.fitiPhone5sSerires
         let subTitleHeight: CGFloat = 22.0.fitiPhone5sSerires
-        let titleInset: CGFloat = 14.0.fitiPhone5sSerires
+        let titleInset: CGFloat = 12.0.fitiPhone5sSerires
         var titleViewTop: CGFloat = 56.0.fitiPhone5sSerires
         if UIDevice.current.isBelowOrEqual375Device {
-            titleViewTop = 41.0.fitBelow375Pt
+            titleViewTop = 38.0.fitBelow375Pt
         }
         view.addSubview(titleView)
         titleView.snp.makeConstraints {
@@ -352,12 +352,12 @@ extension IAPViewController {
             $0.top.equalTo(0)
         }
         let bottomCenterLine = UIView()
-        let bottomViewHeight: CGFloat = 15
-        bottomCenterLine.backgroundColor = UIColor(hex: 0x808080)
+        let bottomViewHeight: CGFloat = 16
+        bottomCenterLine.backgroundColor = UIColor(hex: 0x3a404d)?.withAlphaComponent(0.4)
         privacyBtnView.addSubview(bottomCenterLine)
         bottomCenterLine.snp.makeConstraints {
             $0.width.equalTo(1)
-            $0.height.equalTo(10)
+            $0.height.equalTo(8)
             $0.top.equalTo(10)
             $0.centerX.equalTo(privacyBtnView.snp.centerX)
         }
@@ -387,7 +387,7 @@ extension IAPViewController {
         }
         iapBtnView.snp.makeConstraints {
             $0.left.right.equalTo(0)
-            $0.bottom.equalTo(privacyBtnView.snp.top).offset(-11.0.fitiPhone5sSerires)
+            $0.bottom.equalTo(privacyBtnView.snp.top).offset(-9.0.fitiPhone5sSerires)
             $0.height.equalTo(subcribeBtnHeight * 2 + subscribeInset)
         }
         iapBtnView.addSubview(tryBtn)
@@ -448,7 +448,7 @@ extension IAPViewController {
         let hStackInset: CGFloat = 15.0.fitBelow375Pt
         var hoTop: CGFloat = 68.0.fitiPhone5sSerires
         if UIDevice.current.isBelowOrEqual375Device {
-            hoTop = 40.0.fitBelow375Pt
+            hoTop = 36.0.fitBelow375Pt
         }
         h0.snp.makeConstraints {
             $0.left.equalTo(titleLabel.snp.left)
