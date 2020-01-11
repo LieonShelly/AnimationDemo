@@ -14,7 +14,7 @@ import RxSwift
 extension UIDevice {
     
     var isBelowOrEqual375Device: Bool {
-        return UIScreen.main.bounds.width <= 375.0
+        return UIScreen.main.bounds.width <= 375.0 && !isiPhoneXSeries
     }
     
     var isiPhoneXSeries: Bool {

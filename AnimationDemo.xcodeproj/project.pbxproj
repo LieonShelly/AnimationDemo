@@ -92,6 +92,8 @@
 		CDC87F2F2362E39600EFE022 /* BtnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC87F2D2362E39600EFE022 /* BtnViewController.xib */; };
 		CDD33F842368447A00FD074A /* GuideStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD33F832368447A00FD074A /* GuideStartView.swift */; };
 		CDD33F862368448500FD074A /* GuideStartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD33F852368448500FD074A /* GuideStartView.xib */; };
+		CDDB073923C96DC300C0AA97 /* NewAnimatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDB073723C96DC300C0AA97 /* NewAnimatedViewController.swift */; };
+		CDDB073A23C96DC300C0AA97 /* NewAnimatedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDDB073823C96DC300C0AA97 /* NewAnimatedViewController.xib */; };
 		CDF9AB6C238FE86D00226E37 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF9AB6B238FE86D00226E37 /* PlayerViewController.swift */; };
 		CDFAAA78238A54D400918051 /* BtnProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFAAA76238A54D400918051 /* BtnProgressViewController.swift */; };
 		CDFAAA79238A54D400918051 /* BtnProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFAAA77238A54D400918051 /* BtnProgressViewController.xib */; };
@@ -237,6 +239,8 @@
 		CDC87F2D2362E39600EFE022 /* BtnViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BtnViewController.xib; sourceTree = "<group>"; };
 		CDD33F832368447A00FD074A /* GuideStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideStartView.swift; sourceTree = "<group>"; };
 		CDD33F852368448500FD074A /* GuideStartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuideStartView.xib; sourceTree = "<group>"; };
+		CDDB073723C96DC300C0AA97 /* NewAnimatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAnimatedViewController.swift; sourceTree = "<group>"; };
+		CDDB073823C96DC300C0AA97 /* NewAnimatedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewAnimatedViewController.xib; sourceTree = "<group>"; };
 		CDF9AB6B238FE86D00226E37 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		CDFAAA76238A54D400918051 /* BtnProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnProgressViewController.swift; sourceTree = "<group>"; };
 		CDFAAA77238A54D400918051 /* BtnProgressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BtnProgressViewController.xib; sourceTree = "<group>"; };
@@ -475,6 +479,8 @@
 				CD6C28D223A21D620008761C /* ScaleBtnViewController.xib */,
 				CD787BCE23B59AAA00DAE0BD /* LoadingViewController.swift */,
 				CD6832FD23BAF7F9008C0C9F /* IAPViewController.swift */,
+				CDDB073723C96DC300C0AA97 /* NewAnimatedViewController.swift */,
+				CDDB073823C96DC300C0AA97 /* NewAnimatedViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -661,6 +667,7 @@
 				CD2FCFA9234DB37600E28E5C /* PinchViewController.xib in Resources */,
 				CD725ADA234F0E4E00C11FB0 /* PanViewController.xib in Resources */,
 				CD6C28D423A21D620008761C /* ScaleBtnViewController.xib in Resources */,
+				CDDB073A23C96DC300C0AA97 /* NewAnimatedViewController.xib in Resources */,
 				CDD33F862368448500FD074A /* GuideStartView.xib in Resources */,
 				CDFF205B236837A500800136 /* GuideStartViewController.xib in Resources */,
 				CDBBC731239F6D5000B07EE9 /* SwipeViewController.xib in Resources */,
@@ -757,6 +764,7 @@
 				CD749ACA2356F6EF00C357A5 /* FlipSubViewController.swift in Sources */,
 				CD749AC72356F42F00C357A5 /* FlipAnimator.swift in Sources */,
 				CD2D3F262387C96F00924CB4 /* CustomViewController.swift in Sources */,
+				CDDB073923C96DC300C0AA97 /* NewAnimatedViewController.swift in Sources */,
 				CD0230FA237A9BE000324E30 /* FXTutorialPanel.swift in Sources */,
 				CD306C4D2355CC36002ABA93 /* Common.swift in Sources */,
 				CDADB236235EE7A7002A57FD /* TipPopViewController.swift in Sources */,

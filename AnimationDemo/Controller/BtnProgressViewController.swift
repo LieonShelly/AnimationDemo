@@ -294,7 +294,7 @@ class FXArcView: UIView {
    func showAnimation() {
         let position =  CABasicAnimation(keyPath: "position.x")
         position.fromValue = -30
-        position.toValue = bounds.width + 30
+        position.toValue = bounds.width + 300
         position.fillMode = .removed
         position.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         position.duration = 1

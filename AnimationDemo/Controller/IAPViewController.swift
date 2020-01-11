@@ -25,9 +25,22 @@ class IAPViewController: UIViewController {
     }()
     fileprivate lazy var recoverVipBtn: UIButton = {
         let btn = UIButton()
-        btn.setTitle("恢复会员".localized_FX(), for: .normal)
-        btn.setTitleColor(.white, for: .normal)
-        btn.titleLabel?.font = UIFont.customFont(ofSize: 15, isBold: true)
+        let title = "恢复会员".localized_FX()
+        let shadow = NSShadow()
+        shadow.shadowBlurRadius = 2
+        shadow.shadowColor = UIColor.black
+        btn.setAttributedTitle(NSAttributedString(string: title,
+                                                  attributes: [NSAttributedString.Key.font : UIFont.customFont(ofSize: 15, isBold: true),
+                                                               NSAttributedString.Key.foregroundColor : UIColor.white,
+                                                               NSAttributedString.Key.shadow : shadow
+        ]),
+                               for: .normal)
+        btn.setAttributedTitle(NSAttributedString(string: title,
+                                                  attributes: [NSAttributedString.Key.font : UIFont.customFont(ofSize: 15, isBold: true),
+                                                               NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(0.4),
+                                                               NSAttributedString.Key.shadow : shadow
+        ]),
+                               for: .highlighted)
         return btn
     }()
     fileprivate lazy var topView: UIView = {
@@ -112,15 +125,15 @@ class IAPViewController: UIViewController {
         let gradientLayer = gradientView.layer as! CAGradientLayer
         gradientLayer.colors = [
             UIColor.white.withAlphaComponent(0).cgColor,
-            UIColor.white.withAlphaComponent(0.1).cgColor,
-            UIColor.white.withAlphaComponent(0.7).cgColor,
-            UIColor.white.withAlphaComponent(0.8).cgColor,
-            UIColor.white.withAlphaComponent(0.9).cgColor,
+//            UIColor.white.withAlphaComponent(0.1).cgColor,
+//            UIColor.white.withAlphaComponent(0.7).cgColor,
+//            UIColor.white.withAlphaComponent(0.8).cgColor,
+//            UIColor.white.withAlphaComponent(0.9).cgColor,
             UIColor.white.cgColor,
         ]
         gradientLayer.startPoint = CGPoint(x: 1, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 0.7, y: 0.5)
-        gradientLayer.locations = [0, 0.2, 0.4, 0.6, 0.8, 1]
+        gradientLayer.endPoint = CGPoint(x: 0.8, y: 0.45)
+//        gradientLayer.locations = [0, 0.2, 0.4, 0.6, 0.8, 1]
         return gradientView
     }()
     
@@ -203,6 +216,7 @@ class IAPViewController: UIViewController {
                                               attributes: [
                                                 NSAttributedString.Key.foregroundColor : textColor,
                                                 NSAttributedString.Key.font : text2Font,
+                                                NSAttributedString.Key.baselineOffset: 1,
         ])
         let attr3 = NSMutableAttributedString(string: text3,
                                               attributes: [
@@ -339,39 +353,45 @@ extension IAPViewController {
         /// 隐私协议
         let bottonImg = UIImage(named: "ipa_bottom_bg")
         bottomBg.image = bottonImg
-        let privacyViewHeight: CGFloat = bottonImg!.size.height
-        view.addSubview(privacyBtnView)
-        privacyBtnView.snp.makeConstraints {
-            $0.left.right.bottom.equalTo(0)
-            $0.height.equalTo(privacyViewHeight)
-        }
-        privacyBtnView.addSubview(bottomBg)
+        view.addSubview(bottomBg)
         bottomBg.snp.makeConstraints {
             $0.size.equalTo(bottonImg!.size)
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(0)
+            $0.bottom.equalTo(0)
         }
+        
+        let privacyViewHeight: CGFloat = 16.0.fitiPhone5sSerires
+        var privacyBtnViewBottom: CGFloat = 120.0.fitiPhone5sSerires
+        if UIDevice.current.isBelowOrEqual375Device {
+            privacyBtnViewBottom = 50.fitiPhone5sSerires
+        }
+        view.addSubview(privacyBtnView)
+        privacyBtnView.snp.makeConstraints {
+            $0.left.right.equalTo(0)
+            $0.height.equalTo(privacyViewHeight)
+            $0.bottom.equalTo(-privacyBtnViewBottom)
+        }
+      
         let bottomCenterLine = UIView()
         let bottomViewHeight: CGFloat = 16
         bottomCenterLine.backgroundColor = UIColor(hex: 0x3a404d)?.withAlphaComponent(0.4)
         privacyBtnView.addSubview(bottomCenterLine)
-        bottomCenterLine.snp.makeConstraints {
-            $0.width.equalTo(1)
-            $0.height.equalTo(8)
-            $0.top.equalTo(10)
-            $0.centerX.equalTo(privacyBtnView.snp.centerX)
-        }
         privacyBtnView.addSubview(conditionBtn)
         privacyBtnView.addSubview(privacyBtn)
         conditionBtn.snp.makeConstraints {
-            $0.centerY.equalTo(bottomCenterLine.snp.centerY)
-            $0.right.equalTo(bottomCenterLine.snp.left).offset(-10.5)
+            $0.centerY.equalToSuperview()
+            $0.right.equalTo(privacyBtnView.snp.centerX).offset(-7.5)
             $0.height.equalTo(bottomViewHeight)
         }
         privacyBtn.snp.makeConstraints {
-            $0.centerY.equalTo(bottomCenterLine.snp.centerY)
-            $0.left.equalTo(bottomCenterLine.snp.right).offset(10.5)
+            $0.centerY.equalToSuperview()
+            $0.left.equalTo(conditionBtn.snp.right).offset(16)
             $0.height.equalTo(bottomViewHeight)
+        }
+        bottomCenterLine.snp.makeConstraints {
+            $0.width.equalTo(1)
+            $0.height.equalTo(8)
+            $0.center.equalToSuperview()
         }
         
         /// 订阅按钮部分
@@ -414,19 +434,19 @@ extension IAPViewController {
         descLabel1.attributedText = attr1.attriText
         descLabel1.frame.size = CGSize(width: textMaxWidth, height: attr1.textHeight)
         
-        let attr2 = createMulitiText("项高级调色功能", hightLoghtText: "22 ", fullText: "22 项高级调色功能")
+        let attr2 = createMulitiText("22", fullText: "22项高级调色功能")
         descLabel2.attributedText = attr2.attriText
         descLabel2.frame.size = CGSize(width: textMaxWidth, height: attr2.textHeight)
         
-        let attr3 = createMulitiText("专业人像精修工具", hightLoghtText: "100+ ", fullText: "100+ 专业人像精修工具")
+        let attr3 = createMulitiText("100+", fullText: "100+专业人像精修工具")
         descLabel3.attributedText = attr3.attriText
         descLabel3.frame.size = CGSize(width: textMaxWidth, height: attr3.textHeight)
         
-        let attr4 = createMulitiText("顶级风格化滤镜全部解锁", hightLoghtText: "200+ ", fullText: "200+ 顶级风格化滤镜全部解锁")
+        let attr4 = createMulitiText("200+", fullText: "200+ top style filters to be unlocked")
         descLabel4.attributedText = attr4.attriText
         descLabel4.frame.size = CGSize(width: textMaxWidth, height: attr4.textHeight)
         
-        let attr5 = createMulitiText("潮流创意素材，每周更新", hightLoghtText: "1000+ ", fullText: "1000+ 潮流创意素材，每周更新")
+        let attr5 = createMulitiText("1000+", fullText: "1000+ trendy creative materials coming weekly")
         descLabel5.attributedText = attr5.attriText
         descLabel5.frame.size = CGSize(width: textMaxWidth, height: attr5.textHeight)
         h0 = createHorisionStack(hook0, label: descLabel0)
@@ -446,7 +466,7 @@ extension IAPViewController {
         
         let hStackHeight: CGFloat = 28.0.fitiPhone5sSerires
         let hStackInset: CGFloat = 15.0.fitBelow375Pt
-        var hoTop: CGFloat = 68.0.fitiPhone5sSerires
+        var hoTop: CGFloat = 55.0.fitiPhone5sSerires
         if UIDevice.current.isBelowOrEqual375Device {
             hoTop = 36.0.fitBelow375Pt
         }
@@ -554,21 +574,20 @@ extension IAPViewController {
         return (attrText0, attrText0Height)
     }
     
-    fileprivate func createMulitiText(_ blackText: String,
-                                      hightLoghtText: String,
-                                      fullText: String ) -> (attriText: NSMutableAttributedString, textHeight: CGFloat) {
-        let textMaxWidth: CGFloat = view.bounds.width - 60.0.fitiPhone5sSerires
-        let text2 = fullText.localized_FX()
-        let text20 = hightLoghtText.localized_FX()
-        let text21 = blackText.localized_FX()
-        let attrText2 = NSMutableAttributedString(string: text2)
-        attrText2.addAttributes(createHightLightTextStyle(),
-                                range: NSRange(text2.range(of: text20)!, in: text2))
-        attrText2.addAttributes(createBlackTextStyle(),
-                                range: NSRange(text2.range(of: text21)!, in: text2))
-        let attrText2Height: CGFloat = attrText2.boundingRect(with: CGSize(width: textMaxWidth, height: .infinity), options: NSStringDrawingOptions.usesFontLeading, context: nil).size.height
-        return (attrText2, attrText2Height)
-    }
+      fileprivate func createMulitiText(_ hightLightText: String,
+                                        fullText: String ) -> (attriText: NSMutableAttributedString, textHeight: CGFloat) {
+          let textMaxWidth: CGFloat = view.bounds.width - 60.0.fitiPhone5sSerires
+          let text2 = fullText
+          let text20 = hightLightText//.localized(nil)
+          
+          let attrText2 = NSMutableAttributedString(string: text2)
+          attrText2.addAttributes(createBlackTextStyle(),
+                                  range: NSRange(location: 0, length: text2.count))
+          attrText2.addAttributes(createHightLightTextStyle(),
+                                  range: NSRange(text2.range(of: text20)!, in: text2))
+          let attrText2Height: CGFloat = attrText2.boundingRect(with: CGSize(width: textMaxWidth, height: .infinity), options: NSStringDrawingOptions.usesFontLeading, context: nil).size.height
+          return (attrText2, attrText2Height)
+      }
     
     fileprivate func showAnimation() {
         let h0Y = h0.frame.origin.y
@@ -659,19 +678,19 @@ extension IAPViewController {
         tryBtn.alpha = 0
         subscribeBtn.alpha = 0
         
-        UIView.animate(withDuration: 1, delay: 1 + 0.25 * 5, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 0.7, delay: 1 + 0.25 * 5, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: [.curveEaseInOut], animations: {
             self.subscribeBtn.transform = CGAffineTransform(scaleX: 1, y: 1)
         }, completion: nil)
         
         UIView.animate(withDuration: 0.25, delay: 1 + 0.25 * 5, options: [.curveEaseInOut], animations: {
             self.subscribeBtn.alpha = 1
         }, completion: nil)
-               
-        UIView.animate(withDuration: 1, delay: 1 + 0.25 * 5 + 0.8, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: [.curveEaseInOut], animations: {
+        
+        UIView.animate(withDuration: 0.7, delay: 1 + 0.25 * 5 + 0.2, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: [.curveEaseInOut], animations: {
             self.tryBtn.transform = CGAffineTransform(scaleX: 1, y: 1)
         }, completion: nil)
-
-        UIView.animate(withDuration: 0.25, delay: 1 + 0.25 * 5 + 0.8, options: [.curveEaseInOut], animations: {
+        
+        UIView.animate(withDuration: 0.25, delay: 1 + 0.25 * 5 + 0.2, options: [.curveEaseInOut], animations: {
             self.tryBtn.alpha = 1
         }, completion: nil)
     }

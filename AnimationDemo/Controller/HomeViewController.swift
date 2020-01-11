@@ -171,7 +171,6 @@ extension HomeViewController {
             let vcc = ScaleBtnViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
-        /// LoadingViewController
         let loadingVC = ListItem("Laoding", handler: { [weak self] in
             guard let weakSelf = self else {
                 return
@@ -179,7 +178,6 @@ extension HomeViewController {
             let vcc = LoadingViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
-        /// IAPViewController
         let iAPViewController = ListItem("IAPViewController", handler: { [weak self] in
             guard let weakSelf = self else {
                 return
@@ -187,6 +185,13 @@ extension HomeViewController {
             let vcc = IAPViewController()
             vcc.modalPresentationStyle = .fullScreen
             weakSelf.present(vcc, animated: true, completion: nil)
+        })
+        let newAnimatedViewController = ListItem("NewAnimatedViewController", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = NewAnimatedViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
         items.append(tap)
         items.append(pinch)
@@ -210,6 +215,8 @@ extension HomeViewController {
         items.append(scaleBtnViewController)
         items.append(loadingVC)
         items.append(iAPViewController)
+        
+        items.append(newAnimatedViewController)
     }
     
 }
