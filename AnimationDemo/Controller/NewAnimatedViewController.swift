@@ -13,6 +13,7 @@ class NewAnimatedViewController: UIViewController {
     @IBOutlet weak var naviBar: UIView!
     fileprivate var naviBarOriginFrame: CGRect = .zero
     fileprivate var isShow: Bool = false
+    fileprivate var showAniamteStartFrame: CGRect = .zero
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,15 +44,17 @@ class NewAnimatedViewController: UIViewController {
                                 animations: {
                                     UIView.addKeyframe(withRelativeStartTime: 0,
                                                        relativeDuration: 0.25) {
-                                                        self.naviBar.frame = CGRect(origin: self.naviBarOriginFrame.origin,
-                                                                                    size: CGSize(width: self.naviBarOriginFrame.width + 50,
-                                                                                                 height: self.naviBarOriginFrame.height + 50))
+                                                        self.naviBar.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
                                     }
                                     UIView.addKeyframe(withRelativeStartTime: 0.25,
                                                        relativeDuration: 0.25) {
-                                                        self.naviBar.frame = CGRect(origin: self.naviBarOriginFrame.origin, size: .zero)
+                                                        self.naviBar.transform = CGAffineTransform(scaleX: 0, y: 0)
                                     }
-        }, completion: nil)
+        }, completion: { _ in
+            self.naviBar.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            self.naviBar.frame.origin = self.naviBarOriginFrame.origin
+            self.naviBar.transform = .identity
+        })
         
         UIView.animateKeyframes(withDuration: 0.25,
                                 delay: 0.0,
@@ -78,15 +81,23 @@ class NewAnimatedViewController: UIViewController {
     }
     
     fileprivate func showAnimation() {
-        naviBar.frame = CGRect(origin: naviBarOriginFrame.origin, size: .zero)
-        naviBar.alpha = 1
+        showAniamteStartFrame = CGRect(x: naviBarOriginFrame.origin.x,
+                                       y: naviBarOriginFrame.origin.y + naviBarOriginFrame.height * 0.5,
+                                       width: 0,
+                                       height: 0)
+        naviBar.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
+        naviBar.frame = naviBarOriginFrame
+        naviBar.alpha = 0
+        naviBar.transform = CGAffineTransform(scaleX: 0, y: 0)
         UIView.animate(withDuration: 0.5,
                        delay: 0, usingSpringWithDamping: 0.5,
                        initialSpringVelocity: 0,
                        options: [.curveEaseInOut],
                        animations: {
-                        self.naviBar.frame = self.naviBarOriginFrame
-        }, completion: nil)
+                        self.naviBar.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }, completion: { _ in
+
+        })
         
         
         nextBtn.transform = CGAffineTransform(scaleX: 0, y: 0)
