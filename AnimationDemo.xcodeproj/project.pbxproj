@@ -13,6 +13,7 @@
 		CD039004237BF15400638401 /* FXMoveAniamtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD039003237BF15400638401 /* FXMoveAniamtion.swift */; };
 		CD0537B8237934F100F9BDB5 /* EventSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0537B6237934F100F9BDB5 /* EventSendViewController.swift */; };
 		CD0537B9237934F100F9BDB5 /* EventSendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD0537B7237934F100F9BDB5 /* EventSendViewController.xib */; };
+		CD0D70C023CDA44500336622 /* ic_tutorial_robot360.png in Resources */ = {isa = PBXBuildFile; fileRef = CD0D70BF23CDA44500336622 /* ic_tutorial_robot360.png */; };
 		CD10BCF523694787007B4808 /* IFAnimaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BCF423694787007B4808 /* IFAnimaton.swift */; };
 		CD1691CC23595B93006E73AD /* RecordAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1691CA23595B93006E73AD /* RecordAudioViewController.swift */; };
 		CD1691CD23595B93006E73AD /* RecordAudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1691CB23595B93006E73AD /* RecordAudioViewController.xib */; };
@@ -94,6 +95,7 @@
 		CDD33F862368448500FD074A /* GuideStartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD33F852368448500FD074A /* GuideStartView.xib */; };
 		CDDB073923C96DC300C0AA97 /* NewAnimatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDB073723C96DC300C0AA97 /* NewAnimatedViewController.swift */; };
 		CDDB073A23C96DC300C0AA97 /* NewAnimatedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDDB073823C96DC300C0AA97 /* NewAnimatedViewController.xib */; };
+		CDF9276C23CEC94100DD5183 /* ic_tutorial_alert_yls@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDF9276B23CEC94000DD5183 /* ic_tutorial_alert_yls@3x.png */; };
 		CDF9AB6C238FE86D00226E37 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF9AB6B238FE86D00226E37 /* PlayerViewController.swift */; };
 		CDFAAA78238A54D400918051 /* BtnProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFAAA76238A54D400918051 /* BtnProgressViewController.swift */; };
 		CDFAAA79238A54D400918051 /* BtnProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFAAA77238A54D400918051 /* BtnProgressViewController.xib */; };
@@ -153,6 +155,7 @@
 		CD039003237BF15400638401 /* FXMoveAniamtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXMoveAniamtion.swift; sourceTree = "<group>"; };
 		CD0537B6237934F100F9BDB5 /* EventSendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSendViewController.swift; sourceTree = "<group>"; };
 		CD0537B7237934F100F9BDB5 /* EventSendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventSendViewController.xib; sourceTree = "<group>"; };
+		CD0D70BF23CDA44500336622 /* ic_tutorial_robot360.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_tutorial_robot360.png; sourceTree = "<group>"; };
 		CD10BCF423694787007B4808 /* IFAnimaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFAnimaton.swift; sourceTree = "<group>"; };
 		CD1691CA23595B93006E73AD /* RecordAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordAudioViewController.swift; sourceTree = "<group>"; };
 		CD1691CB23595B93006E73AD /* RecordAudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordAudioViewController.xib; sourceTree = "<group>"; };
@@ -241,6 +244,7 @@
 		CDD33F852368448500FD074A /* GuideStartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuideStartView.xib; sourceTree = "<group>"; };
 		CDDB073723C96DC300C0AA97 /* NewAnimatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAnimatedViewController.swift; sourceTree = "<group>"; };
 		CDDB073823C96DC300C0AA97 /* NewAnimatedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewAnimatedViewController.xib; sourceTree = "<group>"; };
+		CDF9276B23CEC94000DD5183 /* ic_tutorial_alert_yls@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_tutorial_alert_yls@3x.png"; sourceTree = "<group>"; };
 		CDF9AB6B238FE86D00226E37 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		CDFAAA76238A54D400918051 /* BtnProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnProgressViewController.swift; sourceTree = "<group>"; };
 		CDFAAA77238A54D400918051 /* BtnProgressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BtnProgressViewController.xib; sourceTree = "<group>"; };
@@ -404,6 +408,8 @@
 		CD6832FF23BB48FB008C0C9F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				CDF9276B23CEC94000DD5183 /* ic_tutorial_alert_yls@3x.png */,
+				CD0D70BF23CDA44500336622 /* ic_tutorial_robot360.png */,
 				CD68330423BB4BE6008C0C9F /* video_vip_headerView_plus.mp4 */,
 				CD68330523BB4BE6008C0C9F /* video_vip_headerView_x.mp4 */,
 				CD68330223BB491F008C0C9F /* ipa_bottom_bg@3x.png */,
@@ -676,9 +682,11 @@
 				CDFF20492367E6B800800136 /* LongPressViewController.xib in Resources */,
 				CD2FCFA2234D79AB00E28E5C /* TapAnimationViewController.xib in Resources */,
 				CD35A9D92372A668007C8354 /* ScreenRecordViewController.xib in Resources */,
+				CD0D70C023CDA44500336622 /* ic_tutorial_robot360.png in Resources */,
 				CDFF205323682B3200800136 /* DemoTouchViewController.xib in Resources */,
 				CDADB237235EE7A7002A57FD /* TipPopViewController.xib in Resources */,
 				CD749ACB2356F6EF00C357A5 /* FlipSubViewController.xib in Resources */,
+				CDF9276C23CEC94100DD5183 /* ic_tutorial_alert_yls@3x.png in Resources */,
 				CD1691CD23595B93006E73AD /* RecordAudioViewController.xib in Resources */,
 				CD88DD612361E4F200B9DB8F /* TestViewController.xib in Resources */,
 				CDC87F2F2362E39600EFE022 /* BtnViewController.xib in Resources */,
