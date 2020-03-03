@@ -64,6 +64,7 @@ class NewAnimatedViewController: UIViewController {
                                     }
         }, completion: { _ in
             self.naviBar.transform = .identity
+            self.naviBar.setAnchorPoint(CGPoint(x: 0.5, y: 0.5))
         })
         
         UIView.animateKeyframes(withDuration: 0.25,
@@ -284,11 +285,11 @@ extension UIView {
         var transition: CGPoint = .zero
         transition.x = newOrigin.x - oldOrigin.x
         transition.y = newOrigin.y - oldOrigin.y
-        
-        center = CGPoint(x: center.x - transition.x,
-                         y: center.y - transition.y)
 //
-//        center = CGPoint(x: oldOrigin.x + layer.anchorPoint.x * frame.width, y:oldOrigin.y + layer.anchorPoint.y * frame.height)
+//        center = CGPoint(x: center.x - transition.x,
+//                         y: center.y - transition.y)
+//
+        center = CGPoint(x: oldOrigin.x + layer.anchorPoint.x * frame.width, y:oldOrigin.y + layer.anchorPoint.y * frame.height)
     }
 }
 
@@ -491,7 +492,7 @@ extension FXTutorialHandlerAlert {
             $0.left.equalTo(23.0.fitiPhone5sSerires)
             $0.width.equalTo(99.0.fitiPhone5sSerires)
             $0.height.equalTo(ylsHeight)
-            $0.top.equalTo(contentView.snp.top).offset(-10)
+            $0.bottom.equalTo(contentView.snp.bottom).offset(0)
         }
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints {

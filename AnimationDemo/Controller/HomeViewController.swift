@@ -193,6 +193,15 @@ extension HomeViewController {
             let vcc = NewAnimatedViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
+        /// HookViewController
+        let hookViewController = ListItem("HookViewController", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = HookViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        items.append(hookViewController)
         items.append(tap)
         items.append(pinch)
         items.append(move)

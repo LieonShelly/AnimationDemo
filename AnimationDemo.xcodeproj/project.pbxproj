@@ -74,6 +74,7 @@
 		CD749ACE2356F72C00C357A5 /* FlipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD749ACC2356F72C00C357A5 /* FlipViewController.swift */; };
 		CD749ACF2356F72C00C357A5 /* FlipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD749ACD2356F72C00C357A5 /* FlipViewController.xib */; };
 		CD787BCF23B59AAA00DAE0BD /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD787BCE23B59AAA00DAE0BD /* LoadingViewController.swift */; };
+		CD7B0C38240E586400C57BE2 /* HookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B0C37240E586400C57BE2 /* HookViewController.swift */; };
 		CD7D50B023613AD300FA9C07 /* PathSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50AF23613AD300FA9C07 /* PathSerivce.swift */; };
 		CD7D50B223613C4600FA9C07 /* PopSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50B123613C4600FA9C07 /* PopSerivce.swift */; };
 		CD7D50B42361768E00FA9C07 /* Param.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50B32361768E00FA9C07 /* Param.swift */; };
@@ -223,6 +224,7 @@
 		CD749ACC2356F72C00C357A5 /* FlipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipViewController.swift; sourceTree = "<group>"; };
 		CD749ACD2356F72C00C357A5 /* FlipViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipViewController.xib; sourceTree = "<group>"; };
 		CD787BCE23B59AAA00DAE0BD /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		CD7B0C37240E586400C57BE2 /* HookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HookViewController.swift; sourceTree = "<group>"; };
 		CD7D50AF23613AD300FA9C07 /* PathSerivce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathSerivce.swift; sourceTree = "<group>"; };
 		CD7D50B123613C4600FA9C07 /* PopSerivce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopSerivce.swift; sourceTree = "<group>"; };
 		CD7D50B32361768E00FA9C07 /* Param.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Param.swift; sourceTree = "<group>"; };
@@ -487,6 +489,7 @@
 				CD6832FD23BAF7F9008C0C9F /* IAPViewController.swift */,
 				CDDB073723C96DC300C0AA97 /* NewAnimatedViewController.swift */,
 				CDDB073823C96DC300C0AA97 /* NewAnimatedViewController.xib */,
+				CD7B0C37240E586400C57BE2 /* HookViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -790,6 +793,7 @@
 				CDFF20562368333600800136 /* ImageTitleCollectionViewCell.swift in Sources */,
 				CDFF205223682B3200800136 /* DemoTouchViewController.swift in Sources */,
 				CD7D50B42361768E00FA9C07 /* Param.swift in Sources */,
+				CD7B0C38240E586400C57BE2 /* HookViewController.swift in Sources */,
 				CD2112EA235D8550003B5202 /* MultiLanguageAlert.swift in Sources */,
 				CD68330E23BDE137008C0C9F /* IFHookMarkView.swift in Sources */,
 				CD3BC9AF234F313E003C8AA9 /* HomeViewController.swift in Sources */,
