@@ -100,6 +100,8 @@
 		CDEA86EE240F5C25007BAA00 /* FXScaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA86ED240F5C25007BAA00 /* FXScaleView.swift */; };
 		CDEA86F0240F5C48007BAA00 /* FXTutorialNextStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA86EF240F5C48007BAA00 /* FXTutorialNextStepView.swift */; };
 		CDEA86F2240F5C63007BAA00 /* FXTutorialStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA86F1240F5C63007BAA00 /* FXTutorialStepView.swift */; };
+		CDEA86FC240F9F5A007BAA00 /* FXTutorialStepNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA86FB240F9F5A007BAA00 /* FXTutorialStepNameView.swift */; };
+		CDEA86FE240FA292007BAA00 /* FXTutorialNumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA86FD240FA292007BAA00 /* FXTutorialNumView.swift */; };
 		CDF9276C23CEC94100DD5183 /* ic_tutorial_alert_yls@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDF9276B23CEC94000DD5183 /* ic_tutorial_alert_yls@3x.png */; };
 		CDF9AB6C238FE86D00226E37 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF9AB6B238FE86D00226E37 /* PlayerViewController.swift */; };
 		CDFAAA78238A54D400918051 /* BtnProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFAAA76238A54D400918051 /* BtnProgressViewController.swift */; };
@@ -254,6 +256,8 @@
 		CDEA86ED240F5C25007BAA00 /* FXScaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXScaleView.swift; sourceTree = "<group>"; };
 		CDEA86EF240F5C48007BAA00 /* FXTutorialNextStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialNextStepView.swift; sourceTree = "<group>"; };
 		CDEA86F1240F5C63007BAA00 /* FXTutorialStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialStepView.swift; sourceTree = "<group>"; };
+		CDEA86FB240F9F5A007BAA00 /* FXTutorialStepNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialStepNameView.swift; sourceTree = "<group>"; };
+		CDEA86FD240FA292007BAA00 /* FXTutorialNumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialNumView.swift; sourceTree = "<group>"; };
 		CDF9276B23CEC94000DD5183 /* ic_tutorial_alert_yls@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_tutorial_alert_yls@3x.png"; sourceTree = "<group>"; };
 		CDF9AB6B238FE86D00226E37 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		CDFAAA76238A54D400918051 /* BtnProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnProgressViewController.swift; sourceTree = "<group>"; };
@@ -547,6 +551,8 @@
 				CDEA86ED240F5C25007BAA00 /* FXScaleView.swift */,
 				CDEA86EF240F5C48007BAA00 /* FXTutorialNextStepView.swift */,
 				CDEA86F1240F5C63007BAA00 /* FXTutorialStepView.swift */,
+				CDEA86FB240F9F5A007BAA00 /* FXTutorialStepNameView.swift */,
+				CDEA86FD240FA292007BAA00 /* FXTutorialNumView.swift */,
 			);
 			path = "New Group";
 			sourceTree = "<group>";
@@ -782,6 +788,7 @@
 				CDAD5B5C237516C200A0E4FE /* FXBannerView.swift in Sources */,
 				CD725AD9234F0E4E00C11FB0 /* PanViewController.swift in Sources */,
 				CDD33F842368447A00FD074A /* GuideStartView.swift in Sources */,
+				CDEA86FC240F9F5A007BAA00 /* FXTutorialStepNameView.swift in Sources */,
 				CD0230EC237A5F5200324E30 /* FXBannerCollectionViewCell.swift in Sources */,
 				CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */,
 				CD787BCF23B59AAA00DAE0BD /* LoadingViewController.swift in Sources */,
@@ -830,6 +837,7 @@
 				CD2FCFA1234D79AB00E28E5C /* TapAnimationViewController.swift in Sources */,
 				CDFF204F23680D5200800136 /* PopImageBrowser.swift in Sources */,
 				CD7D50B223613C4600FA9C07 /* PopSerivce.swift in Sources */,
+				CDEA86FE240FA292007BAA00 /* FXTutorialNumView.swift in Sources */,
 				CDFF204C2367E78100800136 /* ImageCollectionViewCell.swift in Sources */,
 				CD6C28D323A21D620008761C /* ScaleBtnViewController.swift in Sources */,
 				CD224D3B237CF3A50072442F /* FlurViewController.swift in Sources */,

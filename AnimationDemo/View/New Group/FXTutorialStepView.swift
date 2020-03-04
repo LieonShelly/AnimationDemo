@@ -10,11 +10,17 @@ import Foundation
 import UIKit
 
 class FXTutorialStepView: UIView {
+    var exitClickAction: (() -> ())? {
+        didSet {
+            stepNumberView.clickAction = exitClickAction
+        }
+    }
     fileprivate lazy var stepNumberView: FXTutorialStepNumView = {
         let view = FXTutorialStepNumView()
         view.backgroundColor = UIColor.gray
         view.layer.cornerRadius = UISize.cycleSize.width * 0.5
         view.layer.masksToBounds = true
+        view.alpha = 0
         return view
     }()
     
@@ -65,6 +71,22 @@ extension FXTutorialStepView {
             weakSelf.nextStepView.scaleAnimationEnd = {
                 weakSelf.stepNumberView.progressLayer.lineWidth = 0
             }
+        })
+    }
+    
+    func startShow(_ compeletion: (() -> ())?) {
+        stepNumberView.alpha = 1
+        nextStepView.isUserInteractionEnabled = false
+        self.stepNumberView.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
+        UIView.animate(withDuration: 0.25,
+                       delay: 0,
+                       usingSpringWithDamping: 0.4,
+                       initialSpringVelocity: 10,
+                       options: [.transitionCrossDissolve],
+                       animations: {
+                        self.stepNumberView.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }, completion: { _ in
+            compeletion?()
         })
     }
 }

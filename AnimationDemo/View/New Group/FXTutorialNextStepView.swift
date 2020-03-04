@@ -30,26 +30,33 @@ class FXTutorialNextStepView: UIView {
         progressLayer.opacity = 0
         return progressLayer
     }()
-    
     fileprivate lazy var scaleView: FXScaleView = {
         let scaleView = FXScaleView()
         scaleView.backgroundColor = .red
         scaleView.layer.cornerRadius = 50 * 0.5
         scaleView.layer.masksToBounds = true
         scaleView.alpha = 0
-        scaleView.layer.transform = CATransform3DMakeScale(0.4, 0.4, 1)
         return scaleView
     }()
-    
+    fileprivate lazy var numberView: FXTutorialNumView = {
+        let numberView = FXTutorialNumView()
+        numberView.backgroundColor = UIColor.blue.withAlphaComponent(0.4)
+        numberView.layer.opacity = 0
+        return numberView
+      }()
     fileprivate var isNeedLayout: Bool = true
-    
     fileprivate var zoomOutEnd: (() -> ())?
-    
+    struct UISize {
+      static let scaleViewSize: CGSize = CGSize(width: 50, height: 50)
+      static let numberViewSize: CGSize = CGSize(width: 45, height: 45)
+      static let nextBtnSize: CGSize = CGSize(width: 45, height: 40)
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(scaleView)
         layer.addSublayer(progressLayer)
         addSubview(nextBtn)
+        addSubview(numberView)
       
     }
     
@@ -60,9 +67,20 @@ class FXTutorialNextStepView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         if isNeedLayout {
-            scaleView.frame = CGRect(x: bounds.width - 50, y: 0, width: 50, height: 50)
+            numberView.layer.cornerRadius = UISize.numberViewSize.width * 0.5
+            numberView.layer.masksToBounds = true
+            scaleView.frame = CGRect(origin: CGPoint(x: bounds.width - UISize.scaleViewSize.width,
+                                                               y: (bounds.height - UISize.scaleViewSize.height) * 0.5),
+                                               size: UISize.scaleViewSize)
+            
+            numberView.frame = CGRect(origin: CGPoint(x: bounds.width - UISize.numberViewSize.width - 3,
+                                                      y: (bounds.height - UISize.numberViewSize.height) * 0.5),
+                                      size: UISize.numberViewSize)
+            
             nextBtn.layer.position.y = bounds.height * 0.7
-            nextBtn.frame = CGRect(x: bounds.width - 45 - 25, y: (bounds.height - 40) * 0.5, width: 45, height: 40)
+            nextBtn.frame = CGRect(origin: CGPoint(x: 10,
+                                                   y: (bounds.height - UISize.nextBtnSize.height) * 0.5),
+                                   size: UISize.nextBtnSize)
         }
     }
     
@@ -84,6 +102,7 @@ class FXTutorialNextStepView: UIView {
     
     func showAnimation() {
         /// 出现
+        layer.opacity = 1
         let scale = CABasicAnimation(keyPath: "transform.scale")
         scaleView.alpha = 1
         scale.fromValue = 0.5
@@ -132,24 +151,30 @@ class FXTutorialNextStepView: UIView {
         scaleView.setAnchorPoint(CGPoint(x: 1, y: 0.5))
         scaleView.layer.add(scaleViewboundsAni, forKey: nil)
         
-        let hookViewPosition = CABasicAnimation(keyPath: "position.x")
-        hookViewPosition.fromValue = bounds.width - 50 * 0.5
-        hookViewPosition.toValue = 25
+        let hookOpacity = CABasicAnimation(keyPath: "opacity")
+        hookOpacity.fromValue = 1
+        hookOpacity.toValue = 0
+        hookOpacity.fillMode = .forwards
+        hookOpacity.isRemovedOnCompletion = false
+        hookOpacity.duration = 0.15
+        hookOpacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        progressLayer.add(hookOpacity, forKey: nil)
         
-        let hookScale = CABasicAnimation(keyPath: "transform.scale")
-        hookScale.fromValue = 1
-        hookScale.toValue = 0.8
+        let numberViewOpacity = CABasicAnimation(keyPath: "opacity")
+        numberViewOpacity.fromValue = 0
+        numberViewOpacity.toValue = 1
+        numberViewOpacity.fillMode = .backwards
+        numberViewOpacity.isRemovedOnCompletion = false
+        numberViewOpacity.beginTime = CACurrentMediaTime() + 0.1
+        numberViewOpacity.duration = 0.25
+        numberViewOpacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        numberView.layer.add(numberViewOpacity, forKey: nil)
+        numberView.layer.opacity = 1
         
-        let hookGrop = CAAnimationGroup()
-        hookGrop.fillMode = .forwards
-        hookGrop.isRemovedOnCompletion = false
-        hookGrop.duration = 0.5
-        hookGrop.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        hookGrop.animations = [hookViewPosition, hookScale]
-        progressLayer.add(hookGrop, forKey: nil)
     }
     
     fileprivate  func showNextbtn() {
+        isUserInteractionEnabled = true
         let opacity = CABasicAnimation(keyPath: "opacity")
         opacity.fromValue = 0
         opacity.toValue = 1
@@ -211,30 +236,25 @@ class FXTutorialNextStepView: UIView {
         scaleViewboundsAni.isRemovedOnCompletion = true
         scaleViewboundsAni.delegate = self
         scaleViewboundsAni.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        scaleViewboundsAni.setValue("zoomOutAnimation", forKey: "name")
         isNeedLayout = false
         scaleView.setAnchorPoint(CGPoint(x: 1, y: 0.5))
         scaleView.layer.add(scaleViewboundsAni, forKey: nil)
-        
-        let hookViewPosition = CABasicAnimation(keyPath: "position.x")
-        hookViewPosition.fromValue = 25
-        hookViewPosition.toValue =  bounds.width - 50 * 0.5
-        hookViewPosition.fillMode = .forwards
-        
-        let opacity = CABasicAnimation(keyPath: "opacity")
-        opacity.fromValue = 1
-        opacity.toValue = 0
-        opacity.fillMode = .backwards
-        opacity.isRemovedOnCompletion = false
-        
-        let group = CAAnimationGroup()
-        group.duration = 0.5
-        group.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        group.fillMode = .forwards
-        group.delegate = self
-        group.setValue("zoomOutAnimation", forKey: "name")
-        group.isRemovedOnCompletion = false
-        group.animations = [opacity, hookViewPosition]
-        progressLayer.add(group, forKey: nil)
+    }
+    
+    fileprivate func dismiss() {
+        let numberViewOpacity = CABasicAnimation(keyPath: "opacity")
+        numberViewOpacity.fromValue = 1
+        numberViewOpacity.toValue = 0
+        numberViewOpacity.fillMode = .backwards
+        numberViewOpacity.isRemovedOnCompletion = false
+        numberViewOpacity.beginTime = CACurrentMediaTime() + 0.1
+        numberViewOpacity.duration = 0.1
+        numberViewOpacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        numberViewOpacity.setValue("dismiss", forKey: "name")
+        numberViewOpacity.delegate = self
+        layer.add(numberViewOpacity, forKey: nil)
+        layer.opacity = 0
     }
     
     @objc
@@ -261,18 +281,19 @@ extension FXTutorialNextStepView: CAAnimationDelegate {
             zoomOutAnimation()
         } else if let name = anim.value(forKey: "name") as? String?, name == "zoomOutAnimation" {
             scaleView.frame = CGRect(x: bounds.width - 50, y: 0, width: 50, height: 50)
-            scaleView.setNeedsLayout()
-            scaleView.showCoverAnimation()
-            scaleView.coverAnimationEnd = {[weak self] in
-                guard let weakSelf = self else {
-                    return
-                }
-                /// 还原所有的初始配置，为下一次动画做准备
-                weakSelf.scaleView.alpha = 0
-                weakSelf.scaleView.setAnchorPoint(CGPoint(x: 0.5, y: 0.5))
-                weakSelf.progressLayer.removeAllAnimations()
-                weakSelf.progressLayer.opacity = 0
-            }
+            dismiss()
+        } else if let name = anim.value(forKey: "name") as? String?, name == "dismiss" {
+            /// 还原所有的初始配置，为下一次动画做准备
+            scaleView.alpha = 0
+            layer.opacity = 0
+            scaleView.setAnchorPoint(CGPoint(x: 0.5, y: 0.5))
+            scaleView.layer.removeAllAnimations()
+            numberView.layer.removeAllAnimations()
+            progressLayer.removeAllAnimations()
+            layer.removeAllAnimations()
+            progressLayer.opacity = 0
+            isUserInteractionEnabled = false
+            numberView.layer.opacity = 0
         }
     }
 }

@@ -46,7 +46,18 @@ class HookViewController: UIViewController {
                 self.stepView.update(CGFloat($0))
             })
         .disposed(by: bag)
+        stepView.exitClickAction = {
+            debugPrint("exitClickAction")
+        }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        stepView.startShow {
+            
+        }
+    }
+    
 }
 
 
