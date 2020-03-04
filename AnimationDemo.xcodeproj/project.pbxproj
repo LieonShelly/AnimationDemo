@@ -96,6 +96,10 @@
 		CDD33F862368448500FD074A /* GuideStartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD33F852368448500FD074A /* GuideStartView.xib */; };
 		CDDB073923C96DC300C0AA97 /* NewAnimatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDB073723C96DC300C0AA97 /* NewAnimatedViewController.swift */; };
 		CDDB073A23C96DC300C0AA97 /* NewAnimatedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDDB073823C96DC300C0AA97 /* NewAnimatedViewController.xib */; };
+		CDEA86EC240F5C0A007BAA00 /* FXTutorialStepNumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA86EB240F5C0A007BAA00 /* FXTutorialStepNumView.swift */; };
+		CDEA86EE240F5C25007BAA00 /* FXScaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA86ED240F5C25007BAA00 /* FXScaleView.swift */; };
+		CDEA86F0240F5C48007BAA00 /* FXTutorialNextStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA86EF240F5C48007BAA00 /* FXTutorialNextStepView.swift */; };
+		CDEA86F2240F5C63007BAA00 /* FXTutorialStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA86F1240F5C63007BAA00 /* FXTutorialStepView.swift */; };
 		CDF9276C23CEC94100DD5183 /* ic_tutorial_alert_yls@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDF9276B23CEC94000DD5183 /* ic_tutorial_alert_yls@3x.png */; };
 		CDF9AB6C238FE86D00226E37 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF9AB6B238FE86D00226E37 /* PlayerViewController.swift */; };
 		CDFAAA78238A54D400918051 /* BtnProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFAAA76238A54D400918051 /* BtnProgressViewController.swift */; };
@@ -246,6 +250,10 @@
 		CDD33F852368448500FD074A /* GuideStartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuideStartView.xib; sourceTree = "<group>"; };
 		CDDB073723C96DC300C0AA97 /* NewAnimatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAnimatedViewController.swift; sourceTree = "<group>"; };
 		CDDB073823C96DC300C0AA97 /* NewAnimatedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewAnimatedViewController.xib; sourceTree = "<group>"; };
+		CDEA86EB240F5C0A007BAA00 /* FXTutorialStepNumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialStepNumView.swift; sourceTree = "<group>"; };
+		CDEA86ED240F5C25007BAA00 /* FXScaleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXScaleView.swift; sourceTree = "<group>"; };
+		CDEA86EF240F5C48007BAA00 /* FXTutorialNextStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialNextStepView.swift; sourceTree = "<group>"; };
+		CDEA86F1240F5C63007BAA00 /* FXTutorialStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialStepView.swift; sourceTree = "<group>"; };
 		CDF9276B23CEC94000DD5183 /* ic_tutorial_alert_yls@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_tutorial_alert_yls@3x.png"; sourceTree = "<group>"; };
 		CDF9AB6B238FE86D00226E37 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		CDFAAA76238A54D400918051 /* BtnProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnProgressViewController.swift; sourceTree = "<group>"; };
@@ -532,9 +540,21 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		CDEA86EA240F5BFE007BAA00 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				CDEA86EB240F5C0A007BAA00 /* FXTutorialStepNumView.swift */,
+				CDEA86ED240F5C25007BAA00 /* FXScaleView.swift */,
+				CDEA86EF240F5C48007BAA00 /* FXTutorialNextStepView.swift */,
+				CDEA86F1240F5C63007BAA00 /* FXTutorialStepView.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		CDFB49CB2350255F0083426A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CDEA86EA240F5BFE007BAA00 /* New Group */,
 				CDAEB81C23A9BEFC00B34420 /* ic_tutorial_alter_contine@3x.png */,
 				CDFB49CC235025820083426A /* TouchView.swift */,
 				CDFB49CE235047940083426A /* PinchView.swift */,
@@ -769,6 +789,7 @@
 				CD2112ED235D8800003B5202 /* MultiLanguageTexInputAlert.swift in Sources */,
 				CDA89DF82373C0C8000E3346 /* BannerViewController.swift in Sources */,
 				CDFB49CF235047940083426A /* PinchView.swift in Sources */,
+				CDEA86F2240F5C63007BAA00 /* FXTutorialStepView.swift in Sources */,
 				CD2112F1235D8B91003B5202 /* PadTypeCollectionViewCell.swift in Sources */,
 				CD6832FE23BAF7F9008C0C9F /* IAPViewController.swift in Sources */,
 				CD7D50B023613AD300FA9C07 /* PathSerivce.swift in Sources */,
@@ -787,6 +808,7 @@
 				CDA89DFB2373C13B000E3346 /* FXTransformLayout.swift in Sources */,
 				CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */,
 				CDBBC730239F6D5000B07EE9 /* SwipeViewController.swift in Sources */,
+				CDEA86EE240F5C25007BAA00 /* FXScaleView.swift in Sources */,
 				CD749ACE2356F72C00C357A5 /* FlipViewController.swift in Sources */,
 				CD725AD5234F0E1D00C11FB0 /* PanAnimation.swift in Sources */,
 				CDFF20482367E6B800800136 /* LongPressViewController.swift in Sources */,
@@ -798,6 +820,7 @@
 				CD68330E23BDE137008C0C9F /* IFHookMarkView.swift in Sources */,
 				CD3BC9AF234F313E003C8AA9 /* HomeViewController.swift in Sources */,
 				CD0537B8237934F100F9BDB5 /* EventSendViewController.swift in Sources */,
+				CDEA86EC240F5C0A007BAA00 /* FXTutorialStepNumView.swift in Sources */,
 				CD2112F8235DBA4D003B5202 /* Wireframe.swift in Sources */,
 				CD10BCF523694787007B4808 /* IFAnimaton.swift in Sources */,
 				CDF9AB6C238FE86D00226E37 /* PlayerViewController.swift in Sources */,
@@ -814,6 +837,7 @@
 				CD2FCFA5234D7C4000E28E5C /* TapAniamtion.swift in Sources */,
 				CD3BC9AC234F26A0003C8AA9 /* AnimationProtocol.swift in Sources */,
 				CDFB49D123504C070083426A /* ZoomScollVIew.swift in Sources */,
+				CDEA86F0240F5C48007BAA00 /* FXTutorialNextStepView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
