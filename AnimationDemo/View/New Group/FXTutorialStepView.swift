@@ -17,9 +17,9 @@ class FXTutorialStepView: UIView {
     }
     fileprivate lazy var stepNumberView: FXTutorialStepNumView = {
         let view = FXTutorialStepNumView()
-        view.backgroundColor = UIColor.gray
-        view.layer.cornerRadius = UISize.cycleSize.width * 0.5
-        view.layer.masksToBounds = true
+        view.backgroundColor = .clear //  UIColor(red: 37 / 255.0, green: 37 / 255.0, blue: 37 / 255.0, alpha: 0.16)
+//        view.layer.cornerRadius = UISize.stepNumViewSize.width * 0.5
+//        view.layer.masksToBounds = true
         view.alpha = 0
         return view
     }()
@@ -33,7 +33,9 @@ class FXTutorialStepView: UIView {
     fileprivate var isNeedLayout: Bool = true
     
     struct UISize {
-        static let cycleSize: CGSize = CGSize(width: 50, height: 50)
+        static let outterWidth: CGFloat = 3.2
+        static let nextStepViewSize: CGSize = CGSize(width: 44.fitiPhone5sSerires, height: 44.fitiPhone5sSerires)
+        static let stepNumViewSize: CGSize = CGSize(width: 44.fitiPhone5sSerires + outterWidth * 2, height: 44.fitiPhone5sSerires + outterWidth * 2)
     }
     
     override init(frame: CGRect) {
@@ -46,12 +48,15 @@ class FXTutorialStepView: UIView {
         super.layoutSubviews()
         if isNeedLayout {
             nextStepView.frame = CGRect(x: 0,
-                                        y: (bounds.height - UISize.cycleSize.height) * 0.5,
-                                        width: bounds.width, height: UISize.cycleSize.height)
+                                        y: (bounds.height + UISize.outterWidth * 2
+                                            - UISize.stepNumViewSize.height) * 0.5,
+                                        width: bounds.width - UISize.outterWidth,
+                                        height: UISize.nextStepViewSize.height)
             
-            stepNumberView.frame = CGRect(x: bounds.width - UISize.cycleSize.width,
-                                          y: (bounds.height - UISize.cycleSize.height) * 0.5,
-                                          width: UISize.cycleSize.width, height: UISize.cycleSize.height)
+            stepNumberView.frame = CGRect(x: bounds.width - UISize.stepNumViewSize.width,
+                                          y: (bounds.height - UISize.stepNumViewSize.height) * 0.5,
+                                          width: UISize.stepNumViewSize.width,
+                                          height: UISize.stepNumViewSize.height)
         }
         
     }

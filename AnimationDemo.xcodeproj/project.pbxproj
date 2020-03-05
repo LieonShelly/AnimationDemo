@@ -54,6 +54,7 @@
 		CD3BC9AF234F313E003C8AA9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC9AD234F313E003C8AA9 /* HomeViewController.swift */; };
 		CD3BC9B0234F313E003C8AA9 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3BC9AE234F313E003C8AA9 /* HomeViewController.xib */; };
 		CD436428234E17500047930B /* PinchAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD436427234E17500047930B /* PinchAnimation.swift */; };
+		CD57387F2410A99800D6E55F /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57387E2410A99700D6E55F /* VisualEffectView.swift */; };
 		CD6832FE23BAF7F9008C0C9F /* IAPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6832FD23BAF7F9008C0C9F /* IAPViewController.swift */; };
 		CD68330123BB4909008C0C9F /* iap_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD68330023BB4909008C0C9F /* iap_close@3x.png */; };
 		CD68330323BB491F008C0C9F /* ipa_bottom_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD68330223BB491F008C0C9F /* ipa_bottom_bg@3x.png */; };
@@ -210,6 +211,7 @@
 		CD3BC9AD234F313E003C8AA9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CD3BC9AE234F313E003C8AA9 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		CD436427234E17500047930B /* PinchAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchAnimation.swift; sourceTree = "<group>"; };
+		CD57387E2410A99700D6E55F /* VisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		CD6832FD23BAF7F9008C0C9F /* IAPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPViewController.swift; sourceTree = "<group>"; };
 		CD68330023BB4909008C0C9F /* iap_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iap_close@3x.png"; sourceTree = "<group>"; };
 		CD68330223BB491F008C0C9F /* ipa_bottom_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ipa_bottom_bg@3x.png"; sourceTree = "<group>"; };
@@ -560,6 +562,7 @@
 		CDFB49CB2350255F0083426A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CD57387E2410A99700D6E55F /* VisualEffectView.swift */,
 				CDEA86EA240F5BFE007BAA00 /* New Group */,
 				CDAEB81C23A9BEFC00B34420 /* ic_tutorial_alter_contine@3x.png */,
 				CDFB49CC235025820083426A /* TouchView.swift */,
@@ -828,6 +831,7 @@
 				CD3BC9AF234F313E003C8AA9 /* HomeViewController.swift in Sources */,
 				CD0537B8237934F100F9BDB5 /* EventSendViewController.swift in Sources */,
 				CDEA86EC240F5C0A007BAA00 /* FXTutorialStepNumView.swift in Sources */,
+				CD57387F2410A99800D6E55F /* VisualEffectView.swift in Sources */,
 				CD2112F8235DBA4D003B5202 /* Wireframe.swift in Sources */,
 				CD10BCF523694787007B4808 /* IFAnimaton.swift in Sources */,
 				CDF9AB6C238FE86D00226E37 /* PlayerViewController.swift in Sources */,

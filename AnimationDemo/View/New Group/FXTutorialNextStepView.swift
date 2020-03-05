@@ -15,7 +15,7 @@ class FXTutorialNextStepView: UIView {
         let btn = UIButton(type: .custom)
         btn.setTitle("下一步", for: .normal)
         btn.setTitleColor(UIColor.white, for: .normal)
-        btn.titleLabel?.font = UIFont.customFont(ofSize: 15, isBold: true)
+        btn.titleLabel?.font = UIFont.customFont(ofSize: 14, isBold: true)
         btn.layer.opacity = 0
         btn.addTarget(self, action: #selector(nextBtnAction), for: .touchUpInside)
         return btn
@@ -32,24 +32,24 @@ class FXTutorialNextStepView: UIView {
     }()
     fileprivate lazy var scaleView: FXScaleView = {
         let scaleView = FXScaleView()
-        scaleView.backgroundColor = .red
-        scaleView.layer.cornerRadius = 50 * 0.5
+        scaleView.backgroundColor = UIColor(hex: 0xf65685)
+        scaleView.layer.cornerRadius = UISize.scaleViewSize.height * 0.5
         scaleView.layer.masksToBounds = true
         scaleView.alpha = 0
         return scaleView
     }()
     fileprivate lazy var numberView: FXTutorialNumView = {
         let numberView = FXTutorialNumView()
-        numberView.backgroundColor = UIColor.blue.withAlphaComponent(0.4)
+        numberView.backgroundColor = UIColor(hex: 0xff6e99)
         numberView.layer.opacity = 0
         return numberView
       }()
     fileprivate var isNeedLayout: Bool = true
     fileprivate var zoomOutEnd: (() -> ())?
     struct UISize {
-      static let scaleViewSize: CGSize = CGSize(width: 50, height: 50)
-      static let numberViewSize: CGSize = CGSize(width: 45, height: 45)
-      static let nextBtnSize: CGSize = CGSize(width: 45, height: 40)
+      static let scaleViewSize: CGSize = CGSize(width: 44, height: 44)
+        static let numberViewSize: CGSize = CGSize(width: 38.4, height: 38.4)
+      static let nextBtnSize: CGSize = CGSize(width: 42, height: 20)
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -78,7 +78,7 @@ class FXTutorialNextStepView: UIView {
                                       size: UISize.numberViewSize)
             
             nextBtn.layer.position.y = bounds.height * 0.7
-            nextBtn.frame = CGRect(origin: CGPoint(x: 10,
+            nextBtn.frame = CGRect(origin: CGPoint(x: 20,
                                                    y: (bounds.height - UISize.nextBtnSize.height) * 0.5),
                                    size: UISize.nextBtnSize)
         }
@@ -87,14 +87,16 @@ class FXTutorialNextStepView: UIView {
     override func layoutSublayers(of layer: CALayer) {
         super.layoutSublayers(of: layer)
         if isNeedLayout {
-            progressLayer.frame = CGRect(x: bounds.width - 50, y: 0, width: 50, height: 50)
+            progressLayer.frame = CGRect(x: bounds.width - UISize.scaleViewSize.width,
+                                         y: (bounds.height - UISize.scaleViewSize.height) * 0.5,
+                                         width: UISize.scaleViewSize.width,
+                                         height: UISize.scaleViewSize.height)
             let hookPath = UIBezierPath()
-            
-            hookPath.move(to: CGPoint(x: 25, y: 0))
-            hookPath.addCurve(to: CGPoint(x: 13, y: 8), controlPoint1: CGPoint(x: 25, y: 0), controlPoint2: CGPoint(x: 16, y: 2.75))
-            hookPath.addCurve(to: CGPoint(x: 13, y: 21), controlPoint1: CGPoint(x: 10, y: 13.25), controlPoint2: CGPoint(x: 13, y: 21))
-            hookPath.addLine(to: CGPoint(x: 22, y: 32))
-            hookPath.addLine(to: CGPoint(x: 38, y: 14))
+            hookPath.move(to: CGPoint(x: 22, y: 0))
+            hookPath.addCurve(to: CGPoint(x: 12, y: 9), controlPoint1: CGPoint(x: 22, y: 0), controlPoint2: CGPoint(x: 14.5, y: 3.5))
+            hookPath.addCurve(to: CGPoint(x: 13, y: 20), controlPoint1: CGPoint(x: 9.5, y: 14.5), controlPoint2: CGPoint(x: 13, y: 20))
+            hookPath.addLine(to: CGPoint(x: 20, y: 27))
+            hookPath.addLine(to: CGPoint(x: 32, y: 16))
             progressLayer.path = hookPath.cgPath
         }
       
@@ -230,7 +232,9 @@ class FXTutorialNextStepView: UIView {
     fileprivate func zoomOutAnimation() {
         let scaleViewboundsAni = CABasicAnimation(keyPath: "bounds")
         scaleViewboundsAni.fromValue = self.bounds
-        scaleViewboundsAni.toValue = CGRect(x: bounds.width - 50, y: 0, width: 50, height: 50)
+        scaleViewboundsAni.toValue = CGRect(x: bounds.width - UISize.scaleViewSize.width,
+                                            y: bounds.height - UISize.scaleViewSize.height,
+            width: UISize.scaleViewSize.width, height: UISize.scaleViewSize.height)
         scaleViewboundsAni.duration = 0.5
         scaleViewboundsAni.fillMode = .forwards
         scaleViewboundsAni.isRemovedOnCompletion = true
@@ -280,7 +284,7 @@ extension FXTutorialNextStepView: CAAnimationDelegate {
         } else if let name = anim.value(forKey: "name") as? String?, name == "dismissNextBtn" {
             zoomOutAnimation()
         } else if let name = anim.value(forKey: "name") as? String?, name == "zoomOutAnimation" {
-            scaleView.frame = CGRect(x: bounds.width - 50, y: 0, width: 50, height: 50)
+            scaleView.frame = CGRect(x: bounds.width - 44, y: 0, width: 44, height: 44)
             dismiss()
         } else if let name = anim.value(forKey: "name") as? String?, name == "dismiss" {
             /// 还原所有的初始配置，为下一次动画做准备

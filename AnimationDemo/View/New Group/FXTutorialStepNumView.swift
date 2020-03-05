@@ -17,8 +17,8 @@ class FXTutorialStepNumView: UIView {
     }()
     lazy var progressLayer: CAShapeLayer = {
         let progressLayer = CAShapeLayer()
-        progressLayer.strokeColor = UIColor.red.cgColor
-        progressLayer.lineWidth = 3
+        progressLayer.strokeColor = UIColor(hex: 0xf65685)!.cgColor
+        progressLayer.lineWidth = 3.2
         progressLayer.lineCap = .round
         progressLayer.fillColor = UIColor.clear.cgColor
         progressLayer.strokeEnd = 0.5
@@ -27,7 +27,7 @@ class FXTutorialStepNumView: UIView {
   
     fileprivate lazy var numberView: FXTutorialNumView = {
         let numberView = FXTutorialNumView()
-        numberView.backgroundColor = UIColor.red.withAlphaComponent(0.4)
+        numberView.backgroundColor = UIColor(red: 37 / 255.0, green: 37 / 255.0, blue: 37 / 255.0, alpha: 0.16)
         return numberView
     }()
 
@@ -48,12 +48,14 @@ class FXTutorialStepNumView: UIView {
     
     override func layoutSublayers(of layer: CALayer) {
         super.layoutSublayers(of: layer)
-        progressLayer.frame = layer.bounds
-        let cyclePath = UIBezierPath(roundedRect: bounds, cornerRadius: bounds.width * 0.5).cgPath
+        let pathSize = CGSize(width: 44 + 3.2, height: 44 + 3.2)
+        
+        let cyclePath = UIBezierPath(roundedRect: CGRect(origin: CGPoint(x: 3.2 * 0.5, y: 3.2 * 0.5), size: pathSize),
+                                     cornerRadius: pathSize.width * 0.5).cgPath
         progressLayer.path = cyclePath
-        numberView.frame.size = CGSize(width: bounds.width - 5, height: bounds.height - 5)
+        numberView.frame.size = CGSize(width: 44, height: 44)
         numberView.center = CGPoint(x: bounds.width * 0.5, y: bounds.height * 0.5)
-        numberView.layer.cornerRadius = (bounds.width - 5) * 0.5
+        numberView.layer.cornerRadius = 44 * 0.5
         numberView.layer.masksToBounds = true
     }
    
@@ -76,17 +78,19 @@ extension FXTutorialStepNumView {
         progressLayer.strokeEnd = progress
         if progress >= 1 {
             let lineWidth = CABasicAnimation(keyPath: "lineWidth")
-            lineWidth.fromValue = 3
-            lineWidth.toValue = 1
+            lineWidth.fromValue = 3.2
+            lineWidth.toValue = 0
             lineWidth.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-            lineWidth.fillMode = .backwards
+            lineWidth.fillMode = .forwards
+            lineWidth.isRemovedOnCompletion = false
             lineWidth.setValue("lineWidth", forKey: "name")
             lineWidth.duration = 0.25
             lineWidth.delegate = self
             progressLayer.add(lineWidth, forKey: nil)
             self.animationEnd = compeletion
         } else {
-            progressLayer.lineWidth = 3
+            progressLayer.removeAllAnimations()
+            progressLayer.lineWidth = 3.2
         }
     }
     

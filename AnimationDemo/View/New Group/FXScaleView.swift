@@ -30,17 +30,17 @@ class FXScaleView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        coverView.layer.cornerRadius = 50 * 0.5
+        coverView.layer.cornerRadius = 44 * 0.5
         coverView.layer.masksToBounds = true
         coverView.frame = bounds
     }
     
     func showCoverAnimation() {
         coverView.alpha = 1
-        coverView.layer.position.x = bounds.width - 50 -  50 * 0.5
+        coverView.layer.position.x = bounds.width - 44 -  44 * 0.5
         let position = CABasicAnimation(keyPath: "position.x")
-        position.fromValue = bounds.width - 50 -  50 * 0.5
-        position.toValue = bounds.width - 50 * 0.5
+        position.fromValue = bounds.width - 44 -  44 * 0.5
+        position.toValue = bounds.width - 44 * 0.5
         position.fillMode = .forwards
         position.isRemovedOnCompletion = false
         position.duration = 0.25
@@ -48,7 +48,7 @@ class FXScaleView: UIView {
         position.setValue("showCoverAnimation", forKey: "name")
         position.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         coverView.layer.add(position, forKey: nil)
-        coverView.layer.position.x = bounds.width - 50 * 0.5
+        coverView.layer.position.x = bounds.width - 44 * 0.5
     }
 }
 

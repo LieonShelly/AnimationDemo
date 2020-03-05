@@ -30,14 +30,14 @@ class FXTutorialNumView: UIView {
         numeratorLabel.text = "1"
         numeratorLabel.textColor = UIColor.white
         numeratorLabel.textAlignment = .right
-        numeratorLabel.font = UIFont.customFont(ofSize: 11)
+        numeratorLabel.font = UIFont.customFont(ofSize: 17.5)
         return numeratorLabel
     }()
     fileprivate lazy var denominatorLabel: UILabel = {
         let denominatorLabel = UILabel()
         denominatorLabel.text = "4"
         denominatorLabel.textColor = UIColor.white
-        denominatorLabel.font = UIFont.customFont(ofSize: 14)
+        denominatorLabel.font = UIFont.customFont(ofSize: 17.5)
         denominatorLabel.textAlignment = .left
         return denominatorLabel
     }()
