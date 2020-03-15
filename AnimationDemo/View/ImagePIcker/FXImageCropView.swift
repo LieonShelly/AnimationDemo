@@ -9,10 +9,10 @@
 import UIKit
 
 class FXImageCropView: UIView {
-    internal lazy var blurCover: VisualEffectView = {
-        let maskView = VisualEffectView()
+    internal lazy var blurCover: UIView = { // VisualEffectView
+        let maskView = UIView()
         maskView.isUserInteractionEnabled = false
-        maskView.blurRadius = 20
+        maskView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         return maskView
     }()
     fileprivate lazy var overLayer: CropOverlay = {
@@ -38,6 +38,8 @@ class FXImageCropView: UIView {
         let blurCoverMaskShape = CAShapeLayer()
         return blurCoverMaskShape
     }()
+    fileprivate var horisonInset: CGFloat = 0
+    fileprivate var verticalInset: CGFloat = 0
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(scrollView)
@@ -78,9 +80,11 @@ class FXImageCropView: UIView {
 
 extension FXImageCropView: UIScrollViewDelegate {
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
+//        scrollView.contentSize = CGSize(width: (scrollView.contentSize.width + horisonInset), height: scrollView.contentSize.height + verticalInset)
         let offsetX = scrollView.bounds.size.width > scrollView.contentSize.width ? (scrollView.bounds.size.width - scrollView.contentSize.width) * 0.5 : 0.0
         let offsetY = scrollView.bounds.size.height > scrollView.contentSize.height ? (scrollView.bounds.size.height - scrollView.contentSize.height) * 0.5 : 0.0
         imageView.center = CGPoint(x: scrollView.contentSize.width * 0.5 + offsetX, y: scrollView.contentSize.height * 0.5 + offsetY)
+        debugPrint("contentSize: \(scrollView.contentSize)")
         
     }
     
@@ -93,7 +97,10 @@ extension FXImageCropView {
     func configImage(_ image: UIImage, overLayerSize: CGSize) {
         imageView.image = image
         self.overLayerSize = overLayerSize
-        imageView.frame = CGRect(x: 0, y: 0, width: scrollView.bounds.width, height: scrollView.bounds.width * image.size.height / image.size.width)
+        imageView.frame.size = CGSize(width: scrollView.bounds.width, height: scrollView.bounds.width * image.size.height / image.size.width)
+//        scrollView.contentSize = scrollView.bounds.size
+//        horisonInset = bounds.width - overLayerSize.width
+//        verticalInset = (bounds.height - overLayerSize.height) / 2
         scrollViewDidZoom(scrollView)
         setNeedsLayout()
     }
