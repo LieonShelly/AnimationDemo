@@ -37,6 +37,14 @@ extension HomeViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerClassWithCell(UITableViewCell.self)
+        //
+        let icon = ListItem("IConViewController", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = IConViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
         let tap = ListItem("点击类", handler: { [weak self] in
             guard let weakSelf = self else {
                 return
@@ -201,6 +209,16 @@ extension HomeViewController {
             let vcc = HookViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
+        // ImagePickerViewController
+        let picker = ListItem("ImagePickerViewController", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = ImagePickerViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        items.append(picker)
+        items.append(icon)
         items.append(hookViewController)
         items.append(tap)
         items.append(pinch)

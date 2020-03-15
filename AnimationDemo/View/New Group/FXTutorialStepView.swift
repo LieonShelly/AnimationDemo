@@ -17,9 +17,7 @@ class FXTutorialStepView: UIView {
     }
     fileprivate lazy var stepNumberView: FXTutorialStepNumView = {
         let view = FXTutorialStepNumView()
-        view.backgroundColor = .clear //  UIColor(red: 37 / 255.0, green: 37 / 255.0, blue: 37 / 255.0, alpha: 0.16)
-//        view.layer.cornerRadius = UISize.stepNumViewSize.width * 0.5
-//        view.layer.masksToBounds = true
+        view.backgroundColor = .clear
         view.alpha = 0
         return view
     }()
@@ -29,7 +27,7 @@ class FXTutorialStepView: UIView {
         view.backgroundColor = UIColor.clear
         return view
     }()
-    
+    fileprivate var isAnimating: Bool = false
     fileprivate var isNeedLayout: Bool = true
     
     struct UISize {
@@ -67,16 +65,26 @@ class FXTutorialStepView: UIView {
 }
 
 extension FXTutorialStepView {
-    func update(_ progress: CGFloat) {
-        stepNumberView.update(progress, compeletion: {[weak self] in
-            guard let weakSelf = self else {
-                return
+    func update(_ progress: CGFloat, isInterrupt: Bool = false) {
+        if isInterrupt {
+            stepNumberView.hiddenProgress {[weak self] in
+                guard let weakSelf = self else {
+                    return
+                }
+                weakSelf.nextStepView.showContinueBtn()
             }
-            weakSelf.nextStepView.showAnimation()
-            weakSelf.nextStepView.scaleAnimationEnd = {
-                weakSelf.stepNumberView.progressLayer.lineWidth = 0
-            }
-        })
+        } else {
+            isAnimating = progress >= 1
+            stepNumberView.update(progress, compeletion: {[weak self] in
+                guard let weakSelf = self else {
+                    return
+                }
+                weakSelf.nextStepView.showAnimation()
+                weakSelf.nextStepView.scaleAnimationEnd = {
+                    weakSelf.stepNumberView.progressLayer.lineWidth = 0
+                }
+            })
+        }
     }
     
     func startShow(_ compeletion: (() -> ())?) {

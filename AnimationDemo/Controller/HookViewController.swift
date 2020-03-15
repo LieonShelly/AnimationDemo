@@ -59,7 +59,7 @@ class HookViewController: UIViewController {
         view.addSubview(nameView)
         nameView.snp.makeConstraints {
             $0.left.equalTo(15)
-            $0.top.equalTo(view.snp.centerY)
+            $0.top.equalTo(view.snp.centerY).offset(200)
             $0.width.equalTo(120)
             $0.height.equalTo(44)
         }

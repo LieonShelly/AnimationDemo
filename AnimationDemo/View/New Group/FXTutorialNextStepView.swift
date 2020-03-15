@@ -11,6 +11,7 @@ import UIKit
 
 class FXTutorialNextStepView: UIView {
     var scaleAnimationEnd: (() -> ())?
+    fileprivate var isAnmating: Bool = false
     fileprivate lazy var nextBtn: UIButton = {
         let btn = UIButton(type: .custom)
         btn.setTitle("下一步", for: .normal)
@@ -104,6 +105,10 @@ class FXTutorialNextStepView: UIView {
     
     func showAnimation() {
         /// 出现
+        if isAnmating {
+            return
+        }
+        isAnmating = true
         layer.opacity = 1
         let scale = CABasicAnimation(keyPath: "transform.scale")
         scaleView.alpha = 1
@@ -118,8 +123,31 @@ class FXTutorialNextStepView: UIView {
         scaleView.layer.transform = CATransform3DMakeScale(1, 1, 1)
     }
     
+    func showContinueBtn() {
+        /// 出现
+        if isAnmating {
+            return
+        }
+        isAnmating = true
+        layer.opacity = 1
+        progressLayer.strokeColor = UIColor.clear.cgColor
+        progressLayer.opacity = 0
+        let scale = CABasicAnimation(keyPath: "transform.scale")
+        scaleView.alpha = 1
+        scale.fromValue = 0.5
+        scale.toValue = 1
+        scale.fillMode = .backwards
+        scale.duration = 0.25
+        scale.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        scale.setValue("showContinueBtn", forKey: "name")
+        scale.delegate = self
+        scaleView.layer.add(scale, forKey: nil)
+        scaleView.layer.transform = CATransform3DMakeScale(1, 1, 1)
+    }
+    
     fileprivate func startHookAnimation() {
         progressLayer.opacity = 1
+        progressLayer.strokeColor = UIColor.clear.cgColor
         let strokeStartAnimation = CABasicAnimation(keyPath: "strokeStart")
         strokeStartAnimation.fromValue = 0
         strokeStartAnimation.toValue = 0.4
@@ -145,7 +173,7 @@ class FXTutorialNextStepView: UIView {
         scaleViewboundsAni.toValue = self.bounds
         scaleViewboundsAni.duration = 0.5
         scaleViewboundsAni.fillMode = .forwards
-        scaleViewboundsAni.isRemovedOnCompletion = true
+        scaleViewboundsAni.isRemovedOnCompletion = false
         scaleViewboundsAni.delegate = self
         scaleViewboundsAni.setValue("boundsAnimation", forKey: "name")
         scaleViewboundsAni.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
@@ -237,7 +265,7 @@ class FXTutorialNextStepView: UIView {
             width: UISize.scaleViewSize.width, height: UISize.scaleViewSize.height)
         scaleViewboundsAni.duration = 0.5
         scaleViewboundsAni.fillMode = .forwards
-        scaleViewboundsAni.isRemovedOnCompletion = true
+        scaleViewboundsAni.isRemovedOnCompletion = false
         scaleViewboundsAni.delegate = self
         scaleViewboundsAni.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         scaleViewboundsAni.setValue("zoomOutAnimation", forKey: "name")
@@ -286,7 +314,10 @@ extension FXTutorialNextStepView: CAAnimationDelegate {
         } else if let name = anim.value(forKey: "name") as? String?, name == "zoomOutAnimation" {
             scaleView.frame = CGRect(x: bounds.width - 44, y: 0, width: 44, height: 44)
             dismiss()
-        } else if let name = anim.value(forKey: "name") as? String?, name == "dismiss" {
+        } else if let name = anim.value(forKey: "name") as? String?, name == "showContinueBtn" {
+            scaleAnimationEnd?()
+            expandBoundsAnimation()
+        }  else if let name = anim.value(forKey: "name") as? String?, name == "dismiss" {
             /// 还原所有的初始配置，为下一次动画做准备
             scaleView.alpha = 0
             layer.opacity = 0
@@ -298,6 +329,7 @@ extension FXTutorialNextStepView: CAAnimationDelegate {
             progressLayer.opacity = 0
             isUserInteractionEnabled = false
             numberView.layer.opacity = 0
+            isAnmating = false
         }
     }
 }
