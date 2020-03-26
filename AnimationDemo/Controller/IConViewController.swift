@@ -34,13 +34,30 @@ class IConViewController: UIViewController {
             $0.top.equalTo(manualVideoIcon.snp.bottom).offset(20)
         }
         
+        let btn0 = UIButton(type: .contactAdd)
+        view.addSubview(btn0)
+        btn0.snp.makeConstraints {
+            $0.size.equalTo(CGSize(width: 44, height: 44))
+            $0.centerX.equalToSuperview().offset(44 + 10)
+            $0.top.equalTo(manualVideoIcon.snp.bottom).offset(20)
+        }
+          
         btn.rx.tap
             .subscribe(onNext: { (_) in
-                self.manualVideoIcon.show(nil, isShowBreath: true)
+                self.manualVideoIcon.show()
             })
         .disposed(by: bag)
         
+        btn0.rx.tap
+            .subscribe(onNext: { (_) in
+                self.manualVideoIcon.dismiss()
+            })
+            .disposed(by: bag)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        manualVideoIcon.show()
+    }
 
 }

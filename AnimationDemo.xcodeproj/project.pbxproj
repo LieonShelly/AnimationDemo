@@ -581,9 +581,17 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		CDF0548B242C570300C9F645 /* ImageContrast */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ImageContrast;
+			sourceTree = "<group>";
+		};
 		CDFB49CB2350255F0083426A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CDF0548B242C570300C9F645 /* ImageContrast */,
 				CDB280B0241E115C00795A11 /* ImagePIcker */,
 				CD57387E2410A99700D6E55F /* VisualEffectView.swift */,
 				CDEA86EA240F5BFE007BAA00 /* New Group */,

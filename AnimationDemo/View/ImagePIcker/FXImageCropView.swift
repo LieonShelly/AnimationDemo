@@ -15,19 +15,6 @@ class FXImageCropView: UIView {
         maskView.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         return maskView
     }()
-    fileprivate lazy var overLayer: CropOverlay = {
-        let overLayer = CropOverlay()
-        overLayer.isMovable = false
-        overLayer.isUserInteractionEnabled = false
-        return overLayer
-    }()
-    
-    fileprivate lazy var scrollView: UIScrollView = {
-        let scrollView = UIScrollView()
-        scrollView.maximumZoomScale = 5
-        scrollView.minimumZoomScale = 1
-        return scrollView
-    }()
     
     fileprivate lazy var overLayerSize: CGSize = .zero
     fileprivate lazy var imageView: UIImageView = {
@@ -42,19 +29,12 @@ class FXImageCropView: UIView {
     fileprivate var verticalInset: CGFloat = 0
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(scrollView)
-        scrollView.delegate = self
-        scrollView.addSubview(imageView)
-        addSubview(overLayer)
+        addSubview(imageView)
         addSubview(blurCover)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        scrollView.frame = bounds
-        overLayer.frame = CGRect(x: (bounds.width - overLayerSize.width) * 0.5,
-                                 y: (bounds.height - overLayerSize.height) * 0.5,
-                                 width: overLayerSize.width, height: overLayerSize.height)
         blurCover.frame = bounds
     }
     
@@ -78,30 +58,40 @@ class FXImageCropView: UIView {
     }
 }
 
-extension FXImageCropView: UIScrollViewDelegate {
-    func scrollViewDidZoom(_ scrollView: UIScrollView) {
-//        scrollView.contentSize = CGSize(width: (scrollView.contentSize.width + horisonInset), height: scrollView.contentSize.height + verticalInset)
-        let offsetX = scrollView.bounds.size.width > scrollView.contentSize.width ? (scrollView.bounds.size.width - scrollView.contentSize.width) * 0.5 : 0.0
-        let offsetY = scrollView.bounds.size.height > scrollView.contentSize.height ? (scrollView.bounds.size.height - scrollView.contentSize.height) * 0.5 : 0.0
-        imageView.center = CGPoint(x: scrollView.contentSize.width * 0.5 + offsetX, y: scrollView.contentSize.height * 0.5 + offsetY)
-        debugPrint("contentSize: \(scrollView.contentSize)")
-        
-    }
-    
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return imageView
-    }
-}
 extension FXImageCropView {
     
     func configImage(_ image: UIImage, overLayerSize: CGSize) {
         imageView.image = image
         self.overLayerSize = overLayerSize
-        imageView.frame.size = CGSize(width: scrollView.bounds.width, height: scrollView.bounds.width * image.size.height / image.size.width)
-//        scrollView.contentSize = scrollView.bounds.size
-//        horisonInset = bounds.width - overLayerSize.width
-//        verticalInset = (bounds.height - overLayerSize.height) / 2
-        scrollViewDidZoom(scrollView)
+        let scale = min(overLayerSize.width / image.size.width, overLayerSize.height / image.size.height)
+        let scaleSize = CGSize(width: image.size.width * scale, height: image.size.height * scale)
+        imageView.frame.size = scaleSize
+        imageView.frame.origin.x = (bounds.width - scaleSize.width) * 0.5
+        imageView.frame.origin.y = (bounds.height - scaleSize.height) * 0.5
         setNeedsLayout()
+        
+        /**
+         CGFloat scale = 0.0f;
+           
+           // Work out the size of the image to fit into the content bounds
+           scale = MIN(CGRectGetWidth(bounds)/imageSize.width, CGRectGetHeight(bounds)/imageSize.height);
+           CGSize scaledImageSize = (CGSize){floorf(imageSize.width * scale), floorf(imageSize.height * scale)};
+           
+           // If an aspect ratio was pre-applied to the crop view, use that to work out the minimum scale the image needs to be to fit
+           CGSize cropBoxSize = CGSizeZero;
+           if (self.hasAspectRatio) {
+               CGFloat ratioScale = (self.aspectRatio.width / self.aspectRatio.height); //Work out the size of the width in relation to height
+               CGSize fullSizeRatio = (CGSize){boundsSize.height * ratioScale, boundsSize.height};
+               CGFloat fitScale = MIN(boundsSize.width/fullSizeRatio.width, boundsSize.height/fullSizeRatio.height);
+               cropBoxSize = (CGSize){fullSizeRatio.width * fitScale, fullSizeRatio.height * fitScale};
+               
+               scale = MAX(cropBoxSize.width/imageSize.width, cropBoxSize.height/imageSize.height);
+           }
+
+           //Whether aspect ratio, or original, the final image size we'll base the rest of the calculations off
+           CGSize scaledSize = (CGSize){floorf(imageSize.width * scale), floorf(imageSize.height * scale)};
+         
+         */
+       
     }
 }
