@@ -37,7 +37,23 @@ extension HomeViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.registerClassWithCell(UITableViewCell.self)
-        //
+        
+        
+        let refresh = ListItem("RefreshViewController", handler: { [weak self] in
+              guard let weakSelf = self else {
+                  return
+              }
+              let vcc = RefreshViewController()
+              weakSelf.navigationController?.pushViewController(vcc, animated: true)
+          })
+        
+        let image = ListItem("FXTutorialImageContrastVC", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = FXTutorialImageContrastVC()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
         let icon = ListItem("IConViewController", handler: { [weak self] in
             guard let weakSelf = self else {
                 return
@@ -217,6 +233,9 @@ extension HomeViewController {
             let vcc = ImagePickerViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
+        //
+        items.append(refresh)
+        items.append(image)
         items.append(picker)
         items.append(icon)
         items.append(hookViewController)
