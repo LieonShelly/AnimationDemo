@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		040DA1FB3CFF9D106FD25856 /* Pods_AnimationDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD1880775AA74D7272C6FCBE /* Pods_AnimationDemoUITests.framework */; };
-		18D4B3BCA7F9216DC6D8195E /* Pods_AnimationDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C442C914133EC5E3429937B /* Pods_AnimationDemoTests.framework */; };
 		897AC48E9CAFFD037A55AF1B /* Pods_AnimationDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F109C8DA037742590D54FFFA /* Pods_AnimationDemo.framework */; };
 		CD0230EC237A5F5200324E30 /* FXBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0230EA237A5F5200324E30 /* FXBannerCollectionViewCell.swift */; };
 		CD0230ED237A5F5200324E30 /* FXBannerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD0230EB237A5F5200324E30 /* FXBannerCollectionViewCell.xib */; };
@@ -22,20 +20,11 @@
 		CD10BCF523694787007B4808 /* IFAnimaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BCF423694787007B4808 /* IFAnimaton.swift */; };
 		CD1691CC23595B93006E73AD /* RecordAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1691CA23595B93006E73AD /* RecordAudioViewController.swift */; };
 		CD1691CD23595B93006E73AD /* RecordAudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1691CB23595B93006E73AD /* RecordAudioViewController.xib */; };
-		CD2112E0235D82BC003B5202 /* RxAtomic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112D8235D82BC003B5202 /* RxAtomic.framework */; };
-		CD2112E1235D82BC003B5202 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112D9235D82BC003B5202 /* RxRelay.framework */; };
-		CD2112E2235D82BC003B5202 /* RxSwiftExt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DA235D82BC003B5202 /* RxSwiftExt.framework */; };
-		CD2112E4235D82BC003B5202 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DC235D82BC003B5202 /* SnapKit.framework */; };
-		CD2112E5235D82BC003B5202 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DD235D82BC003B5202 /* RxSwift.framework */; };
-		CD2112E6235D82BC003B5202 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DE235D82BC003B5202 /* RxBlocking.framework */; };
-		CD2112E7235D82BC003B5202 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112DF235D82BC003B5202 /* RxCocoa.framework */; };
 		CD2112EA235D8550003B5202 /* MultiLanguageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2112E9235D8550003B5202 /* MultiLanguageAlert.swift */; };
 		CD2112ED235D8800003B5202 /* MultiLanguageTexInputAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2112EB235D8800003B5202 /* MultiLanguageTexInputAlert.swift */; };
 		CD2112EE235D8800003B5202 /* MultiLanguageTexInputAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2112EC235D8800003B5202 /* MultiLanguageTexInputAlert.xib */; };
 		CD2112F1235D8B91003B5202 /* PadTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2112EF235D8B91003B5202 /* PadTypeCollectionViewCell.swift */; };
 		CD2112F2235D8B91003B5202 /* PadTypeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2112F0235D8B91003B5202 /* PadTypeCollectionViewCell.xib */; };
-		CD2112F4235D8D49003B5202 /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112F3235D8D48003B5202 /* RxDataSources.framework */; };
-		CD2112F6235D8DD2003B5202 /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD2112F5235D8DD2003B5202 /* Differentiator.framework */; };
 		CD2112F8235DBA4D003B5202 /* Wireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2112F7235DBA4D003B5202 /* Wireframe.swift */; };
 		CD224D3B237CF3A50072442F /* FlurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD224D39237CF3A50072442F /* FlurViewController.swift */; };
 		CD224D3C237CF3A50072442F /* FlurViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD224D3A237CF3A50072442F /* FlurViewController.xib */; };
@@ -172,11 +161,6 @@
 /* Begin PBXFileReference section */
 		0C6CCD0DF6EB4F7BBBBD4CAF /* Pods-AnimationDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimationDemo.release.xcconfig"; path = "Target Support Files/Pods-AnimationDemo/Pods-AnimationDemo.release.xcconfig"; sourceTree = "<group>"; };
 		0DA9BE03584A8634EA1F5496 /* Pods-AnimationDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimationDemo.debug.xcconfig"; path = "Target Support Files/Pods-AnimationDemo/Pods-AnimationDemo.debug.xcconfig"; sourceTree = "<group>"; };
-		3BADA61F87775BB07856FC7B /* Pods-AnimationDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimationDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-AnimationDemoTests/Pods-AnimationDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		3C442C914133EC5E3429937B /* Pods_AnimationDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimationDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		45FA4916A3D60F9FFF64FA0E /* Pods-AnimationDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimationDemoTests.release.xcconfig"; path = "Target Support Files/Pods-AnimationDemoTests/Pods-AnimationDemoTests.release.xcconfig"; sourceTree = "<group>"; };
-		5DB79E403B43AB7CFD24194C /* Pods-AnimationDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimationDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-AnimationDemoUITests/Pods-AnimationDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		604859831A955FDCC3E9E1E0 /* Pods-AnimationDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnimationDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-AnimationDemoUITests/Pods-AnimationDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CD0230EA237A5F5200324E30 /* FXBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXBannerCollectionViewCell.swift; sourceTree = "<group>"; };
 		CD0230EB237A5F5200324E30 /* FXBannerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FXBannerCollectionViewCell.xib; sourceTree = "<group>"; };
 		CD0230F9237A9BE000324E30 /* FXTutorialPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialPanel.swift; sourceTree = "<group>"; };
@@ -190,7 +174,6 @@
 		CD10BCF423694787007B4808 /* IFAnimaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFAnimaton.swift; sourceTree = "<group>"; };
 		CD1691CA23595B93006E73AD /* RecordAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordAudioViewController.swift; sourceTree = "<group>"; };
 		CD1691CB23595B93006E73AD /* RecordAudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordAudioViewController.xib; sourceTree = "<group>"; };
-		CD1880775AA74D7272C6FCBE /* Pods_AnimationDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AnimationDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2112D8235D82BC003B5202 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
 		CD2112D9235D82BC003B5202 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		CD2112DA235D82BC003B5202 /* RxSwiftExt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwiftExt.framework; path = Carthage/Build/iOS/RxSwiftExt.framework; sourceTree = "<group>"; };
@@ -321,15 +304,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD2112F6235D8DD2003B5202 /* Differentiator.framework in Frameworks */,
-				CD2112F4235D8D49003B5202 /* RxDataSources.framework in Frameworks */,
-				CD2112E0235D82BC003B5202 /* RxAtomic.framework in Frameworks */,
-				CD2112E1235D82BC003B5202 /* RxRelay.framework in Frameworks */,
-				CD2112E2235D82BC003B5202 /* RxSwiftExt.framework in Frameworks */,
-				CD2112E4235D82BC003B5202 /* SnapKit.framework in Frameworks */,
-				CD2112E5235D82BC003B5202 /* RxSwift.framework in Frameworks */,
-				CD2112E6235D82BC003B5202 /* RxBlocking.framework in Frameworks */,
-				CD2112E7235D82BC003B5202 /* RxCocoa.framework in Frameworks */,
 				CD725AD3234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				897AC48E9CAFFD037A55AF1B /* Pods_AnimationDemo.framework in Frameworks */,
 			);
@@ -339,7 +313,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18D4B3BCA7F9216DC6D8195E /* Pods_AnimationDemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +320,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				040DA1FB3CFF9D106FD25856 /* Pods_AnimationDemoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,10 +331,6 @@
 			children = (
 				0DA9BE03584A8634EA1F5496 /* Pods-AnimationDemo.debug.xcconfig */,
 				0C6CCD0DF6EB4F7BBBBD4CAF /* Pods-AnimationDemo.release.xcconfig */,
-				3BADA61F87775BB07856FC7B /* Pods-AnimationDemoTests.debug.xcconfig */,
-				45FA4916A3D60F9FFF64FA0E /* Pods-AnimationDemoTests.release.xcconfig */,
-				5DB79E403B43AB7CFD24194C /* Pods-AnimationDemoUITests.debug.xcconfig */,
-				604859831A955FDCC3E9E1E0 /* Pods-AnimationDemoUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -500,8 +468,6 @@
 				CD2112DC235D82BC003B5202 /* SnapKit.framework */,
 				CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */,
 				F109C8DA037742590D54FFFA /* Pods_AnimationDemo.framework */,
-				3C442C914133EC5E3429937B /* Pods_AnimationDemoTests.framework */,
-				CD1880775AA74D7272C6FCBE /* Pods_AnimationDemoUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -675,7 +641,6 @@
 				CD2FCF68234D796100E28E5C /* Sources */,
 				CD2FCF69234D796100E28E5C /* Frameworks */,
 				CD2FCF6A234D796100E28E5C /* Resources */,
-				CD725AD0234EFF2700C11FB0 /* Carthage */,
 				CDACD95923698FCA008EA187 /* Embed Frameworks */,
 				2AD17B26EEB7167002E7D33F /* [CP] Embed Pods Frameworks */,
 			);
@@ -692,7 +657,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD2FCF99234D796500E28E5C /* Build configuration list for PBXNativeTarget "AnimationDemoTests" */;
 			buildPhases = (
-				CA62C74BA47BC343D65CB3AD /* [CP] Check Pods Manifest.lock */,
 				CD2FCF7E234D796500E28E5C /* Sources */,
 				CD2FCF7F234D796500E28E5C /* Frameworks */,
 				CD2FCF80234D796500E28E5C /* Resources */,
@@ -711,7 +675,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD2FCF9C234D796500E28E5C /* Build configuration list for PBXNativeTarget "AnimationDemoUITests" */;
 			buildPhases = (
-				97AA78150896ABE120F3D830 /* [CP] Check Pods Manifest.lock */,
 				CD2FCF89234D796500E28E5C /* Sources */,
 				CD2FCF8A234D796500E28E5C /* Frameworks */,
 				CD2FCF8B234D796500E28E5C /* Resources */,
@@ -847,78 +810,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AnimationDemo/Pods-AnimationDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		97AA78150896ABE120F3D830 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AnimationDemoUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CA62C74BA47BC343D65CB3AD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AnimationDemoTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CD725AD0234EFF2700C11FB0 /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/IQKeyboardManagerSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxAtomic.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwiftExt.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Differentiator.framework",
-			);
-			name = Carthage;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		DE82F95D198E4DD4E108C41D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1191,15 +1082,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0DA9BE03584A8634EA1F5496 /* Pods-AnimationDemo.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = YFZ6GPTEHY;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = AnimationDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1219,15 +1106,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0C6CCD0DF6EB4F7BBBBD4CAF /* Pods-AnimationDemo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = YFZ6GPTEHY;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = AnimationDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1245,7 +1128,6 @@
 		};
 		CD2FCF9A234D796500E28E5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3BADA61F87775BB07856FC7B /* Pods-AnimationDemoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1267,7 +1149,6 @@
 		};
 		CD2FCF9B234D796500E28E5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45FA4916A3D60F9FFF64FA0E /* Pods-AnimationDemoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1289,7 +1170,6 @@
 		};
 		CD2FCF9D234D796500E28E5C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DB79E403B43AB7CFD24194C /* Pods-AnimationDemoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1309,7 +1189,6 @@
 		};
 		CD2FCF9E234D796500E28E5C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 604859831A955FDCC3E9E1E0 /* Pods-AnimationDemoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

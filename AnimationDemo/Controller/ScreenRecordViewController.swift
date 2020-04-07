@@ -24,12 +24,10 @@ class ScreenRecordViewController: UIViewController, RPPreviewViewControllerDeleg
         super.viewDidLoad()
         RPScreenRecorder.shared().delegate = self
         recordButton.layer.cornerRadius = 32.5
-        window.addPannel()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        window.removePannel()
     }
     
     func viewReset() {
@@ -41,11 +39,9 @@ class ScreenRecordViewController: UIViewController, RPPreviewViewControllerDeleg
     
     @IBAction func recordButtonTapped() {
         if !isRecording {
-            window.startShowDot()
             startRecordingw()
             startRecording()
         } else {
-            window.dismiss()
             stopRecording()
         }
     }

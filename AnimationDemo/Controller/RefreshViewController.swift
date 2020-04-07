@@ -36,7 +36,6 @@ class RefreshViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         view.addSubview(tableView)
-        view.addSubview(aniamteView)
         tableView.contentInset = UIEdgeInsets(top: 24, left: 0, bottom: 0, right: 0)
         tableView.snp.makeConstraints {
             $0.edges.equalTo(0)
@@ -49,12 +48,15 @@ class RefreshViewController: UIViewController {
                 self.tableView.mj_header?.endRefreshing()
             }
         })
-        aniamteView.snp.makeConstraints {
-            $0.left.right.equalTo(0)
-            $0.height.equalTo(100)
-            $0.centerY.equalTo(view.snp.centerY).offset(20)
-        }
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let cells = tableView.visibleCells
+        for cell in cells {
+            (cell as? ContrastCell)?.contrastView.startAnimation(with: .leftToRightSlash)
+        }
     }
 }
 
@@ -89,7 +91,6 @@ extension RefreshViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == 1 && currentAnimateCell == nil {
             self.currentAnimateCell = cell as? ContrastCell
-            self.currentAnimateCell?.contrastView.startAnimation(with: .easeInEaseOut)
         }
     }
     
@@ -124,7 +125,7 @@ extension RefreshViewController {
         if currentAnimateCell != nil {
             currentAnimateCell?.contrastView.shoulRepeatAniamtion(false)
         }
-         cell.contrastView.startAnimation(with: .easeInEaseOut)
+         cell.contrastView.startAnimation(with: .staticLeftRight)
         currentAnimateCell = cell
     }
     
@@ -172,8 +173,6 @@ extension RefreshViewController {
             }
         }
         
-        /// 2. 处理快速滑动时，超出屏幕外的cell
-        
     }
     
     // 当前播放的动效的cell是否划出屏幕
@@ -207,7 +206,9 @@ extension RefreshViewController {
     }
 }
 
-
+/**
+同学们，从上周的打卡记录来看，发现大家健身打卡的积极性不是很高，可能是由于是疫情过后的第一周打卡，大家还没有及时调整过来，所以决定上周的健身打卡就作为我们健身打卡的热身周，从本周正式开始算每天的打卡记录，大家觉得这样可行不？
+ */
 class CellEntity {
     var isShowContranstView: Bool
     
@@ -232,6 +233,11 @@ class ContrastCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        contrastView.prepareForReuse()
     }
 
 }

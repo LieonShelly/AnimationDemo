@@ -19,46 +19,34 @@ class FXTutorialImageContrastView: UIView {
         /// 上下对比 - 静态
         case staticTopBottom
     }
-    fileprivate lazy var beforeText: NSMutableAttributedString = {
-        let text = "before"
-        let shadow = NSShadow()
-        shadow.shadowBlurRadius = 2
-        shadow.shadowColor = UIColor.black
-        let att = NSMutableAttributedString(string: text)
-        att.addAttributes([NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(0.7),
-                           NSAttributedString.Key.shadow: shadow], range: NSRange(location: 0, length: text.count))
-        return att
-    }()
-    fileprivate lazy var afterText: NSMutableAttributedString = {
-        let text = "after"
-        let shadow = NSShadow()
-        shadow.shadowBlurRadius = 2
-        shadow.shadowColor = UIColor.black
-        let att = NSMutableAttributedString(string: text)
-        att.addAttributes([NSAttributedString.Key.foregroundColor : UIColor.white.withAlphaComponent(0.7),
-                           NSAttributedString.Key.shadow: shadow], range: NSRange(location: 0, length: text.count))
-        return att
-    }()
     fileprivate lazy var beforeLabel: UILabel = {
         let label = UILabel()
+        label.text = "before"
+        label.textColor = UIColor(hex: 0x333333)
+        label.textAlignment = .center
+        label.font = UIFont.customFont(ofSize: 11, isBold: true)
         return label
     }()
     fileprivate lazy var afterLabel: UILabel = {
         let label = UILabel()
+        label.text = "after"
+        label.textColor = UIColor(hex: 0x333333)
+        label.textAlignment = .center
+        label.font = UIFont.customFont(ofSize: 11, isBold: true)
         return label
     }()
     fileprivate var animationType: AnimationType = .easeInEaseOut
     fileprivate lazy var originImageView: UIImageView = {
         let originImageView = UIImageView()
-        originImageView.image = UIImage(named: "meishi0")
+        originImageView.image = UIImage(named: "before")
         return originImageView
     }()
     fileprivate lazy var effectImageView: UIImageView = {
         let originImageView = UIImageView()
-        originImageView.image = UIImage(named: "meishi1")
+        originImageView.image = UIImage(named: "after")
         return originImageView
     }()
-    fileprivate var fontSize: CGFloat = 0
+    fileprivate var fontSize: CGFloat = 11
     fileprivate lazy var sperateLine: FXGradientView = {
         let view = FXGradientView()
         (view.layer as! CAGradientLayer).colors = [
@@ -70,27 +58,47 @@ class FXTutorialImageContrastView: UIView {
         (view.layer as! CAGradientLayer).endPoint = CGPoint(x: 0.5, y: 1)
         return view
     }()
-    fileprivate var isRepeat: Bool = true
+    fileprivate var isRepeat: Bool = false
+    fileprivate(set) var isAnimating: Bool = false
+    fileprivate lazy var beforeLabelContainer: UIView = UIView()
+    fileprivate lazy var afterLabelContainer: UIView = UIView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        clipsToBounds = true
+        beforeLabelContainer.backgroundColor = .white
+        afterLabelContainer.backgroundColor = .white
+        beforeLabelContainer.layer.cornerRadius = 9
+        afterLabelContainer.layer.cornerRadius = 9
+        beforeLabelContainer.layer.masksToBounds = true
+        afterLabelContainer.layer.masksToBounds = true
+        beforeLabelContainer.clipsToBounds = true
+        afterLabelContainer.clipsToBounds = true
         addSubview(originImageView)
         addSubview(effectImageView)
-        addSubview(beforeLabel)
-        addSubview(afterLabel)
+        addSubview(beforeLabelContainer)
+        addSubview(afterLabelContainer)
         addSubview(sperateLine)
+        beforeLabelContainer.addSubview(beforeLabel)
+        afterLabelContainer.addSubview(afterLabel)
         reset()
         originImageView.snp.makeConstraints { $0.edges.equalTo(0)}
-         effectImageView.snp.makeConstraints { $0.edges.equalTo(0)}
-        beforeLabel.snp.makeConstraints {
-            $0.left.equalTo(20)
-            $0.size.equalTo(CGSize(width: 50, height: 20))
+        effectImageView.snp.makeConstraints { $0.edges.equalTo(0)}
+        beforeLabelContainer.snp.makeConstraints {
+            $0.left.equalTo(-200)
+            $0.size.equalTo(CGSize(width: 50, height: 18))
             $0.bottom.equalTo(-20)
         }
-        afterLabel.snp.makeConstraints {
-            $0.left.equalTo(20)
-            $0.size.equalTo(CGSize(width: 50, height: 20))
+        afterLabelContainer.snp.makeConstraints {
+            $0.left.equalTo(-200)
+            $0.size.equalTo(CGSize(width: 50, height: 18))
             $0.bottom.equalTo(-20)
+        }
+        beforeLabel.snp.makeConstraints {
+            $0.edges.equalTo(0)
+        }
+        afterLabel.snp.makeConstraints {
+            $0.edges.equalTo(0)
         }
         sperateLine.snp.makeConstraints {
             $0.centerX.equalToSuperview()
@@ -107,7 +115,7 @@ class FXTutorialImageContrastView: UIView {
     }
     
     /// 开始动画
-    public func startAnimation(with type: AnimationType, fontSize: CGFloat = 18) {
+    public func startAnimation(with type: AnimationType, fontSize: CGFloat = 11) {
         animationType = type
         self.fontSize = fontSize
         reset()
@@ -123,10 +131,15 @@ class FXTutorialImageContrastView: UIView {
     }
     
     public func prepareForReuse() {
-        reset()
+        originImageView.layer.removeAllAnimations()
+        effectImageView.layer.removeAllAnimations()
+        originImageView.layer.mask = nil
+        effectImageView.layer.mask = nil
         originImageView.image = nil
         effectImageView.image = nil
+        reset()
     }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -189,6 +202,7 @@ extension FXTutorialImageContrastView {
             breforeLabelopacity.fillMode = .forwards
             afterLabel.layer.add(breforeLabelopacity, forKey: nil)
         }
+        isAnimating = true
     }
     
     /// 效果图出现 after label出现  before label消失
@@ -230,224 +244,421 @@ extension FXTutorialImageContrastView {
         
     }
     
-    /// 中间位置的斜线 /
+    /// 中间位置的直线 /
     fileprivate func createMediumSlashPath() -> UIBezierPath {
         let path1 = UIBezierPath()
         path1.move(to: .zero)
-        path1.addLine(to: CGPoint(x: bounds.width * 0.5 + 40, y: 0))
-        path1.addLine(to: CGPoint(x: bounds.width * 0.5 + 40 - 40, y: bounds.height))
+        path1.addLine(to: CGPoint(x: bounds.width + 40, y: 0))
+        path1.addLine(to: CGPoint(x: bounds.width + 40, y: bounds.height))
         path1.addLine(to: CGPoint(x: 0, y: bounds.height))
         path1.close()
         return path1
     }
     
-    /// 起始位置的斜线 /
+    /// 起始位置的直线  /
     fileprivate func createStartSlashPath() -> UIBezierPath {
         let path0 = UIBezierPath()
         path0.move(to: .zero)
         path0.addLine(to: CGPoint(x: 0, y: 0))
-        path0.addLine(to: CGPoint(x: -40, y: bounds.height))
         path0.addLine(to: CGPoint(x: 0, y: bounds.height))
+        path0.addLine(to: CGPoint(x: -40, y: bounds.height))
+        path0.addLine(to: CGPoint(x: -40, y: 0))
         path0.close()
         return path0
     }
     
-    /// 斜线扫描：从左边到中间
+    /// beforelabel从下至上出现
+    fileprivate func showBeforeLabelFromBotttom() {
+        bringSubviewToFront(beforeLabelContainer)
+        beforeLabel.layer.position.y = beforeLabelContainer.bounds.height * 1.5
+        let opacity = CAKeyframeAnimation(keyPath: "position.y")
+        opacity.values = [beforeLabelContainer.bounds.height * 1.5, beforeLabelContainer.bounds.height * 0.5]
+        opacity.beginTime = CACurrentMediaTime() //+ 0.5 + 1.5
+        opacity.duration = 0.5
+        opacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        opacity.delegate = self
+        opacity.setValue("showBeforeLabelFromBotttom", forKey: "name")
+        opacity.isRemovedOnCompletion = false
+        opacity.fillMode = .forwards
+        beforeLabel.layer.add(opacity, forKey: nil)
+    }
+    
+    /// beforelabel 中间位置至上消失
+    fileprivate func dismissBeforeLabelToTop() {
+        bringSubviewToFront(beforeLabelContainer)
+        beforeLabel.layer.position.y = beforeLabelContainer.bounds.height * 1.5
+        let opacity = CAKeyframeAnimation(keyPath: "position.y")
+        opacity.values = [beforeLabelContainer.bounds.height * 0.5, -beforeLabelContainer.bounds.height * 1.5]
+        opacity.duration = 0.5
+        opacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        opacity.delegate = self
+        opacity.setValue("dismissBeforeLabelToTop", forKey: "name")
+        opacity.isRemovedOnCompletion = false
+        opacity.fillMode = .forwards
+        beforeLabel.layer.add(opacity, forKey: nil)
+    }
+    
+    /// afterlabel从下至上出现
+    fileprivate func showAfterLabelFromBotttom() {
+        bringSubviewToFront(afterLabelContainer)
+        afterLabel.layer.position.y = afterLabelContainer.bounds.height * 1.5
+        let opacity = CAKeyframeAnimation(keyPath: "position.y")
+        opacity.values = [beforeLabelContainer.bounds.height * 1.5, beforeLabelContainer.bounds.height * 0.5]
+        opacity.beginTime = CACurrentMediaTime() //+ 0.5 + 1.5
+        opacity.duration = 0.5
+        opacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        opacity.delegate = self
+        opacity.setValue("showAfterLabelFromBotttom", forKey: "name")
+        opacity.isRemovedOnCompletion = false
+        opacity.fillMode = .forwards
+        afterLabel.layer.add(opacity, forKey: nil)
+    }
+    
+    /// afterlabel 中间位置至上消失
+    fileprivate func dismissAfterLabelToTop() {
+        bringSubviewToFront(afterLabelContainer)
+        afterLabel.layer.position.y = afterLabelContainer.bounds.height * 1.5
+        let opacity = CAKeyframeAnimation(keyPath: "position.y")
+        opacity.values = [beforeLabelContainer.bounds.height * 0.5, -beforeLabelContainer.bounds.height * 1.5]
+        opacity.duration = 0.5
+        opacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        opacity.delegate = self
+        opacity.setValue("dismissAfterLabelToTop", forKey: "name")
+        opacity.isRemovedOnCompletion = false
+        opacity.fillMode = .forwards
+        afterLabel.layer.add(opacity, forKey: nil)
+    }
+    
+    /// 斜线扫描：从左边到右边
     fileprivate func originImageViewSlashLeftToMedium() {
         bringSubviewToFront(effectImageView)
         bringSubviewToFront(originImageView)
-        bringSubviewToFront(beforeLabel)
-        bringSubviewToFront(afterLabel)
-        let shape = CAShapeLayer()
-        originImageView.layer.mask = shape
-        let path0 = createStartSlashPath()
-        let path1 = createMediumSlashPath()
-        let firstPathAnimation = CAKeyframeAnimation(keyPath: "path")
-        firstPathAnimation.values = [path0.cgPath, path1.cgPath]
-        firstPathAnimation.beginTime = CACurrentMediaTime() + 1.5
-        firstPathAnimation.duration = 1
-        firstPathAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        firstPathAnimation.delegate = self
-        firstPathAnimation.setValue("originImageViewSlashLeftToMedium", forKey: "name")
-        firstPathAnimation.isRemovedOnCompletion = false
-        firstPathAnimation.fillMode = .forwards
-        shape.add(firstPathAnimation, forKey: nil)
+        bringSubviewToFront(beforeLabelContainer)
+        bringSubviewToFront(sperateLine)
+        expandBeforeLabelContainer()
         
-        /// 显示label
-        let opacity = CAKeyframeAnimation(keyPath: "opacity")
-        opacity.values = [0, 1]
-        opacity.beginTime = CACurrentMediaTime() + 0.5 + 1.5
-        opacity.duration = 0.5
-        opacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        opacity.delegate = self
-        opacity.setValue("showLabel", forKey: "name")
-        opacity.isRemovedOnCompletion = false
-        opacity.fillMode = .forwards
-        beforeLabel.layer.add(opacity, forKey: nil)
-        afterLabel.layer.add(opacity, forKey: nil)
+        let shape = CAShapeLayer()
+        shape.frame = bounds
+        originImageView.layer.mask = shape
+        let path = createMediumSlashPath()
+        shape.path = path.cgPath
+        
+        //// 移动mask
+        let maskPosition = CAKeyframeAnimation(keyPath: "position.x")
+        maskPosition.values = [bounds.width * 0.5, bounds.width * 1.5]
+        maskPosition.beginTime = CACurrentMediaTime() + 1.5
+        maskPosition.duration = 1
+        maskPosition.timingFunction = CAMediaTimingFunction(name: .linear)
+        maskPosition.delegate = self
+        maskPosition.setValue("originImageViewSlashLeftToRight", forKey: "name")
+        maskPosition.isRemovedOnCompletion = false
+        maskPosition.fillMode = .forwards
+        shape.add(maskPosition, forKey: nil)
+        
+        /// 移动分割线
+        let sperateLinePosition = CAKeyframeAnimation(keyPath: "position.x")
+        sperateLinePosition.values = [0, bounds.width]
+        sperateLinePosition.beginTime = CACurrentMediaTime() + 1.5
+        sperateLinePosition.duration = 1
+        sperateLinePosition.timingFunction = CAMediaTimingFunction(name: .linear)
+        sperateLinePosition.delegate = self
+        sperateLinePosition.isRemovedOnCompletion = false
+        sperateLinePosition.fillMode = .forwards
+        sperateLine.layer.add(sperateLinePosition, forKey: nil)
+        isAnimating = true
     }
     
-     /// 斜线扫描：从中间到左边
-    fileprivate func originImageViewSlashMediumToLeft() {
-        bringSubviewToFront(effectImageView)
-        bringSubviewToFront(originImageView)
-        bringSubviewToFront(beforeLabel)
-        bringSubviewToFront(afterLabel)
-        let path0 = createStartSlashPath()
-        let path1 = createMediumSlashPath()
-        let pathAnimation = CAKeyframeAnimation(keyPath: "path")
-        pathAnimation.values = [path1.cgPath, path0.cgPath]
-        pathAnimation.beginTime = CACurrentMediaTime() + 1
-        pathAnimation.duration = 1
-        pathAnimation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        pathAnimation.delegate = self
-        pathAnimation.setValue("originImageViewSlashMediumToLeft", forKey: "name")
-        pathAnimation.isRemovedOnCompletion = false
-        pathAnimation.fillMode = .forwards
-        (originImageView.layer.mask as? CAShapeLayer)?.add(pathAnimation, forKey: nil)
-        /// 隐藏label
+    /// 将原图的mask恢复到原始位置
+    fileprivate func originImageViewMaskToMedium() {
+
+        let maskPosition = CAKeyframeAnimation(keyPath: "position.x")
+        maskPosition.values = [bounds.width * 1.5, bounds.width * 0.5]
+        maskPosition.duration = 2
+        maskPosition.timingFunction = CAMediaTimingFunction(name: .linear)
+        maskPosition.delegate = self
+        maskPosition.setValue("originImageViewMaskToMedium", forKey: "name")
+        maskPosition.isRemovedOnCompletion = false
+        maskPosition.fillMode = .forwards
+        originImageView.layer.mask?.add(maskPosition, forKey: nil)
+    }
+    /// 改变原图的opacity为0
+    fileprivate func originImageViewDismiss(_ duration: Double = 0.5) {
         let opacity = CAKeyframeAnimation(keyPath: "opacity")
         opacity.values = [1, 0]
-        opacity.beginTime = CACurrentMediaTime() + 1
-        opacity.duration = 0.5
+        opacity.duration = duration
         opacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         opacity.delegate = self
-        opacity.setValue("showLabel", forKey: "name")
+        opacity.setValue("originImageViewDismiss", forKey: "name")
         opacity.isRemovedOnCompletion = false
         opacity.fillMode = .forwards
-        beforeLabel.layer.add(opacity, forKey: nil)
-        afterLabel.layer.add(opacity, forKey: nil)
+        originImageView.layer.add(opacity, forKey: nil)
+    }
+    /// 原图出现
+    fileprivate func originImageViewShow(_ duration: Double = 0.5) {
+         let opacity = CAKeyframeAnimation(keyPath: "opacity")
+         opacity.values = [0, 1]
+         opacity.duration = duration
+         opacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+         opacity.delegate = self
+         opacity.setValue("originImageViewShow", forKey: "name")
+         opacity.isRemovedOnCompletion = false
+         opacity.fillMode = .forwards
+         originImageView.layer.add(opacity, forKey: nil)
+     }
+    /// 效果图放大动画
+    fileprivate func effectImageZoomIn() {
+        let scale = CAKeyframeAnimation(keyPath: "transform.scale")
+        scale.values = [1, 1.1]
+        scale.beginTime = CACurrentMediaTime()
+        scale.duration = 1
+        scale.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        scale.delegate = self
+        scale.setValue("effectImageZoomIn", forKey: "name")
+        scale.isRemovedOnCompletion = false
+        scale.fillMode = .forwards
+        effectImageView.layer.add(scale, forKey: nil)
     }
     
+    /// 原图放大动画
+    fileprivate func originImageZoomIn() {
+        let scale = CAKeyframeAnimation(keyPath: "transform.scale")
+        scale.values = [1, 1.1]
+        scale.beginTime = CACurrentMediaTime()
+        scale.duration = 1
+        scale.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        scale.delegate = self
+        scale.setValue("effectImageZoomIn", forKey: "name")
+        scale.isRemovedOnCompletion = false
+        scale.fillMode = .forwards
+        originImageView.layer.add(scale, forKey: nil)
+    }
+    
+    /// 效果图缩小动画
+    fileprivate func effectImageZoomOut() {
+        let scale = CAKeyframeAnimation(keyPath: "transform.scale")
+        scale.values = [1.1, 1]
+        scale.beginTime = CACurrentMediaTime()
+        scale.duration = 1
+        scale.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        scale.delegate = self
+        scale.setValue("effectImageZoomOut", forKey: "name")
+        scale.isRemovedOnCompletion = false
+        scale.fillMode = .forwards
+        effectImageView.layer.add(scale, forKey: nil)
+    }
+    
+    /// 原图缩小动画
+    fileprivate func originImageZoomOut() {
+        let scale = CAKeyframeAnimation(keyPath: "transform.scale")
+        scale.values = [1.1, 1]
+        scale.beginTime = CACurrentMediaTime()
+        scale.duration = 1
+        scale.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        scale.delegate = self
+        scale.setValue("originImageZoomOut", forKey: "name")
+        scale.isRemovedOnCompletion = false
+        scale.fillMode = .forwards
+        originImageView.layer.add(scale, forKey: nil)
+    }
+    
+    /// beforeLabelContainer展开
+    fileprivate func expandBeforeLabelContainer() {
+        let scale = CAKeyframeAnimation(keyPath: "transform.scale.x")
+        scale.values = [0, 1]
+        scale.duration = 0.25
+        scale.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        scale.delegate = self
+        scale.setValue("expandBeforeLabelContainer", forKey: "name")
+        scale.isRemovedOnCompletion = false
+        scale.fillMode = .forwards
+        beforeLabelContainer.layer.add(scale, forKey: nil)
+    }
+    
+    /// afterLabelContainer展开
+    fileprivate func expandAfterLabelContainer() {
+        let scale = CAKeyframeAnimation(keyPath: "transform.scale.x")
+        scale.values = [0, 1]
+        scale.duration = 0.25
+        scale.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        scale.delegate = self
+        scale.setValue("expandAfterLabelContainer", forKey: "name")
+        scale.isRemovedOnCompletion = false
+        scale.fillMode = .forwards
+        afterLabelContainer.layer.add(scale, forKey: nil)
+    }
+    
+    
+    /// beforeLabelContainer缩小
+    fileprivate func zoomOutBeforeLabelContainer() {
+        let scale = CAKeyframeAnimation(keyPath: "transform.scale.x")
+        scale.values = [1, 0]
+        scale.duration = 0.25
+        scale.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        scale.delegate = self
+        scale.setValue("zoomOutBeforeLabelContainer", forKey: "name")
+        scale.isRemovedOnCompletion = false
+        scale.fillMode = .forwards
+        beforeLabelContainer.layer.add(scale, forKey: nil)
+    }
+    
+    /// afterLabelContainer缩小
+    fileprivate func zoomOutAfterLabelContainer() {
+        let scale = CAKeyframeAnimation(keyPath: "transform.scale.x")
+        scale.values = [1, 0]
+        scale.duration = 0.25
+        scale.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        scale.delegate = self
+        scale.setValue("zoomOutAfterLabelContainer", forKey: "name")
+        scale.isRemovedOnCompletion = false
+        scale.fillMode = .forwards
+        afterLabelContainer.layer.add(scale, forKey: nil)
+    }
+    
+    
     fileprivate func reset() {
-        beforeLabel.layer.mask = nil
-        beforeLabel.layer.opacity = 0
-        afterLabel.layer.opacity = 0
-        beforeLabel.layer.mask?.removeAllAnimations()
+        originImageView.layer.mask = nil
+        originImageView.layer.removeAllAnimations()
+        effectImageView.layer.removeAllAnimations()
         beforeLabel.layer.removeAllAnimations()
-        afterLabel.layer.mask?.removeAllAnimations()
         afterLabel.layer.removeAllAnimations()
         sperateLine.isHidden = true
         layer.removeAllAnimations()
         isRepeat = true
+        beforeLabel.layer.position.y = beforeLabelContainer.bounds.height * 1.5
+        afterLabel.layer.position.y = afterLabelContainer.bounds.height * 1.5
+        
+        let scale = CAKeyframeAnimation(keyPath: "transform.scale.x")
+        scale.values = [1, 0]
+        scale.duration = 0.001
+        scale.timingFunction = CAMediaTimingFunction(name: .linear)
+        scale.delegate = self
+        scale.setValue("zoomOutBeforeLabelContainer", forKey: "name")
+        scale.isRemovedOnCompletion = false
+        scale.fillMode = .forwards
+        beforeLabelContainer.layer.add(scale, forKey: nil)
+        afterLabelContainer.layer.add(scale, forKey: nil)
+        
+        
     }
     
     fileprivate func resetUI(_ fontSize: CGFloat) {
-          beforeLabel.font = UIFont.customFont(ofSize: fontSize)
-          afterLabel.font = UIFont.customFont(ofSize: fontSize)
-          self.fontSize = fontSize
-          let style = NSMutableParagraphStyle()
-          style.alignment = .left
-          style.lineSpacing = 0
-          beforeText.addAttributes([NSAttributedString.Key.paragraphStyle: style,
-                                    NSAttributedString.Key.font: UIFont.customFont(ofSize: fontSize, isBold: true)],
-                                   range: NSRange(location: 0, length: beforeText.string.count))
-          afterText.addAttributes([NSAttributedString.Key.font: UIFont.customFont(ofSize: fontSize, isBold: true),
-                                   NSAttributedString.Key.paragraphStyle: style],
-                                  range: NSRange(location: 0, length: afterText.string.count))
-          let beforeSize = beforeText.boundingRect(with: CGSize(width: 100, height: CGFloat.infinity), options: [.usesLineFragmentOrigin], context: nil).size
-          let afterSize = beforeText.boundingRect(with: CGSize(width: 100, height: CGFloat.infinity), options: [.usesLineFragmentOrigin], context: nil).size
-          beforeLabel.attributedText = beforeText
-          afterLabel.attributedText = afterText
-          switch animationType {
-          case .easeInEaseOut:
-              beforeLabel.snp.remakeConstraints {
-                  $0.left.equalTo(20)
-                  $0.bottom.equalTo(-10)
-                  $0.size.equalTo(beforeSize)
-              }
-              afterLabel.snp.remakeConstraints {
-                  $0.left.equalTo(beforeLabel.snp.left)
-                  $0.centerY.equalTo(beforeLabel.snp.centerY)
-                  $0.size.equalTo(afterSize)
-              }
-              layoutIfNeeded()
-          case .leftToRightSlash:
-              beforeLabel.snp.remakeConstraints {
-                  $0.left.equalTo(20)
-                  $0.bottom.equalTo(-10)
-                  $0.size.equalTo(beforeSize)
-              }
-              afterLabel.snp.remakeConstraints {
-                  $0.right.equalTo(-20)
-                  $0.centerY.equalTo(beforeLabel.snp.centerY)
-                  $0.size.equalTo(afterSize)
-              }
-              layoutIfNeeded()
-          case .staticLeftRight:
-              (sperateLine.layer as! CAGradientLayer).startPoint = CGPoint(x: 0.5, y: 0.0)
-              (sperateLine.layer as! CAGradientLayer).endPoint = CGPoint(x: 0.5, y: 1)
-              beforeLabel.layer.opacity = 1
-              afterLabel.layer.opacity = 1
-              sperateLine.isHidden = false
-              bringSubviewToFront(effectImageView)
-              bringSubviewToFront(originImageView)
-              bringSubviewToFront(beforeLabel)
-              bringSubviewToFront(afterLabel)
-              bringSubviewToFront(sperateLine)
-              sperateLine.snp.remakeConstraints {
-                  $0.centerX.equalToSuperview()
-                  $0.width.equalTo(2)
-                  $0.top.equalTo(0)
-                  $0.bottom.equalTo(0)
-              }
-              effectImageView.snp.remakeConstraints {
-                  $0.left.top.bottom.equalToSuperview()
-                  $0.right.equalTo(snp.centerX)
-              }
-              originImageView.snp.remakeConstraints {
-                  $0.right.top.bottom.equalToSuperview()
-                  $0.left.equalTo(snp.centerX)
-              }
-              beforeLabel.snp.remakeConstraints {
-                  $0.left.equalTo(20)
-                  $0.bottom.equalTo(-10)
-                  $0.size.equalTo(beforeSize)
-              }
-              afterLabel.snp.remakeConstraints {
-                  $0.right.equalTo(-5)
-                  $0.centerY.equalTo(beforeLabel.snp.centerY)
-                  $0.size.equalTo(afterSize)
-              }
-              layoutIfNeeded()
-          case .staticTopBottom:
-              (sperateLine.layer as! CAGradientLayer).startPoint = CGPoint(x: 0, y: 0.5)
-              (sperateLine.layer as! CAGradientLayer).endPoint = CGPoint(x: 1, y: 0.5)
-              beforeLabel.layer.opacity = 1
-              afterLabel.layer.opacity = 1
-              sperateLine.isHidden = false
-              bringSubviewToFront(effectImageView)
-              bringSubviewToFront(originImageView)
-              bringSubviewToFront(beforeLabel)
-              bringSubviewToFront(afterLabel)
-              bringSubviewToFront(sperateLine)
-              sperateLine.snp.remakeConstraints {
-                  $0.centerY.equalToSuperview()
-                  $0.height.equalTo(2)
-                  $0.left.equalTo(0)
-                  $0.right.equalTo(0)
-              }
-              originImageView.snp.remakeConstraints {
-                  $0.left.top.right.equalToSuperview()
-                  $0.bottom.equalTo(snp.centerY)
-              }
-              effectImageView.snp.remakeConstraints {
-                  $0.right.bottom.left.equalToSuperview()
-                  $0.top.equalTo(snp.centerY)
-              }
-              beforeLabel.snp.remakeConstraints {
-                  $0.left.equalTo(20)
-                  $0.top.equalTo(10)
-                  $0.size.equalTo(beforeSize)
-              }
-              afterLabel.snp.remakeConstraints {
-                  $0.left.equalTo(20)
-                  $0.bottom.equalTo(-10)
-                  $0.size.equalTo(afterSize)
-              }
-              layoutIfNeeded()
-          }
-      }
+        let beforeSize = CGSize(width: 52, height: 18)
+        let afterSize = CGSize(width: 52, height: 18)
+        switch animationType {
+        case .easeInEaseOut:
+            beforeLabelContainer.snp.remakeConstraints {
+                $0.left.equalTo(20)
+                $0.bottom.equalTo(-10)
+                $0.size.equalTo(beforeSize)
+            }
+            afterLabelContainer.snp.remakeConstraints {
+                $0.left.equalTo(beforeLabelContainer.snp.left)
+                $0.centerY.equalTo(beforeLabelContainer.snp.centerY)
+                $0.size.equalTo(afterSize)
+            }
+            layoutIfNeeded()
+        case .leftToRightSlash:
+            beforeLabelContainer.snp.remakeConstraints {
+                $0.left.equalTo(20)
+                $0.bottom.equalTo(-10)
+                $0.size.equalTo(beforeSize)
+            }
+            afterLabelContainer.snp.remakeConstraints {
+                $0.right.equalTo(-20)
+                $0.centerY.equalTo(beforeLabelContainer.snp.centerY)
+                $0.size.equalTo(afterSize)
+            }
+            (sperateLine.layer as! CAGradientLayer).startPoint = CGPoint(x: 0.5, y: 0.0)
+            (sperateLine.layer as! CAGradientLayer).endPoint = CGPoint(x: 0.5, y: 1)
+            sperateLine.isHidden = true
+            sperateLine.snp.remakeConstraints {
+                $0.right.equalTo(snp.left)
+                $0.width.equalTo(2)
+                $0.top.equalTo(0)
+                $0.bottom.equalTo(0)
+            }
+            bringSubviewToFront(effectImageView)
+            bringSubviewToFront(originImageView)
+            bringSubviewToFront(beforeLabelContainer)
+            bringSubviewToFront(afterLabelContainer)
+            bringSubviewToFront(sperateLine)
+            layoutIfNeeded()
+            beforeLabel.layer.position.y = beforeLabelContainer.bounds.height * 1.5
+            afterLabel.layer.position.y = afterLabelContainer.bounds.height * 1.5
+        case .staticLeftRight:
+            (sperateLine.layer as! CAGradientLayer).startPoint = CGPoint(x: 0.5, y: 0.0)
+            (sperateLine.layer as! CAGradientLayer).endPoint = CGPoint(x: 0.5, y: 1)
+            beforeLabel.layer.opacity = 1
+            afterLabel.layer.opacity = 1
+            sperateLine.isHidden = false
+            bringSubviewToFront(effectImageView)
+            bringSubviewToFront(originImageView)
+            bringSubviewToFront(beforeLabelContainer)
+            bringSubviewToFront(afterLabelContainer)
+            bringSubviewToFront(sperateLine)
+            sperateLine.snp.remakeConstraints {
+                $0.centerX.equalToSuperview()
+                $0.width.equalTo(2)
+                $0.top.equalTo(0)
+                $0.bottom.equalTo(0)
+            }
+            effectImageView.snp.remakeConstraints {
+                $0.left.top.bottom.equalToSuperview()
+                $0.right.equalTo(snp.centerX)
+            }
+            originImageView.snp.remakeConstraints {
+                $0.right.top.bottom.equalToSuperview()
+                $0.left.equalTo(snp.centerX)
+            }
+            beforeLabelContainer.snp.remakeConstraints {
+                $0.left.equalTo(20)
+                $0.bottom.equalTo(-10)
+                $0.size.equalTo(beforeSize)
+            }
+            afterLabelContainer.snp.remakeConstraints {
+                $0.right.equalTo(-5)
+                $0.centerY.equalTo(beforeLabelContainer.snp.centerY)
+                $0.size.equalTo(afterSize)
+            }
+            layoutIfNeeded()
+        case .staticTopBottom:
+            (sperateLine.layer as! CAGradientLayer).startPoint = CGPoint(x: 0, y: 0.5)
+            (sperateLine.layer as! CAGradientLayer).endPoint = CGPoint(x: 1, y: 0.5)
+            beforeLabel.layer.opacity = 1
+            afterLabel.layer.opacity = 1
+            sperateLine.isHidden = false
+            bringSubviewToFront(effectImageView)
+            bringSubviewToFront(originImageView)
+            bringSubviewToFront(beforeLabelContainer)
+            bringSubviewToFront(afterLabelContainer)
+            bringSubviewToFront(sperateLine)
+            sperateLine.snp.remakeConstraints {
+                $0.centerY.equalToSuperview()
+                $0.height.equalTo(2)
+                $0.left.equalTo(0)
+                $0.right.equalTo(0)
+            }
+            originImageView.snp.remakeConstraints {
+                $0.left.top.right.equalToSuperview()
+                $0.bottom.equalTo(snp.centerY)
+            }
+            effectImageView.snp.remakeConstraints {
+                $0.right.bottom.left.equalToSuperview()
+                $0.top.equalTo(snp.centerY)
+            }
+            beforeLabelContainer.snp.remakeConstraints {
+                $0.left.equalTo(20)
+                $0.top.equalTo(10)
+                $0.size.equalTo(beforeSize)
+            }
+            afterLabelContainer.snp.remakeConstraints {
+                $0.left.equalTo(20)
+                $0.bottom.equalTo(-10)
+                $0.size.equalTo(afterSize)
+            }
+            layoutIfNeeded()
+        }
+    }
     
     
 }
@@ -458,46 +669,13 @@ extension FXTutorialImageContrastView: CAAnimationDelegate {
         guard !isRepeat else {
             return
         }
-        if let name = anim.value(forKey: "name") as? String, name == "originImageViewSlashLeftToMedium" {
-            print("animationDidStart - effectImageViewEaseInEaseOut - isRepeat :\(isRepeat)")
-            effectImageView.layer.removeAllAnimations()
-            originImageView.layer.mask?.removeAllAnimations()
-            originImageView.layer.mask = nil
-            effectImageView.layer.opacity = 1
-            bringSubviewToFront(effectImageView)
-        } else   if let name = anim.value(forKey: "name") as? String, name == "effectImageViewEaseInEaseOutShow" {
-            print("animationDidStart - effectImageViewEaseInEaseOutShow - isRepeat :\(isRepeat)")
-            bringSubviewToFront(effectImageView)
-            let opacity = CAKeyframeAnimation(keyPath: "opacity")
-            opacity.values = [0, 1]
-            opacity.duration = 1
-            opacity.duration = 0.25
-            opacity.fillMode = .forwards
-            opacity.isRemovedOnCompletion = false
-            opacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-            effectImageView.layer.add(opacity, forKey: nil)
-        }
     }
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         guard flag == true else {
             return
         }
-        if let name = anim.value(forKey: "name") as? String, name == "originImageViewSlashLeftToMedium" { /// 从左边到中间扫描结束
-            (originImageView.layer.mask as? CAShapeLayer)?.path = createMediumSlashPath().cgPath
-            afterLabel.layer.opacity = 1
-            beforeLabel.layer.opacity = 1
-            originImageViewSlashMediumToLeft()
-        } else if let name = anim.value(forKey: "name") as? String, name == "originImageViewSlashMediumToLeft" { /// 从中间到左边扫描结束， leftToRightSlash 这一轮动画结束
-            effectImageView.layer.removeAllAnimations()
-            originImageView.layer.mask?.removeAllAnimations()
-            originImageView.layer.mask = nil
-            if isRepeat {
-                originImageViewSlashLeftToMedium()
-            } else {
-                bringSubviewToFront(effectImageView)
-            }
-        }  else if let name = anim.value(forKey: "name") as? String, name == "effectImageViewEaseInEaseOut" { /// EaseInEaseOut 这一轮动画结束
+        if let name = anim.value(forKey: "name") as? String, name == "effectImageViewEaseInEaseOut" { /// EaseInEaseOut 这一轮动画结束
             effectImageView.layer.opacity = 0
             beforeLabel.layer.opacity = 1
             afterLabel.layer.opacity = 0
@@ -516,14 +694,52 @@ extension FXTutorialImageContrastView: CAAnimationDelegate {
                 labelopacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
                 labelopacity.isRemovedOnCompletion = false
                 labelopacity.fillMode = .forwards
+                labelopacity.delegate = self
+                labelopacity.setValue("easeInEaseOutFinish", forKey: "name")
                 afterLabel.layer.add(labelopacity, forKey: nil)
+                isAnimating = false
             }
-        } else if let name = anim.value(forKey: "name") as? String, name == "stopAnimation" {
-            layer.opacity = 0
-            reset()
-        }  else if let name = anim.value(forKey: "name") as? String, name == "startAniamtion" {
-            layer.opacity = 1
-            directStartAnimation()
+        } else if let name = anim.value(forKey: "name") as? String, name == "originImageViewSlashLeftToRight" { /// 原图从左到右扫描完成，出现效果图放大，同时原图也跟着放大
+            expandAfterLabelContainer()
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+                self.effectImageZoomIn()
+                self.originImageZoomIn()
+                self.originImageViewMaskToMedium()
+                self.originImageViewDismiss(0.001)
+            }
+        } else if let name = anim.value(forKey: "name") as? String, name == "showBeforeLabelFromBotttom" { /// beforelabel从下至上出现完成
+            beforeLabel.layer.position.y = beforeLabelContainer.bounds.height * 0.5
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                self.dismissBeforeLabelToTop()
+            }
+        } else if let name = anim.value(forKey: "name") as? String, name == "dismissBeforeLabelToTop" { /// beforelabel从中间至上消失完成
+            beforeLabel.layer.position.y = beforeLabelContainer.bounds.height * 1.5
+            zoomOutBeforeLabelContainer()
+        } else if let name = anim.value(forKey: "name") as? String, name == "showAfterLabelFromBotttom" { /// afterLabel从下至上出现完成
+            afterLabel.layer.position.y = afterLabelContainer.bounds.height * 0.5
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                self.dismissAfterLabelToTop()
+            }
+        } else if let name = anim.value(forKey: "name") as? String, name == "dismissAfterLabelToTop" { /// afterLabel从中间至上消失完成
+            afterLabel.layer.position.y = afterLabelContainer.bounds.height * 1.5
+            zoomOutAfterLabelContainer()
+        }  else if let name = anim.value(forKey: "name") as? String, name == "effectImageZoomIn" { /// 效果图放大动画完成，
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                self.originImageViewShow()
+            }
+        }   else if let name = anim.value(forKey: "name") as? String, name == "expandBeforeLabelContainer" { /// beforeLabelContainer 展开
+            showBeforeLabelFromBotttom()
+        } else if let name = anim.value(forKey: "name") as? String, name == "expandAfterLabelContainer" { /// afterLabelContainer 展开
+            showAfterLabelFromBotttom()
+        } else if let name = anim.value(forKey: "name") as? String, name == "originImageViewShow" { /// 原图出现
+            originImageZoomOut()
+            effectImageZoomOut()
+        }  else if let name = anim.value(forKey: "name") as? String, name == "originImageZoomOut" { /// 一轮完成
+            if isRepeat {
+                originImageViewSlashLeftToMedium()
+            } else {
+                isAnimating = false
+            }
         }
     }
     
