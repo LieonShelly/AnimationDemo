@@ -142,7 +142,6 @@ class IFRefreshLoadingView: UIView {
     }
     
     func update(_ progress: CGFloat) {
-        print("IFRefreshHeader - IFRefreshLoadingView: - update : \(progress)")
         topLayer.strokeEnd = progress
         bottomLayer.strokeEnd = progress
         self.progress = progress
@@ -152,7 +151,6 @@ class IFRefreshLoadingView: UIView {
         if isAnimating {
             return
         }
-        print("IFRefreshHeader - IFRefreshLoadingView: - reset")
         isAnimating = true
         let strokeStart = CABasicAnimation(keyPath: "strokeStart")
         strokeStart.toValue = 1

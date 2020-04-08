@@ -19,6 +19,28 @@ class FXTutorialImageContrastView: UIView {
         /// 上下对比 - 静态
         case staticTopBottom
     }
+    
+    struct AnimationName {
+        static let effectImageViewEaseInEaseOut = "effectImageViewEaseInEaseOut"
+        static let effectImageViewEaseInEaseOutShow = "effectImageViewEaseInEaseOutShow"
+        static let originImageViewSlashLeftToRight = "originImageViewSlashLeftToRight"
+        static let dismissBeforeLabelToTop = "dismissBeforeLabelToTop"
+        static let showAfterLabelFromBotttom = "showAfterLabelFromBotttom"
+        static let dismissAfterLabelToTop = "dismissAfterLabelToTop"
+        static let effectImageZoomIn = "effectImageZoomIn"
+        static let expandBeforeLabelContainer = "expandBeforeLabelContainer"
+        static let expandAfterLabelContainer = "expandAfterLabelContainer"
+        static let originImageViewShow = "originImageViewShow"
+        static let originImageZoomOut = "originImageZoomOut"
+        static let showBeforeLabelFromBotttom = "showBeforeLabelFromBotttom"
+        static let originImageViewMaskToMedium = "originImageViewMaskToMedium"
+        static let originImageViewDismiss = "originImageViewDismiss"
+        static let originImageZoomIn = "originImageZoomIn"
+        static let zoomOutAfterLabelContainer = "zoomOutAfterLabelContainer"
+        static let effectImageZoomOut = "effectImageZoomOut"
+        static let zoomOutBeforeLabelContainer = "zoomOutBeforeLabelContainer"
+    }
+    
     fileprivate lazy var beforeLabel: UILabel = {
         let label = UILabel()
         label.text = "Before"
@@ -61,9 +83,12 @@ class FXTutorialImageContrastView: UIView {
     fileprivate(set) var isAnimating: Bool = false
     fileprivate lazy var beforeLabelContainer: UIView = UIView()
     fileprivate lazy var afterLabelContainer: UIView = UIView()
+    /// 被中断的动画
+    fileprivate var errorAnima: CAAnimation?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        addNotification()
         clipsToBounds = true
         beforeLabelContainer.backgroundColor = UIColor.white.withAlphaComponent(0.24)
         afterLabelContainer.backgroundColor = UIColor.white.withAlphaComponent(0.24)
@@ -107,6 +132,10 @@ class FXTutorialImageContrastView: UIView {
         }
     }
     
+    deinit {
+        print("FXTutorialImageContrastView - deinit")
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -143,6 +172,16 @@ extension FXTutorialImageContrastView {
         effectImageView.image = nil
         reset()
     }
+    
+    /// 恢复被中断的动画
+    @objc
+    public func recoverAnimation() {
+        guard let errorAnima = self.errorAnima else {
+            return
+        }
+        animationErrorHandle(errorAnima)
+    }
+
 }
 
 extension FXTutorialImageContrastView {
@@ -151,7 +190,7 @@ extension FXTutorialImageContrastView {
         case .easeInEaseOut:
             effectImageViewEaseInEaseOut()
         case .leftToRightSlash:
-            originImageViewSlashLeftToMedium()
+            originImageViewSlashLeftToRight()
         case .staticLeftRight:
             break
         case .staticTopBottom:
@@ -215,66 +254,95 @@ extension FXTutorialImageContrastView {
     fileprivate func showBeforeLabelFromBotttom() {
         bringSubviewToFront(beforeLabelContainer)
         beforeLabel.layer.position.y = beforeLabelContainer.bounds.height * 1.5
-        let opacity = CAKeyframeAnimation(keyPath: "position.y")
-        opacity.values = [beforeLabelContainer.bounds.height * 1.5, beforeLabelContainer.bounds.height * 0.5]
-        opacity.beginTime = CACurrentMediaTime() //+ 0.5 + 1.5
-        opacity.duration = 0.5
-        opacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        opacity.delegate = self
-        opacity.setValue("showBeforeLabelFromBotttom", forKey: "name")
-        opacity.isRemovedOnCompletion = false
-        opacity.fillMode = .forwards
-        beforeLabel.layer.add(opacity, forKey: nil)
+        
+        let position = CAKeyframeAnimation(keyPath: "position.y")
+        position.values = [beforeLabelContainer.bounds.height * 1.5, beforeLabelContainer.bounds.height * 0.5]
+
+        let opacity = CAKeyframeAnimation(keyPath: "opacity")
+        opacity.values = [0, 1]
+        
+        let group = CAAnimationGroup()
+        group.beginTime = CACurrentMediaTime() //+ 0.5 + 1.5
+        group.duration = 0.5
+        group.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        group.delegate = self
+        group.setValue("showBeforeLabelFromBotttom", forKey: "name")
+        group.isRemovedOnCompletion = false
+        group.fillMode = .forwards
+        group.animations = [position, opacity]
+        beforeLabel.layer.add(group, forKey: nil)
     }
     
     /// beforelabel 中间位置至上消失
     fileprivate func dismissBeforeLabelToTop() {
         bringSubviewToFront(beforeLabelContainer)
-        beforeLabel.layer.position.y = beforeLabelContainer.bounds.height * 1.5
-        let opacity = CAKeyframeAnimation(keyPath: "position.y")
-        opacity.values = [beforeLabelContainer.bounds.height * 0.5, -beforeLabelContainer.bounds.height * 1.5]
-        opacity.duration = 0.5
-        opacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        opacity.delegate = self
-        opacity.setValue("dismissBeforeLabelToTop", forKey: "name")
-        opacity.isRemovedOnCompletion = false
-        opacity.fillMode = .forwards
-        beforeLabel.layer.add(opacity, forKey: nil)
+        beforeLabel.layer.position.y = beforeLabelContainer.bounds.height * 0.5
+        
+        let position = CAKeyframeAnimation(keyPath: "position.y")
+        position.values = [beforeLabelContainer.bounds.height * 0.5, beforeLabelContainer.bounds.height * 0.2]
+        
+        let opacity = CAKeyframeAnimation(keyPath: "opacity")
+        opacity.values = [1, 0]
+        
+        let group = CAAnimationGroup()
+        group.beginTime = CACurrentMediaTime() //+ 0.5 + 1.5
+        group.duration = 0.5
+        group.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        group.delegate = self
+        group.setValue("dismissBeforeLabelToTop", forKey: "name")
+        group.isRemovedOnCompletion = false
+        group.fillMode = .forwards
+        group.animations = [position, opacity]
+        beforeLabel.layer.add(group, forKey: nil)
+        
     }
     
     /// afterlabel从下至上出现
     fileprivate func showAfterLabelFromBotttom() {
         bringSubviewToFront(afterLabelContainer)
         afterLabel.layer.position.y = afterLabelContainer.bounds.height * 1.5
-        let opacity = CAKeyframeAnimation(keyPath: "position.y")
-        opacity.values = [beforeLabelContainer.bounds.height * 1.5, beforeLabelContainer.bounds.height * 0.5]
-        opacity.beginTime = CACurrentMediaTime() //+ 0.5 + 1.5
-        opacity.duration = 0.5
-        opacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        opacity.delegate = self
-        opacity.setValue("showAfterLabelFromBotttom", forKey: "name")
-        opacity.isRemovedOnCompletion = false
-        opacity.fillMode = .forwards
-        afterLabel.layer.add(opacity, forKey: nil)
+        let position = CAKeyframeAnimation(keyPath: "position.y")
+        position.values = [afterLabelContainer.bounds.height * 1.5, afterLabelContainer.bounds.height * 0.5]
+        
+        let opacity = CAKeyframeAnimation(keyPath: "opacity")
+        opacity.values = [0, 1]
+        
+        let group = CAAnimationGroup()
+        group.beginTime = CACurrentMediaTime() //+ 0.5 + 1.5
+        group.duration = 0.5
+        group.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        group.delegate = self
+        group.setValue("showAfterLabelFromBotttom", forKey: "name")
+        group.isRemovedOnCompletion = false
+        group.fillMode = .forwards
+        group.animations = [position, opacity]
+        afterLabel.layer.add(group, forKey: nil)
     }
     
     /// afterlabel 中间位置至上消失
     fileprivate func dismissAfterLabelToTop() {
         bringSubviewToFront(afterLabelContainer)
-        afterLabel.layer.position.y = afterLabelContainer.bounds.height * 1.5
-        let opacity = CAKeyframeAnimation(keyPath: "position.y")
-        opacity.values = [beforeLabelContainer.bounds.height * 0.5, -beforeLabelContainer.bounds.height * 1.5]
-        opacity.duration = 0.5
-        opacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        opacity.delegate = self
-        opacity.setValue("dismissAfterLabelToTop", forKey: "name")
-        opacity.isRemovedOnCompletion = false
-        opacity.fillMode = .forwards
-        afterLabel.layer.add(opacity, forKey: nil)
+        afterLabel.layer.position.y = afterLabelContainer.bounds.height * 0.5
+        let position = CAKeyframeAnimation(keyPath: "position.y")
+        position.values = [afterLabelContainer.bounds.height * 0.5, -afterLabelContainer.bounds.height * 1.5]
+        
+        let opacity = CAKeyframeAnimation(keyPath: "opacity")
+        opacity.values = [1, 0]
+        
+        let group = CAAnimationGroup()
+        group.beginTime = CACurrentMediaTime() //+ 0.5 + 1.5
+        group.duration = 0.5
+        group.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        group.delegate = self
+        group.setValue("dismissAfterLabelToTop", forKey: "name")
+        group.isRemovedOnCompletion = false
+        group.fillMode = .forwards
+        group.animations = [position, opacity]
+        afterLabel.layer.add(group, forKey: nil)
     }
     
     /// 斜线扫描：从左边到右边
-    fileprivate func originImageViewSlashLeftToMedium() {
+    fileprivate func originImageViewSlashLeftToRight() {
         bringSubviewToFront(effectImageView)
         bringSubviewToFront(originImageView)
         bringSubviewToFront(beforeLabelContainer)
@@ -298,29 +366,16 @@ extension FXTutorialImageContrastView {
         maskPosition.isRemovedOnCompletion = false
         maskPosition.fillMode = .forwards
         shape.add(maskPosition, forKey: nil)
-        
-        /// 移动分割线
-        let sperateLinePosition = CAKeyframeAnimation(keyPath: "position.x")
-        sperateLinePosition.values = [0, bounds.width]
-        sperateLinePosition.beginTime = CACurrentMediaTime() + 1.5
-        sperateLinePosition.duration = 1
-        sperateLinePosition.timingFunction = CAMediaTimingFunction(name: .linear)
-        sperateLinePosition.delegate = self
-        sperateLinePosition.isRemovedOnCompletion = false
-        sperateLinePosition.fillMode = .forwards
-        sperateLine.layer.add(sperateLinePosition, forKey: nil)
-        isAnimating = true
     }
     
     /// 将原图的mask恢复到原始位置
-    fileprivate func originImageViewMaskToMedium() {
-
+    fileprivate func originImageViewMaskToMedium(_ duration: Double = 0.01) {
         let maskPosition = CAKeyframeAnimation(keyPath: "position.x")
         maskPosition.values = [bounds.width * 1.5, bounds.width * 0.5]
-        maskPosition.duration = 2
+        maskPosition.duration = duration
         maskPosition.timingFunction = CAMediaTimingFunction(name: .linear)
         maskPosition.delegate = self
-        maskPosition.setValue("originImageViewMaskToMedium", forKey: "name")
+        maskPosition.setValue(AnimationName.originImageViewMaskToMedium, forKey: "name")
         maskPosition.isRemovedOnCompletion = false
         maskPosition.fillMode = .forwards
         originImageView.layer.mask?.add(maskPosition, forKey: nil)
@@ -333,7 +388,7 @@ extension FXTutorialImageContrastView {
         opacity.duration = duration
         opacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         opacity.delegate = self
-        opacity.setValue("originImageViewDismiss", forKey: "name")
+        opacity.setValue(AnimationName.originImageViewDismiss, forKey: "name")
         opacity.isRemovedOnCompletion = false
         opacity.fillMode = .forwards
         originImageView.layer.add(opacity, forKey: nil)
@@ -346,7 +401,7 @@ extension FXTutorialImageContrastView {
          opacity.duration = duration
          opacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
          opacity.delegate = self
-         opacity.setValue("originImageViewShow", forKey: "name")
+        opacity.setValue(AnimationName.originImageViewShow, forKey: "name")
          opacity.isRemovedOnCompletion = false
          opacity.fillMode = .forwards
          originImageView.layer.add(opacity, forKey: nil)
@@ -360,7 +415,7 @@ extension FXTutorialImageContrastView {
         scale.duration = 1
         scale.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         scale.delegate = self
-        scale.setValue("effectImageZoomIn", forKey: "name")
+        scale.setValue(AnimationName.effectImageZoomIn, forKey: "name")
         scale.isRemovedOnCompletion = false
         scale.fillMode = .forwards
         effectImageView.layer.add(scale, forKey: nil)
@@ -374,7 +429,7 @@ extension FXTutorialImageContrastView {
         scale.duration = 1
         scale.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         scale.delegate = self
-        scale.setValue("effectImageZoomIn", forKey: "name")
+        scale.setValue( AnimationName.originImageZoomIn, forKey: "name")
         scale.isRemovedOnCompletion = false
         scale.fillMode = .forwards
         originImageView.layer.add(scale, forKey: nil)
@@ -408,24 +463,25 @@ extension FXTutorialImageContrastView {
         originImageView.layer.add(scale, forKey: nil)
     }
     
-    /// beforeLabelContainer展开
+    /// beforeLabelContaine出现
     fileprivate func expandBeforeLabelContainer() {
          bringSubviewToFront(beforeLabelContainer)
-        let scale = CAKeyframeAnimation(keyPath: "transform.scale.x")
+        let scale = CAKeyframeAnimation(keyPath: "opacity")
         scale.values = [0, 1]
         scale.duration = 0.25
         scale.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         scale.delegate = self
-        scale.setValue("expandBeforeLabelContainer", forKey: "name")
+        scale.setValue(AnimationName.expandBeforeLabelContainer, forKey: "name")
         scale.isRemovedOnCompletion = false
         scale.fillMode = .forwards
+        scale.setValue("expandBeforeLabelContainer", forKey: "name")
         beforeLabelContainer.layer.add(scale, forKey: nil)
     }
     
     /// afterLabelContainer展开
     fileprivate func expandAfterLabelContainer() {
         bringSubviewToFront(afterLabelContainer)
-        let scale = CAKeyframeAnimation(keyPath: "transform.scale.x")
+        let scale = CAKeyframeAnimation(keyPath: "opacity")
         scale.values = [0, 1]
         scale.duration = 0.25
         scale.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
@@ -437,10 +493,10 @@ extension FXTutorialImageContrastView {
     }
     
     /// beforeLabelContainer缩小
-    fileprivate func zoomOutBeforeLabelContainer() {
-        let scale = CAKeyframeAnimation(keyPath: "transform.scale.x")
+    fileprivate func zoomOutBeforeLabelContainer(_ duration: Double = 0.25) {
+        let scale = CAKeyframeAnimation(keyPath: "opacity")
         scale.values = [1, 0]
-        scale.duration = 0.25
+        scale.duration = duration
         scale.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         scale.delegate = self
         scale.setValue("zoomOutBeforeLabelContainer", forKey: "name")
@@ -450,10 +506,10 @@ extension FXTutorialImageContrastView {
     }
     
     /// afterLabelContainer缩小
-    fileprivate func zoomOutAfterLabelContainer() {
-        let scale = CAKeyframeAnimation(keyPath: "transform.scale.x")
+    fileprivate func zoomOutAfterLabelContainer(_ duration: Double = 0.25) {
+        let scale = CAKeyframeAnimation(keyPath: "opacity")
         scale.values = [1, 0]
-        scale.duration = 0.25
+        scale.duration = duration
         scale.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         scale.delegate = self
         scale.setValue("zoomOutAfterLabelContainer", forKey: "name")
@@ -464,26 +520,28 @@ extension FXTutorialImageContrastView {
     
     /// 隐藏labelContainer
     fileprivate func hiddenLabelContainer(_ duration: Double = 0.001) {
-        let scale = CAKeyframeAnimation(keyPath: "transform.scale.x")
+        let scale = CAKeyframeAnimation(keyPath: "opacity")
         scale.values = [1, 0]
         scale.duration = duration
-        scale.timingFunction = CAMediaTimingFunction(name: .linear)
+        scale.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         scale.delegate = self
         scale.isRemovedOnCompletion = false
         scale.fillMode = .forwards
+         scale.setValue("hiddenLabelContainer", forKey: "name")
         beforeLabelContainer.layer.add(scale, forKey: nil)
         afterLabelContainer.layer.add(scale, forKey: nil)
     }
     
     /// 显示labelContainer
     fileprivate func showLabelContainer(_ duration: Double = 0.001) {
-        let scale = CAKeyframeAnimation(keyPath: "transform.scale.x")
+        let scale = CAKeyframeAnimation(keyPath: "opacity")
         scale.values = [0, 1]
         scale.duration = duration
-        scale.timingFunction = CAMediaTimingFunction(name: .linear)
+        scale.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         scale.delegate = self
         scale.isRemovedOnCompletion = false
         scale.fillMode = .forwards
+        scale.setValue("showLabelContainer", forKey: "name")
         beforeLabelContainer.layer.add(scale, forKey: nil)
         afterLabelContainer.layer.add(scale, forKey: nil)
     }
@@ -640,10 +698,13 @@ extension FXTutorialImageContrastView {
         }
     }
     
+    fileprivate func addNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(recoverAnimation), name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
 }
 
 extension FXTutorialImageContrastView: CAAnimationDelegate {
-    
+ 
     func animationDidStart(_ anim: CAAnimation) {
         guard !isRepeat else {
             return
@@ -652,18 +713,80 @@ extension FXTutorialImageContrastView: CAAnimationDelegate {
     
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         guard flag == true else {
+            isAnimating = false
+            errorAnima = anim
             return
         }
-        if let name = anim.value(forKey: "name") as? String, name == "effectImageViewEaseInEaseOut" { /// EaseInEaseOut 这一轮动画结束
+         animationLoop(anim)
+    }
+    
+    fileprivate func animationErrorHandle(_ anim: CAAnimation) {
+        guard let name = anim.value(forKey: "name") as? String else {
+            return
+        }
+        print(name)
+        isAnimating = true
+        if name == AnimationName.originImageZoomIn || name == AnimationName.effectImageZoomIn  { /// 原图效果放大后，动画被中断
+            originImageViewMaskToMedium()
+            originImageViewDismiss(0.001)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                self.originImageViewShow()
+            }
+        }  else if name == AnimationName.zoomOutAfterLabelContainer { /// AfterLabelContainer 动画被中断
+            originImageViewMaskToMedium()
+            originImageViewDismiss(0.001)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                self.originImageViewShow()
+            }
+        } else if name == AnimationName.originImageViewDismiss {
+            showAfterLabelFromBotttom()
+            originImageViewMaskToMedium()
+            originImageViewDismiss(0.001)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                self.originImageViewShow()
+            }
+        } else if name == AnimationName.dismissBeforeLabelToTop {
+            zoomOutBeforeLabelContainer()
+            expandAfterLabelContainer()
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+                self.effectImageZoomIn()
+                self.originImageZoomIn()
+                self.originImageViewMaskToMedium()
+                self.originImageViewDismiss(0.001)
+            }
+        } else if name == AnimationName.effectImageZoomOut {
+            originImageViewSlashLeftToRight()
+        } else if name == AnimationName.dismissAfterLabelToTop {
+            zoomOutAfterLabelContainer()
+        } else if name == AnimationName.originImageViewMaskToMedium {
+            originImageViewDismiss(0.001)
+            showAfterLabelFromBotttom()
+            originImageViewMaskToMedium()
+            originImageViewDismiss(0.001)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                self.originImageViewShow()
+            }
+        } else if name == AnimationName.showAfterLabelFromBotttom {
+            dismissAfterLabelToTop()
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.75) {
+                self.originImageViewMaskToMedium()
+                self.originImageViewDismiss(0.001)
+            }
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                self.originImageViewShow()
+            }
+        } else {
+            animationLoop(anim)
+        }
+    }
+    
+    fileprivate func animationLoop(_ anim: CAAnimation) {
+        if let name = anim.value(forKey: "name") as? String, name == AnimationName.effectImageViewEaseInEaseOut { /// EaseInEaseOut 这一轮动画结束
             effectImageView.layer.opacity = 0
-            beforeLabel.layer.opacity = 1
-            afterLabel.layer.opacity = 0
             effectImageViewEaseInEaseOutShow()
-        } else if let name = anim.value(forKey: "name") as? String, name == "effectImageViewEaseInEaseOutShow" { /// EaseInEaseOut 进行到一半
+        } else if let name = anim.value(forKey: "name") as? String, name == AnimationName.effectImageViewEaseInEaseOutShow { /// EaseInEaseOut 进行到一半
             effectImageView.layer.opacity = 1
-            beforeLabel.layer.opacity = 0
             if isRepeat {
-                afterLabel.layer.opacity = 1
                 bringSubviewToFront(afterLabel)
                 effectImageViewEaseInEaseOut()
             } else {
@@ -678,7 +801,7 @@ extension FXTutorialImageContrastView: CAAnimationDelegate {
                 afterLabel.layer.add(labelopacity, forKey: nil)
                 isAnimating = false
             }
-        } else if let name = anim.value(forKey: "name") as? String, name == "originImageViewSlashLeftToRight" { /// 原图从左到右扫描完成，出现效果图放大，同时原图也跟着放大
+        } else if let name = anim.value(forKey: "name") as? String, name == AnimationName.originImageViewSlashLeftToRight { /// 原图从左到右扫描完成，出现效果图放大，同时原图也跟着放大
             expandAfterLabelContainer()
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
                 self.effectImageZoomIn()
@@ -686,36 +809,36 @@ extension FXTutorialImageContrastView: CAAnimationDelegate {
                 self.originImageViewMaskToMedium()
                 self.originImageViewDismiss(0.001)
             }
-        } else if let name = anim.value(forKey: "name") as? String, name == "showBeforeLabelFromBotttom" { /// beforelabel从下至上出现完成
+        } else if let name = anim.value(forKey: "name") as? String, name == AnimationName.showBeforeLabelFromBotttom { /// beforelabel从下至上出现完成
             beforeLabel.layer.position.y = beforeLabelContainer.bounds.height * 0.5
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                self.zoomOutBeforeLabelContainer()
                 self.dismissBeforeLabelToTop()
             }
-        } else if let name = anim.value(forKey: "name") as? String, name == "dismissBeforeLabelToTop" { /// beforelabel从中间至上消失完成
+        } else if let name = anim.value(forKey: "name") as? String, name == AnimationName.zoomOutBeforeLabelContainer { /// beforelabel从中间至上消失完成
             beforeLabel.layer.position.y = beforeLabelContainer.bounds.height * 1.5
-            zoomOutBeforeLabelContainer()
-        } else if let name = anim.value(forKey: "name") as? String, name == "showAfterLabelFromBotttom" { /// afterLabel从下至上出现完成
+        } else if let name = anim.value(forKey: "name") as? String, name == AnimationName.showAfterLabelFromBotttom { /// afterLabel从下至上出现完成
             afterLabel.layer.position.y = afterLabelContainer.bounds.height * 0.5
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                self.zoomOutAfterLabelContainer()
                 self.dismissAfterLabelToTop()
             }
-        } else if let name = anim.value(forKey: "name") as? String, name == "dismissAfterLabelToTop" { /// afterLabel从中间至上消失完成
+        } else if let name = anim.value(forKey: "name") as? String, name == AnimationName.dismissAfterLabelToTop { /// afterLabel从中间至上消失完成
             afterLabel.layer.position.y = afterLabelContainer.bounds.height * 1.5
-            zoomOutAfterLabelContainer()
-        }  else if let name = anim.value(forKey: "name") as? String, name == "effectImageZoomIn" { /// 效果图放大动画完成，
+        }  else if let name = anim.value(forKey: "name") as? String, name == AnimationName.effectImageZoomIn { /// 效果图放大动画完成，
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
                 self.originImageViewShow()
             }
-        }   else if let name = anim.value(forKey: "name") as? String, name == "expandBeforeLabelContainer" { /// beforeLabelContainer 展开
+        }   else if let name = anim.value(forKey: "name") as? String, name == AnimationName.expandBeforeLabelContainer { /// beforeLabelContainer 展开
             showBeforeLabelFromBotttom()
-        } else if let name = anim.value(forKey: "name") as? String, name == "expandAfterLabelContainer" { /// afterLabelContainer 展开
+        } else if let name = anim.value(forKey: "name") as? String, name == AnimationName.expandAfterLabelContainer { /// afterLabelContainer 展开
             showAfterLabelFromBotttom()
-        } else if let name = anim.value(forKey: "name") as? String, name == "originImageViewShow" { /// 原图出现
+        } else if let name = anim.value(forKey: "name") as? String, name == AnimationName.originImageViewShow { /// 原图出现
             originImageZoomOut()
             effectImageZoomOut()
-        }  else if let name = anim.value(forKey: "name") as? String, name == "originImageZoomOut" { /// 一轮完成
+        }  else if let name = anim.value(forKey: "name") as? String, name == AnimationName.originImageZoomOut { /// 一轮完成
             if isRepeat {
-                originImageViewSlashLeftToMedium()
+                originImageViewSlashLeftToRight()
             } else {
                 isAnimating = false
             }
@@ -723,3 +846,4 @@ extension FXTutorialImageContrastView: CAAnimationDelegate {
     }
     
 }
+

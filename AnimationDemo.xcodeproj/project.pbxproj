@@ -115,6 +115,7 @@
 		CDFB49D423505AD50083426A /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49D223505AD50083426A /* ProgressViewController.swift */; };
 		CDFB49D523505AD50083426A /* ProgressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFB49D323505AD50083426A /* ProgressViewController.xib */; };
 		CDFB49D723505C5F0083426A /* ProgressAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFB49D623505C5F0083426A /* ProgressAnimation.swift */; };
+		CDFD8182243D7479005238FE /* CALayer+MBAnimationPersistence.m in Sources */ = {isa = PBXBuildFile; fileRef = CDFD8181243D7478005238FE /* CALayer+MBAnimationPersistence.m */; };
 		CDFF20482367E6B800800136 /* LongPressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF20462367E6B800800136 /* LongPressViewController.swift */; };
 		CDFF20492367E6B800800136 /* LongPressViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDFF20472367E6B800800136 /* LongPressViewController.xib */; };
 		CDFF204C2367E78100800136 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF204A2367E78100800136 /* ImageCollectionViewCell.swift */; };
@@ -285,6 +286,8 @@
 		CDFB49D223505AD50083426A /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		CDFB49D323505AD50083426A /* ProgressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressViewController.xib; sourceTree = "<group>"; };
 		CDFB49D623505C5F0083426A /* ProgressAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressAnimation.swift; sourceTree = "<group>"; };
+		CDFD8180243D7478005238FE /* CALayer+MBAnimationPersistence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+MBAnimationPersistence.h"; sourceTree = "<group>"; };
+		CDFD8181243D7478005238FE /* CALayer+MBAnimationPersistence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+MBAnimationPersistence.m"; sourceTree = "<group>"; };
 		CDFF20462367E6B800800136 /* LongPressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPressViewController.swift; sourceTree = "<group>"; };
 		CDFF20472367E6B800800136 /* LongPressViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LongPressViewController.xib; sourceTree = "<group>"; };
 		CDFF204A2367E78100800136 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -535,6 +538,8 @@
 		CD725AE0234F13EE00C11FB0 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				CDFD8180243D7478005238FE /* CALayer+MBAnimationPersistence.h */,
+				CDFD8181243D7478005238FE /* CALayer+MBAnimationPersistence.m */,
 				CD2112F7235DBA4D003B5202 /* Wireframe.swift */,
 				CD725AE7234F140E00C11FB0 /* Protocol.swift */,
 				CD725AE5234F140700C11FB0 /* Extensions.swift */,
@@ -869,6 +874,7 @@
 				CD2D3F262387C96F00924CB4 /* CustomViewController.swift in Sources */,
 				CDDB073923C96DC300C0AA97 /* NewAnimatedViewController.swift in Sources */,
 				CD0230FA237A9BE000324E30 /* FXTutorialPanel.swift in Sources */,
+				CDFD8182243D7479005238FE /* CALayer+MBAnimationPersistence.m in Sources */,
 				CD306C4D2355CC36002ABA93 /* Common.swift in Sources */,
 				CDADB236235EE7A7002A57FD /* TipPopViewController.swift in Sources */,
 				CD2FCFA8234DB37600E28E5C /* PinchViewController.swift in Sources */,

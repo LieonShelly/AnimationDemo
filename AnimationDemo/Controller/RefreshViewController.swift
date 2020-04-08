@@ -55,7 +55,7 @@ class RefreshViewController: UIViewController {
         super.viewDidAppear(animated)
         let cells = tableView.visibleCells
         for cell in cells {
-            (cell as? ContrastCell)?.contrastView.startAnimation(with: .staticLeftRight, textBottomInset: 20, textHorisonInset: 20)
+            (cell as? ContrastCell)?.contrastView.startAnimation(with: .leftToRightSlash, textBottomInset: 20, textHorisonInset: 20)
         }
     }
 }
@@ -92,6 +92,10 @@ extension RefreshViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 1 && currentAnimateCell == nil {
             self.currentAnimateCell = cell as? ContrastCell
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(UIViewController(), animated: true)
     }
     
 }
@@ -206,9 +210,6 @@ extension RefreshViewController {
     }
 }
 
-/**
-同学们，从上周的打卡记录来看，发现大家健身打卡的积极性不是很高，可能是由于是疫情过后的第一周打卡，大家还没有及时调整过来，所以决定上周的健身打卡就作为我们健身打卡的热身周，从本周正式开始算每天的打卡记录，大家觉得这样可行不？
- */
 class CellEntity {
     var isShowContranstView: Bool
     

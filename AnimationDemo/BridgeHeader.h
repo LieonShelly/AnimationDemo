@@ -10,5 +10,5 @@
 #define BridgeHeader_h
 
 #import <MJRefresh/MJRefresh.h>
-
+#import "CALayer+MBAnimationPersistence.h"
 #endif /* BridgeHeader_h */
