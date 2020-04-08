@@ -21,32 +21,31 @@ class FXTutorialImageContrastView: UIView {
     }
     fileprivate lazy var beforeLabel: UILabel = {
         let label = UILabel()
-        label.text = "before"
-        label.textColor = UIColor(hex: 0x333333)
+        label.text = "Before"
+        label.textColor = UIColor(hex: 0xffffff)
         label.textAlignment = .center
-        label.font = UIFont.customFont(ofSize: 11, isBold: true)
+        label.font = UIFont.customFont(ofSize: 12, isBold: true)
         return label
     }()
     fileprivate lazy var afterLabel: UILabel = {
         let label = UILabel()
-        label.text = "after"
-        label.textColor = UIColor(hex: 0x333333)
+        label.text = "After"
+        label.textColor = UIColor(hex: 0xffffff)
         label.textAlignment = .center
-        label.font = UIFont.customFont(ofSize: 11, isBold: true)
+        label.font = UIFont.customFont(ofSize: 12, isBold: true)
         return label
     }()
     fileprivate var animationType: AnimationType = .easeInEaseOut
     fileprivate lazy var originImageView: UIImageView = {
         let originImageView = UIImageView()
-        originImageView.image = UIImage(named: "before")
+        originImageView.image = UIImage(named: "bfore1")
         return originImageView
     }()
     fileprivate lazy var effectImageView: UIImageView = {
         let originImageView = UIImageView()
-        originImageView.image = UIImage(named: "after")
+        originImageView.image = UIImage(named: "after1")
         return originImageView
     }()
-    fileprivate var fontSize: CGFloat = 11
     fileprivate lazy var sperateLine: FXGradientView = {
         let view = FXGradientView()
         (view.layer as! CAGradientLayer).colors = [
@@ -66,10 +65,10 @@ class FXTutorialImageContrastView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         clipsToBounds = true
-        beforeLabelContainer.backgroundColor = .white
-        afterLabelContainer.backgroundColor = .white
-        beforeLabelContainer.layer.cornerRadius = 9
-        afterLabelContainer.layer.cornerRadius = 9
+        beforeLabelContainer.backgroundColor = UIColor.white.withAlphaComponent(0.24)
+        afterLabelContainer.backgroundColor = UIColor.white.withAlphaComponent(0.24)
+        beforeLabelContainer.layer.cornerRadius = 10
+        afterLabelContainer.layer.cornerRadius = 10
         beforeLabelContainer.layer.masksToBounds = true
         afterLabelContainer.layer.masksToBounds = true
         beforeLabelContainer.clipsToBounds = true
@@ -108,6 +107,13 @@ class FXTutorialImageContrastView: UIView {
         }
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension FXTutorialImageContrastView {
+    
     /// 配置图片
     public func config(_ originImage: UIImage, effectImage: UIImage) {
         effectImageView.image = effectImage
@@ -115,14 +121,12 @@ class FXTutorialImageContrastView: UIView {
     }
     
     /// 开始动画
-    public func startAnimation(with type: AnimationType, fontSize: CGFloat = 11) {
+    public func startAnimation(with type: AnimationType, textBottomInset: CGFloat = 10,  textHorisonInset: CGFloat = 10) {
         animationType = type
-        self.fontSize = fontSize
         reset()
-        resetUI(fontSize)
+        resetUI(textBottomInset, textHorisonInset: textHorisonInset)
         directStartAnimation()
     }
-    
     
     /// 是否重复动画，在动画结束时判断是否继续动画
     /// - Parameter isRepeat: 是否重复播放
@@ -138,11 +142,6 @@ class FXTutorialImageContrastView: UIView {
         originImageView.image = nil
         effectImageView.image = nil
         reset()
-    }
-    
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }
 
@@ -160,12 +159,8 @@ extension FXTutorialImageContrastView {
         }
     }
     
-    /// 效果图消失，before label出现， after label消失
+    /// 效果图消失
     fileprivate func effectImageViewEaseInEaseOut() {
-        if beforeLabel.layer.opacity != 0 {
-            beforeLabel.layer.opacity = 0
-            beforeLabel.layer.removeAllAnimations()
-        }
         let opacity = CAKeyframeAnimation(keyPath: "opacity")
         opacity.values = [1, 0]
         opacity.delegate = self
@@ -176,36 +171,10 @@ extension FXTutorialImageContrastView {
         opacity.setValue("effectImageViewEaseInEaseOut", forKey: "name")
         opacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         effectImageView.layer.add(opacity, forKey: nil)
-        
-        /// 显示 before label
-        let labelopacity = CAKeyframeAnimation(keyPath: "opacity")
-        labelopacity.values = [0, 1]
-        labelopacity.beginTime = CACurrentMediaTime() + 1.5 + 0.5
-        labelopacity.duration = 0.5
-        labelopacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        labelopacity.delegate = self
-        labelopacity.setValue("showLabel", forKey: "name")
-        labelopacity.isRemovedOnCompletion = false
-        labelopacity.fillMode = .forwards
-        beforeLabel.layer.add(labelopacity, forKey: nil)
-        
-        /// 隐藏 after label
-        if afterLabel.layer.opacity == 1 {
-            let breforeLabelopacity = CAKeyframeAnimation(keyPath: "opacity")
-            breforeLabelopacity.values = [1, 0]
-            breforeLabelopacity.beginTime = CACurrentMediaTime() + 1 + 0.5
-            breforeLabelopacity.duration = 0.5
-            breforeLabelopacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-            breforeLabelopacity.delegate = self
-            breforeLabelopacity.setValue("showLabel", forKey: "name")
-            breforeLabelopacity.isRemovedOnCompletion = false
-            breforeLabelopacity.fillMode = .forwards
-            afterLabel.layer.add(breforeLabelopacity, forKey: nil)
-        }
         isAnimating = true
     }
     
-    /// 效果图出现 after label出现  before label消失
+    /// 效果图出现
     fileprivate func effectImageViewEaseInEaseOutShow() {
         let opacity = CAKeyframeAnimation(keyPath: "opacity")
         opacity.values = [0, 1]
@@ -217,31 +186,6 @@ extension FXTutorialImageContrastView {
         opacity.setValue("effectImageViewEaseInEaseOutShow", forKey: "name")
         opacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         effectImageView.layer.add(opacity, forKey: nil)
-        
-        /// 显示 after label
-        let labelopacity = CAKeyframeAnimation(keyPath: "opacity")
-        labelopacity.values = [0, 1]
-        labelopacity.beginTime = CACurrentMediaTime() + 1 + 0.5
-        labelopacity.duration = 0.5
-        labelopacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        labelopacity.delegate = self
-        labelopacity.setValue("showLabel", forKey: "name")
-        labelopacity.isRemovedOnCompletion = false
-        labelopacity.fillMode = .forwards
-        afterLabel.layer.add(labelopacity, forKey: nil)
-        
-        /// 隐藏 before label
-        let breforeLabelopacity = CAKeyframeAnimation(keyPath: "opacity")
-        breforeLabelopacity.values = [1, 0]
-        breforeLabelopacity.beginTime = CACurrentMediaTime() + 1 + 0.5
-        breforeLabelopacity.duration = 0.5
-        breforeLabelopacity.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        breforeLabelopacity.delegate = self
-        breforeLabelopacity.setValue("showLabel", forKey: "name")
-        breforeLabelopacity.isRemovedOnCompletion = false
-        breforeLabelopacity.fillMode = .forwards
-        beforeLabel.layer.add(breforeLabelopacity, forKey: nil)
-        
     }
     
     /// 中间位置的直线 /
@@ -347,7 +291,7 @@ extension FXTutorialImageContrastView {
         let maskPosition = CAKeyframeAnimation(keyPath: "position.x")
         maskPosition.values = [bounds.width * 0.5, bounds.width * 1.5]
         maskPosition.beginTime = CACurrentMediaTime() + 1.5
-        maskPosition.duration = 1
+        maskPosition.duration = 0.7
         maskPosition.timingFunction = CAMediaTimingFunction(name: .linear)
         maskPosition.delegate = self
         maskPosition.setValue("originImageViewSlashLeftToRight", forKey: "name")
@@ -381,6 +325,7 @@ extension FXTutorialImageContrastView {
         maskPosition.fillMode = .forwards
         originImageView.layer.mask?.add(maskPosition, forKey: nil)
     }
+    
     /// 改变原图的opacity为0
     fileprivate func originImageViewDismiss(_ duration: Double = 0.5) {
         let opacity = CAKeyframeAnimation(keyPath: "opacity")
@@ -393,6 +338,7 @@ extension FXTutorialImageContrastView {
         opacity.fillMode = .forwards
         originImageView.layer.add(opacity, forKey: nil)
     }
+    
     /// 原图出现
     fileprivate func originImageViewShow(_ duration: Double = 0.5) {
          let opacity = CAKeyframeAnimation(keyPath: "opacity")
@@ -405,6 +351,7 @@ extension FXTutorialImageContrastView {
          opacity.fillMode = .forwards
          originImageView.layer.add(opacity, forKey: nil)
      }
+    
     /// 效果图放大动画
     fileprivate func effectImageZoomIn() {
         let scale = CAKeyframeAnimation(keyPath: "transform.scale")
@@ -463,6 +410,7 @@ extension FXTutorialImageContrastView {
     
     /// beforeLabelContainer展开
     fileprivate func expandBeforeLabelContainer() {
+         bringSubviewToFront(beforeLabelContainer)
         let scale = CAKeyframeAnimation(keyPath: "transform.scale.x")
         scale.values = [0, 1]
         scale.duration = 0.25
@@ -476,6 +424,7 @@ extension FXTutorialImageContrastView {
     
     /// afterLabelContainer展开
     fileprivate func expandAfterLabelContainer() {
+        bringSubviewToFront(afterLabelContainer)
         let scale = CAKeyframeAnimation(keyPath: "transform.scale.x")
         scale.values = [0, 1]
         scale.duration = 0.25
@@ -486,7 +435,6 @@ extension FXTutorialImageContrastView {
         scale.fillMode = .forwards
         afterLabelContainer.layer.add(scale, forKey: nil)
     }
-    
     
     /// beforeLabelContainer缩小
     fileprivate func zoomOutBeforeLabelContainer() {
@@ -514,6 +462,31 @@ extension FXTutorialImageContrastView {
         afterLabelContainer.layer.add(scale, forKey: nil)
     }
     
+    /// 隐藏labelContainer
+    fileprivate func hiddenLabelContainer(_ duration: Double = 0.001) {
+        let scale = CAKeyframeAnimation(keyPath: "transform.scale.x")
+        scale.values = [1, 0]
+        scale.duration = duration
+        scale.timingFunction = CAMediaTimingFunction(name: .linear)
+        scale.delegate = self
+        scale.isRemovedOnCompletion = false
+        scale.fillMode = .forwards
+        beforeLabelContainer.layer.add(scale, forKey: nil)
+        afterLabelContainer.layer.add(scale, forKey: nil)
+    }
+    
+    /// 显示labelContainer
+    fileprivate func showLabelContainer(_ duration: Double = 0.001) {
+        let scale = CAKeyframeAnimation(keyPath: "transform.scale.x")
+        scale.values = [0, 1]
+        scale.duration = duration
+        scale.timingFunction = CAMediaTimingFunction(name: .linear)
+        scale.delegate = self
+        scale.isRemovedOnCompletion = false
+        scale.fillMode = .forwards
+        beforeLabelContainer.layer.add(scale, forKey: nil)
+        afterLabelContainer.layer.add(scale, forKey: nil)
+    }
     
     fileprivate func reset() {
         originImageView.layer.mask = nil
@@ -522,33 +495,25 @@ extension FXTutorialImageContrastView {
         beforeLabel.layer.removeAllAnimations()
         afterLabel.layer.removeAllAnimations()
         sperateLine.isHidden = true
-        layer.removeAllAnimations()
         isRepeat = true
         beforeLabel.layer.position.y = beforeLabelContainer.bounds.height * 1.5
         afterLabel.layer.position.y = afterLabelContainer.bounds.height * 1.5
-        
-        let scale = CAKeyframeAnimation(keyPath: "transform.scale.x")
-        scale.values = [1, 0]
-        scale.duration = 0.001
-        scale.timingFunction = CAMediaTimingFunction(name: .linear)
-        scale.delegate = self
-        scale.setValue("zoomOutBeforeLabelContainer", forKey: "name")
-        scale.isRemovedOnCompletion = false
-        scale.fillMode = .forwards
-        beforeLabelContainer.layer.add(scale, forKey: nil)
-        afterLabelContainer.layer.add(scale, forKey: nil)
-        
-        
+        hiddenLabelContainer()
     }
     
-    fileprivate func resetUI(_ fontSize: CGFloat) {
-        let beforeSize = CGSize(width: 52, height: 18)
-        let afterSize = CGSize(width: 52, height: 18)
+    fileprivate func resetUI(_ textBottomInset: CGFloat, textHorisonInset: CGFloat) {
+        let beforeSize = CGSize(width: 52, height: 20)
+        let afterSize = CGSize(width: 52, height: 20)
         switch animationType {
         case .easeInEaseOut:
+            hiddenLabelContainer()
+            beforeLabelContainer.isHidden = true
+            afterLabelContainer.backgroundColor = UIColor.clear
+            afterLabel.font = UIFont.customFont(ofSize: 13, isBold: true)
+            beforeLabel.font = UIFont.customFont(ofSize: 13, isBold: true)
             beforeLabelContainer.snp.remakeConstraints {
                 $0.left.equalTo(20)
-                $0.bottom.equalTo(-10)
+                $0.bottom.equalTo(-textBottomInset)
                 $0.size.equalTo(beforeSize)
             }
             afterLabelContainer.snp.remakeConstraints {
@@ -558,13 +523,14 @@ extension FXTutorialImageContrastView {
             }
             layoutIfNeeded()
         case .leftToRightSlash:
+            hiddenLabelContainer()
             beforeLabelContainer.snp.remakeConstraints {
-                $0.left.equalTo(20)
-                $0.bottom.equalTo(-10)
+                $0.left.equalTo(textHorisonInset)
+                $0.bottom.equalTo(-textBottomInset)
                 $0.size.equalTo(beforeSize)
             }
             afterLabelContainer.snp.remakeConstraints {
-                $0.right.equalTo(-20)
+                $0.right.equalTo(-textHorisonInset)
                 $0.centerY.equalTo(beforeLabelContainer.snp.centerY)
                 $0.size.equalTo(afterSize)
             }
@@ -583,14 +549,23 @@ extension FXTutorialImageContrastView {
             bringSubviewToFront(afterLabelContainer)
             bringSubviewToFront(sperateLine)
             layoutIfNeeded()
+            beforeLabelContainer.backgroundColor = UIColor(red: 18 / 255.0, green: 18 / 255.0, blue: 18 / 255.0, alpha: 0.31)
+            afterLabelContainer.backgroundColor = UIColor(red: 18 / 255.0, green: 18 / 255.0, blue: 18 / 255.0, alpha: 0.31)
+            afterLabel.font = UIFont.customFont(ofSize: 11, isBold: true)
+            beforeLabel.font = UIFont.customFont(ofSize: 11, isBold: true)
             beforeLabel.layer.position.y = beforeLabelContainer.bounds.height * 1.5
             afterLabel.layer.position.y = afterLabelContainer.bounds.height * 1.5
         case .staticLeftRight:
+            showLabelContainer()
             (sperateLine.layer as! CAGradientLayer).startPoint = CGPoint(x: 0.5, y: 0.0)
             (sperateLine.layer as! CAGradientLayer).endPoint = CGPoint(x: 0.5, y: 1)
             beforeLabel.layer.opacity = 1
             afterLabel.layer.opacity = 1
-            sperateLine.isHidden = false
+            sperateLine.isHidden = true
+            beforeLabelContainer.backgroundColor = UIColor(red: 18 / 255.0, green: 18 / 255.0, blue: 18 / 255.0, alpha: 0.31)
+            afterLabelContainer.backgroundColor = UIColor(red: 18 / 255.0, green: 18 / 255.0, blue: 18 / 255.0, alpha: 0.31)
+            afterLabel.font = UIFont.customFont(ofSize: 11, isBold: true)
+            beforeLabel.font = UIFont.customFont(ofSize: 11, isBold: true)
             bringSubviewToFront(effectImageView)
             bringSubviewToFront(originImageView)
             bringSubviewToFront(beforeLabelContainer)
@@ -602,31 +577,36 @@ extension FXTutorialImageContrastView {
                 $0.top.equalTo(0)
                 $0.bottom.equalTo(0)
             }
-            effectImageView.snp.remakeConstraints {
+            originImageView.snp.remakeConstraints {
                 $0.left.top.bottom.equalToSuperview()
                 $0.right.equalTo(snp.centerX)
             }
-            originImageView.snp.remakeConstraints {
+            effectImageView.snp.remakeConstraints {
                 $0.right.top.bottom.equalToSuperview()
                 $0.left.equalTo(snp.centerX)
             }
             beforeLabelContainer.snp.remakeConstraints {
-                $0.left.equalTo(20)
-                $0.bottom.equalTo(-10)
+                $0.left.equalTo(originImageView.snp.left).offset(10)
+                $0.bottom.equalTo(originImageView.snp.bottom).offset(-10)
                 $0.size.equalTo(beforeSize)
             }
             afterLabelContainer.snp.remakeConstraints {
-                $0.right.equalTo(-5)
-                $0.centerY.equalTo(beforeLabelContainer.snp.centerY)
+                $0.left.equalTo(effectImageView.snp.left).offset(10)
+                $0.bottom.equalTo(effectImageView.snp.bottom).offset(-8)
                 $0.size.equalTo(afterSize)
             }
             layoutIfNeeded()
         case .staticTopBottom:
+            showLabelContainer()
             (sperateLine.layer as! CAGradientLayer).startPoint = CGPoint(x: 0, y: 0.5)
             (sperateLine.layer as! CAGradientLayer).endPoint = CGPoint(x: 1, y: 0.5)
             beforeLabel.layer.opacity = 1
             afterLabel.layer.opacity = 1
-            sperateLine.isHidden = false
+            sperateLine.isHidden = true
+            beforeLabelContainer.backgroundColor = UIColor(red: 18 / 255.0, green: 18 / 255.0, blue: 18 / 255.0, alpha: 0.31)
+            afterLabelContainer.backgroundColor = UIColor(red: 18 / 255.0, green: 18 / 255.0, blue: 18 / 255.0, alpha: 0.31)
+            afterLabel.font = UIFont.customFont(ofSize: 11, isBold: true)
+            beforeLabel.font = UIFont.customFont(ofSize: 11, isBold: true)
             bringSubviewToFront(effectImageView)
             bringSubviewToFront(originImageView)
             bringSubviewToFront(beforeLabelContainer)
@@ -647,19 +627,18 @@ extension FXTutorialImageContrastView {
                 $0.top.equalTo(snp.centerY)
             }
             beforeLabelContainer.snp.remakeConstraints {
-                $0.left.equalTo(20)
-                $0.top.equalTo(10)
+                $0.left.equalTo(originImageView.snp.left).offset(12)
+                $0.top.equalTo(8)
                 $0.size.equalTo(beforeSize)
             }
             afterLabelContainer.snp.remakeConstraints {
-                $0.left.equalTo(20)
-                $0.bottom.equalTo(-10)
+                $0.left.equalTo(effectImageView.snp.left).offset(12)
+                $0.top.equalTo(effectImageView.snp.top).offset(8)
                 $0.size.equalTo(afterSize)
             }
             layoutIfNeeded()
         }
     }
-    
     
 }
 

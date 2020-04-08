@@ -33,7 +33,7 @@ class FXTutorialImageContrastVC: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        contrastView.startAnimation(with: .easeInEaseOut, fontSize: 15)
+        contrastView.startAnimation(with: .easeInEaseOut, textBottomInset: 30)
         progressView.show("geasdfsdf")
     }
     

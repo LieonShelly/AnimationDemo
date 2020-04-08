@@ -55,7 +55,7 @@ class RefreshViewController: UIViewController {
         super.viewDidAppear(animated)
         let cells = tableView.visibleCells
         for cell in cells {
-            (cell as? ContrastCell)?.contrastView.startAnimation(with: .leftToRightSlash)
+            (cell as? ContrastCell)?.contrastView.startAnimation(with: .staticLeftRight, textBottomInset: 20, textHorisonInset: 20)
         }
     }
 }
@@ -85,7 +85,7 @@ extension RefreshViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 300
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -224,10 +224,14 @@ class ContrastCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(contrastView)
         contrastView.snp.makeConstraints {
+//            $0.center.equalTo(snp.center)
+//            $0.size.equalTo(CGSize(width: 164, height: 164))
+            
             $0.left.equalTo(20)
             $0.right.equalTo(-20)
             $0.bottom.equalTo(-5)
             $0.top.equalTo(5)
+            
         }
     }
     
