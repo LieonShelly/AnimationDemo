@@ -15,6 +15,10 @@ class TipPop: UIView, AnimationBase {
         return btn
     }()
     
+    override class var layerClass: AnyClass {
+        return CAGradientLayer.self
+    }
+    
     convenience init(_ param: TipPopParam, frame: CGRect) {
         self.init(frame: frame)
         configCoverBtn(param)
@@ -186,15 +190,21 @@ class TipPop: UIView, AnimationBase {
     
     fileprivate func createPopLayer(_ param: TipPopParam) -> CAShapeLayer {
         let popLayer = CAShapeLayer()
-        popLayer.fillColor = param.fillColor.cgColor
+        popLayer.fillColor = UIColor.red.cgColor //param.fillColor.cgColor
         popLayer.strokeColor = param.borderColor.cgColor
         popLayer.lineWidth = param.borderWidth
         return popLayer
     }
     
-    fileprivate func createBgView(_ param: TipPopParam) -> UIView {
-        let bgView = UIView()
-        bgView.backgroundColor = .clear
+    fileprivate func createBgView(_ param: TipPopParam) -> FXGradientView {
+        let bgView = FXGradientView()
+        (bgView.layer as! CAGradientLayer).colors = [
+            UIColor(hex: 0x7ad3ff)!.cgColor,
+            UIColor(hex: 0xe261e0)!.cgColor
+        ]
+        (bgView.layer as! CAGradientLayer).startPoint = CGPoint(x: 0, y: 0.5)
+        (bgView.layer as! CAGradientLayer).endPoint = CGPoint(x: 1, y: 0.5)
+        (bgView.layer as! CAGradientLayer).locations = [0.0,1.0]
         return bgView
     }
     
@@ -209,7 +219,7 @@ class TipPop: UIView, AnimationBase {
                                     bgView: UIView) {
         let pth = PathSerivce.path(with: param)
         popLayer.path = pth.cgPath
-        bgView.layer.addSublayer(popLayer)
+        bgView.layer.mask = popLayer
     }
     
 }

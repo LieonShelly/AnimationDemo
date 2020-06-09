@@ -22,7 +22,7 @@ class IConViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(manualVideoIcon)
         manualVideoIcon.snp.makeConstraints {
-            $0.size.equalTo(CGSize(width: 44, height: 44))
+            $0.size.equalTo(CGSize(width: 52, height: 52))
             $0.center.equalToSuperview()
         }
         

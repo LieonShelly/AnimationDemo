@@ -87,15 +87,16 @@ class TipPopViewController: UIViewController {
         getSettingValue()
         var textParam = CommonTipPopTextParam()
         textParam.backgroudColor = UIColor.clear
-        textParam.textColor = .black
-        textParam.sizeLimitType = .width(180)
+        textParam.textColor = .white
+        textParam.sizeLimitType = .width(view.bounds.width - 40)
         textParam.font = UIFont.systemFont(ofSize: 13)
-        textParam.text = "asdhfjha阿萨德发挥世纪东方就按时 氨甲环酸的规范东方就按时 氨甲环酸的规范东方就按时 氨甲环酸的规范东方就按时 氨甲环酸的规范东方就按时 氨甲环酸的规范东方就按时 氨甲"
+        textParam.text = "遇到难题？点击这里帮您快速解决"
         param.textParam = textParam
         param.arrowPosition = sender.center
         param.displayView = nil
         param.popSize = .zero
         param.minInset = 10
+        param.cornorRadius = 6
         param.direction = self.direction
         TipPop.show(param)
     }

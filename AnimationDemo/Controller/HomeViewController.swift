@@ -36,16 +36,21 @@ extension HomeViewController {
         title = "动画列表"
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.registerClassWithCell(UITableViewCell.self)
-        
-        
+        tableView.registerClassWithCell(UITableViewCell.self) //
+        let expandView  = ListItem("ExpandViewController", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = ExpandViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
         let refresh = ListItem("RefreshViewController", handler: { [weak self] in
-              guard let weakSelf = self else {
-                  return
-              }
-              let vcc = RefreshViewController()
-              weakSelf.navigationController?.pushViewController(vcc, animated: true)
-          })
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = RefreshViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
         
         let image = ListItem("FXTutorialImageContrastVC", handler: { [weak self] in
             guard let weakSelf = self else {
@@ -159,7 +164,7 @@ extension HomeViewController {
             let vcc = FlurViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
-        let customViewController = ListItem("BLur", handler: { [weak self] in
+        let customViewController = ListItem("CustomViewController", handler: { [weak self] in
             guard let weakSelf = self else {
                 return
             }
@@ -175,19 +180,19 @@ extension HomeViewController {
         })
         
         let playerViewController = ListItem("player", handler: { [weak self] in
-              guard let weakSelf = self else {
-                  return
-              }
-              let vcc = PlayerViewController()
-              weakSelf.navigationController?.pushViewController(vcc, animated: true)
-          })
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = PlayerViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
         let swipeViewController = ListItem("Swipe", handler: { [weak self] in
-             guard let weakSelf = self else {
-                 return
-             }
-             let vcc = SwipeViewController()
-             weakSelf.navigationController?.pushViewController(vcc, animated: true)
-         })
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = SwipeViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
         let scaleBtnViewController = ListItem("ScaleBtnViewController", handler: { [weak self] in
             guard let weakSelf = self else {
                 return
@@ -233,7 +238,43 @@ extension HomeViewController {
             let vcc = ImagePickerViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
-        //
+        //GradientBtnVC
+        let gradient = ListItem("GradientBtnVC", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = GradientBtnVC()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        // FXPGCLoginViewController
+        let loginVC = ListItem("FXPGCLoginViewController", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = FXPGCLoginViewController(FXPGCLoginViewModel())
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        // GradientBorderVc
+        let gvc = ListItem("GradientBorderVc", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = GradientBorderVc()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        // FXUploadAlerTestVC
+        let alert = ListItem("FXUploadAlerTestVC", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = FXUploadAlerTestVC()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+         items.append(alert)
+        items.append(gvc)
+        items.append(loginVC)
+        items.append(gradient)
+        items.append(expandView)
         items.append(refresh)
         items.append(image)
         items.append(picker)
