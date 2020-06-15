@@ -30,4 +30,13 @@ enum FXTutorialHandleVideoListUIType {
             return models.count
         }
     }
+    
+    var title: String {
+        switch self {
+        case .tutorilSkill:
+            return "教程技巧"
+        case .commonSkill:
+            return "通用技巧"
+        }
+    }
 }

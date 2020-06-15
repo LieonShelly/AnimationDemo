@@ -11,13 +11,15 @@ import RxSwift
 import RxCocoa
 
 class FXTutorialHandleVideoListVC: UIViewController {
-    fileprivate lazy var tableViewBg: UIImageView = {
-        let imageView = UIImageView()
-        return imageView
+    fileprivate lazy var tableViewBg: BlurImageView = {
+        let view = BlurImageView()
+        view.visualEffectView.tint(UIColor(red: 37 / 255.0, green: 37 / 255.0, blue: 37 / 255.0, alpha: 1), blurRadius: 20, colorTintAlpha: 0.8)
+        return view
     }()
     fileprivate lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .plain)
+        let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
     fileprivate lazy var closeBtn: UIButton = {
@@ -42,6 +44,7 @@ class FXTutorialHandleVideoListVC: UIViewController {
 
 extension FXTutorialHandleVideoListVC {
     fileprivate func configUI() {
+        tableView.estimatedRowHeight = 200
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
@@ -65,6 +68,23 @@ extension FXTutorialHandleVideoListVC {
     
     fileprivate func configVM(_ viewModel: FXTutorialHandleVideoListVM) {
         self.viewModel.configData {[weak self] in
+            var videoURL: URL?
+            guard let model = viewModel.sections.first else {
+                return
+            }
+            switch model {
+            case .commonSkill(let models):
+                videoURL = models.first?.videoURL
+            case .tutorilSkill(let models):
+                videoURL = models.first?.videoURL
+            }
+            if let videoUrl = videoURL {
+                FXVideoCoverGenerator.shared.generateThumbnailForVideo(videoUrl) { (image, url) in
+                    if videoUrl.absoluteString == url.absoluteString {
+                        self?.tableViewBg.image = image
+                    }
+                }
+            }
             self?.tableView.reloadData()
         }
     }
@@ -88,20 +108,47 @@ extension FXTutorialHandleVideoListVC: UITableViewDataSource, UITableViewDelegat
             return cell
         case .commonSkill(let rows):
             let cell = tableView.dequeueCell(FXTutoriaComonSkillVideoCell.self, for: indexPath)
+            cell.configData(rows[indexPath.row])
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let sectonModel = viewModel.sections[indexPath.section]
         return UITableView.automaticDimension
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueHeaderFooterView(FXTutorialVideoListHeader.self)
+         let sectonModel = viewModel.sections[section]
+         header.titlelabel.text = sectonModel.title
+        switch sectonModel {
+        case .tutorilSkill:
+            header.titlelabel.snp.updateConstraints {
+                $0.bottom.top.equalTo(0)
+            }
+            header.contentView.layoutIfNeeded()
+        case .commonSkill:
+            header.titlelabel.snp.updateConstraints {
+                $0.top.equalTo(36 * 0.5)
+                $0.bottom.equalTo(-20 * 0.5)
+            }
+            header.contentView.layoutIfNeeded()
+        }
+        return header
+    }
     
-    /// 计算视频的高度
-    /// - Parameters:
-    ///   - relativeWidth: 相对宽度
-    /// - Returns: 等比的相对高度
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let sectonModel = viewModel.sections[section]
+        switch sectonModel {
+        case .tutorilSkill:
+            return 22
+        case .commonSkill:
+            return 36 * 0.5 + 22 + 20 * 0.5
+        }
+    }
+    
+    
+    /// 计算视频的高度 
     static func playerHeight(_ videoURL: URL, relativeWidth: CGFloat) -> CGFloat {
         let idealImageSize = FXVideoCoverGenerator.shared.getVideoSize(videoURL)
         if idealImageSize.width == 0 || idealImageSize.height == 0 {

@@ -90,11 +90,11 @@ private extension VisualEffectView {
 }
 
 extension VisualEffectView {
-    func tint(_ color: UIColor, blurRadius: CGFloat) {
-        self.colorTint = color
-        self.colorTintAlpha = 0.6
-        self.blurRadius = blurRadius
-    }
+     func tint(_ color: UIColor, blurRadius: CGFloat, colorTintAlpha: CGFloat = 0.6) {
+          self.colorTint = color
+          self.colorTintAlpha = colorTintAlpha
+          self.blurRadius = blurRadius
+      }
 }
 
 

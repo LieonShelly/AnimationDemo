@@ -9,44 +9,103 @@
 import Foundation
 
 class FXTutoriaComonSkillVideoCell: UITableViewCell {
-  
-}
-
-import AVKit
-
-
-/// 获取视频中的图片
-class FXVideoCoverGenerator {
-    static let shared: FXVideoCoverGenerator = FXVideoCoverGenerator()
-    fileprivate let queue = DispatchQueue(label: "FXVideoGeneratorQueue", attributes: .concurrent)
-    private init() {}
-    
-    /**
-     判断内存中是否存在缓存的图片
-     存在直接返回图片
-     不存在。开启线程获取，获取成功，存缓存，存磁盘，然后放回图片
-     */
-    func generateThumbnailForVideo(_ url: URL, completion: ((_ image: UIImage?, _ url: URL) -> Void)?) {
-        let asset = AVAsset(url: url)
-        let imageGenerator = AVAssetImageGenerator(asset: asset)
-        imageGenerator.maximumSize = CGSize(width: 100, height: 0)
-        imageGenerator.appliesPreferredTrackTransform = true
-        guard let imageRef = try? imageGenerator .copyCGImage(at: .zero, actualTime: nil) else {
-            completion?(nil, url)
-            return
+    struct UISize {
+        static let playerHorizonInset: CGFloat = UIDevice.current.isiPhoneXSeries ? 50 : 20
+        static let titleBgHeigt: CGFloat = 87
+    }
+    fileprivate lazy var titlelabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.customFont(ofSize: 16)
+        label.textColor = UIColor.white
+        label.textAlignment = .center
+        label.numberOfLines = 2
+        return label
+    }()
+    fileprivate lazy var titlelBg: BlurImageView = {
+        let view = BlurImageView()
+        view.visualEffectView.tint(UIColor(red: 0 / 255.0, green: 0 / 255.0, blue: 0 / 255.0, alpha: 1), blurRadius: 20, colorTintAlpha: 0.4)
+        return view
+    }()
+    fileprivate lazy var playerCoverView: UIImageView = {
+        let playerCoverView = UIImageView()
+        return playerCoverView
+    }()
+    fileprivate lazy var playerView: FXPlayerView = {
+        let playerView = FXPlayerView()
+        return playerView
+    }()
+    fileprivate lazy var shadowView: FXShadowView = {
+        let shadowView = FXShadowView()
+        return shadowView
+    }()
+    fileprivate lazy var containerView: UIView = {
+        let containerView = UIView()
+        containerView.layer.cornerRadius = 15
+        containerView.layer.masksToBounds = true
+        return containerView
+    }()
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        contentView.backgroundColor = .clear
+        backgroundColor = .clear
+        contentView.addSubview(shadowView)
+        contentView.addSubview(containerView)
+        containerView.addSubview(titlelBg)
+        containerView.addSubview(titlelabel)
+        containerView.addSubview(playerView)
+        containerView.addSubview(playerCoverView)
+       
+        containerView.snp.makeConstraints {
+            $0.top.equalTo(35 * 0.5)
+            $0.bottom.equalTo(-35 * 0.5)
+            $0.height.equalTo(300)
+            $0.left.equalTo(UISize.playerHorizonInset)
+            $0.right.equalTo(-UISize.playerHorizonInset)
         }
-        
-        let image = UIImage(cgImage: imageRef)
-        completion?(image, url)
+        titlelBg.snp.makeConstraints {
+            $0.left.right.bottom.equalTo(0)
+            $0.height.equalTo(UISize.titleBgHeigt)
+        }
+        titlelabel.snp.makeConstraints {
+            $0.center.equalTo(titlelBg.snp.center)
+            $0.left.equalTo(30)
+            $0.right.equalTo(-30)
+        }
+        playerView.snp.makeConstraints {
+            $0.top.equalTo(0)
+            $0.left.equalTo(0)
+            $0.right.equalTo(0)
+            $0.bottom.equalTo(titlelBg.snp.top)
+            $0.height.equalTo(100)
+        }
+        shadowView.snp.makeConstraints {
+            $0.edges.equalTo(containerView.snp.edges).inset(-0)
+        }
+        playerCoverView.snp.makeConstraints {
+            $0.edges.equalTo(playerView.snp.edges)
+        }
     }
     
-    func getVideoSize(_ url: URL) -> CGSize {
-        let asset = AVAsset(url: url)
-        let tracks = asset.tracks
-        var videoSize = CGSize(width: 0, height: 0)
-        for track in tracks where track.naturalSize != .zero {
-            videoSize = track.naturalSize
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+extension FXTutoriaComonSkillVideoCell {
+    func configData(_ model: FXTutorialHandleVideoModel) {
+        titlelabel.text = model.text
+        if let videoUrl = model.videoURL {
+            FXVideoCoverGenerator.shared.generateThumbnailForVideo(videoUrl) { (image, url) in
+                if videoUrl.absoluteString == url.absoluteString {
+                    self.playerCoverView.image = image
+                    self.titlelBg.image = image
+                }
+            }
+            let imageHeight = FXTutorialHandleVideoListVC.playerHeight(videoUrl, relativeWidth: UIScreen.main.bounds.width - UISize.playerHorizonInset * 2)
+            containerView.snp.updateConstraints {
+                $0.height.equalTo(imageHeight + UISize.titleBgHeigt)
+            }
         }
-        return videoSize
     }
 }
