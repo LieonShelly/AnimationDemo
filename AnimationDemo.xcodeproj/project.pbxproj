@@ -82,6 +82,7 @@
 		CD98766C241A3C0D0020D00F /* FXTutorialManulVideoIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98766B241A3C0D0020D00F /* FXTutorialManulVideoIcon.swift */; };
 		CD98766E241A3CD20020D00F /* IConViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98766D241A3CD20020D00F /* IConViewController.swift */; };
 		CD99459024975BCF00789E45 /* FXVideoCoverGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD99458F24975BCF00789E45 /* FXVideoCoverGenerator.swift */; };
+		CD994592249776F600789E45 /* FXTutorialManulVideoBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD994591249776F600789E45 /* FXTutorialManulVideoBaseCell.swift */; };
 		CDA1879F24970DFD00C46013 /* FXTutorialHandleVideoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1879E24970DFD00C46013 /* FXTutorialHandleVideoListVC.swift */; };
 		CDA187A124970E2A00C46013 /* FXTutorialHandleVideoListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA187A024970E2A00C46013 /* FXTutorialHandleVideoListVM.swift */; };
 		CDA187A324970E7600C46013 /* FXTutorialManulVideoHandleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA187A224970E7600C46013 /* FXTutorialManulVideoHandleCell.swift */; };
@@ -274,6 +275,7 @@
 		CD98766B241A3C0D0020D00F /* FXTutorialManulVideoIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialManulVideoIcon.swift; sourceTree = "<group>"; };
 		CD98766D241A3CD20020D00F /* IConViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IConViewController.swift; sourceTree = "<group>"; };
 		CD99458F24975BCF00789E45 /* FXVideoCoverGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXVideoCoverGenerator.swift; sourceTree = "<group>"; };
+		CD994591249776F600789E45 /* FXTutorialManulVideoBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialManulVideoBaseCell.swift; sourceTree = "<group>"; };
 		CDA1879E24970DFD00C46013 /* FXTutorialHandleVideoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialHandleVideoListVC.swift; sourceTree = "<group>"; };
 		CDA187A024970E2A00C46013 /* FXTutorialHandleVideoListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialHandleVideoListVM.swift; sourceTree = "<group>"; };
 		CDA187A224970E7600C46013 /* FXTutorialManulVideoHandleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialManulVideoHandleCell.swift; sourceTree = "<group>"; };
@@ -632,6 +634,7 @@
 				CDA187A224970E7600C46013 /* FXTutorialManulVideoHandleCell.swift */,
 				CDA187A424970EA200C46013 /* FXTutoriaComonSkillVideoCell.swift */,
 				CDA187A624970FD200C46013 /* FXTutorialVideoListHeader.swift */,
+				CD994591249776F600789E45 /* FXTutorialManulVideoBaseCell.swift */,
 			);
 			path = Viiew;
 			sourceTree = "<group>";
@@ -1007,6 +1010,7 @@
 				CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */,
 				CD3E24BA24446A4200F892F4 /* FXTutorialToast.swift in Sources */,
 				CD787BCF23B59AAA00DAE0BD /* LoadingViewController.swift in Sources */,
+				CD994592249776F600789E45 /* FXTutorialManulVideoBaseCell.swift in Sources */,
 				CDFB49CD235025820083426A /* TouchView.swift in Sources */,
 				CDF0548F242C7BDA00C9F645 /* FXTutorialImageContrastVC.swift in Sources */,
 				CD2112ED235D8800003B5202 /* MultiLanguageTexInputAlert.swift in Sources */,

@@ -8,36 +8,18 @@
 
 import Foundation
 
-class FXTutoriaComonSkillVideoCell: UITableViewCell {
-    struct UISize {
-        static let playerHorizonInset: CGFloat = UIDevice.current.isiPhoneXSeries ? 50 : 20
+class FXTutoriaComonSkillVideoCell: FXTutorialManulVideoBaseCell {
+    
+    struct OtherUISize {
         static let titleBgHeigt: CGFloat = 87
     }
-    fileprivate lazy var titlelabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.customFont(ofSize: 16)
-        label.textColor = UIColor.white
-        label.textAlignment = .center
-        label.numberOfLines = 2
-        return label
-    }()
+    
     fileprivate lazy var titlelBg: BlurImageView = {
         let view = BlurImageView()
         view.visualEffectView.tint(UIColor(red: 0 / 255.0, green: 0 / 255.0, blue: 0 / 255.0, alpha: 1), blurRadius: 20, colorTintAlpha: 0.4)
         return view
     }()
-    fileprivate lazy var playerCoverView: UIImageView = {
-        let playerCoverView = UIImageView()
-        return playerCoverView
-    }()
-    fileprivate lazy var playerView: FXPlayerView = {
-        let playerView = FXPlayerView()
-        return playerView
-    }()
-    fileprivate lazy var shadowView: FXShadowView = {
-        let shadowView = FXShadowView()
-        return shadowView
-    }()
+    
     fileprivate lazy var containerView: UIView = {
         let containerView = UIView()
         containerView.layer.cornerRadius = 15
@@ -46,6 +28,7 @@ class FXTutoriaComonSkillVideoCell: UITableViewCell {
     }()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        playerView.layer.cornerRadius = 0
         contentView.backgroundColor = .clear
         backgroundColor = .clear
         contentView.addSubview(shadowView)
@@ -54,7 +37,7 @@ class FXTutoriaComonSkillVideoCell: UITableViewCell {
         containerView.addSubview(titlelabel)
         containerView.addSubview(playerView)
         containerView.addSubview(playerCoverView)
-       
+        
         containerView.snp.makeConstraints {
             $0.top.equalTo(35 * 0.5)
             $0.bottom.equalTo(-35 * 0.5)
@@ -64,7 +47,7 @@ class FXTutoriaComonSkillVideoCell: UITableViewCell {
         }
         titlelBg.snp.makeConstraints {
             $0.left.right.bottom.equalTo(0)
-            $0.height.equalTo(UISize.titleBgHeigt)
+            $0.height.equalTo(OtherUISize.titleBgHeigt)
         }
         titlelabel.snp.makeConstraints {
             $0.center.equalTo(titlelBg.snp.center)
@@ -86,26 +69,26 @@ class FXTutoriaComonSkillVideoCell: UITableViewCell {
         }
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-}
-
-extension FXTutoriaComonSkillVideoCell {
-    func configData(_ model: FXTutorialHandleVideoModel) {
+    override func configData(_ model: FXTutorialHandleVideoModel) {
         titlelabel.text = model.text
         if let videoUrl = model.videoURL {
-            FXVideoCoverGenerator.shared.generateThumbnailForVideo(videoUrl) { (image, url) in
+            let imageWidth = UIScreen.main.bounds.width - UISize.playerHorizonInset * 2
+            let imageHeight = FXTutorialHandleVideoListVC.playerHeight(videoUrl, relativeWidth: imageWidth)
+            containerView.snp.updateConstraints {
+                $0.height.equalTo(imageHeight + OtherUISize.titleBgHeigt)
+            }
+            FXVideoCoverGenerator.shared.generateThumbnailForVideo(videoUrl, maximumSize: CGSize(width: imageWidth, height: imageHeight)) { (image, url) in
                 if videoUrl.absoluteString == url.absoluteString {
                     self.playerCoverView.image = image
                     self.titlelBg.image = image
                 }
             }
-            let imageHeight = FXTutorialHandleVideoListVC.playerHeight(videoUrl, relativeWidth: UIScreen.main.bounds.width - UISize.playerHorizonInset * 2)
-            containerView.snp.updateConstraints {
-                $0.height.equalTo(imageHeight + UISize.titleBgHeigt)
-            }
         }
+        configPlayer(model)
     }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }

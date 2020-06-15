@@ -79,7 +79,7 @@ extension FXTutorialHandleVideoListVC {
                 videoURL = models.first?.videoURL
             }
             if let videoUrl = videoURL {
-                FXVideoCoverGenerator.shared.generateThumbnailForVideo(videoUrl) { (image, url) in
+                FXVideoCoverGenerator.shared.generateThumbnailForVideo(videoUrl, maximumSize: self!.view.bounds.size) { (image, url) in
                     if videoUrl.absoluteString == url.absoluteString {
                         self?.tableViewBg.image = image
                     }
