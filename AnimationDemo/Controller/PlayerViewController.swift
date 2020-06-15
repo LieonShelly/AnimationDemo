@@ -28,6 +28,13 @@ class PlayerViewController: UIViewController {
     
 }
 
+class FXPlayerView: UIView {
+    
+    override class var layerClass: AnyClass {
+        return AVPlayerLayer.self
+    }
+}
+
 
 import Foundation
 import UIKit

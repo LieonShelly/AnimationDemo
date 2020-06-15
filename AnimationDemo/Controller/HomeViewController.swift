@@ -270,6 +270,18 @@ extension HomeViewController {
             let vcc = FXUploadAlerTestVC()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
+        let videoList = ListItem("videoList", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let videoPath = Bundle.main.path(forResource: "vertical_scroll_texture_touch_clear.mp4", ofType: nil)
+            let videoURL = URL(fileURLWithPath: videoPath ?? "")
+            let inputModel = FXTutorialHandleVideoModel(videoURL, text: "阿士大夫就水电费阿萨德鼓风机阿士大夫")
+            let vm = FXTutorialHandleVideoListVM(inputModel)
+            let vcc = FXTutorialHandleVideoListVC(vm)
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        items.append(videoList)
          items.append(alert)
         items.append(gvc)
         items.append(loginVC)
