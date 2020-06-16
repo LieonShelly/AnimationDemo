@@ -29,6 +29,7 @@ class FXTutoriaComonSkillVideoCell: FXTutorialManulVideoBaseCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         playerView.layer.cornerRadius = 0
+        playerCoverView.layer.cornerRadius = 0
         contentView.backgroundColor = .clear
         backgroundColor = .clear
         contentView.addSubview(shadowView)
@@ -59,7 +60,6 @@ class FXTutoriaComonSkillVideoCell: FXTutorialManulVideoBaseCell {
             $0.left.equalTo(0)
             $0.right.equalTo(0)
             $0.bottom.equalTo(titlelBg.snp.top)
-            $0.height.equalTo(100)
         }
         shadowView.snp.makeConstraints {
             $0.edges.equalTo(containerView.snp.edges).inset(-0)
@@ -74,17 +74,27 @@ class FXTutoriaComonSkillVideoCell: FXTutorialManulVideoBaseCell {
         if let videoUrl = model.videoURL {
             let imageWidth = UIScreen.main.bounds.width - UISize.playerHorizonInset * 2
             let imageHeight = FXTutorialHandleVideoListVC.playerHeight(videoUrl, relativeWidth: imageWidth)
-            containerView.snp.updateConstraints {
-                $0.height.equalTo(imageHeight + OtherUISize.titleBgHeigt)
+            let containerH = imageHeight + OtherUISize.titleBgHeigt
+            if containerH != containerView.bounds.height {
+                containerView.snp.updateConstraints {
+                    $0.height.equalTo(containerH)
+                }
+                contentView.layoutIfNeeded()
             }
-            FXVideoCoverGenerator.shared.generateThumbnailForVideo(videoUrl, maximumSize: CGSize(width: imageWidth, height: imageHeight)) { (image, url) in
-                if videoUrl.absoluteString == url.absoluteString {
-                    self.playerCoverView.image = image
-                    self.titlelBg.image = image
+            if let cover = model.coverImg {
+                let image = UIImage(contentsOfFile: cover)
+                self.playerCoverView.image = image
+                self.titlelBg.image = image
+            } else {
+                FXVideoCoverGenerator.shared.generateThumbnailForVideo(videoUrl, maximumSize: CGSize(width: imageWidth, height: imageHeight)) { (image, url) in
+                    if videoUrl.absoluteString == url.absoluteString {
+                        self.playerCoverView.image = image
+                        self.titlelBg.image = image
+                    }
                 }
             }
         }
-        configPlayer(model)
+        startPlay(model)
     }
 
     required init?(coder: NSCoder) {

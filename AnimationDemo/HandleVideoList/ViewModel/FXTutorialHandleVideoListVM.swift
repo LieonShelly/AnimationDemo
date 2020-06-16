@@ -25,9 +25,16 @@ class FXTutorialHandleVideoListVM {
         // vertical_scroll_texture_touch_clear
         let videoPath = Bundle.main.path(forResource: "vertical_scroll_texture_touch_clear.mp4", ofType: nil)
         let videoURL = URL(fileURLWithPath: videoPath ?? "")
+        let coverImagePath = Bundle.main.path(forResource: "vertical_scroll_texture_touch_clear_cover.jpg", ofType: nil)
         sections.append(.commonSkill(
-            [FXTutorialHandleVideoModel(videoURL, text: "必须GET的奇妙画笔使用技巧 奇妙画笔使用技巧"),
-             FXTutorialHandleVideoModel(videoURL, text: "必须GET的奇妙画笔使用技巧 奇妙画笔使用技巧")]
+            [FXTutorialHandleVideoModel(videoURL, text: "必须GET的奇妙画笔使用技巧 奇妙画笔使用技巧", coverImg: coverImagePath),
+             FXTutorialHandleVideoModel(videoURL, text: "必须GET的奇妙画笔使用技巧 奇妙画笔使用技巧", coverImg: coverImagePath),
+             FXTutorialHandleVideoModel(videoURL, text: "必须GET的奇妙画笔使用技巧 奇妙画笔使用技巧", coverImg: coverImagePath),
+             FXTutorialHandleVideoModel(videoURL, text: "必须GET的奇妙画笔使用技巧 奇妙画笔使用技巧", coverImg: coverImagePath),
+             FXTutorialHandleVideoModel(videoURL, text: "必须GET的奇妙画笔使用技巧 奇妙画笔使用技巧", coverImg: coverImagePath),
+             FXTutorialHandleVideoModel(videoURL, text: "必须GET的奇妙画笔使用技巧 奇妙画笔使用技巧", coverImg: coverImagePath),
+             FXTutorialHandleVideoModel(videoURL, text: "必须GET的奇妙画笔使用技巧 奇妙画笔使用技巧", coverImg: coverImagePath),
+             FXTutorialHandleVideoModel(videoURL, text: "必须GET的奇妙画笔使用技巧 奇妙画笔使用技巧", coverImg: coverImagePath)]
             ))
         finish?()
     }

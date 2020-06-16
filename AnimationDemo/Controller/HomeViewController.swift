@@ -274,7 +274,7 @@ extension HomeViewController {
             guard let weakSelf = self else {
                 return
             }
-            let videoPath = Bundle.main.path(forResource: "vertical_scroll_texture_touch_clear.mp4", ofType: nil)
+            let videoPath = Bundle.main.path(forResource: "video_vip_headerView_x.mp4", ofType: nil)
             let videoURL = URL(fileURLWithPath: videoPath ?? "")
             let inputModel = FXTutorialHandleVideoModel(videoURL, text: "阿士大夫就水电费阿萨德鼓风机阿士大夫")
             let vm = FXTutorialHandleVideoListVM(inputModel)

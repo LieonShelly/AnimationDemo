@@ -83,6 +83,7 @@
 		CD98766E241A3CD20020D00F /* IConViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98766D241A3CD20020D00F /* IConViewController.swift */; };
 		CD99459024975BCF00789E45 /* FXVideoCoverGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD99458F24975BCF00789E45 /* FXVideoCoverGenerator.swift */; };
 		CD994592249776F600789E45 /* FXTutorialManulVideoBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD994591249776F600789E45 /* FXTutorialManulVideoBaseCell.swift */; };
+		CD9945942498540600789E45 /* vertical_scroll_texture_touch_clear_cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD9945932498540600789E45 /* vertical_scroll_texture_touch_clear_cover.jpg */; };
 		CDA1879F24970DFD00C46013 /* FXTutorialHandleVideoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1879E24970DFD00C46013 /* FXTutorialHandleVideoListVC.swift */; };
 		CDA187A124970E2A00C46013 /* FXTutorialHandleVideoListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA187A024970E2A00C46013 /* FXTutorialHandleVideoListVM.swift */; };
 		CDA187A324970E7600C46013 /* FXTutorialManulVideoHandleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA187A224970E7600C46013 /* FXTutorialManulVideoHandleCell.swift */; };
@@ -276,6 +277,7 @@
 		CD98766D241A3CD20020D00F /* IConViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IConViewController.swift; sourceTree = "<group>"; };
 		CD99458F24975BCF00789E45 /* FXVideoCoverGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXVideoCoverGenerator.swift; sourceTree = "<group>"; };
 		CD994591249776F600789E45 /* FXTutorialManulVideoBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialManulVideoBaseCell.swift; sourceTree = "<group>"; };
+		CD9945932498540600789E45 /* vertical_scroll_texture_touch_clear_cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vertical_scroll_texture_touch_clear_cover.jpg; sourceTree = "<group>"; };
 		CDA1879E24970DFD00C46013 /* FXTutorialHandleVideoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialHandleVideoListVC.swift; sourceTree = "<group>"; };
 		CDA187A024970E2A00C46013 /* FXTutorialHandleVideoListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialHandleVideoListVM.swift; sourceTree = "<group>"; };
 		CDA187A224970E7600C46013 /* FXTutorialManulVideoHandleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialManulVideoHandleCell.swift; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 		CD6832FF23BB48FB008C0C9F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				CD9945932498540600789E45 /* vertical_scroll_texture_touch_clear_cover.jpg */,
 				CDA187AA24971F1500C46013 /* vertical_scroll_texture_touch_clear.mp4 */,
 				CDF9276B23CEC94000DD5183 /* ic_tutorial_alert_yls@3x.png */,
 				CD0D70BF23CDA44500336622 /* ic_tutorial_robot360.png */,
@@ -540,10 +543,10 @@
 				CD749ACC2356F72C00C357A5 /* FlipViewController.swift */,
 				CD749ACD2356F72C00C357A5 /* FlipViewController.xib */,
 				CD1691CA23595B93006E73AD /* RecordAudioViewController.swift */,
+				CD88DD5E2361E4F200B9DB8F /* TestViewController.swift */,
 				CD1691CB23595B93006E73AD /* RecordAudioViewController.xib */,
 				CDADB234235EE7A7002A57FD /* TipPopViewController.swift */,
 				CDADB235235EE7A7002A57FD /* TipPopViewController.xib */,
-				CD88DD5E2361E4F200B9DB8F /* TestViewController.swift */,
 				CD88DD5F2361E4F200B9DB8F /* TestViewController.xib */,
 				CDC87F2C2362E39600EFE022 /* BtnViewController.swift */,
 				CDC87F2D2362E39600EFE022 /* BtnViewController.xib */,
@@ -896,6 +899,7 @@
 				CD2112EE235D8800003B5202 /* MultiLanguageTexInputAlert.xib in Resources */,
 				CD68330623BB4BE6008C0C9F /* video_vip_headerView_plus.mp4 in Resources */,
 				CD2112F2235D8B91003B5202 /* PadTypeCollectionViewCell.xib in Resources */,
+				CD9945942498540600789E45 /* vertical_scroll_texture_touch_clear_cover.jpg in Resources */,
 				CDA89DF92373C0C8000E3346 /* BannerViewController.xib in Resources */,
 				CDFAAA79238A54D400918051 /* BtnProgressViewController.xib in Resources */,
 				CD68330323BB491F008C0C9F /* ipa_bottom_bg@3x.png in Resources */,

@@ -40,6 +40,10 @@ class FXTutorialHandleVideoListVC: UIViewController {
         configVM(viewModel)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
 }
 
 extension FXTutorialHandleVideoListVC {
@@ -88,6 +92,7 @@ extension FXTutorialHandleVideoListVC {
             self?.tableView.reloadData()
         }
     }
+    
 }
 
 extension FXTutorialHandleVideoListVC: UITableViewDataSource, UITableViewDelegate {
@@ -147,8 +152,28 @@ extension FXTutorialHandleVideoListVC: UITableViewDataSource, UITableViewDelegat
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? FXTutorialManulVideoBaseCell else {
+            return
+        }
+        cell.pausePlay()
+    }
     
-    /// 计算视频的高度 
+    
+    /// 松手时已经静止，decelerate为false
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+
+        }
+    }
+    
+    /// 松手时，还在滑动，最后停止
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+
+    }
+    
+    
+    /// 计算视频的高度
     static func playerHeight(_ videoURL: URL, relativeWidth: CGFloat) -> CGFloat {
         let idealImageSize = FXVideoCoverGenerator.shared.getVideoSize(videoURL)
         if idealImageSize.width == 0 || idealImageSize.height == 0 {

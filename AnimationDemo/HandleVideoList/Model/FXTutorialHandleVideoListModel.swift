@@ -8,13 +8,33 @@
 
 import Foundation
 
+
 class FXTutorialHandleVideoModel {
+    enum PlayerStatus {
+        case pause(Double)
+        case inProgress(Double)
+        case idle
+        
+        var progress: Double {
+            switch self {
+            case .pause(let value):
+                return value
+            case .inProgress(let value):
+                return value
+            case .idle:
+                return 0
+            }
+        }
+    }
     var videoURL: URL?
     var text: String?
+    var status: PlayerStatus = .inProgress(0.5)
+    var coverImg: String?
     
-    init(_ videoURL: URL? = nil, text: String? = nil) {
+    init(_ videoURL: URL? = nil, text: String? = nil, coverImg: String? = nil) {
         self.videoURL = videoURL
         self.text = text
+        self.coverImg = coverImg
     }
 }
 
