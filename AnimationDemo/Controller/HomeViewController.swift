@@ -279,7 +279,8 @@ extension HomeViewController {
             let inputModel = FXTutorialHandleVideoModel(videoURL, text: "阿士大夫就水电费阿萨德鼓风机阿士大夫")
             let vm = FXTutorialHandleVideoListVM(inputModel)
             let vcc = FXTutorialHandleVideoListVC(vm)
-            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+            vcc.modalPresentationStyle = .fullScreen
+            weakSelf.present(vcc, animated: true, completion: nil)
         })
         items.append(videoList)
          items.append(alert)

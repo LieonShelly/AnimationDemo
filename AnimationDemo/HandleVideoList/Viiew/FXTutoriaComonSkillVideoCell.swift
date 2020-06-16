@@ -18,7 +18,7 @@ class FXTutoriaComonSkillVideoCell: FXTutorialManulVideoBaseCell {
     
     fileprivate lazy var titlelBg: BlurImageView = {
         let view = BlurImageView()
-        view.visualEffectView.tint(UIColor(red: 0 / 255.0, green: 0 / 255.0, blue: 0 / 255.0, alpha: 1), blurRadius: 20, colorTintAlpha: 0.4)
+        view.visualEffectView.tint(UIColor(red: 0 / 255.0, green: 0 / 255.0, blue: 0 / 255.0, alpha: 1), blurRadius: 20, colorTintAlpha: 0.6)
         return view
     }()
     

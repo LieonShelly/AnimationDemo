@@ -10,7 +10,7 @@ import AVKit
 
 class FXTutorialManulVideoBaseCell: UITableViewCell {
     struct UISize {
-        static let playerHorizonInset: CGFloat = UIDevice.current.isiPhoneXSeries ? 50 : 20
+        static let playerHorizonInset: CGFloat = UIDevice.current.isiPhoneXSeries ? 50 : 35
     }
     lazy var titlelabel: UILabel = {
         let label = UILabel()
@@ -104,14 +104,11 @@ extension FXTutorialManulVideoBaseCell {
             if player == nil {
                  player = AVPlayer(playerItem: playerItem)
             } else {
-                hiddenPlayerCover()
-                player?.seek(to: .zero)
-                player?.play()
-                return
+                player?.replaceCurrentItem(with: playerItem)
             }
-            playerItem.addObserver(self, forKeyPath: "status", options: .new, context: nil)
             (playerView.layer as? AVPlayerLayer)?.player = player
             (playerView.layer as? AVPlayerLayer)?.videoGravity = .resizeAspect
+            playerItem.addObserver(self, forKeyPath: "status", options: .new, context: nil)
             NotificationCenter.default.addObserver(self, selector: #selector(didPlayEnd), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
         }
     }

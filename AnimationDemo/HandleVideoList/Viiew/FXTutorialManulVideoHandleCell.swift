@@ -12,7 +12,7 @@ import AVKit
 class FXTutorialManulVideoHandleCell: FXTutorialManulVideoBaseCell {
     
     struct OtherUISize {
-        static let titleTop: CGFloat = 4
+        static let titleTop: CGFloat = 8
         static let playerTop: CGFloat = 20
         static let playerBottom: CGFloat = -35 * 0.5
     }

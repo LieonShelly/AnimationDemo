@@ -84,6 +84,22 @@
 		CD99459024975BCF00789E45 /* FXVideoCoverGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD99458F24975BCF00789E45 /* FXVideoCoverGenerator.swift */; };
 		CD994592249776F600789E45 /* FXTutorialManulVideoBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD994591249776F600789E45 /* FXTutorialManulVideoBaseCell.swift */; };
 		CD9945942498540600789E45 /* vertical_scroll_texture_touch_clear_cover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD9945932498540600789E45 /* vertical_scroll_texture_touch_clear_cover.jpg */; };
+		CD9945A42498941800789E45 /* vertical_scroll_face_exact_fix_skin.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD9945952498940A00789E45 /* vertical_scroll_face_exact_fix_skin.mp4 */; };
+		CD9945A52498941800789E45 /* vertical_scroll_face_exact_fix_ease_up.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD9945962498940B00789E45 /* vertical_scroll_face_exact_fix_ease_up.mp4 */; };
+		CD9945A62498941800789E45 /* vertical_scroll_cut_into_horizontal_perspective.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD9945972498940C00789E45 /* vertical_scroll_cut_into_horizontal_perspective.mp4 */; };
+		CD9945A72498941800789E45 /* vertical_scroll_face_exact_fix_light_skin.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD9945982498940D00789E45 /* vertical_scroll_face_exact_fix_light_skin.mp4 */; };
+		CD9945A82498941800789E45 /* vertical_scroll_face_little_change_face.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD9945992498940E00789E45 /* vertical_scroll_face_little_change_face.mp4 */; };
+		CD9945A92498941800789E45 /* vertical_scroll_face_little_change_many_people_make.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD99459A2498940F00789E45 /* vertical_scroll_face_little_change_many_people_make.mp4 */; };
+		CD9945AA2498941800789E45 /* vertical_scroll_face_exact_fix_touch_clear.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD99459B2498941100789E45 /* vertical_scroll_face_exact_fix_touch_clear.mp4 */; };
+		CD9945AB2498941800789E45 /* vertical_scroll_face_exact_fix_light_eye.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD99459C2498941200789E45 /* vertical_scroll_face_exact_fix_light_eye.mp4 */; };
+		CD9945AC2498941800789E45 /* vertical_scroll_cut_into_vertical_perspective.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD99459D2498941300789E45 /* vertical_scroll_cut_into_vertical_perspective.mp4 */; };
+		CD9945AD2498941800789E45 /* vertical_scroll_face_exact_fix_spot_fix.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD99459E2498941400789E45 /* vertical_scroll_face_exact_fix_spot_fix.mp4 */; };
+		CD9945AE2498941800789E45 /* vertical_scroll_contrast.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD99459F2498941400789E45 /* vertical_scroll_contrast.mp4 */; };
+		CD9945AF2498941800789E45 /* vertical_scroll_face_exact_fix_light_white.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD9945A02498941500789E45 /* vertical_scroll_face_exact_fix_light_white.mp4 */; };
+		CD9945B02498941800789E45 /* vertical_scroll_face_little_change_eye.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD9945A12498941600789E45 /* vertical_scroll_face_little_change_eye.mp4 */; };
+		CD9945B12498941800789E45 /* vertical_scroll_face_exact_fix_shadow.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD9945A22498941700789E45 /* vertical_scroll_face_exact_fix_shadow.mp4 */; };
+		CD9945B22498941800789E45 /* vertical_scroll_face_exact_fix.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD9945A32498941800789E45 /* vertical_scroll_face_exact_fix.mp4 */; };
+		CD9945B62498AC4300789E45 /* ic_tutorial_video_cancel@3x@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD9945B52498AC4200789E45 /* ic_tutorial_video_cancel@3x@3x.png */; };
 		CDA1879F24970DFD00C46013 /* FXTutorialHandleVideoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1879E24970DFD00C46013 /* FXTutorialHandleVideoListVC.swift */; };
 		CDA187A124970E2A00C46013 /* FXTutorialHandleVideoListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA187A024970E2A00C46013 /* FXTutorialHandleVideoListVM.swift */; };
 		CDA187A324970E7600C46013 /* FXTutorialManulVideoHandleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA187A224970E7600C46013 /* FXTutorialManulVideoHandleCell.swift */; };
@@ -278,6 +294,22 @@
 		CD99458F24975BCF00789E45 /* FXVideoCoverGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXVideoCoverGenerator.swift; sourceTree = "<group>"; };
 		CD994591249776F600789E45 /* FXTutorialManulVideoBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialManulVideoBaseCell.swift; sourceTree = "<group>"; };
 		CD9945932498540600789E45 /* vertical_scroll_texture_touch_clear_cover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vertical_scroll_texture_touch_clear_cover.jpg; sourceTree = "<group>"; };
+		CD9945952498940A00789E45 /* vertical_scroll_face_exact_fix_skin.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = vertical_scroll_face_exact_fix_skin.mp4; sourceTree = "<group>"; };
+		CD9945962498940B00789E45 /* vertical_scroll_face_exact_fix_ease_up.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = vertical_scroll_face_exact_fix_ease_up.mp4; sourceTree = "<group>"; };
+		CD9945972498940C00789E45 /* vertical_scroll_cut_into_horizontal_perspective.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = vertical_scroll_cut_into_horizontal_perspective.mp4; sourceTree = "<group>"; };
+		CD9945982498940D00789E45 /* vertical_scroll_face_exact_fix_light_skin.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = vertical_scroll_face_exact_fix_light_skin.mp4; sourceTree = "<group>"; };
+		CD9945992498940E00789E45 /* vertical_scroll_face_little_change_face.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = vertical_scroll_face_little_change_face.mp4; sourceTree = "<group>"; };
+		CD99459A2498940F00789E45 /* vertical_scroll_face_little_change_many_people_make.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = vertical_scroll_face_little_change_many_people_make.mp4; sourceTree = "<group>"; };
+		CD99459B2498941100789E45 /* vertical_scroll_face_exact_fix_touch_clear.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = vertical_scroll_face_exact_fix_touch_clear.mp4; sourceTree = "<group>"; };
+		CD99459C2498941200789E45 /* vertical_scroll_face_exact_fix_light_eye.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = vertical_scroll_face_exact_fix_light_eye.mp4; sourceTree = "<group>"; };
+		CD99459D2498941300789E45 /* vertical_scroll_cut_into_vertical_perspective.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = vertical_scroll_cut_into_vertical_perspective.mp4; sourceTree = "<group>"; };
+		CD99459E2498941400789E45 /* vertical_scroll_face_exact_fix_spot_fix.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = vertical_scroll_face_exact_fix_spot_fix.mp4; sourceTree = "<group>"; };
+		CD99459F2498941400789E45 /* vertical_scroll_contrast.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = vertical_scroll_contrast.mp4; sourceTree = "<group>"; };
+		CD9945A02498941500789E45 /* vertical_scroll_face_exact_fix_light_white.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = vertical_scroll_face_exact_fix_light_white.mp4; sourceTree = "<group>"; };
+		CD9945A12498941600789E45 /* vertical_scroll_face_little_change_eye.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = vertical_scroll_face_little_change_eye.mp4; sourceTree = "<group>"; };
+		CD9945A22498941700789E45 /* vertical_scroll_face_exact_fix_shadow.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = vertical_scroll_face_exact_fix_shadow.mp4; sourceTree = "<group>"; };
+		CD9945A32498941800789E45 /* vertical_scroll_face_exact_fix.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = vertical_scroll_face_exact_fix.mp4; sourceTree = "<group>"; };
+		CD9945B52498AC4200789E45 /* ic_tutorial_video_cancel@3x@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_tutorial_video_cancel@3x@3x.png"; sourceTree = "<group>"; };
 		CDA1879E24970DFD00C46013 /* FXTutorialHandleVideoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialHandleVideoListVC.swift; sourceTree = "<group>"; };
 		CDA187A024970E2A00C46013 /* FXTutorialHandleVideoListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialHandleVideoListVM.swift; sourceTree = "<group>"; };
 		CDA187A224970E7600C46013 /* FXTutorialManulVideoHandleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialManulVideoHandleCell.swift; sourceTree = "<group>"; };
@@ -494,6 +526,22 @@
 		CD6832FF23BB48FB008C0C9F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				CD9945B52498AC4200789E45 /* ic_tutorial_video_cancel@3x@3x.png */,
+				CD99459F2498941400789E45 /* vertical_scroll_contrast.mp4 */,
+				CD9945972498940C00789E45 /* vertical_scroll_cut_into_horizontal_perspective.mp4 */,
+				CD99459D2498941300789E45 /* vertical_scroll_cut_into_vertical_perspective.mp4 */,
+				CD9945962498940B00789E45 /* vertical_scroll_face_exact_fix_ease_up.mp4 */,
+				CD99459C2498941200789E45 /* vertical_scroll_face_exact_fix_light_eye.mp4 */,
+				CD9945982498940D00789E45 /* vertical_scroll_face_exact_fix_light_skin.mp4 */,
+				CD9945A02498941500789E45 /* vertical_scroll_face_exact_fix_light_white.mp4 */,
+				CD9945A22498941700789E45 /* vertical_scroll_face_exact_fix_shadow.mp4 */,
+				CD9945952498940A00789E45 /* vertical_scroll_face_exact_fix_skin.mp4 */,
+				CD99459E2498941400789E45 /* vertical_scroll_face_exact_fix_spot_fix.mp4 */,
+				CD99459B2498941100789E45 /* vertical_scroll_face_exact_fix_touch_clear.mp4 */,
+				CD9945A32498941800789E45 /* vertical_scroll_face_exact_fix.mp4 */,
+				CD9945A12498941600789E45 /* vertical_scroll_face_little_change_eye.mp4 */,
+				CD9945992498940E00789E45 /* vertical_scroll_face_little_change_face.mp4 */,
+				CD99459A2498940F00789E45 /* vertical_scroll_face_little_change_many_people_make.mp4 */,
 				CD9945932498540600789E45 /* vertical_scroll_texture_touch_clear_cover.jpg */,
 				CDA187AA24971F1500C46013 /* vertical_scroll_texture_touch_clear.mp4 */,
 				CDF9276B23CEC94000DD5183 /* ic_tutorial_alert_yls@3x.png */,
@@ -891,28 +939,44 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD9945B62498AC4300789E45 /* ic_tutorial_video_cancel@3x@3x.png in Resources */,
+				CD9945B12498941800789E45 /* vertical_scroll_face_exact_fix_shadow.mp4 in Resources */,
+				CD9945A72498941800789E45 /* vertical_scroll_face_exact_fix_light_skin.mp4 in Resources */,
 				CDFB49D523505AD50083426A /* ProgressViewController.xib in Resources */,
+				CD9945AF2498941800789E45 /* vertical_scroll_face_exact_fix_light_white.mp4 in Resources */,
+				CD9945B02498941800789E45 /* vertical_scroll_face_little_change_eye.mp4 in Resources */,
 				CD2FCF7C234D796500E28E5C /* LaunchScreen.storyboard in Resources */,
 				CDFF204D2367E78100800136 /* ImageCollectionViewCell.xib in Resources */,
+				CD9945AD2498941800789E45 /* vertical_scroll_face_exact_fix_spot_fix.mp4 in Resources */,
+				CD9945AB2498941800789E45 /* vertical_scroll_face_exact_fix_light_eye.mp4 in Resources */,
 				CD749ACF2356F72C00C357A5 /* FlipViewController.xib in Resources */,
 				CD68330723BB4BE6008C0C9F /* video_vip_headerView_x.mp4 in Resources */,
 				CD2112EE235D8800003B5202 /* MultiLanguageTexInputAlert.xib in Resources */,
 				CD68330623BB4BE6008C0C9F /* video_vip_headerView_plus.mp4 in Resources */,
 				CD2112F2235D8B91003B5202 /* PadTypeCollectionViewCell.xib in Resources */,
 				CD9945942498540600789E45 /* vertical_scroll_texture_touch_clear_cover.jpg in Resources */,
+				CD9945AE2498941800789E45 /* vertical_scroll_contrast.mp4 in Resources */,
+				CD9945A92498941800789E45 /* vertical_scroll_face_little_change_many_people_make.mp4 in Resources */,
 				CDA89DF92373C0C8000E3346 /* BannerViewController.xib in Resources */,
+				CD9945A62498941800789E45 /* vertical_scroll_cut_into_horizontal_perspective.mp4 in Resources */,
+				CD9945A42498941800789E45 /* vertical_scroll_face_exact_fix_skin.mp4 in Resources */,
 				CDFAAA79238A54D400918051 /* BtnProgressViewController.xib in Resources */,
 				CD68330323BB491F008C0C9F /* ipa_bottom_bg@3x.png in Resources */,
 				CD0230ED237A5F5200324E30 /* FXBannerCollectionViewCell.xib in Resources */,
 				CD2FCFA9234DB37600E28E5C /* PinchViewController.xib in Resources */,
 				CD725ADA234F0E4E00C11FB0 /* PanViewController.xib in Resources */,
+				CD9945AA2498941800789E45 /* vertical_scroll_face_exact_fix_touch_clear.mp4 in Resources */,
 				CD6C28D423A21D620008761C /* ScaleBtnViewController.xib in Resources */,
 				CDDB073A23C96DC300C0AA97 /* NewAnimatedViewController.xib in Resources */,
+				CD9945A82498941800789E45 /* vertical_scroll_face_little_change_face.mp4 in Resources */,
 				CDD33F862368448500FD074A /* GuideStartView.xib in Resources */,
 				CDFF205B236837A500800136 /* GuideStartViewController.xib in Resources */,
 				CDBBC731239F6D5000B07EE9 /* SwipeViewController.xib in Resources */,
 				CD2FCF79234D796500E28E5C /* Assets.xcassets in Resources */,
 				CD68330123BB4909008C0C9F /* iap_close@3x.png in Resources */,
+				CD9945A52498941800789E45 /* vertical_scroll_face_exact_fix_ease_up.mp4 in Resources */,
+				CD9945B22498941800789E45 /* vertical_scroll_face_exact_fix.mp4 in Resources */,
+				CD9945AC2498941800789E45 /* vertical_scroll_cut_into_vertical_perspective.mp4 in Resources */,
 				CDFF20492367E6B800800136 /* LongPressViewController.xib in Resources */,
 				CDA187AB24971F1500C46013 /* vertical_scroll_texture_touch_clear.mp4 in Resources */,
 				CD2FCFA2234D79AB00E28E5C /* TapAnimationViewController.xib in Resources */,

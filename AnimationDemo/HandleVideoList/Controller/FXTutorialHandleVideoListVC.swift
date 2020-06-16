@@ -11,9 +11,33 @@ import RxSwift
 import RxCocoa
 
 class FXTutorialHandleVideoListVC: UIViewController {
+    struct UISize {
+        static let closeTop: CGFloat = 37
+        static let closeBtnHeight: CGFloat = 30
+        static let closeBtnLeft: CGFloat = 20 - 7
+        static let navbarH: CGFloat = UIDevice.current.isiPhoneXSeries ? 81 : 64
+        static let closeBtnBottom: CGFloat = 10
+        static let tabInsetTop: CGFloat = UIDevice.current.isiPhoneXSeries ? closeTop + closeBtnHeight - 8: closeTop + closeBtnHeight - 25
+        static let tabInsetbottom: CGFloat = 46
+    }
+    fileprivate let bag = DisposeBag()
+    fileprivate lazy var titleLabel: UILabel = {
+        let titleLabel = UILabel()
+        titleLabel.text = "进阶技巧"
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont.customFont(ofSize: 18, isBold: false)
+        return titleLabel
+    }()
+    fileprivate lazy var navbar: VisualEffectView = {
+        let blurBg = VisualEffectView()
+        blurBg.blurRadius = 20.fitiPhone5sSerires
+        blurBg.colorTint = UIColor.black.withAlphaComponent(0.45)
+        blurBg.colorTintAlpha = 1
+        return blurBg
+    }()
     fileprivate lazy var tableViewBg: BlurImageView = {
         let view = BlurImageView()
-        view.visualEffectView.tint(UIColor(red: 37 / 255.0, green: 37 / 255.0, blue: 37 / 255.0, alpha: 1), blurRadius: 20, colorTintAlpha: 0.8)
+        view.visualEffectView.tint(UIColor(red: 37 / 255.0, green: 37 / 255.0, blue: 37 / 255.0, alpha: 1), blurRadius: 20, colorTintAlpha: 0.75)
         return view
     }()
     fileprivate lazy var tableView: UITableView = {
@@ -24,7 +48,7 @@ class FXTutorialHandleVideoListVC: UIViewController {
     }()
     fileprivate lazy var closeBtn: UIButton = {
         let closeBtn = UIButton()
-        closeBtn.backgroundColor = .blue
+        closeBtn.setImage(UIImage(contentsOfFile: Bundle.getFilePath(fileName: "ic_tutorial_video_cancel@3x")), for: .normal)
         return closeBtn
     }()
     fileprivate var viewModel: FXTutorialHandleVideoListVM!
@@ -52,15 +76,32 @@ extension FXTutorialHandleVideoListVC {
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
+        view.addSubview(navbar)
         view.addSubview(closeBtn)
+        view.addSubview(titleLabel)
         tableView.snp.makeConstraints{
             $0.edges.equalTo(0)
         }
+        closeBtn.rx.tap
+            .subscribe(onNext: {[weak self] (_) in
+                guard let weakSelf = self else {
+                    return
+                }
+                weakSelf.dismiss(animated: true, completion: nil)
+            })
+            .disposed(by: bag)
+        navbar.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: UISize.navbarH)
         closeBtn.snp.makeConstraints {
-            $0.size.equalTo(CGSize(width: 30, height: 30))
-            $0.left.equalTo(20 - 7)
-            $0.top.equalTo(37)
+            $0.left.equalTo(UISize.closeBtnLeft)
+            $0.size.equalTo(CGSize(width: UISize.closeBtnHeight, height: UISize.closeBtnHeight))
+            $0.bottom.equalTo(navbar.snp.bottom).offset(-UISize.closeBtnBottom)
         }
+        titleLabel.snp.makeConstraints {
+            $0.centerX.equalTo(view.snp.centerX)
+            $0.centerY.equalTo(closeBtn.snp.centerY)
+        }
+        tableView.contentInset = UIEdgeInsets(top: UISize.tabInsetTop, left: 0, bottom: UISize.tabInsetbottom, right: 0)
+        tableView.contentOffset = CGPoint(x: 0, y: -UISize.tabInsetTop)
         tableViewBg.backgroundColor = .black
         tableViewBg.frame = view.bounds
         tableView.backgroundView = tableViewBg
@@ -68,6 +109,11 @@ extension FXTutorialHandleVideoListVC {
         tableView.registerClassWithCell(FXTutorialManulVideoHandleCell.self)
         tableView.registerClassWithCell(FXTutoriaComonSkillVideoCell.self)
         tableView.registerClassWithHeaderFooterView(FXTutorialVideoListHeader.self)
+        if #available(iOS 11.0, *) {
+            tableView.contentInsetAdjustmentBehavior = .never
+        } else {
+            automaticallyAdjustsScrollViewInsets = false
+        }
     }
     
     fileprivate func configVM(_ viewModel: FXTutorialHandleVideoListVM) {
@@ -92,7 +138,6 @@ extension FXTutorialHandleVideoListVC {
             self?.tableView.reloadData()
         }
     }
-    
 }
 
 extension FXTutorialHandleVideoListVC: UITableViewDataSource, UITableViewDelegate {
@@ -110,12 +155,10 @@ extension FXTutorialHandleVideoListVC: UITableViewDataSource, UITableViewDelegat
         case .tutorilSkill(let rows):
             let cell = tableView.dequeueCell(FXTutorialManulVideoHandleCell.self, for: indexPath)
             cell.configData(rows[indexPath.row])
-            cell.titlelabel.text = "卡但是返回卡萨丁暗示法开始大富科技接口和水电费静安寺快递费卡还是短发看哈收到货熬枯受淡话费卡和第三方"
             return cell
         case .commonSkill(let rows):
             let cell = tableView.dequeueCell(FXTutoriaComonSkillVideoCell.self, for: indexPath)
             cell.configData(rows[indexPath.row])
-            cell.titlelabel.text = "\(indexPath.section) - \(indexPath.row)"
             return cell
         }
     }
@@ -180,7 +223,7 @@ extension FXTutorialHandleVideoListVC: UITableViewDataSource, UITableViewDelegat
         case .tutorilSkill:
             return 22
         case .commonSkill:
-            return 36 * 0.5 + 22 + 20 * 0.5
+            return 5 * 0.5 + 22 + 20 * 0.5
         }
     }
     
@@ -192,11 +235,20 @@ extension FXTutorialHandleVideoListVC: UITableViewDataSource, UITableViewDelegat
         let sectionModel = viewModel.sections[section]
         switch sectionModel {
         case .tutorilSkill:
-            return 7
+            return 16
         default:
             break
         }
         return 0.0001
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        var alpha = scrollView.contentOffset.y * 1 / UISize.navbarH + (UISize.tabInsetTop) / UISize.navbarH
+        alpha = alpha >= 1 ? 1 : alpha
+        print(alpha)
+        navbar.alpha = alpha
+        titleLabel.alpha = alpha
+        navbar.blurRadius = 20 * alpha
     }
     
     /// 计算视频的高度
