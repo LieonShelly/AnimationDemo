@@ -37,12 +37,12 @@ class FXTutorialManulVideoBaseCell: UITableViewCell {
         return shadowView
     }()
     var player: AVPlayer?
-    fileprivate var timeObserver: Any?
     fileprivate var videoData: FXTutorialHandleVideoModel?
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
     }
+    
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -63,52 +63,22 @@ class FXTutorialManulVideoBaseCell: UITableViewCell {
                     }
                 }
             }
-            if playerView.bounds.height != imageHeight {
-                playerView.snp.updateConstraints {
-                    $0.height.equalTo(imageHeight)
-                }
-                contentView.layoutIfNeeded()
-            }
         }
+        showPlayerCover()
         startPlay(model)
+
     }
     
     func startPlay(_ model: FXTutorialHandleVideoModel) {
         configPlayer(model)
     }
     
-    func pausePlay() {
-        guard let duration = player?.currentItem?.duration.seconds, !duration.isNaN else {
-            return
-        }
-        let time = CMTime(seconds: duration, preferredTimescale: 1)
-        player?.pause()
-        player!.seek(to: time, completionHandler: { _ in
-            print("pausePlay - pausePlay - currentTime \(self.player?.currentItem?.currentTime().seconds ?? 0)")
-            self.player?.play()
-            print("pausePlay - pausePlay - currentTime \(self.player?.currentItem?.currentTime().seconds ?? 0)")
-        })
-        
-    }
-    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "status", let statusRawValue = change?[NSKeyValueChangeKey.newKey] as? Int, let status = AVPlayer.Status(rawValue: statusRawValue), let model = videoData {
+        if keyPath == "status", let statusRawValue = change?[NSKeyValueChangeKey.newKey] as? Int, let status = AVPlayer.Status(rawValue: statusRawValue) {
             switch status {
             case .readyToPlay:
-                switch model.status {
-                case .idle:
-                    player?.play()
-                default:
-                    guard let duration = player?.currentItem?.duration.seconds, !duration.isNaN else {
-                        return
-                    }
-                    player?.pause()
-                    let time = CMTime(value: CMTimeValue(10000 * duration * model.status.progress), timescale: 10000)
-                    player!.seek(to: time, completionHandler: { _ in
-                        self.player?.play()
-                    })
-                }
                 hiddenPlayerCover()
+                player?.play()
             default:
                 showPlayerCover()
             }
@@ -131,19 +101,18 @@ extension FXTutorialManulVideoBaseCell {
         self.videoData = model
         if let videoUrl = model.videoURL {
             let playerItem = AVPlayerItem(url: videoUrl)
-            player = AVPlayer(playerItem: playerItem)
+            if player == nil {
+                 player = AVPlayer(playerItem: playerItem)
+            } else {
+                hiddenPlayerCover()
+                player?.seek(to: .zero)
+                player?.play()
+                return
+            }
             playerItem.addObserver(self, forKeyPath: "status", options: .new, context: nil)
             (playerView.layer as? AVPlayerLayer)?.player = player
             (playerView.layer as? AVPlayerLayer)?.videoGravity = .resizeAspect
             NotificationCenter.default.addObserver(self, selector: #selector(didPlayEnd), name: Notification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
-            timeObserver = player?.addPeriodicTimeObserver(forInterval: CMTime(value: CMTimeValue(10), timescale: 1000), queue: DispatchQueue.main) { [weak self](time) in
-                let currentTime = time.seconds
-                guard let weakSelf = self, let totalTime = weakSelf.player?.currentItem?.duration, !totalTime.seconds.isNaN else {
-                    return
-                }
-                let progress = currentTime / totalTime.seconds
-                //                model.status = .inProgress(progress)
-            }
         }
     }
     

@@ -11,6 +11,12 @@ import AVKit
 
 class FXTutorialManulVideoHandleCell: FXTutorialManulVideoBaseCell {
     
+    struct OtherUISize {
+        static let titleTop: CGFloat = 4
+        static let playerTop: CGFloat = 20
+        static let playerBottom: CGFloat = -35 * 0.5
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.backgroundColor = .clear
@@ -21,16 +27,15 @@ class FXTutorialManulVideoHandleCell: FXTutorialManulVideoBaseCell {
         contentView.addSubview(playerCoverView)
         
         titlelabel.snp.makeConstraints {
-            $0.top.equalTo(4)
+            $0.top.equalTo(OtherUISize.titleTop)
             $0.left.equalTo(10)
             $0.right.equalTo(-10)
         }
         playerView.snp.makeConstraints {
-            $0.top.equalTo(titlelabel.snp.bottom).offset(20)
+            $0.top.equalTo(titlelabel.snp.bottom).offset(OtherUISize.playerTop)
             $0.left.equalTo(UISize.playerHorizonInset)
             $0.right.equalTo(-UISize.playerHorizonInset)
-            $0.bottom.equalTo(-35 * 0.5)
-            $0.height.equalTo(100)
+            $0.bottom.equalTo(OtherUISize.playerBottom)
         }
         shadowView.snp.makeConstraints {
             $0.edges.equalTo(playerView.snp.edges).inset(-0)

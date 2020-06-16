@@ -11,7 +11,9 @@ import Foundation
 class FXTutoriaComonSkillVideoCell: FXTutorialManulVideoBaseCell {
     
     struct OtherUISize {
-        static let titleBgHeigt: CGFloat = 87
+        static let containerTop: CGFloat = 35 * 0.5
+        static let containerBottom: CGFloat = 35 * 0.5
+        static let titleBgHeight: CGFloat = 87
     }
     
     fileprivate lazy var titlelBg: BlurImageView = {
@@ -40,15 +42,14 @@ class FXTutoriaComonSkillVideoCell: FXTutorialManulVideoBaseCell {
         containerView.addSubview(playerCoverView)
         
         containerView.snp.makeConstraints {
-            $0.top.equalTo(35 * 0.5)
-            $0.bottom.equalTo(-35 * 0.5)
-            $0.height.equalTo(300)
+            $0.top.equalTo(OtherUISize.containerTop)
+            $0.bottom.equalTo(-OtherUISize.containerBottom)
             $0.left.equalTo(UISize.playerHorizonInset)
             $0.right.equalTo(-UISize.playerHorizonInset)
         }
         titlelBg.snp.makeConstraints {
             $0.left.right.bottom.equalTo(0)
-            $0.height.equalTo(OtherUISize.titleBgHeigt)
+            $0.height.equalTo(OtherUISize.titleBgHeight)
         }
         titlelabel.snp.makeConstraints {
             $0.center.equalTo(titlelBg.snp.center)
@@ -74,13 +75,6 @@ class FXTutoriaComonSkillVideoCell: FXTutorialManulVideoBaseCell {
         if let videoUrl = model.videoURL {
             let imageWidth = UIScreen.main.bounds.width - UISize.playerHorizonInset * 2
             let imageHeight = FXTutorialHandleVideoListVC.playerHeight(videoUrl, relativeWidth: imageWidth)
-            let containerH = imageHeight + OtherUISize.titleBgHeigt
-            if containerH != containerView.bounds.height {
-                containerView.snp.updateConstraints {
-                    $0.height.equalTo(containerH)
-                }
-                contentView.layoutIfNeeded()
-            }
             if let cover = model.coverImg {
                 let image = UIImage(contentsOfFile: cover)
                 self.playerCoverView.image = image
@@ -96,7 +90,7 @@ class FXTutoriaComonSkillVideoCell: FXTutorialManulVideoBaseCell {
         }
         startPlay(model)
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

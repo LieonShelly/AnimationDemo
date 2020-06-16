@@ -22,10 +22,7 @@ class FXTutorialVideoListHeader: UITableViewHeaderFooterView {
         super.init(reuseIdentifier: reuseIdentifier)
         contentView.addSubview(titlelabel)
         titlelabel.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.top.equalTo(18)
-            $0.height.equalTo(22)
-            $0.bottom.equalTo(-10)
+            $0.center.equalToSuperview()
         }
     }
     

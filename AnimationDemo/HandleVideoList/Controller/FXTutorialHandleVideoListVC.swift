@@ -110,35 +110,67 @@ extension FXTutorialHandleVideoListVC: UITableViewDataSource, UITableViewDelegat
         case .tutorilSkill(let rows):
             let cell = tableView.dequeueCell(FXTutorialManulVideoHandleCell.self, for: indexPath)
             cell.configData(rows[indexPath.row])
+            cell.titlelabel.text = "卡但是返回卡萨丁暗示法开始大富科技接口和水电费静安寺快递费卡还是短发看哈收到货熬枯受淡话费卡和第三方"
             return cell
         case .commonSkill(let rows):
             let cell = tableView.dequeueCell(FXTutoriaComonSkillVideoCell.self, for: indexPath)
             cell.configData(rows[indexPath.row])
+            cell.titlelabel.text = "\(indexPath.section) - \(indexPath.row)"
             return cell
         }
     }
     
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        let sectonModel = viewModel.sections[indexPath.section]
+        switch sectonModel {
+        case .tutorilSkill(let rows):
+            let model = rows[indexPath.row]
+            if let videoUrl = model.videoURL {
+                let imageWidth = UIScreen.main.bounds.width -  FXTutorialManulVideoHandleCell.UISize.playerHorizonInset * 2
+                let imageHeight = FXTutorialHandleVideoListVC.playerHeight(videoUrl, relativeWidth: imageWidth)
+                return FXTutorialManulVideoHandleCell.OtherUISize.titleTop +
+                    FXTutorialManulVideoHandleCell.OtherUISize.playerTop +
+                    FXTutorialManulVideoHandleCell.OtherUISize.playerBottom +
+                    imageHeight
+            }
+        case .commonSkill(let rows):
+            let model = rows[indexPath.row]
+            if let videoUrl = model.videoURL {
+                let imageWidth = UIScreen.main.bounds.width - FXTutoriaComonSkillVideoCell.UISize.playerHorizonInset * 2
+                let imageHeight = FXTutorialHandleVideoListVC.playerHeight(videoUrl, relativeWidth: imageWidth)
+                let containerH = imageHeight + FXTutoriaComonSkillVideoCell.OtherUISize.titleBgHeight
+                return FXTutoriaComonSkillVideoCell.OtherUISize.containerTop +
+                    containerH +
+                    FXTutoriaComonSkillVideoCell.OtherUISize.containerBottom
+            }
+        }
+        return 0
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+      
+        let sectonModel = viewModel.sections[indexPath.section]
+        switch sectonModel {
+        case .tutorilSkill:
+            return UITableView.automaticDimension
+        case .commonSkill(let rows):
+            let model = rows[indexPath.row]
+            if let videoUrl = model.videoURL {
+                let imageWidth = UIScreen.main.bounds.width - FXTutoriaComonSkillVideoCell.UISize.playerHorizonInset * 2
+                let imageHeight = FXTutorialHandleVideoListVC.playerHeight(videoUrl, relativeWidth: imageWidth)
+                let containerH = imageHeight + FXTutoriaComonSkillVideoCell.OtherUISize.titleBgHeight
+                return FXTutoriaComonSkillVideoCell.OtherUISize.containerTop +
+                    containerH +
+                    FXTutoriaComonSkillVideoCell.OtherUISize.containerBottom
+            }
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = tableView.dequeueHeaderFooterView(FXTutorialVideoListHeader.self)
          let sectonModel = viewModel.sections[section]
          header.titlelabel.text = sectonModel.title
-        switch sectonModel {
-        case .tutorilSkill:
-            header.titlelabel.snp.updateConstraints {
-                $0.bottom.top.equalTo(0)
-            }
-            header.contentView.layoutIfNeeded()
-        case .commonSkill:
-            header.titlelabel.snp.updateConstraints {
-                $0.top.equalTo(36 * 0.5)
-                $0.bottom.equalTo(-20 * 0.5)
-            }
-            header.contentView.layoutIfNeeded()
-        }
         return header
     }
     
@@ -152,26 +184,20 @@ extension FXTutorialHandleVideoListVC: UITableViewDataSource, UITableViewDelegat
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) as? FXTutorialManulVideoBaseCell else {
-            return
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        let sectionModel = viewModel.sections[section]
+        switch sectionModel {
+        case .tutorilSkill:
+            return 7
+        default:
+            break
         }
-        cell.pausePlay()
+        return 0.0001
     }
-    
-    
-    /// 松手时已经静止，decelerate为false
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if !decelerate {
-
-        }
-    }
-    
-    /// 松手时，还在滑动，最后停止
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-
-    }
-    
     
     /// 计算视频的高度
     static func playerHeight(_ videoURL: URL, relativeWidth: CGFloat) -> CGFloat {
