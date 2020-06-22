@@ -14,7 +14,7 @@ class FXTutorialManulVideoHandleCell: FXTutorialManulVideoBaseCell {
     struct OtherUISize {
         static let titleTop: CGFloat = 8
         static let playerTop: CGFloat = 20
-        static let playerBottom: CGFloat = -35 * 0.5
+        static let playerBottom: CGFloat = 35 * 0.5
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -35,7 +35,7 @@ class FXTutorialManulVideoHandleCell: FXTutorialManulVideoBaseCell {
             $0.top.equalTo(titlelabel.snp.bottom).offset(OtherUISize.playerTop)
             $0.left.equalTo(UISize.playerHorizonInset)
             $0.right.equalTo(-UISize.playerHorizonInset)
-            $0.bottom.equalTo(OtherUISize.playerBottom)
+            $0.bottom.equalTo(-OtherUISize.playerBottom)
         }
         shadowView.snp.makeConstraints {
             $0.edges.equalTo(playerView.snp.edges).inset(-0)

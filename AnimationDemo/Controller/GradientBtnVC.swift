@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GradientBtnVC: UIViewController {
+class GradientBtnVC: IFListBaseViewController {
     fileprivate lazy var bgView: UIImageView = {
         let bgView = UIImageView()
         bgView.image = UIImage(named: "ic_tutorial_code_bg")

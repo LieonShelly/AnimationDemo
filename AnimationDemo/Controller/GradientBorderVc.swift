@@ -20,7 +20,7 @@ class Button: UIButton {
     }
 }
 
-class GradientBorderVc: UIViewController {
+class GradientBorderVc: IFListBaseViewController {
     struct UISize {
         static let iconSize: CGSize = CGSize(width: 42.fitiPhone5sSerires, height: 42.fitiPhone5sSerires)
         static let lineWidth: CGFloat = 1

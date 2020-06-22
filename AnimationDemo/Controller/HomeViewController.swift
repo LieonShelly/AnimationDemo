@@ -282,6 +282,23 @@ extension HomeViewController {
             vcc.modalPresentationStyle = .fullScreen
             weakSelf.present(vcc, animated: true, completion: nil)
         })
+        let card = ListItem("CardViewController", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = CardViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        // SegmentVC
+        let segmentVC = ListItem("SegmentVC", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = SegmentVC()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        items.append(segmentVC)
+        items.append(card)
         items.append(videoList)
          items.append(alert)
         items.append(gvc)

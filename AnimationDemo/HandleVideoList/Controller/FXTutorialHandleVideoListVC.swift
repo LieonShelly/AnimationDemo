@@ -72,7 +72,7 @@ class FXTutorialHandleVideoListVC: UIViewController {
 
 extension FXTutorialHandleVideoListVC {
     fileprivate func configUI() {
-        tableView.estimatedRowHeight = 200
+//        tableView.estimatedRowHeight = 200
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
@@ -171,10 +171,7 @@ extension FXTutorialHandleVideoListVC: UITableViewDataSource, UITableViewDelegat
             if let videoUrl = model.videoURL {
                 let imageWidth = UIScreen.main.bounds.width -  FXTutorialManulVideoHandleCell.UISize.playerHorizonInset * 2
                 let imageHeight = FXTutorialHandleVideoListVC.playerHeight(videoUrl, relativeWidth: imageWidth)
-                return FXTutorialManulVideoHandleCell.OtherUISize.titleTop +
-                    FXTutorialManulVideoHandleCell.OtherUISize.playerTop +
-                    FXTutorialManulVideoHandleCell.OtherUISize.playerBottom +
-                    imageHeight
+                return imageHeight
             }
         case .commonSkill(let rows):
             let model = rows[indexPath.row]
@@ -191,7 +188,6 @@ extension FXTutorialHandleVideoListVC: UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-      
         let sectonModel = viewModel.sections[indexPath.section]
         switch sectonModel {
         case .tutorilSkill:

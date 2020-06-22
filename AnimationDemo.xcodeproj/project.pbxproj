@@ -112,6 +112,13 @@
 		CDA89DF82373C0C8000E3346 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA89DF62373C0C8000E3346 /* BannerViewController.swift */; };
 		CDA89DF92373C0C8000E3346 /* BannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDA89DF72373C0C8000E3346 /* BannerViewController.xib */; };
 		CDA89DFB2373C13B000E3346 /* FXTransformLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA89DFA2373C13B000E3346 /* FXTransformLayout.swift */; };
+		CDA9A8BF249DB945000CEF71 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA9A8BE249DB945000CEF71 /* CardViewController.swift */; };
+		CDA9A8C1249F8945000CEF71 /* CycleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA9A8C0249F8945000CEF71 /* CycleLayout.swift */; };
+		CDA9A8E024A092C1000CEF71 /* SegmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA9A8DF24A092C1000CEF71 /* SegmentVC.swift */; };
+		CDA9A8E224A0BAA8000CEF71 /* ArcLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA9A8E124A0BAA8000CEF71 /* ArcLayout.swift */; };
+		CDA9A8E424A0F718000CEF71 /* WheelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA9A8E324A0F718000CEF71 /* WheelLayout.swift */; };
+		CDA9A8E624A10A15000CEF71 /* WaterFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA9A8E524A10A15000CEF71 /* WaterFlowLayout.swift */; };
+		CDA9A8E824A10FF6000CEF71 /* TransformLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA9A8E724A10FF6000CEF71 /* TransformLayout.swift */; };
 		CDAB78DE247FB46F00905236 /* FXPGCLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB78D4247FB46F00905236 /* FXPGCLoginViewModel.swift */; };
 		CDAB78DF247FB46F00905236 /* FXPGCLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB78D6247FB46F00905236 /* FXPGCLoginViewController.swift */; };
 		CDAB78E0247FB46F00905236 /* FXLoginUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDAB78D8247FB46F00905236 /* FXLoginUIModel.swift */; };
@@ -322,6 +329,13 @@
 		CDA89DF62373C0C8000E3346 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		CDA89DF72373C0C8000E3346 /* BannerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerViewController.xib; sourceTree = "<group>"; };
 		CDA89DFA2373C13B000E3346 /* FXTransformLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTransformLayout.swift; sourceTree = "<group>"; };
+		CDA9A8BE249DB945000CEF71 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		CDA9A8C0249F8945000CEF71 /* CycleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleLayout.swift; sourceTree = "<group>"; };
+		CDA9A8DF24A092C1000CEF71 /* SegmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentVC.swift; sourceTree = "<group>"; };
+		CDA9A8E124A0BAA8000CEF71 /* ArcLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcLayout.swift; sourceTree = "<group>"; };
+		CDA9A8E324A0F718000CEF71 /* WheelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelLayout.swift; sourceTree = "<group>"; };
+		CDA9A8E524A10A15000CEF71 /* WaterFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterFlowLayout.swift; sourceTree = "<group>"; };
+		CDA9A8E724A10FF6000CEF71 /* TransformLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformLayout.swift; sourceTree = "<group>"; };
 		CDAB78D4247FB46F00905236 /* FXPGCLoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FXPGCLoginViewModel.swift; sourceTree = "<group>"; };
 		CDAB78D6247FB46F00905236 /* FXPGCLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FXPGCLoginViewController.swift; sourceTree = "<group>"; };
 		CDAB78D8247FB46F00905236 /* FXLoginUIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FXLoginUIModel.swift; sourceTree = "<group>"; };
@@ -634,6 +648,8 @@
 				CD874F552486261100FC72EC /* GradientBorderVc.swift */,
 				CDA48305248FB7CF00526333 /* FXUploadTextInputAlert.swift */,
 				CDA48307248FB80300526333 /* FXUploadAlerTestVC.swift */,
+				CDA9A8BE249DB945000CEF71 /* CardViewController.swift */,
+				CDA9A8DF24A092C1000CEF71 /* SegmentVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -828,6 +844,11 @@
 				CD68330D23BDE137008C0C9F /* IFHookMarkView.swift */,
 				CDBB312B242CF98B00C1DCAD /* FXTutorialUploadProgressView.swift */,
 				CD074789243385460080FD64 /* IFRefreshHeader.swift */,
+				CDA9A8C0249F8945000CEF71 /* CycleLayout.swift */,
+				CDA9A8E124A0BAA8000CEF71 /* ArcLayout.swift */,
+				CDA9A8E324A0F718000CEF71 /* WheelLayout.swift */,
+				CDA9A8E524A10A15000CEF71 /* WaterFlowLayout.swift */,
+				CDA9A8E724A10FF6000CEF71 /* TransformLayout.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1079,9 +1100,11 @@
 				CD3E24BA24446A4200F892F4 /* FXTutorialToast.swift in Sources */,
 				CD787BCF23B59AAA00DAE0BD /* LoadingViewController.swift in Sources */,
 				CD994592249776F600789E45 /* FXTutorialManulVideoBaseCell.swift in Sources */,
+				CDA9A8E624A10A15000CEF71 /* WaterFlowLayout.swift in Sources */,
 				CDFB49CD235025820083426A /* TouchView.swift in Sources */,
 				CDF0548F242C7BDA00C9F645 /* FXTutorialImageContrastVC.swift in Sources */,
 				CD2112ED235D8800003B5202 /* MultiLanguageTexInputAlert.swift in Sources */,
+				CDA9A8E224A0BAA8000CEF71 /* ArcLayout.swift in Sources */,
 				CDAB78E1247FB46F00905236 /* FXUser.swift in Sources */,
 				CDA89DF82373C0C8000E3346 /* BannerViewController.swift in Sources */,
 				CD7DEB8A246E3A850086FDBB /* GradientBtnVC.swift in Sources */,
@@ -1104,6 +1127,7 @@
 				CD0747872433835C0080FD64 /* RefreshViewController.swift in Sources */,
 				CD039004237BF15400638401 /* FXMoveAniamtion.swift in Sources */,
 				CDA187A924971A0700C46013 /* FXTutorialHandleVideoListModel.swift in Sources */,
+				CDA9A8E824A10FF6000CEF71 /* TransformLayout.swift in Sources */,
 				CD1691CC23595B93006E73AD /* RecordAudioViewController.swift in Sources */,
 				CD88DD602361E4F200B9DB8F /* TestViewController.swift in Sources */,
 				CDA89DFB2373C13B000E3346 /* FXTransformLayout.swift in Sources */,
@@ -1114,8 +1138,10 @@
 				CDA1879F24970DFD00C46013 /* FXTutorialHandleVideoListVC.swift in Sources */,
 				CD725AD5234F0E1D00C11FB0 /* PanAnimation.swift in Sources */,
 				CDFF20482367E6B800800136 /* LongPressViewController.swift in Sources */,
+				CDA9A8E024A092C1000CEF71 /* SegmentVC.swift in Sources */,
 				CDFF20562368333600800136 /* ImageTitleCollectionViewCell.swift in Sources */,
 				CDFF205223682B3200800136 /* DemoTouchViewController.swift in Sources */,
+				CDA9A8BF249DB945000CEF71 /* CardViewController.swift in Sources */,
 				CD7D50B42361768E00FA9C07 /* Param.swift in Sources */,
 				CDF0548D242C575A00C9F645 /* FXTutorialImageContrastView.swift in Sources */,
 				CD7B0C38240E586400C57BE2 /* HookViewController.swift in Sources */,
@@ -1139,11 +1165,13 @@
 				CDB280B6241E160500795A11 /* FXImageCropView.swift in Sources */,
 				CDBB312C242CF98B00C1DCAD /* FXTutorialUploadProgressView.swift in Sources */,
 				CDFAAA78238A54D400918051 /* BtnProgressViewController.swift in Sources */,
+				CDA9A8C1249F8945000CEF71 /* CycleLayout.swift in Sources */,
 				CDAB78E0247FB46F00905236 /* FXLoginUIModel.swift in Sources */,
 				CD2FCFA1234D79AB00E28E5C /* TapAnimationViewController.swift in Sources */,
 				CDFF204F23680D5200800136 /* PopImageBrowser.swift in Sources */,
 				CDA48306248FB7CF00526333 /* FXUploadTextInputAlert.swift in Sources */,
 				CDA48308248FB80300526333 /* FXUploadAlerTestVC.swift in Sources */,
+				CDA9A8E424A0F718000CEF71 /* WheelLayout.swift in Sources */,
 				CD7D50B223613C4600FA9C07 /* PopSerivce.swift in Sources */,
 				CDEA86FE240FA292007BAA00 /* FXTutorialNumView.swift in Sources */,
 				CDFF204C2367E78100800136 /* ImageCollectionViewCell.swift in Sources */,
