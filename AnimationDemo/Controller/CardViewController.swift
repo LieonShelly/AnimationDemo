@@ -14,16 +14,32 @@ class CardViewController: IFListBaseViewController {
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         return view
     }()
+    fileprivate lazy var recommendCover: IFGradientView = {
+        let view = IFGradientView()
+        (view.layer as? CAGradientLayer)?.startPoint = CGPoint(x: 0.5, y: 0)
+        (view.layer as? CAGradientLayer)?.endPoint = CGPoint(x: 0.5, y: 1)
+        (view.layer as? CAGradientLayer)?.colors = [UIColor(hex: 0xffffff)!.withAlphaComponent(0).cgColor, UIColor(hex: 0xffffff)!.cgColor]
+        return view
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         collectionView.dataSource = self
         view.addSubview(collectionView)
         collectionView.registerClassWithCell(WheelCell.self)
+        
+        
+        view.addSubview(recommendCover)
         collectionView.snp.makeConstraints {
             $0.left.right.equalTo(0)
             $0.centerY.equalTo(view.snp.centerY)
             $0.height.equalTo(300)
+        }
+        
+        recommendCover.snp.makeConstraints {
+            $0.left.right.equalTo(0)
+            $0.height.equalTo(145)
+            $0.bottom.equalTo(collectionView.snp.bottom)
         }
     }
 }

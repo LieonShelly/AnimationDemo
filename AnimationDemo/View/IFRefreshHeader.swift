@@ -17,14 +17,11 @@ class IFRefreshHeader: MJRefreshHeader {
         didSet {
             switch state {
             case .idle:
-                loadingView.reset()
-                loadingView.layer.removeAllAnimations()
-                break
+                loadingView.update(0)
             case .pulling:
                 break
             case .refreshing:
                 refreshAnimation()
-                break
             default:
                 break
             }
@@ -40,10 +37,8 @@ class IFRefreshHeader: MJRefreshHeader {
     
     override func placeSubviews() {
         super.placeSubviews()
-        let size = loadingView.frame.size
-        loadingView.center = CGPoint(x: mj_w * 0.5, y: mj_h - size.height * 0.5)
+        loadingView.center = CGPoint(x: mj_w * 0.5, y: mj_h * 0.5)
     }
-    
     
     override func scrollViewContentOffsetDidChange(_ change: [AnyHashable : Any]?) {
         super.scrollViewContentOffsetDidChange(change)
@@ -64,8 +59,18 @@ class IFRefreshHeader: MJRefreshHeader {
         }
         loadingView.update(pullPercent)
     }
+    let contentInsetTop: CGFloat = 50
+    override func beginRefreshing() {
+        state = .pulling
+        let contentInset = scrollView!.contentInset
+        scrollView?.contentInset = UIEdgeInsets(top: contentInset.top + contentInsetTop, left: contentInset.left, bottom: contentInset.bottom, right: contentInset.right)
+        
+    }
     
     override func endRefreshing() {
+        state = .idle
+        let contentInset = scrollView!.contentInset
+        scrollView?.contentInset = UIEdgeInsets(top: contentInset.top - contentInsetTop, left: contentInset.left, bottom: contentInset.bottom, right: contentInset.right)
         super.endRefreshing()
     }
 }
@@ -79,7 +84,7 @@ extension IFRefreshHeader {
         rotation.fromValue = 0
         rotation.toValue = CGFloat.pi * 2
         rotation.fillMode = .forwards
-        rotation.duration = 0.5
+        rotation.duration = 0.4
         rotation.repeatCount = .infinity
         rotation.isRemovedOnCompletion = false
         rotation.autoreverses = false
@@ -89,12 +94,173 @@ extension IFRefreshHeader {
     }
 }
 
+private let contentOffsetY: CGFloat = 50.0
+
+enum RefrehState {
+    case normal
+    case pulling
+    case wilRefresh
+}
+
+public class LRefreshControl: UIView {
+    public var refreshHandler: ( () -> (Void))?
+    fileprivate weak var scrollView: UIScrollView?
+    fileprivate lazy var refreshView: IFRefreshLoadingView = IFRefreshLoadingView()
+    
+    fileprivate var state: RefrehState = .normal {
+        didSet {
+            switch state {
+            case .normal:
+                refreshView.update(0)
+            case .pulling:
+                refreshView.update(1)
+            case .wilRefresh:
+                refreshAnimation()
+            }
+        }
+    }
+    
+    public init() {
+        super.init(frame: CGRect())
+        addNormamRefesh()
+        refreshView.backgroundColor = .red
+        backgroundColor = .blue
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        addNormamRefesh()
+        addShineView()
+    }
+    
+    public func beginRefresh() {
+        guard let sv = scrollView else { return  }
+        state = .wilRefresh
+        var inset = sv.contentInset
+        inset.top += contentOffsetY
+        sv.contentInset = inset
+        refreshHandler?()
+    }
+    
+   public func endRefreshing() {
+        if state != .wilRefresh {
+            return
+        }
+        guard let sv = scrollView else { return  }
+        state = .normal
+        var inset = sv.contentInset
+        inset.top -= contentOffsetY
+        sv.contentInset = inset
+    }
+    
+    public func needToShine(text: String) {
+        refreshView.isHidden = true
+    }
+}
+
+extension LRefreshControl {
+    override public func willMove(toSuperview newSuperview: UIView?) {
+        super.willMove(toSuperview: newSuperview)
+        guard let sv = newSuperview as? UIScrollView else { return  }
+        scrollView = sv
+        scrollView?.addObserver(self, forKeyPath: "contentOffset", options: [], context: nil)
+    }
+    
+    override public func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        guard let sv = scrollView else { return  }
+        let happenOffsetY = -sv.contentInset.top
+        let offsetY = sv.contentOffset.y
+        let pullPercent = (happenOffsetY - offsetY - 50) / 50
+        let height = -(sv.contentInset.top + sv.contentOffset.y )
+        if height < 0 {
+            return
+        }
+        print(pullPercent)
+        self.frame = CGRect(x: 0,
+                            y: -height,
+                            width: sv.bounds.width,
+                            height: height)
+        if sv.isDragging {
+            if height > contentOffsetY && state == .normal {
+                state = .pulling
+            } else if height <= contentOffsetY && state == .pulling {
+                state = .normal
+            }
+        } else {
+            if state == .pulling  {
+                beginRefresh()
+                
+            }
+        }
+    }
+    
+    override public func removeFromSuperview() {
+        superview?.removeObserver(self, forKeyPath: "contentOffset")
+        super.removeFromSuperview()
+    }
+}
+extension LRefreshControl {
+    fileprivate func refreshAnimation() {
+        if refreshView.progress < 1 {
+            refreshView.update(1)
+        }
+        let rotation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotation.fromValue = 0
+        rotation.toValue = CGFloat.pi * 2
+        rotation.fillMode = .forwards
+        rotation.duration = 0.4
+        rotation.repeatCount = .infinity
+        rotation.isRemovedOnCompletion = false
+        rotation.autoreverses = false
+        rotation.timingFunction = CAMediaTimingFunction(name: .linear)
+        refreshView.layer.add(rotation, forKey: nil)
+        
+    }
+    fileprivate  func addNormamRefesh() {
+        backgroundColor = superview?.backgroundColor
+        addSubview(refreshView)
+        refreshView.translatesAutoresizingMaskIntoConstraints = false
+        addConstraint(NSLayoutConstraint(item: refreshView,
+                                         attribute: .centerX,
+                                         relatedBy: .equal,
+                                         toItem: self,
+                                         attribute: .centerX,
+                                         multiplier: 1.0,
+                                         constant: 0))
+        addConstraint(NSLayoutConstraint(item: refreshView,
+                                         attribute: .bottom,
+                                         relatedBy: .equal,
+                                         toItem: self,
+                                         attribute: .bottom,
+                                         multiplier: 1.0,
+                                         constant: 0))
+        addConstraint(NSLayoutConstraint(item: refreshView,
+                                         attribute: .width,
+                                         relatedBy: .equal,
+                                         toItem: nil,
+                                         attribute: .notAnAttribute,
+                                         multiplier: 1.0,
+                                         constant: refreshView.bounds.width))
+        addConstraint(NSLayoutConstraint(item: refreshView,
+                                         attribute: .height,
+                                         relatedBy: .equal,
+                                         toItem: nil,
+                                         attribute: .notAnAttribute,
+                                         multiplier: 1.0,
+                                         constant: refreshView.bounds.height))
+        refreshView.update(0)
+    }
+    
+    fileprivate func addShineView() {
+
+    }
+}
 
 class IFRefreshLoadingView: UIView {
     var progress: CGFloat = 0
     fileprivate lazy var topLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
-        layer.strokeColor = UIColor(hex: 0xD6DDE7)!.cgColor
+        layer.strokeColor = UIColor(hex: 0xC8CED5)!.cgColor
         layer.fillColor = UIColor.clear.cgColor
         layer.lineCap = .round
         layer.lineWidth = 2
@@ -103,7 +269,7 @@ class IFRefreshLoadingView: UIView {
     }()
     fileprivate lazy var bottomLayer: CAShapeLayer = {
         let layer = CAShapeLayer()
-        layer.strokeColor = UIColor(hex: 0xD6DDE7)!.cgColor
+        layer.strokeColor = UIColor(hex: 0xC8CED5)!.cgColor
         layer.lineCap = .round
         layer.lineWidth = 2
         layer.backgroundColor = UIColor.clear.cgColor
@@ -111,7 +277,6 @@ class IFRefreshLoadingView: UIView {
         return layer
     }()
     fileprivate var isAnimating: Bool = false
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -142,9 +307,18 @@ class IFRefreshLoadingView: UIView {
     }
     
     func update(_ progress: CGFloat) {
+        if bottomLayer.animation(forKey: "strokeStart") != nil {
+            bottomLayer.removeAllAnimations()
+            isAnimating = false
+        }
+        if topLayer.animation(forKey: "strokeStart") != nil {
+            topLayer.removeAllAnimations()
+            isAnimating = false
+        }
         topLayer.strokeEnd = progress
         bottomLayer.strokeEnd = progress
         self.progress = progress
+        
     }
     
     func reset() {
@@ -184,4 +358,3 @@ extension IFRefreshLoadingView: CAAnimationDelegate {
         topLayer.removeAllAnimations()
     }
 }
-

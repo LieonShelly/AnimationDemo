@@ -31,6 +31,14 @@ class RefreshViewController: UIViewController {
         }
         return models
     }()
+    fileprivate lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        return refreshControl
+    }()
+    fileprivate lazy var refresh: LRefreshControl = {
+          let refresh = LRefreshControl()
+          return refresh
+      }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,11 +56,33 @@ class RefreshViewController: UIViewController {
                 self.tableView.mj_header?.endRefreshing()
             }
         })
+//        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshAction), for: .valueChanged)
+//        tableView.mj_header?.beginRefreshing()
         
+        tableView.addSubview(refresh)
+        refresh.refreshHandler = {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                self.refresh.endRefreshing()
+            }
+        }
+        
+    }
+    
+    
+    @objc
+    fileprivate func refreshAction() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.refreshControl.endRefreshing()
+            self.tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        refreshControl.beginRefreshing()
+        refreshAction()
+//        tableView.setContentOffset(CGPoint(x: 0, y: -200), animated: true)
         let cells = tableView.visibleCells
         for cell in cells {
             (cell as? ContrastCell)?.contrastView.startAnimation(with: .leftToRightSlash, textBottomInset: 20, textHorisonInset: 20)

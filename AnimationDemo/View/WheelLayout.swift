@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import VideoToolbox
 
 class WheelCollectionLayoutAttributes: UICollectionViewLayoutAttributes {
     var angle: CGFloat = 0

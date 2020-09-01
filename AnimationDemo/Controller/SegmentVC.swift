@@ -10,16 +10,27 @@ import UIKit
 import JXSegmentedView
 
 class SegmentVC: UIViewController {
-    lazy var segmentedDataSource: JXSegmentedBaseDataSource = {
+    struct UISize {
+        static let titleInset: CGFloat = 10
+        static let naviHeight: CGFloat = 44
+        static let navTop: CGFloat = UIDevice.current.isiPhoneXSeries ? 44 : 20
+        static let navMaxY = navTop + naviHeight
+    }
+    fileprivate lazy var segmentedDataSource: JXSegmentedBaseDataSource = {
         let segmentedDataSource = JXSegmentedDotDataSource()
         segmentedDataSource.isTitleColorGradientEnabled = true
+        
         segmentedDataSource.titles = ["修图", "教程"]
-        segmentedDataSource.titleNormalColor = UIColor.black
-        segmentedDataSource.titleSelectedColor = .black
-        segmentedDataSource.isTitleZoomEnabled = true
-        segmentedDataSource.itemSpacing = 10
+        segmentedDataSource.titleNormalColor = UIColor.black.withAlphaComponent(0.5)
+        segmentedDataSource.titleSelectedColor = UIColor.black
+        segmentedDataSource.isTitleZoomEnabled = false
+        segmentedDataSource.itemSpacing = UISize.titleInset
         segmentedDataSource.isSelectedAnimable = true
-        segmentedDataSource.dotStates = [false, true]
+        segmentedDataSource.titleNormalFont = UIFont.customFont(ofSize: 18, isBold: true)
+        segmentedDataSource.titleSelectedFont = UIFont.customFont(ofSize: 18, isBold: true)
+        segmentedDataSource.dotStates = [false, false]
+        segmentedDataSource.dotColor = UIColor(hex: 0xf54fb0)!
+        segmentedDataSource.dotSize = CGSize(width: 5, height: 5)
         return  segmentedDataSource
     }()
     let segmentedView = JXSegmentedView()
@@ -28,6 +39,7 @@ class SegmentVC: UIViewController {
     }()
     var vcLists: [IFListBaseViewController] = []
     
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         vcLists.append(CardViewController())
@@ -40,16 +52,17 @@ class SegmentVC: UIViewController {
         segmentedView.listContainer = listContainerView
         view.addSubview(listContainerView)
         segmentedView.snp.makeConstraints {
-            $0.left.equalTo(0)
-            $0.width.equalTo(100)
-            $0.top.equalTo(100)
-            $0.height.equalTo(44)
+            $0.center.equalToSuperview()
+            $0.width.equalTo(140)
+            $0.bottom.equalTo(0)
+            $0.height.equalTo(18)
         }
         listContainerView.snp.makeConstraints {
             $0.left.right.equalTo(0)
             $0.top.equalTo(segmentedView.snp.bottom)
             $0.bottom.equalTo(0)
         }
+    
     }
     
 }

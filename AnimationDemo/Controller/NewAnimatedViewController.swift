@@ -285,11 +285,14 @@ extension UIView {
         var transition: CGPoint = .zero
         transition.x = newOrigin.x - oldOrigin.x
         transition.y = newOrigin.y - oldOrigin.y
-//
 //        center = CGPoint(x: center.x - transition.x,
 //                         y: center.y - transition.y)
-//
+
         center = CGPoint(x: oldOrigin.x + layer.anchorPoint.x * frame.width, y:oldOrigin.y + layer.anchorPoint.y * frame.height)
+//
+//        let oldFrame = frame
+//        layer.anchorPoint = point
+//        frame = oldFrame
     }
 }
 

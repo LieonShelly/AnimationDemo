@@ -297,6 +297,33 @@ extension HomeViewController {
             let vcc = SegmentVC()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
+        // PageViewController
+        let pageVc = ListItem("PageViewController", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = PageViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        // StickerCrossViewController
+        let crossVC = ListItem("StickerCrossViewController", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = StickerCrossViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        // FX3dLightVC
+        let r3dLightVC = ListItem("FX3dLightVC", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = FX3dLightVC()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        items.append(r3dLightVC)
+        items.append(crossVC)
+        items.append(pageVc)
         items.append(segmentVC)
         items.append(card)
         items.append(videoList)
@@ -334,6 +361,12 @@ extension HomeViewController {
         items.append(iAPViewController)
         
         items.append(newAnimatedViewController)
+        
+        var hue: CGFloat = 0
+        var saturation: CGFloat = 0
+        var brightness: CGFloat = 0
+        UIColor(hex: 0xff0000)!.getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: nil)
+        print("hue:\(hue) - saturation: \(saturation) - brightness:\(brightness) ")
     }
     
 }
