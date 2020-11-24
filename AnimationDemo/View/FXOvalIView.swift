@@ -17,8 +17,8 @@ class FXOvalIView: UIView {
         super.layoutSublayers(of: layer)
         let layer = self.layer as? CAShapeLayer
         layer?.lineWidth = 2
-        layer?.fillColor = UIColor.yellow.withAlphaComponent(0.5).cgColor
-        layer?.strokeColor = UIColor.blue.cgColor
+        layer?.fillColor = UIColor(hex: 0x6970ff)!.withAlphaComponent(0.53).cgColor
+        layer?.strokeColor = UIColor(hex: 0x56bbff)!.cgColor
         let path = UIBezierPath(ovalIn: bounds).cgPath
         layer?.path = path
     }
@@ -41,6 +41,7 @@ class FX3DLightMoveLightPanel: UIView {
     }()
     fileprivate lazy var ovalView: FXOvalIView = {
         let ovalView = FXOvalIView()
+        ovalView.layer.opacity = 0
         return ovalView
     }()
     var nosePoint: CGPoint?
@@ -75,6 +76,18 @@ class FX3DLightMoveLightPanel: UIView {
         startPoint = ovalView.center
     }
     
+    func showAnimation() {
+        let btnScale = CAKeyframeAnimation(keyPath: "opacity")
+        btnScale.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        btnScale.fillMode = .forwards
+        btnScale.isRemovedOnCompletion = false
+        btnScale.delegate = self
+        btnScale.duration = 1.5
+        btnScale.setValue("showAnimation", forKey: "name")
+        btnScale.values = [0, 1, 0]
+        ovalView.layer.add(btnScale, forKey: nil)
+    }
+    
     func configSuperPath(_ rect: CGRect, nosePoint: CGPoint) {
         superPath = UIBezierPath(ovalIn: rect)
         self.nosePoint = nosePoint
@@ -82,6 +95,7 @@ class FX3DLightMoveLightPanel: UIView {
         (pathView.layer as? CAShapeLayer)?.path = superPath?.cgPath
         startPoint = nosePoint
         ovalRect = rect
+        radius = rect.width * 0.5
         ovalPathAllPoints.append(contentsOf: ovalPathAllPoints(rect, nosePoint: nosePoint))
         print("ovalPathAllPoints:\(ovalPathAllPoints.count)")
     }
@@ -95,13 +109,10 @@ class FX3DLightMoveLightPanel: UIView {
             return
         }
         if !superPath.contains(point) {
-            let alllDistance = ovalPathAllPoints.map { (inPoint) -> CGFloat in
-                return sqrt((inPoint.x - point.x) * (inPoint.x - point.x) + (inPoint.y - point.y) * (inPoint.y - point.y) )
-            }
-            let min = alllDistance.min()!
-            let minIndex = alllDistance.firstIndex(of: min)!
-            let newPoint = ovalPathAllPoints[minIndex]
-            point = newPoint
+            let OA = sqrt((point.x - nosePoint.x) * (point.x - nosePoint.x) + (point.y - nosePoint.y) * (point.y - nosePoint.y))
+            let yb = (point.y - nosePoint.y) * radius / OA + nosePoint.y
+            let xb = nosePoint.x +  (point.x - nosePoint.x) * radius / OA
+            point = CGPoint(x: xb, y: yb)
         }
         ovalView.center = point
         let distanceY  = abs(point.y - nosePoint.y)
@@ -167,5 +178,45 @@ class FX3DLightMoveLightPanel: UIView {
             return point1.x > point2.x && point1.y > point2.y
         }
         return allPoints
+    }
+    
+    func minDistancePoint(_ point: CGPoint, _ ovalRect: CGRect, nosePoint: CGPoint) {
+        print("point:\(point)")
+        let point = CGPoint(x: mapValue(point.x, mapMaxV: 1, mapMinV: 0, uiMaxV: UIScreen.main.bounds.width, uiMinV: 0),
+                            y: mapValue(point.y, mapMaxV: 1, mapMinV: 0, uiMaxV: UIScreen.main.bounds.height, uiMinV: 0))
+        let nosePoint = CGPoint(x: mapValue(nosePoint.x, mapMaxV: 1, mapMinV: 0, uiMaxV: UIScreen.main.bounds.width, uiMinV: 0),
+                                y: mapValue(nosePoint.y, mapMaxV: 1, mapMinV: 0, uiMaxV: UIScreen.main.bounds.height, uiMinV: 0))
+        let ovalRect = CGRect(x:  mapValue(ovalRect.origin.x, mapMaxV: 1, mapMinV: 0, uiMaxV: UIScreen.main.bounds.width, uiMinV: 0),
+                              y:  mapValue(ovalRect.origin.y, mapMaxV: 1, mapMinV: 0, uiMaxV: UIScreen.main.bounds.height, uiMinV: 0),
+                              width:  mapValue(ovalRect.width, mapMaxV: 1, mapMinV: 0, uiMaxV: UIScreen.main.bounds.width, uiMinV: 0),
+                              height:  mapValue(ovalRect.height, mapMaxV: 1, mapMinV: 0, uiMaxV: UIScreen.main.bounds.height, uiMinV: 0))
+        let a = ovalRect.height * 0.5
+        let b = ovalRect.width * 0.5
+        let k = point.y / point.x
+        let A = b * k * k + a
+        let B = -(2 * b * nosePoint.y * k + 2 * a * nosePoint.x)
+        let C = b * nosePoint.y * nosePoint.y + a * nosePoint.x * nosePoint.x - a * b
+        
+        let x = (-B + sqrt(B * B - 4 * A * C)) / (2 * A)
+        let y = k * x
+        let point0 = CGPoint(x: x, y: y)
+        print(point0)
+    }
+    
+    fileprivate func mapValue(_ inputValue: CGFloat, mapMaxV: CGFloat, mapMinV: CGFloat, uiMaxV: CGFloat, uiMinV: CGFloat) -> CGFloat {
+        let realV: CGFloat = ((mapMaxV - mapMinV) * (inputValue - uiMinV) / (uiMaxV - uiMinV)) + mapMinV
+        return realV
+    }
+}
+
+extension FX3DLightMoveLightPanel: CAAnimationDelegate {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        
+    }
+}
+
+extension CGFloat {
+    var  intFloat:  CGFloat {
+        return CGFloat(Int(self))
     }
 }

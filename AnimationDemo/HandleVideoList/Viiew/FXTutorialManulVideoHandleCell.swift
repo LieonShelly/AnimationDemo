@@ -52,17 +52,19 @@ class FXTutorialManulVideoHandleCell: FXTutorialManulVideoBaseCell {
 }
 
 class FXShadowView: UIView {
-    
-    fileprivate var cornerRadius: CGFloat = 22
-    
-    override func layoutSublayers(of layer: CALayer) {
-        super.layoutSublayers(of: layer)
-        let path = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
-        layer.shadowPath = path
-        layer.shadowColor = UIColor(hex: 0x020207)!.cgColor
-        layer.shadowOpacity = 0.3
-        layer.shadowOffset = CGSize(width: 0, height: 7)
-        layer.shadowRadius = 15
-    }
-    
+     var shadowColor: CGColor = UIColor(hex: 0x020207)!.cgColor
+      var cornerRadius: CGFloat = 22
+      var shadowOpacity: Float = 0.3
+      var shadowOffset: CGSize = CGSize(width: 0, height: 7)
+      var shadowRadius: CGFloat = 15
+      
+      override func layoutSublayers(of layer: CALayer) {
+          super.layoutSublayers(of: layer)
+          let path = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius).cgPath
+          layer.shadowPath = path
+          layer.shadowColor = shadowColor
+          layer.shadowOpacity = shadowOpacity
+          layer.shadowOffset = shadowOffset
+          layer.shadowRadius = shadowRadius
+      }
 }

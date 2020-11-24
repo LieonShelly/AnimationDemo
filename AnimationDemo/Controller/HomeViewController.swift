@@ -321,6 +321,14 @@ extension HomeViewController {
             let vcc = FX3dLightVC()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
+        let maskViewController = ListItem("MaskViewController", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = MaskViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        items.append(maskViewController)
         items.append(r3dLightVC)
         items.append(crossVC)
         items.append(pageVc)
