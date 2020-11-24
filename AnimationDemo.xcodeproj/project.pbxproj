@@ -79,13 +79,7 @@
 		CD749ACB2356F6EF00C357A5 /* FlipSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD749AC92356F6EF00C357A5 /* FlipSubViewController.xib */; };
 		CD749ACE2356F72C00C357A5 /* FlipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD749ACC2356F72C00C357A5 /* FlipViewController.swift */; };
 		CD749ACF2356F72C00C357A5 /* FlipViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD749ACD2356F72C00C357A5 /* FlipViewController.xib */; };
-		CD777D96254AFB670037C7F1 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD777D95254AFB670037C7F1 /* WidgetKit.framework */; };
-		CD777D98254AFB670037C7F1 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD777D97254AFB670037C7F1 /* SwiftUI.framework */; };
-		CD777D9B254AFB670037C7F1 /* Demo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD777D9A254AFB670037C7F1 /* Demo.swift */; };
-		CD777D9E254AFB690037C7F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD777D9D254AFB690037C7F1 /* Assets.xcassets */; };
-		CD777DA0254AFB690037C7F1 /* Demo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CD777D9C254AFB670037C7F1 /* Demo.intentdefinition */; };
 		CD777DA1254AFB690037C7F1 /* Demo.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = CD777D9C254AFB670037C7F1 /* Demo.intentdefinition */; };
-		CD777DA4254AFB690037C7F1 /* DemoExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CD777D94254AFB670037C7F1 /* DemoExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CD787BCF23B59AAA00DAE0BD /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD787BCE23B59AAA00DAE0BD /* LoadingViewController.swift */; };
 		CD7B0C38240E586400C57BE2 /* HookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B0C37240E586400C57BE2 /* HookViewController.swift */; };
 		CD7D50B023613AD300FA9C07 /* PathSerivce.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50AF23613AD300FA9C07 /* PathSerivce.swift */; };
@@ -216,13 +210,6 @@
 			remoteGlobalIDString = CD2FCF6B234D796100E28E5C;
 			remoteInfo = AnimationDemo;
 		};
-		CD777DA2254AFB690037C7F1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CD2FCF64234D796100E28E5C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CD777D93254AFB670037C7F1;
-			remoteInfo = DemoExtension;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -232,7 +219,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				CD777DA4254AFB690037C7F1 /* DemoExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,7 +326,6 @@
 		CD749AC92356F6EF00C357A5 /* FlipSubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipSubViewController.xib; sourceTree = "<group>"; };
 		CD749ACC2356F72C00C357A5 /* FlipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipViewController.swift; sourceTree = "<group>"; };
 		CD749ACD2356F72C00C357A5 /* FlipViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipViewController.xib; sourceTree = "<group>"; };
-		CD777D94254AFB670037C7F1 /* DemoExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DemoExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD777D95254AFB670037C7F1 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		CD777D97254AFB670037C7F1 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		CD777D9A254AFB670037C7F1 /* Demo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo.swift; sourceTree = "<group>"; };
@@ -488,15 +473,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD777D91254AFB670037C7F1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CD777D98254AFB670037C7F1 /* SwiftUI.framework in Frameworks */,
-				CD777D96254AFB670037C7F1 /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -563,7 +539,6 @@
 				CD2FCF6C234D796100E28E5C /* AnimationDemo.app */,
 				CD2FCF82234D796500E28E5C /* AnimationDemoTests.xctest */,
 				CD2FCF8D234D796500E28E5C /* AnimationDemoUITests.xctest */,
-				CD777D94254AFB670037C7F1 /* DemoExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -984,7 +959,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				CD777DA3254AFB690037C7F1 /* PBXTargetDependency */,
 			);
 			name = AnimationDemo;
 			productName = AnimationDemo;
@@ -1027,23 +1001,6 @@
 			productReference = CD2FCF8D234D796500E28E5C /* AnimationDemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		CD777D93254AFB670037C7F1 /* DemoExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CD777DA8254AFB690037C7F1 /* Build configuration list for PBXNativeTarget "DemoExtension" */;
-			buildPhases = (
-				CD777D90254AFB670037C7F1 /* Sources */,
-				CD777D91254AFB670037C7F1 /* Frameworks */,
-				CD777D92254AFB670037C7F1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DemoExtension;
-			productName = DemoExtension;
-			productReference = CD777D94254AFB670037C7F1 /* DemoExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1065,9 +1022,6 @@
 						CreatedOnToolsVersion = 11.0;
 						TestTargetID = CD2FCF6B234D796100E28E5C;
 					};
-					CD777D93254AFB670037C7F1 = {
-						CreatedOnToolsVersion = 12.1;
-					};
 				};
 			};
 			buildConfigurationList = CD2FCF67234D796100E28E5C /* Build configuration list for PBXProject "AnimationDemo" */;
@@ -1086,7 +1040,6 @@
 				CD2FCF6B234D796100E28E5C /* AnimationDemo */,
 				CD2FCF81234D796500E28E5C /* AnimationDemoTests */,
 				CD2FCF8C234D796500E28E5C /* AnimationDemoUITests */,
-				CD777D93254AFB670037C7F1 /* DemoExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -1168,14 +1121,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CD777D92254AFB670037C7F1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CD777D9E254AFB690037C7F1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1371,15 +1316,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CD777D90254AFB670037C7F1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CD777D9B254AFB670037C7F1 /* Demo.swift in Sources */,
-				CD777DA0254AFB690037C7F1 /* Demo.intentdefinition in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1392,11 +1328,6 @@
 			isa = PBXTargetDependency;
 			target = CD2FCF6B234D796100E28E5C /* AnimationDemo */;
 			targetProxy = CD2FCF8E234D796500E28E5C /* PBXContainerItemProxy */;
-		};
-		CD777DA3254AFB690037C7F1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CD777D93254AFB670037C7F1 /* DemoExtension */;
-			targetProxy = CD777DA2254AFB690037C7F1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1532,7 +1463,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: 欣 权 (MT7532G7XR)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = YFZ6GPTEHY;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1557,7 +1488,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development: 欣 权 (MT7532G7XR)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = YFZ6GPTEHY;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1656,54 +1587,6 @@
 			};
 			name = Release;
 		};
-		CD777DA6254AFB690037C7F1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YFZ6GPTEHY;
-				INFOPLIST_FILE = Demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vstudio.inFace.Demo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		CD777DA7254AFB690037C7F1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YFZ6GPTEHY;
-				INFOPLIST_FILE = Demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vstudio.inFace.Demo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1739,15 +1622,6 @@
 			buildConfigurations = (
 				CD2FCF9D234D796500E28E5C /* Debug */,
 				CD2FCF9E234D796500E28E5C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CD777DA8254AFB690037C7F1 /* Build configuration list for PBXNativeTarget "DemoExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CD777DA6254AFB690037C7F1 /* Debug */,
-				CD777DA7254AFB690037C7F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

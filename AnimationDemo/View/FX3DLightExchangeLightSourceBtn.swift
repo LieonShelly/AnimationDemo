@@ -90,9 +90,9 @@ extension FX3DLightExchangeLightSourceBtn {
     @objc
     fileprivate func tapBtnClick() {
         tapAction?()
-        if status == .none {
-            status = .topToBottom
-        }
+        let impactFeedBack = UIImpactFeedbackGenerator()
+        impactFeedBack.prepare()
+        impactFeedBack.impactOccurred()
         switch status {
         case .topToBottom:
             topViewCenter2LeftTB()
@@ -110,7 +110,7 @@ extension FX3DLightExchangeLightSourceBtn {
     fileprivate func topViewCenter2LeftTB() {
         let group = CAAnimationGroup()
         group.isRemovedOnCompletion = false
-        group.duration = 0.5
+        group.duration = 0.15
         group.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         group.fillMode = .forwards
         let position = CABasicAnimation(keyPath: "position")
@@ -129,7 +129,7 @@ extension FX3DLightExchangeLightSourceBtn {
     fileprivate func topViewLeft2CenterTB() {
         let group = CAAnimationGroup()
         group.isRemovedOnCompletion = false
-        group.duration = 0.5
+        group.duration = 0.15
         group.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         group.fillMode = .forwards
         let position = CABasicAnimation(keyPath: "position")
@@ -147,7 +147,7 @@ extension FX3DLightExchangeLightSourceBtn {
     fileprivate func bottomViewCenter2RightTB() {
         let group = CAAnimationGroup()
         group.isRemovedOnCompletion = false
-        group.duration = 0.5
+        group.duration = 0.15
         group.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         group.fillMode = .forwards
         
@@ -168,7 +168,7 @@ extension FX3DLightExchangeLightSourceBtn {
     fileprivate func bottomViewRight2CenterTB() {
         let group = CAAnimationGroup()
         group.isRemovedOnCompletion = false
-        group.duration = 0.5
+        group.duration = 0.15
         group.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         group.fillMode = .forwards
         
@@ -187,7 +187,7 @@ extension FX3DLightExchangeLightSourceBtn {
     fileprivate func topViewCenter2LeftBT() {
         let group = CAAnimationGroup()
         group.isRemovedOnCompletion = false
-        group.duration = 0.5
+        group.duration = 0.15
         group.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         group.fillMode = .forwards
         
@@ -205,7 +205,7 @@ extension FX3DLightExchangeLightSourceBtn {
     fileprivate func topViewLeft2CenterBT() {
         let group = CAAnimationGroup()
         group.isRemovedOnCompletion = false
-        group.duration = 0.5
+        group.duration = 0.15
         group.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         group.fillMode = .forwards
         let position = CABasicAnimation(keyPath: "position")
@@ -223,7 +223,7 @@ extension FX3DLightExchangeLightSourceBtn {
     fileprivate func bottomViewCenter2RightBT() {
         let group = CAAnimationGroup()
         group.isRemovedOnCompletion = false
-        group.duration = 0.5
+        group.duration = 0.15
         group.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         group.fillMode = .forwards
         
@@ -242,7 +242,7 @@ extension FX3DLightExchangeLightSourceBtn {
     fileprivate func bottomViewRight2CenterBT() {
         let group = CAAnimationGroup()
         group.isRemovedOnCompletion = false
-        group.duration = 0.5
+        group.duration = 0.15
         group.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         group.fillMode = .forwards
         
@@ -278,7 +278,6 @@ extension FX3DLightExchangeLightSourceBtn: CAAnimationDelegate {
         } else if name == "bottomViewRight2CenterTB" {
             status = .bottomToTop
         }
-        print("status: \(status)")
     }
 }
 
