@@ -67,6 +67,13 @@
 		CD68330E23BDE137008C0C9F /* IFHookMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD68330D23BDE137008C0C9F /* IFHookMarkView.swift */; };
 		CD6C28D323A21D620008761C /* ScaleBtnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6C28D123A21D620008761C /* ScaleBtnViewController.swift */; };
 		CD6C28D423A21D620008761C /* ScaleBtnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6C28D223A21D620008761C /* ScaleBtnViewController.xib */; };
+		CD6F17452574FA5900957317 /* IFSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6F173D2574FA5900957317 /* IFSettingViewModel.swift */; };
+		CD6F17462574FA5900957317 /* IFSettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6F173F2574FA5900957317 /* IFSettingController.swift */; };
+		CD6F17472574FA5900957317 /* IFSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6F17412574FA5900957317 /* IFSettingModel.swift */; };
+		CD6F17482574FA5900957317 /* IFSettingCommonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6F17432574FA5900957317 /* IFSettingCommonCell.swift */; };
+		CD6F17492574FA5900957317 /* IFSettingVipStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6F17442574FA5900957317 /* IFSettingVipStatusCell.swift */; };
+		CD6F174D2575D89900957317 /* IFSettingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6F174C2575D89900957317 /* IFSettingHeaderView.swift */; };
+		CD6F17512575EDFF00957317 /* IFSettingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6F17502575EDFF00957317 /* IFSettingFooterView.swift */; };
 		CD6F4BEF24A4E4EF00E2AE47 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6F4BEE24A4E4EF00E2AE47 /* PageViewController.swift */; };
 		CD725AD3234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */; };
 		CD725AD5234F0E1D00C11FB0 /* PanAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AD4234F0E1D00C11FB0 /* PanAnimation.swift */; };
@@ -314,6 +321,13 @@
 		CD68330D23BDE137008C0C9F /* IFHookMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFHookMarkView.swift; sourceTree = "<group>"; };
 		CD6C28D123A21D620008761C /* ScaleBtnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleBtnViewController.swift; sourceTree = "<group>"; };
 		CD6C28D223A21D620008761C /* ScaleBtnViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScaleBtnViewController.xib; sourceTree = "<group>"; };
+		CD6F173D2574FA5900957317 /* IFSettingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IFSettingViewModel.swift; sourceTree = "<group>"; };
+		CD6F173F2574FA5900957317 /* IFSettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IFSettingController.swift; sourceTree = "<group>"; };
+		CD6F17412574FA5900957317 /* IFSettingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IFSettingModel.swift; sourceTree = "<group>"; };
+		CD6F17432574FA5900957317 /* IFSettingCommonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IFSettingCommonCell.swift; sourceTree = "<group>"; };
+		CD6F17442574FA5900957317 /* IFSettingVipStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IFSettingVipStatusCell.swift; sourceTree = "<group>"; };
+		CD6F174C2575D89900957317 /* IFSettingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFSettingHeaderView.swift; sourceTree = "<group>"; };
+		CD6F17502575EDFF00957317 /* IFSettingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFSettingFooterView.swift; sourceTree = "<group>"; };
 		CD6F4BEE24A4E4EF00E2AE47 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = "<group>"; };
 		CD725AD4234F0E1D00C11FB0 /* PanAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanAnimation.swift; sourceTree = "<group>"; };
@@ -546,6 +560,7 @@
 		CD2FCF6E234D796100E28E5C /* AnimationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CD6F173B2574FA5900957317 /* Settings */,
 				CD1E5FBF255E348A003928A7 /* Mems.swift */,
 				CDF156B8254A6BB0001AD6A6 /* 1.zip */,
 				CDA1879924970D8B00C46013 /* HandleVideoList */,
@@ -624,6 +639,52 @@
 				CD68330023BB4909008C0C9F /* iap_close@3x.png */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		CD6F173B2574FA5900957317 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CD6F173C2574FA5900957317 /* ViewModel */,
+				CD6F173E2574FA5900957317 /* Controller */,
+				CD6F17402574FA5900957317 /* Model */,
+				CD6F17422574FA5900957317 /* View */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		CD6F173C2574FA5900957317 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CD6F173D2574FA5900957317 /* IFSettingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CD6F173E2574FA5900957317 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CD6F173F2574FA5900957317 /* IFSettingController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CD6F17402574FA5900957317 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD6F17412574FA5900957317 /* IFSettingModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CD6F17422574FA5900957317 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CD6F17432574FA5900957317 /* IFSettingCommonCell.swift */,
+				CD6F17442574FA5900957317 /* IFSettingVipStatusCell.swift */,
+				CD6F174C2575D89900957317 /* IFSettingHeaderView.swift */,
+				CD6F17502575EDFF00957317 /* IFSettingFooterView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		CD725AD1234EFF6F00C11FB0 /* Frameworks */ = {
@@ -1177,6 +1238,7 @@
 				CD436428234E17500047930B /* PinchAnimation.swift in Sources */,
 				CD99459024975BCF00789E45 /* FXVideoCoverGenerator.swift in Sources */,
 				CDAB78E3247FB46F00905236 /* FXLoginTitleCell.swift in Sources */,
+				CD6F17512575EDFF00957317 /* IFSettingFooterView.swift in Sources */,
 				CD2880D3235FE38700F20EF1 /* TipPop.swift in Sources */,
 				CD2FCF70234D796100E28E5C /* AppDelegate.swift in Sources */,
 				CDFF205A236837A500800136 /* GuideStartViewController.swift in Sources */,
@@ -1197,6 +1259,7 @@
 				CDA9A8E624A10A15000CEF71 /* WaterFlowLayout.swift in Sources */,
 				CDFB49CD235025820083426A /* TouchView.swift in Sources */,
 				CDF0548F242C7BDA00C9F645 /* FXTutorialImageContrastVC.swift in Sources */,
+				CD6F17472574FA5900957317 /* IFSettingModel.swift in Sources */,
 				CD3218E72530421900546C50 /* FX3dLightMessageView.swift in Sources */,
 				CD2112ED235D8800003B5202 /* MultiLanguageTexInputAlert.swift in Sources */,
 				CDA9A8E224A0BAA8000CEF71 /* ArcLayout.swift in Sources */,
@@ -1224,6 +1287,7 @@
 				CD039004237BF15400638401 /* FXMoveAniamtion.swift in Sources */,
 				CDA187A924971A0700C46013 /* FXTutorialHandleVideoListModel.swift in Sources */,
 				CDA9A8E824A10FF6000CEF71 /* TransformLayout.swift in Sources */,
+				CD6F17462574FA5900957317 /* IFSettingController.swift in Sources */,
 				CD1691CC23595B93006E73AD /* RecordAudioViewController.swift in Sources */,
 				CD88DD602361E4F200B9DB8F /* TestViewController.swift in Sources */,
 				CDA89DFB2373C13B000E3346 /* FXTransformLayout.swift in Sources */,
@@ -1236,7 +1300,9 @@
 				CDA1879F24970DFD00C46013 /* FXTutorialHandleVideoListVC.swift in Sources */,
 				CD725AD5234F0E1D00C11FB0 /* PanAnimation.swift in Sources */,
 				CDEBF3622508E84100C29A7A /* FXVerticalColorSlider.swift in Sources */,
+				CD6F174D2575D89900957317 /* IFSettingHeaderView.swift in Sources */,
 				CDFF20482367E6B800800136 /* LongPressViewController.swift in Sources */,
+				CD6F17492574FA5900957317 /* IFSettingVipStatusCell.swift in Sources */,
 				CDA9A8E024A092C1000CEF71 /* SegmentVC.swift in Sources */,
 				CDFF20562368333600800136 /* ImageTitleCollectionViewCell.swift in Sources */,
 				CDFF205223682B3200800136 /* DemoTouchViewController.swift in Sources */,
@@ -1245,10 +1311,12 @@
 				CDC4908A24F9FBDA00E824B1 /* FX3DLightExchangeLightSourceBtn.swift in Sources */,
 				CD66DEC524CAE83E0011A99F /* StickerCrossView.swift in Sources */,
 				CDF0548D242C575A00C9F645 /* FXTutorialImageContrastView.swift in Sources */,
+				CD6F17482574FA5900957317 /* IFSettingCommonCell.swift in Sources */,
 				CD7B0C38240E586400C57BE2 /* HookViewController.swift in Sources */,
 				CD2112EA235D8550003B5202 /* MultiLanguageAlert.swift in Sources */,
 				CDA187A124970E2A00C46013 /* FXTutorialHandleVideoListVM.swift in Sources */,
 				CD68330E23BDE137008C0C9F /* IFHookMarkView.swift in Sources */,
+				CD6F17452574FA5900957317 /* IFSettingViewModel.swift in Sources */,
 				CD3BC9AF234F313E003C8AA9 /* HomeViewController.swift in Sources */,
 				CD98766E241A3CD20020D00F /* IConViewController.swift in Sources */,
 				CDB9006A25660E8A005C078B /* MaskViewController.swift in Sources */,

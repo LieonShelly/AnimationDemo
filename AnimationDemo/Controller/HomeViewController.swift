@@ -328,6 +328,15 @@ extension HomeViewController {
             let vcc = MaskViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
+        //
+        let settingVC = ListItem("IFSettingController", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = IFSettingController(IFSettingViewModel())
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        items.append(settingVC)
         items.append(maskViewController)
         items.append(r3dLightVC)
         items.append(crossVC)
