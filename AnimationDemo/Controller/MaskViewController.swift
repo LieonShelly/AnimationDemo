@@ -198,3 +198,92 @@ extension Default {
 let json = #"{"id": 12345, "title": "My First Video", "state": "reserved"}"#
 let value = try! JSONDecoder().decode(Video.self, from: json.data(using: .utf8)!)
 
+/**
+ # 泛型
+ - 将类型参数化，类似于C++中的模板
+ ```Swift
+ class Stack<E> {
+     var elements = [E]()
+     
+     func push(_ element: E) {
+         elements.append(element)
+     }
+     
+     func pop() -> E {
+         return elements.removeLast()
+     }
+     
+     func top() -> E {
+         return elements.last!
+     }
+     
+     func size() -> Int {
+         return elements.count
+     }
+ }
+ ```
+ - 可以在协议中定一个泛型(关联类型)
+ ```Swift
+ protocol Stackable {
+     associatedtype Element
+     mutating func push(_ element: Element)
+     mutating func pop() -> Element
+     func top() -> Element
+     func size() -> Int
+ }
+
+ class Stack<E>: Stackable {
+     var elements = [E]()
+     func push(_ element: E) {
+         
+     }
+     mutating func pop() -> E {
+         return elements.removeLast()
+     }
+     func top() -> E {
+         return elements.last!
+     }
+     func size() -> Int {
+         return elements.count
+     }
+ }
+
+ ```
+ - 用于类型约束
+ ```Swift
+ protocol Runable { }
+ class Person { }
+
+ func swapValue<T: Person & Runable>(_ a: inout T, _ b: inout T) {
+     (a, b) = (b, a)
+ }
+ 
+ func get<T: Runable>(_ type: Int) -> T {
+     if type == 0 {
+         return Person() as! T
+     }
+     return Car() as? T
+ }
+}
+ ```
+ 
+ ## 不透明类型（Opaque Type）
+ - 使用some关键字声明一个不透明类型
+ - some限制只能返回一种类型
+ ```Swift
+ func get(_ type: Int) -> some Runable {
+     return Car()
+ }
+ 
+ // ❌
+ func get(_ type: Int) -> some Runable {
+     if type == 0 {
+         return Person()
+     }
+     return Car()
+ }
+ ```
+ */
+
+
+
