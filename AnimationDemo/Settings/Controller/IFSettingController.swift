@@ -16,10 +16,10 @@ class IFSettingController: UIViewController {
     struct UISize {
         static let navTop: CGFloat = UIDevice.current.isiPhoneXSeries ? 44 : 24
         static let navH: CGFloat = 44
-        static let vipH: CGFloat = 24 + 17 + 14 + 64 + 24
-        static let notVipH: CGFloat = 24 + 64 + 24
+        static let vipH: CGFloat = 55 + 64
+        static let notVipH: CGFloat = 24 + 64 
         static let commonH: CGFloat = 56
-        static let headerH: CGFloat = 210 - 24
+        static let headerH: CGFloat = 210
         static let debugH: CGFloat = 56
     }
     fileprivate lazy var tableView: UITableView = {
@@ -87,6 +87,7 @@ class IFSettingController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+    
 }
 
 extension IFSettingController {
@@ -155,16 +156,16 @@ extension IFSettingController: UITableViewDelegate {
         let item = section.items[indexPath.row]
         switch item {
         case .common:
-            return 56
+            return UISize.commonH
         case .vipOrNot(let status):
             switch status {
             case .notVip:
-                return 24 + 64 + 24
+                return UISize.notVipH
             case .vip:
-                return 24 + 17 + 14 + 64 + 24
+                return UISize.vipH
             }
         case .debug:
-            return 0
+            return UISize.debugH
         }
     }
     

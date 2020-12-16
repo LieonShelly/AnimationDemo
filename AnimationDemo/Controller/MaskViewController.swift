@@ -9,10 +9,25 @@
 import UIKit
 
 class MaskViewController: UIViewController {
-    
+    fileprivate lazy var lightView: FxLightView = {
+        let lightView = FxLightView()
+        return lightView
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .yellow
+        view.addSubview(lightView)
+        lightView.snp.makeConstraints {
+            $0.center.equalTo(view.snp.center)
+            $0.size.equalTo(CGSize(width: 100, height: 100))
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        lightView.startPathAnimation()
+    }
+    
+    func testMask() {
         /**
          # mask的用法
             - mask是遮罩，它会挡住父视图的渲染
@@ -34,9 +49,90 @@ class MaskViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(blueView)
     }
-    
 }
 
+
+class FxLightView: UIView {
+    fileprivate lazy var shadowView: FXShadowView = {
+        let shadowView = FXShadowView()
+        shadowView.shadowOffset = .zero
+        shadowView.shadowColor = UIColor.red.cgColor
+        shadowView.shadowRadius = 5
+        shadowView.shadowOpacity = 1
+        shadowView.cornerRadius = 4
+        return shadowView
+    }()
+    fileprivate lazy var shapeView: FXShapeView = {
+        let shapeView = FXShapeView()
+        (shapeView.layer as? CAShapeLayer)?.fillColor = UIColor.clear.cgColor
+        (shapeView.layer as? CAShapeLayer)?.strokeColor = UIColor.black.cgColor
+        (shapeView.layer as? CAShapeLayer)?.lineWidth = 2
+        return shapeView
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(shadowView)
+        shadowView.snp.makeConstraints {
+            $0.edges.equalTo(0)
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        shapeView.frame = bounds
+        shadowView.layer.mask = shapeView.layer
+        let path = UIBezierPath(roundedRect: bounds, cornerRadius: 5).cgPath
+        (shapeView.layer as? CAShapeLayer)?.path = path
+        (shapeView.layer as? CAShapeLayer)?.strokeEnd = 1.0
+        (shapeView.layer as? CAShapeLayer)?.strokeStart = 0.9
+    }
+    
+    func startPathAnimation() {
+        let group = CAAnimationGroup()
+        group.fillMode = .forwards
+        group.timingFunction = CAMediaTimingFunction(name: .linear)
+        group.isRemovedOnCompletion = false
+        group.duration = 1
+        group.setValue("strokeEndFirst", forKey: "name")
+        group.delegate = self
+        let strokeEnd =  CAKeyframeAnimation(keyPath: "strokeEnd")
+        
+        strokeEnd.values = [1, 0.1]
+        
+        let strokeStart = CAKeyframeAnimation(keyPath: "strokeStart")
+        strokeStart.values = [0.9, 0]
+        
+        group.animations = [strokeEnd, strokeStart]
+        shapeView.layer.add(group, forKey: nil)
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+}
+
+extension FxLightView: CAAnimationDelegate {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        guard let name = anim.value(forKey: "name") as?  String else {
+            return
+        }
+        if name == "strokeEndFirst" {
+            let group = CAAnimationGroup()
+            group.fillMode = .forwards
+            group.timingFunction = CAMediaTimingFunction(name: .linear)
+            group.isRemovedOnCompletion = false
+            group.duration = 0.25
+            group.delegate = self
+            group.setValue("strokeEndSecond", forKey: "name")
+            let strokeEnd =  CAKeyframeAnimation(keyPath: "strokeEnd")
+            strokeEnd.values = [0.1, 0]
+            group.animations = [strokeEnd]
+            shapeView.layer.add(group, forKey: nil)
+        }
+    }
+}
 
 /**
  使用 Property Wrapper 为 Codable 解码设定默认值

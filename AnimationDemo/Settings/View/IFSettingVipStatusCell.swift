@@ -73,7 +73,7 @@ class IFSettingVipStatusCell: UITableViewCell {
         backView.snp.makeConstraints {
             $0.left.equalTo(20)
             $0.right.equalTo(-20)
-            $0.centerY.equalToSuperview()
+            $0.top.equalTo(0)
             $0.height.equalTo(64)
         }
         shadowView.snp.makeConstraints {

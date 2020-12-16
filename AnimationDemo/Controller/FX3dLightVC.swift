@@ -471,6 +471,43 @@ enum TestEnum3 {
     case test3(Int)
     case test4(Bool)
     case test5
-    
-   
 }
+
+/**
+# 下标（subscript）
+ - 使用subscript可以给任意类型（枚举、结构体、类）增加下标功能
+ - subscript的语法类似于实例方法、计算属性，本质就是方法（函数）
+ - n subscript可以没有set方法，但必须要有get方法
+ - 可以设置参数标签
+ - 下标可以是类型方法
+ ```Swift
+ class Point {
+     var x = 0.0, y = 0.0
+     
+     subscript(index: Int) -> Double {
+         set {
+             if index == 0 {
+                 x = newValue
+             } else if index == 1 {
+                 y = newValue
+             }
+         }
+         get {
+             if index == 0 {
+                 return x
+             } else if index == 1 {
+                 return y
+             }
+             return 0
+         }
+     }
+ }
+
+ var point = Point()
+ point[0] = 11
+ point[1] = 23
+ ```
+ */
+
+
+

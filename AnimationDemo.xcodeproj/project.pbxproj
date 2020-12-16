@@ -52,6 +52,7 @@
 		CD3BC9B0234F313E003C8AA9 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD3BC9AE234F313E003C8AA9 /* HomeViewController.xib */; };
 		CD3E24BA24446A4200F892F4 /* FXTutorialToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3E24B924446A4200F892F4 /* FXTutorialToast.swift */; };
 		CD436428234E17500047930B /* PinchAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD436427234E17500047930B /* PinchAnimation.swift */; };
+		CD4959382582836A002DBFEA /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4959372582836A002DBFEA /* Property.swift */; };
 		CD57387F2410A99800D6E55F /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57387E2410A99700D6E55F /* VisualEffectView.swift */; };
 		CD5E733F24B6B518007C46E9 /* IFFuncChooseSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E733E24B6B518007C46E9 /* IFFuncChooseSectionHeader.swift */; };
 		CD5F97D624B85043008DD802 /* IFRecommendStartBtnPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5F97D524B85043008DD802 /* IFRecommendStartBtnPop.swift */; };
@@ -306,6 +307,7 @@
 		CD3BC9AE234F313E003C8AA9 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		CD3E24B924446A4200F892F4 /* FXTutorialToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialToast.swift; sourceTree = "<group>"; };
 		CD436427234E17500047930B /* PinchAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchAnimation.swift; sourceTree = "<group>"; };
+		CD4959372582836A002DBFEA /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		CD57387E2410A99700D6E55F /* VisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		CD5E733E24B6B518007C46E9 /* IFFuncChooseSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFFuncChooseSectionHeader.swift; sourceTree = "<group>"; };
 		CD5F97D524B85043008DD802 /* IFRecommendStartBtnPop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFRecommendStartBtnPop.swift; sourceTree = "<group>"; };
@@ -788,6 +790,7 @@
 				CD2112F7235DBA4D003B5202 /* Wireframe.swift */,
 				CD725AE7234F140E00C11FB0 /* Protocol.swift */,
 				CD725AE5234F140700C11FB0 /* Extensions.swift */,
+				CD4959372582836A002DBFEA /* Property.swift */,
 			);
 			path = Vender;
 			sourceTree = "<group>";
@@ -1324,6 +1327,7 @@
 				CD0537B8237934F100F9BDB5 /* EventSendViewController.swift in Sources */,
 				CDAB78DE247FB46F00905236 /* FXPGCLoginViewModel.swift in Sources */,
 				CDEA86EC240F5C0A007BAA00 /* FXTutorialStepNumView.swift in Sources */,
+				CD4959382582836A002DBFEA /* Property.swift in Sources */,
 				CD57387F2410A99800D6E55F /* VisualEffectView.swift in Sources */,
 				CD2112F8235DBA4D003B5202 /* Wireframe.swift in Sources */,
 				CDF47D7A245458ED006D9F22 /* ExpandViewController.swift in Sources */,
