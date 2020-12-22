@@ -336,6 +336,15 @@ extension HomeViewController {
             let vcc = IFSettingController(IFSettingViewModel())
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
+        
+        let shareVC = ListItem("IFMyShareAlbumVC", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = IFMyShareAlbumVC()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        items.append(shareVC)
         items.append(settingVC)
         items.append(maskViewController)
         items.append(r3dLightVC)
