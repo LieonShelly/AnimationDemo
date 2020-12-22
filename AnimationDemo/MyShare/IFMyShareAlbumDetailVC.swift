@@ -1,5 +1,5 @@
 //
-//  IFMyShareAlbumVC.swift
+//  IFMyShareAlbumDetailVC.swift
 //  AnimationDemo
 //
 //  Created by lieon on 2020/12/22.
@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class IFMyShareAlbumVC: UIViewController {
+class IFMyShareAlbumDetailVC: UIViewController {
     struct UISize {
         static let navTop: CGFloat = UIDevice.current.isiPhoneXSeries ? 46 : 24
         static let navH: CGFloat = 44
@@ -30,17 +30,17 @@ class IFMyShareAlbumVC: UIViewController {
         btn.setImage(UIImage(named: "ic_myshare_back"), for: .normal)
         return btn
     }()
-    fileprivate lazy var bgView: IFMyShareAlbumBgView = {
-        let bgView = IFMyShareAlbumBgView()
+    fileprivate lazy var bgView: IFMyShareAlbumDetailBgView = {
+        let bgView = IFMyShareAlbumDetailBgView()
         return bgView
     }()
     fileprivate let bag = DisposeBag()
-    fileprivate lazy var timeView: IFMyShareAlbumTimeLineView = {
-        let view = IFMyShareAlbumTimeLineView()
+    fileprivate lazy var timeView: IFMyShareAlbumDetailTimeLineView = {
+        let view = IFMyShareAlbumDetailTimeLineView()
         return view
     }()
-    fileprivate lazy var qrView: IFMyShareAlbumQRView = {
-        let qrView = IFMyShareAlbumQRView()
+    fileprivate lazy var qrView: IFMyShareAlbumDetailQRView = {
+        let qrView = IFMyShareAlbumDetailQRView()
         return qrView
     }()
     override func viewDidLoad() {
@@ -55,7 +55,7 @@ class IFMyShareAlbumVC: UIViewController {
     
 }
 
-extension IFMyShareAlbumVC {
+extension IFMyShareAlbumDetailVC {
     fileprivate func configUI() {
         view.addSubview(bgView)
         view.addSubview(navBar)

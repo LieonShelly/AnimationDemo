@@ -337,11 +337,11 @@ extension HomeViewController {
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
         
-        let shareVC = ListItem("IFMyShareAlbumVC", handler: { [weak self] in
+        let shareVC = ListItem("IFMyShareAlbumDetailVC", handler: { [weak self] in
             guard let weakSelf = self else {
                 return
             }
-            let vcc = IFMyShareAlbumVC()
+            let vcc = IFMyShareAlbumDetailVC()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
         items.append(shareVC)

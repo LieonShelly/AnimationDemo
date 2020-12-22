@@ -56,9 +56,9 @@
 		CD4959382582836A002DBFEA /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4959372582836A002DBFEA /* Property.swift */; };
 		CD57387F2410A99800D6E55F /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD57387E2410A99700D6E55F /* VisualEffectView.swift */; };
 		CD5E733F24B6B518007C46E9 /* IFFuncChooseSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5E733E24B6B518007C46E9 /* IFFuncChooseSectionHeader.swift */; };
-		CD5F66472591C9F300CAED29 /* IFMyShareAlbumTimeLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5F66462591C9F300CAED29 /* IFMyShareAlbumTimeLineView.swift */; };
-		CD5F664B2591CA5500CAED29 /* IFMyShareAlbumTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5F664A2591CA5500CAED29 /* IFMyShareAlbumTimeView.swift */; };
-		CD5F665F2591D69000CAED29 /* IFMyShareAlbumQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5F665E2591D69000CAED29 /* IFMyShareAlbumQRView.swift */; };
+		CD5F66472591C9F300CAED29 /* IFMyShareAlbumDetailTimeLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5F66462591C9F300CAED29 /* IFMyShareAlbumDetailTimeLineView.swift */; };
+		CD5F664B2591CA5500CAED29 /* IFMyShareAlbumDetailTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5F664A2591CA5500CAED29 /* IFMyShareAlbumDetailTimeView.swift */; };
+		CD5F665F2591D69000CAED29 /* IFMyShareAlbumDetailQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5F665E2591D69000CAED29 /* IFMyShareAlbumDetailQRView.swift */; };
 		CD5F97D624B85043008DD802 /* IFRecommendStartBtnPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5F97D524B85043008DD802 /* IFRecommendStartBtnPop.swift */; };
 		CD61351D24AB42920062A5D8 /* IFHomePop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD61351C24AB42920062A5D8 /* IFHomePop.swift */; };
 		CD61351F24AB74FB0062A5D8 /* test.svg in Resources */ = {isa = PBXBuildFile; fileRef = CD61351E24AB74FB0062A5D8 /* test.svg */; };
@@ -183,8 +183,8 @@
 		CDF0548F242C7BDA00C9F645 /* FXTutorialImageContrastVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF0548E242C7BDA00C9F645 /* FXTutorialImageContrastVC.swift */; };
 		CDF156B9254A6BB0001AD6A6 /* 1.zip in Resources */ = {isa = PBXBuildFile; fileRef = CDF156B8254A6BB0001AD6A6 /* 1.zip */; };
 		CDF47D7A245458ED006D9F22 /* ExpandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF47D79245458ED006D9F22 /* ExpandViewController.swift */; };
-		CDF4ACEF2591C39200AD54BE /* IFMyShareAlbumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4ACEE2591C39200AD54BE /* IFMyShareAlbumVC.swift */; };
-		CDF4ACF72591C53A00AD54BE /* IFMyShareAlbumBgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4ACF62591C53A00AD54BE /* IFMyShareAlbumBgView.swift */; };
+		CDF4ACEF2591C39200AD54BE /* IFMyShareAlbumDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4ACEE2591C39200AD54BE /* IFMyShareAlbumDetailVC.swift */; };
+		CDF4ACF72591C53A00AD54BE /* IFMyShareAlbumDetailBgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF4ACF62591C53A00AD54BE /* IFMyShareAlbumDetailBgView.swift */; };
 		CDF9276C23CEC94100DD5183 /* ic_tutorial_alert_yls@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CDF9276B23CEC94000DD5183 /* ic_tutorial_alert_yls@3x.png */; };
 		CDF9AB6C238FE86D00226E37 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF9AB6B238FE86D00226E37 /* PlayerViewController.swift */; };
 		CDFAAA78238A54D400918051 /* BtnProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFAAA76238A54D400918051 /* BtnProgressViewController.swift */; };
@@ -317,9 +317,9 @@
 		CD4959372582836A002DBFEA /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		CD57387E2410A99700D6E55F /* VisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		CD5E733E24B6B518007C46E9 /* IFFuncChooseSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFFuncChooseSectionHeader.swift; sourceTree = "<group>"; };
-		CD5F66462591C9F300CAED29 /* IFMyShareAlbumTimeLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFMyShareAlbumTimeLineView.swift; sourceTree = "<group>"; };
-		CD5F664A2591CA5500CAED29 /* IFMyShareAlbumTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFMyShareAlbumTimeView.swift; sourceTree = "<group>"; };
-		CD5F665E2591D69000CAED29 /* IFMyShareAlbumQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFMyShareAlbumQRView.swift; sourceTree = "<group>"; };
+		CD5F66462591C9F300CAED29 /* IFMyShareAlbumDetailTimeLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFMyShareAlbumDetailTimeLineView.swift; sourceTree = "<group>"; };
+		CD5F664A2591CA5500CAED29 /* IFMyShareAlbumDetailTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFMyShareAlbumDetailTimeView.swift; sourceTree = "<group>"; };
+		CD5F665E2591D69000CAED29 /* IFMyShareAlbumDetailQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFMyShareAlbumDetailQRView.swift; sourceTree = "<group>"; };
 		CD5F97D524B85043008DD802 /* IFRecommendStartBtnPop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFRecommendStartBtnPop.swift; sourceTree = "<group>"; };
 		CD61351C24AB42920062A5D8 /* IFHomePop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFHomePop.swift; sourceTree = "<group>"; };
 		CD61351E24AB74FB0062A5D8 /* test.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = test.svg; sourceTree = "<group>"; };
@@ -449,8 +449,8 @@
 		CDF0548E242C7BDA00C9F645 /* FXTutorialImageContrastVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialImageContrastVC.swift; sourceTree = "<group>"; };
 		CDF156B8254A6BB0001AD6A6 /* 1.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = 1.zip; sourceTree = "<group>"; };
 		CDF47D79245458ED006D9F22 /* ExpandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandViewController.swift; sourceTree = "<group>"; };
-		CDF4ACEE2591C39200AD54BE /* IFMyShareAlbumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFMyShareAlbumVC.swift; sourceTree = "<group>"; };
-		CDF4ACF62591C53A00AD54BE /* IFMyShareAlbumBgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFMyShareAlbumBgView.swift; sourceTree = "<group>"; };
+		CDF4ACEE2591C39200AD54BE /* IFMyShareAlbumDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFMyShareAlbumDetailVC.swift; sourceTree = "<group>"; };
+		CDF4ACF62591C53A00AD54BE /* IFMyShareAlbumDetailBgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFMyShareAlbumDetailBgView.swift; sourceTree = "<group>"; };
 		CDF9276B23CEC94000DD5183 /* ic_tutorial_alert_yls@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_tutorial_alert_yls@3x.png"; sourceTree = "<group>"; };
 		CDF9AB6B238FE86D00226E37 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		CDFAAA76238A54D400918051 /* BtnProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnProgressViewController.swift; sourceTree = "<group>"; };
@@ -977,7 +977,7 @@
 			isa = PBXGroup;
 			children = (
 				CDF4ACF32591C3F500AD54BE /* View */,
-				CDF4ACEE2591C39200AD54BE /* IFMyShareAlbumVC.swift */,
+				CDF4ACEE2591C39200AD54BE /* IFMyShareAlbumDetailVC.swift */,
 			);
 			path = MyShare;
 			sourceTree = "<group>";
@@ -985,10 +985,10 @@
 		CDF4ACF32591C3F500AD54BE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CDF4ACF62591C53A00AD54BE /* IFMyShareAlbumBgView.swift */,
-				CD5F66462591C9F300CAED29 /* IFMyShareAlbumTimeLineView.swift */,
-				CD5F664A2591CA5500CAED29 /* IFMyShareAlbumTimeView.swift */,
-				CD5F665E2591D69000CAED29 /* IFMyShareAlbumQRView.swift */,
+				CDF4ACF62591C53A00AD54BE /* IFMyShareAlbumDetailBgView.swift */,
+				CD5F66462591C9F300CAED29 /* IFMyShareAlbumDetailTimeLineView.swift */,
+				CD5F664A2591CA5500CAED29 /* IFMyShareAlbumDetailTimeView.swift */,
+				CD5F665E2591D69000CAED29 /* IFMyShareAlbumDetailQRView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1288,11 +1288,11 @@
 				CDD33F842368447A00FD074A /* GuideStartView.swift in Sources */,
 				CDEA86FC240F9F5A007BAA00 /* FXTutorialStepNameView.swift in Sources */,
 				CD0230EC237A5F5200324E30 /* FXBannerCollectionViewCell.swift in Sources */,
-				CDF4ACF72591C53A00AD54BE /* IFMyShareAlbumBgView.swift in Sources */,
+				CDF4ACF72591C53A00AD54BE /* IFMyShareAlbumDetailBgView.swift in Sources */,
 				CD07478A243385460080FD64 /* IFRefreshHeader.swift in Sources */,
 				CDC4908C24F9FDE100E824B1 /* FX3dLightVC.swift in Sources */,
-				CD5F665F2591D69000CAED29 /* IFMyShareAlbumQRView.swift in Sources */,
-				CD5F66472591C9F300CAED29 /* IFMyShareAlbumTimeLineView.swift in Sources */,
+				CD5F665F2591D69000CAED29 /* IFMyShareAlbumDetailQRView.swift in Sources */,
+				CD5F66472591C9F300CAED29 /* IFMyShareAlbumDetailTimeLineView.swift in Sources */,
 				CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */,
 				CD3E24BA24446A4200F892F4 /* FXTutorialToast.swift in Sources */,
 				CD787BCF23B59AAA00DAE0BD /* LoadingViewController.swift in Sources */,
@@ -1315,7 +1315,7 @@
 				CD7D50B023613AD300FA9C07 /* PathSerivce.swift in Sources */,
 				CD749ACA2356F6EF00C357A5 /* FlipSubViewController.swift in Sources */,
 				CD749AC72356F42F00C357A5 /* FlipAnimator.swift in Sources */,
-				CDF4ACEF2591C39200AD54BE /* IFMyShareAlbumVC.swift in Sources */,
+				CDF4ACEF2591C39200AD54BE /* IFMyShareAlbumDetailVC.swift in Sources */,
 				CD2D3F262387C96F00924CB4 /* CustomViewController.swift in Sources */,
 				CDE081C724B74E6000B7609C /* IFHomeTutorialListBgView.swift in Sources */,
 				CDDB073923C96DC300C0AA97 /* NewAnimatedViewController.swift in Sources */,
@@ -1391,7 +1391,7 @@
 				CDA9A8E424A0F718000CEF71 /* WheelLayout.swift in Sources */,
 				CD7D50B223613C4600FA9C07 /* PopSerivce.swift in Sources */,
 				CDEA86FE240FA292007BAA00 /* FXTutorialNumView.swift in Sources */,
-				CD5F664B2591CA5500CAED29 /* IFMyShareAlbumTimeView.swift in Sources */,
+				CD5F664B2591CA5500CAED29 /* IFMyShareAlbumDetailTimeView.swift in Sources */,
 				CDFF204C2367E78100800136 /* ImageCollectionViewCell.swift in Sources */,
 				CDA187A324970E7600C46013 /* FXTutorialManulVideoHandleCell.swift in Sources */,
 				CDC6A84524FA913F000E8CFA /* FXOvalIView.swift in Sources */,

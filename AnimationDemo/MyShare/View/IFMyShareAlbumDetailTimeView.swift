@@ -1,5 +1,5 @@
 //
-//  IFMyShareAlbumTimeView.swift
+//  IFMyShareAlbumDetailTimeView.swift
 //  AnimationDemo
 //
 //  Created by lieon on 2020/12/22.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IFMyShareAlbumTimeView: UIView {
+class IFMyShareAlbumDetailTimeView: UIView {
     struct UISize {
         static let numSize = CGSize(width: 53, height: 52)
         static let spacing: CGFloat = 3

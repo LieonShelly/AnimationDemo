@@ -1,5 +1,5 @@
 //
-//  IFMyShareAlbumQRView.swift
+//  IFMyShareAlbumDetailQRView.swift
 //  AnimationDemo
 //
 //  Created by lieon on 2020/12/22.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IFMyShareAlbumQRView: UIView {
+class IFMyShareAlbumDetailQRView: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.customFont(ofSize: 22, isBold: true)

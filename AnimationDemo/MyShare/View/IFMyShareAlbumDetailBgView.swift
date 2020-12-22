@@ -1,5 +1,5 @@
 //
-//  IFMyShareAlbumBgView.swift
+//  IFMyShareAlbumDetailBgView.swift
 //  AnimationDemo
 //
 //  Created by lieon on 2020/12/22.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IFMyShareAlbumBgView: UIView {
+class IFMyShareAlbumDetailBgView: UIView {
     fileprivate lazy var rightView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "ic_myshare_bg_ic")

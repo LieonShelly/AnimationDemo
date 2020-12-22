@@ -1,5 +1,5 @@
 //
-//  IFMyShareAlbumTimeLineView.swift
+//  IFMyShareAlbumDetailTimeLineView.swift
 //  AnimationDemo
 //
 //  Created by lieon on 2020/12/22.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IFMyShareAlbumTimeLineView: UIView {
+class IFMyShareAlbumDetailTimeLineView: UIView {
     
     fileprivate lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -25,16 +25,16 @@ class IFMyShareAlbumTimeLineView: UIView {
         label.text = "距离分享结束还有"
         return label
     }()
-    fileprivate lazy var hourView: IFMyShareAlbumTimeView = {
-        let view = IFMyShareAlbumTimeView()
+    fileprivate lazy var hourView: IFMyShareAlbumDetailTimeView = {
+        let view = IFMyShareAlbumDetailTimeView()
         return view
     }()
-    fileprivate lazy var minuteView: IFMyShareAlbumTimeView = {
-        let view = IFMyShareAlbumTimeView()
+    fileprivate lazy var minuteView: IFMyShareAlbumDetailTimeView = {
+        let view = IFMyShareAlbumDetailTimeView()
         return view
     }()
-    fileprivate lazy var secondView: IFMyShareAlbumTimeView = {
-        let view = IFMyShareAlbumTimeView()
+    fileprivate lazy var secondView: IFMyShareAlbumDetailTimeView = {
+        let view = IFMyShareAlbumDetailTimeView()
         return view
     }()
     
