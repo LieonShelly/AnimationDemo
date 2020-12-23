@@ -36,15 +36,38 @@ class IFMyShareAlbumDetailTimeView: UIView {
         label.text = "时"
         return label
     }()
+    fileprivate lazy var bgView: UIView = {
+        let bgView = UIView()
+        bgView.backgroundColor = UIColor(hex: 0x1e1e1e)
+        bgView.layer.cornerRadius = 5
+        bgView.layer.masksToBounds = true
+        return bgView
+    }()
+    fileprivate lazy var bgShadowView: FXShadowView = {
+        let bgView = FXShadowView()
+        bgView.shadowRadius = 10
+        bgView.cornerRadius = 5
+        bgView.shadowColor = UIColor.black.withAlphaComponent(0.15).cgColor
+        bgView.shadowOpacity = 1
+        return bgView
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        addSubview(bgShadowView)
+        addSubview(bgView)
         addSubview(gradientView)
         addSubview(subtitleLabel)
         gradientView.snp.makeConstraints {
             $0.left.equalTo(0)
             $0.centerY.equalToSuperview()
             $0.size.equalTo(UISize.numSize)
+        }
+        bgView.snp.makeConstraints {
+            $0.edges.equalTo(gradientView)
+        }
+        bgShadowView.snp.makeConstraints {
+            $0.edges.equalTo(bgView)
         }
         subtitleLabel.snp.makeConstraints {
             $0.left.equalTo(gradientView.snp.right).offset(UISize.spacing)
@@ -57,6 +80,7 @@ class IFMyShareAlbumDetailTimeView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         titleLabel.frame = CGRect(x: 0, y: 0, width: UISize.numSize.width, height: UISize.numSize.height)
+        bgShadowView.setNeedsLayout()
     }
     
     required init?(coder: NSCoder) {

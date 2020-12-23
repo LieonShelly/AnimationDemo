@@ -55,7 +55,7 @@ class IFMyShareAlbumDetailQRView: UIView {
     }()
     fileprivate lazy var toptitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.customFont(ofSize: 11)
+        label.font = UIFont.customFont(ofSize: 11, isBold: true)
         label.textColor = UIColor(hex: 0xa38065)
         label.text = "·支持高质量下载·"
         return label
@@ -115,7 +115,7 @@ class IFMyShareAlbumDetailQRView: UIView {
         }
         titleLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(50)
+            $0.top.equalTo(UIDevice.current.isiPhoneXSeries ? 50 : 40)
             $0.height.equalTo(30)
         }
         subtitleLabel.snp.makeConstraints {
@@ -125,7 +125,7 @@ class IFMyShareAlbumDetailQRView: UIView {
         }
         qrView.snp.makeConstraints {
             $0.size.equalTo(CGSize(width: 194, height: 194))
-            $0.top.equalTo(subtitleLabel.snp.bottom).offset(27)
+            $0.top.equalTo(subtitleLabel.snp.bottom).offset(UIDevice.current.isiPhoneXSeries ? 27 : 2)
             $0.centerX.equalTo(titleLabel.snp.centerX)
         }
         qrSubtitleLabel.snp.makeConstraints {
@@ -135,12 +135,12 @@ class IFMyShareAlbumDetailQRView: UIView {
         }
         codeLael.snp.makeConstraints {
             $0.centerX.equalTo(titleLabel.snp.centerX)
-            $0.top.equalTo(qrSubtitleLabel.snp.bottom).offset(19)
+            $0.top.equalTo(qrSubtitleLabel.snp.bottom).offset(UIDevice.current.isiPhoneXSeries ? 19 : 15)
             $0.size.equalTo(CGSize(width: 140, height: 30))
         }
         wechatBtn.snp.makeConstraints {
             $0.size.equalTo(CGSize(width: 63, height: 63))
-            $0.top.equalTo(codeLael.snp.bottom).offset(13)
+            $0.top.equalTo(codeLael.snp.bottom).offset(UIDevice.current.isiPhoneXSeries ? 13 : 10)
             $0.centerX.equalTo(titleLabel.snp.centerX)
         }
         wechatBtnLabel.snp.makeConstraints {

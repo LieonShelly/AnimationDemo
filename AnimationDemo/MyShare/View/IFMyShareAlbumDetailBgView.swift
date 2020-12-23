@@ -9,45 +9,38 @@
 import UIKit
 
 class IFMyShareAlbumDetailBgView: UIView {
-    fileprivate lazy var rightView: UIImageView = {
+    fileprivate lazy var topBgView: UIImageView = {
+        let icon = UIImageView(image: UIImage(named: "ic_my_share_detail_top_bg"))
+        return icon
+    }()
+    fileprivate lazy var bottomView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "ic_myshare_bg_ic")
+        imageView.image = UIImage(named: "ic_my_share_detail_bottombg")
         return imageView
     }()
     fileprivate lazy var bgView: FXGradientView = {
         let bgView = FXGradientView()
         let layer = bgView.layer as? CAGradientLayer
-        layer?.colors = [UIColor(hex: 0x171717)!.cgColor, UIColor(hex: 0x2b2b2b)!.cgColor]
-        layer?.startPoint = CGPoint(x: 0.5, y: 0)
-        layer?.endPoint = CGPoint(x: 0.5, y: 1)
-        return bgView
-    }()
-    fileprivate lazy var leftView: FXGradientView = {
-        let bgView = FXGradientView()
-        let layer = bgView.layer as? CAGradientLayer
         layer?.colors = [UIColor(hex: 0x2b2b2b)!.cgColor, UIColor(hex: 0x171717)!.cgColor]
-        layer?.startPoint = CGPoint(x: 0.5, y: 0)
-        layer?.endPoint = CGPoint(x: 0.5, y: 1)
+        layer?.startPoint = .zero
+        layer?.endPoint = CGPoint(x: 1.0, y: 1.0)
         return bgView
     }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(bgView)
-        addSubview(leftView)
-        addSubview(rightView)
+        addSubview(topBgView)
+        addSubview(bottomView)
         bgView.snp.makeConstraints {
             $0.edges.equalTo(0)
         }
-        rightView.snp.makeConstraints {
-            $0.right.top.equalTo(0)
+        topBgView.snp.makeConstraints {
+            $0.left.top.right.equalTo(0)
             $0.height.equalTo(169)
-            $0.width.equalTo(220)
         }
-        leftView.snp.makeConstraints {
-            $0.left.top.equalTo(0)
-            $0.height.equalTo(350)
-            $0.right.equalTo(rightView.snp.left)
+        bottomView.snp.makeConstraints {
+            $0.left.bottom.equalTo(0)
+            $0.size.equalTo(CGSize(width: 291, height: 178))
         }
     }
     

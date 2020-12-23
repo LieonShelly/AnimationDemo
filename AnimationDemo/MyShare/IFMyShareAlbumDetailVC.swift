@@ -12,13 +12,8 @@ import RxCocoa
 
 class IFMyShareAlbumDetailVC: UIViewController {
     struct UISize {
-        static let navTop: CGFloat = UIDevice.current.isiPhoneXSeries ? 46 : 24
+        static let navTop: CGFloat = UIDevice.current.isiPhoneXSeries ? 44 : 0
         static let navH: CGFloat = 44
-        static let vipH: CGFloat = 55 + 64
-        static let notVipH: CGFloat = 24 + 64
-        static let commonH: CGFloat = 56
-        static let headerH: CGFloat = 210
-        static let debugH: CGFloat = 56
     }
     fileprivate lazy var navBar: UIView = {
         let navBar = UIView()
@@ -43,6 +38,7 @@ class IFMyShareAlbumDetailVC: UIViewController {
         let qrView = IFMyShareAlbumDetailQRView()
         return qrView
     }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
@@ -85,7 +81,7 @@ extension IFMyShareAlbumDetailVC {
         }
         view.addSubview(timeView)
         timeView.snp.makeConstraints {
-            $0.top.equalTo(navBar.snp.bottom).offset(19)
+            $0.top.equalTo(navBar.snp.bottom).offset(UIDevice.current.isiPhoneXSeries ? 21 : 6)
             $0.left.right.equalTo(0)
             $0.height.equalTo(52 + 20 + 22 + 1 + 17)
         }
@@ -93,8 +89,20 @@ extension IFMyShareAlbumDetailVC {
         qrView.snp.makeConstraints {
             $0.left.equalTo(27)
             $0.right.equalTo(-27)
-            $0.top.equalTo(timeView.snp.bottom).offset(33)
-            $0.bottom.equalTo(-59)
+            $0.top.equalTo(timeView.snp.bottom).offset(UIDevice.current.isiPhoneXSeries ? 33 : 23)
+            $0.bottom.equalTo(UIDevice.current.isiPhoneXSeries ? -59 : -24)
         }
+        // 分享按钮点击
+        qrView.wechatBtn.rx.tap
+            .subscribe(onNext: {[weak self] in
+                guard let weakSelf = self else {
+                    return
+                }
+                
+                
+            })
+            .disposed(by: bag)
+        
+        timeView.config(30)
     }
 }
