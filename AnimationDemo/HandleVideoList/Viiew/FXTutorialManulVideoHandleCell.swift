@@ -68,3 +68,124 @@ class FXShadowView: UIView {
           layer.shadowRadius = shadowRadius
       }
 }
+
+class FXInnerShadowView: UIView {
+    fileprivate lazy var innerShadow: CALayer = {
+        let innerShadowLayer = CALayer()
+        return innerShadowLayer
+    }()
+    
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        layer.addSublayer(innerShadow)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        addInnerShadow()
+    }
+    
+    private func addInnerShadow() {
+        innerShadow.frame = bounds
+        let path = UIBezierPath(rect: innerShadow.bounds.insetBy(dx: -1, dy: -1))
+        let cutout = UIBezierPath(rect: innerShadow.bounds).reversing()
+        path.append(cutout)
+        innerShadow.shadowPath = path.cgPath
+        innerShadow.masksToBounds = true
+        innerShadow.shadowColor = UIColor(hex: 0x161616)!.cgColor
+        innerShadow.shadowOffset = CGSize.zero
+        innerShadow.shadowOpacity = 1
+        innerShadow.shadowRadius = 10
+        innerShadow.cornerRadius = 5
+    }
+}
+
+
+class InnerShadowLayer: CAShapeLayer {
+    var innerShadowColor: CGColor = UIColor.black.cgColor {
+        didSet { setNeedsDisplay() }
+    }
+    
+    var innerShadowOffset: CGSize = .zero {
+        didSet { setNeedsDisplay() }
+    }
+    
+    var innerShadowRadius: CGFloat = 8 {
+        didSet { setNeedsDisplay() }
+    }
+    
+    var innerShadowOpacity: Float = 1 {
+        didSet { setNeedsDisplay() }
+    }
+    
+    override init() {
+        super.init()
+        initialize()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initialize()
+    }
+    
+    func initialize() {
+        masksToBounds      = true
+        shouldRasterize    = true
+        contentsScale      = UIScreen.main.scale
+        rasterizationScale = UIScreen.main.scale
+        setNeedsDisplay()
+    }
+    
+    override func draw(in ctx: CGContext) {
+        ctx.setAllowsAntialiasing(true);
+        ctx.setShouldAntialias(true);
+        ctx.interpolationQuality = .high;
+        let colorspace = CGColorSpaceCreateDeviceRGB();
+        
+        var rect   = bounds
+        var radius = cornerRadius
+        if self.borderWidth != 0 {
+            rect   = rect.insetBy(dx:borderWidth, dy: borderWidth);
+            radius -= borderWidth
+            radius = max(radius, 0)
+        }
+        let someInnerPath: CGPath = UIBezierPath(roundedRect: rect, cornerRadius: radius).cgPath
+        ctx.addPath(someInnerPath)
+        ctx.clip()
+        
+        let shadowPath = CGMutablePath()
+        let shadowRect = rect.insetBy(dx: -rect.size.width, dy: -rect.size.width)
+        shadowPath.addRect(shadowRect)
+        shadowPath.addPath(someInnerPath)
+        shadowPath.closeSubpath()
+        
+        let oldComponents: [CGFloat] = innerShadowColor.components!
+        var newComponents:[CGFloat] = [0, 0, 0, 0]
+        let numberOfComponents: Int = innerShadowColor.numberOfComponents
+        switch (numberOfComponents){
+        case 2:
+            // 灰度
+            newComponents[0] = oldComponents[0]
+            newComponents[1] = oldComponents[0]
+            newComponents[2] = oldComponents[0]
+            newComponents[3] = oldComponents[1] * CGFloat(innerShadowOpacity)
+        case 4:
+            // RGBA
+            newComponents[0] = oldComponents[0]
+            newComponents[1] = oldComponents[1]
+            newComponents[2] = oldComponents[2]
+            newComponents[3] = oldComponents[3] * CGFloat(innerShadowOpacity)
+        default: break
+        }
+        let innerShadowColorWithMultipliedAlpha = CGColor(colorSpace: colorspace, components: newComponents) ?? UIColor.white.cgColor
+        ctx.setFillColor(innerShadowColorWithMultipliedAlpha)
+        ctx.setShadow(offset: innerShadowOffset, blur: innerShadowRadius, color: innerShadowColorWithMultipliedAlpha)
+        ctx.addPath(shadowPath)
+        ctx.fillPath()
+    }
+}

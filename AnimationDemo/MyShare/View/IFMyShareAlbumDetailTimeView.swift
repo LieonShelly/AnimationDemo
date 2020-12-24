@@ -22,8 +22,7 @@ class IFMyShareAlbumDetailTimeView: UIView {
     }()
     fileprivate lazy var titleLabel: UILabel = {
         let label = UILabel()
-        // FIXME: FONT
-        label.font = UIFont.customFont(ofSize: 40, isBold: true)
+        label.font = UIFont(name: "Oswald-Medium", size: 40)
         label.textAlignment = .center
         label.textColor = UIColor.black
         label.text = "27"
@@ -31,7 +30,7 @@ class IFMyShareAlbumDetailTimeView: UIView {
     }()
     fileprivate lazy var subtitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.customFont(ofSize: 12)
+        label.font = UIFont(name: "PingFangSC-Semibold", size: 12)
         label.textColor = UIColor(hex: 0xdabaa5)
         label.text = "时"
         return label
@@ -43,12 +42,9 @@ class IFMyShareAlbumDetailTimeView: UIView {
         bgView.layer.masksToBounds = true
         return bgView
     }()
-    fileprivate lazy var bgShadowView: FXShadowView = {
-        let bgView = FXShadowView()
-        bgView.shadowRadius = 10
-        bgView.cornerRadius = 5
-        bgView.shadowColor = UIColor.black.withAlphaComponent(0.15).cgColor
-        bgView.shadowOpacity = 1
+    fileprivate lazy var bgShadowView: UIImageView = {
+        let bgView = UIImageView()
+        bgView.image = UIImage(named: "ic_time_bg")
         return bgView
     }()
     

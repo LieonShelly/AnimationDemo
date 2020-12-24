@@ -14,13 +14,28 @@ class IFMyShareAlbumDetailTimeLineView: UIView {
         let label = UILabel()
         label.font = UIFont.customFont(ofSize: 12)
         label.textColor = UIColor.white
-        label.text = "COUNT DOWN"
         label.alpha = 0.2
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 0.75
+        let attr0 = NSMutableAttributedString(string: "COUNT")
+        attr0.addAttributes([.font: UIFont(name: "PingFangSC-Light", size: 12)!,
+                             .foregroundColor: UIColor.white,
+                             .paragraphStyle: style],
+                            range: NSRange(location: 0, length: attr0.string.count))
+        attr0.append(NSAttributedString(string: " "))
+        
+        let attr1 = NSMutableAttributedString(string: "DOWN")
+        attr1.addAttributes([.font: UIFont(name: "PingFangSC-Light", size: 12)!,
+                             .foregroundColor: UIColor.white,
+                             .paragraphStyle: style],
+                            range: NSRange(location: 0, length: attr1.string.count))
+        attr0.append(attr1)
+        label.attributedText = attr0
         return label
     }()
     fileprivate lazy var subtitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.customFont(ofSize: 16)
+        label.font = UIFont(name: "PingFangSC-Light", size: 16)
         label.textColor = UIColor(hex: 0xeccbb5)
         label.text = "距离分享结束还有"
         return label
@@ -60,7 +75,6 @@ class IFMyShareAlbumDetailTimeLineView: UIView {
         let stack = UIStackView(arrangedSubviews: [hourView, minuteView, secondView])
         stack.axis = .horizontal
         stack.spacing = 5
-        stack.clipsToBounds = false
         stack.alignment = .center
         hourView.snp.makeConstraints {
             $0.size.equalTo(CGSize(width: 53 + 5 + 12, height: 52))
@@ -104,7 +118,6 @@ class IFMyShareAlbumDetailTimeLineView: UIView {
             weakSelf.hourView.config("\(String(format: "%02d", hor))", subTitle: "时")
             weakSelf.minuteView.config("\(String(format: "%02d", min))", subTitle: "分")
             weakSelf.secondView.config("\(String(format: "%02d", sec))", subTitle: "秒")
-            print("timInterval: \(weakSelf.timeInterval) - hor: \(hor) - min: \(min) - sec: \(sec)")
         }
         timer.resume()
         self.timer = timer

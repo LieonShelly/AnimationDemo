@@ -13,6 +13,10 @@ class IFMyShareAlbumDetailBgView: UIView {
         let icon = UIImageView(image: UIImage(named: "ic_my_share_detail_top_bg"))
         return icon
     }()
+    fileprivate lazy var topView: UIView = {
+        let topView = UIView()
+        return topView
+    }()
     fileprivate lazy var bottomView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "ic_my_share_detail_bottombg")
@@ -29,14 +33,19 @@ class IFMyShareAlbumDetailBgView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(bgView)
-        addSubview(topBgView)
+        addSubview(topView)
+        topView.addSubview(topBgView)
         addSubview(bottomView)
         bgView.snp.makeConstraints {
             $0.edges.equalTo(0)
         }
-        topBgView.snp.makeConstraints {
+        topView.snp.makeConstraints {
             $0.left.top.right.equalTo(0)
-            $0.height.equalTo(169)
+            $0.height.equalTo(262)
+        }
+        topBgView.snp.makeConstraints {
+            $0.left.right.bottom.equalTo(0)
+            $0.height.equalTo(262)
         }
         bottomView.snp.makeConstraints {
             $0.left.bottom.equalTo(0)

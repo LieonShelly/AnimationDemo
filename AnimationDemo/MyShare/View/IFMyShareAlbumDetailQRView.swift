@@ -11,21 +11,21 @@ import UIKit
 class IFMyShareAlbumDetailQRView: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.customFont(ofSize: 22, isBold: true)
+        label.font = UIFont(name: "PingFangSC-Medium", size: 22)
         label.textColor = UIColor(hex: 0x222222)
         label.text = "我的摄影作品集"
         return label
     }()
     lazy var subtitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.customFont(ofSize: 12)
+        label.font =  UIFont(name: "PingFangSC-Light", size: 12)
         label.textColor = UIColor(hex: 0xb5b5b5)
         label.text = "2020-12-08"
         return label
     }()
     lazy var codeLael: UILabel = {
         let label = UILabel()
-        label.font = UIFont.customFont(ofSize: 13)
+        label.font = UIFont(name: "PingFangSC-Light", size: 13)
         label.textColor = UIColor.black
         label.text = "提取码：123456"
         label.textAlignment = .center
@@ -45,12 +45,17 @@ class IFMyShareAlbumDetailQRView: UIView {
         qrView.backgroundColor = .white
         return qrView
     }()
+    lazy var qrBgView: UIImageView = {
+        let qrView = UIImageView()
+        qrView.backgroundColor = .white
+        return qrView
+    }()
     fileprivate lazy var bgView: FXGradientView = {
         let bgView = FXGradientView()
         let layer = bgView.layer as? CAGradientLayer
         layer?.colors = [UIColor(hex: 0xf7f6f4)!.cgColor, UIColor(hex: 0xf7f6f4)!.cgColor]
-        layer?.startPoint = CGPoint(x: 0.5, y: 0)
-        layer?.endPoint = CGPoint(x: 0.5, y: 1)
+        layer?.startPoint = CGPoint(x: 0, y: 0)
+        layer?.endPoint = CGPoint(x: 0, y: 1)
         return bgView
     }()
     fileprivate lazy var toptitleLabel: UILabel = {
@@ -62,17 +67,28 @@ class IFMyShareAlbumDetailQRView: UIView {
     }()
     fileprivate lazy var qrSubtitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.customFont(ofSize: 13)
-        label.textColor = UIColor(hex: 0x222222)
-        label.text = "扫码查看高清大图"
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 1
+        let attr0 = NSMutableAttributedString(string: "扫码查看高清大图")
+        attr0.addAttributes([.font: UIFont(name: "PingFangSC-Regular", size: 13)!,
+                             .foregroundColor: UIColor(hex: 0x222222)!,
+                             .paragraphStyle: style],
+                            range: NSRange(location: 0, length: attr0.string.count))
+        attr0.append(NSAttributedString(string: " "))
+        label.attributedText = attr0
         return label
     }()
   
     fileprivate lazy var wechatBtnLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.customFont(ofSize: 11)
-        label.textColor = UIColor(hex: 0x333333)
-        label.text = "分享给朋友"
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 1
+        let attr0 = NSMutableAttributedString(string: "分享给朋友")
+        attr0.addAttributes([.font: UIFont(name: "PingFangSC-Regular", size: 11)!,
+                             .foregroundColor: UIColor(hex: 0x333333)!,
+                             .paragraphStyle: style],
+                            range: NSRange(location: 0, length: attr0.string.count))
+        label.attributedText = attr0
         return label
     }()
     fileprivate lazy var topBgView: FXGradientView = {
@@ -80,8 +96,8 @@ class IFMyShareAlbumDetailQRView: UIView {
         let layer = topBgView.layer as? CAGradientLayer
         layer?.colors = [UIColor(hex: 0xf2d9c7)!.cgColor, UIColor(hex: 0xd4ae95)!.cgColor]
         layer?.cornerRadius = 15
-        layer?.startPoint = CGPoint(x: 0, y: 0.5)
-        layer?.endPoint = CGPoint(x: 1, y: 0.5)
+        layer?.startPoint = CGPoint(x: 0, y: 1)
+        layer?.endPoint = CGPoint(x: 1, y: 1)
         layer?.masksToBounds = true
         return topBgView
     }()
@@ -94,7 +110,7 @@ class IFMyShareAlbumDetailQRView: UIView {
         addSubview(toptitleLabel)
         addSubview(titleLabel)
         addSubview(subtitleLabel)
-        addSubview(qrView)
+        addSubview(qrBgView)
         addSubview(qrView)
         addSubview(qrSubtitleLabel)
         addSubview(codeLael)
@@ -108,8 +124,8 @@ class IFMyShareAlbumDetailQRView: UIView {
             $0.top.equalTo(6)
         }
         topBgView.snp.makeConstraints {
-            $0.right.equalTo(100)
-            $0.height.equalTo(100)
+            $0.right.equalTo(28 * 2)
+            $0.height.equalTo(28 * 2)
             $0.left.equalTo(toptitleLabel.snp.left).offset(-11)
             $0.bottom.equalTo(toptitleLabel.snp.bottom).offset(6)
         }
@@ -123,14 +139,17 @@ class IFMyShareAlbumDetailQRView: UIView {
             $0.top.equalTo(titleLabel.snp.bottom).offset(0)
             $0.height.equalTo(17)
         }
-        qrView.snp.makeConstraints {
+        qrBgView.snp.makeConstraints {
             $0.size.equalTo(CGSize(width: 194, height: 194))
-            $0.top.equalTo(subtitleLabel.snp.bottom).offset(UIDevice.current.isiPhoneXSeries ? 27 : 2)
+            $0.top.equalTo(subtitleLabel.snp.bottom).offset(UIDevice.current.isiPhoneXSeries ? 13 : 2)
             $0.centerX.equalTo(titleLabel.snp.centerX)
+        }
+        qrView.snp.makeConstraints {
+            $0.edges.equalTo(qrBgView.snp.edges).inset(11)
         }
         qrSubtitleLabel.snp.makeConstraints {
             $0.centerX.equalTo(titleLabel.snp.centerX)
-            $0.top.equalTo(qrView.snp.bottom).offset(9)
+            $0.top.equalTo(qrBgView.snp.bottom).offset(9)
             $0.height.equalTo(18)
         }
         codeLael.snp.makeConstraints {
