@@ -166,10 +166,13 @@
 		CDC86A6C2511E2BA00D5E5C3 /* FX3DLightTypeChooseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC86A6B2511E2BA00D5E5C3 /* FX3DLightTypeChooseView.swift */; };
 		CDC87F2E2362E39600EFE022 /* BtnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC87F2C2362E39600EFE022 /* BtnViewController.swift */; };
 		CDC87F2F2362E39600EFE022 /* BtnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC87F2D2362E39600EFE022 /* BtnViewController.xib */; };
+		CDD2E365259434B800FD8E8A /* IFShareExceptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD2E364259434B800FD8E8A /* IFShareExceptionView.swift */; };
+		CDD2E36C25943D9F00FD8E8A /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD2E36B25943D9F00FD8E8A /* EmptyViewController.swift */; };
 		CDD33F842368447A00FD074A /* GuideStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD33F832368447A00FD074A /* GuideStartView.swift */; };
 		CDD33F862368448500FD074A /* GuideStartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD33F852368448500FD074A /* GuideStartView.xib */; };
 		CDDB073923C96DC300C0AA97 /* NewAnimatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDB073723C96DC300C0AA97 /* NewAnimatedViewController.swift */; };
 		CDDB073A23C96DC300C0AA97 /* NewAnimatedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDDB073823C96DC300C0AA97 /* NewAnimatedViewController.xib */; };
+		CDDC1A2D25959574008CE67C /* IFMyShareWechatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC1A2C25959574008CE67C /* IFMyShareWechatView.swift */; };
 		CDE081C724B74E6000B7609C /* IFHomeTutorialListBgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE081C624B74E6000B7609C /* IFHomeTutorialListBgView.swift */; };
 		CDE79D5C24AC6CE600E57451 /* IFEditImageInputBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE79D5B24AC6CE600E57451 /* IFEditImageInputBtn.swift */; };
 		CDEA86EC240F5C0A007BAA00 /* FXTutorialStepNumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA86EB240F5C0A007BAA00 /* FXTutorialStepNumView.swift */; };
@@ -432,10 +435,13 @@
 		CDC86A6B2511E2BA00D5E5C3 /* FX3DLightTypeChooseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FX3DLightTypeChooseView.swift; sourceTree = "<group>"; };
 		CDC87F2C2362E39600EFE022 /* BtnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnViewController.swift; sourceTree = "<group>"; };
 		CDC87F2D2362E39600EFE022 /* BtnViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BtnViewController.xib; sourceTree = "<group>"; };
+		CDD2E364259434B800FD8E8A /* IFShareExceptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFShareExceptionView.swift; sourceTree = "<group>"; };
+		CDD2E36B25943D9F00FD8E8A /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		CDD33F832368447A00FD074A /* GuideStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideStartView.swift; sourceTree = "<group>"; };
 		CDD33F852368448500FD074A /* GuideStartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuideStartView.xib; sourceTree = "<group>"; };
 		CDDB073723C96DC300C0AA97 /* NewAnimatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAnimatedViewController.swift; sourceTree = "<group>"; };
 		CDDB073823C96DC300C0AA97 /* NewAnimatedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewAnimatedViewController.xib; sourceTree = "<group>"; };
+		CDDC1A2C25959574008CE67C /* IFMyShareWechatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFMyShareWechatView.swift; sourceTree = "<group>"; };
 		CDE081C624B74E6000B7609C /* IFHomeTutorialListBgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFHomeTutorialListBgView.swift; sourceTree = "<group>"; };
 		CDE79D5B24AC6CE600E57451 /* IFEditImageInputBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditImageInputBtn.swift; sourceTree = "<group>"; };
 		CDEA86EB240F5C0A007BAA00 /* FXTutorialStepNumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialStepNumView.swift; sourceTree = "<group>"; };
@@ -574,6 +580,7 @@
 		CD2FCF6E234D796100E28E5C /* AnimationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CDD2E36A25943D7000FD8E8A /* Em */,
 				CDF4ACF22591C3D800AD54BE /* MyShare */,
 				CD6F173B2574FA5900957317 /* Settings */,
 				CD1E5FBF255E348A003928A7 /* Mems.swift */,
@@ -950,6 +957,14 @@
 			path = ImagePIcker;
 			sourceTree = "<group>";
 		};
+		CDD2E36A25943D7000FD8E8A /* Em */ = {
+			isa = PBXGroup;
+			children = (
+				CDD2E36B25943D9F00FD8E8A /* EmptyViewController.swift */,
+			);
+			path = Em;
+			sourceTree = "<group>";
+		};
 		CDEA86EA240F5BFE007BAA00 /* New Group */ = {
 			isa = PBXGroup;
 			children = (
@@ -989,6 +1004,8 @@
 				CD5F66462591C9F300CAED29 /* IFMyShareAlbumDetailTimeLineView.swift */,
 				CD5F664A2591CA5500CAED29 /* IFMyShareAlbumDetailTimeView.swift */,
 				CD5F665E2591D69000CAED29 /* IFMyShareAlbumDetailQRView.swift */,
+				CDD2E364259434B800FD8E8A /* IFShareExceptionView.swift */,
+				CDDC1A2C25959574008CE67C /* IFMyShareWechatView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1313,6 +1330,7 @@
 				CD2112F1235D8B91003B5202 /* PadTypeCollectionViewCell.swift in Sources */,
 				CD6832FE23BAF7F9008C0C9F /* IAPViewController.swift in Sources */,
 				CD7D50B023613AD300FA9C07 /* PathSerivce.swift in Sources */,
+				CDDC1A2D25959574008CE67C /* IFMyShareWechatView.swift in Sources */,
 				CD749ACA2356F6EF00C357A5 /* FlipSubViewController.swift in Sources */,
 				CD749AC72356F42F00C357A5 /* FlipAnimator.swift in Sources */,
 				CDF4ACEF2591C39200AD54BE /* IFMyShareAlbumDetailVC.swift in Sources */,
@@ -1353,6 +1371,8 @@
 				CDC4908A24F9FBDA00E824B1 /* FX3DLightExchangeLightSourceBtn.swift in Sources */,
 				CD66DEC524CAE83E0011A99F /* StickerCrossView.swift in Sources */,
 				CDF0548D242C575A00C9F645 /* FXTutorialImageContrastView.swift in Sources */,
+				CDD2E36C25943D9F00FD8E8A /* EmptyViewController.swift in Sources */,
+				CDD2E365259434B800FD8E8A /* IFShareExceptionView.swift in Sources */,
 				CD6F17482574FA5900957317 /* IFSettingCommonCell.swift in Sources */,
 				CD7B0C38240E586400C57BE2 /* HookViewController.swift in Sources */,
 				CD2112EA235D8550003B5202 /* MultiLanguageAlert.swift in Sources */,

@@ -344,6 +344,14 @@ extension HomeViewController {
             let vcc = IFMyShareAlbumDetailVC()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
+        let emptyVC = ListItem("EmptyViewController", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = EmptyViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        items.append(emptyVC)
         items.append(shareVC)
         items.append(settingVC)
         items.append(maskViewController)
