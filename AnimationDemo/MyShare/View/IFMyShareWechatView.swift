@@ -21,19 +21,17 @@ class IFMyShareWechatView: UIView {
     }()
     lazy var nameDescLabel: UILabel = {
         let label = UILabel()
-        let style = NSMutableParagraphStyle()
-        style.lineSpacing = 1.5
         let attr0 = NSMutableAttributedString(string: "商业级人像精修神器")
         attr0.addAttributes([.font: UIFont(name: "PingFangSC-Light", size: 11)!,
                              .foregroundColor: UIColor(hex: 0x838383)!,
-                             .paragraphStyle: style],
+                             .kern: 1.5],
                             range: NSRange(location: 0, length: attr0.string.count))
         label.attributedText = attr0
         return label
     }()
     fileprivate lazy var bottomLogo: UIImageView = {
         let bottomLogo = UIImageView()
-        bottomLogo.image = UIImage(named: "my_share_wh_inface")
+        bottomLogo.image = UIImage(named: "ic_my_share_wh_inface")
         return bottomLogo
     }()
     lazy var qrView: UIImageView = {
@@ -43,6 +41,7 @@ class IFMyShareWechatView: UIView {
     }()
     lazy var titleLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .center
         label.font = UIFont(name: "PingFangSC-Semibold", size: 22)
         label.textColor = UIColor(hex: 0x333333)
         label.text = "圣诞节晚上约拍"
@@ -52,6 +51,7 @@ class IFMyShareWechatView: UIView {
         let label = UILabel()
         label.font =  UIFont(name: "PingFangSC-Regular", size: 15)
         label.textColor = UIColor(hex: 0x9e9e9e)
+        label.textAlignment = .center
         label.text = "2020-12-08"
         return label
     }()
@@ -107,7 +107,7 @@ class IFMyShareWechatView: UIView {
             $0.height.equalTo(487)
         }
         nameLogo.snp.makeConstraints {
-            $0.top.equalTo(UIDevice.current.isiPhoneXSeries ? 188 : 107)
+            $0.top.equalTo(UIDevice.current.isiPhoneXSeries ? 188 - 10 : 107 - 10)
             $0.left.equalTo(37)
             $0.size.equalTo(CGSize(width: 110, height: 27))
         }
@@ -120,11 +120,13 @@ class IFMyShareWechatView: UIView {
             $0.left.equalTo(28)
             $0.right.equalTo(-28)
             $0.height.equalTo(437)
-            $0.top.equalTo(nameDescLabel.snp.bottom).offset(25)
+            $0.top.equalTo(nameDescLabel.snp.bottom).offset(25 + 10)
         }
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(44)
             $0.height.equalTo(30)
+            $0.left.equalTo(10)
+            $0.right.equalTo(-10)
             $0.centerX.equalToSuperview()
         }
         subtitleLabel.snp.makeConstraints {
@@ -134,7 +136,7 @@ class IFMyShareWechatView: UIView {
         }
         qrBgView.snp.makeConstraints {
             $0.size.equalTo(CGSize(width: 179, height: 179))
-            $0.top.equalTo(subtitleLabel.snp.bottom).offset(33)
+            $0.top.equalTo(subtitleLabel.snp.bottom).offset(33 - 11)
             $0.centerX.equalTo(titleLabel.snp.centerX)
         }
         qrView.snp.makeConstraints {
@@ -168,7 +170,8 @@ class IFMyShareWechatView: UIView {
     
     func snapShotImage() -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(UIScreen.main.bounds.size, false, UIScreen.main.scale)
-        self.drawHierarchy(in: UIScreen.main.bounds, afterScreenUpdates: false)
+        self.drawHierarchy(in: UIScreen.main.bounds, afterScreenUpdates: true)
+        let img = UIGraphicsGetImageFromCurrentImageContext()
         return img
     }
 }
