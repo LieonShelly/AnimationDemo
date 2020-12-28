@@ -86,13 +86,13 @@ extension IFMyShareAlbumDetailVC {
             $0.centerY.equalToSuperview()
             $0.left.equalTo(20)
         }
-        var isFore = false
+        var isFore = true
         if isFore {
             view.addSubview(foreView)
             foreView.snp.makeConstraints {
-                $0.top.equalTo(navBar.snp.bottom).offset(UIDevice.current.isiPhoneXSeries ? 21 : 6)
+                $0.top.equalTo(navBar.snp.bottom).offset(UIDevice.current.isiPhoneXSeries ? 43 : 6)
                 $0.left.right.equalTo(0)
-                $0.height.equalTo(17 + 1 + 22 + 10 + 78)
+                $0.height.equalTo(17 + 1 + 22 + 7 + 59)
             }
             view.addSubview(qrView)
             qrView.snp.makeConstraints {

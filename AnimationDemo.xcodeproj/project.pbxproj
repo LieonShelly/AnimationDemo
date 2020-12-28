@@ -46,6 +46,7 @@
 		CD306C4D2355CC36002ABA93 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD306C4C2355CC36002ABA93 /* Common.swift */; };
 		CD3218E72530421900546C50 /* FX3dLightMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3218E62530421800546C50 /* FX3dLightMessageView.swift */; };
 		CD32D1DF258A452B004A8172 /* IFUploadPhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD32D1DE258A452B004A8172 /* IFUploadPhotoService.swift */; };
+		CD34F6D425998A35009653F4 /* FuncCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD34F6D325998A35009653F4 /* FuncCoding.swift */; };
 		CD35A9D82372A668007C8354 /* ScreenRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD35A9D62372A668007C8354 /* ScreenRecordViewController.swift */; };
 		CD35A9D92372A668007C8354 /* ScreenRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD35A9D72372A668007C8354 /* ScreenRecordViewController.xib */; };
 		CD3BC9AC234F26A0003C8AA9 /* AnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC9AB234F26A0003C8AA9 /* AnimationProtocol.swift */; };
@@ -311,6 +312,7 @@
 		CD306C4C2355CC36002ABA93 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		CD3218E62530421800546C50 /* FX3dLightMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FX3dLightMessageView.swift; sourceTree = "<group>"; };
 		CD32D1DE258A452B004A8172 /* IFUploadPhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFUploadPhotoService.swift; sourceTree = "<group>"; };
+		CD34F6D325998A35009653F4 /* FuncCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncCoding.swift; sourceTree = "<group>"; };
 		CD35A9D62372A668007C8354 /* ScreenRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRecordViewController.swift; sourceTree = "<group>"; };
 		CD35A9D72372A668007C8354 /* ScreenRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScreenRecordViewController.xib; sourceTree = "<group>"; };
 		CD3BC9AB234F26A0003C8AA9 /* AnimationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationProtocol.swift; sourceTree = "<group>"; };
@@ -582,6 +584,7 @@
 		CD2FCF6E234D796100E28E5C /* AnimationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CD34F6D225998A1D009653F4 /* Rx */,
 				CDD2E36A25943D7000FD8E8A /* Em */,
 				CDF4ACF22591C3D800AD54BE /* MyShare */,
 				CD6F173B2574FA5900957317 /* Settings */,
@@ -632,6 +635,14 @@
 				CD2112D2235D7ED5003B5202 /* Animations */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		CD34F6D225998A1D009653F4 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				CD34F6D325998A35009653F4 /* FuncCoding.swift */,
+			);
+			path = Rx;
 			sourceTree = "<group>";
 		};
 		CD6832FF23BB48FB008C0C9F /* Resource */ = {
@@ -1392,6 +1403,7 @@
 				CD4959382582836A002DBFEA /* Property.swift in Sources */,
 				CD57387F2410A99800D6E55F /* VisualEffectView.swift in Sources */,
 				CD2112F8235DBA4D003B5202 /* Wireframe.swift in Sources */,
+				CD34F6D425998A35009653F4 /* FuncCoding.swift in Sources */,
 				CDF47D7A245458ED006D9F22 /* ExpandViewController.swift in Sources */,
 				CD10BCF523694787007B4808 /* IFAnimaton.swift in Sources */,
 				CD777DA1254AFB690037C7F1 /* Demo.intentdefinition in Sources */,

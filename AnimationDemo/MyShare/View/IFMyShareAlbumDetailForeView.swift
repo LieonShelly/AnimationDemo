@@ -40,7 +40,12 @@ class IFMyShareAlbumDetailForeView: UIView {
     
     fileprivate lazy var foreView: UIImageView = {
         let foreView = UIImageView()
-        foreView.image = UIImage(named: "ic_my_share_fore")
+        let isEn = false
+        if isEn {
+            foreView.image = UIImage(named: "ic_my_share_fore_en")
+        } else {
+            foreView.image = UIImage(named: "ic_my_share_fore")
+        }
         return foreView
     }()
     
@@ -60,9 +65,9 @@ class IFMyShareAlbumDetailForeView: UIView {
             $0.height.equalTo(22)
         }
         foreView.snp.makeConstraints {
-            $0.left.equalTo(12)
-            $0.top.equalTo(subtitleLabel.snp.bottom).offset(10)
-            $0.size.equalTo(CGSize(width: 205, height: 78))
+            $0.left.equalTo(titleLabel.snp.left)
+            $0.top.equalTo(subtitleLabel.snp.bottom).offset(7)
+            $0.size.equalTo(CGSize(width: 230, height: 59))
         }
     }
     
