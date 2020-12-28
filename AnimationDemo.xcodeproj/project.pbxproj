@@ -47,6 +47,8 @@
 		CD3218E72530421900546C50 /* FX3dLightMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3218E62530421800546C50 /* FX3dLightMessageView.swift */; };
 		CD32D1DF258A452B004A8172 /* IFUploadPhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD32D1DE258A452B004A8172 /* IFUploadPhotoService.swift */; };
 		CD34F6D425998A35009653F4 /* FuncCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD34F6D325998A35009653F4 /* FuncCoding.swift */; };
+		CD34F6DB2599B6C5009653F4 /* IFBatchShareFirstEnterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD34F6DA2599B6C5009653F4 /* IFBatchShareFirstEnterView.swift */; };
+		CD34F6DF2599CBA2009653F4 /* SourceHanSansCN-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD34F6DE2599CBA2009653F4 /* SourceHanSansCN-Heavy.otf */; };
 		CD35A9D82372A668007C8354 /* ScreenRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD35A9D62372A668007C8354 /* ScreenRecordViewController.swift */; };
 		CD35A9D92372A668007C8354 /* ScreenRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD35A9D72372A668007C8354 /* ScreenRecordViewController.xib */; };
 		CD3BC9AC234F26A0003C8AA9 /* AnimationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3BC9AB234F26A0003C8AA9 /* AnimationProtocol.swift */; };
@@ -313,6 +315,8 @@
 		CD3218E62530421800546C50 /* FX3dLightMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FX3dLightMessageView.swift; sourceTree = "<group>"; };
 		CD32D1DE258A452B004A8172 /* IFUploadPhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFUploadPhotoService.swift; sourceTree = "<group>"; };
 		CD34F6D325998A35009653F4 /* FuncCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuncCoding.swift; sourceTree = "<group>"; };
+		CD34F6DA2599B6C5009653F4 /* IFBatchShareFirstEnterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFBatchShareFirstEnterView.swift; sourceTree = "<group>"; };
+		CD34F6DE2599CBA2009653F4 /* SourceHanSansCN-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSansCN-Heavy.otf"; sourceTree = "<group>"; };
 		CD35A9D62372A668007C8354 /* ScreenRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenRecordViewController.swift; sourceTree = "<group>"; };
 		CD35A9D72372A668007C8354 /* ScreenRecordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScreenRecordViewController.xib; sourceTree = "<group>"; };
 		CD3BC9AB234F26A0003C8AA9 /* AnimationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationProtocol.swift; sourceTree = "<group>"; };
@@ -645,6 +649,14 @@
 			path = Rx;
 			sourceTree = "<group>";
 		};
+		CD34F6D92599B6A4009653F4 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				CD34F6DA2599B6C5009653F4 /* IFBatchShareFirstEnterView.swift */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
 		CD6832FF23BB48FB008C0C9F /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -973,6 +985,8 @@
 		CDD2E36A25943D7000FD8E8A /* Em */ = {
 			isa = PBXGroup;
 			children = (
+				CD34F6DE2599CBA2009653F4 /* SourceHanSansCN-Heavy.otf */,
+				CD34F6D92599B6A4009653F4 /* VIew */,
 				CDD2E36B25943D9F00FD8E8A /* EmptyViewController.swift */,
 			);
 			path = Em;
@@ -1206,6 +1220,7 @@
 				CD725ADA234F0E4E00C11FB0 /* PanViewController.xib in Resources */,
 				CD9945AA2498941800789E45 /* vertical_scroll_face_exact_fix_touch_clear.mp4 in Resources */,
 				CD6C28D423A21D620008761C /* ScaleBtnViewController.xib in Resources */,
+				CD34F6DF2599CBA2009653F4 /* SourceHanSansCN-Heavy.otf in Resources */,
 				CDDB073A23C96DC300C0AA97 /* NewAnimatedViewController.xib in Resources */,
 				CD9945A82498941800789E45 /* vertical_scroll_face_little_change_face.mp4 in Resources */,
 				CDD33F862368448500FD074A /* GuideStartView.xib in Resources */,
@@ -1414,6 +1429,7 @@
 				CDC87F2E2362E39600EFE022 /* BtnViewController.swift in Sources */,
 				CDB280B6241E160500795A11 /* FXImageCropView.swift in Sources */,
 				CDBB312C242CF98B00C1DCAD /* FXTutorialUploadProgressView.swift in Sources */,
+				CD34F6DB2599B6C5009653F4 /* IFBatchShareFirstEnterView.swift in Sources */,
 				CD5E733F24B6B518007C46E9 /* IFFuncChooseSectionHeader.swift in Sources */,
 				CDFAAA78238A54D400918051 /* BtnProgressViewController.swift in Sources */,
 				CDA9A8C1249F8945000CEF71 /* CycleLayout.swift in Sources */,

@@ -9,7 +9,10 @@
 import UIKit
 
 class EmptyViewController: UIViewController {
-    
+    fileprivate lazy var coverView: IFBatchShareFirstEnterView = {
+        let cover = IFBatchShareFirstEnterView()
+        return cover
+    }()
     fileprivate lazy var exceptionView: IFExceptionView = {
         let emptyView = IFExceptionView()
         return emptyView
@@ -28,8 +31,8 @@ class EmptyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        view.addSubview(wechatImg)
-        wechatImg.snp.makeConstraints {
+        view.addSubview(coverView)
+        coverView.snp.makeConstraints {
             $0.edges.equalTo(0)
         }
     }
