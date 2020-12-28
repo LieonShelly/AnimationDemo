@@ -15,19 +15,17 @@ class IFMyShareAlbumDetailTimeLineView: UIView {
         label.font = UIFont.customFont(ofSize: 12)
         label.textColor = UIColor.white
         label.alpha = 0.2
-        let style = NSMutableParagraphStyle()
-        style.lineSpacing = 0.75
         let attr0 = NSMutableAttributedString(string: "COUNT")
         attr0.addAttributes([.font: UIFont(name: "PingFangSC-Light", size: 12)!,
                              .foregroundColor: UIColor.white,
-                             .paragraphStyle: style],
+                             .kern: 1.5],
                             range: NSRange(location: 0, length: attr0.string.count))
         attr0.append(NSAttributedString(string: " "))
         
         let attr1 = NSMutableAttributedString(string: "DOWN")
         attr1.addAttributes([.font: UIFont(name: "PingFangSC-Light", size: 12)!,
                              .foregroundColor: UIColor.white,
-                             .paragraphStyle: style],
+                             .kern: 1.5],
                             range: NSRange(location: 0, length: attr1.string.count))
         attr0.append(attr1)
         label.attributedText = attr0
@@ -37,7 +35,7 @@ class IFMyShareAlbumDetailTimeLineView: UIView {
         let label = UILabel()
         label.font = UIFont(name: "PingFangSC-Light", size: 16)
         label.textColor = UIColor(hex: 0xeccbb5)
-        label.text = "距离分享结束还有"
+        label.text = "距离分享结束还有".localized(nil)
         return label
     }()
     fileprivate lazy var hourView: IFMyShareAlbumDetailTimeView = {
@@ -54,9 +52,20 @@ class IFMyShareAlbumDetailTimeLineView: UIView {
     }()
     fileprivate var timer: DispatchSourceTimer?
     fileprivate var timeInterval = 0
+    fileprivate lazy var foreView: UIImageView = {
+        let foreView = UIImageView()
+        return foreView
+    }()
+    fileprivate lazy var stack: UIStackView = {
+        let stackView = UIStackView()
+        return stackView
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        hourView.config("\(String(format: "%02d", 0))", subTitle: "时")
+        minuteView.config("\(String(format: "%02d", 0))", subTitle: "分")
+        secondView.config("\(String(format: "%02d", 0))", subTitle: "秒")
         addSubview(titleLabel)
         addSubview(subtitleLabel)
         addSubview(hourView)
@@ -72,7 +81,9 @@ class IFMyShareAlbumDetailTimeLineView: UIView {
             $0.top.equalTo(titleLabel.snp.bottom).offset(1)
             $0.height.equalTo(22)
         }
-        let stack = UIStackView(arrangedSubviews: [hourView, minuteView, secondView])
+        stack.addArrangedSubview(hourView)
+        stack.addArrangedSubview(minuteView)
+        stack.addArrangedSubview(secondView)
         stack.axis = .horizontal
         stack.spacing = 5
         stack.alignment = .center

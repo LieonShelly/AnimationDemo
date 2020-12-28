@@ -42,6 +42,7 @@ class IFMyShareAlbumDetailQRView: UIView {
     }()
     lazy var qrView: UIImageView = {
         let qrView = UIImageView()
+        qrView.image = UIImage(named: "qr-1")
         qrView.backgroundColor = .white
         return qrView
     }()
