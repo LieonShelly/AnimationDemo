@@ -131,26 +131,12 @@ class IFGradientLabel: UIView {
 }
 
 fileprivate
-class IFBatchShareFirstDoubleView: UIView {
-    fileprivate lazy var gradientLabel: IFGradientLabel = {
-        let label = IFGradientLabel()
-        return label
-    }()
-    fileprivate lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = UIColor(hex: 0x4e4e4e)
-        label.font = UIFont(name: "PingFangSC-Regular", size: 14)
-        return label
-    }()
+class IFBatchShareFirstDoubleView: IFBatchShareFirstOneView {
     fileprivate lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(hex: 0x4e4e4e)
         label.font = UIFont(name: "PingFangSC-Regular", size: 14)
         return label
-    }()
-    fileprivate lazy var icon: UIImageView = {
-        let icon = UIImageView()
-        return icon
     }()
     
     override init(frame: CGRect) {
@@ -158,13 +144,14 @@ class IFBatchShareFirstDoubleView: UIView {
      
         addSubview(icon)
         let view = UIView()
+        view.clipsToBounds = true
         addSubview(view)
         view.addSubview(gradientLabel)
         view.addSubview(titleLabel)
         view.addSubview(subtitleLabel)
         gradientLabel.snp.makeConstraints {
             $0.left.top.equalTo(0)
-            $0.width.equalTo(200)
+            $0.right.equalTo(0)
             $0.height.equalTo(21)
         }
         titleLabel.snp.makeConstraints {
@@ -184,6 +171,7 @@ class IFBatchShareFirstDoubleView: UIView {
         }
         view.snp.makeConstraints {
             $0.left.equalTo(icon.snp.right).offset(29)
+            $0.right.equalTo(-10)
             $0.centerY.equalTo(icon.snp.centerY)
         }
     }
@@ -214,27 +202,23 @@ class IFBatchShareFirstOneView: UIView {
         super.init(frame: frame)
        
         addSubview(icon)
-        gradientLabel.snp.makeConstraints {
-            $0.height.equalTo(21)
-            $0.width.equalTo(200)
-        }
-     
-        addSubview(icon)
         icon.snp.makeConstraints {
             $0.left.top.equalTo(0)
             $0.size.equalTo(CGSize(width: 148, height: 130))
         }
         let stack = UIView()
         addSubview(stack)
+        stack.clipsToBounds = true
         stack.snp.makeConstraints {
             $0.centerY.equalTo(icon.snp.centerY)
             $0.left.equalTo(icon.snp.right).offset(30)
+            $0.right.equalTo(-10)
         }
         stack.addSubview(gradientLabel)
         stack.addSubview(titleLabel)
         gradientLabel.snp.makeConstraints {
             $0.left.top.equalTo(0)
-            $0.width.equalTo(200)
+            $0.right.equalTo(0)
             $0.height.equalTo(21)
         }
         titleLabel.snp.makeConstraints {
