@@ -51,11 +51,13 @@ class IFBatchShareFirstEnterView: UIView {
         addSubview(doubleRowView)
         addSubview(firstRowView0)
         addSubview(firstRowView1)
-        addSubview(btn)
-        
+        let btnView = UIView()
+        addSubview(btnView)
+        btnView.addSubview(btn)
+
         bgView.snp.makeConstraints { $0.edges.equalTo(0) }
         doubleRowView.snp.makeConstraints {
-            $0.top.equalTo(UIDevice.current.isiPhoneXSeries ? 84 : 55)
+            $0.top.equalTo(UIDevice.current.isiPhoneXSeries ? 84 : 60)
             $0.left.equalTo(33)
             $0.right.equalTo(0)
             $0.height.equalTo(130)
@@ -73,10 +75,14 @@ class IFBatchShareFirstEnterView: UIView {
             $0.left.equalTo(firstRowView0.snp.left)
             $0.height.equalTo(130)
         }
+        btnView.snp.makeConstraints {
+            $0.left.right.bottom.equalTo(0)
+            $0.top.equalTo(firstRowView1.snp.bottom)
+        }
         btn.snp.makeConstraints {
             $0.left.equalTo(25)
             $0.right.equalTo(-25)
-            $0.top.equalTo(firstRowView1.snp.bottom).offset(UIDevice.current.isiPhoneXSeries ? 65 : 55)
+            $0.centerY.equalToSuperview()
             $0.height.equalTo(50)
         }
     }
