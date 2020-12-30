@@ -88,3 +88,35 @@ infix operator >>>: leftPrecedence
 func >>>(filter1: @escaping Filter, filter2: @escaping Filter) -> Filter {
     return { image in filter2(filter1(image)) }
 }
+
+/**
+ # 科里化
+ - 将多参数单函数运算过程转换为多函数单参数的运算过程
+ */
+
+func testCurrying() {
+    func add1(x: Int, y: Int) -> Int {
+        return x + y
+    }
+    
+    // A -> (B -> C)
+    func add2(x: Int) -> (Int) -> Int {
+        return { y in  return x + y }
+    }
+    
+    add2(x: 2)(2)
+}
+
+func testMapReduce() {
+    func computeArrays(xs: [Int], transform: (Int) -> Int) -> [Int] {
+        var results: [Int] = []
+        for x in xs {
+            results.append(transform(x))
+        }
+        return results
+    }
+    
+    func douleArray2(xs: [Int]) -> [Int] {
+        computeArrays(xs: xs, transform: { $0 * 2 })
+    }
+}
