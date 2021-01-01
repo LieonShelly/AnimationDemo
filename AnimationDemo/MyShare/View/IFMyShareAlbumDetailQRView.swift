@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class IFMyShareAlbumDetailQRView: UIView {
     lazy var titleLabel: UILabel = {
@@ -45,7 +46,6 @@ class IFMyShareAlbumDetailQRView: UIView {
     lazy var qrView: UIImageView = {
         let qrView = UIImageView()
         qrView.backgroundColor = .white
-        qrView.image = #imageLiteral(resourceName: "qr-1")
         return qrView
     }()
     lazy var qrBgView: UIImageView = {
@@ -70,10 +70,15 @@ class IFMyShareAlbumDetailQRView: UIView {
     }()
     fileprivate lazy var qrSubtitleLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .center
+        var kern = 0
+        if String.getLocLanguage() == "zh-Hans" {
+            kern = 2
+        }
         let attr0 = NSMutableAttributedString(string: "长按保存二维码图片".localized(nil))
         attr0.addAttributes([.font: UIFont(name: "PingFangSC-Regular", size: 13)!,
                              .foregroundColor: UIColor(hex: 0x222222)!,
-                             .kern: 2],
+                             .kern: kern],
                             range: NSRange(location: 0, length: attr0.string.count))
         attr0.append(NSAttributedString(string: " "))
         label.attributedText = attr0
@@ -114,7 +119,7 @@ class IFMyShareAlbumDetailQRView: UIView {
         let codeTopInetView = UIView()
         let wechatTopInsetView = UIView()
         let wechatBottomInsetView = UIView()
-       
+    
         addSubview(titleTopInsetView)
         addSubview(topContainer)
         addSubview(titleTopInsetView)
@@ -126,7 +131,21 @@ class IFMyShareAlbumDetailQRView: UIView {
         addSubview(titleContainer)
         let qrContainer = UIView()
         addSubview(qrContainer)
-
+        topContainer.isUserInteractionEnabled = false
+        titleTopInsetView.isUserInteractionEnabled = false
+        qrTopInsetView.isUserInteractionEnabled = false
+        codeTopInetView.isUserInteractionEnabled = false
+        wechatTopInsetView.isUserInteractionEnabled = false
+        wechatBottomInsetView.isUserInteractionEnabled = false
+        qrView.isUserInteractionEnabled = false
+        qrBgView.isUserInteractionEnabled = false
+        qrSubtitleLabel.isUserInteractionEnabled = false
+        codeLael.isUserInteractionEnabled = false
+        qrContainer.isUserInteractionEnabled = false
+        titleLabel.isUserInteractionEnabled = false
+        subtitleLabel.isUserInteractionEnabled = false
+        titleContainer.isUserInteractionEnabled = false
+        
         topContainer.addSubview(topBgView)
         topContainer.addSubview(toptitleLabel)
         topContainer.snp.makeConstraints {
@@ -204,6 +223,8 @@ class IFMyShareAlbumDetailQRView: UIView {
             $0.centerX.equalTo(titleLabel.snp.centerX)
             $0.top.equalTo(qrBgView.snp.bottom).offset(9)
             $0.height.equalTo(18)
+            $0.left.equalTo(10)
+            $0.right.equalTo(-10)
             $0.bottom.equalTo(qrContainer.snp.bottom)
         }
         addSubview(codeLael)
@@ -237,6 +258,7 @@ class IFMyShareAlbumDetailQRView: UIView {
         wechatView.addSubview(wechatBtnLabel)
         wechatBtn.snp.makeConstraints {
             $0.size.equalTo(CGSize(width: 63, height: 63))
+            $0.left.right.equalTo(0)
             $0.top.equalTo(wechatView.snp.top)
             $0.centerX.equalTo(wechatView.snp.centerX)
         }
@@ -250,7 +272,7 @@ class IFMyShareAlbumDetailQRView: UIView {
         addSubview(bottomView)
         bottomView.snp.makeConstraints {
             $0.left.right.bottom.equalTo(0)
-            $0.height.equalTo(UIDevice.current.isiPhoneXSeries ? 10 : 5)
+            $0.height.equalTo(UIDevice.current.isiPhoneXSeries ? 15 : 5)
         }
 
         wechatBottomInsetView.snp.makeConstraints {
@@ -259,15 +281,39 @@ class IFMyShareAlbumDetailQRView: UIView {
             $0.bottom.equalTo(bottomView.snp.top)
             $0.height.equalTo(titleTopInsetView.snp.height)
         }
-        
-        
+        let longges = UILongPressGestureRecognizer(target: self, action: #selector(self.saveQr(_:)))
+        longges.minimumPressDuration = 1
+        bgView.isUserInteractionEnabled = true
+        bgView.addGestureRecognizer(longges)
+       
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
+    
     @objc
-    fileprivate func saveQr() {
-        
+    fileprivate func saveQr(_ ges: UILongPressGestureRecognizer) {
+        guard let image = qrView.image else {
+//            FXViewToast.makeToast("保存失败，请重试".localized(nil))
+            return
+        }
+        guard ges.state == .began else {
+            return
+        }
+        let impactFeedBack = UIImpactFeedbackGenerator()
+        impactFeedBack.prepare()
+        impactFeedBack.impactOccurred()
+        PHPhotoLibrary.shared().performChanges {
+            PHAssetChangeRequest.creationRequestForAsset(from: image)
+        } completionHandler: { (isSuccess, _) in
+            DispatchQueue.main.async {
+//                if isSuccess {
+//                    self.makeToast("保存成功".localized(nil))
+//                } else {
+//                    self.makeToast("保存失败，请重试".localized(nil))
+//                }
+            }
+        }
     }
 }

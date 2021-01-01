@@ -9,6 +9,10 @@
 import UIKit
 
 class IFMyShareAlbumDetailForeView: UIView {
+    struct UISize {
+        static let preViewSize = CGSize(width: UIScreen.main.bounds.height <= 667 ? 230 * 0.6 : 230,
+                                        height: UIScreen.main.bounds.height <= 667 ? 59 * 0.6 : 59)
+    }
     fileprivate lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.customFont(ofSize: 12)
@@ -34,17 +38,19 @@ class IFMyShareAlbumDetailForeView: UIView {
         let label = UILabel()
         label.font = UIFont(name: "PingFangSC-Light", size: 16)
         label.textColor = UIColor(hex: 0xeccbb5)
-        label.text = "距离分享结束还有".localized(nil)
+        label.text = "照片分享有效期".localized(nil)
         return label
     }()
     
     fileprivate lazy var foreView: UIImageView = {
         let foreView = UIImageView()
-        let isEn = false
-        if isEn {
+        let isCN = String.getLocLanguage() == "zh-Hans"
+        if isCN {
             foreView.image = UIImage(named: "ic_my_share_fore_en")
+            
+//            foreView.image = UIImage(named: "ic_my_share_fore")
         } else {
-            foreView.image = UIImage(named: "ic_my_share_fore")
+            foreView.image = UIImage(named: "ic_my_share_fore_en")
         }
         return foreView
     }()
@@ -67,7 +73,7 @@ class IFMyShareAlbumDetailForeView: UIView {
         foreView.snp.makeConstraints {
             $0.left.equalTo(titleLabel.snp.left)
             $0.top.equalTo(subtitleLabel.snp.bottom).offset(7)
-            $0.size.equalTo(CGSize(width: 230, height: 59))
+            $0.size.equalTo(UISize.preViewSize)
         }
     }
     

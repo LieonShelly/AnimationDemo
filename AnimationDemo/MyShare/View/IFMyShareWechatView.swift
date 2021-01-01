@@ -16,12 +16,16 @@ class IFMyShareWechatView: UIView {
     }()
     fileprivate lazy var nameLogo: UIImageView = {
         let nameLogo = UIImageView()
-        nameLogo.image = UIImage(named: "ic_share_wh_bg_name")
+        var name = "ic_share_wh_bg_name_en"
+        if String.getLocLanguage() == "zh-Hans" {
+            name = "ic_share_wh_bg_name'"
+        }
+        nameLogo.image = UIImage(named: name)
         return nameLogo
     }()
     lazy var nameDescLabel: UILabel = {
         let label = UILabel()
-        let attr0 = NSMutableAttributedString(string: "商业级人像精修神器")
+        let attr0 = NSMutableAttributedString(string: "商业级人像精修神器".localized(nil))
         attr0.addAttributes([.font: UIFont(name: "PingFangSC-Light", size: 11)!,
                              .foregroundColor: UIColor(hex: 0x838383)!,
                              .kern: 1.5],
@@ -57,10 +61,14 @@ class IFMyShareWechatView: UIView {
     }()
     fileprivate lazy var qrSubtitleLabel: UILabel = {
         let label = UILabel()
-        let attr0 = NSMutableAttributedString(string: "扫码查看高清大图")
+        var kern = 0
+        if String.getLocLanguage() == "zh-Hans" {
+            kern = 2
+        }
+        let attr0 = NSMutableAttributedString(string: "asdfadsf asdfasd asdfasdf sdfa".localized(nil))
         attr0.addAttributes([.font: UIFont(name: "PingFangSC-Regular", size: 14)!,
                              .foregroundColor: UIColor(hex: 0x333333)!,
-                             .kern: 2],
+                             .kern: kern],
                             range: NSRange(location: 0, length: attr0.string.count))
         label.attributedText = attr0
         return label
@@ -74,7 +82,7 @@ class IFMyShareWechatView: UIView {
         let label = UILabel()
         label.font = UIFont(name: "PingFangSC-Semibold", size: 12)
         label.textColor = UIColor(hex: 0xa38065)
-        label.text = "支持高质量下载"
+        label.text = "支持高质量下载".localized(nil)
         return label
     }()
     fileprivate lazy var qrBgView: UIView = {
@@ -147,6 +155,8 @@ class IFMyShareWechatView: UIView {
             $0.top.equalTo(qrBgView.snp.bottom).offset(19)
             $0.height.equalTo(20)
             $0.centerX.equalTo(qrContainer.snp.centerX)
+            $0.left.equalTo(10)
+            $0.right.equalTo(-10)
         }
         bottomtitleLabelbg.snp.makeConstraints {
             $0.right.bottom.equalTo(0)

@@ -71,11 +71,11 @@ func testFilter() {
         let composeFilter = composeFilters(blur(radius: 20), colorOverlay(color: overlayColor))
         let result = composeFilter(image)
         
-       let myFilter2 = blur(radius: 2) >>> colorOverlay(color: overlayColor)
+        let myFilter2 = blur(radius: 2) >>> colorOverlay(color: overlayColor)
         myFilter2(image)
     }
     
-  
+    
     
 }
 
@@ -119,4 +119,93 @@ func testMapReduce() {
     func douleArray2(xs: [Int]) -> [Int] {
         computeArrays(xs: xs, transform: { $0 * 2 })
     }
+    
+    func genericComputeArray1<T>(xs: [Int], transform: ((Int) -> T)) -> [T] {
+        var result: [T] = []
+        for x in xs {
+            result.append(transform(x))
+        }
+        return result
+    }
+    
+    func map<Element, T>(xs: [Element], transform: ((Element)->T)) -> [T] {
+        var result: [T] = []
+        for x in xs {
+            result.append(transform(x))
+        }
+        return result
+    }
 }
+
+extension Array {
+    func map<T>(transform: ((Element) -> T)) -> [T] {
+        var result: [T] = []
+        for x in self {
+            result.append(transform(x))
+        }
+        return result
+    }
+    
+    func filter(transform: ((Element) -> Bool)) -> [Element] {
+        var result: [Element] = []
+        for x in self where transform(x) == true {
+            result.append(x)
+        }
+        return result
+    }
+    
+    func reduce<T>(initial: T, combine: (T, Element) -> T) -> T {
+        var result = initial
+        for x in self {// [1, 2] => $0 *2 => [2, 4]
+            result = combine(result, x)
+        }
+        return result
+    }
+    
+    func sumUsingReduce(xs: [Int]) -> Int {
+        return xs.reduce(0, { $0 + $1})
+    }
+    
+    func mapUsingReduce<T>(transform: (Element) -> T) -> [T] {
+        return reduce([]) { (result, x) -> [T] in
+            return result + [transform(x)]
+        }
+    }
+    
+    func filterUsingRecue(includeElement: ((Element) -> Bool)) -> [Element] {
+        return reduce([], {result, x in
+            return includeElement(x) ? result + [x] : result
+        })
+    }
+}
+
+func >>><A, B, C>(f: @escaping ((A)->B), g: @escaping ((B)->C)) -> ((A)->C) {
+    return {x in g(f(x)) }
+}
+
+func ??<T>(optional: T?, defaultValue: @escaping () -> T) -> T {
+    if let x = optional {
+        return x
+    } else {
+        return defaultValue()
+    }
+}
+
+extension Optional {
+    func map<U>(transform: (Wrapped) -> U) -> U? {
+        guard let x = self else {
+            return nil
+        }
+        return transform(x)
+    }
+}
+
+func incrementOptional2(optional: Int?) -> Int? {
+    return optional.map { $0 + 1}
+}
+
+
+//enum Optional<T> {
+//    case some(T)
+//    case none
+//}

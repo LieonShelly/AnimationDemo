@@ -31,8 +31,8 @@ class EmptyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        view.addSubview(coverView)
-        coverView.snp.makeConstraints {
+        view.addSubview(wechatImg)
+        wechatImg.snp.makeConstraints {
             $0.edges.equalTo(0)
         }
     }
@@ -40,6 +40,21 @@ class EmptyViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+}
+
+extension EmptyViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 11
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return "阿萨德"
     }
 }
 

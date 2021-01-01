@@ -393,3 +393,9 @@ extension String {
 }
 
 
+public extension String {
+    static func getLocLanguage() -> String {
+        return "zh-Hans"
+    }
+   
+}

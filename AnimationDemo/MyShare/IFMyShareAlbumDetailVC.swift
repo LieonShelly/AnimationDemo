@@ -92,7 +92,7 @@ extension IFMyShareAlbumDetailVC {
             foreView.snp.makeConstraints {
                 $0.top.equalTo(navBar.snp.bottom).offset(UIDevice.current.isiPhoneXSeries ? 43 : 6)
                 $0.left.right.equalTo(0)
-                $0.height.equalTo(17 + 1 + 22 + 7 + 59)
+                $0.height.equalTo(17 + 1 + 22 + 7 + IFMyShareAlbumDetailForeView.UISize.preViewSize.height)
             }
             view.addSubview(qrView)
             qrView.snp.makeConstraints {
