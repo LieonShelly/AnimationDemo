@@ -65,7 +65,9 @@ class IFMyShareWechatView: UIView {
         if String.getLocLanguage() == "zh-Hans" {
             kern = 2
         }
-        let attr0 = NSMutableAttributedString(string: "asdfadsf asdfasd asdfasdf sdfa".localized(nil))
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        let attr0 = NSMutableAttributedString(string: "扫码查看高清大图".localized(nil))
         attr0.addAttributes([.font: UIFont(name: "PingFangSC-Regular", size: 14)!,
                              .foregroundColor: UIColor(hex: 0x333333)!,
                              .kern: kern],
@@ -153,7 +155,7 @@ class IFMyShareWechatView: UIView {
         }
         qrSubtitleLabel.snp.makeConstraints {
             $0.top.equalTo(qrBgView.snp.bottom).offset(19)
-            $0.height.equalTo(20)
+            $0.height.greaterThanOrEqualTo(20)
             $0.centerX.equalTo(qrContainer.snp.centerX)
             $0.left.equalTo(10)
             $0.right.equalTo(-10)

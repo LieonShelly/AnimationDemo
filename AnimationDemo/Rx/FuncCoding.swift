@@ -92,6 +92,35 @@ func >>>(filter1: @escaping Filter, filter2: @escaping Filter) -> Filter {
 /**
  # 科里化
  - 将多参数单函数运算过程转换为多函数单参数的运算过程
+ 
+```Swift
+ 
+ extension Array {
+     func map<T>(transform: ((Element) -> T)) -> [T] {
+         var result: [T] = []
+         for x in self {
+             result.append(transform(x))
+         }
+         return result
+     }
+     
+     func filter(transform: ((Element) -> Bool)) -> [Element] {
+         var result: [Element] = []
+         for x in self where transform(x) == true {
+             result.append(x)
+         }
+         return result
+     }
+     
+     func reduce<T>(initial: T, combine: (T, Element) -> T) -> T {
+         var result = initial
+         for x in self {
+             result = combine(result, x)
+         }
+         return result
+     }
+ }
+```
  */
 
 func testCurrying() {
@@ -156,26 +185,10 @@ extension Array {
     
     func reduce<T>(initial: T, combine: (T, Element) -> T) -> T {
         var result = initial
-        for x in self {// [1, 2] => $0 *2 => [2, 4]
+        for x in self {
             result = combine(result, x)
         }
         return result
-    }
-    
-    func sumUsingReduce(xs: [Int]) -> Int {
-        return xs.reduce(0, { $0 + $1})
-    }
-    
-    func mapUsingReduce<T>(transform: (Element) -> T) -> [T] {
-        return reduce([]) { (result, x) -> [T] in
-            return result + [transform(x)]
-        }
-    }
-    
-    func filterUsingRecue(includeElement: ((Element) -> Bool)) -> [Element] {
-        return reduce([], {result, x in
-            return includeElement(x) ? result + [x] : result
-        })
     }
 }
 
