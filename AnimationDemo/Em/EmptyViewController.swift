@@ -41,6 +41,10 @@ class EmptyViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        navigationController?.popToRootViewController(animated: true)
+    }
 }
 
 extension EmptyViewController: UIPickerViewDataSource, UIPickerViewDelegate {

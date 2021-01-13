@@ -351,6 +351,24 @@ extension HomeViewController {
             let vcc = EmptyViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
+        
+        let clipVC = ListItem("ClipViewController", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = ClipViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        
+        let triangleVC = ListItem("TriangleViewController", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = TriangleViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        items.append(triangleVC)
+        items.append(clipVC)
         items.append(emptyVC)
         items.append(shareVC)
         items.append(settingVC)

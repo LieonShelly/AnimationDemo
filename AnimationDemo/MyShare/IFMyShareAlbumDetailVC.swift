@@ -78,7 +78,7 @@ extension IFMyShareAlbumDetailVC {
                 guard let weakSelf = self else {
                     return
                 }
-                weakSelf.navigationController?.popViewController(animated: true)
+                weakSelf.navigationController?.popToRootViewController(animated: true)
             })
             .disposed(by: bag)
         navBar.addSubview(closeBtn)

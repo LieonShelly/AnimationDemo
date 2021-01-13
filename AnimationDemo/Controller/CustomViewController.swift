@@ -332,3 +332,23 @@ internal extension UIImage {
     }
 }
 
+
+public class IFButton: UIButton {
+    convenience public init(style: IFButtonStyle, fontSize: CGFloat? = nil) {
+        self.init(type: .custom)
+        backgroundColor = .black
+    }
+}
+
+
+import UIKit
+
+public struct IFButtonStyle {
+}
+
+extension IFButtonStyle {
+    /// 普通按钮：黑色、文字金色medium
+    public static let common = IFButtonStyle()
+    /// 白底、黑字
+    public static let white = IFButtonStyle()
+}

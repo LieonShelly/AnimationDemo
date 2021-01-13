@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = FXWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = UINavigationController(rootViewController: HomeViewController())
         window?.makeKeyAndVisible()
-        test()
         return true
     }
     

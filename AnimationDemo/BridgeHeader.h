@@ -11,4 +11,5 @@
 
 #import <MJRefresh/MJRefresh.h>
 #import "CALayer+MBAnimationPersistence.h"
+#import "TriangleMiddleware.h"
 #endif /* BridgeHeader_h */

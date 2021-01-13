@@ -1,7 +1,6 @@
 {
   "images" : [
     {
-      "filename" : "趣味贴纸照片小涂鸦1 2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -10,6 +9,7 @@
       "scale" : "2x"
     },
     {
+      "filename" : "加载失败icon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

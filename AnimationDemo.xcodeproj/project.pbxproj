@@ -20,6 +20,7 @@
 		CD10BCF523694787007B4808 /* IFAnimaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD10BCF423694787007B4808 /* IFAnimaton.swift */; };
 		CD1691CC23595B93006E73AD /* RecordAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1691CA23595B93006E73AD /* RecordAudioViewController.swift */; };
 		CD1691CD23595B93006E73AD /* RecordAudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1691CB23595B93006E73AD /* RecordAudioViewController.xib */; };
+		CD17637225A6B04A006ECCC1 /* ClipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD17637125A6B04A006ECCC1 /* ClipViewController.swift */; };
 		CD1E5FC0255E348A003928A7 /* Mems.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1E5FBF255E348A003928A7 /* Mems.swift */; };
 		CD2112EA235D8550003B5202 /* MultiLanguageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2112E9235D8550003B5202 /* MultiLanguageAlert.swift */; };
 		CD2112ED235D8800003B5202 /* MultiLanguageTexInputAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2112EB235D8800003B5202 /* MultiLanguageTexInputAlert.swift */; };
@@ -89,6 +90,16 @@
 		CD725ADA234F0E4E00C11FB0 /* PanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD725AD8234F0E4E00C11FB0 /* PanViewController.xib */; };
 		CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AE5234F140700C11FB0 /* Extensions.swift */; };
 		CD725AE8234F140E00C11FB0 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AE7234F140E00C11FB0 /* Protocol.swift */; };
+		CD73DE7D25AD4BF800BA282A /* HelloTriangle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CD73DE7B25AD4BF800BA282A /* HelloTriangle.cpp */; };
+		CD73DE8325AD4C9500BA282A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD73DE8225AD4C9500BA282A /* CoreGraphics.framework */; };
+		CD73DE8525AD4C9C00BA282A /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD73DE8425AD4C9C00BA282A /* GLKit.framework */; };
+		CD73DE8725AD4CA400BA282A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD73DE8625AD4CA400BA282A /* OpenGLES.framework */; };
+		CD73DE8E25AD4D5A00BA282A /* esShapes.c in Sources */ = {isa = PBXBuildFile; fileRef = CD73DE8A25AD4D5900BA282A /* esShapes.c */; };
+		CD73DE8F25AD4D5A00BA282A /* esTransform.c in Sources */ = {isa = PBXBuildFile; fileRef = CD73DE8B25AD4D5900BA282A /* esTransform.c */; };
+		CD73DE9025AD4D5A00BA282A /* esShader.c in Sources */ = {isa = PBXBuildFile; fileRef = CD73DE8C25AD4D5900BA282A /* esShader.c */; };
+		CD73DE9125AD4D5A00BA282A /* esUtil.c in Sources */ = {isa = PBXBuildFile; fileRef = CD73DE8D25AD4D5A00BA282A /* esUtil.c */; };
+		CD73DE9625AD4D6400BA282A /* FileWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CD73DE9425AD4D6400BA282A /* FileWrapper.m */; };
+		CD73E29725AD877600BA282A /* TriangleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD73E29625AD877600BA282A /* TriangleViewController.swift */; };
 		CD749AC72356F42F00C357A5 /* FlipAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD749AC62356F42F00C357A5 /* FlipAnimator.swift */; };
 		CD749ACA2356F6EF00C357A5 /* FlipSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD749AC82356F6EF00C357A5 /* FlipSubViewController.swift */; };
 		CD749ACB2356F6EF00C357A5 /* FlipSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD749AC92356F6EF00C357A5 /* FlipSubViewController.xib */; };
@@ -105,6 +116,7 @@
 		CD874F562486261100FC72EC /* GradientBorderVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD874F552486261100FC72EC /* GradientBorderVc.swift */; };
 		CD88DD602361E4F200B9DB8F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD88DD5E2361E4F200B9DB8F /* TestViewController.swift */; };
 		CD88DD612361E4F200B9DB8F /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD88DD5F2361E4F200B9DB8F /* TestViewController.xib */; };
+		CD9236BE25AF4B2800E60060 /* TriangleMiddleware.mm in Sources */ = {isa = PBXBuildFile; fileRef = CD9236BD25AF4B2800E60060 /* TriangleMiddleware.mm */; };
 		CD98766C241A3C0D0020D00F /* FXTutorialManulVideoIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98766B241A3C0D0020D00F /* FXTutorialManulVideoIcon.swift */; };
 		CD98766E241A3CD20020D00F /* IConViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98766D241A3CD20020D00F /* IConViewController.swift */; };
 		CD99459024975BCF00789E45 /* FXVideoCoverGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD99458F24975BCF00789E45 /* FXVideoCoverGenerator.swift */; };
@@ -272,6 +284,7 @@
 		CD10BCF423694787007B4808 /* IFAnimaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFAnimaton.swift; sourceTree = "<group>"; };
 		CD1691CA23595B93006E73AD /* RecordAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordAudioViewController.swift; sourceTree = "<group>"; };
 		CD1691CB23595B93006E73AD /* RecordAudioViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordAudioViewController.xib; sourceTree = "<group>"; };
+		CD17637125A6B04A006ECCC1 /* ClipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipViewController.swift; sourceTree = "<group>"; };
 		CD1E5FBF255E348A003928A7 /* Mems.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mems.swift; sourceTree = "<group>"; };
 		CD2112D8235D82BC003B5202 /* RxAtomic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxAtomic.framework; path = Carthage/Build/iOS/RxAtomic.framework; sourceTree = "<group>"; };
 		CD2112D9235D82BC003B5202 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
@@ -357,6 +370,20 @@
 		CD725AD8234F0E4E00C11FB0 /* PanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PanViewController.xib; sourceTree = "<group>"; };
 		CD725AE5234F140700C11FB0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		CD725AE7234F140E00C11FB0 /* Protocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		CD73DE7B25AD4BF800BA282A /* HelloTriangle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = HelloTriangle.cpp; sourceTree = "<group>"; };
+		CD73DE7C25AD4BF800BA282A /* HelloTriangle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = HelloTriangle.hpp; sourceTree = "<group>"; };
+		CD73DE8225AD4C9500BA282A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CD73DE8425AD4C9C00BA282A /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		CD73DE8625AD4CA400BA282A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		CD73DE8A25AD4D5900BA282A /* esShapes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = esShapes.c; sourceTree = "<group>"; };
+		CD73DE8B25AD4D5900BA282A /* esTransform.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = esTransform.c; sourceTree = "<group>"; };
+		CD73DE8C25AD4D5900BA282A /* esShader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = esShader.c; sourceTree = "<group>"; };
+		CD73DE8D25AD4D5A00BA282A /* esUtil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = esUtil.c; sourceTree = "<group>"; };
+		CD73DE9425AD4D6400BA282A /* FileWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileWrapper.m; sourceTree = "<group>"; };
+		CD73DE9525AD4D6400BA282A /* FileWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileWrapper.h; sourceTree = "<group>"; };
+		CD73DE9925AD4D7100BA282A /* esUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = esUtil.h; sourceTree = "<group>"; };
+		CD73DE9C25AD4DA000BA282A /* esUtil_win.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = esUtil_win.h; sourceTree = "<group>"; };
+		CD73E29625AD877600BA282A /* TriangleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleViewController.swift; sourceTree = "<group>"; };
 		CD749AC62356F42F00C357A5 /* FlipAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipAnimator.swift; sourceTree = "<group>"; };
 		CD749AC82356F6EF00C357A5 /* FlipSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipSubViewController.swift; sourceTree = "<group>"; };
 		CD749AC92356F6EF00C357A5 /* FlipSubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipSubViewController.xib; sourceTree = "<group>"; };
@@ -378,6 +405,8 @@
 		CD874F552486261100FC72EC /* GradientBorderVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBorderVc.swift; sourceTree = "<group>"; };
 		CD88DD5E2361E4F200B9DB8F /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		CD88DD5F2361E4F200B9DB8F /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
+		CD9236BC25AF4B2800E60060 /* TriangleMiddleware.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TriangleMiddleware.h; sourceTree = "<group>"; };
+		CD9236BD25AF4B2800E60060 /* TriangleMiddleware.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TriangleMiddleware.mm; sourceTree = "<group>"; };
 		CD98766B241A3C0D0020D00F /* FXTutorialManulVideoIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialManulVideoIcon.swift; sourceTree = "<group>"; };
 		CD98766D241A3CD20020D00F /* IConViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IConViewController.swift; sourceTree = "<group>"; };
 		CD99458F24975BCF00789E45 /* FXVideoCoverGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXVideoCoverGenerator.swift; sourceTree = "<group>"; };
@@ -496,7 +525,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD73DE8725AD4CA400BA282A /* OpenGLES.framework in Frameworks */,
+				CD73DE8325AD4C9500BA282A /* CoreGraphics.framework in Frameworks */,
 				CD725AD3234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework in Frameworks */,
+				CD73DE8525AD4C9C00BA282A /* GLKit.framework in Frameworks */,
 				897AC48E9CAFFD037A55AF1B /* Pods_AnimationDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,6 +557,14 @@
 				0C6CCD0DF6EB4F7BBBBD4CAF /* Pods-AnimationDemo.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CD17637025A6B03B006ECCC1 /* Clip */ = {
+			isa = PBXGroup;
+			children = (
+				CD17637125A6B04A006ECCC1 /* ClipViewController.swift */,
+			);
+			path = Clip;
 			sourceTree = "<group>";
 		};
 		CD2112D2235D7ED5003B5202 /* Animations */ = {
@@ -588,6 +628,8 @@
 		CD2FCF6E234D796100E28E5C /* AnimationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CD73DE7725AD4B2E00BA282A /* OpenGLES学习 */,
+				CD17637025A6B03B006ECCC1 /* Clip */,
 				CD34F6D225998A1D009653F4 /* Rx */,
 				CDD2E36A25943D7000FD8E8A /* Em */,
 				CDF4ACF22591C3D800AD54BE /* MyShare */,
@@ -737,6 +779,9 @@
 		CD725AD1234EFF6F00C11FB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CD73DE8625AD4CA400BA282A /* OpenGLES.framework */,
+				CD73DE8425AD4C9C00BA282A /* GLKit.framework */,
+				CD73DE8225AD4C9500BA282A /* CoreGraphics.framework */,
 				CD2112F5235D8DD2003B5202 /* Differentiator.framework */,
 				CD2112F3235D8D48003B5202 /* RxDataSources.framework */,
 				CD2112D8235D82BC003B5202 /* RxAtomic.framework */,
@@ -840,6 +885,57 @@
 			path = Vender;
 			sourceTree = "<group>";
 		};
+		CD73DE7725AD4B2E00BA282A /* OpenGLES学习 */ = {
+			isa = PBXGroup;
+			children = (
+				CD73DE9F25AD4DB500BA282A /* Common */,
+				CD73DE7A25AD4BA800BA282A /* HelloTriangle */,
+			);
+			path = "OpenGLES学习";
+			sourceTree = "<group>";
+		};
+		CD73DE7A25AD4BA800BA282A /* HelloTriangle */ = {
+			isa = PBXGroup;
+			children = (
+				CD9236BB25AF4AB500E60060 /* Middleware */,
+				CD73E29525AD871300BA282A /* iOS */,
+				CD73E29425AD86FC00BA282A /* Render */,
+			);
+			path = HelloTriangle;
+			sourceTree = "<group>";
+		};
+		CD73DE9F25AD4DB500BA282A /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CD73DE9C25AD4DA000BA282A /* esUtil_win.h */,
+				CD73DE9925AD4D7100BA282A /* esUtil.h */,
+				CD73DE9525AD4D6400BA282A /* FileWrapper.h */,
+				CD73DE9425AD4D6400BA282A /* FileWrapper.m */,
+				CD73DE8C25AD4D5900BA282A /* esShader.c */,
+				CD73DE8A25AD4D5900BA282A /* esShapes.c */,
+				CD73DE8B25AD4D5900BA282A /* esTransform.c */,
+				CD73DE8D25AD4D5A00BA282A /* esUtil.c */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CD73E29425AD86FC00BA282A /* Render */ = {
+			isa = PBXGroup;
+			children = (
+				CD73DE7B25AD4BF800BA282A /* HelloTriangle.cpp */,
+				CD73DE7C25AD4BF800BA282A /* HelloTriangle.hpp */,
+			);
+			path = Render;
+			sourceTree = "<group>";
+		};
+		CD73E29525AD871300BA282A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CD73E29625AD877600BA282A /* TriangleViewController.swift */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
 		CD777D99254AFB670037C7F1 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
@@ -868,6 +964,15 @@
 				CD7D50B6236191CC00FA9C07 /* IFExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		CD9236BB25AF4AB500E60060 /* Middleware */ = {
+			isa = PBXGroup;
+			children = (
+				CD9236BC25AF4B2800E60060 /* TriangleMiddleware.h */,
+				CD9236BD25AF4B2800E60060 /* TriangleMiddleware.mm */,
+			);
+			path = Middleware;
 			sourceTree = "<group>";
 		};
 		CDA1879924970D8B00C46013 /* HandleVideoList */ = {
@@ -1327,22 +1432,26 @@
 				CD2FCF70234D796100E28E5C /* AppDelegate.swift in Sources */,
 				CDFF205A236837A500800136 /* GuideStartViewController.swift in Sources */,
 				CD224D3E237CF7980072442F /* GradientView.swift in Sources */,
+				CD73DE9025AD4D5A00BA282A /* esShader.c in Sources */,
 				CDAD5B5C237516C200A0E4FE /* FXBannerView.swift in Sources */,
 				CD725AD9234F0E4E00C11FB0 /* PanViewController.swift in Sources */,
 				CD61351D24AB42920062A5D8 /* IFHomePop.swift in Sources */,
 				CDA187A524970EA200C46013 /* FXTutoriaComonSkillVideoCell.swift in Sources */,
+				CD73DE8F25AD4D5A00BA282A /* esTransform.c in Sources */,
 				CDD33F842368447A00FD074A /* GuideStartView.swift in Sources */,
 				CDEA86FC240F9F5A007BAA00 /* FXTutorialStepNameView.swift in Sources */,
 				CD0230EC237A5F5200324E30 /* FXBannerCollectionViewCell.swift in Sources */,
 				CDF4ACF72591C53A00AD54BE /* IFMyShareAlbumDetailBgView.swift in Sources */,
 				CD07478A243385460080FD64 /* IFRefreshHeader.swift in Sources */,
 				CDC4908C24F9FDE100E824B1 /* FX3dLightVC.swift in Sources */,
+				CD73DE7D25AD4BF800BA282A /* HelloTriangle.cpp in Sources */,
 				CD5F665F2591D69000CAED29 /* IFMyShareAlbumDetailQRView.swift in Sources */,
 				CD5F66472591C9F300CAED29 /* IFMyShareAlbumDetailTimeLineView.swift in Sources */,
 				CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */,
 				CD3E24BA24446A4200F892F4 /* FXTutorialToast.swift in Sources */,
 				CD787BCF23B59AAA00DAE0BD /* LoadingViewController.swift in Sources */,
 				CD994592249776F600789E45 /* FXTutorialManulVideoBaseCell.swift in Sources */,
+				CD73DE9125AD4D5A00BA282A /* esUtil.c in Sources */,
 				CDA9A8E624A10A15000CEF71 /* WaterFlowLayout.swift in Sources */,
 				CDFB49CD235025820083426A /* TouchView.swift in Sources */,
 				CDF0548F242C7BDA00C9F645 /* FXTutorialImageContrastVC.swift in Sources */,
@@ -1365,6 +1474,7 @@
 				CDF4ACEF2591C39200AD54BE /* IFMyShareAlbumDetailVC.swift in Sources */,
 				CD2D3F262387C96F00924CB4 /* CustomViewController.swift in Sources */,
 				CDE081C724B74E6000B7609C /* IFHomeTutorialListBgView.swift in Sources */,
+				CD9236BE25AF4B2800E60060 /* TriangleMiddleware.mm in Sources */,
 				CDDB073923C96DC300C0AA97 /* NewAnimatedViewController.swift in Sources */,
 				CD0230FA237A9BE000324E30 /* FXTutorialPanel.swift in Sources */,
 				CDFD8182243D7479005238FE /* CALayer+MBAnimationPersistence.m in Sources */,
@@ -1375,6 +1485,7 @@
 				CD0747872433835C0080FD64 /* RefreshViewController.swift in Sources */,
 				CD039004237BF15400638401 /* FXMoveAniamtion.swift in Sources */,
 				CDA187A924971A0700C46013 /* FXTutorialHandleVideoListModel.swift in Sources */,
+				CD73DE8E25AD4D5A00BA282A /* esShapes.c in Sources */,
 				CDA9A8E824A10FF6000CEF71 /* TransformLayout.swift in Sources */,
 				CD6F17462574FA5900957317 /* IFSettingController.swift in Sources */,
 				CD1691CC23595B93006E73AD /* RecordAudioViewController.swift in Sources */,
@@ -1408,6 +1519,7 @@
 				CDA187A124970E2A00C46013 /* FXTutorialHandleVideoListVM.swift in Sources */,
 				CD68330E23BDE137008C0C9F /* IFHookMarkView.swift in Sources */,
 				CD6F17452574FA5900957317 /* IFSettingViewModel.swift in Sources */,
+				CD17637225A6B04A006ECCC1 /* ClipViewController.swift in Sources */,
 				CD3BC9AF234F313E003C8AA9 /* HomeViewController.swift in Sources */,
 				CD98766E241A3CD20020D00F /* IConViewController.swift in Sources */,
 				CDB9006A25660E8A005C078B /* MaskViewController.swift in Sources */,
@@ -1419,6 +1531,7 @@
 				CD57387F2410A99800D6E55F /* VisualEffectView.swift in Sources */,
 				CD2112F8235DBA4D003B5202 /* Wireframe.swift in Sources */,
 				CD34F6D425998A35009653F4 /* FuncCoding.swift in Sources */,
+				CD73E29725AD877600BA282A /* TriangleViewController.swift in Sources */,
 				CDF47D7A245458ED006D9F22 /* ExpandViewController.swift in Sources */,
 				CD10BCF523694787007B4808 /* IFAnimaton.swift in Sources */,
 				CD777DA1254AFB690037C7F1 /* Demo.intentdefinition in Sources */,
@@ -1458,6 +1571,7 @@
 				CD3BC9AC234F26A0003C8AA9 /* AnimationProtocol.swift in Sources */,
 				CD98766C241A3C0D0020D00F /* FXTutorialManulVideoIcon.swift in Sources */,
 				CDFB49D123504C070083426A /* ZoomScollVIew.swift in Sources */,
+				CD73DE9625AD4D6400BA282A /* FileWrapper.m in Sources */,
 				CDB280B2241E118600795A11 /* CropOverlay.swift in Sources */,
 				CDEA86F0240F5C48007BAA00 /* FXTutorialNextStepView.swift in Sources */,
 				CD25467824CE73CC002D87E2 /* StickerCrossViewController.swift in Sources */,
