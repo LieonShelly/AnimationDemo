@@ -8,6 +8,17 @@
 
 #include "HelloTriangle.hpp"
 
+/**
+ # 绘制步骤
+ - 1.创建简单的顶点和片段着色器
+ - 2.编译和加载着色器
+ - 3.创建一个程序对象并链接着色器
+ - 4.设置视口和清除颜色缓冲区
+ - 5.加载几何形状和绘制图元
+ - 6.显示后台缓冲区
+ */
+
+// 编译加载着色器
 GLuint loadShader(GLenum type, const char *shaderSrc) {
     GLuint shader;
     GLint compiled;
@@ -59,6 +70,7 @@ int init(ESContext *esContext ) {
     GLint linked;
     vertexShader = loadShader(GL_VERTEX_SHADER, vShaderStr);
     fragmentShader = loadShader(GL_FRAGMENT_SHADER, fShaderStr);
+    // 创建程序对象并链接着色器
     programObject = glCreateProgram();
     if (programObject == 0) {
         return 0;;
@@ -89,14 +101,17 @@ int init(ESContext *esContext ) {
 
 void draw(ESContext *esContext) {
     UserData *userDara = (UserData*)esContext->userData;
+    // 设置视口和清除颜色缓冲区
+    glViewport(0, 0, esContext->width, esContext->height);
+    glClear(GL_COLOR_BUFFER_BIT);
+    glUseProgram(userDara->programObject);
+    
+    // 加载几何形状绘制图元
     GLfloat vVertices[] = {
         0.0f,  0.5f, 0.0f,
         -0.5f, -0.5f, 0.0f,
         0.5f, -0.5f, 0.0f
     };
-    glViewport(0, 0, esContext->width, esContext->height);
-    glClear(GL_COLOR_BUFFER_BIT);
-    glUseProgram(userDara->programObject);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, vVertices);
     glEnableVertexAttribArray(0);
     glDrawArrays(GL_TRIANGLES, 0, 3);
