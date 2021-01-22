@@ -18,17 +18,21 @@ class IFMyShareWechatView: UIView {
         let nameLogo = UIImageView()
         var name = "ic_share_wh_bg_name_en"
         if String.getLocLanguage() == "zh-Hans" {
-            name = "ic_share_wh_bg_name'"
+            name = "ic_share_wh_bg_name"
         }
         nameLogo.image = UIImage(named: name)
         return nameLogo
     }()
     lazy var nameDescLabel: UILabel = {
         let label = UILabel()
+        var kern: CGFloat = 0
+        if String.getLocLanguage() == "zh-Hans" {
+            kern = 1.5
+        }
         let attr0 = NSMutableAttributedString(string: "商业级人像精修神器".localized(nil))
         attr0.addAttributes([.font: UIFont(name: "PingFangSC-Light", size: 11)!,
                              .foregroundColor: UIColor(hex: 0x838383)!,
-                             .kern: 1.5],
+                             .kern: kern],
                             range: NSRange(location: 0, length: attr0.string.count))
         label.attributedText = attr0
         return label
@@ -126,39 +130,118 @@ class IFMyShareWechatView: UIView {
             $0.top.equalTo(nameLogo.snp.bottom).offset(7)
             $0.height.equalTo(16)
         }
-        qrContainer.snp.makeConstraints {
-            $0.left.equalTo(28)
-            $0.right.equalTo(-28)
-            $0.height.equalTo(437)
-            $0.top.equalTo(nameDescLabel.snp.bottom).offset(25 + 10)
-        }
-        titleLabel.snp.makeConstraints {
-            $0.top.equalTo(44)
-            $0.height.equalTo(30)
-            $0.left.equalTo(10)
-            $0.right.equalTo(-10)
-            $0.centerX.equalToSuperview()
-        }
-        subtitleLabel.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(7)
-            $0.height.equalTo(21)
-            $0.centerX.equalTo(titleLabel.snp.centerX)
-        }
-        qrBgView.snp.makeConstraints {
-            $0.size.equalTo(CGSize(width: 179, height: 179))
-            $0.top.equalTo(subtitleLabel.snp.bottom).offset(33 - 11)
-            $0.centerX.equalTo(titleLabel.snp.centerX)
-        }
-        qrView.snp.makeConstraints {
-            $0.left.top.equalTo(4.5)
-            $0.right.bottom.equalTo(-4.5)
-        }
-        qrSubtitleLabel.snp.makeConstraints {
-            $0.top.equalTo(qrBgView.snp.bottom).offset(19)
-            $0.height.greaterThanOrEqualTo(20)
-            $0.centerX.equalTo(qrContainer.snp.centerX)
-            $0.left.equalTo(10)
-            $0.right.equalTo(-10)
+        let isPlusMax = UIScreen.main.bounds.width >= 414 && UIScreen.main.bounds.width < 428
+        let is12Max = UIScreen.main.bounds.width >= 428
+        if isPlusMax {
+            qrContainer.snp.makeConstraints {
+                $0.left.equalTo(28)
+                $0.right.equalTo(-28)
+                $0.height.equalTo(490)
+                $0.top.equalTo(nameDescLabel.snp.bottom).offset(25 + 10)
+            }
+            titleLabel.snp.makeConstraints {
+                $0.top.equalTo(44)
+                $0.height.equalTo(30)
+                $0.left.equalTo(10)
+                $0.right.equalTo(-10)
+                $0.centerX.equalToSuperview()
+            }
+            subtitleLabel.snp.makeConstraints {
+                $0.top.equalTo(titleLabel.snp.bottom).offset(7)
+                $0.height.equalTo(21)
+                $0.centerX.equalTo(titleLabel.snp.centerX)
+            }
+            qrBgView.snp.makeConstraints {
+                $0.left.equalTo(78.5)
+                $0.right.equalTo(-78.5)
+                $0.height.equalTo(qrBgView.snp.width)
+                $0.top.equalTo(subtitleLabel.snp.bottom).offset(32)
+                $0.centerX.equalTo(titleLabel.snp.centerX)
+            }
+            qrView.snp.makeConstraints {
+                $0.left.top.equalTo(4.5)
+                $0.right.bottom.equalTo(-4.5)
+            }
+            qrSubtitleLabel.snp.makeConstraints {
+                $0.top.equalTo(qrBgView.snp.bottom).offset(32)
+                $0.height.greaterThanOrEqualTo(20)
+                $0.centerX.equalTo(qrContainer.snp.centerX)
+                $0.left.equalTo(10)
+                $0.right.equalTo(-10)
+            }
+        } else if is12Max {
+            qrContainer.snp.makeConstraints {
+                $0.left.equalTo(28)
+                $0.right.equalTo(-28)
+                $0.height.equalTo(490 + 20)
+                $0.top.equalTo(nameDescLabel.snp.bottom).offset(25 + 10)
+            }
+            titleLabel.snp.makeConstraints {
+                $0.top.equalTo(44)
+                $0.height.equalTo(30)
+                $0.left.equalTo(10)
+                $0.right.equalTo(-10)
+                $0.centerX.equalToSuperview()
+            }
+            subtitleLabel.snp.makeConstraints {
+                $0.top.equalTo(titleLabel.snp.bottom).offset(7)
+                $0.height.equalTo(21)
+                $0.centerX.equalTo(titleLabel.snp.centerX)
+            }
+            qrBgView.snp.makeConstraints {
+                $0.left.equalTo(78.5)
+                $0.right.equalTo(-78.5)
+                $0.height.equalTo(qrBgView.snp.width)
+                $0.top.equalTo(subtitleLabel.snp.bottom).offset(32)
+                $0.centerX.equalTo(titleLabel.snp.centerX)
+            }
+            qrView.snp.makeConstraints {
+                $0.left.top.equalTo(4.5)
+                $0.right.bottom.equalTo(-4.5)
+            }
+            qrSubtitleLabel.snp.makeConstraints {
+                $0.top.equalTo(qrBgView.snp.bottom).offset(32)
+                $0.height.greaterThanOrEqualTo(20)
+                $0.centerX.equalTo(qrContainer.snp.centerX)
+                $0.left.equalTo(10)
+                $0.right.equalTo(-10)
+            }
+        } else {
+            qrContainer.snp.makeConstraints {
+                $0.left.equalTo(28)
+                $0.right.equalTo(-28)
+                $0.height.equalTo(437)
+                $0.top.equalTo(nameDescLabel.snp.bottom).offset(25 + 10)
+            }
+            titleLabel.snp.makeConstraints {
+                $0.top.equalTo(44)
+                $0.height.equalTo(30)
+                $0.left.equalTo(10)
+                $0.right.equalTo(-10)
+                $0.centerX.equalToSuperview()
+            }
+            subtitleLabel.snp.makeConstraints {
+                $0.top.equalTo(titleLabel.snp.bottom).offset(7)
+                $0.height.equalTo(21)
+                $0.centerX.equalTo(titleLabel.snp.centerX)
+            }
+            qrBgView.snp.makeConstraints {
+                $0.size.equalTo(CGSize(width: 179, height: 179))
+                $0.top.equalTo(subtitleLabel.snp.bottom).offset(33 - 11)
+                $0.centerX.equalTo(titleLabel.snp.centerX)
+            }
+            qrView.snp.makeConstraints {
+                $0.left.top.equalTo(4.5)
+                $0.right.bottom.equalTo(-4.5)
+            }
+            qrSubtitleLabel.snp.makeConstraints {
+                $0.top.equalTo(qrBgView.snp.bottom).offset(19)
+                $0.height.greaterThanOrEqualTo(20)
+                $0.centerX.equalTo(qrContainer.snp.centerX)
+                $0.left.equalTo(10)
+                $0.right.equalTo(-10)
+            }
+         
         }
         bottomtitleLabelbg.snp.makeConstraints {
             $0.right.bottom.equalTo(0)

@@ -117,6 +117,7 @@
 		CD88DD602361E4F200B9DB8F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD88DD5E2361E4F200B9DB8F /* TestViewController.swift */; };
 		CD88DD612361E4F200B9DB8F /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD88DD5F2361E4F200B9DB8F /* TestViewController.xib */; };
 		CD9236BE25AF4B2800E60060 /* TriangleMiddleware.mm in Sources */ = {isa = PBXBuildFile; fileRef = CD9236BD25AF4B2800E60060 /* TriangleMiddleware.mm */; };
+		CD92371D25B02BEE00E60060 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CD92371B25B02BEE00E60060 /* Shader.cpp */; };
 		CD98766C241A3C0D0020D00F /* FXTutorialManulVideoIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98766B241A3C0D0020D00F /* FXTutorialManulVideoIcon.swift */; };
 		CD98766E241A3CD20020D00F /* IConViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD98766D241A3CD20020D00F /* IConViewController.swift */; };
 		CD99459024975BCF00789E45 /* FXVideoCoverGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD99458F24975BCF00789E45 /* FXVideoCoverGenerator.swift */; };
@@ -138,6 +139,7 @@
 		CD9945B12498941800789E45 /* vertical_scroll_face_exact_fix_shadow.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD9945A22498941700789E45 /* vertical_scroll_face_exact_fix_shadow.mp4 */; };
 		CD9945B22498941800789E45 /* vertical_scroll_face_exact_fix.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CD9945A32498941800789E45 /* vertical_scroll_face_exact_fix.mp4 */; };
 		CD9945B62498AC4300789E45 /* ic_tutorial_video_cancel@3x@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CD9945B52498AC4200789E45 /* ic_tutorial_video_cancel@3x@3x.png */; };
+		CD99DA0325B87EEB00D6F270 /* VertextShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CD99DA0125B87EEB00D6F270 /* VertextShader.cpp */; };
 		CDA1879F24970DFD00C46013 /* FXTutorialHandleVideoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA1879E24970DFD00C46013 /* FXTutorialHandleVideoListVC.swift */; };
 		CDA187A124970E2A00C46013 /* FXTutorialHandleVideoListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA187A024970E2A00C46013 /* FXTutorialHandleVideoListVM.swift */; };
 		CDA187A324970E7600C46013 /* FXTutorialManulVideoHandleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA187A224970E7600C46013 /* FXTutorialManulVideoHandleCell.swift */; };
@@ -171,6 +173,8 @@
 		CDB280B2241E118600795A11 /* CropOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB280B1241E118600795A11 /* CropOverlay.swift */; };
 		CDB280B4241E11CD00795A11 /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB280B3241E11CD00795A11 /* ImagePickerViewController.swift */; };
 		CDB280B6241E160500795A11 /* FXImageCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB280B5241E160500795A11 /* FXImageCropView.swift */; };
+		CDB79D6F25B5EC990052FDBE /* VertexArrayObjects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB79D6D25B5EC990052FDBE /* VertexArrayObjects.cpp */; };
+		CDB79D8725B6823C0052FDBE /* Primittive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB79D8525B6823C0052FDBE /* Primittive.cpp */; };
 		CDB9006A25660E8A005C078B /* MaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9006925660E8A005C078B /* MaskViewController.swift */; };
 		CDBB312C242CF98B00C1DCAD /* FXTutorialUploadProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBB312B242CF98B00C1DCAD /* FXTutorialUploadProgressView.swift */; };
 		CDBBC730239F6D5000B07EE9 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBC72E239F6D5000B07EE9 /* SwipeViewController.swift */; };
@@ -407,6 +411,8 @@
 		CD88DD5F2361E4F200B9DB8F /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
 		CD9236BC25AF4B2800E60060 /* TriangleMiddleware.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TriangleMiddleware.h; sourceTree = "<group>"; };
 		CD9236BD25AF4B2800E60060 /* TriangleMiddleware.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TriangleMiddleware.mm; sourceTree = "<group>"; };
+		CD92371B25B02BEE00E60060 /* Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		CD92371C25B02BEE00E60060 /* Shader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shader.hpp; sourceTree = "<group>"; };
 		CD98766B241A3C0D0020D00F /* FXTutorialManulVideoIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialManulVideoIcon.swift; sourceTree = "<group>"; };
 		CD98766D241A3CD20020D00F /* IConViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IConViewController.swift; sourceTree = "<group>"; };
 		CD99458F24975BCF00789E45 /* FXVideoCoverGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXVideoCoverGenerator.swift; sourceTree = "<group>"; };
@@ -428,6 +434,8 @@
 		CD9945A22498941700789E45 /* vertical_scroll_face_exact_fix_shadow.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = vertical_scroll_face_exact_fix_shadow.mp4; sourceTree = "<group>"; };
 		CD9945A32498941800789E45 /* vertical_scroll_face_exact_fix.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = vertical_scroll_face_exact_fix.mp4; sourceTree = "<group>"; };
 		CD9945B52498AC4200789E45 /* ic_tutorial_video_cancel@3x@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_tutorial_video_cancel@3x@3x.png"; sourceTree = "<group>"; };
+		CD99DA0125B87EEB00D6F270 /* VertextShader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VertextShader.cpp; sourceTree = "<group>"; };
+		CD99DA0225B87EEB00D6F270 /* VertextShader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VertextShader.hpp; sourceTree = "<group>"; };
 		CDA1879E24970DFD00C46013 /* FXTutorialHandleVideoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialHandleVideoListVC.swift; sourceTree = "<group>"; };
 		CDA187A024970E2A00C46013 /* FXTutorialHandleVideoListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialHandleVideoListVM.swift; sourceTree = "<group>"; };
 		CDA187A224970E7600C46013 /* FXTutorialManulVideoHandleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialManulVideoHandleCell.swift; sourceTree = "<group>"; };
@@ -461,6 +469,10 @@
 		CDB280B1241E118600795A11 /* CropOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CropOverlay.swift; sourceTree = "<group>"; };
 		CDB280B3241E11CD00795A11 /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 		CDB280B5241E160500795A11 /* FXImageCropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXImageCropView.swift; sourceTree = "<group>"; };
+		CDB79D6D25B5EC990052FDBE /* VertexArrayObjects.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VertexArrayObjects.cpp; sourceTree = "<group>"; };
+		CDB79D6E25B5EC990052FDBE /* VertexArrayObjects.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VertexArrayObjects.hpp; sourceTree = "<group>"; };
+		CDB79D8525B6823C0052FDBE /* Primittive.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Primittive.cpp; sourceTree = "<group>"; };
+		CDB79D8625B6823C0052FDBE /* Primittive.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Primittive.hpp; sourceTree = "<group>"; };
 		CDB9006925660E8A005C078B /* MaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
 		CDBB312B242CF98B00C1DCAD /* FXTutorialUploadProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialUploadProgressView.swift; sourceTree = "<group>"; };
 		CDBBC72E239F6D5000B07EE9 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
@@ -888,6 +900,10 @@
 		CD73DE7725AD4B2E00BA282A /* OpenGLES学习 */ = {
 			isa = PBXGroup;
 			children = (
+				CD99DA0025B87D4100D6F270 /* 顶点着色器 */,
+				CDB79D8425B6821C0052FDBE /* 图元装配和光栅化 */,
+				CDB79D6C25B5EC6A0052FDBE /* VertextArrayObjects */,
+				CD92371A25B02BC000E60060 /* 着色器和程序 */,
 				CD73DE9F25AD4DB500BA282A /* Common */,
 				CD73DE7A25AD4BA800BA282A /* HelloTriangle */,
 			);
@@ -973,6 +989,24 @@
 				CD9236BD25AF4B2800E60060 /* TriangleMiddleware.mm */,
 			);
 			path = Middleware;
+			sourceTree = "<group>";
+		};
+		CD92371A25B02BC000E60060 /* 着色器和程序 */ = {
+			isa = PBXGroup;
+			children = (
+				CD92371B25B02BEE00E60060 /* Shader.cpp */,
+				CD92371C25B02BEE00E60060 /* Shader.hpp */,
+			);
+			path = "着色器和程序";
+			sourceTree = "<group>";
+		};
+		CD99DA0025B87D4100D6F270 /* 顶点着色器 */ = {
+			isa = PBXGroup;
+			children = (
+				CD99DA0125B87EEB00D6F270 /* VertextShader.cpp */,
+				CD99DA0225B87EEB00D6F270 /* VertextShader.hpp */,
+			);
+			path = "顶点着色器";
 			sourceTree = "<group>";
 		};
 		CDA1879924970D8B00C46013 /* HandleVideoList */ = {
@@ -1085,6 +1119,24 @@
 				CDB280B5241E160500795A11 /* FXImageCropView.swift */,
 			);
 			path = ImagePIcker;
+			sourceTree = "<group>";
+		};
+		CDB79D6C25B5EC6A0052FDBE /* VertextArrayObjects */ = {
+			isa = PBXGroup;
+			children = (
+				CDB79D6D25B5EC990052FDBE /* VertexArrayObjects.cpp */,
+				CDB79D6E25B5EC990052FDBE /* VertexArrayObjects.hpp */,
+			);
+			path = VertextArrayObjects;
+			sourceTree = "<group>";
+		};
+		CDB79D8425B6821C0052FDBE /* 图元装配和光栅化 */ = {
+			isa = PBXGroup;
+			children = (
+				CDB79D8525B6823C0052FDBE /* Primittive.cpp */,
+				CDB79D8625B6823C0052FDBE /* Primittive.hpp */,
+			);
+			path = "图元装配和光栅化";
 			sourceTree = "<group>";
 		};
 		CDD2E36A25943D7000FD8E8A /* Em */ = {
@@ -1440,11 +1492,13 @@
 				CD73DE8F25AD4D5A00BA282A /* esTransform.c in Sources */,
 				CDD33F842368447A00FD074A /* GuideStartView.swift in Sources */,
 				CDEA86FC240F9F5A007BAA00 /* FXTutorialStepNameView.swift in Sources */,
+				CD92371D25B02BEE00E60060 /* Shader.cpp in Sources */,
 				CD0230EC237A5F5200324E30 /* FXBannerCollectionViewCell.swift in Sources */,
 				CDF4ACF72591C53A00AD54BE /* IFMyShareAlbumDetailBgView.swift in Sources */,
 				CD07478A243385460080FD64 /* IFRefreshHeader.swift in Sources */,
 				CDC4908C24F9FDE100E824B1 /* FX3dLightVC.swift in Sources */,
 				CD73DE7D25AD4BF800BA282A /* HelloTriangle.cpp in Sources */,
+				CDB79D6F25B5EC990052FDBE /* VertexArrayObjects.cpp in Sources */,
 				CD5F665F2591D69000CAED29 /* IFMyShareAlbumDetailQRView.swift in Sources */,
 				CD5F66472591C9F300CAED29 /* IFMyShareAlbumDetailTimeLineView.swift in Sources */,
 				CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */,
@@ -1507,6 +1561,7 @@
 				CDFF20562368333600800136 /* ImageTitleCollectionViewCell.swift in Sources */,
 				CDFF205223682B3200800136 /* DemoTouchViewController.swift in Sources */,
 				CDA9A8BF249DB945000CEF71 /* CardViewController.swift in Sources */,
+				CD99DA0325B87EEB00D6F270 /* VertextShader.cpp in Sources */,
 				CD7D50B42361768E00FA9C07 /* Param.swift in Sources */,
 				CDC4908A24F9FBDA00E824B1 /* FX3DLightExchangeLightSourceBtn.swift in Sources */,
 				CD66DEC524CAE83E0011A99F /* StickerCrossView.swift in Sources */,
@@ -1524,6 +1579,7 @@
 				CD98766E241A3CD20020D00F /* IConViewController.swift in Sources */,
 				CDB9006A25660E8A005C078B /* MaskViewController.swift in Sources */,
 				CDAB78E4247FB46F00905236 /* FXLoginTextInputCell.swift in Sources */,
+				CDB79D8725B6823C0052FDBE /* Primittive.cpp in Sources */,
 				CD0537B8237934F100F9BDB5 /* EventSendViewController.swift in Sources */,
 				CDAB78DE247FB46F00905236 /* FXPGCLoginViewModel.swift in Sources */,
 				CDEA86EC240F5C0A007BAA00 /* FXTutorialStepNumView.swift in Sources */,

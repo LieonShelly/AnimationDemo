@@ -75,11 +75,12 @@ int init(ESContext *esContext ) {
     if (programObject == 0) {
         return 0;;
     }
+    // 将程序和着色器连接
     glAttachShader(programObject, vertexShader);
     glAttachShader(programObject, fragmentShader);
-    // linke the program
+    // 链接程序对象
     glLinkProgram(programObject);
-    // check the link status
+    // 检查链接状态
     glGetProgramiv(programObject, GL_LINK_STATUS, &linked);
     if (!linked) {
         GLint infonLen = 0;

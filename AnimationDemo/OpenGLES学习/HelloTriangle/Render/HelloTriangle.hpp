@@ -15,6 +15,8 @@
 
 typedef struct {
     GLuint programObject;
+    GLuint *vboIds;
+    GLuint vaoId;
 } UserData;
 
 GLuint loadShader(GLenum type, const char *shaderSrc);

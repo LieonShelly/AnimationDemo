@@ -7,8 +7,7 @@
 //
 
 #import "TriangleMiddleware.h"
-
-#import "HelloTriangle.hpp"
+#import "VertexArrayObjects.hpp"
 #import "esUtil.h"
 
 @implementation TriangleMiddleware
@@ -33,6 +32,6 @@
 
 - (void)setupGL {
     memset( &_esContext, 0, sizeof( _esContext ) );
-    esMain( &_esContext );
+    esMainWithVAO( &_esContext );
 }
 @end
