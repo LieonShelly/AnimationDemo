@@ -149,6 +149,7 @@
 		CDA187AB24971F1500C46013 /* vertical_scroll_texture_touch_clear.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = CDA187AA24971F1500C46013 /* vertical_scroll_texture_touch_clear.mp4 */; };
 		CDA48306248FB7CF00526333 /* FXUploadTextInputAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA48305248FB7CF00526333 /* FXUploadTextInputAlert.swift */; };
 		CDA48308248FB80300526333 /* FXUploadAlerTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA48307248FB80300526333 /* FXUploadAlerTestVC.swift */; };
+		CDA50BDF25BC5F9E00A63E7C /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDA50BDD25BC5F9E00A63E7C /* Texture.cpp */; };
 		CDA89DF82373C0C8000E3346 /* BannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA89DF62373C0C8000E3346 /* BannerViewController.swift */; };
 		CDA89DF92373C0C8000E3346 /* BannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDA89DF72373C0C8000E3346 /* BannerViewController.xib */; };
 		CDA89DFB2373C13B000E3346 /* FXTransformLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA89DFA2373C13B000E3346 /* FXTransformLayout.swift */; };
@@ -445,6 +446,8 @@
 		CDA187AA24971F1500C46013 /* vertical_scroll_texture_touch_clear.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = vertical_scroll_texture_touch_clear.mp4; sourceTree = "<group>"; };
 		CDA48305248FB7CF00526333 /* FXUploadTextInputAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FXUploadTextInputAlert.swift; sourceTree = "<group>"; };
 		CDA48307248FB80300526333 /* FXUploadAlerTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXUploadAlerTestVC.swift; sourceTree = "<group>"; };
+		CDA50BDD25BC5F9E00A63E7C /* Texture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		CDA50BDE25BC5F9E00A63E7C /* Texture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Texture.hpp; sourceTree = "<group>"; };
 		CDA89DF62373C0C8000E3346 /* BannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerViewController.swift; sourceTree = "<group>"; };
 		CDA89DF72373C0C8000E3346 /* BannerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerViewController.xib; sourceTree = "<group>"; };
 		CDA89DFA2373C13B000E3346 /* FXTransformLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTransformLayout.swift; sourceTree = "<group>"; };
@@ -900,6 +903,7 @@
 		CD73DE7725AD4B2E00BA282A /* OpenGLES学习 */ = {
 			isa = PBXGroup;
 			children = (
+				CDA50BDC25BC5F7800A63E7C /* 纹理 */,
 				CD99DA0025B87D4100D6F270 /* 顶点着色器 */,
 				CDB79D8425B6821C0052FDBE /* 图元装配和光栅化 */,
 				CDB79D6C25B5EC6A0052FDBE /* VertextArrayObjects */,
@@ -1054,6 +1058,15 @@
 				CD99458F24975BCF00789E45 /* FXVideoCoverGenerator.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CDA50BDC25BC5F7800A63E7C /* 纹理 */ = {
+			isa = PBXGroup;
+			children = (
+				CDA50BDD25BC5F9E00A63E7C /* Texture.cpp */,
+				CDA50BDE25BC5F9E00A63E7C /* Texture.hpp */,
+			);
+			path = "纹理";
 			sourceTree = "<group>";
 		};
 		CDAB78D2247FB46F00905236 /* User */ = {
@@ -1585,6 +1598,7 @@
 				CDEA86EC240F5C0A007BAA00 /* FXTutorialStepNumView.swift in Sources */,
 				CD4959382582836A002DBFEA /* Property.swift in Sources */,
 				CD57387F2410A99800D6E55F /* VisualEffectView.swift in Sources */,
+				CDA50BDF25BC5F9E00A63E7C /* Texture.cpp in Sources */,
 				CD2112F8235DBA4D003B5202 /* Wireframe.swift in Sources */,
 				CD34F6D425998A35009653F4 /* FuncCoding.swift in Sources */,
 				CD73E29725AD877600BA282A /* TriangleViewController.swift in Sources */,
