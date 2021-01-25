@@ -11,7 +11,7 @@ import UIKit
 class ClipViewController: UIViewController {
     fileprivate lazy var imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .red
+        imageView.image = UIImage(named: "ic_free_alert_bg")
         return imageView
     }()
     fileprivate lazy var oriImageView: UIImageView = {
@@ -21,25 +21,18 @@ class ClipViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .black
         view.addSubview(imageView)
-        view.addSubview(oriImageView)
-        let image0 = UIImage(named: "test_pic")!
-        let imgSize = image0.size
-        let clipSize = CGSize(width: 200.0, height: 200.0 * imgSize.height / imgSize.width)
-        imageView.image = image0.imageFill(rect: CGRect(x: 0, y: 0, width: clipSize.width, height: clipSize.height), contentMode: .scaleAspectFit)
-        oriImageView.image = image0
-        
+        let bgSize = CGSize(width: 310, height: 344)
         imageView.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.centerY.equalToSuperview().offset(60)
-            $0.size.equalTo(CGSize(width: 200.0, height: 200.0 * imgSize.height / imgSize.width))
+            $0.center.equalToSuperview()
+            $0.size.equalTo(bgSize)
         }
-        oriImageView.snp.makeConstraints {
-            $0.centerX.equalTo(imageView.snp.centerX)
-            $0.size.equalTo(clipSize)
-            $0.bottom.equalTo(imageView.snp.top).offset(-10)
-        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let vcc = IFFreeChanceAlert()
+        vcc.display(willShow: nil, didShow: nil, willDismiss: nil, didDismiss: nil)
     }
     
 }

@@ -367,6 +367,19 @@ extension HomeViewController {
             let vcc = TriangleViewController()
             weakSelf.navigationController?.pushViewController(vcc, animated: true)
         })
+        let freeAlert = ListItem("freeAlert", handler: { [weak self] in
+            let vcc = IFFreeChanceAlert()
+            vcc.display(willShow: nil, didShow: nil, willDismiss: nil, didDismiss: nil)
+        })
+        let resultAlert = ListItem("resultAlert", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = IFFreeChanceSuccessAlert()
+            vcc.display(willShow: nil, didShow: nil, willDismiss: nil, didDismiss: nil)
+        })
+        items.append(freeAlert)
+        items.append(resultAlert)
         items.append(triangleVC)
         items.append(clipVC)
         items.append(emptyVC)

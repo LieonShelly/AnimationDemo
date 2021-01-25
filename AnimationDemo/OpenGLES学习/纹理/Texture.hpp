@@ -50,7 +50,7 @@ class MipMap2D {
         "uniform sampler2D s_texture;               \n"
         "void main()                                \n"
         "{                                          \n"
-        " outColor = texture(s_texture, v_texCoord) \n";
+        " outColor = texture(s_texture, v_texCoord) \n"
         "}                                          \n"
         ;
         // load the shader and get a linked program object
