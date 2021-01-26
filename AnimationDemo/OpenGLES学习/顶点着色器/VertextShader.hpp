@@ -49,6 +49,7 @@ class VertextShader {
      #### 内建常量
      - 顶点着色器内内建常量如下：
      ```C++
+     
      // 可以指定的顶点属性的最大数量
      const mediump int gl_MaxVertexArribs = 16;
      //顶点着色器中可以使用的vec4统一变量项目的最大数量

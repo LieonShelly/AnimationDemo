@@ -61,13 +61,13 @@ class MipMap2D {
         // get the offset location
         userData->offsetLoc = glGetUniformLocation(userData->programObject, "u_offset");
         // load the texture
-        userData->textureId = CreateMipMappedTexture2D();
+        userData->textureId = createMipMappedTexture2D();
         glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
         return 1;
     }
     
     // create mipmapped 2D texure image
-    GLuint CreateMipMappedTexture2D() {
+    GLuint createMipMappedTexture2D() {
         GLuint textureId;
         int width = 256;
         int height = 256;
@@ -193,7 +193,41 @@ class MipMap2D {
     }
     
     void draw(ESContext *esContext) {
-        
+        UserData *userData = (UserData*)esContext->userData;
+        GLfloat vVertices[] = { -0.5f,  0.5f, 0.0f, 1.5f,  // Position 0
+            0.0f,  0.0f,              // TexCoord 0
+           -0.5f, -0.5f, 0.0f, 0.75f, // Position 1
+            0.0f,  1.0f,              // TexCoord 1
+            0.5f, -0.5f, 0.0f, 0.75f, // Position 2
+            1.0f,  1.0f,              // TexCoord 2
+            0.5f,  0.5f, 0.0f, 1.5f,  // Position 3
+            1.0f,  0.0f               // TexCoord 3
+         };
+        GLushort indices[] = { 0, 1, 2, 0, 2, 3 };
+        glViewport(0, 0, esContext->width, esContext->height);
+        glClear(GL_COLOR_BUFFER_BIT);
+        glUseProgram(userData->programObject);
+        // Load the vertex position
+        glVertexAttribPointer ( 0, 4, GL_FLOAT,
+                                GL_FALSE, 6 * sizeof ( GLfloat ), vVertices );
+        glVertexAttribPointer ( 1, 2, GL_FLOAT,
+                                GL_FALSE, 6 * sizeof ( GLfloat ), &vVertices[4] );
+        glEnableVertexAttribArray ( 0 );
+        glEnableVertexAttribArray ( 1 );
+        // Bind the texture
+        glActiveTexture ( GL_TEXTURE0 );
+        glBindTexture ( GL_TEXTURE_2D, userData->textureId );
+        // Set the sampler texture unit to 0
+        glUniform1i ( userData->samplerLoc, 0 );
+        // Draw quad with nearest sampling
+        glTexParameteri ( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST );
+        glUniform1f ( userData->offsetLoc, -0.6f );
+        glDrawElements ( GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices );
+        // Draw quad with trilinear filtering
+        glTexParameteri ( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR );
+        glUniform1f ( userData->offsetLoc, 0.6f );
+        glDrawElements ( GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices );
+
     }
     
     void shutDown(ESContext *esContext) {
