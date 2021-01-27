@@ -13,14 +13,14 @@
 @implementation TriangleMiddleware
 {
     ESContext _esContext;
-    SimpleTexture2D * _sm;
+    SimpleTextureCubemap * _sm;
 }
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        _sm = new SimpleTexture2D();
+        _sm = new SimpleTextureCubemap();
     }
     return self;
 }
