@@ -194,6 +194,8 @@
 		CDD2E36C25943D9F00FD8E8A /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD2E36B25943D9F00FD8E8A /* EmptyViewController.swift */; };
 		CDD33F842368447A00FD074A /* GuideStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD33F832368447A00FD074A /* GuideStartView.swift */; };
 		CDD33F862368448500FD074A /* GuideStartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD33F852368448500FD074A /* GuideStartView.xib */; };
+		CDD37E8D25C13F3D008A46AD /* basemap.tga in Resources */ = {isa = PBXBuildFile; fileRef = CDD37E8B25C13F3D008A46AD /* basemap.tga */; };
+		CDD37E8E25C13F3D008A46AD /* lightmap.tga in Resources */ = {isa = PBXBuildFile; fileRef = CDD37E8C25C13F3D008A46AD /* lightmap.tga */; };
 		CDDB073923C96DC300C0AA97 /* NewAnimatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDB073723C96DC300C0AA97 /* NewAnimatedViewController.swift */; };
 		CDDB073A23C96DC300C0AA97 /* NewAnimatedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDDB073823C96DC300C0AA97 /* NewAnimatedViewController.xib */; };
 		CDDC1A2D25959574008CE67C /* IFMyShareWechatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC1A2C25959574008CE67C /* IFMyShareWechatView.swift */; };
@@ -503,6 +505,8 @@
 		CDD2E36B25943D9F00FD8E8A /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		CDD33F832368447A00FD074A /* GuideStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideStartView.swift; sourceTree = "<group>"; };
 		CDD33F852368448500FD074A /* GuideStartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GuideStartView.xib; sourceTree = "<group>"; };
+		CDD37E8B25C13F3D008A46AD /* basemap.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = basemap.tga; sourceTree = "<group>"; };
+		CDD37E8C25C13F3D008A46AD /* lightmap.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = lightmap.tga; sourceTree = "<group>"; };
 		CDDB073723C96DC300C0AA97 /* NewAnimatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAnimatedViewController.swift; sourceTree = "<group>"; };
 		CDDB073823C96DC300C0AA97 /* NewAnimatedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewAnimatedViewController.xib; sourceTree = "<group>"; };
 		CDDC1A2C25959574008CE67C /* IFMyShareWechatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFMyShareWechatView.swift; sourceTree = "<group>"; };
@@ -1080,6 +1084,8 @@
 		CDA50BDC25BC5F7800A63E7C /* 纹理 */ = {
 			isa = PBXGroup;
 			children = (
+				CDD37E8B25C13F3D008A46AD /* basemap.tga */,
+				CDD37E8C25C13F3D008A46AD /* lightmap.tga */,
 				CDA50BDD25BC5F9E00A63E7C /* Texture.cpp */,
 				CDA50BDE25BC5F9E00A63E7C /* Texture.hpp */,
 			);
@@ -1403,6 +1409,7 @@
 				CD9945AB2498941800789E45 /* vertical_scroll_face_exact_fix_light_eye.mp4 in Resources */,
 				CD749ACF2356F72C00C357A5 /* FlipViewController.xib in Resources */,
 				CD68330723BB4BE6008C0C9F /* video_vip_headerView_x.mp4 in Resources */,
+				CDD37E8E25C13F3D008A46AD /* lightmap.tga in Resources */,
 				CD2112EE235D8800003B5202 /* MultiLanguageTexInputAlert.xib in Resources */,
 				CD68330623BB4BE6008C0C9F /* video_vip_headerView_plus.mp4 in Resources */,
 				CD2112F2235D8B91003B5202 /* PadTypeCollectionViewCell.xib in Resources */,
@@ -1434,6 +1441,7 @@
 				CD9945AC2498941800789E45 /* vertical_scroll_cut_into_vertical_perspective.mp4 in Resources */,
 				CD61351F24AB74FB0062A5D8 /* test.svg in Resources */,
 				CDFF20492367E6B800800136 /* LongPressViewController.xib in Resources */,
+				CDD37E8D25C13F3D008A46AD /* basemap.tga in Resources */,
 				CDA187AB24971F1500C46013 /* vertical_scroll_texture_touch_clear.mp4 in Resources */,
 				CD2FCFA2234D79AB00E28E5C /* TapAnimationViewController.xib in Resources */,
 				CD35A9D92372A668007C8354 /* ScreenRecordViewController.xib in Resources */,
