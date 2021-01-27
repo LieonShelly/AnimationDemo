@@ -38,6 +38,16 @@ typedef struct {
     // Texture handle
     GLuint baseMapTexId;
     GLuint lightMapTexId;
+    
+    // Handle to a framebuffer object
+    GLuint fbo;
+
+    // Texture handle
+    GLuint colorTexId[4];
+
+    // Texture size
+    GLsizei textureWidth;
+    GLsizei textureHeight;
 } UserData;
 
 class MipMap2D {
@@ -560,6 +570,148 @@ public:
     }
 };
 
+class MRTs {
+public:
+    int init(ESContext *esContext) {
+        UserData *userData = (UserData*)esContext->userData;
+        char vShaderStr[] =
+        "#version 300 es                            \n"
+        "layout(location = 0) in vec4 a_position;   \n"
+        "void main()                                \n"
+        "{                                          \n"
+        "   gl_Position = a_position;               \n"
+        "}                                          \n";
+        char fShaderStr[] =
+        "#version 300 es                                     \n"
+        "precision mediump float;                            \n"
+        "layout(location = 0) out vec4 fragData0;            \n"
+        "layout(location = 1) out vec4 fragData1;            \n"
+        "layout(location = 2) out vec4 fragData2;            \n"
+        "layout(location = 3) out vec4 fragData3;            \n"
+        "void main()                                         \n"
+        "{                                                   \n"
+        " fragData0 = vec4(1, 0, 0, 1);                      \n"
+        "                                                    \n"
+        "  // second buffer will contain green color         \n"
+        "  fragData1 = vec4 ( 0, 1, 0, 1 );                  \n"
+        "                                                    \n"
+        "  // third buffer will contain blue color           \n"
+        "  fragData2 = vec4 ( 0, 0, 1, 1 );                  \n"
+        "                                                    \n"
+        "  // fourth buffer will contain gray color          \n"
+        "  fragData3 = vec4 ( 0.5, 0.5, 0.5, 1 );            \n"
+        "}                                                   \n";
+        // Load the shaders and get a linked program object
+        userData->programObject = esLoadProgram ( vShaderStr, fShaderStr );
+        init(esContext);
+        glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
+        return GL_TRUE;
+    }
+    
+    void initFBO(ESContext *esContext) {
+        UserData *userData = (UserData*)esContext->userData;
+        int i;
+        GLint defaultFramebuffer = 0;
+        const GLenum attchments[4] =
+        {
+            GL_COLOR_ATTACHMENT0,
+            GL_COLOR_ATTACHMENT1,
+            GL_COLOR_ATTACHMENT2,
+            GL_COLOR_ATTACHMENT3
+        };
+        glGetIntegerv(GL_FRAMEBUFFER_BINDING, &defaultFramebuffer);
+        
+        // setup fbo
+        glGenFramebuffers(1, &userData->fbo);
+        glBindFramebuffer(GL_DRAW_FRAMEBUFFER, userData->fbo);
+    
+        userData->textureHeight = userData->textureWidth = 400;
+        glGenTextures(4, &userData->colorTexId[0]);
+        
+        // setup four output buffers and attach to fbo
+        for (i = 0; i < 4; ++i) {
+            glBindTexture(GL_TEXTURE_2D, userData->colorTexId[i]);
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, userData->textureWidth, userData->textureHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+            // Set the filtering mode
+            glTexParameteri ( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST );
+            glTexParameteri ( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST );
+            glFramebufferTexture2D(GL_DRAW_FRAMEBUFFER, attchments[i], GL_TEXTURE_2D, userData->colorTexId[i], 0);
+        }
+        glDrawBuffers(4, attchments);
+        if (GL_FRAMEBUFFER_COMPLETE != glCheckFramebufferStatus ( GL_FRAMEBUFFER )){
+           return;
+        }
+        glBindFramebuffer(GL_FRAMEBUFFER, defaultFramebuffer);
+    }
+    
+    void drawGeometry ( ESContext *esContext ) {
+        UserData *userData = (UserData*)esContext->userData;
+        GLfloat vVertices[] = {
+            -1.0f,  1.0f, 0.0f,
+            -1.0f, -1.0f, 0.0f,
+            1.0f, -1.0f, 0.0f,
+            1.0f,  1.0f, 0.0f,
+        };
+        GLushort indices[] = { 0, 1, 2, 0, 2, 3 };
+        glViewport(0, 0, esContext->width, esContext->height);
+        glClear(GL_COLOR_BUFFER_BIT);
+        glUseProgram(userData->programObject);
+        // Load the vertex position
+        glVertexAttribPointer ( 0, 3, GL_FLOAT,
+                                GL_FALSE, 3 * sizeof ( GLfloat ), vVertices );
+        glEnableVertexAttribArray ( 0 );
+        
+        // Draw a quad
+        glDrawElements ( GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indices );
+    }
+    
+    // Copy MRT output buffers to screen
+    void blitTextures ( ESContext *esContext ) {
+        UserData *userData = (UserData*)esContext->userData;
+        // set the fbo for reading
+        glBindFramebuffer(GL_READ_FRAMEBUFFER, userData->fbo);
+        
+        // Copy the output red buffer to lower left quadrant
+        glReadBuffer(GL_COLOR_ATTACHMENT0);
+        glBlitFramebuffer(0, 0, userData->textureWidth, userData->textureHeight, 0, 0, esContext->width * 0.5, esContext->height * 0.5, GL_COLOR_BUFFER_BIT, GL_LINEAR);
+        // Copy the output green buffer to lower right quadrant
+        glReadBuffer(GL_COLOR_ATTACHMENT1);
+        glBlitFramebuffer(0, 0, userData->textureWidth, userData->textureHeight, 0, 0, esContext->width * 0.5, esContext->height * 0.5, GL_COLOR_BUFFER_BIT, GL_LINEAR);
+        // Copy the output blue buffer to upper left quadrant
+        glReadBuffer ( GL_COLOR_ATTACHMENT2 );
+        glBlitFramebuffer ( 0, 0, userData->textureWidth, userData->textureHeight,
+                            0, esContext->height/2, esContext->width/2, esContext->height,
+                            GL_COLOR_BUFFER_BIT, GL_LINEAR );
+        // Copy the output gray buffer to upper right quadrant
+        glReadBuffer ( GL_COLOR_ATTACHMENT3 );
+        glBlitFramebuffer ( 0, 0, userData->textureWidth, userData->textureHeight,
+                            esContext->width/2, esContext->height/2, esContext->width, esContext->height,
+                            GL_COLOR_BUFFER_BIT, GL_LINEAR );
+    }
+    
+    void draw(ESContext *esContext) {
+        UserData *userData = (UserData*)esContext->userData;
+        GLint defaultFramebuffer = 0;
+        const GLenum attachments[4] =
+        {
+           GL_COLOR_ATTACHMENT0,
+           GL_COLOR_ATTACHMENT1,
+           GL_COLOR_ATTACHMENT2,
+           GL_COLOR_ATTACHMENT3
+        };
+        
+        glGetIntegerv ( GL_FRAMEBUFFER_BINDING, &defaultFramebuffer );
+        
+        //FIRST: use MRTs to output four colors to four buffers
+        glBindFramebuffer(GL_FRAMEBUFFER, userData->fbo);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        glDrawBuffers(4, attachments);
+        drawGeometry(esContext);
+        
+        glBindFramebuffer(GL_DRAW_FRAMEBUFFER, defaultFramebuffer);
+        blitTextures(esContext);
+    }
+};
 
 
 #endif /* Texture_hpp */
