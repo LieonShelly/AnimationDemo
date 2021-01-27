@@ -189,6 +189,7 @@
 		CDC87F2E2362E39600EFE022 /* BtnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC87F2C2362E39600EFE022 /* BtnViewController.swift */; };
 		CDC87F2F2362E39600EFE022 /* BtnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC87F2D2362E39600EFE022 /* BtnViewController.xib */; };
 		CDCAD86625BEC5590068E381 /* IFFreeChanceSuccessAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCAD86525BEC5590068E381 /* IFFreeChanceSuccessAlert.swift */; };
+		CDCF386D25C00E6000174C38 /* Vector3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDCF386B25C00E6000174C38 /* Vector3.cpp */; };
 		CDD2E365259434B800FD8E8A /* IFShareExceptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD2E364259434B800FD8E8A /* IFShareExceptionView.swift */; };
 		CDD2E36C25943D9F00FD8E8A /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD2E36B25943D9F00FD8E8A /* EmptyViewController.swift */; };
 		CDD33F842368447A00FD074A /* GuideStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDD33F832368447A00FD074A /* GuideStartView.swift */; };
@@ -197,6 +198,7 @@
 		CDDB073A23C96DC300C0AA97 /* NewAnimatedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDDB073823C96DC300C0AA97 /* NewAnimatedViewController.xib */; };
 		CDDC1A2D25959574008CE67C /* IFMyShareWechatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC1A2C25959574008CE67C /* IFMyShareWechatView.swift */; };
 		CDDC1B942597326A008CE67C /* IFMyShareAlbumDetailForeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDDC1B932597326A008CE67C /* IFMyShareAlbumDetailForeView.swift */; };
+		CDDF0FEF25BFB15E00F6156A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDDF0FF125BFB15E00F6156A /* Localizable.strings */; };
 		CDE081C724B74E6000B7609C /* IFHomeTutorialListBgView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE081C624B74E6000B7609C /* IFHomeTutorialListBgView.swift */; };
 		CDE79D5C24AC6CE600E57451 /* IFEditImageInputBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE79D5B24AC6CE600E57451 /* IFEditImageInputBtn.swift */; };
 		CDEA86EC240F5C0A007BAA00 /* FXTutorialStepNumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDEA86EB240F5C0A007BAA00 /* FXTutorialStepNumView.swift */; };
@@ -320,7 +322,6 @@
 		CD2FCF6F234D796100E28E5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD2FCF78234D796500E28E5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD2FCF7B234D796500E28E5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		CD2FCF7D234D796500E28E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD2FCF82234D796500E28E5C /* AnimationDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimationDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2FCF86234D796500E28E5C /* AnimationDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationDemoTests.swift; sourceTree = "<group>"; };
 		CD2FCF88234D796500E28E5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -345,6 +346,8 @@
 		CD3BC9AE234F313E003C8AA9 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		CD3E24B924446A4200F892F4 /* FXTutorialToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialToast.swift; sourceTree = "<group>"; };
 		CD436427234E17500047930B /* PinchAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinchAnimation.swift; sourceTree = "<group>"; };
+		CD46BFB625BFB4CE00E1489B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		CD46BFB725BFB4CE00E1489B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		CD4959372582836A002DBFEA /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		CD57387E2410A99700D6E55F /* VisualEffectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
 		CD5E733E24B6B518007C46E9 /* IFFuncChooseSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFFuncChooseSectionHeader.swift; sourceTree = "<group>"; };
@@ -362,6 +365,8 @@
 		CD68330423BB4BE6008C0C9F /* video_vip_headerView_plus.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_vip_headerView_plus.mp4; sourceTree = "<group>"; };
 		CD68330523BB4BE6008C0C9F /* video_vip_headerView_x.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video_vip_headerView_x.mp4; sourceTree = "<group>"; };
 		CD68330D23BDE137008C0C9F /* IFHookMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFHookMarkView.swift; sourceTree = "<group>"; };
+		CD6B740F25BFB45600F5C10A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		CD6B741025BFB45600F5C10A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		CD6C28D123A21D620008761C /* ScaleBtnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleBtnViewController.swift; sourceTree = "<group>"; };
 		CD6C28D223A21D620008761C /* ScaleBtnViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScaleBtnViewController.xib; sourceTree = "<group>"; };
 		CD6F173D2574FA5900957317 /* IFSettingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IFSettingViewModel.swift; sourceTree = "<group>"; };
@@ -492,6 +497,8 @@
 		CDC87F2C2362E39600EFE022 /* BtnViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnViewController.swift; sourceTree = "<group>"; };
 		CDC87F2D2362E39600EFE022 /* BtnViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BtnViewController.xib; sourceTree = "<group>"; };
 		CDCAD86525BEC5590068E381 /* IFFreeChanceSuccessAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFFreeChanceSuccessAlert.swift; sourceTree = "<group>"; };
+		CDCF386B25C00E6000174C38 /* Vector3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Vector3.cpp; sourceTree = "<group>"; };
+		CDCF386C25C00E6000174C38 /* Vector3.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Vector3.hpp; sourceTree = "<group>"; };
 		CDD2E364259434B800FD8E8A /* IFShareExceptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFShareExceptionView.swift; sourceTree = "<group>"; };
 		CDD2E36B25943D9F00FD8E8A /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
 		CDD33F832368447A00FD074A /* GuideStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideStartView.swift; sourceTree = "<group>"; };
@@ -500,6 +507,7 @@
 		CDDB073823C96DC300C0AA97 /* NewAnimatedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewAnimatedViewController.xib; sourceTree = "<group>"; };
 		CDDC1A2C25959574008CE67C /* IFMyShareWechatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFMyShareWechatView.swift; sourceTree = "<group>"; };
 		CDDC1B932597326A008CE67C /* IFMyShareAlbumDetailForeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFMyShareAlbumDetailForeView.swift; sourceTree = "<group>"; };
+		CDDF0FF025BFB15E00F6156A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CDE081C624B74E6000B7609C /* IFHomeTutorialListBgView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFHomeTutorialListBgView.swift; sourceTree = "<group>"; };
 		CDE79D5B24AC6CE600E57451 /* IFEditImageInputBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFEditImageInputBtn.swift; sourceTree = "<group>"; };
 		CDEA86EB240F5C0A007BAA00 /* FXTutorialStepNumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialStepNumView.swift; sourceTree = "<group>"; };
@@ -667,8 +675,8 @@
 				CD2FCFA3234D7A5F00E28E5C /* Source */,
 				CD2FCF78234D796500E28E5C /* Assets.xcassets */,
 				CD2FCF7A234D796500E28E5C /* LaunchScreen.storyboard */,
-				CD2FCF7D234D796500E28E5C /* Info.plist */,
 				CD074788243384130080FD64 /* BridgeHeader.h */,
+				CDDF0FF125BFB15E00F6156A /* Localizable.strings */,
 			);
 			path = AnimationDemo;
 			sourceTree = "<group>";
@@ -911,6 +919,7 @@
 		CD73DE7725AD4B2E00BA282A /* OpenGLES学习 */ = {
 			isa = PBXGroup;
 			children = (
+				CDCF386A25C00E4600174C38 /* 向量类 */,
 				CDA50BDC25BC5F7800A63E7C /* 纹理 */,
 				CD99DA0025B87D4100D6F270 /* 顶点着色器 */,
 				CDB79D8425B6821C0052FDBE /* 图元装配和光栅化 */,
@@ -1160,6 +1169,15 @@
 			path = "图元装配和光栅化";
 			sourceTree = "<group>";
 		};
+		CDCF386A25C00E4600174C38 /* 向量类 */ = {
+			isa = PBXGroup;
+			children = (
+				CDCF386B25C00E6000174C38 /* Vector3.cpp */,
+				CDCF386C25C00E6000174C38 /* Vector3.hpp */,
+			);
+			path = "向量类";
+			sourceTree = "<group>";
+		};
 		CDD2E36A25943D7000FD8E8A /* Em */ = {
 			isa = PBXGroup;
 			children = (
@@ -1353,6 +1371,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
+				"zh-Hans",
 			);
 			mainGroup = CD2FCF63234D796100E28E5C;
 			productRefGroup = CD2FCF6D234D796100E28E5C /* Products */;
@@ -1396,6 +1416,7 @@
 				CD68330323BB491F008C0C9F /* ipa_bottom_bg@3x.png in Resources */,
 				CD0230ED237A5F5200324E30 /* FXBannerCollectionViewCell.xib in Resources */,
 				CD2FCFA9234DB37600E28E5C /* PinchViewController.xib in Resources */,
+				CDDF0FEF25BFB15E00F6156A /* Localizable.strings in Resources */,
 				CD725ADA234F0E4E00C11FB0 /* PanViewController.xib in Resources */,
 				CD9945AA2498941800789E45 /* vertical_scroll_face_exact_fix_touch_clear.mp4 in Resources */,
 				CD6C28D423A21D620008761C /* ScaleBtnViewController.xib in Resources */,
@@ -1572,6 +1593,7 @@
 				CDBBC730239F6D5000B07EE9 /* SwipeViewController.swift in Sources */,
 				CDEA86EE240F5C25007BAA00 /* FXScaleView.swift in Sources */,
 				CD1E5FC0255E348A003928A7 /* Mems.swift in Sources */,
+				CDCF386D25C00E6000174C38 /* Vector3.cpp in Sources */,
 				CD5F97D624B85043008DD802 /* IFRecommendStartBtnPop.swift in Sources */,
 				CD749ACE2356F72C00C357A5 /* FlipViewController.swift in Sources */,
 				CDA1879F24970DFD00C46013 /* FXTutorialHandleVideoListVC.swift in Sources */,
@@ -1696,8 +1718,20 @@
 			isa = PBXVariantGroup;
 			children = (
 				CD2FCF7B234D796500E28E5C /* Base */,
+				CD6B740F25BFB45600F5C10A /* zh-Hant */,
+				CD46BFB625BFB4CE00E1489B /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CDDF0FF125BFB15E00F6156A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDDF0FF025BFB15E00F6156A /* en */,
+				CD6B741025BFB45600F5C10A /* zh-Hant */,
+				CD46BFB725BFB4CE00E1489B /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1707,6 +1741,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1767,6 +1802,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

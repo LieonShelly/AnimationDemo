@@ -376,6 +376,7 @@ extension HomeViewController {
                 return
             }
             let vcc = IFFreeChanceSuccessAlert()
+            vcc.config(13)
             vcc.display(willShow: nil, didShow: nil, willDismiss: nil, didDismiss: nil)
         })
         items.append(freeAlert)

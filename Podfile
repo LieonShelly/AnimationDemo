@@ -9,7 +9,6 @@ target 'AnimationDemo' do
   pod 'RxCocoa', '~> 5'
   pod 'MJRefresh', :modular_headers => true
   pod 'SnapKit', '~> 5.0.0'
-  pod 'IQKeyboardManagerSwift'
   pod 'RxDataSources', '~> 4.0'
   pod 'RxSwiftExt', '~> 5'
   pod "JXSegmentedView"

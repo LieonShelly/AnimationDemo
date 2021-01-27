@@ -39,6 +39,7 @@ class IFFreeChanceAlert: FXViewAlertBase {
         titleLabel.font = UIFont(name: "PingFangSC-Medium", size: 19)
         titleLabel.text = "恭喜你获得幸运礼包".localized(nil)
         titleLabel.textColor = UIColor(hex: 0x333333)
+        titleLabel.textAlignment = .center
         return titleLabel
     }()
     fileprivate lazy var titleBg: UIImageView = {

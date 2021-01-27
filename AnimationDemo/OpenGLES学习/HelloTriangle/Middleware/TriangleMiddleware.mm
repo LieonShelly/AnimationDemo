@@ -7,12 +7,26 @@
 //
 
 #import "TriangleMiddleware.h"
-#import "VertexArrayObjects.hpp"
+#import "Texture.hpp"
 #import "esUtil.h"
 
 @implementation TriangleMiddleware
 {
     ESContext _esContext;
+    SimpleTexture2D * _sm;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _sm = new SimpleTexture2D();
+    }
+    return self;
+}
+
+- (void)dealloc {
+    delete _sm;
 }
 
 - (void)drawInRect:(CGRect)rect {
@@ -21,17 +35,20 @@
     if (_esContext.drawFunc) {
         _esContext.drawFunc(&_esContext);
     }
+    _sm->draw(&_esContext);
 }
 
 
 - (void)tearDownGL {
-    if (_esContext.shutdownFunc ) {
-        _esContext.shutdownFunc( &_esContext );
-    }
+    
 }
 
 - (void)setupGL {
     memset( &_esContext, 0, sizeof( _esContext ) );
-    esMainWithVAO( &_esContext );
+    _esContext.userData = malloc ( sizeof ( UserData ) );
+    esCreateWindow ( &_esContext, "Simple Texture 2D", 320, 240, ES_WINDOW_RGB );
+    if (!_sm->init( &_esContext) ) {
+        return;
+    }
 }
 @end

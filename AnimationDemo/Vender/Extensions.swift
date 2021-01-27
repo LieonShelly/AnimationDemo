@@ -325,18 +325,9 @@ extension UIColor {
 
 
 extension String {
-    func localized(_ desc: String = "") -> String {
-        return self
-    }
-    
-    /// prefix default is i18n_apple_, desc will be returned without find value
     func localized(_ desc: String?, prefix: String = "i18n_apple_") -> String {
-        return localized(desc, prefix: prefix, discardError: false)
-    }
-    
-    /// 注意discardError是用于某些文案当前未支持多语言，但是可以忽略的情况；会返回无前缀的文案
-    func localized(_ desc: String?, prefix: String = "i18n_apple_", discardError: Bool) -> String {
-        return self
+        let localStr = NSLocalizedString(prefix + self, comment: "")
+        return localStr
     }
 }
 
@@ -398,4 +389,7 @@ public extension String {
         return "zh-Hans"
     }
    
+    static func isLanguageEn() -> Bool {
+        return getLocLanguage() == "en" // "en" "zh-Hans"
+    }
 }

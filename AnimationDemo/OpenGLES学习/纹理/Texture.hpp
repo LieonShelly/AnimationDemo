@@ -24,6 +24,12 @@ typedef struct {
 
     // Texture handle
     GLuint textureId;
+    
+    // Vertex data
+    int      numIndices;
+    GLfloat *vertices;
+    GLfloat *normals;
+    GLuint  *indices;
 } UserData;
 
 class MipMap2D {
@@ -234,6 +240,98 @@ class MipMap2D {
         
     }
 };
+
+class SimpleTexture2D {
+public:
+    int init(ESContext *escontext) {
+        UserData *userData = (UserData*)escontext->userData;
+        char vShaderStr[] =
+           "#version 300 es                            \n"
+           "layout(location = 0) in vec4 a_position;   \n"
+           "layout(location = 1) in vec2 a_texCoord;   \n"
+           "out vec2 v_texCoord;                       \n"
+           "void main()                                \n"
+           "{                                          \n"
+           "   gl_Position = a_position;               \n"
+        "   v_texCoord = a_texCoord;                \n"
+        "}\n";
+        
+        char fShaderStr[] =
+           "#version 300 es                                     \n"
+           "precision mediump float;                            \n"
+           "in vec2 v_texCoord;                                 \n"
+           "layout(location = 0) out vec4 outColor;             \n"
+           "uniform sampler2D s_texture;                        \n"
+           "void main()                                         \n"
+           "{                                                   \n"
+           "  outColor = texture( s_texture, v_texCoord );      \n"
+        "} \n";
+        
+        userData->programObject = esLoadProgram(vShaderStr, fShaderStr);
+        userData->samplerLoc = glGetUniformLocation(userData->programObject, "s_texture");
+        userData->textureId = createSimpleTexture2D();
+        glClearColor ( 1.0f, 1.0f, 1.0f, 0.0f );
+        return GL_TRUE;
+    }
+    
+    GLuint createSimpleTexture2D() {
+        GLuint textureId;
+        GLubyte pixels[4 * 3] =
+        {
+            255, 0, 0,
+            0, 255, 0,
+            0, 0, 255,
+            255, 255, 0
+        };
+        // Use tightly packed data
+        glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+        // 生成纹理对象
+        glGenTextures(1, &textureId);
+        // 绑定纹理对象
+        glBindTexture(GL_TEXTURE_2D, textureId);
+        // 加载纹理
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 2, 2, 0, GL_RGB, GL_UNSIGNED_BYTE, pixels);
+        // 设置过滤模式
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+        return textureId;
+    }
+    
+    void draw(ESContext *esContext) {
+        UserData *userData = (UserData*)esContext->userData;
+        GLfloat vVertices[] = {
+            -0.5f, 0.5f, 0.0f,
+            0.0, 0.0f,
+            -0.5, -0.5f, 0.0f,
+            0.0, 1.0f,
+            0.5f, -0.5f, 0.0f,
+            1.0f, 1.0f,
+            0.5f, 0.5f, 0.0f,
+            1.0f, 0.0f
+        };
+        GLushort indeices[] = {0, 1, 2, 0, 2, 3 };
+        glViewport(0, 0, esContext->width, esContext->height);
+        glClear(GL_COLOR_BUFFER_BIT);
+        glUseProgram(userData->programObject);
+        // 加载顶点坐标
+        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), vVertices);
+        // 加载纹理坐标
+        glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(GLfloat), &vVertices[3]);
+        glEnableVertexAttribArray(0);
+        glEnableVertexAttribArray(1);
+        
+        // 绑定纹理
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, userData->textureId);
+        // 采样器设置为使用纹理单元0 一个纹理的位置值通常称为一个纹理单元(Texture Unit)。一个纹理的默认纹理单元是0，它是默认的激活纹理单元，
+        glUniform1f(userData->samplerLoc, 0);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_SHORT, indeices);
+    }
+    
+};
+
+
+
 
 
 #endif /* Texture_hpp */

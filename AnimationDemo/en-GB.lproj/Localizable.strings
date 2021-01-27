@@ -1,0 +1,3561 @@
+/* i18n_952_反馈或建议 */
+"i18n_952_反馈或建议" = "Feedback";
+
+/* i18n_952_恢复会员 */
+"i18n_952_恢复会员" = "Restore";
+
+/* i18n_952_立即成为VIP */
+"i18n_952_立即成为VIP" = "VIP";
+
+/* i18n_952_VIP订阅须知内容V1 */
+"i18n_952_VIP订阅须知内容V1" = "The subscription fee will be paid by your iTunes account at the time of confirmation of subscription. The subscription will be automatically renewed unless you cancel the subscription at least 24 hours before the expiry of current period. Your account will deduct the renewal fees for current package within 24 hours before the expiry of current period. After subscription, you can manage and cancel subscription in Apple ID account at any time.";
+
+/* i18n_952_VIP多月标识 */
+"i18n_952_VIP多月标识" = "%d months";
+
+/* i18n_952_VIP继续按钮 */
+"i18n_952_VIP继续按钮" = "Continue";
+
+/* i18n_952_VIP节省 */
+"i18n_952_VIP节省" = "Save %d%%";
+
+/* i18n_952_VIP每月价格 */
+"i18n_952_VIP每月价格" = "%d months: %@/mo";
+
+/* i18n_952_VIP权益副标题内容 */
+"i18n_952_VIP权益副标题内容" = "Unlock all functions";
+
+/* i18n_952_VIP权益主标题内容 */
+"i18n_952_VIP权益主标题内容" = "Join inFace VIP";
+
+/* i18n_952_VIP永久免费商品 */
+"i18n_952_VIP永久免费商品" = "Permanent VIP";
+
+/* i18n_952_VIP总计 */
+"i18n_952_VIP总计" = "Total";
+
+/* i18n_953_VIP_年费续订商品价格 */
+"i18n_953_VIP_年费续订商品价格" = "%@ after trial";
+
+/* i18n_apple_《 */
+"i18n_apple_《" = "\"";
+
+/* i18n_apple_》 */
+"i18n_apple_》" = "\"";
+
+/* i18n_apple_「人像大师」 */
+"i18n_apple_「人像大师」" = "「Launched」";
+
+/* i18n_apple_」照让照片美起来吧~ */
+"i18n_apple_」照让照片美起来吧~" = "」照让照片美起来吧~";
+
+/* i18n_apple_%d时%d分%d秒 */
+"i18n_apple_%d时%d分%d秒" = "%d hour %d minutes %d seconds";
+
+/* i18n_apple_✨美哭了✨ */
+"i18n_apple_✨美哭了✨" = "#inFace# Create it!";
+
+/* i18n_apple_🔔收到1条提示🔔 */
+"i18n_apple_🔔收到1条提示🔔" = "🔔One Notification🔔";
+
+/* i18n_apple_$29.99/年（仅需$2.49/月） */
+"i18n_apple_$29.99/年（仅需$2.49/月）" = "Annual member, only %@%";
+
+/* i18n_apple_100+高级人像精修工具 */
+"i18n_apple_100+高级人像精修工具" = "100+ advanced portrait editing tools";
+
+/* i18n_apple_100+热门攻略 每周更新 */
+"i18n_apple_100+热门攻略 每周更新" = "100+ popular guides updated weekly";
+
+/* i18n_apple_100+人像精修工具，全部解锁 */
+"i18n_apple_100+人像精修工具，全部解锁" = "100+ portrait editing tools, all unlocked";
+
+/* i18n_apple_100+专业人像精修工具 */
+"i18n_apple_100+专业人像精修工具" = "100+ professional portrait editing tools";
+
+/* i18n_apple_100+VIP专属素材，每周持续更新 */
+"i18n_apple_100+VIP专属素材，每周持续更新" = "%@ VIP material, updated weekly.";
+
+/* i18n_apple_1000+潮流创意素材，每周更新 */
+"i18n_apple_1000+潮流创意素材，每周更新" = "1000+ trendy materials coming weekly";
+
+/* i18n_apple_1000+创意素材，每周持续更新 */
+"i18n_apple_1000+创意素材，每周持续更新" = "1000+materials coming weekly";
+
+/* i18n_apple_10次 */
+"i18n_apple_10次" = "10times";
+
+/* i18n_apple_15秒掌握新技能 */
+"i18n_apple_15秒掌握新技能" = "Improve photo grades in one second";
+
+/* i18n_apple_200+顶级风格化滤镜全解锁 */
+"i18n_apple_200+顶级风格化滤镜全解锁" = "200+ top style filters to be unlocked";
+
+/* i18n_apple_200+滤镜自由使用 */
+"i18n_apple_200+滤镜自由使用" = "200+filters for free";
+
+/* i18n_apple_2000+潮流创意素材 每周更新 */
+"i18n_apple_2000+潮流创意素材 每周更新" = "2000+ materials updated weekly";
+
+/* i18n_apple_2000+VIP模板&素材，自由创作 */
+"i18n_apple_2000+VIP模板&素材，自由创作" = "2000+ VIP templates & materials";
+
+/* i18n_apple_22+高级调色功能 */
+"i18n_apple_22+高级调色功能" = "22+ advanced color editing functions";
+
+/* i18n_apple_22项高级调色功能 */
+"i18n_apple_22项高级调色功能" = "22 advanced color editing functions";
+
+/* i18n_apple_30+VIP功能模块解锁 */
+"i18n_apple_30+VIP功能模块解锁" = "30+ VIP functions are unlocked";
+
+/* i18n_apple_3天免费试用 */
+"i18n_apple_3天免费试用" = "%@ days free trial";
+
+/* i18n_apple_3天免费试用，可随时取消 */
+"i18n_apple_3天免费试用，可随时取消" = "3 days free trial, cancel at any time";
+
+/* i18n_apple_3D打光技术，营造真实光影氛围 */
+"i18n_apple_3D打光技术，营造真实光影氛围" = "Create a real light and shadow atmosphere";
+
+/* i18n_apple_3D面孔科技  */
+"i18n_apple_3D面孔科技 " = "3D face technology";
+
+/* i18n_apple_3D塑颜 */
+"i18n_apple_3D塑颜" = "3D Shaping";
+
+/* i18n_apple_42项 */
+"i18n_apple_42项" = "42";
+
+/* i18n_apple_72小时 */
+"i18n_apple_72小时" = "72 hours";
+
+/* i18n_apple_24小时 */
+"i18n_apple_24小时" = "24 hours";
+
+/* i18n_apple_7折 */
+"i18n_apple_7折" = "30%off";
+
+/* i18n_apple_7折成为会员 */
+"i18n_apple_7折成为会员" = "30% discount";
+
+/* i18n_apple_啊哦 处理失败 */
+"i18n_apple_啊哦 处理失败" = "Edit failed";
+
+/* i18n_apple_手机存储空间不足，保存失败 */
+"i18n_apple_手机存储空间不足，保存失败" = "Not enough storage space";
+
+/* i18n_apple_啊哦！ */
+"i18n_apple_啊哦！" = "Ah oh!";
+
+/* i18n_apple_哎呀，没有保存吗？ */
+"i18n_apple_哎呀，没有保存吗？" = "哎呀，没有保存吗？";
+
+/* i18n_apple_按住照片拖动调整面部 */
+"i18n_apple_按住照片拖动调整面部" = "Hold the photo and drag to adjust the face";
+
+/* i18n_apple_暗部 */
+"i18n_apple_暗部" = "Dark";
+
+/* i18n_apple_暗淡 */
+"i18n_apple_暗淡" = "Dim";
+
+/* i18n_apple_暗角 */
+"i18n_apple_暗角" = "Vignette";
+
+/* i18n_apple_暗角、中心亮度 */
+"i18n_apple_暗角、中心亮度" = "Prominent subject";
+
+/* i18n_apple_白水晶 */
+"i18n_apple_白水晶" = "Crystal";
+
+/* i18n_apple_白雾 */
+"i18n_apple_白雾" = "Mist";
+
+/* i18n_apple_白皙肤 */
+"i18n_apple_白皙肤" = "White";
+
+/* i18n_apple_白牙 */
+"i18n_apple_白牙" = "White Teeth";
+
+/* i18n_apple_百变背景 */
+"i18n_apple_百变背景" = "Backgrounds";
+
+/* i18n_apple_百变背景添加投影会让人物更加真实、立体 */
+"i18n_apple_百变背景添加投影会让人物更加真实、立体" = "百变背景添加投影会让人物更加真实、立体";
+
+/* i18n_apple_百款修图攻略抢先尝鲜 每周更新 */
+"i18n_apple_百款修图攻略抢先尝鲜 每周更新" = "100+  guides experience weekly update";
+
+/* i18n_apple_百万 */
+"i18n_apple_百万" = "million";
+
+/* i18n_apple_斑点修复 */
+"i18n_apple_斑点修复" = "Acne";
+
+/* i18n_apple_版画 */
+"i18n_apple_版画" = "Print";
+
+/* i18n_apple_帮助与反馈 */
+"i18n_apple_帮助与反馈" = "Feedback";
+
+/* i18n_apple_饱和度 */
+"i18n_apple_饱和度" = "Saturation";
+
+/* i18n_apple_保存 */
+"i18n_apple_保存" = "Save";
+
+/* i18n_apple_保存本次编辑 */
+"i18n_apple_保存本次编辑" = "Save";
+
+/* i18n_apple_保存编辑好的照片到您的相册 */
+"i18n_apple_保存编辑好的照片到您的相册" = "Save the edited photo in your album.";
+
+/* i18n_apple_保存常用预设，使操作更方便 */
+"i18n_apple_保存常用预设，使操作更方便" = "Save common presets to make operation easier.";
+
+/* i18n_apple_保存成功 */
+"i18n_apple_保存成功" = "Finished";
+
+/* i18n_apple_保存当前效果 */
+"i18n_apple_保存当前效果" = "Save effect";
+
+/* i18n_apple_保存到相册 */
+"i18n_apple_保存到相册" = "Save to album";
+
+/* i18n_apple_保存你的精修照片！ */
+"i18n_apple_保存你的精修照片！" = "Save your refined photos!";
+
+/* i18n_apple_保存失败，请尝试重新保存 */
+"i18n_apple_保存失败，请尝试重新保存" = "Save failed, please save again";
+
+/* i18n_apple_保存失败，请重试 */
+"i18n_apple_保存失败，请重试" = "Save failed, try ";
+
+/* i18n_apple_保存所有VIP功能效果 */
+"i18n_apple_保存所有VIP功能效果" = "to save all effects";
+
+/* i18n_apple_保存特权生效中 */
+"i18n_apple_保存特权生效中" = "Saving privilege on";
+
+/* i18n_apple_保存照片 */
+"i18n_apple_保存照片" = "Save";
+
+/* i18n_apple_保护 */
+"i18n_apple_保护" = "Protect Zone";
+
+/* i18n_apple_保护背景不变形 */
+"i18n_apple_保护背景不变形" = "Protect from deform";
+
+/* i18n_apple_保护你的隐私安全 */
+"i18n_apple_保护你的隐私安全" = "Protect your privacy";
+
+/* i18n_apple_保留当前所选内容 */
+"i18n_apple_保留当前所选内容" = "Keep current";
+
+/* i18n_apple_保留自然皮肤细节 */
+"i18n_apple_保留自然皮肤细节" = "Preserve natural skin details";
+
+/* i18n_apple_本机型最高处理像素为 */
+"i18n_apple_本机型最高处理像素为" = "This model can process up to ";
+
+/* i18n_apple_鼻尖大小 */
+"i18n_apple_鼻尖大小" = "Tip";
+
+/* i18n_apple_鼻梁宽度 */
+"i18n_apple_鼻梁宽度" = "Narrow";
+
+/* i18n_apple_鼻梁提升 */
+"i18n_apple_鼻梁提升" = "Lift";
+
+/* i18n_apple_鼻梁微调 */
+"i18n_apple_鼻梁微调" = "Nose";
+
+/* i18n_apple_鼻翼宽度 */
+"i18n_apple_鼻翼宽度" = "Width";
+
+/* i18n_apple_鼻子 */
+"i18n_apple_鼻子" = "Nose";
+
+/* i18n_apple_鼻子高度 */
+"i18n_apple_鼻子高度" = "Nose height";
+
+/* i18n_apple_比例 */
+"i18n_apple_比例" = "Ratio";
+
+/* i18n_apple_边缘模糊 */
+"i18n_apple_边缘模糊" = "Blurred edges";
+
+/* i18n_apple_边缘融合 */
+"i18n_apple_边缘融合" = "Edge fusion";
+
+/* i18n_apple_边缘羽化 */
+"i18n_apple_边缘羽化" = "Edge Feather";
+
+/* i18n_apple_编辑照片 */
+"i18n_apple_编辑照片" = "Edit photos";
+
+/* i18n_apple_编辑照片需访问相册 */
+"i18n_apple_编辑照片需访问相册" = "Please allow us to visit your album.";
+
+/* i18n_apple_编码失败，请尝试重新保存 */
+"i18n_apple_编码失败，请尝试重新保存" = "Encoding failed, please try to save again";
+
+/* i18n_apple_编码失败，无法导出 */
+"i18n_apple_编码失败，无法导出" = "Encoding failed, unable to export";
+
+/* i18n_apple_变暗 */
+"i18n_apple_变暗" = "Darken";
+
+/* i18n_apple_变换多个背景，使照片更加丰满～ */
+"i18n_apple_变换多个背景，使照片更加丰满～" = "Change the background, create endless possibilities";
+
+/* i18n_apple_变亮 */
+"i18n_apple_变亮" = "Lighten";
+
+/* i18n_apple_变形 */
+"i18n_apple_变形" = "Transform";
+
+/* i18n_apple_变形保护 */
+"i18n_apple_变形保护" = "Protection";
+
+/* i18n_apple_便捷管理你的创作 */
+"i18n_apple_便捷管理你的创作" = "Convenient management";
+
+/* i18n_apple_标准画质 */
+"i18n_apple_标准画质" = "Standard";
+
+/* i18n_apple_别错过你的专属特权 */
+"i18n_apple_别错过你的专属特权" = "Don't miss privileges";
+
+/* i18n_apple_别滑了，我是有底线哒 */
+"i18n_apple_别滑了，我是有底线哒" = "I have boundaries, creativity has no boundaries";
+
+/* i18n_apple_冰雹 */
+"i18n_apple_冰雹" = "Hail";
+
+/* i18n_apple_波澜 */
+"i18n_apple_波澜" = "Wave";
+
+/* i18n_apple_波纹 */
+"i18n_apple_波纹" = "Ripple";
+
+/* i18n_apple_不保存 */
+"i18n_apple_不保存" = "No";
+
+/* i18n_apple_不同意 */
+"i18n_apple_不同意" = "Refuse";
+
+/* i18n_apple_不要这%d张了 */
+"i18n_apple_不要这%d张了" = "Give up the %d";
+
+/* i18n_apple_不再提示 */
+"i18n_apple_不再提示" = "Don't ask again";
+
+/* i18n_apple_步骤复杂，我不太懂 */
+"i18n_apple_步骤复杂，我不太懂" = "步骤复杂，我不太懂";
+
+/* i18n_apple_部分功能不可用 */
+"i18n_apple_部分功能不可用" = "Some functions are not available.";
+
+/* i18n_apple_擦除 */
+"i18n_apple_擦除" = "Erase";
+
+/* i18n_apple_擦除保护 */
+"i18n_apple_擦除保护" = "Modify Zone";
+
+/* i18n_apple_彩雕 */
+"i18n_apple_彩雕" = "Colored-C";
+
+/* i18n_apple_彩铅 */
+"i18n_apple_彩铅" = "Crayon";
+
+/* i18n_apple_彩色 */
+"i18n_apple_彩色" = "color";
+
+/* i18n_apple_操作失败，未能找到相关内容 */
+"i18n_apple_操作失败，未能找到相关内容" = "Failed, unable to find related content";
+
+/* i18n_apple_操作完成，可调整下方参数到满意 */
+"i18n_apple_操作完成，可调整下方参数到满意" = "End of operation, fine-tune the results to the satisfaction.";
+
+/* i18n_apple_操作完成，可根据照片微调肤质参数到满意 */
+"i18n_apple_操作完成，可根据照片微调肤质参数到满意" = "End of operation, fine-tune the skin to satisfaction.";
+
+/* i18n_apple_操作完成，可根据照片微调五官到满意 */
+"i18n_apple_操作完成，可根据照片微调五官到满意" = "End of operation, fine-tune facial features to satisfaction.";
+
+/* i18n_apple_层次调节 */
+"i18n_apple_层次调节" = "Layer Adjust";
+
+/* i18n_apple_查看更多教程 */
+"i18n_apple_查看更多教程" = "View more tutorials";
+
+/* i18n_apple_查看前后对比 */
+"i18n_apple_查看前后对比" = "Click to compare";
+
+/* i18n_apple_查看全部 */
+"i18n_apple_查看全部" = "See All";
+
+/* i18n_apple_查看全部模板 */
+"i18n_apple_查看全部模板" = "See All";
+
+/* i18n_apple_尝试 */
+"i18n_apple_尝试" = "Check it out";
+
+/* i18n_apple_畅享商业级人像精修 */
+"i18n_apple_畅享商业级人像精修" = "Enjoy commercial portrait retouching effects";
+
+/* i18n_apple_畅享所有功能 */
+"i18n_apple_畅享所有功能" = "Get all features";
+
+/* i18n_apple_超高分辨率，最佳品质输出 */
+"i18n_apple_超高分辨率，最佳品质输出" = "No loss details, best quality";
+
+/* i18n_apple_超高清 */
+"i18n_apple_超高清" = "Ultra HD";
+
+/* i18n_apple_超高清画质，千万像素导出 */
+"i18n_apple_超高清画质，千万像素导出" = "Ultra HD, millions of export";
+
+/* i18n_apple_超高清画质保存 */
+"i18n_apple_超高清画质保存" = "Ultra HD picture quality preservation";
+
+/* i18n_apple_超清 */
+"i18n_apple_超清" = "HD";
+
+/* i18n_apple_超清画质 */
+"i18n_apple_超清画质" = "Ultra-clear";
+
+/* i18n_apple_超清画质导出 */
+"i18n_apple_超清画质导出" = "Super clear picture quality";
+
+/* i18n_apple_超现实 */
+"i18n_apple_超现实" = "Surreal";
+
+/* i18n_apple_潮流素材及时领取 */
+"i18n_apple_潮流素材及时领取" = "Get the latest materials";
+
+/* i18n_apple_撤销 */
+"i18n_apple_撤销" = "Undo";
+
+/* i18n_apple_成熟 */
+"i18n_apple_成熟" = "Mature";
+
+/* i18n_apple_成为inFace */
+"i18n_apple_成为inFace" = "Become";
+
+/* i18n_apple_橙 */
+"i18n_apple_橙" = "Orange";
+
+/* i18n_apple_赤 */
+"i18n_apple_赤" = "Red";
+
+/* i18n_apple_赤粉 */
+"i18n_apple_赤粉" = "Peach pink";
+
+/* i18n_apple_抽取inFace年会员，解锁全部功能 */
+"i18n_apple_抽取inFace年会员，解锁全部功能" = "to draw annual VIP";
+
+/* i18n_apple_处理这张 */
+"i18n_apple_处理这张" = "Deal with it";
+
+/* i18n_apple_创意 */
+"i18n_apple_创意" = "创意";
+
+/* i18n_apple_创意特效 */
+"i18n_apple_创意特效" = "Creative Effect";
+
+/* i18n_apple_创意涂鸦教程 */
+"i18n_apple_创意涂鸦教程" = "Creative Doodle";
+
+/* i18n_apple_垂直拉伸 */
+"i18n_apple_垂直拉伸" = "V-Stretch";
+
+/* i18n_apple_垂直透视 */
+"i18n_apple_垂直透视" = "V-Perspective";
+
+/* i18n_apple_粗纹 */
+"i18n_apple_粗纹" = "Coarse line";
+
+/* i18n_apple_打光灯 */
+"i18n_apple_打光灯" = "Lighting";
+
+/* i18n_apple_打开声音更有利于技巧学习哦 */
+"i18n_apple_打开声音更有利于技巧学习哦" = "Open the sound is more conducive to learning";
+
+/* i18n_apple_打开通知，会员福利不错过，攻略上线抢先知 */
+"i18n_apple_打开通知，会员福利不错过，攻略上线抢先知" = "Open the notification, grasp VIP privilege, Raiders";
+
+/* i18n_apple_打开通知权限 */
+"i18n_apple_打开通知权限" = "Open notification permissions";
+
+/* i18n_apple_打开推送获得实时消息和推送通知 */
+"i18n_apple_打开推送获得实时消息和推送通知" = "Turn on push for real-time messages";
+
+/* i18n_apple_打造迷人微笑 */
+"i18n_apple_打造迷人微笑" = "Get a charming smile";
+
+/* i18n_apple_打造意境照片 */
+"i18n_apple_打造意境照片" = "Create artistic photos";
+
+/* i18n_apple_打造自然肤质 你的美是天生 */
+"i18n_apple_打造自然肤质 你的美是天生" = "Create natural skin Your beauty is born";
+
+/* i18n_apple_打造S曲线 */
+"i18n_apple_打造S曲线" = "S curve tutorial";
+
+/* i18n_apple_打造S曲线，雕刻手臂线条。 */
+"i18n_apple_打造S曲线，雕刻手臂线条。" = "Create S curve and sculpt arm lines.";
+
+/* i18n_apple_大小 */
+"i18n_apple_大小" = "Size";
+
+/* i18n_apple_淡彩 */
+"i18n_apple_淡彩" = "Light color";
+
+/* i18n_apple_淡化 */
+"i18n_apple_淡化" = "dilute";
+
+/* i18n_apple_当前机型不支持此格式导出 */
+"i18n_apple_当前机型不支持此格式导出" = "Does not support this format export";
+
+/* i18n_apple_当前网络不可用，请开启网络重试 */
+"i18n_apple_当前网络不可用，请开启网络重试" = "Network error. Please try again";
+
+/* i18n_apple_当前未检测到人像 */
+"i18n_apple_当前未检测到人像" = "No portrait detected";
+
+/* i18n_apple_当前无LUT */
+"i18n_apple_当前无LUT" = "Currently no LUT";
+
+/* i18n_apple_当前效果已保存到我的肤质 */
+"i18n_apple_当前效果已保存到我的肤质" = "The current effect has been saved to my skin";
+
+/* i18n_apple_当前照片人脸过小或为侧脸 */
+"i18n_apple_当前照片人脸过小或为侧脸" = "The face is too small or side face";
+
+/* i18n_apple_当前照片未含可解析内容，请换张照片重试 */
+"i18n_apple_当前照片未含可解析内容，请换张照片重试" = "The picture contains no content to be analyzed. Please change another one";
+
+/* i18n_apple_导出 */
+"i18n_apple_导出" = "Export";
+
+/* i18n_apple_导出更高画质 */
+"i18n_apple_导出更高画质" = "Higher quality";
+
+/* i18n_apple_导入照片 */
+"i18n_apple_导入照片" = "导入照片";
+
+/* i18n_apple_到首页 */
+"i18n_apple_到首页" = "Home";
+
+/* i18n_apple_倒计时3天，7折购年会员即将过期，前往使用> */
+"i18n_apple_倒计时3天，7折购年会员即将过期，前往使用>" = "only 3 days, 30% discount will expire, go to use>";
+
+/* i18n_apple_第%d步 */
+"i18n_apple_第%d步" = "Step %d";
+
+/* i18n_apple_第一时间试用最新功能 */
+"i18n_apple_第一时间试用最新功能" = "Try the latest function immediately.";
+
+/* i18n_apple_第一时间通知你 */
+"i18n_apple_第一时间通知你" = "We’ll give you the earliest notice.";
+
+/* i18n_apple_点击查看 */
+"i18n_apple_点击查看" = "Click to view";
+
+/* i18n_apple_点击获取灵感～ */
+"i18n_apple_点击获取灵感～" = "点击获取灵感～";
+
+/* i18n_apple_点击进阶技巧，可学习更多修图技能哦～ */
+"i18n_apple_点击进阶技巧，可学习更多修图技能哦～" = "Click here to learn more skills~";
+
+/* i18n_apple_点击它！自动get同款效果 */
+"i18n_apple_点击它！自动get同款效果" = "click it! Automatically get the same effect";
+
+/* i18n_apple_点击选择任意面部，进行单独编辑 */
+"i18n_apple_点击选择任意面部，进行单独编辑" = "Tap any part on face to edit separately.";
+
+/* i18n_apple_点击拥有》》 */
+"i18n_apple_点击拥有》》" = "inFace helps you ignite social networks with photos";
+
+/* i18n_apple_点击这里，调整画笔大小 */
+"i18n_apple_点击这里，调整画笔大小" = "Click here to adjust the brush size.";
+
+/* i18n_apple_点击这里开始修图～ */
+"i18n_apple_点击这里开始修图～" = "Click it !";
+
+/* i18n_apple_点击重试 */
+"i18n_apple_点击重试" = "Retry";
+
+/* i18n_apple_点击左侧按钮，保存当前效果 */
+"i18n_apple_点击左侧按钮，保存当前效果" = "Click the button on the left to save current effect";
+
+/* i18n_apple_电子画 */
+"i18n_apple_电子画" = "Digital";
+
+/* i18n_apple_垫下巴 */
+"i18n_apple_垫下巴" = "Mat Chin";
+
+/* i18n_apple_雕刻 */
+"i18n_apple_雕刻" = "Carving";
+
+/* i18n_apple_调色 */
+"i18n_apple_调色" = "调色";
+
+/* i18n_apple_调色工具 */
+"i18n_apple_调色工具" = "color tool";
+
+/* i18n_apple_调色神器-提升照片色彩，营造高级感 */
+"i18n_apple_调色神器-提升照片色彩，营造高级感" = "Enhance photo color and texture.";
+
+/* i18n_apple_调整暗角、中心亮度，使主体更突出 */
+"i18n_apple_调整暗角、中心亮度，使主体更突出" = "Highlight the subject by vignette and center bright.";
+
+/* i18n_apple_调整暗角程度，使照片主体更鲜明 */
+"i18n_apple_调整暗角程度，使照片主体更鲜明" = "Make the photo more vivid.";
+
+/* i18n_apple_调整鼻子，使鼻子更立体 */
+"i18n_apple_调整鼻子，使鼻子更立体" = "Adjust nose to make it more straight.";
+
+/* i18n_apple_调整脸部，使面部更精致 */
+"i18n_apple_调整脸部，使面部更精致" = "Adjust face to create more delicate effect.";
+
+/* i18n_apple_调整脸部轮廓，使面部轮廓更立体 */
+"i18n_apple_调整脸部轮廓，使面部轮廓更立体" = "Adjust the facial contour to make  it more stereoscopic.";
+
+/* i18n_apple_调整眼部，增强眼部效果 */
+"i18n_apple_调整眼部，增强眼部效果" = "Adjust eyes to enhance eye effect.";
+
+/* i18n_apple_调整照片亮部和暗部区域，提高照片层次感 */
+"i18n_apple_调整照片亮部和暗部区域，提高照片层次感" = "Adjusting the light and dark area,improve photo layering.";
+
+/* i18n_apple_调整照片颜色，使照片整体更通透 */
+"i18n_apple_调整照片颜色，使照片整体更通透" = "Adjusting the color to make a photo clearer.";
+
+/* i18n_apple_调整指定图层效果 */
+"i18n_apple_调整指定图层效果" = "调整指定图层效果";
+
+/* i18n_apple_叠加 */
+"i18n_apple_叠加" = "Overlay";
+
+/* i18n_apple_订阅须知 */
+"i18n_apple_订阅须知" = "Subscriptions are charged to your iTunes account at the time of purchase confirmation, and subscriptions are automatically renewed unless you cancel your subscription at least 24 hours prior to the end of the current period.Your account will be charged a renewal fee for your package within 24 hours of the end of the current subscription period.After purchase, you can set up management and unsubscribe at any time in your Apple ID account.By registering for this subscription and indicating that you agree to our \"inFace VIP subscription Notice\" and \"inFace Privacy Policy\"";
+
+/* i18n_apple_独家批量分享 */
+"i18n_apple_独家批量分享" = "Exclusive batch sharing";
+
+/* i18n_apple_独特 */
+"i18n_apple_独特" = "Unique";
+
+/* i18n_apple_对比 */
+"i18n_apple_对比" = "Compare";
+
+/* i18n_apple_对比度 */
+"i18n_apple_对比度" = "Contrast";
+
+/* i18n_apple_兑换中 */
+"i18n_apple_兑换中" = "Redeeming";
+
+/* i18n_apple_多款特效为照片增添创意 */
+"i18n_apple_多款特效为照片增添创意" = "Multiple effects make creative photos";
+
+/* i18n_apple_多款贴纸让照片不再单调！ */
+"i18n_apple_多款贴纸让照片不再单调！" = "Make photos richer.";
+
+/* i18n_apple_多人面部操作 */
+"i18n_apple_多人面部操作" = "Multiple Faces";
+
+/* i18n_apple_额…网络异常，请重新尝试 */
+"i18n_apple_额…网络异常，请重新尝试" = "Er... Network exception, please try again";
+
+/* i18n_apple_发际线 */
+"i18n_apple_发际线" = "Hairline";
+
+/* i18n_apple_反向 */
+"i18n_apple_反向" = "Invert";
+
+/* i18n_apple_反转片 */
+"i18n_apple_反转片" = "Reversal";
+
+/* i18n_apple_返回 */
+"i18n_apple_返回" = "Back";
+
+/* i18n_apple_返回后将重新编辑星标照片哦 */
+"i18n_apple_返回后将重新编辑星标照片哦" = "After returning, we will re-edit the star photo";
+
+/* i18n_apple_返回首页 */
+"i18n_apple_返回首页" = "Go home";
+
+/* i18n_apple_范围 */
+"i18n_apple_范围" = "Range";
+
+/* i18n_apple_放缩 */
+"i18n_apple_放缩" = "Zoom";
+
+/* i18n_apple_分 */
+"i18n_apple_分" = "M";
+
+/* i18n_apple_分类 */
+"i18n_apple_分类" = "Category";
+
+/* i18n_apple_分离色调 */
+"i18n_apple_分离色调" = "Split tone";
+
+/* i18n_apple_分析失败 */
+"i18n_apple_分析失败" = "Analysis failed";
+
+/* i18n_apple_分析完毕 */
+"i18n_apple_分析完毕" = "Analysis done";
+
+/* i18n_apple_分享 */
+"i18n_apple_分享" = "Share";
+
+/* i18n_apple_分享标题 */
+"i18n_apple_分享标题" = "Share title";
+
+/* i18n_apple_分享到 */
+"i18n_apple_分享到" = "Share";
+
+/* i18n_apple_分享给朋友 */
+"i18n_apple_分享给朋友" = "Share with friends";
+
+/* i18n_apple_分享结束 */
+"i18n_apple_分享结束" = "End";
+
+/* i18n_apple_分享设置 */
+"i18n_apple_分享设置" = "Sharing settings";
+
+/* i18n_apple_分享失败，请重试 */
+"i18n_apple_分享失败，请重试" = "Selection failed, please try again";
+
+/* i18n_apple_分享中 */
+"i18n_apple_分享中" = "Sharing";
+
+/* i18n_apple_氛围感 */
+"i18n_apple_氛围感" = "Atmosphere";
+
+/* i18n_apple_氛围光 */
+"i18n_apple_氛围光" = "Ambient light";
+
+/* i18n_apple_粉肤 */
+"i18n_apple_粉肤" = "Pink";
+
+/* i18n_apple_粉末 */
+"i18n_apple_粉末" = "Powder";
+
+/* i18n_apple_粉丝专属通道，现已享受9折 */
+"i18n_apple_粉丝专属通道，现已享受9折" = "Exclusive for fans, save 10%";
+
+/* i18n_apple_丰唇 */
+"i18n_apple_丰唇" = "Plumper";
+
+/* i18n_apple_否 */
+"i18n_apple_否" = "No";
+
+/* i18n_apple_肤色 */
+"i18n_apple_肤色" = "Color";
+
+/* i18n_apple_肤色矫正 */
+"i18n_apple_肤色矫正" = "Skin Tone";
+
+/* i18n_apple_肤质调整 */
+"i18n_apple_肤质调整" = "Skin Adjustment";
+
+/* i18n_apple_服务条款 */
+"i18n_apple_服务条款" = "Terms of Service";
+
+/* i18n_apple_浮世 */
+"i18n_apple_浮世" = "Ukiyo";
+
+/* i18n_apple_付款系统太慢了，我无法付款 */
+"i18n_apple_付款系统太慢了，我无法付款" = "The payment system is too slow, I cannot pay";
+
+/* i18n_apple_复制 */
+"i18n_apple_复制" = "Copy";
+
+/* i18n_apple_该分享已结束 */
+"i18n_apple_该分享已结束" = "This sharing has ended";
+
+/* i18n_apple_该教程适合的照片 */
+"i18n_apple_该教程适合的照片" = "Photos suitable for the guide:";
+
+/* i18n_apple_改变透视分割线 */
+"i18n_apple_改变透视分割线" = "Change perspective line";
+
+/* i18n_apple_改变透视分割线，无痕拉出大长腿！ */
+"i18n_apple_改变透视分割线，无痕拉出大长腿！" = "Change perspective line";
+
+/* i18n_apple_感谢你的反馈！ */
+"i18n_apple_感谢你的反馈！" = "Thanks for your feedback!";
+
+/* i18n_apple_感谢您成为inFace VIP */
+"i18n_apple_感谢您成为inFace VIP" = "Thank you for being an inFace VIP";
+
+/* i18n_apple_感谢您的反馈，我们会持续改进 */
+"i18n_apple_感谢您的反馈，我们会持续改进" = "感谢您的反馈，我们会持续改进";
+
+/* i18n_apple_刚刚的改动将丢失哦 */
+"i18n_apple_刚刚的改动将丢失哦" = "The changes just now will be lost";
+
+/* i18n_apple_高低眉 */
+"i18n_apple_高低眉" = "Balance";
+
+/* i18n_apple_高度 */
+"i18n_apple_高度" = "Height";
+
+/* i18n_apple_高光 */
+"i18n_apple_高光" = "Highlight";
+
+/* i18n_apple_高光色调 */
+"i18n_apple_高光色调" = "Highlight tone";
+
+/* i18n_apple_高级 */
+"i18n_apple_高级" = "Elegant";
+
+/* i18n_apple_高级调色工具 */
+"i18n_apple_高级调色工具" = "Advanced color tools";
+
+/* i18n_apple_高级功能 */
+"i18n_apple_高级功能" = "H-functions";
+
+/* i18n_apple_高级教程 */
+"i18n_apple_高级教程" = "tutorial";
+
+/* i18n_apple_高清 */
+"i18n_apple_高清" = "SD";
+
+/* i18n_apple_高斯模糊 */
+"i18n_apple_高斯模糊" = "Gaussian blur";
+
+/* i18n_apple_高质量 */
+"i18n_apple_高质量" = "H-quality";
+
+/* i18n_apple_高质量画质 */
+"i18n_apple_高质量画质" = "High Quality";
+
+/* i18n_apple_格式 */
+"i18n_apple_格式" = "Format";
+
+/* i18n_apple_个人收藏 */
+"i18n_apple_个人收藏" = "Favorites";
+
+/* i18n_apple_给你的照片挑一个高级感满满的滤镜吧🌹 */
+"i18n_apple_给你的照片挑一个高级感满满的滤镜吧🌹" = "Fancy filter for your photo🌹";
+
+/* i18n_apple_给我们五星好评吧 */
+"i18n_apple_给我们五星好评吧" = "Give us five-star review.";
+
+/* i18n_apple_更多 */
+"i18n_apple_更多" = "More";
+
+/* i18n_apple_更多权益敬请期待 */
+"i18n_apple_更多权益敬请期待" = "Stay tuned for more rights";
+
+/* i18n_apple_更立体更精致 */
+"i18n_apple_更立体更精致" = "More three-dimensional and more refined";
+
+/* i18n_apple_攻略详情 */
+"i18n_apple_攻略详情" = "Guide details";
+
+/* i18n_apple_恭喜你！获得新技能！ */
+"i18n_apple_恭喜你！获得新技能！" = "Get New Skills!";
+
+/* i18n_apple_恭喜您 */
+"i18n_apple_恭喜您" = "Congrats";
+
+/* i18n_apple_恭喜您成为VIP */
+"i18n_apple_恭喜您成为VIP" = "inFace VIP";
+
+/* i18n_apple_处理照片 */
+"i18n_apple_处理照片" = "Total of";
+
+/* i18n_apple_勾勒 */
+"i18n_apple_勾勒" = "Outline";
+
+/* i18n_apple_构图不好？智能重构提升美感！ */
+"i18n_apple_构图不好？智能重构提升美感！" = "构图不好？智能重构提升美感！";
+
+/* i18n_apple_构图技巧 */
+"i18n_apple_构图技巧" = "构图技巧";
+
+/* i18n_apple_购买inFace年会员节省30% */
+"i18n_apple_购买inFace年会员节省30%" = "Buy annual VIP with 30% off";
+
+/* i18n_apple_购买VIP */
+"i18n_apple_购买VIP" = "Get VIP or Restore";
+
+/* i18n_apple_估计大小 */
+"i18n_apple_估计大小" = "Size";
+
+/* i18n_apple_古铜肤 */
+"i18n_apple_古铜肤" = "Wheat";
+
+/* i18n_apple_关于协议 */
+"i18n_apple_关于协议" = "Agreement";
+
+/* i18n_apple_管理 */
+"i18n_apple_管理" = "Manage";
+
+/* i18n_apple_光线类型 */
+"i18n_apple_光线类型" = "Light pattern";
+
+/* i18n_apple_光线强弱 */
+"i18n_apple_光线强弱" = "Light intensity";
+
+/* i18n_apple_光影与你，一键变更美！ */
+"i18n_apple_光影与你，一键变更美！" = "#inFace#IMAGE MAGIC!";
+
+/* i18n_apple_光源距离 */
+"i18n_apple_光源距离" = "Light source distance";
+
+/* i18n_apple_还不确定？试用3天看看 */
+"i18n_apple_还不确定？试用3天看看" = "Not sure? Try free trial";
+
+/* i18n_apple_还原 */
+"i18n_apple_还原" = "Restore";
+
+/* i18n_apple_海量攻略任选 */
+"i18n_apple_海量攻略任选" = "Many guides to choose";
+
+/* i18n_apple_好的 */
+"i18n_apple_好的" = "Alright";
+
+/* i18n_apple_好的，开启通知 */
+"i18n_apple_好的，开启通知" = "OK, allow notification.";
+
+/* i18n_apple_好的，去分享 */
+"i18n_apple_好的，去分享" = "Ok, go share";
+
+/* i18n_apple_好的，去设置 */
+"i18n_apple_好的，去设置" = "Ok, go setup.";
+
+/* i18n_apple_沙漠 */
+"i18n_apple_沙漠" = "Desert";
+
+/* i18n_apple_黑白 */
+"i18n_apple_黑白" = "B&W";
+
+/* i18n_apple_黑色 */
+"i18n_apple_黑色" = "Black";
+
+/* i18n_apple_黑纹 */
+"i18n_apple_黑纹" = "Black line";
+
+/* i18n_apple_很抱歉没能让您完成操作， */
+"i18n_apple_很抱歉没能让您完成操作，" = "很抱歉没能让您完成操作，";
+
+/* i18n_apple_厚度 */
+"i18n_apple_厚度" = "Thickness";
+
+/* i18n_apple_蝴蝶结 */
+"i18n_apple_蝴蝶结" = "Bow";
+
+/* i18n_apple_花花 */
+"i18n_apple_花花" = "Flower";
+
+/* i18n_apple_画笔 */
+"i18n_apple_画笔" = "Brush";
+
+/* i18n_apple_画笔大小 */
+"i18n_apple_画笔大小" = "Size";
+
+/* i18n_apple_画笔透明度 */
+"i18n_apple_画笔透明度" = "Opacity";
+
+/* i18n_apple_画笔羽化 */
+"i18n_apple_画笔羽化" = "Feather";
+
+/* i18n_apple_画质 */
+"i18n_apple_画质" = "Quality";
+
+/* i18n_apple_画质清晰。 */
+"i18n_apple_画质清晰。" = "images, presenting ultra-clear pictures.";
+
+/* i18n_apple_欢迎成为inFace会员 */
+"i18n_apple_欢迎成为inFace会员" = "Welcome to become inFace VIP";
+
+/* i18n_apple_欢迎成为VIP会员 */
+"i18n_apple_欢迎成为VIP会员" = "Welcome to become a VIP member";
+
+/* i18n_apple_欢迎你，VIP用户 */
+"i18n_apple_欢迎你，VIP用户" = "Welcome, inFace VIP";
+
+/* i18n_apple_欢迎使用人像大师 */
+"i18n_apple_欢迎使用人像大师" = "Welcome to inFace";
+
+/* i18n_apple_欢迎体验inFace，试点这儿，开启极致肤质之旅… */
+"i18n_apple_欢迎体验inFace，试点这儿，开启极致肤质之旅…" = "1/4  Welcome to inFace. Click here to start the journey of delicate skin.";
+
+/* i18n_apple_幻境 */
+"i18n_apple_幻境" = "Dreamland";
+
+/* i18n_apple_换张照片再试试吧 */
+"i18n_apple_换张照片再试试吧" = "Try another photo";
+
+/* i18n_apple_皇冠 */
+"i18n_apple_皇冠" = "Crown";
+
+/* i18n_apple_黄色 */
+"i18n_apple_黄色" = "Yellow";
+
+/* i18n_apple_黄土 */
+"i18n_apple_黄土" = "Loess";
+
+/* i18n_apple_灰云 */
+"i18n_apple_灰云" = "Grey cloud";
+
+/* i18n_apple_恢复 */
+"i18n_apple_恢复" = "Recover";
+
+/* i18n_apple_恢复会员成功 */
+"i18n_apple_恢复会员成功" = "Membership restoration successed.";
+
+/* i18n_apple_恢复会员失败，会员已过期 */
+"i18n_apple_恢复会员失败，会员已过期" = "Recovering member failed because member has expired";
+
+/* i18n_apple_恢复会员失败，请重新尝试 */
+"i18n_apple_恢复会员失败，请重新尝试" = "Membership restoration failed. Try again.";
+
+/* i18n_apple_回忆 */
+"i18n_apple_回忆" = "Memory";
+
+/* i18n_apple_会员素材 */
+"i18n_apple_会员素材" = "every week";
+
+/* i18n_apple_会员已到期，仅$23.99/年，可随时取消 */
+"i18n_apple_会员已到期，仅$23.99/年，可随时取消" = "VIP has expired, only %@.";
+
+/* i18n_apple_会员专属身份徽标 */
+"i18n_apple_会员专属身份徽标" = "VIP exclusive icon";
+
+/* i18n_apple_会员专属图标 */
+"i18n_apple_会员专属图标" = "VIP exclusive icon";
+
+/* i18n_apple_会员尊享权益 */
+"i18n_apple_会员尊享权益" = "Member privileges";
+
+/* i18n_apple_混合模式 */
+"i18n_apple_混合模式" = "Blending Mode";
+
+/* i18n_apple_混合颜色带 */
+"i18n_apple_混合颜色带" = "Blend If";
+
+/* i18n_apple_获得会员折扣信息 */
+"i18n_apple_获得会员折扣信息" = "Get the membership discount information.";
+
+/* i18n_apple_获得免费试用VIP资格 */
+"i18n_apple_获得免费试用VIP资格" = "Get the free trial VIP qualification.";
+
+/* i18n_apple_获得以下奖品 */
+"i18n_apple_获得以下奖品" = "You've got these gifts";
+
+/* i18n_apple_获取灵感 */
+"i18n_apple_获取灵感" = "Get inspiration";
+
+/* i18n_apple_肌理 */
+"i18n_apple_肌理" = "Texture";
+
+/* i18n_apple_基础 */
+"i18n_apple_基础" = "Basis";
+
+/* i18n_apple_及时获取热门素材 */
+"i18n_apple_及时获取热门素材" = "Get popular materials in time";
+
+/* i18n_apple_即将开始 */
+"i18n_apple_即将开始" = "About to start";
+
+/* i18n_apple_即刻享受最新攻略 */
+"i18n_apple_即刻享受最新攻略" = "Enjoy the latest guide immediately";
+
+/* i18n_apple_极速交付 */
+"i18n_apple_极速交付" = "Fast delivery";
+
+/* i18n_apple_极致肤质 */
+"i18n_apple_极致肤质" = "Skin";
+
+/* i18n_apple_极致肤质中一键美颜可快速还原肌肤质感哦～ */
+"i18n_apple_极致肤质中一键美颜可快速还原肌肤质感哦～" = "极致肤质中一键美颜可快速还原肌肤质感哦～";
+
+/* i18n_apple_继续 */
+"i18n_apple_继续" = "Cont.";
+
+/* i18n_apple_继续保存 */
+"i18n_apple_继续保存" = "Saving";
+
+/* i18n_apple_继续编辑 */
+"i18n_apple_继续编辑" = "Continue";
+
+/* i18n_apple_加阴影 */
+"i18n_apple_加阴影" = "Add shadow";
+
+/* i18n_apple_加载失败 */
+"i18n_apple_加载失败" = "Failed to load";
+
+/* i18n_apple_加载失败，点击这里重新尝试 */
+"i18n_apple_加载失败，点击这里重新尝试" = "Failed to load. Please tap to try again";
+
+/* i18n_apple_加载失败，点击重试 */
+"i18n_apple_加载失败，点击重试" = "Failed to load. Tap here to try again";
+
+/* i18n_apple_加载失败，请点击重试哦～ */
+"i18n_apple_加载失败，请点击重试哦～" = "Loading failed, please click to try again";
+
+/* i18n_apple_加载失败，请重试 */
+"i18n_apple_加载失败，请重试" = "Loading failed, please try again";
+
+/* i18n_apple_加载中，请稍等… */
+"i18n_apple_加载中，请稍等…" = "Loading, please wait for a while...";
+
+/* i18n_apple_加载中… */
+"i18n_apple_加载中…" = "Loading...";
+
+/* i18n_apple_减轻过曝 */
+"i18n_apple_减轻过曝" = "Anti Glare";
+
+/* i18n_apple_减鲜艳度 */
+"i18n_apple_减鲜艳度" = "Cool Down";
+
+/* i18n_apple_减小过红皮肤的颜色强度 */
+"i18n_apple_减小过红皮肤的颜色强度" = "Fade the reddish tone.";
+
+/* i18n_apple_剪裁 */
+"i18n_apple_剪裁" = "Crop";
+
+/* i18n_apple_将当前选择设为默认 */
+"i18n_apple_将当前选择设为默认" = "Set as default";
+
+/* i18n_apple_讲解 */
+"i18n_apple_讲解" = "Tips";
+
+/* i18n_apple_角度 */
+"i18n_apple_角度" = "angle";
+
+/* i18n_apple_矫正黄皮提亮肤色 */
+"i18n_apple_矫正黄皮提亮肤色" = "Correct yellow skin and brighten skin tone";
+
+/* i18n_apple_教程 */
+"i18n_apple_教程" = "Tutorial";
+
+/* i18n_apple_教程技巧 */
+"i18n_apple_教程技巧" = "教程技巧";
+
+/* i18n_apple_教程演示 */
+"i18n_apple_教程演示" = "Study";
+
+/* i18n_apple_教程已完成！您可以再继续进行微调 */
+"i18n_apple_教程已完成！您可以再继续进行微调" = "Completed! You can continue to fine-tune";
+
+/* i18n_apple_解锁20+高级功能，打造质感肌肤 */
+"i18n_apple_解锁20+高级功能，打造质感肌肤" = "Unlock %@ features to perfect skin.";
+
+/* i18n_apple_解锁超高清保存 */
+"i18n_apple_解锁超高清保存" = "Unlock FHD";
+
+/* i18n_apple_解锁全部功能 */
+"i18n_apple_解锁全部功能" = "Unlock all features ";
+
+/* i18n_apple_解锁同款 */
+"i18n_apple_解锁同款" = "解锁同款";
+
+/* i18n_apple_解析失败 */
+"i18n_apple_解析失败" = "Failed to analyze";
+
+/* i18n_apple_今天 */
+"i18n_apple_今天" = "Today";
+
+/* i18n_apple_金灿 */
+"i18n_apple_金灿" = "Golden";
+
+/* i18n_apple_仅剩2天，年会员7折购，仅需$20.99 */
+"i18n_apple_仅剩2天，年会员7折购，仅需$20.99" = "2 days left，30% discount for annual membership，only $20.99";
+
+/* i18n_apple_仅需 */
+"i18n_apple_仅需" = "only";
+
+/* i18n_apple_仅需$20.99 */
+"i18n_apple_仅需$20.99" = "Now:$20.99";
+
+/* i18n_apple_尽情享受全部功能与服务 */
+"i18n_apple_尽情享受全部功能与服务" = "Enjoy all the functions and services";
+
+/* i18n_apple_尽情享受全部功能与素材 */
+"i18n_apple_尽情享受全部功能与素材" = "Access to all functions";
+
+/* i18n_apple_进阶技巧 */
+"i18n_apple_进阶技巧" = "Advanced skills";
+
+/* i18n_apple_进阶教程 */
+"i18n_apple_进阶教程" = "Advanced tutorial";
+
+/* i18n_apple_进入 */
+"i18n_apple_进入" = "OK";
+
+/* i18n_apple_进入学习更多技巧！ */
+"i18n_apple_进入学习更多技巧！" = "Go to learn more skills!";
+
+/* i18n_apple_精修必备 */
+"i18n_apple_精修必备" = "Essential tool";
+
+/* i18n_apple_精选教程上线提醒 */
+"i18n_apple_精选教程上线提醒" = "selected tutorials release";
+
+/* i18n_apple_精选滤镜 */
+"i18n_apple_精选滤镜" = "Selective Filter";
+
+/* i18n_apple_精选模板 */
+"i18n_apple_精选模板" = "Template";
+
+/* i18n_apple_镜头模糊 */
+"i18n_apple_镜头模糊" = "Blur shape";
+
+/* i18n_apple_旧时 */
+"i18n_apple_旧时" = "Old";
+
+/* i18n_apple_旧闻 */
+"i18n_apple_旧闻" = "Nostalgia";
+
+/* i18n_apple_拒绝扁平脸 五官更立体 */
+"i18n_apple_拒绝扁平脸 五官更立体" = "Refuse to have a flat face";
+
+/* i18n_apple_距离分享结束还有 */
+"i18n_apple_距离分享结束还有" = "Until the end of sharing";
+
+/* i18n_apple_聚光 */
+"i18n_apple_聚光" = "Spot";
+
+/* i18n_apple_聚光模式 */
+"i18n_apple_聚光模式" = "Spotlight";
+
+/* i18n_apple_绝对 */
+"i18n_apple_绝对" = "Absolute";
+
+/* i18n_apple_开启访问“所有照片”权限 */
+"i18n_apple_开启访问“所有照片”权限" = "Enable access to \”All Photos\”";
+
+/* i18n_apple_开启通知，获取最新功能、素材和教程 */
+"i18n_apple_开启通知，获取最新功能、素材和教程" = "Turn notifications on for the latest  features, materials, and tutorials";
+
+/* i18n_apple_开启通知，即刻获得： */
+"i18n_apple_开启通知，即刻获得：" = "Enable the notice. You can enjoy:";
+
+/* i18n_apple_开启通知权限 */
+"i18n_apple_开启通知权限" = "Enable notification";
+
+/* i18n_apple_开启推送 */
+"i18n_apple_开启推送" = "Turn notifications on";
+
+/* i18n_apple_开启网络 */
+"i18n_apple_开启网络" = "Open the network";
+
+/* i18n_apple_开启网络才能使用 */
+"i18n_apple_开启网络才能使用" = "Turn on the network to use";
+
+/* i18n_apple_开启网络权限立即体验修图攻略 */
+"i18n_apple_开启网络权限立即体验修图攻略" = "Open the network permission";
+
+/* i18n_apple_开始 */
+"i18n_apple_开始" = "Start";
+
+/* i18n_apple_开始订阅前体验 */
+"i18n_apple_开始订阅前体验" = "Trial before subscribe";
+
+/* i18n_apple_开始上传 */
+"i18n_apple_开始上传" = "Upload";
+
+/* i18n_apple_开始试用 */
+"i18n_apple_开始试用" = "Start free trial now";
+
+/* i18n_apple_开始修图 */
+"i18n_apple_开始修图" = "开始修图";
+
+/* i18n_apple_开通会员 */
+"i18n_apple_开通会员" = "Buy VIP";
+
+/* i18n_apple_开通会员折扣 */
+"i18n_apple_开通会员折扣" = " VIP discount";
+
+/* i18n_apple_开学特惠 */
+"i18n_apple_开学特惠" = "Special offer";
+
+/* i18n_apple_颗粒 */
+"i18n_apple_颗粒" = "Particle";
+
+/* i18n_apple_颗粒纹 */
+"i18n_apple_颗粒纹" = "Grain";
+
+/* i18n_apple_可爱 */
+"i18n_apple_可爱" = "Cute";
+
+/* i18n_apple_可访问所有功能 */
+"i18n_apple_可访问所有功能" = "Access All Features";
+
+/* i18n_apple_可根据喜好在下方选择素材哦～ */
+"i18n_apple_可根据喜好在下方选择素材哦～" = "可根据喜好在下方选择素材哦～";
+
+/* i18n_apple_可选颜色 */
+"i18n_apple_可选颜色" = "Colors";
+
+/* i18n_apple_可以更好管理作品哟～ */
+"i18n_apple_可以更好管理作品哟～" = "Can better manage creation~";
+
+/* i18n_apple_请尝试清理空间后重试 */
+"i18n_apple_请尝试清理空间后重试" = "Hurry up to make room, I'm here waiting for you";
+
+/* i18n_apple_快使用「 */
+"i18n_apple_快使用「" = "快使用「";
+
+/* i18n_apple_快速开始 */
+"i18n_apple_快速开始" = "Quick start";
+
+/* i18n_apple_快速提升画面美感 */
+"i18n_apple_快速提升画面美感" = "快速提升画面美感";
+
+/* i18n_apple_快速修复穿帮部分 */
+"i18n_apple_快速修复穿帮部分" = "快速修复穿帮部分";
+
+/* i18n_apple_快速get同款效果 */
+"i18n_apple_快速get同款效果" = "快速get同款效果";
+
+/* i18n_apple_拉出大长腿教程 */
+"i18n_apple_拉出大长腿教程" = "Create Long Legs";
+
+/* i18n_apple_拉动滑动杆沿垂直方向调整照片构图，使人物瞬间增高 */
+"i18n_apple_拉动滑动杆沿垂直方向调整照片构图，使人物瞬间增高" = "Drag the sliding rod to adjust the composition vertically.";
+
+/* i18n_apple_拉动滑动杆沿水平方向调整人像身材 */
+"i18n_apple_拉动滑动杆沿水平方向调整人像身材" = "Drag the sliding rod to adjust the figure body horizontally.";
+
+/* i18n_apple_拉动滑动杆沿水平方向调整照片边缘 */
+"i18n_apple_拉动滑动杆沿水平方向调整照片边缘" = "Drag the sliding rod to adjust the edge of photo horizontally.";
+
+/* i18n_apple_蓝色墨水 */
+"i18n_apple_蓝色墨水" = "Blue ink";
+
+/* i18n_apple_立即畅享所有功能与素材 */
+"i18n_apple_立即畅享所有功能与素材" = "Imagine all the features and materials now";
+
+/* i18n_apple_立即订阅 */
+"i18n_apple_立即订阅" = "Subscribe now";
+
+/* i18n_apple_立即解锁100+专业精修工具 */
+"i18n_apple_立即解锁100+专业精修工具" = "100+pro editing tools";
+
+/* i18n_apple_立即升级 */
+"i18n_apple_立即升级" = "Upgrade Now";
+
+/* i18n_apple_立即升级会员 */
+"i18n_apple_立即升级会员" = "Upgrade member now";
+
+/* i18n_apple_立即升级享用 */
+"i18n_apple_立即升级享用" = "OK";
+
+/* i18n_apple_立即体验 */
+"i18n_apple_立即体验" = "Start";
+
+/* i18n_apple_立即体验所有功能 */
+"i18n_apple_立即体验所有功能" = "Enjoy all the features.";
+
+/* i18n_apple_立即制作 */
+"i18n_apple_立即制作" = "立即制作";
+
+/* i18n_apple_立即制作同款 */
+"i18n_apple_立即制作同款" = "Apply";
+
+/* i18n_apple_立即重试 */
+"i18n_apple_立即重试" = "Retry immediately";
+
+/* i18n_apple_立体感 */
+"i18n_apple_立体感" = "Three-dimensional";
+
+/* i18n_apple_利用调整创造一个效果,再来保存成自定义吧! */
+"i18n_apple_利用调整创造一个效果,再来保存成自定义吧!" = "Create a new effect by adjusting settings and save as custom preset";
+
+/* i18n_apple_联系与建议 */
+"i18n_apple_联系与建议" = "Feedback";
+
+/* i18n_apple_脸型 */
+"i18n_apple_脸型" = "Face";
+
+/* i18n_apple_亮白 */
+"i18n_apple_亮白" = "Whiten";
+
+/* i18n_apple_亮部 */
+"i18n_apple_亮部" = "Bright";
+
+/* i18n_apple_亮彩 */
+"i18n_apple_亮彩" = "Bright color";
+
+/* i18n_apple_亮度 */
+"i18n_apple_亮度" = "Brightness";
+
+/* i18n_apple_亮光 */
+"i18n_apple_亮光" = "Vivid Light";
+
+/* i18n_apple_亮眼 */
+"i18n_apple_亮眼" = "Bright Eyes";
+
+/* i18n_apple_烈焰 */
+"i18n_apple_烈焰" = "Blaze";
+
+/* i18n_apple_菱形 */
+"i18n_apple_菱形" = "Diamond";
+
+/* i18n_apple_领取3天免费试用 */
+"i18n_apple_领取3天免费试用" = "Get a free 3-day trial";
+
+/* i18n_apple_琉璃 */
+"i18n_apple_琉璃" = "Glaze";
+
+/* i18n_apple_六边形 */
+"i18n_apple_六边形" = "hexagon";
+
+/* i18n_apple_六芒星 */
+"i18n_apple_六芒星" = "Six-pointed star";
+
+/* i18n_apple_滤色 */
+"i18n_apple_滤色" = "Screen";
+
+/* i18n_apple_轮廓光 */
+"i18n_apple_轮廓光" = "Contour light";
+
+/* i18n_apple_马赛克 */
+"i18n_apple_马赛克" = "Mosaic";
+
+/* i18n_apple_马上开始 */
+"i18n_apple_马上开始" = "Begin";
+
+/* i18n_apple_眉峰 */
+"i18n_apple_眉峰" = "Ridge";
+
+/* i18n_apple_眉间距 */
+"i18n_apple_眉间距" = "Spacing";
+
+/* i18n_apple_眉毛 */
+"i18n_apple_眉毛" = "Eyebrow";
+
+/* i18n_apple_每月持续更新会员专享福利 */
+"i18n_apple_每月持续更新会员专享福利" = "Monthly membership benefits";
+
+/* i18n_apple_每周更新 */
+"i18n_apple_每周更新" = "updated weekly";
+
+/* i18n_apple_每周上新 */
+"i18n_apple_每周上新" = "New";
+
+/* i18n_apple_朦胧 */
+"i18n_apple_朦胧" = "Hazy";
+
+/* i18n_apple_梦幻 */
+"i18n_apple_梦幻" = "Dream";
+
+/* i18n_apple_密码 */
+"i18n_apple_密码" = "Password";
+
+/* i18n_apple_密码必须为6位字母或数字 */
+"i18n_apple_密码必须为6位字母或数字" = "The password must be 6 letters or numbers";
+
+/* i18n_apple_免费试用 */
+"i18n_apple_免费试用" = "Free trial";
+
+/* i18n_apple_免费试用3天 */
+"i18n_apple_免费试用3天" = "3 days free";
+
+/* i18n_apple_免费试用3天，可随时取消，仅$23.99/年 */
+"i18n_apple_免费试用3天，可随时取消，仅$23.99/年" = "%@ days free trial, only %@.";
+
+/* i18n_apple_免费试用3天，其后以%@订阅 */
+"i18n_apple_免费试用3天，其后以%@订阅" = "3-days free trial, then %@";
+
+/* i18n_apple_免费试用3天，然后%@ */
+"i18n_apple_免费试用3天，然后%@" = "3-days free trial, then %@";
+
+/* i18n_apple_免费试用全部功能 */
+"i18n_apple_免费试用全部功能" = "Get a free trial";
+
+/* i18n_apple_面部光 */
+"i18n_apple_面部光" = "Facial light";
+
+/* i18n_apple_面部精修 */
+"i18n_apple_面部精修" = "Retouch";
+
+/* i18n_apple_描写 */
+"i18n_apple_描写" = "Narrative";
+
+/* i18n_apple_秒 */
+"i18n_apple_秒" = "S";
+
+/* i18n_apple_名称 */
+"i18n_apple_名称" = "Name";
+
+/* i18n_apple_专辑主题 */
+"i18n_apple_专辑主题" = "Name";
+
+/* i18n_apple_访问密码 */
+"i18n_apple_访问密码" = "Password";
+
+/* i18n_apple_分享有效期 */
+"i18n_apple_分享有效期" = "Time limit";
+
+/* i18n_apple_模糊笔 */
+"i18n_apple_模糊笔" = "Blur";
+
+/* i18n_apple_模糊度 */
+"i18n_apple_模糊度" = "Ambiguity";
+
+/* i18n_apple_模拟操作中 */
+"i18n_apple_模拟操作中" = "Simulating";
+
+/* i18n_apple_磨皮 */
+"i18n_apple_磨皮" = "Smooth";
+
+/* i18n_apple_磨皮不糊，只在inFace(⁎⁍̴̛ᴗ⁍̴̛⁎) */
+"i18n_apple_磨皮不糊，只在inFace(⁎⁍̴̛ᴗ⁍̴̛⁎)" = "One click, photo more beautiful 🧚‍♀️";
+
+/* i18n_apple_磨皮有质感 */
+"i18n_apple_磨皮有质感" = "Microdermabrasion has texture";
+
+/* i18n_apple_磨平皮肤，使皮肤更光滑 */
+"i18n_apple_磨平皮肤，使皮肤更光滑" = "Smooth skin to make skin more smooth.";
+
+/* i18n_apple_墨黛 */
+"i18n_apple_墨黛" = "Ink";
+
+/* i18n_apple_默认保留EXIF信息 */
+"i18n_apple_默认保留EXIF信息" = "Keep EXIF ​​information by default";
+
+/* i18n_apple_默认导出格式 */
+"i18n_apple_默认导出格式" = "Format";
+
+/* i18n_apple_默认导出画质 */
+"i18n_apple_默认导出画质" = "Quality";
+
+/* i18n_apple_那些年 */
+"i18n_apple_那些年" = "those years";
+
+/* i18n_apple_内存不足，无法保存照片 */
+"i18n_apple_内存不足，无法保存照片" = "Insufficient memory to save photos";
+
+/* i18n_apple_内眼角 */
+"i18n_apple_内眼角" = "Inner corner";
+
+/* i18n_apple_你的专属折扣 */
+"i18n_apple_你的专属折扣" = "Your exclusive discount";
+
+/* i18n_apple_你有一份专属折扣待领取，点击查看> */
+"i18n_apple_你有一份专属折扣待领取，点击查看>" = "You have an exclusive discount to claim, click to view>";
+
+/* i18n_apple_年度会员 */
+"i18n_apple_年度会员" = "Annual member VIP";
+
+/* i18n_apple_您的手机没有安装微信 */
+"i18n_apple_您的手机没有安装微信" = "WeChat is not installed on your mobile phone";
+
+/* i18n_apple_您可以选择继续编辑或退出 */
+"i18n_apple_您可以选择继续编辑或退出" = "You can continue editing or exit";
+
+/* i18n_apple_扭曲 */
+"i18n_apple_扭曲" = "Distortion";
+
+/* i18n_apple_暖光 */
+"i18n_apple_暖光" = "Warm light";
+
+/* i18n_apple_欧美 */
+"i18n_apple_欧美" = "Western";
+
+/* i18n_apple_朋友圈骗赞技巧 */
+"i18n_apple_朋友圈骗赞技巧" = "Tricks to increase likes.";
+
+/* i18n_apple_批处理 */
+"i18n_apple_批处理" = "Batch processing";
+
+/* i18n_apple_批量处理 */
+"i18n_apple_批量处理" = "Batch processing";
+
+/* i18n_apple_批量处理，提高修图效率 */
+"i18n_apple_批量处理，提高修图效率" = "Batch processing improves efficiency";
+
+/* i18n_apple_批量处理中请不要退出inFace或锁屏，不然可能会处理失败哦 */
+"i18n_apple_批量处理中请不要退出inFace或锁屏，不然可能会处理失败哦" = "Please do not exit inFace or lock the screen during batch processing, otherwise the processing may fail";
+
+/* i18n_apple_批量分享 */
+"i18n_apple_批量分享" = "Batch sharing";
+
+/* i18n_apple_批量分享，极速交付无压力 */
+"i18n_apple_批量分享，极速交付无压力" = "Batch sharing and fast delivery";
+
+/* i18n_apple_平衡 */
+"i18n_apple_平衡" = "Balance";
+
+/* i18n_apple_处理用时 */
+"i18n_apple_处理用时" = "Total time";
+
+/* i18n_apple_平均用时 */
+"i18n_apple_平均用时" = "Average time";
+
+/* i18n_apple_平面模特都在使用的P图神器💃 */
+"i18n_apple_平面模特都在使用的P图神器💃" = "inFace! Being used by models!💃";
+
+/* i18n_apple_曝光度 */
+"i18n_apple_曝光度" = "Exposure";
+
+/* i18n_apple_七边形 */
+"i18n_apple_七边形" = "Heptagon";
+
+/* i18n_apple_七夕快乐 */
+"i18n_apple_七夕快乐" = "七夕快乐";
+
+/* i18n_apple_期待你在这里创造出更多好照片！ */
+"i18n_apple_期待你在这里创造出更多好照片！" = "Looking forward to you creating more good photos here!";
+
+/* i18n_apple_其他照片应用效果 */
+"i18n_apple_其他照片应用效果" = "其他照片应用效果";
+
+/* i18n_apple_奇妙画笔 */
+"i18n_apple_奇妙画笔" = "Brush";
+
+/* i18n_apple_起点 */
+"i18n_apple_起点" = "Start";
+
+/* i18n_apple_气色 */
+"i18n_apple_气色" = "Complexion";
+
+/* i18n_apple_千万 */
+"i18n_apple_千万" = "millions of";
+
+/* i18n_apple_铅笔画 */
+"i18n_apple_铅笔画" = "Pencil draw";
+
+/* i18n_apple_前往设置 */
+"i18n_apple_前往设置" = "Go to settings";
+
+/* i18n_apple_前往设置页 */
+"i18n_apple_前往设置页" = "Go to the Settings";
+
+/* i18n_apple_强光 */
+"i18n_apple_强光" = "Glare";
+
+/* i18n_apple_抢先体验最新功能 */
+"i18n_apple_抢先体验最新功能" = "Experience the latest features in advance";
+
+/* i18n_apple_切换到VIP图标 */
+"i18n_apple_切换到VIP图标" = "Switch to VIP icon";
+
+/* i18n_apple_切换人脸 */
+"i18n_apple_切换人脸" = "Switch face";
+
+/* i18n_apple_青色 */
+"i18n_apple_青色" = "Cyan";
+
+/* i18n_apple_轻擦斑点和痘印将其去除 */
+"i18n_apple_轻擦斑点和痘印将其去除" = "Erase the fleck and acne to remove.";
+
+/* i18n_apple_轻点并按住，将你的作品与原始照片进行对比 */
+"i18n_apple_轻点并按住，将你的作品与原始照片进行对比" = "Tap and hold to compare your result with the original.";
+
+/* i18n_apple_轻点以选择滤镜，感受更多神奇的效果 */
+"i18n_apple_轻点以选择滤镜，感受更多神奇的效果" = "Click to select a filter to create more miraculous effects.";
+
+/* i18n_apple_轻滑实现毛孔细节精修 */
+"i18n_apple_轻滑实现毛孔细节精修" = "Easily realize the refinement of pore.";
+
+/* i18n_apple_轻轻涂抹 自然肌肤无瑕疵 */
+"i18n_apple_轻轻涂抹 自然肌肤无瑕疵" = "Apply lightly Naturally flawless skin";
+
+/* i18n_apple_轻扫面部，打造立体轮廓 */
+"i18n_apple_轻扫面部，打造立体轮廓" = "Sweep face to create 3D contour.";
+
+/* i18n_apple_轻扫面部，使其明亮白皙 */
+"i18n_apple_轻扫面部，使其明亮白皙" = "Sweep face to make skin white.";
+
+/* i18n_apple_轻扫皮肤，打造亮丽肤色 */
+"i18n_apple_轻扫皮肤，打造亮丽肤色" = "Sweep skin to create bright skin.";
+
+/* i18n_apple_轻扫眼睛，使其明亮有神 */
+"i18n_apple_轻扫眼睛，使其明亮有神" = "Sweep eyes to create bright eyes.";
+
+/* i18n_apple_倾斜 */
+"i18n_apple_倾斜" = "Tilt";
+
+/* i18n_apple_清除 */
+"i18n_apple_清除" = "Clear";
+
+/* i18n_apple_清爽不油腻 */
+"i18n_apple_清爽不油腻" = "Refreshing and not greasy";
+
+/* i18n_apple_清晰度 */
+"i18n_apple_清晰度" = "Definition";
+
+/* i18n_apple_晴 */
+"i18n_apple_晴" = "Sunny";
+
+/* i18n_apple_请点击重试哦 */
+"i18n_apple_请点击重试哦" = "Please click to try again";
+
+/* i18n_apple_请调整参数后再保存 */
+"i18n_apple_请调整参数后再保存" = "Please adjust the parameters before saving";
+
+/* i18n_apple_请放心，inFace不会打扰你 */
+"i18n_apple_请放心，inFace不会打扰你" = "inFace won't disturb you";
+
+/* i18n_apple_请设置邮件帐户来发送电子邮件 */
+"i18n_apple_请设置邮件帐户来发送电子邮件" = "Please set up the Email account to receive email.";
+
+/* i18n_apple_请手动微调照片到最佳效果 */
+"i18n_apple_请手动微调照片到最佳效果" = "Manually fine-tune the picture to best effect.";
+
+/* i18n_apple_请输入名称 */
+"i18n_apple_请输入名称" = "Please enter the name";
+
+/* i18n_apple_请输入邀请码 */
+"i18n_apple_请输入邀请码" = "Please enter the invitation code";
+
+/* i18n_apple_请先调整肤质参数后再保存 */
+"i18n_apple_请先调整肤质参数后再保存" = "Please adjust the skin quality parameters before saving";
+
+/* i18n_apple_请先调整肤质参数后再使用 */
+"i18n_apple_请先调整肤质参数后再使用" = "Please adjust the skin quality parameters before using";
+
+/* i18n_apple_请选择以下类型照片 */
+"i18n_apple_请选择以下类型照片" = "请选择以下类型照片";
+
+/* i18n_apple_请选择照片 */
+"i18n_apple_请选择照片" = "Select photos";
+
+/* i18n_apple_请重新选择一张照片 */
+"i18n_apple_请重新选择一张照片" = "Please reselect a photo.";
+
+/* i18n_apple_区域保护 */
+"i18n_apple_区域保护" = "Protection";
+
+/* i18n_apple_祛除法令纹，打造完美笑容 */
+"i18n_apple_祛除法令纹，打造完美笑容" = "Remove the nasolabial folds to create perfect smile.";
+
+/* i18n_apple_祛除脸部痘痘、痘印，使皮肤更光滑 */
+"i18n_apple_祛除脸部痘痘、痘印，使皮肤更光滑" = "Remove acne and pockmark to make skin more smooth.";
+
+/* i18n_apple_祛除眼袋、黑眼圈，使整体精神更饱满 */
+"i18n_apple_祛除眼袋、黑眼圈，使整体精神更饱满" = "Remove the eye bag to refresh.";
+
+/* i18n_apple_祛除鱼尾纹，使眼部更紧致 */
+"i18n_apple_祛除鱼尾纹，使眼部更紧致" = "Remove crow's feet to compact your eye skin.";
+
+/* i18n_apple_祛痘 */
+"i18n_apple_祛痘" = "Acne";
+
+/* i18n_apple_祛法令纹 */
+"i18n_apple_祛法令纹" = "Nasolabial";
+
+/* i18n_apple_祛黑头 */
+"i18n_apple_祛黑头" = "Blackheads";
+
+/* i18n_apple_祛红血丝 */
+"i18n_apple_祛红血丝" = "Reddish";
+
+/* i18n_apple_祛眼袋 */
+"i18n_apple_祛眼袋" = "Eyebag";
+
+/* i18n_apple_祛油光 */
+"i18n_apple_祛油光" = "Gloss";
+
+/* i18n_apple_祛鱼尾纹 */
+"i18n_apple_祛鱼尾纹" = "Crow's Feet";
+
+/* i18n_apple_取消 */
+"i18n_apple_取消" = "Cancel";
+
+/* i18n_apple_取消当前效果并返回上一页 */
+"i18n_apple_取消当前效果并返回上一页" = "Cancel save";
+
+/* i18n_apple_取消购买 */
+"i18n_apple_取消购买" = "Cancel Purchase";
+
+/* i18n_apple_取消全选 */
+"i18n_apple_取消全选" = "Cancel";
+
+/* i18n_apple_取消收藏 */
+"i18n_apple_取消收藏" = "Remove from Saved ";
+
+/* i18n_apple_去抽奖 */
+"i18n_apple_去抽奖" = "Go to draw";
+
+/* i18n_apple_批量分享照片 */
+"i18n_apple_批量分享照片" = "Bath share photos";
+
+/* i18n_apple_去分享 */
+"i18n_apple_去分享" = "Go share";
+
+/* i18n_apple_去开启 */
+"i18n_apple_去开启" = "Connect";
+
+/* i18n_apple_去开启通知 */
+"i18n_apple_去开启通知" = "Enable the notice.";
+
+/* i18n_apple_去看看 */
+"i18n_apple_去看看" = "Continue";
+
+/* i18n_apple_去批量 */
+"i18n_apple_去批量" = "Go batch";
+
+/* i18n_apple_去评价 */
+"i18n_apple_去评价" = "Go review";
+
+/* i18n_apple_去使用 */
+"i18n_apple_去使用" = "To use";
+
+/* i18n_apple_去试试 */
+"i18n_apple_去试试" = "Try it ";
+
+/* i18n_apple_去首页 */
+"i18n_apple_去首页" = "Home";
+
+/* i18n_apple_全部恢复 */
+"i18n_apple_全部恢复" = "Restore all";
+
+/* i18n_apple_全部模板 */
+"i18n_apple_全部模板" = "All templates";
+
+/* i18n_apple_全部预设 */
+"i18n_apple_全部预设" = "All presets";
+
+/* i18n_apple_全图镜像 */
+"i18n_apple_全图镜像" = "Flip";
+
+/* i18n_apple_全新3D微笑 */
+"i18n_apple_全新3D微笑" = "New 3D smile";
+
+/* i18n_apple_全新3D五官调整 */
+"i18n_apple_全新3D五官调整" = "New 3D facial features adjustment";
+
+/* i18n_apple_全新调色功能 */
+"i18n_apple_全新调色功能" = "New toner function.";
+
+/* i18n_apple_全选 */
+"i18n_apple_全选" = "Select all";
+
+/* i18n_apple_权益 */
+"i18n_apple_权益" = "Privilege";
+
+/* i18n_apple_缺少一些重要调整 */
+"i18n_apple_缺少一些重要调整" = "缺少一些重要调整";
+
+/* i18n_apple_确定 */
+"i18n_apple_确定" = "Sure";
+
+/* i18n_apple_确定不继续了吗？ */
+"i18n_apple_确定不继续了吗？" = "Are you sure not to continue?";
+
+/* i18n_apple_确定放弃 */
+"i18n_apple_确定放弃" = "Give up";
+
+/* i18n_apple_确定放弃当前效果吗？ */
+"i18n_apple_确定放弃当前效果吗？" = "Are you sure to abandon the current effect?";
+
+/* i18n_apple_确定放弃你的作品吗？ */
+"i18n_apple_确定放弃你的作品吗？" = "Are you sure to give up your work?";
+
+/* i18n_apple_确认 */
+"i18n_apple_确认" = "OK";
+
+/* i18n_apple_确认删除 */
+"i18n_apple_确认删除" = "Delete";
+
+/* i18n_apple_让鼻子挺拔，塑造完美鼻型 */
+"i18n_apple_让鼻子挺拔，塑造完美鼻型" = "Let nose more straight and create a perfect nose.";
+
+/* i18n_apple_让肌肤更具质感 */
+"i18n_apple_让肌肤更具质感" = "Make skin more textured.";
+
+/* i18n_apple_让每一张人像与众不同 */
+"i18n_apple_让每一张人像与众不同" = "Make every portrait different";
+
+/* i18n_apple_让面部的高光阴影增强，使五官更立体 */
+"i18n_apple_让面部的高光阴影增强，使五官更立体" = "Enhance highlights to make the face more solid.";
+
+/* i18n_apple_让你的照片更有故事感 */
+"i18n_apple_让你的照片更有故事感" = "Adds life to your photos ";
+
+/* i18n_apple_让你的自拍更细腻、更高级 */
+"i18n_apple_让你的自拍更细腻、更高级" = "Make your selfies more delicate and advanced💃";
+
+/* i18n_apple_热门功能 */
+"i18n_apple_热门功能" = "Popular features";
+
+/* i18n_apple_人使用过 */
+"i18n_apple_人使用过" = "%@人使用过";
+
+/* i18n_apple_人像保护 */
+"i18n_apple_人像保护" = "Portrait protection";
+
+/* i18n_apple_人像大师 */
+"i18n_apple_人像大师" = "inFace";
+
+/* i18n_apple_柔光 */
+"i18n_apple_柔光" = "Soft";
+
+/* i18n_apple_柔光模式 */
+"i18n_apple_柔光模式" = "Soft";
+
+/* i18n_apple_如何快速选中调整图层 */
+"i18n_apple_如何快速选中调整图层" = "如何快速选中调整图层";
+
+/* i18n_apple_如何添加多个纹理 */
+"i18n_apple_如何添加多个纹理" = "如何添加多个纹理";
+
+/* i18n_apple_三角形 */
+"i18n_apple_三角形" = "triangle";
+
+/* i18n_apple_三十项无级微控让五官更显自然 */
+"i18n_apple_三十项无级微控让五官更显自然" = "30 features make the facial more natural.";
+
+/* i18n_apple_三叶草 */
+"i18n_apple_三叶草" = "Clover";
+
+/* i18n_apple_扫码查看高清大图 */
+"i18n_apple_扫码查看高清大图" = "Scan the QR code to view the HD image";
+
+/* i18n_apple_色彩 */
+"i18n_apple_色彩" = "Color";
+
+/* i18n_apple_色彩调整 */
+"i18n_apple_色彩调整" = "Pick color";
+
+/* i18n_apple_色彩融合 */
+"i18n_apple_色彩融合" = "Color fusion";
+
+/* i18n_apple_色调 */
+"i18n_apple_色调" = "Color Tone";
+
+/* i18n_apple_色温 */
+"i18n_apple_色温" = "Temp";
+
+/* i18n_apple_色相 */
+"i18n_apple_色相" = "Hue";
+
+/* i18n_apple_山根 */
+"i18n_apple_山根" = "Nose root";
+
+/* i18n_apple_删除 */
+"i18n_apple_删除" = "Delete";
+
+/* i18n_apple_删除成功 */
+"i18n_apple_删除成功" = "Successfully delete";
+
+/* i18n_apple_删除后你的照片将停止分享，确定删除吗？ */
+"i18n_apple_删除后你的照片将停止分享，确定删除吗？" = "After deleting, your photos will stop sharing. Are you sure?";
+
+/* i18n_apple_删除失败 */
+"i18n_apple_删除失败" = "Failed to delete";
+
+/* i18n_apple_闪电 */
+"i18n_apple_闪电" = "lightning";
+
+/* i18n_apple_商品失效 */
+"i18n_apple_商品失效" = "Product Failure";
+
+/* i18n_apple_商业广告级的皮肤质感，点击拥有👆 */
+"i18n_apple_商业广告级的皮肤质感，点击拥有👆" = "Edit the photo and share it!💃";
+
+/* i18n_apple_商业级人像肤质首次亮相 */
+"i18n_apple_商业级人像肤质首次亮相" = "Advertising portrait skin.";
+
+/* i18n_apple_商业级人像精修神器 */
+"i18n_apple_商业级人像精修神器" = "Commercial Portrait";
+
+/* i18n_apple_上传失败 */
+"i18n_apple_上传失败" = "Upload failed";
+
+/* i18n_apple_上传中 */
+"i18n_apple_上传中" = "Uploading";
+
+/* i18n_apple_上次保存不成功 */
+"i18n_apple_上次保存不成功" = "Unsuccessful saving last time, retry to save the last editing?";
+
+/* i18n_apple_上次编辑的照片未完成 */
+"i18n_apple_上次编辑的照片未完成" = "The last edited photo not finished";
+
+/* i18n_apple_上次修改 */
+"i18n_apple_上次修改" = "Last Time";
+
+/* i18n_apple_上对称 */
+"i18n_apple_上对称" = "U-Symmetry";
+
+/* i18n_apple_深度对象分析… */
+"i18n_apple_深度对象分析…" = "Depth object analysis…";
+
+/* i18n_apple_升级会员 */
+"i18n_apple_升级会员" = "Upgrade member";
+
+/* i18n_apple_升级会员解锁 */
+"i18n_apple_升级会员解锁" = "Upgrade to unlock";
+
+/* i18n_apple_升级inFace VIP */
+"i18n_apple_升级inFace VIP" = "Upgrade inFace VIP";
+
+/* i18n_apple_省去单张分享烦恼 */
+"i18n_apple_省去单张分享烦恼" = "Save the trouble of single sharing";
+
+/* i18n_apple_剩余 %d 次 */
+"i18n_apple_剩余 %d 次" = "%d times left";
+
+/* i18n_apple_石墙面 */
+"i18n_apple_石墙面" = "Stone wall";
+
+/* i18n_apple_石印 */
+"i18n_apple_石印" = "Lithography";
+
+/* i18n_apple_时 */
+"i18n_apple_时" = "H";
+
+/* i18n_apple_时限 */
+"i18n_apple_时限" = "Time limit";
+
+/* i18n_apple_实用 */
+"i18n_apple_实用" = "实用";
+
+/* i18n_apple_使肌肤质感更细腻 */
+"i18n_apple_使肌肤质感更细腻" = "Make skin more delicate.";
+
+/* i18n_apple_使皮肤更白嫩红润、让偏色肤色变正常 */
+"i18n_apple_使皮肤更白嫩红润、让偏色肤色变正常" = "Makes the skin rosy and normal.";
+
+/* i18n_apple_使皮肤更具有质感 */
+"i18n_apple_使皮肤更具有质感" = "Make skin more smooth.";
+
+/* i18n_apple_使用“橡皮擦”，进行局部优化 */
+"i18n_apple_使用“橡皮擦”，进行局部优化" = "Use the \“Eraser\” for local optimization.";
+
+/* i18n_apple_使用精选纹理选择天空改善坏天气！ */
+"i18n_apple_使用精选纹理选择天空改善坏天气！" = "使用精选纹理选择天空改善坏天气！";
+
+/* i18n_apple_使用面部贴纸能够智能快速上脸哦～ */
+"i18n_apple_使用面部贴纸能够智能快速上脸哦～" = "使用面部贴纸能够智能快速上脸哦～";
+
+/* i18n_apple_使用条款 */
+"i18n_apple_使用条款" = "Terms of use";
+
+/* i18n_apple_使用网格，辅助修饰更加精准 */
+"i18n_apple_使用网格，辅助修饰更加精准" = "Use grids to aid in more precise modifications.";
+
+/* i18n_apple_使照片构图更加立体 */
+"i18n_apple_使照片构图更加立体" = "Make the photo composition more stereoscopic.";
+
+/* i18n_apple_使整体画面更生动 */
+"i18n_apple_使整体画面更生动" = "Make the overall picture more vivid.";
+
+/* i18n_apple_示范 */
+"i18n_apple_示范" = "Demo";
+
+/* i18n_apple_示例图 */
+"i18n_apple_示例图" = "Sample";
+
+/* i18n_apple_试试其他光线吧 */
+"i18n_apple_试试其他光线吧" = "Try other light";
+
+/* i18n_apple_试试收藏这个预设吧！ */
+"i18n_apple_试试收藏这个预设吧！" = "Try saving this preset! ";
+
+/* i18n_apple_试试手气 */
+"i18n_apple_试试手气" = "试试手气";
+
+/* i18n_apple_试一试 */
+"i18n_apple_试一试" = "Start";
+
+/* i18n_apple_试一下这儿，神奇的皮肤美化自动完成。 */
+"i18n_apple_试一下这儿，神奇的皮肤美化自动完成。" = "2/4  Click here to auto beautify skin.";
+
+/* i18n_apple_试用结束后%@，每月仅%@ */
+"i18n_apple_试用结束后%@，每月仅%@" = "%@/year after trial, %@/month";
+
+/* i18n_apple_试用全部功能 */
+"i18n_apple_试用全部功能" = "Free trial";
+
+/* i18n_apple_是 */
+"i18n_apple_是" = "Yes";
+
+/* i18n_apple_是的 */
+"i18n_apple_是的" = "Yes";
+
+/* i18n_apple_是否保存为我的肤质预设？ */
+"i18n_apple_是否保存为我的肤质预设？" = "Whether to save as the preset of my skin type?";
+
+/* i18n_apple_是否放弃当前操作图片？ */
+"i18n_apple_是否放弃当前操作图片？" = "Whether to discard the image in processing?";
+
+/* i18n_apple_是否更新我的肤质预设？ */
+"i18n_apple_是否更新我的肤质预设？" = "Whether to update the preset of my skin type?";
+
+/* i18n_apple_是否继续进行编辑？ */
+"i18n_apple_是否继续进行编辑？" = "Do you want to continue editing?";
+
+/* i18n_apple_是否退出 */
+"i18n_apple_是否退出" = "Exit?";
+
+/* i18n_apple_是否需要重新下载 */
+"i18n_apple_是否需要重新下载" = "Download again？";
+
+/* i18n_apple_是否要从以下位置删除此照片？ */
+"i18n_apple_是否要从以下位置删除此照片？" = "Whether from the following location delete this photo?";
+
+/* i18n_apple_是否要从以下位置删除选中照片？ */
+"i18n_apple_是否要从以下位置删除选中照片？" = "Whether from the following location delete these photos?";
+
+/* i18n_apple_是否应用当前效果 */
+"i18n_apple_是否应用当前效果" = "Apply the current effect?";
+
+/* i18n_apple_是否有人物… */
+"i18n_apple_是否有人物…" = "Whether there is human or not...";
+
+/* i18n_apple_收藏 */
+"i18n_apple_收藏" = "Saved ";
+
+/* i18n_apple_收藏、自定义 */
+"i18n_apple_收藏、自定义" = "Collection, Custom";
+
+/* i18n_apple_收藏成功 */
+"i18n_apple_收藏成功" = "Successfully saved";
+
+/* i18n_apple_手动恢复 */
+"i18n_apple_手动恢复" = "Restore manually";
+
+/* i18n_apple_手动塑形 */
+"i18n_apple_手动塑形" = "Reshape";
+
+/* i18n_apple_手动塑形中保护可保护背景不变形～ */
+"i18n_apple_手动塑形中保护可保护背景不变形～" = "手动塑形中保护可保护背景不变形～";
+
+/* i18n_apple_手动消除 */
+"i18n_apple_手动消除" = "Erase manually";
+
+/* i18n_apple_手绘 */
+"i18n_apple_手绘" = "Hand Painted";
+
+/* i18n_apple_手指按住，移动\n营造不同的光线效果 */
+"i18n_apple_手指按住，移动\n营造不同的光线效果" = "Press and move your fingers\nCreate different light effects";
+
+/* i18n_apple_首年¥88，次年自动续费¥128，可随时取消 */
+"i18n_apple_首年¥88，次年自动续费¥128，可随时取消" = "%@ first year, auto renewal %@ next year";
+
+/* i18n_apple_首页左上角可以设置高质量画质导出照片哦～ */
+"i18n_apple_首页左上角可以设置高质量画质导出照片哦～" = "首页左上角可以设置高质量画质导出照片哦～";
+
+/* i18n_apple_瘦颌骨 */
+"i18n_apple_瘦颌骨" = "Jaw";
+
+/* i18n_apple_瘦脸 */
+"i18n_apple_瘦脸" = "Face-lift";
+
+/* i18n_apple_瘦颧骨 */
+"i18n_apple_瘦颧骨" = "Cheekbone";
+
+/* i18n_apple_数据显示，最受网红喜爱的滤镜是这几款！ */
+"i18n_apple_数据显示，最受网红喜爱的滤镜是这几款！" = "Natural smooth your skin! 😊";
+
+/* i18n_apple_刷新完成 */
+"i18n_apple_刷新完成" = "刷新完成";
+
+/* i18n_apple_甩掉拜拜肉教程 */
+"i18n_apple_甩掉拜拜肉教程" = "Slim Arms Tutorial";
+
+/* i18n_apple_双色光 */
+"i18n_apple_双色光" = "Two-color light";
+
+/* i18n_apple_双指缩放查看细节 */
+"i18n_apple_双指缩放查看细节" = "Two-finger zoom to view details";
+
+/* i18n_apple_双指移动照片，操作更流畅 */
+"i18n_apple_双指移动照片，操作更流畅" = "Move the photo with two fingers.";
+
+/* i18n_apple_水彩 */
+"i18n_apple_水彩" = "Watercolor";
+
+/* i18n_apple_水滴 */
+"i18n_apple_水滴" = "Water drop";
+
+/* i18n_apple_水平镜像 */
+"i18n_apple_水平镜像" = "Flip Horizontal";
+
+/* i18n_apple_水平拉伸 */
+"i18n_apple_水平拉伸" = "H-Stretch";
+
+/* i18n_apple_水平透视 */
+"i18n_apple_水平透视" = "H-Perspective";
+
+/* i18n_apple_水色 */
+"i18n_apple_水色" = "Water color";
+
+/* i18n_apple_水意 */
+"i18n_apple_水意" = "Water";
+
+/* i18n_apple_顺畅的在功能间切换，直至完成修饰 */
+"i18n_apple_顺畅的在功能间切换，直至完成修饰" = "Switch among functions until finish the adjustment.";
+
+/* i18n_apple_送你一份冬日福利，年会员7折购，仅需$20.99 */
+"i18n_apple_送你一份冬日福利，年会员7折购，仅需$20.99" = "Winter benefit, 30% off annual membership, only $20.99";
+
+/* i18n_apple_塑形保护 */
+"i18n_apple_塑形保护" = "Shaping Protection";
+
+/* i18n_apple_塑形不穿帮 */
+"i18n_apple_塑形不穿帮" = "Shaping without piercing";
+
+/* i18n_apple_缩放 */
+"i18n_apple_缩放" = "Zoom";
+
+/* i18n_apple_缩放调整手臂细节，修饰手臂拜拜肉 */
+"i18n_apple_缩放调整手臂细节，修饰手臂拜拜肉" = "Zoom to adjust the details of arm and create slim arm.";
+
+/* i18n_apple_缩放照片 */
+"i18n_apple_缩放照片" = "Zoom Photo";
+
+/* i18n_apple_所有改动将会丢失 */
+"i18n_apple_所有改动将会丢失" = "All changes will be lost";
+
+/* i18n_apple_所有照片 */
+"i18n_apple_所有照片" = "Photos";
+
+/* i18n_apple_太棒啦！技巧学习完成 */
+"i18n_apple_太棒啦！技巧学习完成" = "Great! Skills learning completed";
+
+/* i18n_apple_太棒啦！效果制作完成 */
+"i18n_apple_太棒啦！效果制作完成" = "Great! Effect production completed";
+
+/* i18n_apple_提高色彩通透性，让画面更干净！ */
+"i18n_apple_提高色彩通透性，让画面更干净！" = "Improve color transparency.";
+
+/* i18n_apple_提高照片整体亮度，使照片更明亮 */
+"i18n_apple_提高照片整体亮度，使照片更明亮" = "Improve the overall brightness to make the photo brighter.";
+
+/* i18n_apple_提亮肤色 */
+"i18n_apple_提亮肤色" = "Brighten";
+
+/* i18n_apple_提亮照片中心亮度，使面部轮廓更加清晰 */
+"i18n_apple_提亮照片中心亮度，使面部轮廓更加清晰" = "Highlight the center to make facial contour clearer.";
+
+/* i18n_apple_体验更多VIP功能 */
+"i18n_apple_体验更多VIP功能" = "More VIP functions";
+
+/* i18n_apple_替换背景，让照片背景不再凌乱 */
+"i18n_apple_替换背景，让照片背景不再凌乱" = "Combine with portrait function to make finer pictures";
+
+/* i18n_apple_天 */
+"i18n_apple_天" = "day";
+
+/* i18n_apple_添加贴纸，使照片更富趣味性 */
+"i18n_apple_添加贴纸，使照片更富趣味性" = "Add stickers to make the photo more interesting";
+
+/* i18n_apple_添加纹理，使照片更有意境 */
+"i18n_apple_添加纹理，使照片更有意境" = "Add texture to enrich the photo";
+
+/* i18n_apple_添加羽毛，使整体画面更生动 */
+"i18n_apple_添加羽毛，使整体画面更生动" = "Add feathers to make the overall picture more vivid.";
+
+/* i18n_apple_添加自定义 */
+"i18n_apple_添加自定义" = "Add custom effect";
+
+/* i18n_apple_甜美 */
+"i18n_apple_甜美" = "Sweet";
+
+/* i18n_apple_填充 */
+"i18n_apple_填充" = "Fill";
+
+/* i18n_apple_条款与申明 */
+"i18n_apple_条款与申明" = "Clauses and statement";
+
+/* i18n_apple_跳过 */
+"i18n_apple_跳过" = "Skip";
+
+/* i18n_apple_跳过这张 */
+"i18n_apple_跳过这张" = "Skip it";
+
+/* i18n_apple_贴出趣味照片 */
+"i18n_apple_贴出趣味照片" = "Post funny photos";
+
+/* i18n_apple_通用技巧 */
+"i18n_apple_通用技巧" = "General skills";
+
+/* i18n_apple_通知我 */
+"i18n_apple_通知我" = "Notice me";
+
+/* i18n_apple_同意并接受 */
+"i18n_apple_同意并接受" = "I agree";
+
+/* i18n_apple_瞳间距 */
+"i18n_apple_瞳间距" = "Pupil distance";
+
+/* i18n_apple_投影 */
+"i18n_apple_投影" = "Projection";
+
+/* i18n_apple_投影大小 */
+"i18n_apple_投影大小" = "Projection size";
+
+/* i18n_apple_透明度 */
+"i18n_apple_透明度" = "transparency";
+
+/* i18n_apple_突出细节 */
+"i18n_apple_突出细节" = "Structure";
+
+/* i18n_apple_图层编辑 */
+"i18n_apple_图层编辑" = "Layer editing";
+
+/* i18n_apple_图像智能识别中… */
+"i18n_apple_图像智能识别中…" = "Image intelligent recognition…";
+
+/* i18n_apple_笔触 */
+"i18n_apple_笔触" = "Strokes";
+
+/* i18n_apple_涂抹 */
+"i18n_apple_涂抹" = "Brush";
+
+/* i18n_apple_涂抹、擦除 */
+"i18n_apple_涂抹、擦除" = "Smear,Erase";
+
+/* i18n_apple_涂抹区域使其获得保护，不受其他功能操作影响 */
+"i18n_apple_涂抹区域使其获得保护，不受其他功能操作影响" = "Protect your photos from other functional operations.";
+
+/* i18n_apple_涂鸦 */
+"i18n_apple_涂鸦" = "Graffiti";
+
+/* i18n_apple_推动 */
+"i18n_apple_推动" = "Push";
+
+/* i18n_apple_推动手臂，调整手臂轮廓。 */
+"i18n_apple_推动手臂，调整手臂轮廓。" = "Push arm to adjust the arm contour.";
+
+/* i18n_apple_退出 */
+"i18n_apple_退出" = "Exit";
+
+/* i18n_apple_退出编辑 */
+"i18n_apple_退出编辑" = "Exit";
+
+/* i18n_apple_退出编辑吗？ */
+"i18n_apple_退出编辑吗？" = "Quit?";
+
+/* i18n_apple_退出攻略 */
+"i18n_apple_退出攻略" = "Quit";
+
+/* i18n_apple_退出将不会保存之前的所有操作 */
+"i18n_apple_退出将不会保存之前的所有操作" = "The previous edit will not be saved once exit.";
+
+/* i18n_apple_退出批量 */
+"i18n_apple_退出批量" = "Exit";
+
+/* i18n_apple_褪色 */
+"i18n_apple_褪色" = "Fade";
+
+/* i18n_apple_拖动这里，调整缩放范围 */
+"i18n_apple_拖动这里，调整缩放范围" = "Drag to adjust the zooming scope.";
+
+/* i18n_apple_拖拉 */
+"i18n_apple_拖拉" = "Drag & drop";
+
+/* i18n_apple_椭圆 */
+"i18n_apple_椭圆" = "oval";
+
+/* i18n_apple_全新版本 功能升级 */
+"i18n_apple_全新版本 功能升级" = "New version features";
+
+/* i18n_apple_正在保存照片… */
+"i18n_apple_正在保存照片…" = "Saving…";
+
+/* i18n_apple_外眼角 */
+"i18n_apple_外眼角" = "Outer corner";
+
+/* i18n_apple_完成 */
+"i18n_apple_完成" = "OK";
+
+/* i18n_apple_完成最后一步 */
+"i18n_apple_完成最后一步" = "Complete the last step";
+
+/* i18n_apple_玩趣奇妙画笔 */
+"i18n_apple_玩趣奇妙画笔" = "Magic Brush";
+
+/* i18n_apple_玩趣贴纸 */
+"i18n_apple_玩趣贴纸" = "Stickers";
+
+/* i18n_apple_万像素 */
+"i18n_apple_万像素" = "M Pixels";
+
+/* i18n_apple_网红博主同款模板！ */
+"i18n_apple_网红博主同款模板！" = "The same template for bloggers!";
+
+/* i18n_apple_网红贴纸 */
+"i18n_apple_网红贴纸" = "Popular stickers";
+
+/* i18n_apple_网络错误 */
+"i18n_apple_网络错误" = "Network Error";
+
+/* i18n_apple_网络错误，请检查网络设置 */
+"i18n_apple_网络错误，请检查网络设置" = "Network error, please check network settings";
+
+/* i18n_apple_网络世界 */
+"i18n_apple_网络世界" = "Cyberspace";
+
+/* i18n_apple_微笑 */
+"i18n_apple_微笑" = "Smile";
+
+/* i18n_apple_为您推荐适用效果… */
+"i18n_apple_为您推荐适用效果…" = "为您推荐适用效果…";
+
+/* i18n_apple_未安装该App */
+"i18n_apple_未安装该App" = "App isn't installed.";
+
+/* i18n_apple_未获得相册权限，无法保存照片 */
+"i18n_apple_未获得相册权限，无法保存照片" = "Unable to save photo without album permission.";
+
+/* i18n_apple_未检测到面部 */
+"i18n_apple_未检测到面部" = "No face detected";
+
+/* i18n_apple_未检测到人脸 */
+"i18n_apple_未检测到人脸" = "No human face detected";
+
+/* i18n_apple_未检测到人物 */
+"i18n_apple_未检测到人物" = "No human detected";
+
+/* i18n_apple_未开启权限 */
+"i18n_apple_未开启权限" = "Unopened Permission";
+
+/* i18n_apple_未开启网络权限 */
+"i18n_apple_未开启网络权限" = "Network permissions are not turned on";
+
+/* i18n_apple_未能获取到相册权限 */
+"i18n_apple_未能获取到相册权限" = "Failed to obtain album permissions";
+
+/* i18n_apple_未匹配成功，我在努力改进中... */
+"i18n_apple_未匹配成功，我在努力改进中..." = "竟然没找到，我去进修了～";
+
+/* i18n_apple_未识别到人脸 */
+"i18n_apple_未识别到人脸" = "No face recognized.";
+
+/* i18n_apple_未找到素材，请检查网络设置 */
+"i18n_apple_未找到素材，请检查网络设置" = "Please check network Settings";
+
+/* i18n_apple_未知错误 */
+"i18n_apple_未知错误" = "Unknown Mistake";
+
+/* i18n_apple_纹理 */
+"i18n_apple_纹理" = "Textures";
+
+/* i18n_apple_我吹爆( *｀ω´) */
+"i18n_apple_我吹爆( *｀ω´)" = "( *｀ω´)";
+
+/* i18n_apple_我的分享 */
+"i18n_apple_我的分享" = "My share";
+
+/* i18n_apple_我的肤质 */
+"i18n_apple_我的肤质" = "My skin type";
+
+/* i18n_apple_我的肤质已更新 */
+"i18n_apple_我的肤质已更新" = "My skin has been updated";
+
+/* i18n_apple_我的摄影作品集 */
+"i18n_apple_我的摄影作品集" = "My photo portfolio";
+
+/* i18n_apple_我的照片套用后不好看 */
+"i18n_apple_我的照片套用后不好看" = "我的照片套用后不好看";
+
+/* i18n_apple_我的作品集 */
+"i18n_apple_我的作品集" = "My creation";
+
+/* i18n_apple_我想长期使用，但价格太贵了 */
+"i18n_apple_我想长期使用，但价格太贵了" = "I want to use it for a long time, but the price is too expensive";
+
+/* i18n_apple_我知道了 */
+"i18n_apple_我知道了" = "Got it";
+
+/* i18n_apple_我只是随便用用而已 */
+"i18n_apple_我只是随便用用而已" = "I just use it casually";
+
+/* i18n_apple_我只是想试试 */
+"i18n_apple_我只是想试试" = "我只是想试试";
+
+/* i18n_apple_我只用这一次，但价格有点贵 */
+"i18n_apple_我只用这一次，但价格有点贵" = "I only use this once, but the price is a bit expensive";
+
+/* i18n_apple_无法操作，照片已被删除 */
+"i18n_apple_无法操作，照片已被删除" = "Cannot operate, photo has been deleted";
+
+/* i18n_apple_无法读取照片 */
+"i18n_apple_无法读取照片" = "Unable to read photos. \nPlease check your network settings and try again.";
+
+/* i18n_apple_无法读取照片，请检查网络并重试 */
+"i18n_apple_无法读取照片，请检查网络并重试" = "Cannot access pictures. Please check the network connection and try again";
+
+/* i18n_apple_无邮件帐户 */
+"i18n_apple_无邮件帐户" = "No available Email account";
+
+/* i18n_apple_五彩 */
+"i18n_apple_五彩" = "Multicolored";
+
+/* i18n_apple_五官立体 */
+"i18n_apple_五官立体" = "3D Facial";
+
+/* i18n_apple_五官微调 */
+"i18n_apple_五官微调" = "Shaping";
+
+/* i18n_apple_五官微调还能选择多张人脸调整哦！ */
+"i18n_apple_五官微调还能选择多张人脸调整哦！" = "五官微调还能选择多张人脸调整哦！";
+
+/* i18n_apple_喜欢我们吗 */
+"i18n_apple_喜欢我们吗" = "Do you like inFace?";
+
+/* i18n_apple_系统说我付款方式有问题 */
+"i18n_apple_系统说我付款方式有问题" = "The system says there is a problem with my payment method";
+
+/* i18n_apple_细节不丢失，还原你的美 */
+"i18n_apple_细节不丢失，还原你的美" = "No loss of details, restore your beauty";
+
+/* i18n_apple_细节磨皮 */
+"i18n_apple_细节磨皮" = "Smooth Skin";
+
+/* i18n_apple_细节微调 更美更自然 */
+"i18n_apple_细节微调 更美更自然" = "Fine-tuning the details more beautiful and natural";
+
+/* i18n_apple_细纹 */
+"i18n_apple_细纹" = "Fine lines";
+
+/* i18n_apple_下次 */
+"i18n_apple_下次" = "Next Time";
+
+/* i18n_apple_下次可直接应用该效果 */
+"i18n_apple_下次可直接应用该效果" = "You can directly apply this effect next time";
+
+/* i18n_apple_下次使用更方便 */
+"i18n_apple_下次使用更方便" = "Greater convenience for next use";
+
+/* i18n_apple_下对称 */
+"i18n_apple_下对称" = "D-Symmetry";
+
+/* i18n_apple_下一步 */
+"i18n_apple_下一步" = "Next ";
+
+/* i18n_apple_下载iCloud照片 */
+"i18n_apple_下载iCloud照片" = "Download iCloud Photo";
+
+/* i18n_apple_鲜艳度 */
+"i18n_apple_鲜艳度" = "Vividness";
+
+/* i18n_apple_线描 */
+"i18n_apple_线描" = "Line";
+
+/* i18n_apple_线条 */
+"i18n_apple_线条" = "Line";
+
+/* i18n_apple_线性光 */
+"i18n_apple_线性光" = "Linear Light";
+
+/* i18n_apple_限时特惠 */
+"i18n_apple_限时特惠" = "Limited time offer";
+
+/* i18n_apple_限时展示照片 */
+"i18n_apple_限时展示照片" = "Limited time display photos";
+
+/* i18n_apple_相对 */
+"i18n_apple_相对" = "Relative";
+
+/* i18n_apple_相机胶卷 */
+"i18n_apple_相机胶卷" = "My Albums";
+
+/* i18n_apple_想返回？点这个按钮 */
+"i18n_apple_想返回？点这个按钮" = "Want to return? Click this button";
+
+/* i18n_apple_想获取专属修图模板？点这里~ */
+"i18n_apple_想获取专属修图模板？点这里~" = "想获取专属修图模板？点这里~";
+
+/* i18n_apple_想修图却无处下手？点这里~ */
+"i18n_apple_想修图却无处下手？点这里~" = "Edit photo? From here!";
+
+/* i18n_apple_想要跳过某一个步骤 */
+"i18n_apple_想要跳过某一个步骤" = "想要跳过某一个步骤";
+
+/* i18n_apple_消除笔 */
+"i18n_apple_消除笔" = "Eraser";
+
+/* i18n_apple_消除细纹 */
+"i18n_apple_消除细纹" = "Wringkles";
+
+/* i18n_apple_小脸 */
+"i18n_apple_小脸" = "Smaller";
+
+/* i18n_apple_小头 */
+"i18n_apple_小头" = "Small head";
+
+/* i18n_apple_小头、嘴巴高度、瞳间距 */
+"i18n_apple_小头、嘴巴高度、瞳间距" = "Small head, mouth height, interpupillary distance";
+
+/* i18n_apple_小星球 */
+"i18n_apple_小星球" = "Tiny Planet";
+
+/* i18n_apple_小熊 */
+"i18n_apple_小熊" = "Bear";
+
+/* i18n_apple_效果 */
+"i18n_apple_效果" = "Effect";
+
+/* i18n_apple_效果对比 */
+"i18n_apple_效果对比" = "Effect Contrast";
+
+/* i18n_apple_效果对比，点这儿就可以了 */
+"i18n_apple_效果对比，点这儿就可以了" = "4/4  Click here to contrast effect.";
+
+/* i18n_apple_效果与广告图不一致 */
+"i18n_apple_效果与广告图不一致" = "效果与封面图不一致";
+
+/* i18n_apple_效率 */
+"i18n_apple_效率" = "efficiency";
+
+/* i18n_apple_写意 */
+"i18n_apple_写意" = "Freehand";
+
+/* i18n_apple_心形 */
+"i18n_apple_心形" = "Heart-shaped";
+
+/* i18n_apple_新功能：百变背景 */
+"i18n_apple_新功能：百变背景" = "Backgrounds";
+
+/* i18n_apple_新功能：创意特效 */
+"i18n_apple_新功能：创意特效" = "Creative Effects";
+
+/* i18n_apple_新功能：分离色调 */
+"i18n_apple_新功能：分离色调" = "THE NEW";
+
+/* i18n_apple_新功能：精选纹理 */
+"i18n_apple_新功能：精选纹理" = "Texture";
+
+/* i18n_apple_新功能：可选颜色 */
+"i18n_apple_新功能：可选颜色" = "Colors";
+
+/* i18n_apple_新功能：魔法天空 */
+"i18n_apple_新功能：魔法天空" = "Textures: Sky";
+
+/* i18n_apple_新功能：趣味贴纸 */
+"i18n_apple_新功能：趣味贴纸" = "Stickers";
+
+/* i18n_apple_新建分享 */
+"i18n_apple_新建分享" = "New share";
+
+/* i18n_apple_新建分享失败，请重试 */
+"i18n_apple_新建分享失败，请重试" = "New share failed, please try again";
+
+/* i18n_apple_新教程：创意涂鸦 */
+"i18n_apple_新教程：创意涂鸦" = "Creative Doodle";
+
+/* i18n_apple_新教程：广告级人像精修 */
+"i18n_apple_新教程：广告级人像精修" = "Get Texture By 4 Steps";
+
+/* i18n_apple_新教程：拉出大长腿！ */
+"i18n_apple_新教程：拉出大长腿！" = "Create Long Legs";
+
+/* i18n_apple_新教程：甩掉拜拜肉！ */
+"i18n_apple_新教程：甩掉拜拜肉！" = "Create Slim Arm";
+
+/* i18n_apple_新教程：拥有小V脸 */
+"i18n_apple_新教程：拥有小V脸" = "Own Small V Face";
+
+/* i18n_apple_新教程：拯救逆光照 */
+"i18n_apple_新教程：拯救逆光照" = "Backlighting";
+
+/* i18n_apple_新鲜素材即时使用 */
+"i18n_apple_新鲜素材即时使用" = "Instantly use the fresh materials";
+
+/* i18n_apple_新一代美肤效果 */
+"i18n_apple_新一代美肤效果" = "New generation skin effect";
+
+/* i18n_apple_新用户特权 */
+"i18n_apple_新用户特权" = "Privilege";
+
+/* i18n_apple_新用户优享，购买inFace年会员，立省30% */
+"i18n_apple_新用户优享，购买inFace年会员，立省30%" = "Exclusive for new users, inFace annual membership, save 30%";
+
+/* i18n_apple_新增：批量处理 */
+"i18n_apple_新增：批量处理" = "New: Batch";
+
+/* i18n_apple_新增：双色光 */
+"i18n_apple_新增：双色光" = "New: Two-color light";
+
+/* i18n_apple_新增：形状光 */
+"i18n_apple_新增：形状光" = "New: shape light";
+
+/* i18n_apple_新增打光功能 */
+"i18n_apple_新增打光功能" = "New lighting function";
+
+/* i18n_apple_新增内容 */
+"i18n_apple_新增内容" = "THE NEW";
+
+/* i18n_apple_新增五官调整项 */
+"i18n_apple_新增五官调整项" = "New Facial Adjustment";
+
+/* i18n_apple_星光 */
+"i18n_apple_星光" = "Starlight";
+
+/* i18n_apple_星星 */
+"i18n_apple_星星" = "star";
+
+/* i18n_apple_形状光 */
+"i18n_apple_形状光" = "Shape light";
+
+/* i18n_apple_形状光和半身照更配哦～ */
+"i18n_apple_形状光和半身照更配哦～" = "The shape light is more suitable for the bust~";
+
+/* i18n_apple_形状光暂不支持多人脸 */
+"i18n_apple_形状光暂不支持多人脸" = "Shape light not support multiple face";
+
+/* i18n_apple_熊掌 */
+"i18n_apple_熊掌" = "Bear paw";
+
+/* i18n_apple_修出大片即视感 */
+"i18n_apple_修出大片即视感" = "Create blockbuster";
+
+/* i18n_apple_修改 */
+"i18n_apple_修改" = "modify";
+
+/* i18n_apple_修饰眼睛，调整眼睛大小 */
+"i18n_apple_修饰眼睛，调整眼睛大小" = "Embellish eyes and adjust the eye size.";
+
+/* i18n_apple_修饰照片边缘可以拖动照片整体到居中位置哦～ */
+"i18n_apple_修饰照片边缘可以拖动照片整体到居中位置哦～" = "修饰照片边缘可以拖动照片整体到居中位置哦～";
+
+/* i18n_apple_修图 */
+"i18n_apple_修图" = "Edit";
+
+/* i18n_apple_修图攻略 */
+"i18n_apple_修图攻略" = "Picture editing guide";
+
+/* i18n_apple_修图建议匹配中… */
+"i18n_apple_修图建议匹配中…" = "Suggestion matching…";
+
+/* i18n_apple_修图流畅，不卡顿 */
+"i18n_apple_修图流畅，不卡顿" = "Smooth operation, no lag";
+
+/* i18n_apple_虚化 */
+"i18n_apple_虚化" = "Blur";
+
+/* i18n_apple_旋转 */
+"i18n_apple_旋转" = "Rotate";
+
+/* i18n_apple_旋转角度 */
+"i18n_apple_旋转角度" = "Rotate Angle";
+
+/* i18n_apple_漩涡 */
+"i18n_apple_漩涡" = "Swirl";
+
+/* i18n_apple_选更多照片 */
+"i18n_apple_选更多照片" = "More photo";
+
+/* i18n_apple_选取肤色，调整肤色程度使其更自然 */
+"i18n_apple_选取肤色，调整肤色程度使其更自然" = "Select color to make skin more natural.";
+
+/* i18n_apple_选图提示 */
+"i18n_apple_选图提示" = "选图提示";
+
+/* i18n_apple_选择 */
+"i18n_apple_选择" = "Select";
+
+/* i18n_apple_现在还没有作品～ */
+"i18n_apple_现在还没有作品～" = "There are no works yet";
+
+/* i18n_apple_快去创造属于自己的作品吧！ */
+"i18n_apple_快去创造属于自己的作品吧！" = "Go and create your own work!";
+
+/* i18n_apple_选择背景 */
+"i18n_apple_选择背景" = "Choose a background";
+
+/* i18n_apple_选择编辑方式 */
+"i18n_apple_选择编辑方式" = "Select editing method";
+
+/* i18n_apple_选择处理样本照片 */
+"i18n_apple_选择处理样本照片" = "Choose to edit the first photo";
+
+/* i18n_apple_选择更多照片 */
+"i18n_apple_选择更多照片" = "Choose more photo";
+
+/* i18n_apple_选择画笔，描绘翅膀轮廓 */
+"i18n_apple_选择画笔，描绘翅膀轮廓" = "Choose a brush and paint your wings.";
+
+/* i18n_apple_选择需要编辑的照片 */
+"i18n_apple_选择需要编辑的照片" = "Select the photo to be edited.";
+
+/* i18n_apple_选择要分享的照片 */
+"i18n_apple_选择要分享的照片" = "Choose photos to share";
+
+/* i18n_apple_选择一个预设 */
+"i18n_apple_选择一个预设" = "Choose a preset";
+
+/* i18n_apple_选择照片 */
+"i18n_apple_选择照片" = "Choose pic";
+
+/* i18n_apple_选择照片任意区域，对其进行推动 */
+"i18n_apple_选择照片任意区域，对其进行推动" = "Select any position of the photo and drag.";
+
+/* i18n_apple_选择自己的照片效果更好哦～ */
+"i18n_apple_选择自己的照片效果更好哦～" = "选择自己的照片效果更好哦～";
+
+/* i18n_apple_选张照片，AI一键变更美！ */
+"i18n_apple_选张照片，AI一键变更美！" = "There are magic in these filters!";
+
+/* i18n_apple_选中缩放区域，放大缩小选中区域 */
+"i18n_apple_选中缩放区域，放大缩小选中区域" = "Select the zooming zone.";
+
+/* i18n_apple_选中旋转区域，旋转选中区域 */
+"i18n_apple_选中旋转区域，旋转选中区域" = "Select the rotating zone.";
+
+/* i18n_apple_炫彩 */
+"i18n_apple_炫彩" = "Dazzle";
+
+/* i18n_apple_削下巴 */
+"i18n_apple_削下巴" = "Cut Chin";
+
+/* i18n_apple_雪花 */
+"i18n_apple_雪花" = "snowflake";
+
+/* i18n_apple_血色 */
+"i18n_apple_血色" = "Color";
+
+/* i18n_apple_颜老师 */
+"i18n_apple_颜老师" = "Miss Yan";
+
+/* i18n_apple_颜色 */
+"i18n_apple_颜色" = "Color";
+
+/* i18n_apple_颜色减淡 */
+"i18n_apple_颜色减淡" = "Color Dodge";
+
+/* i18n_apple_眼睑下至 */
+"i18n_apple_眼睑下至" = "Eyelid down";
+
+/* i18n_apple_眼睛 */
+"i18n_apple_眼睛" = "Eyes";
+
+/* i18n_apple_眼睛倾斜 */
+"i18n_apple_眼睛倾斜" = "Tilt";
+
+/* i18n_apple_眼睛上下 */
+"i18n_apple_眼睛上下" = "Eyes up&down";
+
+/* i18n_apple_眼距 */
+"i18n_apple_眼距" = "Distance";
+
+/* i18n_apple_眼宽 */
+"i18n_apple_眼宽" = "Width";
+
+/* i18n_apple_眼里有星光 */
+"i18n_apple_眼里有星光" = "There are stars in the eyes";
+
+/* i18n_apple_眼尾微调 */
+"i18n_apple_眼尾微调" = "End of eye";
+
+/* i18n_apple_洋红 */
+"i18n_apple_洋红" = "Magenta";
+
+/* i18n_apple_邀请兑换 */
+"i18n_apple_邀请兑换" = "Invitation redemption";
+
+/* i18n_apple_邀请码不存在 */
+"i18n_apple_邀请码不存在" = "Invitation code does not exist";
+
+/* i18n_apple_邀请码已被使用 */
+"i18n_apple_邀请码已被使用" = "Invitation code has been used";
+
+/* i18n_apple_邀请码已过期 */
+"i18n_apple_邀请码已过期" = "Invitation code has expired";
+
+/* i18n_apple_要退出吗？ */
+"i18n_apple_要退出吗？" = "Do you want to quit?";
+
+/* i18n_apple_夜光云 */
+"i18n_apple_夜光云" = "Cloud";
+
+/* i18n_apple_液化不变形，自然更真实 */
+"i18n_apple_液化不变形，自然更真实" = "Liquify without deformation, more natural, more true.";
+
+/* i18n_apple_一键变美 */
+"i18n_apple_一键变美" = "Auto";
+
+/* i18n_apple_一键操作省时省力 */
+"i18n_apple_一键操作省时省力" = "Efficient operation";
+
+/* i18n_apple_一键打造立体光线照片 更具质感 */
+"i18n_apple_一键打造立体光线照片 更具质感" = "One-click to create three-dimensional light";
+
+/* i18n_apple_一键打造赛博朋克风 */
+"i18n_apple_一键打造赛博朋克风" = "Create cyberpunk style with one click";
+
+/* i18n_apple_一键分享全部照片 */
+"i18n_apple_一键分享全部照片" = "Share all photos with one click";
+
+/* i18n_apple_一键换天，提升照片氛围 */
+"i18n_apple_一键换天，提升照片氛围" = "Enhance photo atmosphere by changing the sky";
+
+/* i18n_apple_一键让你的照片拥有高级感 */
+"i18n_apple_一键让你的照片拥有高级感" = "One click away from gorgeous photo";
+
+/* i18n_apple_一键拯救逆光照 */
+"i18n_apple_一键拯救逆光照" = "Save backlight photos";
+
+/* i18n_apple_一键做同款 */
+"i18n_apple_一键做同款" = "Apply";
+
+/* i18n_apple_已保存 */
+"i18n_apple_已保存" = "Saved";
+
+/* i18n_apple_已保存到相册 */
+"i18n_apple_已保存到相册" = "Saved to album";
+
+/* i18n_apple_已更新 */
+"i18n_apple_已更新" = "Updated";
+
+/* i18n_apple_已加入inFace会员俱乐部 */
+"i18n_apple_已加入inFace会员俱乐部" = "Already joined inFace member club";
+
+/* i18n_apple_已将你的作品保存至相册 */
+"i18n_apple_已将你的作品保存至相册" = "Saved your work to the album";
+
+/* i18n_apple_已取消收藏 */
+"i18n_apple_已取消收藏" = "Uncollected";
+
+/* i18n_apple_已删除 */
+"i18n_apple_已删除" = "Deleted";
+
+/* i18n_apple_已为您匹配到效果 */
+"i18n_apple_已为您匹配到效果" = "%@ effects have been matched";
+
+/* i18n_apple_已选择 */
+"i18n_apple_已选择" = "Chosen";
+
+/* i18n_apple_以%@恢复订阅 */
+"i18n_apple_以%@恢复订阅" = "%@ Subscribe now";
+
+/* i18n_apple_以上 */
+"i18n_apple_以上" = "above";
+
+/* i18n_apple_艺术画 */
+"i18n_apple_艺术画" = "Art";
+
+/* i18n_apple_艺术滤镜 */
+"i18n_apple_艺术滤镜" = "Filters";
+
+/* i18n_apple_阴影 */
+"i18n_apple_阴影" = "Shadow";
+
+/* i18n_apple_阴影程度 */
+"i18n_apple_阴影程度" = "Shadow";
+
+/* i18n_apple_阴影关 */
+"i18n_apple_阴影关" = "Shadow off";
+
+/* i18n_apple_阴影开 */
+"i18n_apple_阴影开" = "Shadow on";
+
+/* i18n_apple_阴影色调 */
+"i18n_apple_阴影色调" = "Shadow tone";
+
+/* i18n_apple_音符 */
+"i18n_apple_音符" = "Note";
+
+/* i18n_apple_隐私弹框内容 */
+"i18n_apple_隐私弹框内容" = "inFace takes your privacy and personal data security seriously. Before you start to use, please make sure that you hace read the \"Terms of Service\" and \"Privacy Policy\" and confirm that you agree to all these terms.";
+
+/* i18n_apple_隐私政策 */
+"i18n_apple_隐私政策" = "Privacy Policy";
+
+/* i18n_apple_印象 */
+"i18n_apple_印象" = "Impression";
+
+/* i18n_apple_营造奇妙的视觉效果 */
+"i18n_apple_营造奇妙的视觉效果" = "Create a marvelous visual effect.";
+
+/* i18n_apple_拥有小V脸教程 */
+"i18n_apple_拥有小V脸教程" = "Get Small V Face";
+
+/* i18n_apple_永久 */
+"i18n_apple_永久" = "Permanent";
+
+/* i18n_apple_永久有效 */
+"i18n_apple_永久有效" = "Permanent";
+
+/* i18n_apple_用尽后无法保存VIP功能效果 */
+"i18n_apple_用尽后无法保存VIP功能效果" = "Running out of times";
+
+/* i18n_apple_用了就喜欢 */
+"i18n_apple_用了就喜欢" = "I like it";
+
+/* i18n_apple_用两个指头放大和缩小照片 */
+"i18n_apple_用两个指头放大和缩小照片" = "3/4  Two fingers zoom in to see the details.";
+
+/* i18n_apple_用时 */
+"i18n_apple_用时" = "Tooks";
+
+/* i18n_apple_用手指进行涂抹、擦除，突出照片人物特征 */
+"i18n_apple_用手指进行涂抹、擦除，突出照片人物特征" = "Smear and erase by a finger to prominent character.";
+
+/* i18n_apple_用手指进行涂抹、擦除，优化整体效果 */
+"i18n_apple_用手指进行涂抹、擦除，优化整体效果" = "Smear and erase by a finger to optimize overall results.";
+
+/* i18n_apple_用照片记录这浪漫时刻 */
+"i18n_apple_用照片记录这浪漫时刻" = "用照片记录这浪漫时刻";
+
+/* i18n_apple_油彩画 */
+"i18n_apple_油彩画" = "Oil painting";
+
+/* i18n_apple_油画 */
+"i18n_apple_油画" = "Oil Painting";
+
+/* i18n_apple_有%d张图片下载失败 */
+"i18n_apple_有%d张图片下载失败" = "%d pictures failed to download";
+
+/* i18n_apple_有效期： */
+"i18n_apple_有效期：" = "Validity period:";
+
+/* i18n_apple_有效期至: */
+"i18n_apple_有效期至:" = "Valid to:";
+
+/* i18n_apple_右对称 */
+"i18n_apple_右对称" = "R-Symmetry";
+
+/* i18n_apple_鱼眼 */
+"i18n_apple_鱼眼" = "Fish eye";
+
+/* i18n_apple_羽化 */
+"i18n_apple_羽化" = "Feather";
+
+/* i18n_apple_预览 */
+"i18n_apple_预览" = "Preview";
+
+/* i18n_apple_预设 */
+"i18n_apple_预设" = "Preset";
+
+/* i18n_apple_遇到了什么问题呢？ */
+"i18n_apple_遇到了什么问题呢？" = "遇到了什么问题呢？";
+
+/* i18n_apple_原价： */
+"i18n_apple_原价：" = "Price:";
+
+/* i18n_apple_原价$29.99 */
+"i18n_apple_原价$29.99" = "Original:$29.99";
+
+/* i18n_apple_原始格式 */
+"i18n_apple_原始格式" = "Origin";
+
+/* i18n_apple_原图 */
+"i18n_apple_原图" = "Original";
+
+/* i18n_apple_原照片过小，无法保存此清晰度 */
+"i18n_apple_原照片过小，无法保存此清晰度" = "Cannot use this resolution";
+
+/* i18n_apple_圆环效果 */
+"i18n_apple_圆环效果" = "Ring Effect";
+
+/* i18n_apple_圆形 */
+"i18n_apple_圆形" = "Round";
+
+/* i18n_apple_月度会员 */
+"i18n_apple_月度会员" = "Monthly membership";
+
+/* i18n_apple_月亮 */
+"i18n_apple_月亮" = "moon";
+
+/* i18n_apple_晕开 */
+"i18n_apple_晕开" = "Halo";
+
+/* i18n_apple_匀肤 */
+"i18n_apple_匀肤" = "Uniform";
+
+/* i18n_apple_允许访问 */
+"i18n_apple_允许访问" = "Ok, I agree.";
+
+/* i18n_apple_允许通知 */
+"i18n_apple_允许通知" = "Allow Notifications";
+
+/* i18n_apple_运动模糊 */
+"i18n_apple_运动模糊" = "Motion blur";
+
+/* i18n_apple_再试一次 */
+"i18n_apple_再试一次" = "Try Again";
+
+/* i18n_apple_再修一些 */
+"i18n_apple_再修一些" = "Edit more";
+
+/* i18n_apple_再修一张 */
+"i18n_apple_再修一张" = "Edit more";
+
+/* i18n_apple_在锁屏界面显示 */
+"i18n_apple_在锁屏界面显示" = "Displayed on lock screen";
+
+/* i18n_apple_暂时不能退出，请稍后再试！ */
+"i18n_apple_暂时不能退出，请稍后再试！" = "Can’t log out temporarily, please try again later!";
+
+/* i18n_apple_暂停 */
+"i18n_apple_暂停" = "time out";
+
+/* i18n_apple_暂无分享 */
+"i18n_apple_暂无分享" = "No share";
+
+/* i18n_apple_暂无分享哦～ */
+"i18n_apple_暂无分享哦～" = "No sharing yet";
+
+/* i18n_apple_暂无照片 */
+"i18n_apple_暂无照片" = "No photo";
+
+/* i18n_apple_增加点缀，烘托照片氛围 */
+"i18n_apple_增加点缀，烘托照片氛围" = "Add accents to set off the photo atmosphere.";
+
+/* i18n_apple_湛 */
+"i18n_apple_湛" = "Clear";
+
+/* i18n_apple_张 */
+"i18n_apple_张" = " photos";
+
+/* i18n_apple_张照片 */
+"i18n_apple_张照片" = "photos";
+
+/* i18n_apple_长按1秒 */
+"i18n_apple_长按1秒" = "Long-press for 1 seconds to favorite";
+
+/* i18n_apple_长按保存二维码图片 */
+"i18n_apple_长按保存二维码图片" = "Long press to save the QR code";
+
+/* i18n_apple_长按常用照片调色中的预设可添加到收藏哦～ */
+"i18n_apple_长按常用照片调色中的预设可添加到收藏哦～" = "长按常用照片调色中的预设可添加到收藏哦～";
+
+/* i18n_apple_长按你喜欢的预设，将其收藏 */
+"i18n_apple_长按你喜欢的预设，将其收藏" = "Long-press on the preset you like to save it";
+
+/* i18n_apple_照片保存成功 */
+"i18n_apple_照片保存成功" = "Successfully Saved.";
+
+/* i18n_apple_照片保存失败 */
+"i18n_apple_照片保存失败" = "Fail to save.";
+
+/* i18n_apple_照片被虫子叼走了 */
+"i18n_apple_照片被虫子叼走了" = "Unexpected error";
+
+/* i18n_apple_照片导出 */
+"i18n_apple_照片导出" = "photo";
+
+/* i18n_apple_照片导出设置 */
+"i18n_apple_照片导出设置" = "Quality settings";
+
+/* i18n_apple_照片调色 */
+"i18n_apple_照片调色" = "Edit";
+
+/* i18n_apple_照片调整 */
+"i18n_apple_照片调整" = "Edit";
+
+/* i18n_apple_照片分享有效期 */
+"i18n_apple_照片分享有效期" = "Sharing validity period";
+
+/* i18n_apple_照片未保存 */
+"i18n_apple_照片未保存" = "Not saved";
+
+/* i18n_apple_正在保存中 */
+"i18n_apple_正在保存中" = "Saving…";
+
+/* i18n_apple_照片正在保存 */
+"i18n_apple_照片正在保存" = "Saving…";
+
+/* i18n_apple_照片质量设置 */
+"i18n_apple_照片质量设置" = "Image quality settings";
+
+/* i18n_apple_这个磨皮的质感 */
+"i18n_apple_这个磨皮的质感" = "Natural and flawless baby skin texture,";
+
+/* i18n_apple_这个人有点懒，还没有作品…… */
+"i18n_apple_这个人有点懒，还没有作品……" = "All works modified with inFace will be here!";
+
+/* i18n_apple_这是什么神仙肤质！ */
+"i18n_apple_这是什么神仙肤质！" = "Flawless skin, just here!";
+
+/* i18n_apple_这些滤镜里竟然有魔法！ */
+"i18n_apple_这些滤镜里竟然有魔法！" = "The retouching artifacts that are used by the flat models💃";
+
+/* i18n_apple_这组纹理和天空照片更配哦！ */
+"i18n_apple_这组纹理和天空照片更配哦！" = "These textures goes well with sky photos!";
+
+/* i18n_apple_真滴好好看！这些滤镜真滴好看！ */
+"i18n_apple_真滴好好看！这些滤镜真滴好看！" = "The sky you took last time is right for the new filter☀️ ☁️ ☁️";
+
+/* i18n_apple_真实感 */
+"i18n_apple_真实感" = "Realism";
+
+/* i18n_apple_拯救废片必备工具！ */
+"i18n_apple_拯救废片必备工具！" = "Enhance photo atmosphere.";
+
+/* i18n_apple_拯救逆光照教程 */
+"i18n_apple_拯救逆光照教程" = "Backlighting";
+
+/* i18n_apple_整体进度 */
+"i18n_apple_整体进度" = "Progress";
+
+/* i18n_apple_整体进度： */
+"i18n_apple_整体进度：" = "Uploading : ";
+
+/* i18n_apple_正常 */
+"i18n_apple_正常" = "Normal";
+
+/* i18n_apple_正片叠底 */
+"i18n_apple_正片叠底" = "Multiply";
+
+/* i18n_apple_正在从iCloud同步照片 */
+"i18n_apple_正在从iCloud同步照片" = "Syncing photos from iCloud";
+
+/* i18n_apple_正在分析图像… */
+"i18n_apple_正在分析图像…" = "Analyzing the image...";
+
+/* i18n_apple_正在获取最新教程… */
+"i18n_apple_正在获取最新教程…" = "正在获取最新教程…";
+
+/* i18n_apple_正在解析背景… */
+"i18n_apple_正在解析背景…" = "Analyzing the background...";
+
+/* i18n_apple_正在下载，请稍等 */
+"i18n_apple_正在下载，请稍等" = "Downloading, please wait for a while";
+
+/* i18n_apple_证照信息 */
+"i18n_apple_证照信息" = "License";
+
+/* i18n_apple_支持高质量下载 */
+"i18n_apple_支持高质量下载" = "Support high quality";
+
+/* i18n_apple_支持无损下载 */
+"i18n_apple_支持无损下载" = "Support lossless download";
+
+/* i18n_apple_支付没有成功不会扣除任何费用 */
+"i18n_apple_支付没有成功不会扣除任何费用" = "No payment will be deducted if the payment is not successful";
+
+/* i18n_apple_支付失败 */
+"i18n_apple_支付失败" = "Payment Failed";
+
+/* i18n_apple_只需轻点，自动轻松修同款 */
+"i18n_apple_只需轻点，自动轻松修同款" = "Just tap to automatically edit the picture";
+
+/* i18n_apple_至 */
+"i18n_apple_至" = "-";
+
+/* i18n_apple_制作同款 */
+"i18n_apple_制作同款" = "Apply";
+
+/* i18n_apple_制作同款需要包含人脸照片，请换张照片重试 */
+"i18n_apple_制作同款需要包含人脸照片，请换张照片重试" = "Please try again with a photo with a face";
+
+/* i18n_apple_制作同款需要包含人物照片，请换张照片重试 */
+"i18n_apple_制作同款需要包含人物照片，请换张照片重试" = "Please try again with photos with people";
+
+/* i18n_apple_制作完成！您可以继续编辑/保存 */
+"i18n_apple_制作完成！您可以继续编辑/保存" = "Finished! \nYou can continue editing/saving";
+
+/* i18n_apple_中心亮度 */
+"i18n_apple_中心亮度" = "Center Bright";
+
+/* i18n_apple_中心缩进 */
+"i18n_apple_中心缩进" = "Indent Center";
+
+/* i18n_apple_重命名 */
+"i18n_apple_重命名" = "Rename";
+
+/* i18n_apple_重试 */
+"i18n_apple_重试" = "Retry";
+
+/* i18n_apple_重试保存 */
+"i18n_apple_重试保存" = "Retry to save";
+
+/* i18n_apple_重试上传 */
+"i18n_apple_重试上传" = "Retry upload";
+
+/* i18n_apple_重塑6D立体轮廓 */
+"i18n_apple_重塑6D立体轮廓" = "Reshape 6D contour";
+
+/* i18n_apple_重新保存 */
+"i18n_apple_重新保存" = "Resave";
+
+/* i18n_apple_重选照片 */
+"i18n_apple_重选照片" = "Reselect";
+
+/* i18n_apple_重做 */
+"i18n_apple_重做" = "Redo";
+
+/* i18n_apple_周卡会员 */
+"i18n_apple_周卡会员" = "Weekly member VIP";
+
+/* i18n_apple_主题素材 */
+"i18n_apple_主题素材" = "主题素材";
+
+/* i18n_apple_注意：保存照片的分辨率越高，则处理和保存的耗时也会越久 */
+"i18n_apple_注意：保存照片的分辨率越高，则处理和保存的耗时也会越久" = "Higher resolution takes longer to process.";
+
+/* i18n_apple_注意描述 */
+"i18n_apple_注意描述" = "Note: If you have subscribed to a VIP, the duration of the invitation card will be used after the subscription ends.";
+
+/* i18n_apple_专属 */
+"i18n_apple_专属" = "exclusive";
+
+/* i18n_apple_专属折扣 */
+"i18n_apple_专属折扣" = "Discount";
+
+/* i18n_apple_专属VIP */
+"i18n_apple_专属VIP" = "Exclusive VIP";
+
+/* i18n_apple_自定义 */
+"i18n_apple_自定义" = "Customize";
+
+/* i18n_apple_自定义美肤参数可添加至我的肤质中哦～ */
+"i18n_apple_自定义美肤参数可添加至我的肤质中哦～" = "自定义美肤参数可添加至我的肤质中哦～";
+
+/* i18n_apple_自定义预设名称 */
+"i18n_apple_自定义预设名称" = "Rename custom preset";
+
+/* i18n_apple_自动对照片进行增强美化，保留细节。 */
+"i18n_apple_自动对照片进行增强美化，保留细节。" = "Automatically retouch your portrait with a tap.";
+
+/* i18n_apple_自动模拟已暂停 */
+"i18n_apple_自动模拟已暂停" = "Auto simulation pause";
+
+/* i18n_apple_自然肤 */
+"i18n_apple_自然肤" = "Natural";
+
+/* i18n_apple_自然甜美 拒绝僵硬 */
+"i18n_apple_自然甜美 拒绝僵硬" = "Naturally sweet, refuse to be rigid";
+
+/* i18n_apple_自然无暇的婴儿肌肤质感，点击试用👆 */
+"i18n_apple_自然无暇的婴儿肌肤质感，点击试用👆" = "Soft and smooth like baby, just here!";
+
+/* i18n_apple_自由编辑 */
+"i18n_apple_自由编辑" = "Edit Free";
+
+/* i18n_apple_自由变形 */
+"i18n_apple_自由变形" = "Free form";
+
+/* i18n_apple_嘴巴高度 */
+"i18n_apple_嘴巴高度" = "Mouth height";
+
+/* i18n_apple_嘴唇 */
+"i18n_apple_嘴唇" = "Lips";
+
+/* i18n_apple_嘴宽 */
+"i18n_apple_嘴宽" = "Width";
+
+/* i18n_apple_最多输入%d个字 */
+"i18n_apple_最多输入%d个字" = "Character limit %d";
+
+/* i18n_apple_最多选择%d张哦 */
+"i18n_apple_最多选择%d张哦" = "Choose up to %d photos";
+
+/* i18n_apple_最多只能添加5个纹理哦 */
+"i18n_apple_最多只能添加5个纹理哦" = "You can only add up to 5 textures.";
+
+/* i18n_apple_最后1天，前往使用7折专属折扣> */
+"i18n_apple_最后1天，前往使用7折专属折扣>" = "Last day, go to use 30% off exclusive discounts>";
+
+/* i18n_apple_最近使用 */
+"i18n_apple_最近使用" = "Recently used";
+
+/* i18n_apple_最近项目 */
+"i18n_apple_最近项目" = "Recent";
+
+/* i18n_apple_最适合本照片的效果都在这里~ */
+"i18n_apple_最适合本照片的效果都在这里~" = "最适合本照片的效果都在这里~";
+
+/* i18n_apple_最新功能、素材、教程上线 */
+"i18n_apple_最新功能、素材、教程上线" = "for latest features, materials and tutorials release";
+
+/* i18n_apple_最新功能抢先体验 */
+"i18n_apple_最新功能抢先体验" = "First to try the latest features";
+
+/* i18n_apple_最新攻略 */
+"i18n_apple_最新攻略" = "Latest Raiders";
+
+/* i18n_apple_最新光线纹理 */
+"i18n_apple_最新光线纹理" = "Latest light texture";
+
+/* i18n_apple_尊享42项会员功能 */
+"i18n_apple_尊享42项会员功能" = "Enjoy 42\nmember rights";
+
+/* i18n_apple_尊享功能 */
+"i18n_apple_尊享功能" = "Exclusive function";
+
+/* i18n_apple_尊享教程 */
+"i18n_apple_尊享教程" = "VIP tutorial";
+
+/* i18n_apple_昨天 */
+"i18n_apple_昨天" = "Yesterday";
+
+/* i18n_apple_左对称 */
+"i18n_apple_左对称" = "L-Symmetry";
+
+/* i18n_apple_作品集 */
+"i18n_apple_作品集" = "Portfolio";
+
+/* i18n_apple_AI修图建议 */
+"i18n_apple_AI修图建议" = "AI suggestion";
+
+/* i18n_apple_AI一键美肤 */
+"i18n_apple_AI一键美肤" = "One-click beauty";
+
+/* i18n_apple_AI智能 */
+"i18n_apple_AI智能" = "AI smart";
+
+/* i18n_apple_APEN */
+"i18n_apple_APEN" = "APEN";
+
+/* i18n_apple_BATCH */
+"i18n_apple_BATCH" = "     ";
+
+/* i18n_apple_CLAS */
+"i18n_apple_CLAS" = "CLAS";
+
+/* i18n_apple_EDIT PHOTOS */
+"i18n_apple_EDIT PHOTOS" = "       ";
+
+/* i18n_apple_EXIF信息 */
+"i18n_apple_EXIF信息" = "EXIF info";
+
+/* i18n_apple_filterCategory_Delicate */
+"i18n_apple_filterCategory_Delicate" = "Delicate";
+
+/* i18n_apple_filterCategory_Effects */
+"i18n_apple_filterCategory_Effects" = "Shimmer";
+
+/* i18n_apple_filterCategory_Fashion */
+"i18n_apple_filterCategory_Fashion" = "Fashion";
+
+/* i18n_apple_filterCategory_Lively */
+"i18n_apple_filterCategory_Lively" = "Lively";
+
+/* i18n_apple_filterCategory_Natural */
+"i18n_apple_filterCategory_Natural" = "Natural";
+
+/* i18n_apple_filterCategory_Shadow */
+"i18n_apple_filterCategory_Shadow" = "Shadow";
+
+/* i18n_apple_HDR */
+"i18n_apple_HDR" = "HDR";
+
+/* i18n_apple_HSL */
+"i18n_apple_HSL" = "HSL";
+
+/* i18n_apple_inFace帮你用照片点燃朋友圈🌟 */
+"i18n_apple_inFace帮你用照片点燃朋友圈🌟" = "Be the Queen with  inFace 💅";
+
+/* i18n_apple_inFace订阅须知 */
+"i18n_apple_inFace订阅须知" = "inFace VIP subscription Notice";
+
+/* i18n_apple_inFace发布中文名称 */
+"i18n_apple_inFace发布中文名称" = "inFace 3.0";
+
+/* i18n_apple_inFace想访问你的照片 */
+"i18n_apple_inFace想访问你的照片" = "inFace wants to access your photos";
+
+/* i18n_apple_inFace隐私政策 */
+"i18n_apple_inFace隐私政策" = "inFace Privacy Policy";
+
+/* i18n_apple_LUT */
+"i18n_apple_LUT" = "LUT";
+
+/* i18n_apple_M唇 */
+"i18n_apple_M唇" = "M";
+
+/* i18n_apple_MIX */
+"i18n_apple_MIX" = "MIX";
+
+/* i18n_apple_OMG！这个祛油光也太好用了吧！盘它！ */
+"i18n_apple_OMG！这个祛油光也太好用了吧！盘它！" = "One click to beautify🧚‍♀️";
+
+/* i18n_apple_userAlert_服务条款 */
+"i18n_apple_userAlert_服务条款" = "Terms of Service";
+
+/* i18n_apple_userAlert_隐私政策 */
+"i18n_apple_userAlert_隐私政策" = "Privacy Policy";
+
+/* i18n_apple_V脸 */
+"i18n_apple_V脸" = "V-Shape";
+
+/* i18n_apple_VIP_滤镜50+ */
+"i18n_apple_VIP_滤镜50+" = "80+ Filters";
+
+/* i18n_apple_VIP_面部阴影 */
+"i18n_apple_VIP_面部阴影" = "Facial Shallow";
+
+/* i18n_apple_VIP_塑形保护 */
+"i18n_apple_VIP_塑形保护" = "Protection";
+
+/* i18n_apple_VIP_纹理 */
+"i18n_apple_VIP_纹理" = "Material Filters";
+
+/* i18n_apple_VIP_照片暗角 */
+"i18n_apple_VIP_照片暗角" = "Vignette";
+
+/* i18n_apple_VIP功能保存机会 */
+"i18n_apple_VIP功能保存机会" = "VIP effects saving";
+
+/* i18n_apple_VIP功能仅支持会员使用 */
+"i18n_apple_VIP功能仅支持会员使用" = "VIP functions are exclusive for VIP members";
+
+/* i18n_apple_VIP解锁同款 */
+"i18n_apple_VIP解锁同款" = "VIP unlock immediately";
+
+/* i18n_apple_VIP使用协议 */
+"i18n_apple_VIP使用协议" = "VIP Agreement";
+
+/* i18n_apple_VIP特享 */
+"i18n_apple_VIP特享" = "VIP";
+
+/* i18n_haw_vip_1个月 */
+"i18n_haw_vip_1个月" = "1 month";
+
+/* i18n_haw_vip_年 */
+"i18n_haw_vip_年" = "year";
+
+/* i18n_haw_vip_月 */
+"i18n_haw_vip_月" = "month";
+
+/* i18n_vip_立即续费 */
+"i18n_vip_立即续费" = "Renew";
+
+/* i18n_vip_立即续费享特权 */
+"i18n_vip_立即续费享特权" = "Continue to enjoy the renewal fee";
+
+/* i18n_vip_DD天试用后自动订阅$X/X */
+"i18n_vip_DD天试用后自动订阅$X/X" = "Automatically subscribe after free trial of DD days";
+
+/* i18n_vip_X天免费试用 */
+"i18n_vip_X天免费试用" = "%@ day free trial";
+
+/* i18n_vip_yyyy.DD.mm已到期 */
+"i18n_vip_yyyy.DD.mm已到期" = "%@ expired";
+
+/* i18n_恭喜你获得幸运礼包 */
+"i18n_恭喜你获得幸运礼包" = "Fortunately receive gifts";
+
+/* i18n_每天可使用 */
+"i18n_每天可使用" = "You can use";
+
+/* i18n_VIP功能免费修图1次 */
+"i18n_VIP功能免费修图1次" = "the VIP function to edit pictures for free once a day";
+
+/* i18n_立即领取 */
+"i18n_立即领取" = "Receive";
+
+/* i18n_领取成功 */
+"i18n_领取成功" = "Receive success";
+
+/* i18n_照片保存成功 */
+"i18n_照片保存成功" = "Photo saved successfully";
+
+/* i18n_您本次共使用%d项VIP功能 */
+"i18n_您本次共使用%d项VIP功能" = "This operation uses %d VIP functions";
+
+/* i18n_今日免费保存次数剩余%d */
+"i18n_今日免费保存次数剩余%d" = "Today’s free saves are left %d";
+
+/* i18n_明日将会获得 */
+"i18n_明日将会获得" = "Tomorrow will get";
+
+/* i18n_1次免费次数 */
+"i18n_1次免费次数" = "1 free time";
+
+/* i18n_好的 */
+"i18n_好的" = "Ok";
+
+/* i18n_【人像大师拍了拍“你”】又能免费使用VIP功能修图啦！赶快来创作吧～ */
+"i18n_人像大师拍了拍“你”又能免费使用VIP功能修图啦！赶快来创作吧～" = "[Portrait Master patted \"you\"] You can use the VIP function to edit pictures again for free! Hurry up and create~";
+

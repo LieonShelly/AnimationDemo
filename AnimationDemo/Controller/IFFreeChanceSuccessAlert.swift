@@ -33,7 +33,7 @@ class IFFreeChanceSuccessAlert: FXViewAlertBase {
     }()
     fileprivate lazy var descLabel0: UILabel = {
         let label = UILabel()
-        label.text = "今日免费保存次数剩余0".localized(nil)
+        label.text = String(format: "今日免费保存次数剩余%d".localized(nil), 0)
         label.font = UIFont(name: "PingFangSC-Regular", size: 15)
         label.textColor = UIColor(hex: 0x333333)
         return label
@@ -68,7 +68,6 @@ class IFFreeChanceSuccessAlert: FXViewAlertBase {
     }()
     fileprivate lazy var subtitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "您本次共使用13项VIP功能".localized(nil)
         label.font = UIFont(name: "PingFangSC-Regular", size: 15)
         label.textColor = UIColor(hex: 0x999999)
         return label
@@ -155,7 +154,11 @@ class IFFreeChanceSuccessAlert: FXViewAlertBase {
         }
         descLabel0.snp.makeConstraints {
             $0.height.equalTo(15)
-            $0.left.equalTo(66)
+            if String.isLanguageEn() {
+                $0.left.equalTo(49)
+            } else {
+                $0.left.equalTo(66)
+            }
             $0.top.equalTo(subtitleLabel.snp.bottom).offset(48)
         }
         
@@ -165,7 +168,11 @@ class IFFreeChanceSuccessAlert: FXViewAlertBase {
             $0.right.equalTo(dot0.snp.right)
         }
         descLabel1.snp.makeConstraints {
-            $0.height.equalTo(15)
+            if String.isLanguageEn() {
+                $0.height.equalTo(17)
+            } else {
+                $0.height.equalTo(15)
+            }
             $0.top.equalTo(descLabel0.snp.bottom).offset(16)
             $0.left.equalTo(descLabel0.snp.left)
         }
