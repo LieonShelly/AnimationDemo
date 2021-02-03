@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import IQKeyboardManagerSwift
 
 class TipPopViewController: UIViewController {
     @IBOutlet weak var popHeight: UITextField!
@@ -26,13 +25,11 @@ class TipPopViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        IQKeyboardManager.shared.enable = true
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        IQKeyboardManager.shared.enable = false
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     

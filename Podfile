@@ -15,7 +15,7 @@ target 'AnimationDemo' do
   pod 'FSPagerView'
   pod "MXParallaxHeader"
   pod 'Zip', '~> 2.1'
-
+  pod 'Kingfisher', '~> 6.0'
 
 
 end

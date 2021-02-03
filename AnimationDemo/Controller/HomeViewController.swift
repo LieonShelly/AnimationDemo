@@ -372,13 +372,19 @@ extension HomeViewController {
             vcc.display(willShow: nil, didShow: nil, willDismiss: nil, didDismiss: nil)
         })
         let resultAlert = ListItem("resultAlert", handler: { [weak self] in
-            guard let weakSelf = self else {
-                return
-            }
             let vcc = IFFreeChanceSuccessAlert()
             vcc.config(13)
             vcc.display(willShow: nil, didShow: nil, willDismiss: nil, didDismiss: nil)
         })
+        
+        let lightVC = ListItem("IFLightViewController", handler: { [weak self] in
+            guard let weakSelf = self else {
+                return
+            }
+            let vcc = IFLightViewController()
+            weakSelf.navigationController?.pushViewController(vcc, animated: true)
+        })
+        items.append(lightVC)
         items.append(freeAlert)
         items.append(resultAlert)
         items.append(triangleVC)

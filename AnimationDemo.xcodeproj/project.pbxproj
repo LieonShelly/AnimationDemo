@@ -84,7 +84,6 @@
 		CD6F174D2575D89900957317 /* IFSettingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6F174C2575D89900957317 /* IFSettingHeaderView.swift */; };
 		CD6F17512575EDFF00957317 /* IFSettingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6F17502575EDFF00957317 /* IFSettingFooterView.swift */; };
 		CD6F4BEF24A4E4EF00E2AE47 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6F4BEE24A4E4EF00E2AE47 /* PageViewController.swift */; };
-		CD725AD3234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD725AD2234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework */; };
 		CD725AD5234F0E1D00C11FB0 /* PanAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AD4234F0E1D00C11FB0 /* PanAnimation.swift */; };
 		CD725AD9234F0E4E00C11FB0 /* PanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD725AD7234F0E4E00C11FB0 /* PanViewController.swift */; };
 		CD725ADA234F0E4E00C11FB0 /* PanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD725AD8234F0E4E00C11FB0 /* PanViewController.xib */; };
@@ -113,6 +112,7 @@
 		CD7D50B42361768E00FA9C07 /* Param.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50B32361768E00FA9C07 /* Param.swift */; };
 		CD7D50B7236191CC00FA9C07 /* IFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7D50B6236191CC00FA9C07 /* IFExtension.swift */; };
 		CD7DEB8A246E3A850086FDBB /* GradientBtnVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7DEB89246E3A850086FDBB /* GradientBtnVC.swift */; };
+		CD7E3D1625C910C500534585 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = CD7E3D1525C910C500534585 /* Student.m */; };
 		CD874F562486261100FC72EC /* GradientBorderVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD874F552486261100FC72EC /* GradientBorderVc.swift */; };
 		CD88DD602361E4F200B9DB8F /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD88DD5E2361E4F200B9DB8F /* TestViewController.swift */; };
 		CD88DD612361E4F200B9DB8F /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD88DD5F2361E4F200B9DB8F /* TestViewController.xib */; };
@@ -178,10 +178,19 @@
 		CDB280B6241E160500795A11 /* FXImageCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB280B5241E160500795A11 /* FXImageCropView.swift */; };
 		CDB79D6F25B5EC990052FDBE /* VertexArrayObjects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB79D6D25B5EC990052FDBE /* VertexArrayObjects.cpp */; };
 		CDB79D8725B6823C0052FDBE /* Primittive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB79D8525B6823C0052FDBE /* Primittive.cpp */; };
+		CDB7AC5525CAE465001D355B /* IFLightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7AC5425CAE465001D355B /* IFLightModel.swift */; };
 		CDB9006A25660E8A005C078B /* MaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9006925660E8A005C078B /* MaskViewController.swift */; };
 		CDBB312C242CF98B00C1DCAD /* FXTutorialUploadProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBB312B242CF98B00C1DCAD /* FXTutorialUploadProgressView.swift */; };
 		CDBBC730239F6D5000B07EE9 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBC72E239F6D5000B07EE9 /* SwipeViewController.swift */; };
 		CDBBC731239F6D5000B07EE9 /* SwipeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDBBC72F239F6D5000B07EE9 /* SwipeViewController.xib */; };
+		CDBECCFA25CAD9BE00E9783C /* MenuCommonBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECCF925CAD9BE00E9783C /* MenuCommonBottomView.swift */; };
+		CDBECD0025CADA4800E9783C /* MenuCommonContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECCFF25CADA4800E9783C /* MenuCommonContentView.swift */; };
+		CDBECD0425CADAC800E9783C /* MennuCommonTitleCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECD0325CADAC800E9783C /* MennuCommonTitleCategoryView.swift */; };
+		CDBECD0825CADB0C00E9783C /* MenuCommonToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECD0725CADB0C00E9783C /* MenuCommonToolbarView.swift */; };
+		CDBECD0C25CADB3100E9783C /* MenuCommonNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECD0B25CADB3100E9783C /* MenuCommonNavBarView.swift */; };
+		CDBECD1125CADBBF00E9783C /* IFLightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECD1025CADBBF00E9783C /* IFLightViewController.swift */; };
+		CDBECD1725CADEEB00E9783C /* MennuCommonIconTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECD1625CADEEB00E9783C /* MennuCommonIconTitleCell.swift */; };
+		CDBECD1B25CAE01400E9783C /* MenuLightCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECD1A25CAE01400E9783C /* MenuLightCustomCell.swift */; };
 		CDC4908A24F9FBDA00E824B1 /* FX3DLightExchangeLightSourceBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC4908924F9FBDA00E824B1 /* FX3DLightExchangeLightSourceBtn.swift */; };
 		CDC4908C24F9FDE100E824B1 /* FX3dLightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC4908B24F9FDE100E824B1 /* FX3dLightVC.swift */; };
 		CDC6A84524FA913F000E8CFA /* FXOvalIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC6A84424FA913F000E8CFA /* FXOvalIView.swift */; };
@@ -418,6 +427,8 @@
 		CD7D50B32361768E00FA9C07 /* Param.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Param.swift; sourceTree = "<group>"; };
 		CD7D50B6236191CC00FA9C07 /* IFExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFExtension.swift; sourceTree = "<group>"; };
 		CD7DEB89246E3A850086FDBB /* GradientBtnVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBtnVC.swift; sourceTree = "<group>"; };
+		CD7E3D1425C910C500534585 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		CD7E3D1525C910C500534585 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
 		CD874F552486261100FC72EC /* GradientBorderVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBorderVc.swift; sourceTree = "<group>"; };
 		CD88DD5E2361E4F200B9DB8F /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		CD88DD5F2361E4F200B9DB8F /* TestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
@@ -489,10 +500,19 @@
 		CDB79D6E25B5EC990052FDBE /* VertexArrayObjects.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VertexArrayObjects.hpp; sourceTree = "<group>"; };
 		CDB79D8525B6823C0052FDBE /* Primittive.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Primittive.cpp; sourceTree = "<group>"; };
 		CDB79D8625B6823C0052FDBE /* Primittive.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Primittive.hpp; sourceTree = "<group>"; };
+		CDB7AC5425CAE465001D355B /* IFLightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFLightModel.swift; sourceTree = "<group>"; };
 		CDB9006925660E8A005C078B /* MaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
 		CDBB312B242CF98B00C1DCAD /* FXTutorialUploadProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialUploadProgressView.swift; sourceTree = "<group>"; };
 		CDBBC72E239F6D5000B07EE9 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
 		CDBBC72F239F6D5000B07EE9 /* SwipeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwipeViewController.xib; sourceTree = "<group>"; };
+		CDBECCF925CAD9BE00E9783C /* MenuCommonBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCommonBottomView.swift; sourceTree = "<group>"; };
+		CDBECCFF25CADA4800E9783C /* MenuCommonContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCommonContentView.swift; sourceTree = "<group>"; };
+		CDBECD0325CADAC800E9783C /* MennuCommonTitleCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MennuCommonTitleCategoryView.swift; sourceTree = "<group>"; };
+		CDBECD0725CADB0C00E9783C /* MenuCommonToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCommonToolbarView.swift; sourceTree = "<group>"; };
+		CDBECD0B25CADB3100E9783C /* MenuCommonNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCommonNavBarView.swift; sourceTree = "<group>"; };
+		CDBECD1025CADBBF00E9783C /* IFLightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFLightViewController.swift; sourceTree = "<group>"; };
+		CDBECD1625CADEEB00E9783C /* MennuCommonIconTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MennuCommonIconTitleCell.swift; sourceTree = "<group>"; };
+		CDBECD1A25CAE01400E9783C /* MenuLightCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuLightCustomCell.swift; sourceTree = "<group>"; };
 		CDC4908924F9FBDA00E824B1 /* FX3DLightExchangeLightSourceBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FX3DLightExchangeLightSourceBtn.swift; sourceTree = "<group>"; };
 		CDC4908B24F9FDE100E824B1 /* FX3dLightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FX3dLightVC.swift; sourceTree = "<group>"; };
 		CDC6A84424FA913F000E8CFA /* FXOvalIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXOvalIView.swift; sourceTree = "<group>"; };
@@ -563,7 +583,6 @@
 			files = (
 				CD73DE8725AD4CA400BA282A /* OpenGLES.framework in Frameworks */,
 				CD73DE8325AD4C9500BA282A /* CoreGraphics.framework in Frameworks */,
-				CD725AD3234EFF7000C11FB0 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				CD73DE8525AD4C9C00BA282A /* GLKit.framework in Frameworks */,
 				897AC48E9CAFFD037A55AF1B /* Pods_AnimationDemo.framework in Frameworks */,
 			);
@@ -664,6 +683,7 @@
 		CD2FCF6E234D796100E28E5C /* AnimationDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CDBECCF225CAD95C00E9783C /* Light */,
 				CD73DE7725AD4B2E00BA282A /* OpenGLES学习 */,
 				CD17637025A6B03B006ECCC1 /* Clip */,
 				CD34F6D225998A1D009653F4 /* Rx */,
@@ -1016,6 +1036,8 @@
 			children = (
 				CD9236BC25AF4B2800E60060 /* TriangleMiddleware.h */,
 				CD9236BD25AF4B2800E60060 /* TriangleMiddleware.mm */,
+				CD7E3D1425C910C500534585 /* Student.h */,
+				CD7E3D1525C910C500534585 /* Student.m */,
 			);
 			path = Middleware;
 			sourceTree = "<group>";
@@ -1177,6 +1199,54 @@
 				CDB79D8625B6823C0052FDBE /* Primittive.hpp */,
 			);
 			path = "图元装配和光栅化";
+			sourceTree = "<group>";
+		};
+		CDBECCF225CAD95C00E9783C /* Light */ = {
+			isa = PBXGroup;
+			children = (
+				CDBECCF825CAD98000E9783C /* View */,
+				CDBECCF725CAD97900E9783C /* Model */,
+				CDBECCF425CAD96D00E9783C /* Controller */,
+			);
+			path = Light;
+			sourceTree = "<group>";
+		};
+		CDBECCF425CAD96D00E9783C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CDBECD1025CADBBF00E9783C /* IFLightViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CDBECCF725CAD97900E9783C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CDB7AC5425CAE465001D355B /* IFLightModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CDBECCF825CAD98000E9783C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CDBECD0F25CADB3600E9783C /* Common */,
+				CDBECD1A25CAE01400E9783C /* MenuLightCustomCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CDBECD0F25CADB3600E9783C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CDBECCF925CAD9BE00E9783C /* MenuCommonBottomView.swift */,
+				CDBECCFF25CADA4800E9783C /* MenuCommonContentView.swift */,
+				CDBECD0325CADAC800E9783C /* MennuCommonTitleCategoryView.swift */,
+				CDBECD0725CADB0C00E9783C /* MenuCommonToolbarView.swift */,
+				CDBECD0B25CADB3100E9783C /* MenuCommonNavBarView.swift */,
+				CDBECD1625CADEEB00E9783C /* MennuCommonIconTitleCell.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		CDCF386A25C00E4600174C38 /* 向量类 */ = {
@@ -1543,7 +1613,9 @@
 				CD99459024975BCF00789E45 /* FXVideoCoverGenerator.swift in Sources */,
 				CDAB78E3247FB46F00905236 /* FXLoginTitleCell.swift in Sources */,
 				CD6F17512575EDFF00957317 /* IFSettingFooterView.swift in Sources */,
+				CDBECD0C25CADB3100E9783C /* MenuCommonNavBarView.swift in Sources */,
 				CD2880D3235FE38700F20EF1 /* TipPop.swift in Sources */,
+				CDBECD0025CADA4800E9783C /* MenuCommonContentView.swift in Sources */,
 				CD32D1DF258A452B004A8172 /* IFUploadPhotoService.swift in Sources */,
 				CD2FCF70234D796100E28E5C /* AppDelegate.swift in Sources */,
 				CDFF205A236837A500800136 /* GuideStartViewController.swift in Sources */,
@@ -1563,6 +1635,7 @@
 				CDC4908C24F9FDE100E824B1 /* FX3dLightVC.swift in Sources */,
 				CD73DE7D25AD4BF800BA282A /* HelloTriangle.cpp in Sources */,
 				CDB79D6F25B5EC990052FDBE /* VertexArrayObjects.cpp in Sources */,
+				CDBECD0825CADB0C00E9783C /* MenuCommonToolbarView.swift in Sources */,
 				CD5F665F2591D69000CAED29 /* IFMyShareAlbumDetailQRView.swift in Sources */,
 				CD5F66472591C9F300CAED29 /* IFMyShareAlbumDetailTimeLineView.swift in Sources */,
 				CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */,
@@ -1583,7 +1656,9 @@
 				CDFB49CF235047940083426A /* PinchView.swift in Sources */,
 				CDEA86F2240F5C63007BAA00 /* FXTutorialStepView.swift in Sources */,
 				CDB280B4241E11CD00795A11 /* ImagePickerViewController.swift in Sources */,
+				CDBECD1B25CAE01400E9783C /* MenuLightCustomCell.swift in Sources */,
 				CD2112F1235D8B91003B5202 /* PadTypeCollectionViewCell.swift in Sources */,
+				CDBECD0425CADAC800E9783C /* MennuCommonTitleCategoryView.swift in Sources */,
 				CD6832FE23BAF7F9008C0C9F /* IAPViewController.swift in Sources */,
 				CD7D50B023613AD300FA9C07 /* PathSerivce.swift in Sources */,
 				CDDC1A2D25959574008CE67C /* IFMyShareWechatView.swift in Sources */,
@@ -1619,6 +1694,7 @@
 				CD5F97D624B85043008DD802 /* IFRecommendStartBtnPop.swift in Sources */,
 				CD749ACE2356F72C00C357A5 /* FlipViewController.swift in Sources */,
 				CDA1879F24970DFD00C46013 /* FXTutorialHandleVideoListVC.swift in Sources */,
+				CDBECD1725CADEEB00E9783C /* MennuCommonIconTitleCell.swift in Sources */,
 				CD725AD5234F0E1D00C11FB0 /* PanAnimation.swift in Sources */,
 				CDEBF3622508E84100C29A7A /* FXVerticalColorSlider.swift in Sources */,
 				CD6F174D2575D89900957317 /* IFSettingHeaderView.swift in Sources */,
@@ -1670,9 +1746,11 @@
 				CD34F6DB2599B6C5009653F4 /* IFBatchShareFirstEnterView.swift in Sources */,
 				CD5E733F24B6B518007C46E9 /* IFFuncChooseSectionHeader.swift in Sources */,
 				CDFAAA78238A54D400918051 /* BtnProgressViewController.swift in Sources */,
+				CDBECD1125CADBBF00E9783C /* IFLightViewController.swift in Sources */,
 				CDA9A8C1249F8945000CEF71 /* CycleLayout.swift in Sources */,
 				CDAB78E0247FB46F00905236 /* FXLoginUIModel.swift in Sources */,
 				CD2FCFA1234D79AB00E28E5C /* TapAnimationViewController.swift in Sources */,
+				CDB7AC5525CAE465001D355B /* IFLightModel.swift in Sources */,
 				CD6F4BEF24A4E4EF00E2AE47 /* PageViewController.swift in Sources */,
 				CDFF204F23680D5200800136 /* PopImageBrowser.swift in Sources */,
 				CDA48306248FB7CF00526333 /* FXUploadTextInputAlert.swift in Sources */,
@@ -1697,6 +1775,8 @@
 				CD98766C241A3C0D0020D00F /* FXTutorialManulVideoIcon.swift in Sources */,
 				CDFB49D123504C070083426A /* ZoomScollVIew.swift in Sources */,
 				CD73DE9625AD4D6400BA282A /* FileWrapper.m in Sources */,
+				CD7E3D1625C910C500534585 /* Student.m in Sources */,
+				CDBECCFA25CAD9BE00E9783C /* MenuCommonBottomView.swift in Sources */,
 				CDB280B2241E118600795A11 /* CropOverlay.swift in Sources */,
 				CDA50BF525BE939200A63E7C /* IFFreeChanceAlert.swift in Sources */,
 				CDEA86F0240F5C48007BAA00 /* FXTutorialNextStepView.swift in Sources */,
@@ -1891,6 +1971,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AnimationDemo/工作流仿写/Lib/ios",
+					"$(PROJECT_DIR)/AnimationDemo/工作流仿写/Lib/mac",
+					"$(PROJECT_DIR)/AnimationDemo/工作流仿写/Lib/linux",
+					"$(PROJECT_DIR)/AnimationDemo/工作流仿写/Lib/android/armeabi-v7a",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vstudio.inFace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = vstudio_development_inFace;
@@ -1915,6 +2002,13 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AnimationDemo/工作流仿写/Lib/ios",
+					"$(PROJECT_DIR)/AnimationDemo/工作流仿写/Lib/mac",
+					"$(PROJECT_DIR)/AnimationDemo/工作流仿写/Lib/linux",
+					"$(PROJECT_DIR)/AnimationDemo/工作流仿写/Lib/android/armeabi-v7a",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vstudio.inFace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
