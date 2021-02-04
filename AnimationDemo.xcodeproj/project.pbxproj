@@ -179,6 +179,8 @@
 		CDB79D6F25B5EC990052FDBE /* VertexArrayObjects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB79D6D25B5EC990052FDBE /* VertexArrayObjects.cpp */; };
 		CDB79D8725B6823C0052FDBE /* Primittive.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CDB79D8525B6823C0052FDBE /* Primittive.cpp */; };
 		CDB7AC5525CAE465001D355B /* IFLightModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7AC5425CAE465001D355B /* IFLightModel.swift */; };
+		CDB7AC7B25CBCD86001D355B /* IFLightParamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7AC7A25CBCD86001D355B /* IFLightParamViewController.swift */; };
+		CDB7AC7F25CBD0AD001D355B /* MenuCommonIconTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB7AC7E25CBD0AD001D355B /* MenuCommonIconTitleCell.swift */; };
 		CDB9006A25660E8A005C078B /* MaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDB9006925660E8A005C078B /* MaskViewController.swift */; };
 		CDBB312C242CF98B00C1DCAD /* FXTutorialUploadProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBB312B242CF98B00C1DCAD /* FXTutorialUploadProgressView.swift */; };
 		CDBBC730239F6D5000B07EE9 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBBC72E239F6D5000B07EE9 /* SwipeViewController.swift */; };
@@ -189,7 +191,7 @@
 		CDBECD0825CADB0C00E9783C /* MenuCommonToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECD0725CADB0C00E9783C /* MenuCommonToolbarView.swift */; };
 		CDBECD0C25CADB3100E9783C /* MenuCommonNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECD0B25CADB3100E9783C /* MenuCommonNavBarView.swift */; };
 		CDBECD1125CADBBF00E9783C /* IFLightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECD1025CADBBF00E9783C /* IFLightViewController.swift */; };
-		CDBECD1725CADEEB00E9783C /* MennuCommonIconTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECD1625CADEEB00E9783C /* MennuCommonIconTitleCell.swift */; };
+		CDBECD1725CADEEB00E9783C /* MenuCommonPicTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECD1625CADEEB00E9783C /* MenuCommonPicTitleCell.swift */; };
 		CDBECD1B25CAE01400E9783C /* MenuLightCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDBECD1A25CAE01400E9783C /* MenuLightCustomCell.swift */; };
 		CDC4908A24F9FBDA00E824B1 /* FX3DLightExchangeLightSourceBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC4908924F9FBDA00E824B1 /* FX3DLightExchangeLightSourceBtn.swift */; };
 		CDC4908C24F9FDE100E824B1 /* FX3dLightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC4908B24F9FDE100E824B1 /* FX3dLightVC.swift */; };
@@ -501,6 +503,8 @@
 		CDB79D8525B6823C0052FDBE /* Primittive.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Primittive.cpp; sourceTree = "<group>"; };
 		CDB79D8625B6823C0052FDBE /* Primittive.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Primittive.hpp; sourceTree = "<group>"; };
 		CDB7AC5425CAE465001D355B /* IFLightModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFLightModel.swift; sourceTree = "<group>"; };
+		CDB7AC7A25CBCD86001D355B /* IFLightParamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFLightParamViewController.swift; sourceTree = "<group>"; };
+		CDB7AC7E25CBD0AD001D355B /* MenuCommonIconTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCommonIconTitleCell.swift; sourceTree = "<group>"; };
 		CDB9006925660E8A005C078B /* MaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskViewController.swift; sourceTree = "<group>"; };
 		CDBB312B242CF98B00C1DCAD /* FXTutorialUploadProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXTutorialUploadProgressView.swift; sourceTree = "<group>"; };
 		CDBBC72E239F6D5000B07EE9 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
@@ -511,7 +515,7 @@
 		CDBECD0725CADB0C00E9783C /* MenuCommonToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCommonToolbarView.swift; sourceTree = "<group>"; };
 		CDBECD0B25CADB3100E9783C /* MenuCommonNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCommonNavBarView.swift; sourceTree = "<group>"; };
 		CDBECD1025CADBBF00E9783C /* IFLightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IFLightViewController.swift; sourceTree = "<group>"; };
-		CDBECD1625CADEEB00E9783C /* MennuCommonIconTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MennuCommonIconTitleCell.swift; sourceTree = "<group>"; };
+		CDBECD1625CADEEB00E9783C /* MenuCommonPicTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCommonPicTitleCell.swift; sourceTree = "<group>"; };
 		CDBECD1A25CAE01400E9783C /* MenuLightCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuLightCustomCell.swift; sourceTree = "<group>"; };
 		CDC4908924F9FBDA00E824B1 /* FX3DLightExchangeLightSourceBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FX3DLightExchangeLightSourceBtn.swift; sourceTree = "<group>"; };
 		CDC4908B24F9FDE100E824B1 /* FX3dLightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FX3dLightVC.swift; sourceTree = "<group>"; };
@@ -1215,6 +1219,7 @@
 			isa = PBXGroup;
 			children = (
 				CDBECD1025CADBBF00E9783C /* IFLightViewController.swift */,
+				CDB7AC7A25CBCD86001D355B /* IFLightParamViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1244,7 +1249,8 @@
 				CDBECD0325CADAC800E9783C /* MennuCommonTitleCategoryView.swift */,
 				CDBECD0725CADB0C00E9783C /* MenuCommonToolbarView.swift */,
 				CDBECD0B25CADB3100E9783C /* MenuCommonNavBarView.swift */,
-				CDBECD1625CADEEB00E9783C /* MennuCommonIconTitleCell.swift */,
+				CDBECD1625CADEEB00E9783C /* MenuCommonPicTitleCell.swift */,
+				CDB7AC7E25CBD0AD001D355B /* MenuCommonIconTitleCell.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1618,6 +1624,7 @@
 				CDBECD0025CADA4800E9783C /* MenuCommonContentView.swift in Sources */,
 				CD32D1DF258A452B004A8172 /* IFUploadPhotoService.swift in Sources */,
 				CD2FCF70234D796100E28E5C /* AppDelegate.swift in Sources */,
+				CDB7AC7B25CBCD86001D355B /* IFLightParamViewController.swift in Sources */,
 				CDFF205A236837A500800136 /* GuideStartViewController.swift in Sources */,
 				CD224D3E237CF7980072442F /* GradientView.swift in Sources */,
 				CD73DE9025AD4D5A00BA282A /* esShader.c in Sources */,
@@ -1637,6 +1644,7 @@
 				CDB79D6F25B5EC990052FDBE /* VertexArrayObjects.cpp in Sources */,
 				CDBECD0825CADB0C00E9783C /* MenuCommonToolbarView.swift in Sources */,
 				CD5F665F2591D69000CAED29 /* IFMyShareAlbumDetailQRView.swift in Sources */,
+				CDB7AC7F25CBD0AD001D355B /* MenuCommonIconTitleCell.swift in Sources */,
 				CD5F66472591C9F300CAED29 /* IFMyShareAlbumDetailTimeLineView.swift in Sources */,
 				CD725AE6234F140700C11FB0 /* Extensions.swift in Sources */,
 				CD3E24BA24446A4200F892F4 /* FXTutorialToast.swift in Sources */,
@@ -1694,7 +1702,7 @@
 				CD5F97D624B85043008DD802 /* IFRecommendStartBtnPop.swift in Sources */,
 				CD749ACE2356F72C00C357A5 /* FlipViewController.swift in Sources */,
 				CDA1879F24970DFD00C46013 /* FXTutorialHandleVideoListVC.swift in Sources */,
-				CDBECD1725CADEEB00E9783C /* MennuCommonIconTitleCell.swift in Sources */,
+				CDBECD1725CADEEB00E9783C /* MenuCommonPicTitleCell.swift in Sources */,
 				CD725AD5234F0E1D00C11FB0 /* PanAnimation.swift in Sources */,
 				CDEBF3622508E84100C29A7A /* FXVerticalColorSlider.swift in Sources */,
 				CD6F174D2575D89900957317 /* IFSettingHeaderView.swift in Sources */,

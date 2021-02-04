@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuLightCustomCell: MennuCommonIconTitleCell {
+class MenuLightCustomCell: MenuCommonPicTitleCell {
     lazy var editIcon: UIImageView = {
         let icon = UIImageView()
         return icon

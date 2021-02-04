@@ -42,6 +42,8 @@ class IFLightViewController: UIViewController {
     fileprivate var materialData: Material?
     fileprivate let origin = IFLightMennuOriginCellData(icon: UIImage(named: "girl0")!, title: "原图")
     fileprivate let custom = IFLightMennuOriginCellData(icon: UIImage(named: "girl0")!, title: "自定义")
+    let transition = RevealAnimator()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
@@ -80,9 +82,9 @@ class IFLightViewController: UIViewController {
         contentView.snp.makeConstraints {
             $0.left.right.bottom.equalTo(0)
         }
-        collectionView.registerClassWithCell(MenuLightCustomCell.self)
-        collectionView.registerClassWithCell(MennuCommonIconTitleCell.self)
         
+        collectionView.registerClassWithCell(MenuCommonPicTitleCell.self)
+        collectionView.registerClassWithCell(MenuLightCustomCell.self)
         collectionView.delegate = self
         collectionView.dataSource = self
         titleCateView.selectedAction = {[weak self] index in
@@ -171,7 +173,7 @@ extension IFLightViewController: UICollectionViewDataSource {
         let data = lists[indexPath.section]
         switch data {
         case .origin(let entity):
-            let cell = collectionView.dequeueCell(MennuCommonIconTitleCell.self, for: indexPath)
+            let cell = collectionView.dequeueCell(MenuCommonPicTitleCell.self, for: indexPath)
             cell.icon.image = entity[indexPath.item].icon
             cell.titleLabel.text = entity[indexPath.item].title
             return cell
@@ -181,7 +183,7 @@ extension IFLightViewController: UICollectionViewDataSource {
             cell.titleLabel.text = entity[indexPath.item].title
             return cell
         case .recommend(let entity):
-            let cell = collectionView.dequeueCell(MennuCommonIconTitleCell.self, for: indexPath)
+            let cell = collectionView.dequeueCell(MenuCommonPicTitleCell.self, for: indexPath)
             cell.icon.kf.setImage(with: URL(string: entity[indexPath.item].itemIcon!)!)
             cell.titleLabel.text = entity[indexPath.item].itemName
             return cell
@@ -207,6 +209,9 @@ extension IFLightViewController: UICollectionViewDelegateFlowLayout {
                 
             }
         }
+        let paramVC = IFLightParamViewController()
+        navigationController?.delegate = self
+        navigationController?.pushViewController(paramVC, animated: false)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -227,3 +232,34 @@ extension IFLightViewController: UICollectionViewDelegateFlowLayout {
     
 }
 
+
+extension IFLightViewController: UINavigationControllerDelegate {
+  func navigationController(_
+    navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) ->
+    UIViewControllerAnimatedTransitioning? {
+      transition.operation = operation
+      return transition
+  }
+}
+
+
+class RevealAnimator: NSObject, UIViewControllerAnimatedTransitioning, CAAnimationDelegate {
+
+  let animationDuration = 0.25
+  var operation: UINavigationController.Operation = .push
+
+  weak var storedContext: UIViewControllerContextTransitioning?
+
+  func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    return animationDuration
+  }
+
+  func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    storedContext = transitionContext
+    if let toVC = transitionContext.viewController(forKey: .to) {
+        transitionContext.containerView.addSubview(toVC.view)
+        toVC.view.frame = transitionContext.finalFrame(for: toVC)
+    }
+    transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+  }
+}
