@@ -76,20 +76,26 @@ class IFLightParamViewController: UIViewController {
         contentView.snp.makeConstraints {
             $0.left.right.bottom.equalTo(0)
         }
+        backBtn.addTarget(self, action: #selector(backAction), for: .touchUpInside)
         collectionView.registerClassWithCell(MenuCommonIconTitleCell.self)
         collectionView.delegate = self
         collectionView.dataSource = self
     }
     
     fileprivate func configData() {
-        lists.append(contentsOf: [IFLightMennuOriginCellData(icon: UIImage(named: "FX_3DLIGHT_SHAPELIGHT_BLURDEGREE")!, title: "透明度"),
-                                  IFLightMennuOriginCellData(icon: UIImage(named: "FX_3DLIGHT_SHAPELIGHT_BLURDEGREE")!, title: "透明度"),
-                                  IFLightMennuOriginCellData(icon: UIImage(named: "FX_3DLIGHT_SHAPELIGHT_BLURDEGREE")!, title: "透明度"),
-                                  IFLightMennuOriginCellData(icon: UIImage(named: "FX_3DLIGHT_SHAPELIGHT_BLURDEGREE")!, title: "透明度"),
-                                  IFLightMennuOriginCellData(icon: UIImage(named: "FX_3DLIGHT_SHAPELIGHT_BLURDEGREE")!, title: "透明度"),
-                                  IFLightMennuOriginCellData(icon: UIImage(named: "FX_3DLIGHT_SHAPELIGHT_BLURDEGREE")!, title: "透明度"),
-                                  IFLightMennuOriginCellData(icon: UIImage(named: "FX_3DLIGHT_SHAPELIGHT_BLURDEGREE")!, title: "透明度"),])
+        lists.append(contentsOf: [IFLightMennuOriginCellData(icon: UIImage(named: "FX_3DLIGHT_SHAPELIGHT_BLURDEGREE")!, title: "光线强弱"),
+                                  IFLightMennuOriginCellData(icon: UIImage(named: "FX_3DLIGHT_SHAPELIGHT_BLURDEGREE")!, title: "光源距离"),
+                                  IFLightMennuOriginCellData(icon: UIImage(named: "FX_3DLIGHT_SHAPELIGHT_BLURDEGREE")!, title: "光线类型"),
+                                  IFLightMennuOriginCellData(icon: UIImage(named: "FX_3DLIGHT_SHAPELIGHT_BLURDEGREE")!, title: "立体感"),
+                                  IFLightMennuOriginCellData(icon: UIImage(named: "FX_3DLIGHT_SHAPELIGHT_BLURDEGREE")!, title: "阴影程度"),
+                                  IFLightMennuOriginCellData(icon: UIImage(named: "FX_3DLIGHT_SHAPELIGHT_BLURDEGREE")!, title: "旋转"),
+                                  IFLightMennuOriginCellData(icon: UIImage(named: "FX_3DLIGHT_SHAPELIGHT_BLURDEGREE")!, title: "曲线")])
         collectionView.reloadData()
+    }
+    
+    @objc
+    fileprivate func backAction() {
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -115,7 +121,12 @@ extension IFLightParamViewController: UICollectionViewDataSource {
 extension IFLightParamViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if indexPath.item == 2 {
+            titleCateView.isHidden = false
+            titleCateView.config(["强光", "弱光"])
+        } else {
+            titleCateView.isHidden = true
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
