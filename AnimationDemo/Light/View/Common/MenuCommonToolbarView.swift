@@ -72,7 +72,6 @@ class MenuCommonToolbarView: UIView {
             $0.left.equalTo(enterBtn.snp.right).offset(10)
             $0.right.equalTo(restoreBtn.snp.left).offset(-10)
             $0.centerY.equalToSuperview()
-            $0.size.equalTo(CGSize(width: 40, height: 40))
         }
         
         restoreBtn.snp.makeConstraints {
